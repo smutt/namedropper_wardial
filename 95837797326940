@@ -1,0 +1,67 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: shared library versions of resolver routines for SunOS ?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326941&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326951&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326938&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200016&r=1&w=2">Re: shared library versions of resolver routines for SunOS ?</a>
+From:       <a href="?a=95837817000013&r=1&w=2">zaphod.mps.ohio-state.edu!samsung!sol.ctr.columbia.edu!ira.uka.de!fauern!tumuc!l</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-12 6:33:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326940&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326940&q=raw">body</a>]</b>
+
+ang@theory.lcs.mit.edu (William S. Ang) writes:
+
+
+&gt;In article &lt;EMV.90Apr9205846@duby.math.lsa.umich.edu&gt; emv@math.lsa.umich.edu (Edward Vielmetti) writes:
+
+&gt;   os: sunos 4.0.3, running with the "sun-fixes" version of libc_resolv.so
+&gt;   that puts name-server based resolver routines in the SunOS shared library.
+
+&gt;   res_search -- fix to not append the local domain if there are
+&gt;   at least two dots in the name, to avoid unneeded queries on
+&gt;   fully specified names, i.e. none of this
+&gt;	   zip.eecs.umich.edu.math.lsa.umich.edu
+&gt;	   zip.eecs.umich.edu.lsa.umich.edu
+&gt;	   zip.eecs.umich.edu.umich.edu
+&gt;   lookup nonsense.
+
+&gt;I have the same problem with resolver appending domain names to fullly
+&gt;qualified hostname.  Anybody has fix for this problem?  Will this be
+&gt;fixed in 4.1?
+
+Yeah, but here in Germany we have an deeper hierarchy in the domains,
+so the simple solution of counting two dots is not very good!
+
+Names here look like: charly.bl.physik.tu-muenchen.de
+
+So if I want to connect to this machine outside of the physics, but inside
+my university, i want to type "charly.bl.physik" . 
+If the resolver simply counts the two dots and then refuses to append
+the domain names, it will not work. Then I have to write down the full
+address. That's annoying.
+
+Sincerely,
+Klaus Steinberger
+
+
+Klaus Steinberger               Beschleunigerlabor der TU und LMU Muenchen
+Phone: (+49 89)3209 4287        Hochschulgelaende, D-8046 Garching, West Germany
+BITNET:  K2@DGABLG5P            Internet: k2@charly.bl.physik.tu-muenchen.de
+
+<b>[<a href="?l=namedroppers&m=95837797326941&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326951&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326938&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

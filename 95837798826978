@@ -1,0 +1,90 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: no inverse mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826979&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826981&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826979&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100009&r=1&w=2">Re: no inverse mappings</a>
+From:       <a href="?a=95837817800018&r=1&w=2">John C Klensin &lt;KLENSIN () INFOODS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-30 13:04:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826978&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826978&q=raw">body</a>]</b>
+
+  I want to respond to part of this on the basis of personal experience and 
+reactions...
+
+
+&gt;	I guess the philosophy puzzles me.  I've always thought of DNS as a
+&gt;	way of making it easier for clients to connect to services, not as any
+&gt;	sort of authentication system.
+   I've never seen it as, strictly, an authentication system either.  And I 
+wouldn't advocate a host that can't reverse map refusing a connection.  But 
+I must admit that I get very nervous when I get an attempted login or ftp 
+attempt from a host that I can't identify by name.
+
+&gt;	At this site we have 2000 machines on LocalTalk networks using dynamic
+&gt;       IP address assignment and supporting no IP services.  Is it really
+&gt;	necessary for security for us to give them all names (actually, give
+&gt;	the addresses names) and put them in our domain database?  Surely if
+&gt;	intrusive activity is coming from one of these machines it's easy to
+&gt;	determine where it's at by looking at the network part of its IP
+&gt;	address? 
+  I don't know how Stanford operates, but, speaking very pragmatically, 
+when one of the possible penetration attempts above happens, and I can't 
+reverse map a host name, I've sometimes sent mail to the person identified 
+by looking at the network part of the IP address as the admin contact.  
+Over the last several months (only), I've had such mail not answered, 
+bounce, or given rude "how should we know what host that is, just because 
+they are using one of our numbers".  I've also been told that up to date 
+information was given to the NIC "a long time ago", but had not made it to 
+the WHOIS database (this is the traditional "blame the NIC" excuse, a close 
+relative to "the check is in the mail").
+   So I would be a lot happier if addresses reversed mapped, and reverse 
+mapped to DNS records that could be used to track down plausible 
+postmasters and zone contacts.  And I'm happier if that information is 
+something that you get to maintain locally, so that "blame the NIC" doesn't 
+work.
+   But I don't think that set of requirements/desires translates into "give 
+them all names... and put them into our domain database".  Or, at least, 
+that it shouldn't.  So, let me suggest an idea that I think is consistent 
+with the current RFCs, even if a little radical....
+    Since you have enough machinery around to dynamically assign IP 
+addresses, what happens if you make a set of DNS records called, e.g.,
+"dynamic.stanford.edu".  If I ask for HINFO, I get some nice stuff that 
+points me to humans who can explain, and the SOA records correspond.  There 
+is no A-record, and, if you like, you can make an MX and point it somewhere 
+(since you probably have a "somewhere".  Now you modify the server a bit so 
+that, if someone makes a reverse mapping inquiry for *any of those 
+addresses*, you return the name "dynamic.stanford.edu", e.g., you provide 
+an effective wildcard for the class of IP addresses that you give out 
+dynamically.  That would satisfy my claimed need to reverse map.  It would 
+probably satisfy a host that tried to reverse map, as long as its 
+validation did not get anal about the process and insist on getting an A 
+record and verifying that they matched.  And you wouldn't have to give 
+those things names and put them in your tables (which would be misleading 
+anyway, because the names would probably change everytime you dynamically 
+supplied an IP address).
+
+  Bob Braden: that would be, more or less, my candidate outline for "the 
+right thing" for a future HR revision to say.   Probably it would require 
+some text elsewhere since, by the criteria proposed the last time, this 
+goes well beyond a "clarification" to anything I can think to hang it on.
+     --john
+-------
+
+<b>[<a href="?l=namedroppers&m=95837798826979&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826981&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826979&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

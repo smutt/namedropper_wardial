@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  network preferences in resolver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027027&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027029&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027027&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700005&r=1&w=2">Re:  network preferences in resolver</a>
+From:       <a href="?a=95837785800024&r=1&w=2">Richard Fox &lt;rfox () amelia ! nas ! nasa ! gov&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-22 17:58:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027028&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027028&q=raw">body</a>]</b>
+
+Stuarts idea of having the syntax of:
+
+network 128.102.1.0	255.255.255.0
+network 192.35.86.0	255.255.255.0
+
+is a much better syntax than what I previously suggested (which was
+having a subnet mask which was applied to all hosts). In fact, since
+the time I wrote the note I have discovered that we may have a class B
+and a class C network on our crays with each network having a different
+subnet mask. Stuart's idea would facilitate and even broader sorting
+capability.
+
+rich
+
+<b>[<a href="?l=namedroppers&m=95837783027027&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027029&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027027&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

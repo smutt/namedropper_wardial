@@ -1,0 +1,106 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'old saint nick' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426415&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426417&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    old saint nick
+From:       <a href="?a=95837661700005&r=1&w=2">"Benson I. Margulies" &lt;Margulies () CISL-SERVICE-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-02 22:19:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426416&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426416&q=raw">body</a>]</b>
+
+There are two salient problems here.
+
+1) Should we try to have a standard, or at least semi-standard, syntax
+for unqualified names?
+
+The advantage is obvious -- users of heterogeneous systems don't have to
+keep jumping.  This would be something like the "ARPA net standard
+editor" that I vaguely remember from my early days.
+
+2) How should hosts collect and use information to perform
+expansion/resolution of non-fully-qualified names?
+
+These two are seperate in the following regard:  Even if people don't
+want to standardize (1), it is clear that individual systems will need
+to have nick-name / name completion services.  For them to be
+implementable, they will need some form of (2).
+
+IDEAS ABOUT SYNTAX
+
+First, try considering a full domain name as a pathname.  For example, a
+Multics absolute pathname looks like:
+
+    &gt;user_dir_dir&gt;Multics&gt;Margulies&gt;Margulies.mbx
+
+However, each user has a current "working directory".  A relative
+pathname is one like:
+
+      &lt;Fred&gt;data.q
+
+This means "go up one, and then down Fred and look for data.q"
+
+The use of this kind of shorthand is obvious in this context.  However,
+it still requires the user to know the complete structure.
+
+I wish to make the following OUTRAGEOUS CLAIM:
+
+"Non-fully-qualified name resolution must depend on human intervention."
+
+Why?  The whole purpose of the domain architecture was to avoid an
+encroaching problem of ambiguous names.  We are guaranteed, then, that
+in the possibly namespace of non-fully-qualified names there are bound
+to be many ambiguities.
+
+How does human intervention happen?  Consider three possibilities:
+
+a) The user is presented with multiple choices for the resolution of a
+name, based on an extensive search in the domain hierarchy.
+
+b) A given host maintains a local table of names.  Preferably, local
+names are syntactically distinct from qualified domain names.
+
+c) A server someplace is prepared to help resolve non-fully-qualified
+names.
+
+This leads me to AN IGNORANT PROPOSAL:
+
+The current domain system establishes domains of authority on
+definitive, unique names.  Parallel, and in fact coexistent with it,
+there could be any number of servers that do not offer a definitive
+answer, but do offer "their idea" of the rssolution of a name.
+
+Thus, any organization (and certainly any organization that owned a
+domain) could choose to offer resolution of organization-relative
+nick-names.  Users could query these resolvers in any order they liked.
+In fact, they would be queried in order of decreasing relevance.
+
+What I imagine is a per-host configuration file that says something
+like:
+
+     First try the local list of nick-names
+     Then try our group's list
+     Then try our department't list
+     ...
+     Then try our friends at university X
+
+Anyone resolving a nick-name this way would be taking their chances, but
+that is the nature of nick-names.
+
+<b>[<a href="?l=namedroppers&m=95837667426415&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426417&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'* names (in the database) vs name-error vs negative caching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026911&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026913&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    * names (in the database) vs name-error vs negative caching
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198807">1988-07-15 11:49:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026912&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026912&q=raw">body</a>]</b>
+
+Suppose the following record is in the database file for the LCS.MIT.EDU
+zone:
+	*.LCS.MIT.EDU MX IN    &lt;data&gt;
+Further suppose there there are no (explicit) records for
+FOOBARBAZ.LCS,MIT.EDU.
+
+(1) What should happen if I ask an authoritative server for the Internet
+MX records for FOOBARBAZ?
+	I think everybody agrees it should respond with the associated
+	data, and a couple of weeks ago both XX.LCS.MIT.EDU and
+	ALLSPICE.LCS.MIT.EDU did this correctly.
+
+(2) What should happen if I ask an authoritative server for the Internet
+Address records for FOOBARBAZ?  Should it give me a name-error, or
+should it reply no-error (with no data)?
+	A couple weeks ago: XX.LCS.MIT.EDU gave an authoritative
+	name-error (with an SOA record for negative caching).
+	ALLSPICE.LCS.MIT.EDU gave an authoritative no-error.
+
+(3) If I happened to ask XX, and got the name-error, should I cache the
+negative response for the name, or for the name/qtype/qclass tripple?
+	I think it only makes sense to cache it for the name alone.  If
+	the name/qtype/qclass were cached, I see no semantic or
+	practical difference between name-error and no-error (with no
+	data), except the name-error often supplies the SOA saying how
+	long to cache the lack of data.  Also, declaring that the /name/
+	doesn't exist should allow me to avoid future network traffic
+	since I won't need to ask about host info, WKS or other things
+	until the cache times out.
+
+(4) If I happened to ask XX, got the name error, and cached the name
+error for the name, what should happen if I consult my database/cache for
+the MX records for FOOBARBAZ?
+	From the discussion of (3) above, I should get an immediate
+	answer of name-error because the name-error was cached.  But if
+	it weren't cached, I would ask a server, as in (1), and get an
+	authoritative no-error answer with data.  This is an
+	inconsistency, and I believe it to be a practical one.  I
+	believe the inconsistency arises in (2), in the case that XX
+	should not have replied name-error because there was a record
+	that covered the name, even if it didn't cover the question
+	being asked.  Another practical note: For systems that do want
+	all of host-info, address, WKS and others, giving no-error
+	requires each of these questions to be asked, degrading
+	application performance and adding network load (see discussion
+	of (3).
+
+(5, extra credit) If I happened to ask for the MX record first, cached
+it, and then asked for the address record and got a name-error, what
+should happen?  (E.g., Should the MX get decached?)
+
+<b>[<a href="?l=namedroppers&m=95837783026911&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026913&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

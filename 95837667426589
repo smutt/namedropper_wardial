@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'bogus information from nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426588&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426590&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426599&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800003&r=1&w=2">bogus information from nameservers</a>
+From:       <a href="?a=95837693600004&r=1&w=2">bloom () monet ! berkeley ! edu (Jim Bloom)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-31 14:43:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426589&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426589&q=raw">body</a>]</b>
+
+I found that several domains are initializing their caches with incorrect
+nameservers for the root domain.  They all are using usc-isif.arpa as a
+root domain server which is incorrect.  The current root domain servers
+are usc-isib.arpa, usc-isic.arpa, sri-nic.arpa, and brl-aos.arpa.
+
+Specifically, the following domains have incorrect databases:
+
+	columbia.edu
+	rice.edu
+	utexas.edu
+	cmu.edu
+	umd.edu
+	cornell.edu
+	mit.edu
+
+I haven't done an exhaustive test, just the nameservers that we talked to
+within a 15 minute period.  My tests covered less than twenty domains.  I
+also found one site propogating information that it had received which
+would be much harder to avoid.
+
+					Jim Bloom
+
+<b>[<a href="?l=namedroppers&m=95837667426588&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426590&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426599&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

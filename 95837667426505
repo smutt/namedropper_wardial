@@ -1,0 +1,69 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'NS &amp; TTL' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426506&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426507&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    NS &amp; TTL
+From:       <a href="?a=95837661700022&r=1&w=2">Rudy.Nedved () CMU-CS-A ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-05 17:41:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426505&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426505&q=raw">body</a>]</b>
+
+I think this issue has been brought up before but a clarification
+about the degree of importance of the TTL field was not given in the
+face of problems and what those problems are. The TTL field currently
+given by many name servers is very small or zero for NS records,
+indicating the data or the delegation of the name space is very short
+lived. It was indicated that fudging the zero TTL records by a little
+bit was okay.
+
+The question I have is the delegation of the name space is actually a
+fairly long event. CMU talks to NIC and says it has three servers and
+NIC says okay and delegates the CMU.EDU subdomain to the three
+servers.  When is CMU going to ask for a new delegation...not that
+instant...  probably not in a week or a month....maybe in 3
+months...more likely after half year or so. This kind of interaction
+or expectation is probably true of many other organizations like
+Symbolics, BBN, Rutgers, Rice, Purdue, CSNET, etc.
+
+In the current system, if you obey the spec, if the the delegating
+server is down or a delegating server is confused then a good chunk
+of the name space disappears unless you happen to have that host in
+your cache and an hour or so has not gone by. This breaks alot of
+systems and hurts users that can not verify that a host exists or
+not...Who wants to find out many hours later after some system
+programmer comes in and fixes things or whatever that they mistyped a
+host name in the subdomain that had the name service problem?
+
+Shouldn't the TTL field for delegation be a lot longer like a week
+or so? Given host's don't change every hour or day and hardware
+changes probably take a few hours, couldn't the TTL field be longer
+then a day...maybe 12 hours or so?
+
+Unless I am missing some subtle issue other then being able to
+change data about a host quickly, the TTL field should be 25% or
+50% of the expected lifetime of the information to use cached
+information longer, reduce the communication overhead which for
+slow links or expensive links is significant in time and/or
+money and add an increased level of stability to the name service
+that is as reasonable as the old host table mechanism stability.
+
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837667426506&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426507&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

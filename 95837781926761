@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'more distribution' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926760&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926762&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    more distribution
+From:       <a href="?a=95837783700005&r=1&w=2">Mark Lottor &lt;MKL () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198701">1987-01-28 22:51:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926761&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926761&q=raw">body</a>]</b>
+
+Well, the last suggestion didn't stir up too much.  This one's
+more exciting and probably more realizable:
+
+A problem with the domain system is that of managing the domain server
+files.  If you maintain one of these for a fair sized domain, then you
+know what it's like to be the NIC.  People are always changing things
+and adding new machines, and you have to edit zone files every few
+days to make the changes.  Wouldn't it be nice if the data was really
+distributed?
+
+So, we add a command to the domain server.  The command allows a host
+to send to a server a list of RRs for itself to be entered into the
+domain server's database (and to a permanent copy on disk).  Now
+imagine a domain server for domain C.B.A that was just started.  It
+has no data except maybe a few pre-wired RR's for gateways and such.
+A host D.C.B.A comes up.  It resolves C.B.A and gets the address of
+it's domain server.  It then send off a list of RRs to the domain
+server and now it's registered.  If the host administrator decides to
+change the name or address of D.C.B.A he just runs some program that
+replaces the current RRs in the server.
+
+This scheme effectively distributes the data right down to the
+source, eliminates the need to have someone edit zone files and such,
+and makes instantaneous changes real easy.
+
+The hard part might be authentication of requests.
+
+Mark
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926760&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926762&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

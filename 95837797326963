@@ -1,0 +1,149 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS troubles' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326962&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326965&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326962&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200026&r=1&w=2">Re: DNS troubles</a>
+From:       <a href="?a=95837817000027&r=1&w=2">Bob Albrightson &lt;bob () jvncb ! csc ! org&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-27 9:02:50</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326963&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326963&q=raw">body</a>]</b>
+
+I can answer the nisc.jvnc.net problem.  For reasons that aren't yet
+apparent the nameserver on that machine went into convultions.  It
+wouldn't answer up to several zones it has authority over.  Restarting it
+seems to have cured it though.  Dale, sorry for the hassle.
+
+ -bob
+
+&gt; From namedroppers-RELAY@nic.ddn.mil Fri Apr 27 02:59:02 1990
+&gt; Received: from jvnca.csc.org by nisc.jvnc.net (5.61/1.34)
+&gt; 	id AA01314; Fri, 27 Apr 90 02:59:01 -0400
+&gt; Received: by jvnca.csc.org (5.52.1/6.13)
+&gt; 	id AA18049; Fri, 27 Apr 90 02:28:57 EDT
+&gt; Return-Path: &lt;namedroppers-RELAY@NIC.DDN.MIL&gt;
+&gt; Received: from ucbvax.Berkeley.EDU by NIC.DDN.MIL with TCP; Thu, 26 Apr 90 14:29:42 \
+&gt;                 PDT
+&gt; Received: by ucbvax.Berkeley.EDU (5.63/1.41)
+&gt; 	id AA20604; Thu, 26 Apr 90 13:55:25 -0700
+&gt; Received: from USENET by ucbvax.Berkeley.EDU with netnews
+&gt; 	for namedroppers@nic.ddn.mil (namedroppers@nic.ddn.mil)
+&gt; 	(contact usenet@ucbvax.Berkeley.EDU if you have questions)
+&gt; Date: 26 Apr 90 20:26:13 GMT
+&gt; From: usc!zaphod.mps.ohio-state.edu!uakari.primate.wisc.edu!dali!milton!oregon!dsmith@ucsd.edu \
+&gt;                 (Dale Smith)
+&gt; Organization: University of Oregon
+&gt; Subject: DNS troubles
+&gt; Message-Id: &lt;19486@oregon.uoregon.edu&gt;
+&gt; Sender: namedroppers-relay@nic.ddn.mil
+&gt; To: namedroppers@nic.ddn.mil
+&gt; Status: RO
+
+&gt; I've seen a recent rash of DNS problems recently and I am wondering if
+&gt; others have seen the same.
+
+&gt; Right now, I see that one of the listed authoritative servers for
+&gt; northeastern.edu (nisc.jvnc.net) knows nothing about northeastern.edu
+&gt; hosts and gives "no information" answers. 
+
+&gt; Also, I see that all of the servers for kun.nl gives "non-existent
+&gt; domain" answers to a host I know is there (mpi01.mpi.kun.nl).  In this
+&gt; case, the server for mpi.kun.nl is unreachable from my site for some
+&gt; reason, but all the servers for kun.nl happily give tell me that mpi01
+&gt; doesn't exist. 
+
+&gt; I just discovered the northeastern.edu problems today, so the
+&gt; nisc.jvnc.net folks haven't had time to try to fix it, but in the kun.nl
+&gt; case, I've tried everything I know of (short of posting to this list and
+&gt; to info-nets@think.com, which I'm doing now) to try to get them to fix
+&gt; the problem. 
+
+&gt; Meanwhile, I have faculty members who are visiting those sites who are
+&gt; stranded, not able to receive mail from their labs and co-workers here. 
+
+&gt; GGGGGGGGGrrrrrrrrrrrrr!!!!!!!
+
+&gt; -- 
+&gt; Dale Smith, Acting Director of Network Services
+&gt; University of Oregon		Internet: dsmith@oregon.uoregon.edu
+&gt; Computing Center		BITNET: dsmith@oregon.bitnet
+&gt; Eugene, OR  97403-1212		Voice: (503)346-4394
+
+&gt; ------------------------------------------------------------
+&gt; &gt; set q=ns
+&gt; &gt; northeastern.edu
+&gt; Server:  c.nyser.net
+&gt; Addresses:  192.33.4.12, 128.213.5.17
+
+&gt; Non-authoritative answer:
+&gt; northeastern.edu        nameserver = HELIOS.NORTHEASTERN.EDU
+&gt; northeastern.edu        nameserver = NNSC.NSF.NET
+&gt; northeastern.edu        nameserver = NISC.JVNC.NET
+&gt; Authoritative answers can be found from:
+&gt; HELIOS.NORTHEASTERN.EDU inet address = 129.10.1.2
+&gt; NNSC.NSF.NET    inet address = 192.31.103.6
+&gt; NNSC.NSF.NET    inet address = 128.89.1.178
+&gt; NISC.JVNC.NET   inet address = 128.121.50.7
+&gt; &gt; server NISC.JVNC.NET
+&gt; Default Server:  NISC.JVNC.NET
+&gt; Address:  128.121.50.7
+
+&gt; &gt; set q=any
+&gt; &gt; HELIOS.NORTHEASTERN.EDU
+&gt; Server:  NISC.JVNC.NET
+&gt; Address:  128.121.50.7
+
+&gt; *** No any type information is available for HELIOS.NORTHEASTERN.EDU
+&gt; &gt; set q=soa
+&gt; &gt; northeastern.edu
+&gt; Server:  NISC.JVNC.NET
+&gt; Address:  128.121.50.7
+
+&gt; *** No start of authority zone information is available for northeastern.edu
+
+&gt; ------------------------------------------------------------
+&gt; &gt; set q=ns
+&gt; &gt; kun.nl
+&gt; Server:  terp.umd.edu
+&gt; Addresses:  128.8.10.90, 10.1.0.17
+
+&gt; Non-authoritative answer:
+&gt; kun.nl  nameserver = phoibos.cs.kun.nl
+&gt; kun.nl  nameserver = wn1.sci.kun.nl
+&gt; kun.nl  nameserver = wn3.sci.kun.nl
+&gt; kun.nl  nameserver = sering.cwi.nl
+&gt; Authoritative answers can be found from:
+&gt; phoibos.cs.kun.nl       inet address = 131.174.81.1
+&gt; wn1.sci.kun.nl  inet address = 131.174.80.1
+&gt; wn3.sci.kun.nl  inet address = 131.174.80.3
+&gt; sering.cwi.nl   inet address = 192.16.184.4
+&gt; &gt; server wn1.sci.kun.nl
+&gt; Default Server:  wn1.sci.kun.nl
+&gt; Address:  131.174.80.1
+
+&gt; &gt; set timeout=60
+&gt; &gt; set q=any
+&gt; &gt; mpi01.mpi.kun.nl
+&gt; Server:  wn1.sci.kun.nl
+&gt; Address:  131.174.80.1
+
+&gt; *** wn1.sci.kun.nl can't find mpi01.mpi.kun.nl: Non-existent domain
+
+
+<b>[<a href="?l=namedroppers&m=95837797326962&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326965&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326962&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

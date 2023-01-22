@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'X.400 implementation issues' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026835&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026836&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    X.400 implementation issues
+From:       <a href="?a=95837784200015&r=1&w=2">Carlos Fernandez</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198612">1986-12-16 13:07:50</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026834&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026834&q=raw">body</a>]</b>
+
+Virginia Tech's Communication Network Services is developing an X.400-based
+networking scheme whose objective is the interconnection of the many
+different types of computer equipment.  Several issues have arisen for
+which we do not have satisfactory answers or information in hand that
+would help in analyzing the problem.  Help in any of these matters
+would be greatly appreciated:
+
+o What is the current level of support expected of different information
+  types?  We are specifically concerned about remote UAEs in workstations.
+  The initial implementation will only support text and ForwardedIPMessage
+  types.  What work is being done in other types?  Where can we find
+  documentation on IA5 and ITA types?
+
+o Are there any implementations of P3 in existence?  We are considering the
+  option of providing MHS services to PCs or workstations that are connected
+  asynchronously, without an ethernet-type of connection.  Given the
+  constraint on the number of physical ports in the MTA server,
+  we cannot have a permanent transport connection between a given PC and
+  the MTA server.  Consequently, we may need to modify P3 and disallow
+  operations originated by the MTA.
+
+Please send your comments/replies/questions directly to
+fernandc%vtvm1.bitnet@wiscvm.
+
+Carlos Fernandez                         Bitnet: FERNANDC@VTVM1
+Communications Network Services
+Plaza 1 B3, Virginia Tech
+Blacksburg, VA 24061
+Acknowledge-To: &lt;FERNANDC@VTVM1&gt;
+Acknowledge-To: &lt;FERNANDC@VTVM1&gt;
+
+<b>[<a href="?l=namedroppers&m=95837759026835&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026836&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

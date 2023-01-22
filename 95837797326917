@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'RE: Reverse resolving an address...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326916&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326918&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326916&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326918&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200008&r=1&w=2">RE: Reverse resolving an address...</a>
+From:       <a href="?a=95837816800041&r=1&w=2">Fred Whiteside &lt;WHITESID () McMaster ! CA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-03 12:36:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326917&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326917&q=raw">body</a>]</b>
+
+Hi,
+
+Kannan Varadhan &lt;kannan@oar.net&gt; writes:
+&gt;  For some strange reason, our nameserver got busy the other day, trying
+&gt;  to reverse resolve an address.  The address it was attempting to
+&gt;  reverse resolve was/is 130.113.0.69.  When I tried repeating the
+&gt;  phenomenon by querying one of the root name servers, I got back NS
+&gt;  RR's for the reverse mapping, but no glue RRs in the additional
+&gt;  section.
+
+        That's us (McMaster.CA). We used to be just a lowly netnorth
+site with only an MX wildcard pointer for the domain, but now we are
+enlightened and can talk on the internet. When I put up our
+authoritative DNS, I registered it with the NIC for the reverse
+translations, and with John Demco (.CA registrar) for the forward
+translation. The NIC put in the address without any glue records (I
+thought that you had to???) and John sent me mail which didn't get
+delivered for reasons that I don't understand. His followup note got
+delivered, and I have replied, and we should be clear of this shortly.
+blackadder is 130.113.0.62 if anyone cares, which they shouldn't ....
+
+&gt;  Is this the right scheme of approaching things?  Or, am I missing
+&gt;  something blatantly obvious, or obviously blatant here?  Here is a
+&gt;  transcript of what I tried, using dig.
+
+        Ummmm what is dig, and can I get one? It looks like the sort
+of thing I'm gonna want around ....
+
+-Fred Whiteside
+ McMaster PostMaster, DNS flunky, and The Guy To Blame ...
+
+<b>[<a href="?l=namedroppers&m=95837797326916&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326918&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326916&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326918&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: private hosts and BIND modifications' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026821&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026820&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026817&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026820&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200005&r=1&w=2">re: private hosts and BIND modifications</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-07 18:17:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026818&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026818&q=raw">body</a>]</b>
+
+
+&gt; - - Gateways, terminal servers, etc.  These machines, while present on
+&gt;  the network, should not appear in general zone transfers and it
+&gt;  should be comparatively difficult to identify them.  For example,
+&gt;  a non-trusted machines that iterated "inet" over all 64K (class B)
+&gt;  host addresses should not get the names of private machines.
+
+I believe both of these types of machines SHOULD be known generally.
+People use terminal servers to telnet all over the Internet and it
+should be possible for a system manager to figure out where a
+TCP connection originated.  And I believe the names of gateways
+are supposed to be returned if you ask for the PTR record of the
+network number (it used to be that way, it may have changed in the
+recent RFCs).  If I can get the name, I ought to be able to get the
+address.
+
+Further, having had some experience with an experimental domain server
+that tried to restrict who could get information from it, it turns
+out to be very hard to keep hosts hidden.  Even if you restrict
+IP packets, mail often gets out (through relays) with hostnames
+that can't be looked up.  Personally, I'm very pessimistic about
+writing software which keeps host names within a confined section
+of the Internet.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837783026821&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026820&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026817&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026820&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'"Be liberal in what you accept."  --  AI.MIT.EDU' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026790&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026792&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026792&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700032&r=1&w=2">"Be liberal in what you accept."  --  AI.MIT.EDU</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-08 12:53:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026791&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026791&q=raw">body</a>]</b>
+
+There are three servers for the AI.MIT.EDU, named PREP, HERMES and
+HEPHAESTUS (all .AI.MIT.EDU).  If I ask these hosts a question about
+AI.MIT.EDU or about hosts under that name, for which they have an
+answer, they answer with the correct data, authoritatively, correctly
+formatted, etc, etc.  If I ask a question for a name that doesn't exist,
+I correctly get a NAME-ERROR reply.
+
+However, if I ask them a question for which they don't have an answer,
+each host does the following rather strange thing.  It replies with a
+rather long UDP datagram (e.g., 388 bytes).  Using the rules in the
+specification to parse this reply, one gets a header and one question.
+There are 0 answers, 0 authorities and 0 additional.  This takes up a
+small (e.g., 31 bytes) of the datagram.  That's bug#1: the parsing
+doesn't match the length of the datagram.
+
+The answer is also non-authoritative.  Bug#2, since each machine is
+authoritative for the question.
+
+If I parse the rest of the message as if it were supposed to be RRs, I
+get a large number of RRs that exactly fill out the datagram.  That's
+bug#3.
+
+They are all :NAME-SERVER records.  My guess is that they were intended
+to go in the authorities section.  Bug#4: The n-authorities field in the
+header was not updated.  Bug#5: There should be some :ADDRESS RRs in the
+additionals section.
+
+The name-server RRs divide into
+ 3 RRs for ai.mit.edu (each with a TTL of 3 hours)
+ 5 RRs for mit.edu (each with a TTL of 2 days)
+ 7 RRs for the root (each good for 3.2 years (bug#6).
+Bug#7: I asked it about things in AI.MIT.EDU, so why is it telling me to
+go ask the same set of machines again?
+
+As far as I can tell, each machine has the same behavior.  I have a
+memory that they have been doing this for a long (&gt;18 months) time.  I
+don't know what domain code they are running, how old it is, why it is
+still so broken, etc, etc.
+
+Here are some of the questions it barfs on:
+	AI.AI.MIT.EDU	:START-OF-AUTHORITY
+	AI.AI.MIT.EDU	:NAME-SERVER
+It does not barf on asking ai.ai.mit.edu for CANONICAL-NAME.  This is
+leading me to suspect that it is really these domain tree traversing
+records (SOA and NS) that are ill-implemented.  My domain code really
+wants to have authoritative versions of those records (or authoritative
+knowledge that they don't exist).  
+
+Assuming MIT isn't going to get more recent domain code on their
+machines, how should I kludge my code to know to expect this lossage and
+deal with it appropriately?  Should I use the part of the answer they
+gave me (without the NS records)?  That doesn't quite work because the
+authoritative bit isn't set.  Should I special case MIT as losing and
+pretend it gives authoritative no-answer messages?  I'd like to be
+liberal in what I accept, but I can't figure out how to do it.  (Fixing
+the machines at MIT would be better, of course.)
+
+<b>[<a href="?l=namedroppers&m=95837783026790&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026792&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026792&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

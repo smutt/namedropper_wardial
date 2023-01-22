@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Telnet question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626987&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626989&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Telnet question
+From:       <a href="?a=95837786400025&r=1&w=2">mcvax!hp4nl!mhres!hst () uunet ! uu ! net  (Klaas Hemstra)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198908">1989-08-22 7:42:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626988&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626988&q=raw">body</a>]</b>
+
+I have a question about a telnet program.
+
+I have a program (written by a college) that sets up a telnet connection
+to a server. The server is connected to a printer. This way it is possible
+to print a file from any computer to that printer.
+
+The problem is that everything works fine, but sometimes the file which is sent
+to the printer is truncated. The last x (x&lt;100) bytes are missing.
+Since the printer in question is a Laserjet, the results are not only missing
+output, but also that the printer is waiting for a formfeed to print the
+current page.
+
+Technically the connection is setup as follows.
+
+-A socket is opened to the correct address.
+-Files are opened to that socket (input and output)
+-Telnet operation modes are negotiated (BINARY, NO ECHO, etc.)
+-The data is sent (binary).
+...... Here the tricky part begins
+-A sort of telnet status is asked
+		(AreYouThere followed by answer "Yes I am here")
+			Comment in source = /* Artificial net flush ? */
+
+-A sleep(5) is done     Comment in source = /* Drain ? */
+-The files (opened on the socket) are closed
+-The socket is closed with a shutdown() call.
+  Note:  The second argument to the shutdown call is 2, meaning that further
+         sends and receives will be disallowed.
+
+My guess is that on some occasions the shutdown call will "shutdown" the
+connection while there is still data wandering around somewhere. 
+The questionable comments in the source also indicate problems with "Flushing"
+the files.
+If that's correct then the question is: How can I make sure that data sent
+  through the socket is really output on the other end (I thought it should) ?
+
+Any other remarks , anyone ?
+
+
+
+
+					Thanks, Klaas
+Klaas Hemstra  (hst@mh.nl)                   |    /  / ,~~~  ~~/~~
+uucp: ..{uunet!}hp4nl!mh.nl!hst              |   /--/  `-,    /  ___  |_/ |__|
+Multihouse N.V., Gouda, the Netherlands      |  /  / ___/    /   ---  | \ |  |
+"Most of us mindreaders are atheist, you know" A song for Lya: George Martin
+
+<b>[<a href="?l=namedroppers&m=95837784626987&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626989&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

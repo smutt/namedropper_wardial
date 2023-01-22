@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Relative naming; another scheme' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026700&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026702&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300011&r=1&w=2">Re: Relative naming; another scheme</a>
+From:       <a href="?a=95837783700016&r=1&w=2">"Paul M. Albitz" &lt;albitz () Purdue ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198605">1986-05-01 15:13:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026701&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026701&q=raw">body</a>]</b>
+
+
+&gt;&gt; First, it would be of great benefit if the method of choosing your list of
+&gt;&gt; rules could be turned into an algorithm applicable anywhere in the domain
+&gt;&gt; tree.  Then there wouldn't have to be so much thought placed when setting
+&gt;&gt; up each host; there would be fewer opportunities for mistakes; and users
+&gt;&gt; would have a more predictable idea of what to expect when they move to a
+&gt;&gt; different host.
+
+Yes.  This would be ideal.  Rudy Nedved mentioned it the troubles they
+had.  I can't dream up one algorithm that would have the high degree
+of success in choosing the right completion the first time than can be
+achieved in a configurable environment.
+
+&gt;&gt; The list of rules at a host depends on the position of that host and other
+&gt;&gt; domain names in the tree.  In your examples, the rules depend on domains
+&gt;&gt; that are ancestors of the host in question, siblings of ancestors (aunts
+&gt;&gt; and uncles), and children of siblings (cousins). I think the last is
+&gt;&gt; taking it too far.  While might be reasonable for OZ.AI.MIT.EDU to keep
+&gt;&gt; track of subdomains of LCS.MIT.EDU, it would be much harder for
+&gt;&gt; SAIL.Stanford.EDU to keep track of subdomains of Purdue.EDU, even though
+&gt;&gt; the relative positions are the same.  (Maybe not really harder, but there
+&gt;&gt; are many subdomains of EDU that we'd have to keep information about.)
+
+Yes.  This is open to abuse and inefficiency.  The system administrator is free
+to set up whatever rules they decide to use.  That can range from the bare
+minimum of only one default domain (your own) to knowing about the complete
+tree.  Your response time would vary accordingly.  I would suggest as a
+guideline staying within your "master" administrative domain.  For us that
+would be Purdue.  For you that would be Stanford.
+
+&gt;&gt; All of the proposals so far assume the host making the completion is a
+&gt;&gt; leaf in the tree (and perhaps that the target host is a leaf too).  It
+&gt;&gt; should be generalized to allow the host to have a domain name with
+&gt;&gt; subdomains.  Doing this seems straightforward.
+
+I see what you are saying.  An example might be if someone in the ecn
+subdomain wanted to mail to someone in the cs subdomain, they would want
+to address the letter as "user@cs".  (The previously mentioned rules
+would only match ".cs".)  We would designate one or more hosts
+to receive mail to letters addressed "user@cs.purdue.edu." so that letter
+would get the right place eventually.
+
+This could be achieved by setting up the rules to match "cs" instead of
+".cs".  We would have to be careful not to have this rule match names
+it wasn't meant to like "user@arcs".  The trailing "cs" of "arcs" is
+not meant to be a domain.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837759026700&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026702&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

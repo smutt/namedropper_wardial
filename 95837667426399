@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: an experiment with domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426397&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426400&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426396&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100002&r=1&w=2">re: an experiment with domain names</a>
+From:       <a href="?a=95837661900013&r=1&w=2">POSTEL () USC-ISIF ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-29 19:30:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426399&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426399&q=raw">body</a>]</b>
+
+
+I really like and appreciate Charles Hornig's experiment.  Of course,
+all host names should be in the HOSTS.TXT file, even the new style
+domain names (such as, "HUDSON.SCRC.SYMBOLICS.COM").  The host 
+administrator and or technical liaison for each host should make sure
+that any domain style name it is using is listed in the NIC's HOSTS.TXT
+file before using the new name.  It would really be interesting to repeat
+Charles' experiment on a monthly basis for the next few months.  I think
+the experiment has to be a bit more subtle though.  We certainly want to
+identify any hosts that can't handle the new names even though the new names
+are in HOSTS.TXT.  And it would be very interesting to be able to tell
+which hosts use HOSTS.TXT and which use the Domain Service to look up
+names.  Charles' experiment does the first, but i am not sure how to set
+up an experiment to do the second test (perhaps using an experimental host
+purposely not listed in HOSTS.TXT but included in the Domain Service data).
+In any case, we are really starting to put a substantially new concept and
+mechanism into service.  There will be some bugs in getting it started and
+some frustration for the individuals caught by the bugs.  I'd appreciate
+hearing about any problems right away when they are discovered.  And 
+remember, the better documented and more detailed the problem report, the
+better i'll be able to help resolve the problem.
+
+--jon.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426397&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426400&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426396&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

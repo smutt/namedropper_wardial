@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Root servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926878&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926880&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Root servers
+From:       <a href="?a=95837784600006&r=1&w=2">Bruce Orchard &lt;ORCHARD/BRUC () scarecrow ! waisman ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198706">1987-06-11 21:57:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926879&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926879&q=raw">body</a>]</b>
+
+It has never been clear to me how a resolver was supposed to know
+the root servers (EDU, MIL, etc.).  In the current system, I see
+two choices:  (1)  The root servers can be listed in an
+initialization file or (2) a resolver can try some server and hope
+it knows even though it is not authoritative.
+
+(1) has the problem that the initialization file must be updated
+periodically as more root servers are added.  (This seems to
+happen about once a month, based on updates to NETINFO:DOMAINS.TXT
+at NIC.)  This seems to violate the spirit of the domain system,
+which is to have updates propagate automatically through the
+system.
+
+(2) has the problem that it may or may not work and seems to
+result in infinite recursion if an unlucky server choice is made.
+
+Therefore, it would seem reasonable to me to have root root
+servers, which would be authoritative about the current root
+servers.  They could probably distribute their records with long
+(a week or a month) time outs, which would reduce the number of
+requests they would have to handle.
+
+Bruce Orchard
+
+<b>[<a href="?l=namedroppers&m=95837781926878&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926880&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

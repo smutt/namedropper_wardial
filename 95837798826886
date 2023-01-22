@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'ISO style domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826885&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826887&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    ISO style domains
+From:       <a href="?a=95837817200029&r=1&w=2">dell () apple ! com  (Thomas E !  Dell)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-01 8:40:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826886&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826886&q=raw">body</a>]</b>
+
+&gt; But it is much nicer to do it with incomplete local adresses.
+&gt;Instead only two character top domains should be allowed (that is
+&gt;remove edu, com etc.) and no two character subdomains.
+
+Forcing all EDU, COM, etc. sites to divide their domains at political
+boundaries is hardly a good idea. Several international corporations would
+have to split their existing domains, possibly moving international traffic 
+out of an internal corporate network and onto a national backbone.
+
+Also if a host or net is physically (via distributed architecture) or 
+logically (company wide addressing scheme) straddling one or more 
+international borders, it may be difficult to decide in which ISO-style 
+domain to locate the person, host, or net.
+
+There are a fair number of COM, ORG, etc. nets that are not located in
+the United States; the NIC seems happy to register them. However, sometimes
+this requires obtaining a dialup connection to the USA which some 
+organizations cannot afford; out of general principles I would still 
+encourage multinationals to register under a "3 character domain" rather 
+than ISO-style.
+
+   ...Tom
+
+dell@apple.com / Thomas E Dell
+
+<b>[<a href="?l=namedroppers&m=95837798826885&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826887&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

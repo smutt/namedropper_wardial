@@ -1,0 +1,40 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'nameserver changes' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426548&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426550&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    nameserver changes
+From:       <a href="?a=95837693400010&r=1&w=2">Rick Adams &lt;rick () seismo ! CSS ! GOV&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-02 12:19:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426549&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426549&q=raw">body</a>]</b>
+
+
+something has change in the past 3 days that is really screwing up
+some 4.2bsd unix sites that are running bind.
+
+Can you give me an idea of what changed so I can attempt to figure
+out what happened?
+
+I have had to return to using the hosts tables because the server
+fails 95% of the time.
+
+---rick
+
+<b>[<a href="?l=namedroppers&m=95837667426548&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426550&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

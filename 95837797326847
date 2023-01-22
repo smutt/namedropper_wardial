@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Zone transfer questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326846&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326848&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326848&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400031&r=1&w=2">Zone transfer questions</a>
+From:       <a href="?a=95837816800004&r=1&w=2">Bruce Orchard &lt;ORCHARD () don ! waisman ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199001">1990-01-07 21:35:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326847&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326847&q=raw">body</a>]</b>
+
+Here are some questions about zone transfers I cannot find the
+answers to in RFC 1034 or RFC 1035, particulary section 4.3.5 of RFC
+1034:
+
+1.  On page 28, RFC 1034 says "The first and last messages [of a zone 
+transfer] must contain the data for the top authoritative node of the
+zone."  Does just mean all the RR's for the top node (an MX is common)
+or just the SOA?  Existing servers seem to just send the SOA.
+
+2.  What RR's should be in each section of the message?  Can there be
+more than one RR in a section of the message?  Existing servers seem
+to send empty question, authority, and additonal sections and exactly
+one RR in the answer section of each message.  BIND seems to abort
+an incoming zone transfer if it gets more than one RR in the answer
+section.
+
+Bruce Orchard (orchard@waisman.wisc.edu)
+University of Wisconsin-Madison
+
+<b>[<a href="?l=namedroppers&m=95837797326846&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326848&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326848&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

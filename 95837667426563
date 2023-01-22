@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domain class for chaos' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426562&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426564&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426558&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426564&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600034&r=1&w=2">domain class for chaos</a>
+From:       <a href="?a=95837693400030&r=1&w=2">Gail Zacharias &lt;GZ () MIT-MC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-09 15:05:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426563&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426563&q=raw">body</a>]</b>
+
+    Date: Tue, 8 Oct 85 17:52 EDT
+    From: David C. Plummer &lt;DCP at SCRC-QUABBIN.ARPA&gt;
+    I see.  If you want to fork off another discussion, I think there should
+    be a naming scheme for chaos addresses so they can appear in mail
+    headers, just as raw internet address can.  (Replace Chaos with DECNet
+    or some other address space for other examples.)
+
+Something like "11406.CH-ADDR.MIT.EDU" could appear in mail headers, provided
+the CH-ADDR.MIT.EDU server says all the right things in response to MAILA
+queries... Something along the lines of:
+	11406.CH-ADDR.MIT.EDU CH A      MIT.EDU 11406
+	11406.CH-ADDR.MIT.EDU CH PTR    OZ.AI.MIT.EDU
+	11406.CH-ADDR.MIT.EDU CH MD     11406.CH-ADDR.MIT.EDU
+	11406.CH-ADDR.MIT.EDU IN MF     MAIL-RELAY.MIT.EDU
+
+The server should pretend the A/MD/MF records exist even if there is no PTR
+record, i.e. even if the host is not registered by name.  Basically a
+syntactically correct nnnn.CH-ADDR.MIT.EDU should never get authoritative
+name errors. 
+
+<b>[<a href="?l=namedroppers&m=95837667426562&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426564&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426558&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426564&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Rudy's msg' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426575&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426578&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426581&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600045&r=1&w=2">Re: Rudy's msg</a>
+From:       <a href="?a=95837693400033&r=1&w=2">RMXJ%cornella.bitnet () ucbvax ! berkeley ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-29 22:52:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426577&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426577&q=raw">body</a>]</b>
+
+Here's my chance to live up to the NAMEDROPPERS moderator's
+request to effect participation from everyone who subscribes.
+I only regret that I am not a "domain guru." (or maybe I don't! &lt;grin&gt;)
+----------------------------------------------------------------
+
+Rudy writes:
+
+&gt;What is the "name policy" behind CSNET going to domain names like .CS.NET?
+&gt;Wasn't the plan to have names like UMASS.EDU registered at NIC which
+&gt;pointed to some domain server at CSNET which had MF records for the
+&gt;phonenet site "umass"?
+
+Yes, I believe the latter to be correct.
+In fact, a conversation that I had with Charlotte Mooers at CSNET
+yesterday appeared to confirm that.
+
+
+&gt;Does this first attempt at using domains for another transport/administration
+&gt;network means that we will have domain names like:
+&gt;    network            domain names
+&gt;    -------            ---------------------
+&gt;    BITNET            BIT.NET
+&gt;    MAILNET            MAIL.NET or EDUCOM.NET
+&gt;    UUCP            UCB-UUCP.NET, SEISMO-UUCP.NET, etc.
+&gt;or is this some transition mechanism to get thru the short term?
+
+No, I think not.  I think the above scenario (?) might provide
+more mess than it is worth and perhaps the question of internetworking
+syntax is best left alone until such time that the local DDNnet
+addressing syntax is fully agreed upon.  Only then, would there exist
+a rational choice to consider changing the internetworking syntax.
+
+
+--- Gligor Tashkovich
+
+INTERNET: RMXJ%CORNELLA.BITNET@WISCVM.WISC.EDU
+
+P.S. Using my Internet address as an example, how might someone
+     implement Rudy's concern? RMXJ%CORNELLA.BIT.NET@WISCVM.WISC.EDU????
+
+<b>[<a href="?l=namedroppers&m=95837667426575&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426578&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426581&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

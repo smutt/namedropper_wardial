@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'A Resolving we will go' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426442&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426444&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    A Resolving we will go
+From:       <a href="?a=95837661900004&r=1&w=2">Murray.pa () Xerox ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-16 5:03:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426443&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426443&q=raw">body</a>]</b>
+
+Suppose I get a nice clean name-not-found response. What TTL do I use
+when I insert a dummy entry into my cache? There aren't any RR records
+comming back so there isn't any slot for the server to pass me that
+info.
+
+Similarly, does the concept of authoritative apply to the data used for
+locating servers? When I made the server cache, I copied the code from
+the name/address cache, and it had an authoritative slot. Is the
+server-info from some servers more reliable that others? When poking
+around by hand, I see various views of the world that don't agree, but I
+don't think that would ever happen in practice since my code is likely
+to work it's way down from the top rather than ask a random server.
+
+It looks to me like the nicname problem in message headers can be solved
+well enough by simply using the primary name that comes back if you get
+a CNAME response. Am I missing something interesting? (It won't work
+right if somebody types in [1.2.3.4].) 
+
+How up-to-date is the data on NIC and/or ISIF? Is it reasonable to use
+them operationally yet?
+	The server at NIC doesn't know about THINK or BNL44, but they are in
+Hosts.txt.
+	ISIF claims to know about "", but it doesn't know about EDU or COM.
+
+How do I tell that Berkeley.EDU isn't a host? If I ask NIC about
+Berkeley.EDU, it says go ask UCB-VAX or UCB-ARPA.  If I ask UCB-VAX, it
+says, yup, I'm a server for Berkeley.EDU, and so is UCB-ARPA, but it
+doesn't say Berkeley.EDU isn't a host. Is there a likely bug in my code,
+or do I have to read between the lines and deduce that asking a server
+that should know about a host that's also a domain means the host
+doesn't exist?
+
+Humm. I just asked NIC and ISIF about ARPA. They said, OK. But that's
+all they said. When I asked them about EDU, they both said NIC and ISIF
+are the servers (and told me their addresses). What's different about
+these 2 cases?
+
+Somebody recently mentioned that the packets were getting big. Does our
+simple Resolver really HAVE to implement the TCP mode? I haven't seen
+anything big enough to be be scarey. So far I managed to get one with
+323 bytes by asking Symbolics about QUABBIN.SCRC.SYMBOLICS.COM (with
+class=*). I haven't seen anything interesting to notice when doing a
+name to address translation. If I get a truncated response, will it be
+truncated on an RR boundry, or might there be a fragment to contend
+with?
+
+<b>[<a href="?l=namedroppers&m=95837667426442&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426444&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogons and root server congestion' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926894&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926896&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Bogons and root server congestion
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198707">1987-07-10 17:10:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926895&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926895&q=raw">body</a>]</b>
+
+In the last few months, the root servers at ISIC, ISIA, and the NIC have
+been receiving an increasing flow of queries asking for the name servers
+for the root for all classes.  That is QTYPE=NS, QCLASS=*, QNAME=.
+These queries are slightly malformed, in that the response bit is set.
+There is no particular pattern just a steady stream (2/second) from a
+lot of different hosts.  Since the TOPS-20 domain software separates
+queries from responses using different ports, it was not checking for
+the response bit, and so answers these queries as if they were correct.
+DPK has christened these packets "bogons".
+
+The problem is that these packets are soaking up increasing portions of
+the root server cycles and network bandwidth.  Its not an exaggeration
+to say that between the three root servers, we are using the majority of
+a KL answering bogons.  The root servers are getting several bogons per
+second, their output queues are building, telnets are slowing, etc.
+
+DPK claims that bogons come from BIND 4.5, and is trying to drain the
+swamp via BIND 4.7, rather than deal with the 4.5 alligator.  The
+people who own the root servers want their cycles back.
+
+I'm not a UNIX person. My questions are:
+
+Does anyone understand the cause of bogons?
+
+Does anyone have a quick fix for BIND 4.5 to kill bogon emissions?
+
+If I fix the TOPS-20 servers to stop replying to bogons, I can
+presumably give the owners back 1/2 of the cycles that bogons are
+eating.
+
+Will this:
+
+A) do bad things to the BIND 4.5s sending the bogons
+
+B) cause them to retransmit?
+
+C) both
+
+What about if I change the root servers to send back format errors?
+
+Something has to be done, and soon.  I don't really want to chance
+breaking all of the BIND 4.5s out there, but I want them to stop hitting
+the root servers.  Any suggestions before replies to bogons are turned
+off?
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781926894&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926896&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

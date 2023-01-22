@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The correct way to signify no-such-host' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927026&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927025&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927031&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500025&r=1&w=2">The correct way to signify no-such-host</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 14:09:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927028&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927028&q=raw">body</a>]</b>
+
+What is the correct way to declare that there is no such host for a
+given domain name?  For example, the MIT.EDU name
+ - does exist (other things are under it) so it doesn't generate NAME-ERROR.
+ - does not have an IN HINFO RR.
+	Real hosts may not have HINFO records.  It's probably a mistake,
+	but there's no domain-reason that I know of why hosts are
+	required to have them.
+ - does not have any IN A RRs.
+	Real hosts may have addresses not on the Internet.
+Given that I don't get a NAME-ERROR, what's the right algorithm?
+
+PS, MIT.EDU doesn't have an IN MX record either, so what algorithm
+should mailers use to determine that it can't send there, considering no
+NAME-ERROR is generated?
+
+<b>[<a href="?l=namedroppers&m=95837781927026&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927025&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927031&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

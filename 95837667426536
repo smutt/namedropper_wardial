@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'resolver question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426535&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426537&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    resolver question
+From:       <a href="?a=95837693400017&r=1&w=2">Greg Satz &lt;SATZ () SU-SIERRA ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-12 8:23:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426536&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426536&q=raw">body</a>]</b>
+
+I want to write a program that uses the Berkeley resolver. It just takes
+a host name and returns all known host addresses and names (including
+nicknames).  With the host table it was just a (quick?) lookup. With
+domains it seems a little more complex. I notice in the RFC that I can
+ask for all RRs for a given host. However, it doesn't seem to return any
+CNAME RRs which would tell me the aliases for that host. The question(s)
+become:
+
+1) How do I get CNAME RRs from a server for a particular host?
+
+or
+
+2) Is there another way of getting a hosts addresses and nicknames?
+
+Please reply to me directly as I am not on this list.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426535&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426537&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Putting up with sites not using nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626998&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626999&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626999&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200027&r=1&w=2">Putting up with sites not using nameservers</a>
+From:       <a href="?a=95229988400016&r=1&w=2">Barry Margolin &lt;barmar () Think ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-12 23:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627000&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627000&q=raw">body</a>]</b>
+
+    Date: 13 Sep 89 02:52:27 GMT
+    From: godiva.cis.ohio-state.edu!karl@tut.cis.ohio-state.edu  (Karl Kleinpaste)
+
+    ... I have
+    nonetheless come extremely close to making an open offer to _anyone_
+    to install a trivial nameserver configuration and RFC-compliant
+    sendmail setup in exchange for some flat consulting fee and root
+    privileges on the system in question for one hour.  If I were actually
+    to do so, I'd expect to be an extremely wealthy man by the end of next
+    week.  
+
+I doubt you'd be that rich that quick.  We're talking about the military
+here -- they can't approve you as a contractor that quickly.  It would
+probably be months before you'd be permitted to do the work.
+
+	   It's not like any of these systems seems to need to do major
+    NIC registration things and domain setup and all that - they just need
+    to get a caching-only configuration in a nameserver, and a sendmail.cf
+    that understands how to use MX records.  No sweat - I install things
+    like that almost without thinking by now.
+
+Are all the machines without resolvers Unix systems running sendmail?
+That seems unlikely to me.
+
+    Is there a good reason for no-nameserver tolerance?  Am I missing an
+    important (and surely DoD-bureaucratic) justification for this
+    foolishness?
+
+Other reasons for systems without nameservers is that some sites must
+run only vendor-supported software.  They can't just hire some random to
+hack their mailer for them, and they can't install publically-available
+software from the net.  For compatibility reasons they might still be
+running an old release of the OS, and the vendor might only implement
+resolving in the newer releases.
+
+The final answer is that MILNET sites simply aren't yet required to run
+resolvers.  There is a schedule of conversion to the domain system on
+the Arpanet and MILNET, and according to that schedule resolvers are
+still optional on MILNET.
+
+So much for justification of their current state.  My suggestion to you
+is that it's not your responsibility to make things easy for sites not
+running resolvers.  While MILNET hosts aren't required to use resolvers,
+they ARE encouraged to do so.  As time goes on there will be more sites
+that they will have trouble reaching, and eventually the inconvenience
+will motivate them to upgrade.  So, tell the people complaining to you
+to leave you alone, as it's their problem and not yours.
+                                                barmar
+
+<b>[<a href="?l=namedroppers&m=95837784626998&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626999&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626999&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

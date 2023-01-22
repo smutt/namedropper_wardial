@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'More about CNAMEs' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927105&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927107&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    More about CNAMEs
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-30 17:41:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927106&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927106&q=raw">body</a>]</b>
+
+[I think the bottom line is that data should be associated with objects,
+not with names.]
+
+I'm trying to do negative caching and find the appropriate SOA record
+for those implementations that don't return the SOA record yet.  The
+example below does return SOA records today, but it didn't in the past.
+
+In the course of querying for the MB record of VEGA.FAC.CS.CMU.EDU, we
+learn that some hosts are nameservers for CMU.EDU.  We ask those hosts
+about VEGA... and get an authoritative answer with no data.  In order to
+do negative caching we need the appropriate SOA record.  I believe it is
+correct first to ask for VEGA...'s SOA record, and get back another
+authoritative no.  (I've already thought about avoiding infinite
+recursion.)  I therefore ask for FAC...'s SOA record.  Instead I get
+back a CNAME.  The CNAME is trying to canonical name the host named
+FAC.CS.CMU.EDU.  What should I do here?  Should I look for the SOA
+record of where the CNAME points (which is VEGA) or should I say that
+the SOA doesn't exist at that node either?  [Aside: note that CMU cannot
+delegate the FAC.CS.CMU.EDU name because that would result in a
+CNAME/NS/SOA trio at the same name.]  I would like to be able remember
+that there is no SOA for FAC... and not be obligated to chase the CNAME.
+Is that reasonable, and if so how do I do that?
+
+Eventually, I ask for the SOA of CS.CMU.EDU and get back authoritative
+nothing, and then ask for the SOA of CMU.EDU and get the appropriate SOA
+record.
+
+I've determined it's not good enough to look at what NS records I
+already have.  Another real-life example: If I try to find
+XX.LCS.MIT.EDU's internet address, I eventually learn that one of the
+nameservers for MIT.EDU is MILO.LCS.MIT.EDU.  If I ask MILO I get back
+an authoritative answer because MILO is also an authoritative server for
+LCS.MIT.EDU, but I don't know that.  Therefore, I shouldn't ask MILO for
+MIT.EDU's SOA record; I must still ask for XX...'s SOA and when that
+fails ask for LCS.MIT.EDU's SOA which does exist.
+
+<b>[<a href="?l=namedroppers&m=95837781927105&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927107&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

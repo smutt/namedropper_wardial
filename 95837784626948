@@ -1,0 +1,78 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: What liberties may an MX'ing host take with delivery?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626949&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626950&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626946&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626954&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200004&r=1&w=2">re: What liberties may an MX'ing host take with delivery?</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-30 12:28:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626948&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626948&q=raw">body</a>]</b>
+
+
+Karl:
+
+The last paragraph of RFC 974 was intended to deal with this question:
+
+   Finally, it should be noted that this is a standard for routing on
+   the Internet.  Mailers serving hosts which lie on multiple networks
+   will presumably have to make some decisions about which network to
+   route through. This decision making is outside the scope of this
+   memo, although mailers may well use the domain system to help them
+   decide.  However, once a mailer decides to deliver a message via the
+   Internet it must apply these rules to route the message.
+
+To put that a bit more bluntly -- if a system is on more than one network,
+routing gets much more painful, and how you deal with it isn't within
+the scope of the memo.  The reason I took that position was that:
+
+    (a) I believed (and still believe) a universal panacea doesn't
+	exist.  So I wasn't in a position to say "all gateways do this."
+	I did write a paper for the Summer 1986 USENIX, discussing
+	in broad terms what might go wrong at a gateway -- your
+	problem is one of the ones listed.
+
+    (b) 1986 was the good old days when hosts on multiple networks
+	(e.g. UUCP, BITNET, Internet) were rare, and were all run
+	by expert e-mail gateway hackers who kept in touch with
+	each other.  Personally I view running a system on multiple
+	networks akin to playing with matches -- you have to be
+	very careful (and a little lucky) not to burn the house
+	down.
+
+It seems to me that, in this context, the fidonet guys are doing a
+semi-reasonable thing.  They are running a gateway.  They get mail via
+the Internet, and forward it via UUCP.  A simple move from one network
+to the next.  The problem comes when that UUCP path intersects another
+UUCP/Internet system, which decides to make the message cross network
+boundaries again.
+
+The MX system sort of assumes that once out of the system, a message won't
+be re-inserted.  (Once a message leaves the Internet, it better not come back).
+The Fidonet folk are working on this assumption -- that when their message
+goes onto UUCP, it won't return to haunt them.  About the only thing
+I think one might complain about is that they might have taken some time
+to check that this was, in fact, true, and that there was no system in
+their UUCP paths that would fight back.  On the other hand, given the
+large number of split-personality hosts out there, I'm not sure they
+can be expected to know what systems might cause trouble.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837784626949&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626950&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626946&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626954&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

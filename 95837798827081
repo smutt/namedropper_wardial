@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Need help configuring name server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827070&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827072&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827095&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500002&r=1&w=2">Need help configuring name server</a>
+From:       <a href="?a=95837818000029&r=1&w=2">mips!bismarck!grins () apple ! com  (Randall Grinstead)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-24 22:01:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827081&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827081&q=raw">body</a>]</b>
+
+A friend of mine has been having some problems configuring a name
+server.   The primary master server is on a Sun and serves a LAN.
+This LAN (LAN #1) is bridged to another LAN (LAN #2) so that both
+LAN's appear as to be the same.
+
+The hosts on LAN #1 however are in a different zone than those on
+LAN  #2.   Everything was running perfectly until the repeater to
+LAN #1 went out, isolating LAN #1.  What he found was  that  when
+using  nslookup,  when hosts were addressed by their non-expanded
+name or alias, the address resolution would  occur  as  expected.
+When a fully qualified name was used, the search would fail.  Ex-
+ample:
+
+        "abc" would obtain the address for abc.x.ab.com ok.
+
+        "abc.x.ab.com" would fail.
+
+What appeared to be happening was that the  later  request  would
+somehow filter up to LAN #1 , and then somehow get resolved.  The
+question is why?  It seems that this is  not  a  normal  type  of
+behaviour, and that all requests within a zone should be resolved
+without going outside of the zone.
+
+Any help would be appreciated.  Thanks in advance!
+-- 
+Randy Grinstead		I speak only for myself, etc., etc., etc.
+UUCP:			    {ames,decwrl,prls,pyramid}!mips!grins
+INTERNET:	grins@mips.COM (grins%mips.com@ames.arc.nasa.gov)
+USPS: 	MIPS Computer Systems,  950 DeGuigne, Sunnyvale, CA 94086
+
+<b>[<a href="?l=namedroppers&m=95837798827070&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827072&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827095&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

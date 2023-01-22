@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Non-domain names still being used in return addresses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426509&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426511&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426511&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600012&r=1&w=2">Non-domain names still being used in return addresses</a>
+From:       <a href="?a=95837692300001&r=1&w=2">Rich Wales &lt;wales () UCLA-LOCUS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-11 11:39:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426510&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426510&q=raw">body</a>]</b>
+
+I took a look just now at our mail system's log of incoming messages
+from the last three weeks or so.  Based on the return addresses given
+in "MAIL FROM:" SMTP commands, it appears that quite a few hosts con-
+tinue to use non-domain-style nicknames in their mail addresses -- even
+though such nicknames are supposedly going to become unusable as hosts
+convert from the NIC host name table to the domain servers/resolvers.
+
+Here is the list I came up with.
+
+    AERO2            CVL              MITRE-BEDFORD    RAND-UNIX
+    AIDS-UNIX        GE-CRD           MITRE-GATEWAY    SEISMO
+    ANL-MCS          GYMBLE           NCSC             SRI-UNIX
+    BBNCCV           ISI-HOBGOBLIN    NOSC             TOVE
+    BBNCD2           ISI-VAXA         NPRDC            UCI-ICSA
+    BERKELEY         LBL-CSAM         NRL-CSS          UCI-ICSD
+    CCA-UNIX         LLL-CRG          NTA-VAX          UCI-ICSE
+    CIT-750          MARYLAND         NYU-CMCL2        UTAH-CS
+    CIT-VAX          MIT-COMET        PLAYFAIR         YALE-APVAX
+
+The hosts listed above represent roughly 1/3 of the incoming messages to
+UCLA-LOCUS.ARPA during the last three weeks.  What really worries me is
+that some very prominent, high-traffic hosts (in particular, BERKELEY
+and SRI-UNIX) are evidently still using non-domain nicknames in the
+return addresses of mail they generate.
+
+Once everyone has switched completely over to the domain data base and
+forsaken the NIC host name table, addresses like "someone@BERKELEY" are
+going to be invalid.  But many people are going to find already that
+mail from the above list of hosts is unreplyable -- since we were all
+encouraged to start converting to the domain data base two months ago
+and (at least in theory!) should all have finished said conversion by
+next Monday (July 15).
+
+Further, when lots of mail continues to come in with old-style return
+addresses, this aggravates the problem of people trying to reply to mail
+that's been sitting in their mailbox for a while.  However you may feel
+about whether or not people should be able to reply to mail sent six
+months or a year ago, a user should surely be able to reply to mail he
+received a week ago -- or two days ago -- without having his reply
+kicked back into his face on the grounds that the destination address
+just became obsolete the other day!
+
+For that matter, I wouldn't be surprised at all to learn that some hosts
+might be delaying their conversion to the new domain server/resolver
+system specifically because so much incoming mail continues to use non-
+domain host nicknames -- and it's much easier to just keep accepting
+such names than to try to explain to a zillion naive users that the
+return addresses on their incoming mail are invalid.
+
+Comments?
+
+-- 
+Rich Wales // UCLA Computer Science Department // +1 213-825-5683
+	3531 Boelter Hall // Los Angeles, California 90024 // USA
+	ARPA:   wales@UCLA-LOCUS.ARPA  -or-  wales@LOCUS.UCLA.EDU
+	UUCP:   ...!(ihnp4,ucbvax)!ucla-cs!wales
+
+<b>[<a href="?l=namedroppers&m=95837667426509&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426511&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426511&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

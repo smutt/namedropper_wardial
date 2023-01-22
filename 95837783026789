@@ -1,0 +1,92 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'We need help configuring our domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026786&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026783&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026779&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026797&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700031&r=1&w=2">We need help configuring our domain.</a>
+From:       <a href="?a=95837785200025&r=1&w=2">7thSon () spar-20 ! spar ! slb ! com (Christopher Garrigues)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-03 23:05:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026789&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026789&q=raw">body</a>]</b>
+
+We're in the process of trying to set up domain servers to do all The
+Right Things, but we're at a loss as to what The Right Things are.
+
+Schlumberger (SLB.COM) has two different nodes with gateways to the
+outside world:  SPAR.SLB.COM is on the Internet, and SDR.SLB.COM is on
+CSnet's phonenet.
+
+Currently, the domain SLB.COM is handled by CSnet-relay.  It provides A
+records for SPAR.SLB.COM and MX records for SDR.SLB.COM via CSnet-relay.
+
+There is an internal X.25 pay-per-packet network (SInet) which includes
+both these sites and many others.
+
+The gateway between SPAR and the rest of the Internet is a Cisco box
+which filters packets passing through in several ways:
+
+1)  Nothing is allowed in from the Internet which is addressed for
+SInet.
+
+2)  Nothing is allowed out to the Interhet which comes from SInet.
+
+3) Only certain packets are allowed in from the Internet to SPAR hosts.
+This is changing, but in essence, Domain and SMTP service are allowed
+through, Telnet and FTP are not.  Other services follow the same general
+model.
+
+SPAR wants to send/reiceve Internet mail directly to the Internet; SDR
+wants to send/receive Internet mail via CSnet.  At the moment, other
+SInet sites aren't in the equation, but we can assume that some will
+want to use SDR as a mail relay, and some will want to use SPAR,
+depending on which will have smaller packet charges.
+
+In terms of what information we want advertised and where we want it
+advertised:
+
+Hosts on the Internet should have A records for hosts in SPAR.SLB.COM,
+and WKS records for hosts in SPAR.SLB.COM that only includes the
+services which can be used from the outside world and MX records for the
+rest of SLB.COM either via CSnet or via SPAR.
+
+Hosts on SInet, except for SPAR, should have full A and WKS records for
+all of the hosts under SLB.COM.  It should also have MX records for the
+Internet that will vary depending on site policy.
+
+Hosts at SPAR should have access to both these databases, using the
+Internet domain system for anything outside SLB.COM, and the internal
+domain system for anything inside SLB.COM.
+
+The hosts at SPAR are a mix of Suns and Symbolics Lisp Machines.  My
+preference would be to run the local server on one of the Symbolics
+machines so we can make use of the namespace system and eliminate
+duplication of data, but if we can only do this using the Suns, I'll
+back off on that issue.
+
+My understanding of the domain RFCs is that SPAR cannot have a different
+view of SLB.COM than the outside world does since hosts are supposed to
+start at the root to find SDR.SLB.COM.  If I'm wrong here, how do we
+splice a subtree from another domain system into our view of the
+Internet domain system.  I'm also concerned about keeping the different
+views of the universe from contaminating one another.
+
+Any comments either on how this is supposed to work or how we can make
+it work?
+
+<b>[<a href="?l=namedroppers&m=95837783026786&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026783&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026779&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026797&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

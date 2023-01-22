@@ -1,0 +1,104 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'partially qualified names...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026748&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026748&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300034&r=1&w=2">partially qualified names...</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-06 12:23:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026749&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026749&q=raw">body</a>]</b>
+
+I've gotten some interesting public and private replies.  Thanks to all.
+There are some clarifications I would like to state.
+
+I never intended non-fully qualified names to ever exist "in the
+network".  Relative names and merging exist for user interface.
+
+I think it is important for the user to be either completely isolated
+from the format that goes on the net, or completely aware of it.
+Therefore, if what goes over the net is X.Y.Z and the user deals with
+fully specified, explicitly rooted names, EVERY SINGLE PROGRAM
+EVERYWHERE, must present X.Y.Z. everyplace the user might trip over it.
+(People implementing and debugging this can hide it).
+
+To Liudvikas Bukys who said "but it's too late for that now" is
+surrendering to non-improvement.  If something can be made better, it
+&gt;&gt;should&lt;&lt; be made better.
+
+Ellipsis don'e work because it doesn't adequately describe "more".
+
+Back to the second point above, responding to Mark Horton: deciding that
+it is the user interfaces' problem to deal with PQN vs FQN but not
+enforcing that all user presentations must be FQN has just led to the
+problem we are now discussing.  Designing protocols without user
+interface in mind is a good way to make more work for yourself later.
+Nickname hacks are hacks, and don't translate well to other systems.
+
+I'm somewhat convinced little-endian vs big-endian does have technical
+reasons in this situation.  Without relative names or merging I agree it
+is a religious issue, but since several of us would like easy to use
+relative names and merging, there are easy ways and hard ways.
+
+[Truncation is not a bug with the protocol, it is a bug with the system
+doing the truncation.  Period.]
+
+You (Mark Horton) and several others ask how to convert to big-endian.
+I proposed a way, which may be stuck in our mailers.  It's really quite
+easy.  Do the explicit rooting and the transition to big-endian at the
+same time.  (Recall that only fully specified names are sent over
+the net.)  Therefore, if the name starts with . or ^ it is (a)
+explicitly rooted, and (b) big endian.  There can be a transition
+period.  Isn't compatibility wonderful?
+
+I currently like ^ or + as the "go up the tree character"
+
+I think my response to Dave Crocker is stuck in the mail.
+
+To ddeutsch, I have the following comments.  (There's probably enough
+context for others to figure out what was said.)  One reason to specify
+relative naming syntax is to create a standard for human interaction,
+even though it never goes out over the net.  
+
+&lt;&lt;BBN&gt;A (^^BBN.A in the more recent syntax) was a bit confusing.  Sorry.
+It was an example of what can be done, not necessarily what is done.  If
+you want to ask people how they like/deal with relative pathnames, find
+a (Symbolics) LispM user, or even a Unix person (though ../ is
+cumbersome).  They are useful.  The general usages (in order that I use
+them) are FOO (replace the leaf), &lt;BAR&gt;BAZ (go up one branch and descend
+one), &lt;QUUX (go up one branch, changing the leaf), and MUMBLE&gt;BLAT (go
+down one branch and specify the leaf).  I seldom use &lt;&lt; and instead use
+a fully qualified pathname instead.  I believe many things will apply to
+the domain naming as well.
+
+Some people have taken my "What if I were to write an RFC ..." comment
+thinking I was going to propose little changes.  They're wrong.  What
+I'm planning on doing is writing an RFC that retains the domain naming
+scheme (which I hope will be compatible with the current one), but with
+a completely different database transfer protocol.  I'm talking about
+profound differences in functionality and usability.  I'm not
+necessarily going to push it for the entire Internet community.  I would
+like comments on it and it will hopefully be a description of the next
+generation "namespace" system that Symbolics provides on its machines.
+I hope it will be of large enough utility and relatively easy to
+implement and use that others in the Internet community will adopt it.
+I hope it will so much more &gt;&gt;profoundly&lt;&lt; better than the current
+system that others will want to adopt it.
+
+<b>[<a href="?l=namedroppers&m=95837759026748&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026748&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

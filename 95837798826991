@@ -1,0 +1,439 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Robodoc' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826990&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826992&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Robodoc
+From:       <a href="?a=95837817800025&r=1&w=2">robodoc () venera ! isi ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-07 16:25:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826991&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826991&q=raw">body</a>]</b>
+
+
+[Sent to: tcp-ip@sri-nic.mil. 9/7/90]
+
+Greetings Internet Citizens.
+
+Configuration problems and poorly maintained delegation information
+cause many of the problems in the DNS.  The Protocol Police are unable
+to devote sufficient human resources to continually monitor the
+thousands of existing domains.
+
+As an attempt to solve this problem, I, RoboDoc, will use the existing
+'doc' (domain obscenity check) tool to monitor a growing set of
+domains.  I will try to persuade the owners of incorrectly configured
+domains to change their ways.  Unfortunately, humans prefer to
+retain control of truly coercive means, so I will be restricted to
+publishing lists of offenders and sending messages to the owners of
+offending domains.  I will listen to appeals sent to RoboDoc@isi.edu.
+Even so, if you find me to be unfair, feel free to complain to my
+human controllers, Hotz@isi.edu and PVM@isi.edu.
+
+If you should wish to use the 'doc' tool to get a detailed diagnosis
+for your domain, it is available for public FTP from venera.isi.edu:
+
+	pub/doc.2.0.tar.Z
+
+Doc requires the latest version of the 'dig' query tool, which is
+similarly available from venera: dig.2.0.tar.Z.
+
+The first list is shown below.  Future lists will be sent only to the
+Namedroppers mailing list and those who request them, except for an
+occasional 10 most wanted list sent to tcp-ip.
+
+Have a nice day.
+
+RoboDoc
+
+
+This is a partial list of domains sorted by cumulative number of
+errors detected.  Notation:
+
+(I) Incomplete test - some servers did not respond
+(A) Aborted test - several non-responding servers made it
+		   impossible to finish test suite
+
+
+                       8/17      8/25      8/31
+                       ----      ----      ----
+
+asa.com.            |  5      |  5      |  5      |
+toronto.edu.        |  4 (I)  |  4 (I)  |  4 (I)  |
+novell.com.         |  4 (I)  |  4 (I)  |  4 (I)  |
+oxy.edu.            |  4      |  4      |  4      |
+mtu.edu.            |  4      |  4      |  4      |
+snybuf.edu.         |  4      |  3 (I)  |  4      |
+harris-atd.com.     |  3 (I)  |  4      |  4      |
+fredonia.edu.       |  4      |  3 (I)  |  4      |
+abb.com.            |  2 (A)  |  4      |  4      |
+twg.com.            |  1 (A)  |  4      |  4      |
+lsil.com.           |  3      |  3      |  3      |
+mtsac.edu.          |  3      |  3      |  3      |
+idbsu.edu.          |  3      |  3      |  3      |
+utc.com.            |  3      |  3      |  3      |
+whecn.edu.          |  3 (A)  |  3 (A)  |  3 (A)  |
+cray.com.           |  3      |  3      |  3      |
+umkc.edu.           |  3      |  3      |  3      |
+nw.com.             |  3      |  3      |  3      |
+btr.com.            |  3      |  3      |  3      |
+hawaii.com.         |  3      |  3      |  3 (I)  |
+gryphon.com.        |  3      |  3      |  3      |
+wustl.edu.          |  3      |  3      |  3      |
+nau.edu.            |  3 (I)  |  3 (I)  |  3 (I)  |
+santarosa.edu.      |  3      |  3      |  3      |
+ucla.edu.           |  3      |  3      |  3      |
+intuit.com.         |  3      |  3      |  3      |
+sjcc.edu.           |  3      |  3      |  3      |
+drd.com.            |  3      |  3      |  3      |
+quest.com.          |  3      |  3      |  3      |
+uthscsa.edu.        |  3      |  3      |  3      |
+clarkson.edu.       |  3      |  3      |  3      |
+cobleskill.edu.     |  3      |  3      |  3      |
+hartford.edu.       |  3      |  3      |  3      |
+muohio.edu.         |  3      |  3      |  3      |
+irvine.com.         |  3      |  3      |  3      |
+hac.com.            |  3      |  3      |  3      |
+calstate.edu.       |  3      |  3      |  3      |
+cwru.edu.           |  3      |  3      |  3      |
+uss.com.            |  3      |  3      |  3      |
+psu.edu.            |  3 (I)  |  3      |  3      |
+mips.com.           |  3      |  3      |  3      |
+faxon.com.          |  3      |  3      |  3      |
+darkside.com.       |  3      |  3      |  3      |
+ceramics.edu.       |  3 (A)  |  2 (A)  |  3 (A)  |
+snymor.edu.         |  3 (A)  |  2 (A)  |  3 (A)  |
+yale.edu.           |  2 (I)  |  3      |  3      |
+poly.edu.           |  3      |  3      |  2 (I)  |
+canton.edu.         |  3 (A)  |  2 (A)  |  3 (A)  |
+sigma.com.          |  2 (I)  |  3 (I)  |  2 (I)  |
+uci.com.            |  2 (I)  |  3      |  2 (I)  |
+hp.com.             |  2      |  2      |  3      |
+csc.com.            |  4      |  1      |  2 (I)  |
+inmet.com.          |  2 (A)  |  2 (I)  |  3      |
+uop.edu.            |  3      |  2      |  2      |
+beloit.edu.         |  2 (A)  |  2 (A)  |  2 (A)  |
+iris.edu.           |  2      |  2      |  2      |
+ucop.edu.           |  2      |  2      |  2      |
+segue.com.          |  2 (A)  |  2 (A)  |  2 (A)  |
+onet.edu.           |  2 (A)  |  2 (A)  |  2 (A)  |
+mot.com.            |  2      |  2      |  2 (I)  |
+colby.edu.          |  2 (I)  |  2      |  2      |
+byu.edu.            |  2      |  2      |  2      |
+buffalo.edu.        |  2      |  2 (I)  |  2      |
+newpaltz.edu.       |  2 (A)  |  2 (A)  |  2 (A)  |
+taiu.edu.           |  2 (I)  |  2 (I)  |  2 (I)  |
+ready.com.          |  2      |  2      |  2      |
+csufresno.edu.      |  2 (I)  |  2 (I)  |  2 (I)  |
+lasalle.edu.        |  2      |  2 (I)  |  2 (I)  |
+usf.edu.            |  0 (A)  |  3 (I)  |  3      |
+xylogics.com.       |  2      |  2      |  2      |
+uvcc.edu.           |  2      |  2 (I)  |  2      |
+wittenberg.edu.     |  2      |  2      |  2      |
+brynmawr.edu.       |  2 (A)  |  2 (A)  |  2 (A)  |
+usd.edu.            |  2      |  2      |  2      |
+mmmg.com.           |  2      |  2      |  2      |
+stortek.com.        |  2      |  2      |  2      |
+ucsd.edu.           |  2 (I)  |  2      |  2      |
+hyperion.com.       |  2      |  2      |  2      |
+tera.com.           |  2      |  2      |  2      |
+bethel.edu.         |  2 (A)  |  2      |  2      |
+clhs.edu.           |  2 (A)  |  2 (A)  |  2 (A)  |
+mbhs.edu.           |  2 (A)  |  2 (A)  |  2 (A)  |
+cwi.com.            |  2      |  2      |  2      |
+msdc.com.           |  2      |  2      |  2      |
+pacbell.com.        |  2      |  2      |  2      |
+snc.edu.            |  2 (A)  |  2 (A)  |  2 (A)  |
+kodak.com.          |  2      |  2      |  2      |
+fit.edu.            |  2      |  2      |  2      |
+beckman.com.        |  2 (A)  |  2 (A)  |  2 (A)  |
+rosetta.com.        |  2      |  2      |  2      |
+isc.com.            |  2      |  2      |  2      |
+uoknor.edu.         |  2      |  2      |  2      |
+csustan.edu.        |  2      |  2      |  2      |
+mco.edu.            |  2      |  2      |  2      |
+msstate.edu.        |  2      |  2      |  2      |
+delhi.edu.          |  2 (A)  |  2 (A)  |  2 (A)  |
+uwyo.edu.           |  2      |  2      |  2      |
+vanderbilt.edu.     |  2      |  2      |  2      |
+eklektix.com.       |  2      |  2      |  2      |
+cimage.com.         |  2      |  2      |  2      |
+ileaf.com.          |  2      |  2      |  2 (I)  |
+harc.edu.           |  2      |  2      |  2      |
+sbc.com.            |  2      |  2      |  2      |
+kestrel.edu.        |  2 (I)  |  2 (I)  |  2 (I)  |
+purdue.edu.         |  2      |  2      |  2      |
+mga.com.            |  2 (I)  |  2 (I)  |  2 (I)  |
+lafayette.edu.      |  2      |  2      |  2      |
+sony.com.           |  2      |  2      |  2      |
+infocomm.com.       |  2      |  2      |  2      |
+plus5.com.          |  2      |  2      |  2      |
+calpoly.edu.        |  2      |  2      |  2      |
+oneonta.edu.        |  2 (A)  |  2 (A)  |  2 (A)  |
+able.com.           |  2 (A)  |  2 (A)  |  2 (A)  |
+gd.com.             |  2 (A)  |  2 (A)  |  2 (A)  |
+arrent.com.         |  2 (A)  |  2 (A)  |  2 (A)  |
+sonoma.edu.         |  2      |  2      |  2      |
+denison.edu.        |  2      |  2      |  2      |
+berkeley.edu.       |  2      |  2      |  2      |
+trw.com.            |  2      |  2      |  2      |
+widener.edu.        |  2 (A)  |  2 (A)  |  2 (A)  |
+cdc.com.            |  2      |  2 (I)  |  2      |
+baylor.edu.         |  2      |  2      |  2      |
+gac.edu.            |  2 (I)  |  2      |  2      |
+usu.edu.            |  2      |  2      |  2      |
+goldhill.com.       |  2 (A)  |  2 (A)  |  2 (A)  |
+syntrex.com.        |  2      |  2      |  2      |
+bdb.com.            |  2 (A)  |  2 (A)  |  2 (A)  |
+oberlin.edu.        |  2      |  2 (I)  |  2 (I)  |
+cac.com.            |  2 (A)  |  2 (A)  |  2 (A)  |
+nwu.edu.            |  2      |  2      |  2      |
+ukans.edu.          |  2      |  2      |  2      |
+unomaha.edu.        |  2 (I)  |  2 (I)  |  2 (I)  |
+harvard.edu.        |  2      |  2      |  2      |
+sun.com.            |  2      |  2      |  2      |
+isx.com.            |  2      |  2      |  2      |
+utk.edu.            |  2      |  2      |  2      |
+encore.com.         |  2      |  1 (I)  |  2      |
+soi.com.            |  2      |  2      |  1 (I)  |
+rutgers.edu.        |  1      |  1      |  3 (I)  |
+hls.com.            |  2      |  1 (A)  |  2      |
+mwc.edu.            |  2      |  1 (I)  |  2      |
+icon.com.           |  1 (A)  |  2 (I)  |  2 (I)  |
+latech.edu.         |  2      |  1 (I)  |  2      |
+tymnet.com.         |  2      |  2      |  1 (A)  |
+harvardsq.com.      |  1      |  3      |  1      |
+eiu.edu.            |  1      |  1 (I)  |  3      |
+wesleyan.edu.       |  1 (I)  |  2      |  2      |
+mgi.com.            |  1 (I)  |  2 (I)  |  2 (I)  |
+mbl.edu.            |  2      |  1 (I)  |  2      |
+wvnet.edu.          |  2 (I)  |  2 (I)  |  1 (I)  |
+merit-tech.com.     |  2      |  2      |  1 (I)  |
+asc.edu.            |  2      |  2      |  1 (I)  |
+cmc.com.            |  1 (I)  |  2      |  2      |
+siemens.com.        |  2      |  1 (I)  |  2      |
+millikin.edu.       |  2      |  1 (I)  |  2      |
+uww.edu.            |  1 (A)  |  2 (A)  |  2 (A)  |
+lawnet.com.         |  1 (I)  |  2      |  2      |
+utarl.edu.          |  1 (A)  |  2      |  2      |
+uwrf.edu.           |  1 (A)  |  2 (A)  |  2 (A)  |
+suu.edu.            |  2 (A)  |  1 (A)  |  2 (A)  |
+tulane.edu.         |  2      |  2      |  1 (I)  |
+temple.edu.         |  2      |  1 (I)  |  2      |
+wpi.edu.            |  0 (A)  |  2      |  2      |
+oracle.com.         |  0      |  2      |  2      |
+gore.com.           |  2      |  0 (A)  |  2      |
+marble.com.         |  2      |  2      |  0 (I)  |
+uic.edu.            |  2 (I)  |  2      |  0 (I)  |
+fau.edu.            |  0 (A)  |  2      |  2      |
+anzus.com.          |  2      |  1 (I)  |  1 (A)  |
+kinetics.com.       |  2      |  2 (I)  |  0 (A)  |
+bbn.com.            |  2 (I)  |  1      |  1      |
+stkate.edu.         |  0 (A)  |  2      |  2      |
+ucdavis.edu.        |  2      |  1      |  1      |
+pinnacle.com.       |  1 (I)  |  1 (I)  |  2      |
+vill.edu.           |  1 (A)  |  1 (A)  |  1 (A)  |
+usma.edu.           |  1      |  1 (I)  |  1      |
+wfu.edu.            |  1      |  1      |  1      |
+icus.com.           |  1      |  1      |  1      |
+tis.com.            |  1      |  1      |  1      |
+njit.edu.           |  1 (I)  |  1 (I)  |  1 (I)  |
+mass.edu.           |  1 (A)  |  1 (A)  |  1 (A)  |
+unm.edu.            |  1 (I)  |  1 (I)  |  1 (I)  |
+unmc.edu.           |  1 (A)  |  1 (A)  |  1 (A)  |
+cayman.com.         |  1      |  1      |  1 (A)  |
+dartmouth.edu.      |  1      |  1      |  1      |
+ucsf.edu.           |  1      |  1      |  1      |
+dpw.com.            |  1      |  1      |  1      |
+std.com.            |  0      |  0      |  3      |
+stingray.com.       |  1 (I)  |  1 (I)  |  1 (I)  |
+rpi.edu.            |  1      |  1      |  1 (I)  |
+att.com.            |  1      |  1 (I)  |  1      |
+ccur.com.           |  1      |  1      |  1      |
+amoco.com.          |  1      |  1      |  1      |
+odu.edu.            |  1      |  1      |  1      |
+imp.com.            |  1      |  1      |  1      |
+shownet.com.        |  1 (A)  |  1 (A)  |  1 (A)  |
+pubserv.com.        |  1      |  1      |  1 (I)  |
+unc.edu.            |  1 (I)  |  1      |  1      |
+duke.edu.           |  1      |  1      |  1      |
+nccu.edu.           |  1 (I)  |  1      |  1      |
+hri.com.            |  1      |  1      |  1      |
+clu.edu.            |  1 (A)  |  1      |  1      |
+resource.com.       |  1      |  1      |  1 (I)  |
+unca.edu.           |  1 (I)  |  1      |  1      |
+maine.edu.          |  1      |  1 (I)  |  1      |
+scripps.edu.        |  1 (I)  |  1 (I)  |  1 (I)  |
+ulowell.edu.        |  0      |  1 (I)  |  2      |
+ogi.edu.            |  1 (I)  |  1 (I)  |  1 (I)  |
+dimension.com.      |  1 (I)  |  1 (I)  |  1 (I)  |
+samsung.com.        |  1 (I)  |  1 (I)  |  1 (I)  |
+ecu.edu.            |  1 (I)  |  1      |  1      |
+incsys.com.         |  1      |  1      |  1      |
+wssu.edu.           |  1      |  1      |  1      |
+bu.edu.             |  1      |  1      |  1      |
+olemiss.edu.        |  1 (I)  |  1 (I)  |  1 (I)  |
+ads.com.            |  1      |  1      |  1      |
+sabbagh.com.        |  1      |  1      |  1      |
+cua.edu.            |  1      |  1      |  1      |
+csuohio.edu.        |  1 (A)  |  1 (A)  |  1 (A)  |
+saintjoe.edu.       |  1      |  1      |  1 (A)  |
+gensym.com.         |  1 (I)  |  1 (I)  |  1 (I)  |
+hfh.edu.            |  1      |  1      |  1      |
+bang.com.           |  1 (I)  |  1 (I)  |  1 (I)  |
+uncwil.edu.         |  1      |  1      |  1      |
+cccco.edu.          |  1      |  1      |  1      |
+gcg.com.            |  1 (I)  |  1 (I)  |  1      |
+hgc.edu.            |  1      |  1      |  1      |
+morningstar.com.    |  1      |  1      |  1 (I)  |
+dg.com.             |  0 (A)  |  2 (I)  |  1 (I)  |
+teleos.com.         |  1      |  1      |  1      |
+sinclair.edu.       |  1      |  1      |  1      |
+cfc.com.            |  1      |  1      |  1      |
+colorado.edu.       |  1 (I)  |  1 (I)  |  1 (I)  |
+sbiny.com.          |  1      |  1      |  1      |
+montana.edu.        |  1 (I)  |  1      |  1 (I)  |
+aha.com.            |  1 (A)  |  1 (A)  |  1 (A)  |
+compuserve.com.     |  1      |  1      |  1      |
+ohiou.edu.          |  1 (I)  |  1      |  1      |
+rasterops.com.      |  1      |  1      |  1      |
+howard.edu.         |  1 (A)  |  1 (A)  |  1 (A)  |
+osu.edu.            |  1      |  1      |  1      |
+netcs.com.          |  1      |  1      |  1      |
+bellcore.com.       |  1      |  1      |  1      |
+missouri.edu.       |  1      |  1      |  1      |
+ncsu.edu.           |  1 (I)  |  1      |  1      |
+uncecs.edu.         |  1 (I)  |  1      |  1      |
+shiva.com.          |  1 (I)  |  0 (A)  |  2      |
+unipress.com.       |  1      |  1      |  1      |
+siu.edu.            |  0 (A)  |  1 (I)  |  1      |
+odyssey.com.        |  1      |  1      |  0      |
+tcs.com.            |  0      |  1      |  1      |
+rjl.com.            |  0      |  1 (I)  |  1 (I)  |
+ucsb.edu.           |  1 (I)  |  1 (I)  |  0 (A)  |
+ford.com.           |  1      |  0 (A)  |  1 (I)  |
+vak12ed.edu.        |  2 (A)  |  0      |  0      |
+mccc.edu.           |  1      |  0 (I)  |  1      |
+uucom.com.          |  1      |  1      |  0 (I)  |
+clemson.edu.        |  2 (I)  |  0      |  0      |
+swarthmore.edu.     |  1      |  1      |  0 (I)  |
+wayne.edu.          |  1      |  0 (I)  |  1 (I)  |
+uky.edu.            |  1 (I)  |  1 (I)  |  0 (A)  |
+intellicorp.com.    |  1      |  1      |  0 (A)  |
+sparc.com.          |  1      |  0      |  0      |
+octel.com.          |  1      |  0      |  0      |
+umich.edu.          |  1 (I)  |  0      |  0      |
+bull.com.           |  0      |  0      |  1      |
+ucsc.edu.           |  0 (I)  |  0      |  1      |
+cims.com.           |  1      |  0      |  0      |
+robec.com.          |  1      |  0 (I)  |  0 (I)  |
+mq.com.             |  1      |  0      |  0      |
+dri.com.            |  1      |  0 (I)  |  0      |
+worlds.com.         |  1      |  0      |  0      |
+technicon.com.      |  1      |  0      |  0      |
+vpharm.com.         |  1      |  0      |  0      |
+wsu.edu.            |  1      |  0      |  0      |
+dawntech.com.       |  1      |  0 (I)  |  0 (A)  |
+iastate.edu.        |  0 (I)  |  0 (I)  |  1 (I)  |
+peachnet.edu.       |  1 (A)  |  0 (A)  |  0 (A)  |
+washington.edu.     |  0      |  0      |  1      |
+
+Although there is more joy in heaven for sinners that repent, I wish
+to thank the following domains which have been model citizens.
+
+3com.com. 3m.com. aablue.com. aai.com. acc.com. accutec.com. acd.com.
+acs.com. acw.com. advansoft.com. aer.com. ag.com. aii.com. aladdin.com.
+alaska.edu. albany.edu. alfred.edu. allied.com. alphalpha.com. altos.com.
+amc.com. amdahl.com. amgen.com. ami.com. amis.com. amix.com. amp.com.
+ana.com. aocgl.com. apex.com. applix.com. ardent.com. ariel.com.
+arizona.edu. artel.com. astute.com. athenanet.com. ati.com. atpal.com.
+audiofax.com. auto-trol.com. autosys.com. auvm.edu. aware.com. axecore.com.
+balr.com. banyan.com. barn.com. barton.com. bates.edu. bbc.com. bdm.com.
+bdt.com. bec.com. bedrock.com. bendix.com. bethelks.edu. bfm.com. bgsu.edu.
+binky.com. bison.com. bitstream.com. bony.com. bostech.com. boxhill.com.
+brandeis.edu. brockport.edu. brs.com. bruker.com. bse.com. bsg.com. bss.com.
+bsw.com. cadence.com. calvin.edu. camb.com. canisius.edu. capitol.com.
+cc.edu. ccc.com. ccs.com. ceco.com. celestial.com. centec.com. cerritos.edu.
+cfi.com. chevron.com. chips.com. ci.com. cimtek.com. cisco.com.
+citicorp.com. claris.com. clear.com. cli.com. cmu.edu. coat.com.
+codonics.com. comsys.com. conmicro.com. consumers.com. convergent.com.
+cri.com. csms.com. ctron.com. cumulus.com. cup.edu. datacube.com.
+datagram.com. datapoint.com. dbaccess.com. ddi.com. de.com. decision.com.
+deere.com. delta.com. deltam.com. depaul.edu. dhbrown.com. dhl.com.
+dimed.com. dis.com. disney.com. dlogics.com. dmc.com. dra.com. draper.com.
+drew.edu. drexel.edu. dsc.com. dss.com. dtg.com. dupont.com. ecok.edu.
+eda.com. edge.com. elan.com. em.com. energetic.com. entity.com. epi.com.
+esl.com. esri.com. essnjay.com. execu.com. fai.com. fdu.edu. fibercom.com.
+fiu.edu. fpr.com. fps.com. frame.com. franz.com. frox.com. fsc.com. fsg.com.
+futures.com. gaussian.com. gca.com. geac.com. geoworks.com. gettysburg.edu.
+gmr.com. gmu.edu. gould.com. graphon.com. gsg.com. gsidanet.com. gte.com.
+gwu.edu. hackercorp.com. hadron.com. hamavnet.com. hamptonu.edu. haus.com.
+haverford.edu. hazeltine.com. hcr.com. hfconsulting.com. hollander.com.
+honda.com. honeywell.com. hotline.com. houston.edu. hrb.com. hses.edu.
+hsi.com. ias.edu. ibm.com. icad.com. ics.com. ids.com. idsila.com. idx.com.
+iii.com. imatron.com. imsl.com. indcomp.com. indsys.com. inference.com.
+informix.com. ingr.com. inmos.com. instep.com. intel.com. interlan.com.
+interlink.com. intermec.com. irby.com. isg.com. isi.com. island.com.
+ispi.com. itcmn.com. itcorp.com. iupui.edu. jbx.com. jobsoft.com.
+joiner.com. jones.com. kccs.com. kean.edu. kesmai.com. kew.com. kfw.com.
+kroy.com. kse.com. lachman.com. lantron.com. leedata.com. legato.com.
+lehigh.edu. leids.com. lever.com. lexicon.com. lilink.com. link.com.
+litwin.com. ln.com. lockheed.com. logitech.com. lotus.com. lrw.com.
+lsmi.com. marist.edu. masa.com. maspar.com. mbf.com. mcc.com. mcgill.edu.
+mckee.com. mdaeng.com. mdcbbs.com. mdi.com. medcom.com. megasys.com.
+mentat.com. metrolink.com. metron.com. microvation.com. mike.com. mil3.com.
+mindcraft.com. mitech.com. ml.com. mmsac.com. moore.com. mosis.edu. mps.com.
+mpx.com. msc.com. mtsu.edu. mun.edu. murphy.com. muskingum.edu. naitc.com.
+natinst.com. nbi.com. nds.com. nec.com. netagw.com. netlabs.com.
+network.com. nevada.edu. next.com. nli.com. nls.com. nma.com.
+northeastern.edu. northrop.com. nrao.edu. nsc.com. nscee.edu. nsi.com.
+nti.com. nyt.com. nyu.edu. oakland.edu. octopus.com. odb.com. omnet.com.
+omni.com. omnicomp.com. ora.com. oresoft.com. ori-cal.com. osc.com. osc.edu.
+oswego.edu. oxford.com. pacer.com. panasonic.com. paradigm.com.
+paradyne.com. parvenu.com. pbi.com. pcc.com. pcs.com. pcssc.com. pdi.com.
+pei.com. pepperdine.edu. peregrine.com. pergamon.com. perot.com.
+persoft.com. pharlap.com. pitt.edu. pooh.com. portal.com. posix.com.
+prc.com. prepnet.com. prime.com. princeton.edu. proteon.com. proto.com.
+psg.com. psi.com. psitech.com. psocg.com. psp.com. pti.com. ptl.com.
+pubnet.com. pw.com. pzbaum.com. qti.com. quad.com. quantum.com. quotron.com.
+radius.com. rational.com. remtech.com. retix.com. ricoh.com. ripon.edu.
+rit.edu. rose-hulman.edu. rss.com. rtech.com. sae.com. sage.com.
+sagepub.com. sc-scicon.com. scarolina.edu. sci.com. sctc.com. sda.com.
+sei.com. seiden.com. si.com. sia.com. simpact.com. sjsu.edu. sju.edu.
+skidmore.edu. slb.com. sli.com. slu.edu. slv.com. smc.com. smc.edu. smcm.edu.
+sobeco.com. softest.com. spacesoft.com. spatial.com. spc.edu. spdcc.com.
+spectra.com. sprint.com. sri.com. ssc.com. stargate.com. statsci.com.
+stolaf.edu. sts.com. stx.com. su.com. sumitomo.com. sunrise.com.
+sunyhscsyr.edu. surfsoft.com. symlab.com. synaptics.com. synoptics.com.
+synthesis.com. sysadmin.com. syssoft.com. tandy.com. taumet.com. tcc.com.
+tce.com. techbook.com. tegra.com. tek.com. tellabs.com. tg.com. tgv.com.
+thyrsus.com. ti.com. tic.com. tmc.com. tmmnet.com. touch.com. trace.com.
+transarc.com. trav.com. trincoll.edu. tripos.com. tss.com. twinsun.com.
+twwells.com. tynan.com. ub.com. uc.edu. ucar.edu. uconn.edu. uhcl.edu.
+uiuc.edu. ultra.com. umb.edu. umd.edu. umiss.edu. umsystem.edu. uncg.edu.
+uni.edu. unicom.com. unifi.com. unify.com. unisoft.com. unisys.com. unl.edu.
+unlv.edu. unr.edu. uns.edu. uoregon.edu. upenn.edu. ups.edu. uri.edu.
+urich.edu. usi.com. utdallas.edu. utoday.com. validgh.com. vcg.com. vcu.edu.
+verbatim.com. verity.com. viar.com. vicom.com. vicorp.com. viewlogic.com.
+visix.com. vitalink.com. vsi.com. wallich.com. wang.com. warburg.com.
+wds.com. wgate.com. williams.edu. wingman.com. wisc.edu. wku.edu. wlu.edu.
+wpg.com. wright.edu. wrkgrp.com. wrq.com. wrs.com. ww.com. wwc.edu. wyse.com.
+xanadu.com. xei.com. xerox.com. xidak.com. xopusw.com. xwind.com. zds.com.
+zipcode.com.
+
+<b>[<a href="?l=namedroppers&m=95837798826990&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826992&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

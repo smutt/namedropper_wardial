@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Special way to query DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327125&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327121&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327119&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327131&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900009&r=1&w=2">Special way to query DNS?</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-19 11:45:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327123&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327123&q=raw">body</a>]</b>
+
+
+&gt; I have a question that I haven't seen addressed anywhere.  I suspect that 
+&gt; the answer is NO but I'll ask anyway.
+&gt; 
+&gt; Dumb Question #79745:
+&gt;    Is there any way to query the Domain Name Server(s) to ask for ALL the 
+&gt; MX records pointing to a certain host?  For instance, my system may have several
+&gt; sites calling in via UUCP that it acts as MX forwarder for.  Is there any way
+&gt; I can query the DNS so that I can dynamically look up to see who has my system
+&gt; in their MX records?
+
+No there isn't a handy way -- that's why RFC 974 says it is bad ettiquette
+to list someone as an MX without asking them first.
+
+It occurs to me that you might be able to generate such a list by doing an
+inverse query to your local server.  Your server typically  (though not
+always -- depends on configuration) will do an MX lookup on mail it
+gets to help decide how to route the mail.  Thus it should pull MXs that
+reference it into your local server cache (whether it gets all of them
+in the cache at once depends on the e-mail patterns at your site).  An
+inverse query might then catch the MXs.  [Mind you, I'd always thought
+that IQ's were so useless that I no longer fully recall how to use them.
+I think this is correct -- if not, someone please firmly correct me].
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837797327125&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327121&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327119&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327131&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

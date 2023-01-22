@@ -1,0 +1,73 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Gratuitous use of the domain system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926941&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926942&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000035&r=1&w=2">Gratuitous use of the domain system</a>
+From:       <a href="?a=95837784800002&r=1&w=2">karn () faline ! bellcore ! com (Phil R !  Karn)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-19 20:43:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926940&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926940&q=raw">body</a>]</b>
+
+One thing I've been seeing more and more of these days are uses
+(especially inverse queries) of the domain system I consider gratuitious
+and wasteful. Here are some examples:
+
+1. The mail system that seems to run on most DEC-10's and -20s. It
+insists on being able to turn the IP address on the incoming connection
+back into a host name, and if the lookup fails, it refuses altogether to
+accept the mail.  At best this can cause an unnecessary delay when
+transferring mail; at worst it can block mail altogether (a bogus PTR
+record escaped from our server last week and it broke mail to an SRI
+DEC-10 site for the entire week).  If you're worried about mail
+spoofing, the proper thing to do is to include the raw IP address (in
+dotted decimal form) in the mail header. A paranoid user can always
+translate it back into a host name himself should he care; most won't
+bother.
+
+2. The telnet and ftp daemons on BSD UNIX.  They also insist on mapping
+incoming IP addresses back into host names for inclusion in /etc/utmp
+(the list of logged-in users). Again the proper approach should be to
+just record the raw IP address so that anyone who is really interested
+in the host name can do the translation "off line".  It is not unusual
+to telnet to a heavily loaded machine, establish a TCP connection in a
+few seconds or less, and then have to wait over a minute for a login
+prompt to finally come back. This is silly! The situation is even worse
+for hosts that do linear searches of their host tables instead of using
+the domain system.
+
+3. Various network management utilities under BSD UNIX. While most have
+options to bypass name lookups (e.g., the -n option under netstat) some
+do not. For example, doing a "route -f" to flush the routing table can
+take ten minutes or more on a heavily loaded machine simply because
+there's no way to tell it not to translate each entry into a symbolic
+name as it confirms flushing it!  All utilities should also allow use of
+numeric IP addresses wherever a symbolic host name would be allowed.
+Most UNIX commands do, but one exception seems to be the "arp" command.
+
+In general, I think IP address -&gt; name translations should be avoided
+altogether by network daemons unless they are absolutely necessary for
+"real time" authentication purposes. This is the case with, e.g., rsh
+and rcp, but NOT with the regular ARPA network applications.
+
+Comments?
+
+Phil
+
+<b>[<a href="?l=namedroppers&m=95837781926941&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926942&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

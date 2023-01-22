@@ -1,0 +1,190 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'network names via DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326903&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326905&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326903&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326906&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200002&r=1&w=2">network names via DNS</a>
+From:       <a href="?a=95837786400026&r=1&w=2">enger () sccgate ! scc ! com ( Robert M !  Enger)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-23 3:19:20</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326904&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326904&q=raw">body</a>]</b>
+
+
+Jon:
+
+My limited understanding of this issue comes from Dr. Mockapetris' RFC 1101.
+++++++
+Mockapetris                                                     [Page 4]
+^L
+RFC 1101     DNS Encoding of Network Names and Other Types    April 1989
+ 
+ 
+4. SPECIFICS FOR NETWORK NAME MAPPINGS
+ 
+   The proposed solution uses information stored at:
+ 
+      - Names in the IN-ADDR.ARPA tree that correspond to host-zero IP
+        addresses.  The same method is used for subnets in a nested
+        fashion.  For example, 0.0.0.10.IN-ADDR.ARPA. for net 10.
+ 
+        Two types of information are stored here: PTR RRs which point
+        to the network name in their data sections, and A RRs, which
+        are present if the network (or subnet) is subnetted further.
+        If a type A RR is present, then it has the address mask as its
+        data.  The general form is:
+ 
+        &lt;reversed-host-zero-number&gt;.IN-ADDR.ARPA. PTR &lt;network-name&gt;
+        &lt;reversed-host-zero-number&gt;.IN-ADDR.ARPA. A   &lt;subnet-mask&gt;
+ 
+        For example:
+ 
+        0.0.0.10.IN-ADDR.ARPA.  PTR     ARPANET.ARPA.
+ 
+        or
+ 
+        0.0.2.128.IN-ADDR.ARPA. PTR     cmu-net.cmu.edu.
+                                A       255.255.255.0
+ 
+        In general, this information will be added to an existing
+        master file for some IN-ADDR.ARPA domain for each network
+        involved.  Similar RRs can be used at host-zero subnet
+        entries.
+ 
+++++++++++
+
+Using good old nslookup to rummage around through the DNS I can find
+a few examples of network information:
+
+&gt; 0.0.83.129.in-addr.arpa
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+
+Non-authoritative answer:
+0.0.83.129.in-addr.arpa host name = zero-bnet.mitre.org
+Authoritative answers can be found from:
+MBUNIX.MITRE.ORG        inet address = 129.83.20.100
+GATEWAY.MITRE.ORG       inet address = 128.29.31.10
+TRANTOR.UMD.EDU inet address = 128.8.10.14
+&gt;                
+&gt; 0.0.148.128.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+ 
+Non-authoritative answer:
+0.0.148.128.in-addr.arpa        host name = brown-edu.brown.edu
+0.0.148.128.in-addr.arpa        inet address = 255.255.255.0
+Authoritative answers can be found from:
+CIS.BROWN.EDU   inet address = 128.148.128.9
+MULTIMAX.ENCORE.COM     inet address = 129.91.1.14
+&gt; 
+&gt; 0.169.16.192.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+
+Non-authoritative answer:
+0.169.16.192.in-addr.arpa       host name = hubnet.itd.nrl.navy.mil
+Authoritative answers can be found from:
+CSS.ITD.NRL.NAVY.MIL    inet address = 128.60.2.112
+AIC.NRL.NAVY.MIL        inet address = 192.26.18.49
+&gt; 
+&gt; 0.0.131.131.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+ 
+0.0.131.131.in-addr.arpa        host name = CONTEL-WTP.contel.com
+0.0.131.131.in-addr.arpa        inet address = 255.255.255.0
+&gt; 
+
+
+However, even going to the source, I do not find comparable records
+for 128.9.0.0, (isi-net):
+
+&gt; set qu=soa
+&gt; 9.128.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+ 
+Non-authoritative answer:
+9.128.in-addr.arpa      origin = venera.isi.edu
+        mail addr = koda.venera.isi.edu
+        serial=300049, refresh=43200, retry=3600, expire=3600000, min=86400
+Authoritative answers can be found from:
+VAXA.ISI.EDU    inet address = 128.9.0.33
+VENERA.ISI.EDU  inet address = 128.9.0.32
+VAX.DARPA.MIL   inet address = 192.5.18.99
+VAX.DARPA.MIL   inet address = 26.6.0.106
+&gt; 
+&gt; server venera.isi.edu.
+Default Server:  venera.isi.edu
+Address:  128.9.0.32
+ 
+&gt; set qu=any
+&gt; 0.0.9.128.in-addr.arpa.
+Server:  venera.isi.edu
+Address:  128.9.0.32
+ 
+*** venera.isi.edu can't find 0.0.9.128.in-addr.arpa.: Non-existent domain
+&gt;
+
+Even though venera wasn't able to find any network info for isi-net,
+it was able to find out about other folks:
+&gt; 0.0.131.131.in-addr.arpa.
+Server:  venera.isi.edu
+Address:  128.9.0.32
+
+Non-authoritative answer:
+0.0.131.131.in-addr.arpa        host name = CONTEL-WTP.contel.com
+0.0.131.131.in-addr.arpa        inet address = 255.255.255.0
+Authoritative answers can be found from:
+SCCGATE.SCC.COM inet address = 10.11.0.20
+SCCGATE.SCC.COM inet address = 131.131.22.220
+WLV.IMSD.CONTEL.COM     inet address = 26.5.0.103
+WLV.IMSD.CONTEL.COM     inet address = 192.26.147.1
+&gt; 
+
+
+
+I am not as much concerned about ISI not having their net info
+in the DNS, as I am by the fact that major backbone networks
+aren't listed!  How can we ask common folk to put their data in,
+if the NIC doesn't even list the big backbones?
+
+&gt; set qu=ptr
+&gt; 0.0.0.10.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+ 
+*** localhost.asd.contel.com can't find 0.0.0.10.in-addr.arpa.: Non-existent domain
+&gt; 0.0.0.26.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+ 
+*** localhost.asd.contel.com can't find 0.0.0.26.in-addr.arpa.: Non-existent domain
+&gt; 0.0.140.129.in-addr.arpa.
+Server:  localhost.asd.contel.com
+Address:  127.0.0.1
+
+*** localhost.asd.contel.com can't find 0.0.140.129.in-addr.arpa.: Non-existent domain
+&gt; 
+
+
+Take care,
+Bob
+
+<b>[<a href="?l=namedroppers&m=95837797326903&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326905&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326903&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326906&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

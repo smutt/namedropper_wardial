@@ -1,0 +1,104 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'mail and what wildcards are for' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927005&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927002&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500019&r=1&w=2">mail and what wildcards are for</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-16 13:43:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927003&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927003&q=raw">body</a>]</b>
+
+    Date: Mon, 16 Nov 87 10:29:46 -0500
+    From: Craig Partridge &lt;craig@NNSC.NSF.NET&gt;
+
+	A small point of historical order here.  Wildcards came before
+    MX RRs existed.
+
+	MX RRs are the product of precisely the task you mention.  We tried
+    to figure out how mail *should* be routed and MX was the result.
+    Conveniently, wildcards in their current form fit the MX mail
+    routing needs so we were able to use them without radical restructuring
+    of the domain system.
+
+I admit to not knowing much about what I'm about to say, so bear with
+me.  I agree that MX is a good model for determine mail routing, but I
+disagree with the current design of how a mail description is
+interpreted.  there are two cases I'm aware of that cause problems.
+
+(1) Return paths.  My understanding is that return paths are physical
+return paths for the actual path a message took.  My understanding is
+that in the event of errors, a system should be able to send a message
+to the original sender by reversing the return path.  The problem is
+that the machine on the end may not accept mail even though it can send
+it.  Many workstations are in this class.  My understanding is that
+routing to this originating machine is one reason for MX records, and
+the need for defaulting.  Below I suggest an alternative (that requires
+more information in the network database).
+
+(2) user@maildrop addresses.  Historically the maildrop portion was
+always a host name.  Even if the message was sent from a workstation the
+maildrop would be some other machine which accepted mail for the user.
+MX records are not needed here, but may also be used.  With domains,
+maildrop could now be a more abstract thing, like an organization, and
+MX records would tell mailers how to deliver to the organization.
+
+That all sounds pretty reasonable, but I think it sometimes breaks down.
+I don't think wildcards are really needed if the following method were
+used.  In the following, "mail target" is both the end part of a return
+path and the maildrop part of user@maildrop.
+ 1  First look for mail target data.  If found, use it.  This is
+    equivalent to the domain's MX records.  This is a good thing to use
+    for organizations (like Symbolics.COM) but not necessarily for sites
+    (such as SCRC.Symbolics.COM) which I'll get to in step 3.
+ 2  Next look for a host with the name of the mail target.  If it exists 
+	2a  If it supports mail delivery (or forwarding), use the host.
+	2b  Else find the "site" the host is in and go to step 3'.
+ 3  Next look for a site with the name of the mail target.  If it exists
+	3'  Part of the information associated with a site are the hosts
+	    that accept mail for that site.  For example,
+	    Elaphant-Butte.SCRC.Symbolics.COM and Riverside.SCRC.Symbolics.COM 
+	    accept mail for SCRC.Symbolics.COM, but not necessarily for
+	    S4CC.Symbolics.COM). 
+ 4  Give up; try sending to host if it exists anyway.
+
+Now, this looks like a lot of mechanism, and I admit it is.  However, I
+think it corresponds much closer to they way it really should work.  I
+have also introduced something called a "SITE" which can roughly be
+thought of as a division of a company, or a division of a division of a
+company.  There is an assumption that hosts are in sites.  Again, I
+think this rather closely corresponds to real world reality.  With
+reasonable caching (and caching of does-not-exist) I think you will find
+that this is not a very expensive operation at all, and that mailers
+could perhaps cache mail-target =&gt; delivery-host translations with
+proper timouts and be quite efficient.
+
+Note that there are no wildcards, nor do you have to add the equivalent
+of MX records for each new host because of step 2b.
+
+Ultimately, I think we would all like to get rid of the user@maildrop
+for people.  It might still make sense for distribution lists, but for
+people I would like to deliver mail to a person and let the system
+figure things out.  The way I see this working is to ask the user object
+for the user@maildrop that is the person's current mailbox.  I think
+this is what the MB record (or MR?) tries to be.  My problem with that
+is that there is much more to a user than a mail address and the domain
+system doesn't easily allow expression of those other things.
+
+<b>[<a href="?l=namedroppers&m=95837781927001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927005&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927002&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

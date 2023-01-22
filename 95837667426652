@@ -1,0 +1,73 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426651&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426653&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426653&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">re: Well Known Ports</a>
+From:       <a href="?a=95837693400010&r=1&w=2">Rick Adams &lt;rick () seismo ! CSS ! GOV&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-18 21:23:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426652&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426652&q=raw">body</a>]</b>
+
+My point is not that the rfc people should abandon machine independance
+in favor of whats best for unix, but that they should be aware of
+whats best for unix when deciding which machine independent format.
+
+For example, it's obvious that we need a machine independent way of
+expressing numbers. One way is to always express them in ascii, another
+is to express then in edcdic, another is to use the current network
+byte order format. All are machine independent, yet some are obviously
+better to work with for some systems.
+	
+	     Your comment about host number to host name mapping amazes
+	me.  I can see why a poor or kludgy implementation of naming would
+	need this sort of function.  It's what older TOPS-20 software used
+	too, before it was recognized that that sort of thing fell apart
+	in a number of real operational situations.
+
+This comment is a perfect example of what I am referring to. You have
+no idea what I want to use the host-number to host-name mapping for,
+yet since tops-20 doesn't use it, you presume that anything that
+does is either kludgy or a poor implementation.
+
+Actually, it's used as a cheap/easy security check. It is trivial to
+telnet to port 25 on a host and pretend to be someone else.  Most mailers
+probably wouldn't notice or care. The unix mailer happens to check to
+see if the ip number of the incoming packet maps to the claimed 
+host name. If not, it notes the fact in the headers of the received message.
+Of course this isn't foolproof, but it's so easy to get this simple
+authentication it seems reasonable to do it.
+
+An example of my thesis is the current argument over the WKS fields.
+Anyone familiar with the current unix networking would have realized
+that there were lots of well known, but unofficial ports in excess
+of the first 256 and that bitfields would be unwieldy for this sparse
+distribution.
+
+I fail to see why we could not register some of these orphaned protocols.
+It's not conceptually different that assigning an internet number to
+a machine that has no intent to connect to the internet. You are basically
+reserving a service so that no one else uses it.
+
+More latitude in registering ports would make life easier for those
+sites using more than the standard protocols.
+
+---rick
+
+<b>[<a href="?l=namedroppers&m=95837667426651&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426653&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426653&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

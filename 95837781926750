@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND Nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926749&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926751&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926751&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500036&r=1&w=2">BIND Nameserver</a>
+From:       <a href="?a=95837784200023&r=1&w=2">Glenn.Marcy () IUS2 ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198701">1987-01-05 15:19:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926750&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926750&q=raw">body</a>]</b>
+
+While looking into installing a BIND name server here, I have
+noticed some peculiarities that might be worth mentioning here.
+
+The sample databases in the BIND operations guide list HINFO
+records with a class of "ANY".  Is this legal ?  Are wildcard
+classes allowed in resource records, or only in queries ?
+
+The other issue is how queries with incomplete domain names are
+interpreted by the server if they are not found.  If the name
+you use in a query does not contain a ".", the BIND server will
+append it's domain to the query.  So if you send a query to the
+Berkeley.EDU server of "monet", it will return information for
+monet.Berkeley.EDU.  Again, is this legal ?  Are name servers
+allowed to resolve such queries in this manner or should they
+fail ?
+
+
+				Glenn Marcy
+				System Manager
+				Computer Science Department
+
+<b>[<a href="?l=namedroppers&m=95837781926749&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926751&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926751&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

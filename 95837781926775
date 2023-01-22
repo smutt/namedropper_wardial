@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  canadian site in .com?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926774&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926777&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926772&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926780&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800003&r=1&w=2">Re:  canadian site in .com?</a>
+From:       <a href="?a=95837784400001&r=1&w=2">Philip Prindeville &lt;philipp () ATHENA ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-26 19:48:28</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926775&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926775&q=raw">body</a>]</b>
+
+My understanding of the two (and three) letter ISO codes is that
+they anticipate the deployment of an ISO domain name space that
+will eventually supersede the Internet domain name space (or
+subsume it).  Whether this is wishful thinking or looking ahead
+is anybody's guess.  I believe that before the domain system
+outlives it's usefulness and is obsolete, it will become somewhat
+dense unless steps are taken now to ensure reasonable sparseness.
+
+An address like "CARLETON.CAN" could be a commercial address or
+an educational one, whereas "CARLETON.EDU" could be confused betwix
+Carlton College in the Midwest and Carleton University in Canada.
+I don't think such scenarios are impossible.  Sufficient robustness
+in the domain naming scheme exists to safeguard such conflicts,
+why ignore it?
+
+Why is Canada .CAN and not .CA?  Because Canadians don't like to
+be confused with Californians, and I imagine Israeli's won't be
+thrilled being confused with whatever-the-heck-you-call-someone-from
+Illinois.
+
+Actually, .CAN does exist, you just can't talk to it from outside.
+This will be fixed (hopefully) soon.
+
+I hope this doesn't confuse anyone moreso than they already are...
+
+-Philip	(yes, I'm pap4@ai.ai.mit.edu)
+
+<b>[<a href="?l=namedroppers&m=95837781926774&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926777&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926772&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926780&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

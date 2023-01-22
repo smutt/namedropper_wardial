@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Case-sensitive Name Service Routines' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827035&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827038&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827036&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827038&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300025&r=1&w=2">Re: Case-sensitive Name Service Routines</a>
+From:       <a href="?a=95837818000005&r=1&w=2">eru!hagbard!sunic!lth.se!newsuser () bloom-beacon ! mit ! edu  (Dan Oscarsson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-29 9:18:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827037&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827037&q=raw">body</a>]</b>
+
+In article &lt;40500002@hpindwa.HP.COM&gt; jbeck@hpindwa.HP.COM (John Beck) writes:
+&gt;I have noticed that gethostbyname matches host-names in a case-insensitive
+&gt;manner, whereas the other name service routines (getbetbyname, getprotobyname,
+&gt;getservbyname) are case sensitive. In addition, getservbyname and getservbyport
+&gt;also takes a protocol parameter, which they match in a case-sensitive manner.
+&gt;
+&gt;The reason gethostbyname is case-insensitive is that it is prescribed in the
+&gt;RFC's for the Domain Name Server (1134 &amp; 1135) that domain names must be case-
+&gt;insensitive. The others, however, are unspecified.
+&gt;
+&gt;It seems to me that the other routines should also match names in a case-
+&gt;insensitive manner. Should it matter whether you call getservbyname with a
+&gt;parameter of "ftp" vs. "FTP"? I think both should work, although currently
+&gt;the former will return a pointer to a proper servent structure, whereas the
+&gt;latter will only return a null pointer.
+&gt;
+&gt;How do others feel about this issue? Is it worth pursuing to get a change
+&gt;effected? Or is it too trivial to bother with? Responses encouraged.
+&gt;
+This is one area where Unix is a mess. For most normal people (non unix)
+a letter A is an A independent of case. I think most of you do noy think
+an A and an a read in a book have different meanings. Therefore I feel
+it would be much better if as much as possible should be case-insensitive.
+At least all routines concerning host names, protocol, services, user names and
+group names (and some more I cannot think of just now).
+Even file names should be looked up case-insensitive (but named case-sensitive),
+but this may be to much for some unix hackers.
+
+   Dan
+
+-- 
+Dan Oscarsson                              Department of Computer Science
+                                           Lund Institute of Technology
+e-mail:  Dan@dna.lth.se                    Box 118
+                                           S-221 00 Lund, Sweden
+
+<b>[<a href="?l=namedroppers&m=95837798827035&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827038&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827036&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827038&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

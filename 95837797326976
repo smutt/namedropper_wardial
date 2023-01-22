@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Bad domain name' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326975&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326977&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326977&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400001&r=1&w=2">Re:  Bad domain name</a>
+From:       <a href="?a=95837817000012&r=1&w=2">usc!samsung!umich!terminator!terminator.cc.umich.edu!bryan () ucsd ! edu  (Bryan Beec</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-06 22:28:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326976&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326976&q=raw">body</a>]</b>
+
+In article &lt;1990May5.022941.14069@mlb.semi.harris.com&gt; del@thrush.mlb.semi.harris.com (Don Lewis) writes:
+&gt;Ah, GENTER-ADAM.AF.MIL is back again.  I haven't seen that one in a couple
+&gt;of months.  Last week it was SRI-NIC.ARPA and BRL-AOS.ARPA.  I don't think
+&gt;the fault lies with the root name servers, it is mainly due to
+&gt;misconfiguration the name servers for some of the subdomains, typically
+&gt;in-addr.arpa subdomains.
+&gt;
+&gt;Let's stamp out DTB's (DNS Transmitted Bogosities)!
+
+Sounds good to me.
+
+And genter-adam.af.mil and the .ARPA twins aren't the only names to
+be seen floating around out there.  I've been seeing some real
+beauties (since we log them before they get added to our cache).
+I just sent some mail to a few people today who either have caches
+filled with more DTBs than LRNRs (Legit Root Ns Rrs) or haven't
+updated their list of root nameservers in about three years.
+
+It would be good if everyone who reads this checks their list
+of root nameservers and helps those domain admins near them who
+don't keep up with things as well as they should.
+--
+Bryan Beecher, U-M Information Technology Division  (+1 313 747 4050)
+Domain:	bryan@terminator.cc.umich.edu  Path: mailrus!terminator!bryan
+
+<b>[<a href="?l=namedroppers&m=95837797326975&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326977&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326977&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

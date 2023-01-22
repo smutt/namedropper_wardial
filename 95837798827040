@@ -1,0 +1,103 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS glue records and BIND 4.8' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827039&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827042&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827030&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827047&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300019&r=1&w=2">Re: DNS glue records and BIND 4.8</a>
+From:       <a href="?a=95837818000008&r=1&w=2">munnari.oz.au!cs.mu.oz.au!kre () uunet ! uu ! net  (Robert Elz)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-29 17:41:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827040&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827040&q=raw">body</a>]</b>
+
+In article &lt;106322@uunet.UU.NET&gt;, asp@uunet.UU.NET (Andrew Partan) writes:
+&gt; We are currently having a problem caused (I think) by someone with a
+&gt; glue records for uunet.uu.net with the wrong address.
+
+Possibly, but also possibly not.
+
+&gt; The only address
+&gt; that uunet.uu.net has is 192.48.96.2; however the address 137.39.1.2
+&gt; keeps showing up.
+
+I had this problem with munnari.oz.au too, when 2 (of 4 previously)
+addresses were removed (actually, moved to another host, which made
+the problem worse).
+
+&gt; We have been trying to track this down &amp; kill it for a while now, but
+&gt; can't figure out where it is coming from.
+
+I think you'll find that its simply the various secondaries that
+you have sending each other bogus info ... ie: currently munnari.oz.au
+(one of the secondaries) believes that uunet has the 137 address,
+and will almost certainly return that to uunet at some stage.
+As you say, BIND will simply accept that and store it when it is
+sent back, and then return it to munnri at some later time.
+
+I believe that the only way to kill this is to shut down every nameserver
+from which you might conceivably ever have your address returned to you,
+purge their caches, and backup zone files that contain the bad address,
+and then restart them all (affectively simultaneously).
+
+This is not really practical...
+
+For munnari, I created a hacked version of named (introducing some bugs
+along the way, so you really don't want it) which refuses to accept any
+info that resides in any zone for which this named is the primary server.
+
+That means that munnari will simply not believe anyone who claims to
+tell it what its own address is (munnari.oz.au is the primary server
+for the oz.au domain).   This then allows everyone else to selectively
+purge their caches, update their backup files, etc, and theoretically
+should eventually result in the old addresses dying out.
+
+However, when I wanted to upgrade my named a while ago, I started the
+new version, without my hack in it, and it took about 30 seconds for
+the ancient old addresses (supposedly dead for months) to return to
+munnari's cache.   Back to the hacked version...
+
+Bind badly needs to be taken away and quietly buried somewhere it
+won't be accidently discovered for a very long time - say in the
+middle of a nuclear waste dump...
+
+Back to the initial issue - I must say I'm a fan of adding as many glue
+records as possible, it does mean more update work, but it also means
+that we can always supply an A along with the NS, saving the requesting
+site from having to go and (possibly) make several queries, even in
+those cases where this will work.
+
+Because of this, I think its a very good idea (you might even say
+essential) to notify all your secondary servers, your parent servers,
+all servers for which you are the secondary, and the servers for the
+parent domains of those domains, whenever you change the IP address
+of a server.
+
+Or better yet - avoid changing the addresses of servers...
+
+kre
+
+ps: it would be real nice if BIND could go and discover the A records
+for all NS's it delegates dynamically after it is started (and then
+again whenever they time out) - that way the only glue records that
+will be useful are for those where you are delegating down, and even
+there, BIND should go verify those with the servers concerned, using
+the glue records just as hints, as it does with the list of root servers
+in root.cache - never returning them in an answer until after verified
+with their owner.
+
+<b>[<a href="?l=namedroppers&m=95837798827039&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827042&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827030&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827047&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

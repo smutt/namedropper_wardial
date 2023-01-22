@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'medical community' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026731&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026733&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026733&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300028&r=1&w=2">medical community</a>
+From:       <a href="?a=95837784000007&r=1&w=2">mark () cbpavo ! cbosgd ! ATT ! COM (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198607">1986-07-09 0:13:12</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026732&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026732&q=raw">body</a>]</b>
+
+We are finding ourselves in a position where we have to establish a
+domain naming convention for the medical community.  We expect to have
+subdomains which represent a "medical center", this means a hospital
+plus any associated clinics and office practices that are affiliated
+with that hospital.  For example, for Columbia Presbyterian Medical
+Center, we expect to have host.CPMC.something.  We just aren't sure
+what the "something" should be.
+
+One possibility would be to put some of them in EDU and some in COM
+and some in GOV, depending on whether it's a university hospital, a
+private hospital, or the VA.  Somehow this isn't very satisfying,
+because (a) I'm not sure whether CPMC is EDU or COM (they seem COM
+to me, but they are sort of affiliated with Columbia University)
+and (b) it doesn't tie the community together very well.  Another
+possibility is to put them under a new top level domain called MED.
+Yet another is to put them under a single subdomain somewhere else
+in the domain tree, perhaps MED.ORG, for example.  (One way of looking
+at this is that we want a place to register our customers, "our" being
+AT&amp;T Medical Information Systems.  Another way is that we're looking
+for a niche for the whole community, although we can't force anybody
+to register in a name space that we would be administering.)  Still
+another possibility is to view them as disconnected LANs that will
+never talk to the outside world, or as one big medical Internet
+which talks to other medical hosts but does not connect elsewhere.)
+Still, I would think that someone, somewhere, would want to establish
+a gateway.
+
+This all becomes more complex when X.400 is taken into account, since
+we must plan for the possibility that some day OSI will become dominant,
+and then we will have little choice but to convert to it.  It would be
+nice to have a naming convention that fits in reasonably will with the
+X.400 global naming tree.
+
+Any suggestions or guideance would be appreciated.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837759026731&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026733&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026733&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

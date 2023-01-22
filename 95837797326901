@@ -1,0 +1,72 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Is there a standard for handling localhost.domain and localhost.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326900&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326902&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Is there a standard for handling localhost.domain and localhost.
+From:       <a href="?a=95837816800030&r=1&w=2">zaphod.mps.ohio-state.edu!usc!jarthur!arnold () tut ! cis ! ohio-state ! edu  (Arnold de</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-21 6:17:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326901&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326901&q=raw">body</a>]</b>
+
+Is there a "standard" or recommended way of handling
+"localhost.domain" (where domain is the local domain name) and
+"localhost." (top level) with a nameserver?
+
+Do most people configure localhost.domain to have A record
+pointing to 127.0.0.1?
+
+Querying one of the root nameservers for "localhost."
+returns A record for 127.0.0.1.
+
+A random survey of a couple of other domains reveal
+that the nameservers for those domain return A pointing to
+127.0.0.1 when asked for localhost.domain (using a random set
+of domains).
+
+The primary nameserver for Claremont.edu currently has the following
+entry:
+
+localhost	IN	CNAME	localhost.
+localhost.	IN	A	127.0.0.1
+
+Querying the primary server for "localhost." and "localhost.claremont.edu"
+eventually return A record with 127.0.0.1 (with extra side trips to
+the root nameservers).
+
+Here is the problem:
+
+The secondary nameserver is failing to get A record for "localhost."
+and "localhost.claremont.edu"
+
+What I need is something to convice our hostmaster to have the record
+localhast	IN	A	127.0.0.1
+
+instead.  If one doesn't exist I will to fight with our server
+(we're the secondary) to work around the problem.
+
+Thanks for advice.
+
+-- 
+
+Arnold de Leon                       arnold@jarthur.claremont.edu
+Computer Science Dept., HMC          uunet!jarthur!arnold
+Claremont, CA 91711                  arnold@hmcvax.bitnet
+
+<b>[<a href="?l=namedroppers&m=95837797326900&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326902&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

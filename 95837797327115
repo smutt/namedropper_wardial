@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Special way to query DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327113&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327116&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327119&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900009&r=1&w=2">Special way to query DNS?</a>
+From:       <a href="?a=95837817400023&r=1&w=2">maverick.ksu.ksu.edu!uafhp!netnews () rutgers ! edu  (Netnews)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-18 8:38:33</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327115&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327115&q=raw">body</a>]</b>
+
+I have a question that I haven't seen addressed anywhere.  I suspect that 
+the answer is NO but I'll ask anyway.
+
+Dumb Question #79745:
+   Is there any way to query the Domain Name Server(s) to ask for ALL the 
+MX records pointing to a certain host?  For instance, my system may have several
+sites calling in via UUCP that it acts as MX forwarder for.  Is there any way
+I can query the DNS so that I can dynamically look up to see who has my system
+in their MX records?
+
+      Thanks!  
+      - David Summers
+      (dws@uafsun4.uark.edu)
+
+<b>[<a href="?l=namedroppers&m=95837797327113&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327116&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327119&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

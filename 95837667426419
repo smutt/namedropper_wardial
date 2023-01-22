@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Please try UCLA name server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426418&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426420&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426420&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100014&r=1&w=2">Please try UCLA name server</a>
+From:       <a href="?a=95837692300001&r=1&w=2">Rich Wales &lt;wales () UCLA-LOCUS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-07 15:33:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426419&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426419&q=raw">body</a>]</b>
+
+The UCLA CS Department now has a name server for the UCLA.EDU domain,
+running on the two hosts UCLA-LOCUS (10.2.0.1) and UCLA-ATS (10.3.0.1).
+
+Our server supports both "regular" and "inverse" queries.  We can handle
+any kind of inverse query (not just address-to-name mapping).  We do not
+yet do completion queries or QCLASS=ANY.
+
+In order to find any bugs, I would like as many people as possible to
+"beat" on our server.  In particular, I would like to know whether
+people not directly on the ARPANET are able to get replies from us (we
+are having some kind of problem -- possibly due to a bug somewhere in
+our LOCUS system's UDP code -- which is preventing me from getting any
+kind of response from name servers on class-B Internet addresses.)
+
+If you encounter any unexpected or seemingly erroneous behavior from our
+server (including situations where it doesn't seem to respond to you at
+all), please send me a message describing the particulars.
+
+Thanks.
+
+-- 
+Rich Wales // UCLA Computer Science Department // +1 213-825-5683
+	3531 Boelter Hall // Los Angeles, California 90024 // USA
+	wales@UCLA-LOCUS.ARPA        {ihnp4,ucbvax}!ucla-cs!wales
+
+<b>[<a href="?l=namedroppers&m=95837667426418&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426420&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426420&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

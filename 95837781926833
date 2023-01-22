@@ -1,0 +1,83 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Domain Names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926832&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926834&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re:  Domain Names
+From:       <a href="?a=95837784200028&r=1&w=2">"Philip A. Prindeville" &lt;PAP4 () AI ! AI ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-13 22:03:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926833&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926833&q=raw">body</a>]</b>
+
+    Date: Wed, 8 Apr 87 18:05:29 PST
+    From: postel@bel.isi.edu (Jon Postel)
+    Subject:  Domain Names
+
+    Philip:
+
+    Somehow we have a hard time getting you to understand that the EDU, COM.
+    etc top level domains are world wide.  An (appropriate) orgaization from
+    any country can join them.
+
+    The US domain does not and will not have COM, EDU, etc as sub domains.
+
+    --jon.
+
+Well Jon, it seems that we have done such a fine job defining
+generic multi-national organizational domains that the US domain
+is going to remain empty for some time.  There is no need to
+put some university in the US domain if it will go in the EDU
+domain...
+
+It is interesting that the British have registered universities
+within the ACademic domain within their national domain (UK), and not
+within the EDU domain (for the most part).  Is this another manifestation
+of driving on the wrong side of the road and writing addresses
+left-to-right?
+
+In any case, it seems that these may be too non-specific.  For
+instance, would Kent.Edu be Kent State University or the University of
+Kent County in England?  British foresight has prevented this conflict,
+at the cost of consistency.
+
+Yet it remains that these generic non-national domains do not provide
+enough information to prevent ambiguity.
+
+Yes, having IBM.COM is better than having IBM.US, IBM.UK, IBM.JP, etc.
+IBM is unambiguous.  `Kent' is not, `Concordia' is not, `Carleton' is
+not.
+
+I think having a US domain is a Good Idea, but the criteria for the
+other domains (COM, EDU, etc) is so ambiguous that no one really wants
+or needs to be in the US domain.  And who wants to be in both?  That's
+twice as much maintenance to do...
+
+I guess Mark (Horton) hit the nail on the head we he pointed out that
+no one had thought of a consistent way to sub-domain US.  By county,
+telephone area code, city, what?  If it can't be by function (COM, EDU,
+etc) it will have to be by geography...
+
+If we go by state, then what to do about multi-state organizations
+(like AT&amp;T, etc)?  Wait, I know!!!
+
+I can't see an viable solution...
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837781926832&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926834&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The US domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926775&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026848&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500033&r=1&w=2">The US domain</a>
+From:       <a href="?a=95837784000024&r=1&w=2">Jake Feinler &lt;FEINLER () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-27 10:16:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926777&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926777&q=raw">body</a>]</b>
+
+Ron,
+
+I believe that .US was held as a place saver so that the naming used
+in the ARPANET/DDN environment could comply with CCITT/ISO standards when
+and if ISO naming standards are adopted on the ARPANET/DDN.  We asked that
+it be reserved so that it would not be used by anyone for something other than
+the country code required by ISO.  If the ISO standards are adopted it is my
+understanding that US would become the topmost domain (after world or
+universe or whatever as the root) and that .COM, .EDU, .MIL etc would be
+followed by .US in the domain name.  Since ISO requires that there be
+a country name I don't see how it could be otherwise.
+
+I think the situation is somewhat analogous to U.S. mail addresses.  Unless
+one is sending a letter outside of the country domain (be it electronic or
+physical,) the country is understood to be the one in which the message/letter
+originated and the destination is understood to be in the same country or
+country domain as the originating message; consequently, no country domain
+would be needed as one is implied.  If the message/letter is crossing country
+boundaries then a country designator would be required.
+
+I agree with you that, if someone wishes to register a country domain in
+our (DDN/ARPANET) name service, it should comply with CCITT/ISO country
+code abbreviations to (hopefully) avoid problems later.
+
+Jake Feinler/NIC
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926775&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026848&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

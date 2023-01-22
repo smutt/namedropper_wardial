@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Root Nameserver Question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626922&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626925&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626925&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900028&r=1&w=2">Root Nameserver Question</a>
+From:       <a href="?a=95837786200032&r=1&w=2">Marty Hoag &lt;NU021172 () VM1 ! NoDak ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-01 10:40:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626924&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626924&q=raw">body</a>]</b>
+
+   We recently had some problems resolving a domain added to the dns last
+week, KESTREL.EDU.  Upon investigation I found that the root nameservers
+(as listed in the file at sri-nic and in the ns records for EDU) were
+not all at the same levels.  I noticed this over last weekend and sent
+a note to the "NS" listed contacts yesterday but got no response.
+
+   Today they are all at serial 890530 for EDU EXCEPT the following:
+
+           C.NYSER.NET   192.33.4.12      is at  890522
+           TERP.UMD.EDU  10.1.0.17        is at  890519
+                         128.8.10.90
+
+   Depending upon connectivity to the other root nameservers this can
+mean that answers will vary depending on which root is used as authoritative.
+
+   Is this a common occurence or are those nameservers just broken at the
+moment?
+
+   Are there any established standards for refresh currency for the root
+nameservers?
+
+   Any information would be appreciated.  I am not on the namedroppers list
+at this time so please include me in any reply.  Thank you!
+
+-----------
+Marty Hoag
+ND Higher Education Computer Network    US Mail: NDSU Computer Center
+Phone: (701)-237-8639  Fax: (701)-237-8541       PO Box 5164 / UCCS
+Bitnet:   NU021172@NDSUVM1    (NOTE 0 = ZERO)    Fargo, ND  58105
+Internet: NU021172@VM1.NoDak.EDU
+UUCP:    ...!uunet!ndsuvax!vm1.nodak.edu!NU021172
+
+<b>[<a href="?l=namedroppers&m=95837784626922&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626925&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626925&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

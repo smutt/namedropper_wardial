@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'What happens between 2:00 and 2:15?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026681&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026683&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    What happens between 2:00 and 2:15?
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-14 20:02:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026682&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026682&q=raw">body</a>]</b>
+
+
+Hello,
+
+    We recently started having problems our domain servers crashing
+frequently.  We'd come in mornings and discover they were down.
+Recently we started using a program which checked every 15minutes to
+see if the server was up, and if not, restarted it.  The program writes
+to a log and we have noticed a funny phenomena.  The server gets
+restarted only some days, and always at 2:15 A.M. EST.  It looks
+suspiciously like some server is sending bomb packets to us at that
+hour.  Does anyone on this list restart/fiddle with their servers
+at that hour?
+
+Craig Partridge
+CSNET Technical Staff
+
+P.S.  The days we had to restart our server over the past week were:
+Monday the 7th, Tue the 8th, Thu the 10th and Monday the 14th.  All
+at 2:15!
+
+<b>[<a href="?l=namedroppers&m=95837759026681&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026683&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

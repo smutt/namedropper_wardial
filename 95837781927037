@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Lessons from the current domain name system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927036&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927039&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927007&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500008&r=1&w=2">Re:  Lessons from the current domain name system</a>
+From:       <a href="?a=95837785000003&r=1&w=2">skat.usc.edu!blarson () oberon ! usc ! edu  (Bob Larson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-21 8:57:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927037&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927037&q=raw">body</a>]</b>
+
+In article &lt;8711170236.AA01150@speed.sun.com&gt; nowicki@SUN.COM (Bill Nowicki) writes:
+&gt;For example, if I send mail to user@Apple.COM it does an MX lookup and
+&gt;sends it via Relay.CS.NET near Boston, and then waits until Apple polls
+&gt;the relay via a long-distance call.  Ideally it would instead be
+&gt;delivered through our direct UUCP link, since they are only a local
+&gt;call away from us.  I think Horton, Partidge et al who devised the MX
+&gt;record scheme (RFCs 974 and 976) had thought about doing something
+&gt;like the UUCP "pathalias" package, but opted for the simpler solution
+&gt;instead.
+
+You obviously have to keep the information that you have a
+non-Internet route to Apple.Com somewhere.  If you want to always try
+the Internet first, you could probably get your site listed as a
+("high-cost"?) MX forwarder to Apple.Com and have your software
+recognise that if it is one of the MX forwarders it should look for a
+non-Internet route to the site.  Of course you should be willing and
+able to route some mail if you advertise you site as an MX forwarder. 
+
+(My understanding of such things may be wrong, I havn't read the RFC's
+carefully.  It may be a violation of one of them to use the "High-Cost"
+forwarder (your own host) rather than the "Low-Cost" one.  You
+obviously should only use this solution to sites you have a reliable
+non-internet connection to.)
+Bob Larson		Arpa: Blarson@Ecla.Usc.Edu
+Uucp: {sdcrdcf,cit-vax}!oberon!skat!blarson		blarson@skat.usc.edu
+Prime mailing list (requests):	info-prime-request%fns1@ecla.usc.edu
+
+<b>[<a href="?l=namedroppers&m=95837781927036&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927039&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927007&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

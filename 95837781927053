@@ -1,0 +1,103 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Submission for fa-namedroppers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927048&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927050&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927050&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500035&r=1&w=2">Submission for fa-namedroppers</a>
+From:       
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-23 9:09:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927053&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927053&q=raw">body</a>]</b>
+
+Path: ufcsv!daemon
+From: Alfred Ganz &lt;ganz-alfred@yale.arpa&gt;
+Newsgroups: fa.namedroppers
+Subject: MR, MG, and MB records
+Message-ID: &lt;9287@ufcsv.cis.ufl.EDU&gt;
+Date: 23 Nov 87 09:09:14 GMT
+Sender: daemon@ufcsv.cis.ufl.EDU
+Lines: 65
+
+
+The following is an extract of an exchange between D. Plummer and me. I think
+the issue addressed is central enough to the question of what to do with
+MR, MG, and MB records that it should be raised even before we address the
+goal questions raised by KARP (which I agree we need to address next!).
+        
+            I believe that what RFC-883 says doesn't address the syntax in the
+            mail world but that name@domain would be used in the name.domain form to do
+            the lookup that you describe.
+        
+        Unfortunately, that's wrong, because mailbox@maildrop and
+        name-of-user-domain-or-otherwise aren't the same thing.  It might be a
+        CONVENTIENT SYNTAX CONVERSION but it isn't THE SAME THING.
+        
+            Unfortunately that makes name@domain and mailbox@maildrop look the same.
+        Agreed.
+            Anytime that one introduces an address mapping type transformation it would be
+            nice to differentiate between "resolved" and "unresolved" addresses, but that
+        This is only a problem if you try to use the same syntax for two
+        purposes.  I'm proposing using two syntaxes for the two different
+        purposes.
+            is a problem with which we have been stuck for a longe time (e.g. the same
+            thing happens with aliasing schemes and they may introduce loops if you are
+            not careful in your definition). However, I am not sure that we would want
+            to wait for any necessary changes to the mail protocols before introducing
+            name binding in a more general fashion. We have been doing it around here for
+            a long time without too much pain.
+        
+        Yow, good for you!  Indeed, somebody has to take the lead, be it the
+        naming system or the mailer.
+        
+I believe that what David and I agree on, is that any mailer must be able to
+determine the meaning of the label that sticks on an envelope that arrives
+at the mailer before it can do a reasonable job at completion of mailbox
+binding and/or delivering the envelope. In particular in the MR, MB context
+it must know what kind of binding has already taken place.
+
+In addition I believe we both agree that in an ideal world we would like for
+the mail protocols to somehow communicate this type of information. The
+question that we must address is if we want to fix the mail protocols first,
+so that they carry the information, or if we want to use the current mail
+protocols and make do with something less than ideal.
+
+P.S. If we are to change the mail protocols, one possible solution is clearly
+to represent the type of binding applied in differing forms of address field
+syntax. However, if we are to change the mail protocols I would think there
+would be lots of other issues to be addressed, and there may be better
+solutions for this particular problem (e.g. different commands and replies
+in the SMTP exchange).
+
+Unfortunately I am currently going from the assumption that we will be unable
+to overhaul the mail protocols in the short term. For this reason, and this
+reason only, I am trying to find a solution where determination of the kind
+of binding is detected by semantics. The only solution of this kind that I
+have been able to come up with is to make the sets of expanded domain names
+that occur on MR records (both name field and RDATA field) and MG records
+(RDATA field) disjoint from the set of expanded domain names in the name field
+of all MB records. Any proposal for a better solution is greatly appreciated!
+
+So here is THE question: Are we going to find definitions for the MR, MG, and
+MB records such that meaningful implementations can be made using the current
+mail protocols, or are we first going to agree on and implement new mail
+protocols?
+
+Who would like to tally the vote? AG
+
+<b>[<a href="?l=namedroppers&m=95837781927048&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927050&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927050&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

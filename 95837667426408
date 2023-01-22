@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: change in host table' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426406&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426409&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426406&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100008&r=1&w=2">Re: change in host table</a>
+From:       <a href="?a=95837692300023&r=1&w=2">Mark Crispin &lt;Crispin () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-01 14:01:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426408&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426408&q=raw">body</a>]</b>
+
+David is mostly correct.  The latest message from HOSTMASTER announced
+David's step (3), in which hosts which have full-qualified domain names
+will have those names listed in the next version of HOSTS.TXT as the
+primary name.  The old ".ARPA" names will be kept as a nickname.  Step
+(5) is "futures" which as far as I'm concerned is uncontroversial.  I
+am advocating the addition of step (1).
+
+David is incorrect in his last paragraph, because the NIC message
+clearly announced this would happen to all "domained" hosts and as such
+this is an action by the NIC.  The controversy is only in the addition
+of fully-qualified domain names at all and so this would be a one-time
+event.  Once everybody's software is verified to run in this mode (e.g.
+I BELIEVE TOPS-20 will work with these new names but I don't KNOW for a
+fact it will) future domain name additions are uncontroversial.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426406&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426409&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426406&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

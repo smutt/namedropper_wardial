@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Network names via DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326895&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326898&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326894&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326898&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200002&r=1&w=2">Re: Network names via DNS</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-14 13:36:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326896&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326896&q=raw">body</a>]</b>
+
+&gt; Now that I can use the DNS to look up host names, it seems sort of
+&gt; silly for getnetbyname() and getnetbyaddr() to be doing linear
+&gt; searches through /etc/networks every time I do a "netstat -r".
+&gt; 
+&gt; Has anyone implemented these functions in a way that uses the DNS to
+&gt; translate back and forth between network names (e.g., ARPANET) and
+&gt; network numbers (e.g., 10.0.0.0)?  Some analogue to the .IN-ADDR.ARPA
+&gt; domain (NET-ADDR, maybe?) would be appropriate for mapping numbers to
+&gt; names.  It would also be a good idea to invent a zone (NET-NAME?) for
+&gt; the names to keep them out of the root domain.  Comments and/or
+&gt; pointers to any relevant RFCs would be appreciated.
+&gt; 
+&gt; Warning: obviation of /etc/services and /etc/protocols is next.
+&gt; 
+&gt;                            :: Jeff Makey
+
+See RFC 1101, "DNS Encoding of Network Names and Other Types"
+
+Although I wrote it up, the ideas were a combination arrived
+at by consensus of the IETF DNS WG.  Note that although we have a
+definition, it is not used, mostly because of the chicken-and-egg
+problem: we don't use it because the data isn't there and we don't
+bother to put the data there because it isn't used.  (The RFC is also
+wrong in that it assumes that subnet masks are hierarchical or
+otherwise well-behaved.)
+
+Now if you want to get seriously into this, check out Hesiod and lose
+your /etc/passwd.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837797326895&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326898&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326894&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326898&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

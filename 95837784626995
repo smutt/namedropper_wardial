@@ -1,0 +1,251 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: CA.US domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626994&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626996&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626994&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626996&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200025&r=1&w=2">Re: CA.US domain</a>
+From:       <a href="?a=95837786400031&r=1&w=2">Ann Westine &lt;westine () ISI ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-08 8:42:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626995&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626995&q=raw">body</a>]</b>
+
+
+                                                     September 1988
+
+
+                 US DOMAIN QUESTIONNAIRE FOR HOST ENTRY
+
+
+To register a host in the US domain, the following information must be
+sent to the US Domain Registrar (WESTINE@ISI.EDU).  Questions may be
+sent by electronic mail to the above address, or by phone at (213-822-
+1511).
+
+NOTE: The key people must have electronic mailboxes.  It is also useful
+for them to have NIC "handles," unique NIC database identifiers.  If you
+have access to "WHOIS", please check to see if you are registered and if
+so, make sure the information is current.  Include only your handle and
+any changes (if any) that need to be made in your entry.  If you do not
+have access to "WHOIS", please provide all the information indicated.
+If you do not have a NIC ident go ahead and apply for one by sending a
+message to NIC@SRI-NIC.ARPA, and we will process your US domain
+application in parallel.
+
+
+(1)  The name of the top-level domain to join.
+
+           For example:  US
+
+
+(2)  The NIC handle of the administrative head of the organization.
+     Alternately, the person's name, title, mailing address, phone
+     number, organization, and network mailbox.  This is the contact
+     point for administrative and policy questions about the domain.  In
+     the case of a research project, this should be the principal
+     investigator.
+
+           For example:
+
+              Administrator
+
+                 Organization  The NetWorthy Corporation
+                 Name          Penelope Q. Sassafrass
+                 Title         President
+                 Mail Address  The NetWorthy Corporation
+                               4676 Andrews Way, Suite 100
+                               Santa Clara, CA 94302-1212
+                 Phone Number  (415) 123-4567
+                 Net Mailbox   Sassafrass@ECHO.TNC.COM
+                 NIC Handle    PQS
+
+
+
+
+Postel &amp; Westine                                                [Page 1]
+
+Domain Questionnaire                                      September 1988
+
+
+(3)  The NIC handle of the technical contact for the entry.
+     Alternately, the person's name, title, mailing address, phone
+     number, organization, and network mailbox.  This is the contact
+     point for problems concerning the domain or zone, as well as for
+     updating information about the domain or zone.
+
+           For example:
+
+              Technical Contact
+
+                 Organization  The NetWorthy Corporation
+                 Name          Ansel A. Aardvark
+                 Title         Executive Director
+                 Mail Address  The NetWorthy Corporation
+                               4676 Andrews Way, Suite 100
+                               Santa Clara, CA. 94302-1212
+                 Phone Number  (415) 123-6789
+                 Net Mailbox   Aardvark@ECHO.TNC.COM
+                 NIC Handle    AAA2
+
+
+
+(4)  The name of the host.  This is the name that will be used in tables
+     and lists associating the domain with the domain server addresses.
+     [While, from a technical standpoint, domain names can be quite long
+     (programmers beware), shorter names are easier for people to cope
+     with.]
+
+           For example:  NetWorthy.Santa-Clara.CA.US
+
+           Or:  Alpha.NetWorthy.Santa-Clara.CA.US
+                Beta.NetWorthy.Santa-Clara.CA.US
+
+
+(5)  If this machine is not directly on the internet, how does it
+     communicate with the Internet.  Through UUCP, BITNET, CSNET, etc?
+     Which forwarding host?
+
+          For example:  The host "Networthy.Santa-Clara.CA.US" uses UUCP
+          to connect to "RELAY.ISI.EDU" which is an Internet host.
+
+          The administrator of RELAY.ISI.EDU must agree to be the
+          forwarding host for Networthy.Santa-Clara.CA.US, and the
+          forwarding host must know a delivery method and route to it.
+          No double MXing.
+
+
+
+
+
+
+Postel &amp; Westine                                                [Page 2]
+
+Domain Questionnaire                                      September 1988
+
+
+(6)  Please describe your organization briefly.
+
+     For example: The NetWorthy Corporation is a consulting
+     organization of people working with UNIX and the C language in an
+     electronic networking environment.  It sponsors two technical
+     conferences annually and distributes a bimonthly newsletter.
+
+
+(7)  What Domain Name System (DNS) Resource Records (RR) and values are
+     to be entered.
+
+     a.  A       Internet Address (internet hosts only)
+     b.  HINFO   Host Information, Machine System (optional)
+     c.  WKS     Well Known Services, Protocols, Ports (internet hosts only)
+     d.  MX      Mail Exchanger (required for UUCP, CSNET, BITNET hosts)
+
+     An example of RRs for an internet host.
+
+     NetWorthy.Santa-Clara.CA.US   IN   A       128.9.3.123
+                              IN   HINFO   SUN-3/11OC UNIX
+                              IN   MX      10  ISI.EDU
+                              IN   WKS     128.9.3.133. UDP (echo
+                                                             tftp)
+                              IN   WKS     128.9.3.133. TCP (telnet
+                                                             ftp
+                                                             tftp
+                                                             finger)
+
+     An example of RRs for a non-internet host.
+
+     Beta.NetWorthy.Santa-Clara.CA.US   MX      10   RELAY.ISI.EDU
+                                        HINFO   SUN-3/11OC UNIX
+
+
+
+(8)  Where is the IN-ADDR pointer record to be entered. (For internet
+     hosts only.)
+
+        For example:
+
+           123.3.9.128.IN-ADDR.ARPA.    PTR  NetWorthy.Santa-Clara.CA.US
+
+     Who is the contact for the zone of the IN-ADDR.ARPA data, where
+     this record will be entered?
+
+
+(9)  What Time to Live (TTL)?  TTL is the time (in seconds) that a
+     resolver will use the data it got from the domain server before it
+
+
+
+Postel &amp; Westine                                                [Page 3]
+
+Domain Questionnaire                                      September 1988
+
+
+     asks it again for the data.  A typical TTL is One Week 604800.
+     (NOTE:  TTL is not applicable to non-Internet hosts.)
+
+        For example:
+
+           One Week   604800
+
+
+(10) CNAME Record if any.
+
+     A nicname to official name entry
+
+        For example:
+
+           ANN.MDR.CA.US     CNAME     WESTINE.ISI.EDU
+
+     NOTE:  In general CNAMES are undesirable, and usually only used
+     temporarily when a host is changing from one official name to
+     another.
+
+     NOTE:  No other RRs are allowed for the name defined by a CNAME
+     record.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Postel &amp; Westine                                                [Page 4]
+
+
+<b>[<a href="?l=namedroppers&m=95837784626994&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626996&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626994&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626996&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'RFC-915 server on-line' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827013&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    RFC-915 server on-line
+From:       <a href="?a=95837817800033&r=1&w=2">Stan Barber &lt;sob () tmc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-16 3:22:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827012&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827012&q=raw">body</a>]</b>
+
+Since there has been some discussion of this, I went ahead and finished the
+RFC-915 server I had been working on. You can reach it on port 117 at
+host 128.249.1.1.
+
+It knows about UUCP and the Internet so far. Plans are to make it know about
+BITNET and THENET's DECNET addressing. 
+
+Please direct all comments to "postmaster@bcm.tmc.edu"
+
+Source code to the server will be made available before the end of the
+year.
+
+STAN BARBER, Director, Networking &amp; Systems Support
+Baylor College of Medicine
+
+P.S. It doesn't know anything fancy about optimizing UUCP paths by using
+the Internet. That will come later I hope.
+
+<b>[<a href="?l=namedroppers&m=95837798827011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827013&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

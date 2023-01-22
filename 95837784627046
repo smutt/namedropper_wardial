@@ -1,0 +1,37 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: RFC 1002 and the RD and RA bits' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627045&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627047&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627021&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627061&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400004&r=1&w=2">Re: RFC 1002 and the RD and RA bits</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-12 18:24:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627046&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627046&q=raw">body</a>]</b>
+
+Has anyone implemented the nameserver stuff talked about in RFCs
+1001/1002?
+
+I never understood why it was written to be every-so-slightly out of
+line with the DNS, just enough to make it impossible to follow both
+sets of rules.  (In case you are wondering, they knew.)
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837784627045&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627047&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627021&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627061&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

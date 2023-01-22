@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'OK, so how about us outlying folk....' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426396&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426397&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    OK, so how about us outlying folk....
+From:       <a href="?a=95837692300020&r=1&w=2">David Alpern  &lt;ALPERN%SJRLVM4.BITNET () WISCVM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-29 14:32:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426398&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426398&q=raw">body</a>]</b>
+
+Alright, now that the DDN sites have been considered, how about
+those of us without direct TCP connections?  Hosts behind gateways,
+like on CSNET for example, should be able to send mail out without
+much real trouble by just sending any mail to particular domains
+through our gateway.
+
+What looks to be more difficult is nickname resolution.  Right now
+ARPAnet host tables are available which contain the nicknames, so
+code can look up a given host specification and be sure it really
+exists before sending the mail off to the gateway.  This is a nice
+feature in that it catches all the mistyped host names while the user
+is still logged on.
+
+Any ideas on how this can be accomplished once the DDN no longer
+needs hosts.txt?  It would be reasonable to say that not all hosts
+need be listed, as the user can be given a message and then asked
+whether to proceed, and up-to-the-minute information isn't needed.
+But the most common host nicknames should certainly be provided, and
+something better than a manually updated list maintained separately
+by each site would be nice.
+
+- Dave
+
+     David M. Alpern
+     IBM San Jose Research Laboratory, K65/282
+     5600 Cottle Road, San Jose, CA 95193
+     Phone: (408) 284-6521
+     Bitnet: ALPERN@SJRLVM4
+     CSnet:  ALPERN@IBM-SJ
+
+<b>[<a href="?l=namedroppers&m=95837667426396&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426397&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

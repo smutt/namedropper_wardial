@@ -1,0 +1,345 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'private hosts and BIND modifications [long message]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026813&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026815&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026816&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200003&r=1&w=2">private hosts and BIND modifications [long message]</a>
+From:       <a href="?a=95837785200039&r=1&w=2">fin () uf ! msc ! umn ! edu (Craig Finseth)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-06 16:47:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026814&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026814&q=raw">body</a>]</b>
+
+	    Modifications to BIND to Support Private Hosts
+
+The Current Situation
+
+The University of Minnesota has a large network of machines.  We want
+to centrally register ALL machines at the primary name server for the
+domain.  However, we want some to be "private."  In particular,
+private machines fall into these categories:
+
+- Gateways, terminal servers, etc.  These machines, while present on
+  the network, should not appear in general zone transfers and it
+  should be comparatively difficult to identify them.  For example,
+  a non-trusted machines that iterated "inet" over all 64K (class B)
+  host addresses should not get the names of private machines.
+
+  Note: Just about every installation has machines in this category.
+  For this much, at least, the problem posed here is of general
+  interest.
+
+- Customer networks.  The Minnesota Supercomputer Center (MSC) has
+  multiple commercial customers with each one having its own network.
+  The customers' identities must be protected from each other.  In
+  particular, one customer should not be able to identify another
+  using the domain name system.  (Customer network and machine names
+  are recorded as nonsense aliases under the msc.umn.edu domain.  We
+  thus remain within the domain name system rules.)
+
+
+A Proposed Solution:
+
+We have come up with a possible solution that is:
+
+	- Very general.  In fact, is more general than we need.  Like
+	  similar solutions, however, it is easier to do the general
+	  solution than an ad hoc one.
+
+	- Designed to fit within the Internet domain name system (RFCs
+	  1033, 1034, 1035).
+
+Our solution is to attach one or more restriction specifiers to each
+host and/or domain that we want to be private.  The solution is
+modelled after the Multics file access control lists.  The details of
+the solution follow.
+
+
+Details:
+
+The restriction specifier(s) appear in a domain and they apply to the
+entire domain and all domains contained within.
+
+There is one (possibly empty) set of restriction specifiers for each
+level in the domain hierarchy.  Restriction resolution starts at the
+root and proceeds down each level of the hierarchy, with each level
+inheriting the permissions from previous levels.
+
+There are two types of restriction specifier.  A set of restriction
+specifiers consists of zero or more instances of each type of
+specifier.  The types are RESTPTR and RESTRIC.
+
+RESTPTRs are like "includes:" they give the name of a domain, whose
+restrictions are included in here.  RESTRICs specify the actual
+restrictions.
+
+
+RESTPTR Specifiers:
+
+Syntax:		ANY	RESTPTR	&lt;domain&gt;
+
+This specifier names a domain, which may or may not contain other
+domains.  The SOA header of that domain contains a (possibly empty)
+list of RESTRIC specifiers.  Those specifiers are processed and
+produce a new set of permissions.
+
+This structure implies that we could create domains soley for the
+purpose of holding (different combinations of) restrictions.  Such
+domains could be created whenever a number of hosts share
+restrictions (a common case).
+
+At each level in the hierarchy, all RESTPTR specifiers are processed
+before any RESTRIC specifiers.
+
+
+RESTRIC Specifiers:
+
+Syntax:		IN	RESTRIC	&lt;address&gt;  &lt;address mask&gt;  "{R NR W NW T NT}"
+
+This specifier declares a set of permissions for a set of requesting
+IP addresses.  There are three permissions:
+
+	- Read permission.
+
+	  If an R is present, the requesting host can receive the
+	  information when looked up by IP address, name, or zone
+	  transfer.
+
+	  If an NR is present, the requesting host can not receive the
+	  information (the host is not included in zone transfers, and
+	  an "unknown host" or "unknown address" response is returned
+	  for IP address or name lookups).
+
+	  If neither R nor NR is present, the Read permission is not
+	  changed (i.e., it is inherited).
+
+	- Write permission.
+
+	  If a W is present, the requesting host can change the domain
+	  or host information.  It is recommended that Read permission
+	  be provided whenever Write permission is.
+
+	  If an NW is present, the requesting host can not change the
+	  domain or host information.
+
+	  If neither W nor NW is present, the Write permission is not
+	  changed (i.e., it is inherited).
+
+	- Transfer permission.
+
+	  If a T is present, the requesting host receives the
+	  restriction speciers along with any data.  The restriction
+	  specifiers include all RESTRIC and RESTPTR specifiers, as
+	  well as the RESTRIC specifiers in the domains pointed to by
+	  the RESTPTR specifiers.  This information is sent in
+	  Additional information part of the reply.
+
+	  If an NT is present, the requesting host does not receive
+	  the restriction information.
+
+	  If neither T nor NT is present, the Transfer permission is
+	  not changed (i.e., it is inherited).
+
+The contents of the &lt;address&gt; and &lt;address mask&gt; fields work together
+to determine whether the requesting host's IP address matches the
+specifier and which permissions to grant.  The &lt;address mask&gt; is
+supplied to support subnetting.  The hosts IP address matches at all
+if this relation holds:
+
+	(&lt;requesting host IP address&gt; &amp; &lt;address mask&gt;) == &lt;address&gt;
+
+There are two limiting cases of interest.  The specifier:
+
+	IN	RESTRIC 0.0.0.0  0.0.0.0  ...
+
+matches all addresses and can be used to specify "world" permissions.
+The specifer:
+
+	IN	RESTRIC a.b.c.d  255.255.255.255  ...
+
+matches only the host IP address a.b.c.d and can be used to specify
+"host specific" permissions.  Address masks with only some bits set
+specify entire networks.
+
+The algorithm followed is as follows:
+
+Rpermission = inherited
+isRmaskSet = FALSE
+Rmask = 0.0.0.0
+...similarly for W and T...
+for each RESTRIC specifier {
+	if (&lt;requesting host IP address&gt; &amp; &lt;address mask&gt;) == &lt;address&gt;) {
+		if (R or NR appears in specifier) {
+			if (!isRmaskSet || (~Rmask &amp; &lt;address mask&gt;)) {
+				Rpermission = R or NR, as specified
+				Rmask = &lt;address mask&gt;
+				isRmaskSet = TRUE
+				}
+			}
+		}
+		...similarly for W and T...
+	}
+
+This algorithm specifies that the most specific value supplied is used
+for each permission.  In effect, this allows you to say something like
+"everyone can read it, except for this network, unless it is Donna's
+machine."
+
+The default permissions are Read, Write, and No Transfer.
+Conceptually, the root domain is considered to have an initial RESTRIC
+specifier of:
+
+	IN	RESTRIC	0.0.0.0  0.0.0.0  "R W NT"
+
+
+Example:
+
+	A sample host record would be:
+
+	; Bridge box
+	tc1		IN	A	128.101.1.200
+			ANY	RESTPTR	tc.msc.umn.edu.
+
+	The d.tc.msc.umn.edu file would have this list:
+
+			IN	RESTRIC	0.0.0.0 0.0.0.0  "NR NW NT"
+			IN	RESTRIC	&lt;trusted host 1&gt;  &lt;mask&gt;  "R T"
+			IN	RESTRIC	&lt;trusted host 2&gt;  &lt;mask&gt;  "R T"
+			...
+
+
+How It Works:
+
+Assume that a customer is asking NAME (a trusted (by the server)
+machine that can handle name requests) for a name and that SERV (a
+name server) contains the name database.
+
+	CUST:	- Send a name request to NAME.
+
+	NAME:	- Accept the request from customer machine.
+		- You haven't got it, so ask SERV for it.
+
+	SERV:	- Accept the request from NAME.
+		- Find the name.
+		- Discover that it has restrictions.
+		- Verify that NAME -- not CUST -- has Read permission.
+		- Pass the name back to NAME.  If the Transfer access
+		  is set (which it should be), include the restriction
+		  information in the reply.
+
+	NAME:	- Accept the information from SERV.
+		- Discover the RESTRIC record.
+		- Verify that the customer machine has Read permission.
+		- Pass the name back to the customer.  If the Transfer
+		  access is set (which it may not be), include the
+		  restriction information in the reply.
+
+	CUST:	- Accept the name and ignore the restriction
+		  information, if present.
+
+
+Additional Example:
+
+The domain name files on SERV might look like this:
+
+cust1.msc.umn.edu.	IN	RESTRIC	128.101.1.0  255.255.255.0  "R T NW"
+			IN	RESTRIC 197.121.35.0  255.255.255.0  "R"
+
+xx.cust1.msc.umn.edu.	ANY	RESTPTR hide.cust1.msc.umn.edu.
+			IN	A	197.121.35.218
+			...
+
+hide.cust1.msc.umn.edu.	IN	RESTRIC	197.121.35.0  255.255.255.0  "W"
+
+The SERV's reply to NAME for CUST's request (for xx.cust1.msc.umn.edu)
+woudl be:
+
+xx.cust1.msc.umn.edu.	IN	A	197.121.35.218
+			...
+
+and, in the Additional information section,
+
+xx.cust1.msc.umn.edu.	ANY	RESTPTR hide.cust1.msc.umn.edu.
+hide.cust1.msc.umn.edu.	IN	RESTRIC	197.121.35.0  255.255.255.0  "W"
+cust1.msc.umn.edu.	IN	RESTRIC	128.101.1.0  255.255.255.0  "R T NW"
+			IN	RESTRIC 197.121.35.0  255.255.255.0  "R"
+
+However, NAME's reply to CUST would only include:
+
+xx.cust1.msc.umn.edu.	IN	A	197.121.35.218
+			...
+
+
+Compatibility:
+
+As the RESTRIC and RESTPTR records only appear on private hosts and
+domains, and they are only passed to those machines which have
+Transfer permission, all other machines will simply never see them.
+Thus, there is no compatibility problem.
+
+If you do see them, someone gave you Transfer permission.  You would
+fall into one of these categories:
+
+	- You are a trusted machine.  Your name server has been
+	  modified to handle them as specified.
+
+	- You are a random private host and told the domain name
+	  maintainers that you want to see the restriction
+	  information.  Your name server will have been checked to
+	  ensure that it safely ignores the records.
+
+
+Security:
+
+With this approach, we can pass private data among all trusted name
+servers.  Private data will only be handed directly to a host that is
+acceptable.  Once outside of the trusted group, all control over the
+data is lost.
+
+However, this scheme should be sufficient.  A case in point: if we
+hand a customer A name to a customer A machine, we assume that the
+customer A machine won't hand the name over to a customer B machine
+(or, if they do, it isn't our problem).
+
+Thus, the security problem appears to be solved.
+
+In addition to the compatibility reasons for having a Transfer
+permission specifier, there is also a security reason.  Suppose that
+the Transfer permission was on by default, and you had a trusted host
+T that could write to your name database:
+
+	IN	RESTRIC	0.0.0.0  0.0.0.0  "R NW T"
+	IN	RESTRIC T  TMASK  "R W T"
+
+An outside host H that asked about the host would receive those
+records in the reply.  One (bogus) packet later, with its source
+address set to T, your name database has just been trashed...
+
+
+In Conclusion:
+
+	- The problem is real.  Does the proposed solution solve it?
+
+	- Is there a better solution?
+
+I would appreciate hearing your comments.
+
+Craig A. Finseth			fin@uc.msc.umn.edu
+Minnesota Supercomputer Center, Inc.	(612) 624-3375
+
+<b>[<a href="?l=namedroppers&m=95837783026813&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026815&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026816&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

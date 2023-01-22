@@ -1,0 +1,159 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Summary: What is a Host Name?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926897&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926900&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926905&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000016&r=1&w=2">Summary: What is a Host Name?</a>
+From:       <a href="?a=95837784600010&r=1&w=2">"Lawrence J. Kaufman" &lt;lkaufman () bbncc-eur ! arpa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198707">1987-07-23 12:52:08</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926898&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926898&q=raw">body</a>]</b>
+
+About a month ago, I asked the question "What is a host's name" in reference
+to a mail acceptance problem between mail hosts that I support and another
+mail host system, asking if the .ARPA is part of a hosts name.  I promised to
+summarize the responses.  Many thanks to those who responded.
+
+--- Larry Kaufman
+    BBNCC, MILNET Technical Support Engineer
+
+----
+
+Here is the summary:
+
+&gt;From Capt. StJohns of the DDN PMO &lt;STJOHNS@SRI-NIC.ARPA&gt;:
+
+Sheesh!  OK, the official name INCLUDES the .ARPA until such time
+they join an Official domain (.MIL, .dca.MIL,  .EDU,  etc).   The
+policy  for  this  is  contaonted  in  one  of the DDN management
+bulletins issued about 3 or 4 months ago.
+
+-------------------------------------
+From: postel@bel.isi.edu (Jon Postel)
+
+I think if you look at RFCs 920 and 921 on the domain system you should
+get the idea that all host in the Internet (including MILNET hosts) must
+use domain style names, and the sooner the better.  The DDN management has
+been slow to back up these RFCs as MILNET requirements, thought there have
+significant steps, and the note from St.Johns should be clear enough.
+Technically, the system can't work unless all the hosts have domain style
+names and are all registered in the name servers.  There are now many hosts
+in the Internet that do not have any version of HOSTS.TXT and use only the
+name servers (and a small cache) to verify host names and translate them to
+addresses.
+
+-----------------------------
+From: HOSTMASTER@SRI-NIC.ARPA
+Sender: STAHL@SRI-NIC.ARPA
+
+I just wanted to reinforce what Jon has stated and mention that the
+management bulletin referred to by Mike St Johns is DDN Management
+Bulletin No. 32.  It directed the removal of all old-style names from
+the host tables.
+
+-----------------------------------------
+From: Bill Barns  &lt;WWB.TYM@OFFICE-1.ARPA&gt;
+
+The documents to which (I assume) Mike StJohns alludes are DDN Management 
+Bulletins 22 and 32.
+
+Even these documents are less than unambiguous to a very legalistic mind, but 
+#22 contains the statement "Briefly, all existing official names will become 
+nicknames, and the new official name will be formed by adding the domain name 
+".ARPA" to the old official name" and #32 says "Network mailers are required to
+use primary host names..." and "Users sending electronic mail should use 
+primary host names in all mail destinations and sources."  Although there are a
+couple of semantic pinholes here, they are really tiny and it is difficult to 
+imagine anyone reading these documents and seriously believing that those 
+pinholes represent any real meaning.
+
+----------------------------
+Pat Barron &lt;pdb@SEI.CMU.EDU&gt;
+
+At the bottom of page 29 of RFC 822, it says:
+
+"When a message crosses a domain boundary, all addresses must be specified
+in the full format, ending with the top-level domain name in the right-
+most field.  It is the responsibility of mail forwarding services to ensure
+that addresses conform with this requirement."
+
+----------------------------------------
+From: braden@braden.isi.edu (Bob Braden)
+
+A host name can be (and often is) abbreviated locally to the first component of
+the full domain name, but the proper and ocmplete name of your host is the
+fully-qualified domain name, and it is this full name that must appear in ALL
+mail headers and SMTP messages that leave your host.
+
+I have noticed a resistance on the part of host software developers to
+incorporate this simple truth into their world. They seem to resist the
+idea of a local name for user convenience, as distinct from the "real
+name".  Perhaps that is what is confusing your errant host administrator.
+
+-------------------------------------------
+From: Paul Mockapetris &lt;pvm@venera.isi.edu&gt;
+
+The .ARPA is part of the host name.  Nothing else makes sense.
+
+------------------------------------------
+From: John Lekashman &lt;lekash@orville.arpa&gt;
+
+Isn't it nice that you are both right, sort of.  The hosts
+name is, or can be, anything one wants.  Of course, the
+address, which includes the .arpa in this case, is what 
+he should be stamping on an message when sending.  Comparing
+apples and oranges always results in some confusion.
+
+---------------------------------------------
+From: Robert Elz &lt;munnari!kre@seismo.CSS.GOV&gt;
+
+You're right, .arpa is part of your host name, and should
+be there in the incoming Rcpt To SMTP line.
+
+--------------------------------------------------------------
+From:  Bruce Orchard &lt;ORCHARD/BRUC@scarecrow.waisman.wisc.edu&gt;
+
+You'll probably have to do what I did:  Make a list
+of host names that other hosts think of as your host
+name and accept any of them in mail.  My list
+has 7 entries on it now.  The strangest one
+is scarecrow.waisman.wisc.edu.arpa, which is what
+a few BITNET sites think of as our name.
+
+---------------------------------------------
+From: cfe+@andrew.cmu.edu (Craig F. Everhart)
+
+... the ``.arpa'' IS part of the host's name.  As is the ``.edu'' in
+``andrew.cmu.edu''.  The other viewpoint might have made some sense in 1982,
+but not since then.
+
+Unfortunately, the other viewpoint is one that is encouraged by some
+1982-vintage berkeley sendmail configuration files.
+
+----------------------------------------------------
+
+From: morgan@lrc-eds.ARPA (Capt Rusty Morgan (NSAL))
+
+Your  question  to  'namedroppers'  et  al.  has  elicited   many
+responses,  some  of  them even hit the point!  I will inform our
+contractor   that   our    "1982-vintage"    Berkeley    Sendmail
+configuration file will have to pass the .DOMAIN name thru to the
+remote SMTP server.
+
+<b>[<a href="?l=namedroppers&m=95837781926897&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926900&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926905&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

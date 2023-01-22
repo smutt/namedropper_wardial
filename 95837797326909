@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Isolated Domain;  How to do it?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326908&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326911&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326910&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200007&r=1&w=2">Isolated Domain;  How to do it?</a>
+From:       <a href="?a=95837816800034&r=1&w=2">oliveb!orc!bu.edu!bu-it!kwe () apple ! com  (Kent England)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-27 15:45:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326909&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326909&q=raw">body</a>]</b>
+
+
+	I'm trying to figure out how to set up a kosher domain (call
+it foo.com.) that is properly registered, but that operates in isolation
+from all other zones, including the Internet Root.  At some point in
+future, when this isolated network joins the Internet, the isolated
+foo.com. would join the Internet Root (pardon my terminology) without
+having to change any usage or domain designation.  I have some theories
+about how this could be done in BIND/named.  Bear with me.  :-)
+
+	It would seem to me to be best to set things up such that
+the foo.com. authoritative server would answer NXDOMAIN for any
+questions about domains outside of foo.com., including root.  Is
+this a good way to isolate?
+
+	It would seem to me to make sense simply to eliminate the
+root NS and A entries in the cache, making the foo.com. name server(s)
+unable to know anything about any other domain, including bar.com.,
+.edu., "", etc.  However, I can't tell whether this would cause an
+error or the NXDOMAIN response that I seek.
+
+	If simply eliminating NS and A entries for the root
+servers in the cache file is insufficient to get a NXDOMAIN answer
+from the foo.com. server(s), then what if I pointed root back
+at the foo.com. server?  Would BIND now think itself to be
+authoritative for everything and answer, with authority, "NXDOMAIN"?
+
+	Pardon me if this has been asked a thousand times, but I
+read this group rather regularly and I haven't seen it asked lately.
+I would appreciate it if someone could dust off an answer and send
+it off to me, and the newsgroup if you think it worthwhile mentioning
+again.
+
+	Thanks much.
+
+	Kent England, Boston University
+
+<b>[<a href="?l=namedroppers&m=95837797326908&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326911&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326910&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

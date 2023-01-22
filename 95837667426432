@@ -1,0 +1,182 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bakeoff cookies' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426433&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426434&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426434&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100016&r=1&w=2">Bakeoff cookies</a>
+From:       <a href="?a=95837692300021&r=1&w=2">mills () dcn6 ! arpa</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-15 2:29:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426432&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426432&q=raw">body</a>]</b>
+
+Folks,
+
+As long we are swatting bugs as new name servers come on-line, I thought
+you might enjoy(?) an example of what certainly is going to happen a lot,
+even after the dust settles down.
+
+I innocently tried to PING (ICMP echo) off rice.edu, but the namesolver
+routine in PING reported "not found" for rice.edu because some aouthoritative
+name server told it that. Puzzled, I tried again and found 128.42.1.1 with no
+trouble. I broke out the shotgun and went looking for the varmits.
+
+Following is a slightly edited transcript of tests from the dcn6.arpa
+(128.4.0.6) backroom. Each line beginning "rsolv" is a command to run a
+namesolver utility that queries the host shown as argument. The argument
+following the "Host name?" prompt is the query name. The subsequent lines are
+self-explanatory. Note that the rsolv utility does not automatically iterate
+the responses, but does retry up to four times. The ordinary namesolver
+routine linked with application programs like PING does iterate in the order
+the addresses are returned and retries each one up to four times, but does not
+back up to a previous level if all addresses fail.
+
+In the first query for rice.edu, the NIC top-level domain server returns three
+name-server addresses for subsequent queries:
+
+rsolv NIC
+Host name? rice.edu
+Authority records
+Type 2  domain name RICE.EDU  host name RICE.EDU
+Type 2  domain name RICE.EDU  host name PENDRAGON.CS.PURDUE.EDU
+Type 2  domain name PURDUE.EDU  host name PENDRAGON.CS.PURDUE.EDU
+Type 2  domain name PURDUE.EDU  host name RICE.EDU
+Additional records
+Type 1  domain name RICE.EDU  host address [192.5.58.6]
+Type 1  domain name RICE.EDU  host address [128.42.1.1]
+Type 1  domain name PENDRAGON.CS.PURDUE.EDU  host address [192.5.48.5]
+
+I have a little trouble with the PURDUE.EDU entries, which I didn't ask for,
+but probably sneak in due to multiple naming. A purist might insist that only
+the principal names should be used. We gotta worry about this because these
+datagrams are quickly getting surprisingly long. Ok, piqued with success we
+try again at each address in turn:
+
+rsolv 192.5.58.6
+Host name? rice.edu
+Answer records
+Type 1  domain name RICE.EDU  host address [128.42.1.1]
+Type 1  domain name RICE.EDU  host address [192.5.58.6]
+
+This one hits the right addresses and the search is through. However, for the
+purpose of testing, we try the second address in the original NIC response:
+
+rsolv 128.42.1.1
+Host name? rice.edu
+?RSOLV-F-Reply timeout
+
+That one doesn't work at the moment, so we try the third and last address:
+
+rsolv 192.5.48.5
+Host name? rice.edu
+Authority records
+Type 2  domain name   host name USC-ISIB.ARPA
+Additional records
+Type 1  domain name USC-ISIB.ARPA  host address [10.3.0.52]
+
+Woops! I bet his tables have not been installed yet. Nevertheless, we lurch
+onwards:
+
+rsolv 10.3.0.52
+Host name? rice.edu
+?RSOLV-F-Unknown name
+
+ISIB tables are probably fractured, too. It claims to be an authority for
+edu at least and denies rice.edu exists (the "unknown name" results from the
+corresponding code in the response).
+
+What happened in my original scenario was that the PING namesolver apparently
+timed-out (after four retries) on the first address returned from NIC and went
+on automatically to try the remaining two, which eventually led to the
+"unknown name" response from ISIB. When I tried it again the first address
+worked, thus the inconsistency.
+
+Here's another one I'm sure you'll like. A query to NIC for berkeley.edu
+returns the following:
+
+rsolv NIC
+Host name? berkeley.edu
+Authority records
+Type 2  domain name BERKELEY.EDU  host name UCB-ARPA.BERKELEY.EDU
+Type 2  domain name BERKELEY.EDU  host name UCB-VAX.BERKELEY.EDU
+Additional records
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [10.0.0.78]
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [128.32.0.4]
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [10.2.0.78]
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [128.32.0.10]
+
+The fuzzy namesolver starts cranking on 10.0.0.78, here illustrated
+step-by-step using the rsolv program.
+
+Host name? 
+rsolv 10.0.0.78
+Host name? berkeley.edu
+Authority records
+Type 2  domain name BERKELEY.EDU  host name UCB-VAX.BERKELEY.EDU
+Type 2  domain name BERKELEY.EDU  host name UCB-ARPA.BERKELEY.EDU
+Additional records
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [128.32.0.10]
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [10.2.0.78]
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [128.32.0.4]
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [10.0.0.78]
+
+OK, we continue cranking on 128.32.0.10:
+
+Host name? 
+rsolv 128.32.0.10
+Host name? berkeley.edu
+?RSOLV-F-Reply timeout
+
+That one is apparently down, so the poor dear turns to the next address on the
+list, 10.2.0.78:
+
+rsolv 10.2.0.78
+Host name? berkeley.edu
+Authority records
+Type 2  domain name BERKELEY.EDU  host name UCB-VAX.BERKELEY.EDU
+Type 2  domain name BERKELEY.EDU  host name UCB-ARPA.BERKELEY.EDU
+Additional records
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [128.32.0.10]
+Type 1  domain name UCB-VAX.BERKELEY.EDU  host address [10.2.0.78]
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [128.32.0.4]
+Type 1  domain name UCB-ARPA.BERKELEY.EDU  host address [10.0.0.78]
+
+Baffled, the fuzz starts as told to honk at 128.32.0.10, which times out as
+before, then honks at the second address on the list, which is this
+machine(!), and around she goes, and goes, and. Since the fuzz discarded the
+previous list, it didn't realize a loop had formed. I foxed the fuzzy
+namesolver to force a halt to this kind of nonsense after one minute. I also
+resolved (ahem) to tear up the namesolver algorithm and do it right using
+end-order search with backup on the domain tree. Boy, I thought it would never
+need come to this so soon.
+
+Obviously the name-server data bases have not yet been completely stabilized,
+so no blame is implied or imputed. However, this is a good time to see how
+things might break in an operational environment. I blanch at the effort this
+system is going to require to keep it honest and consistent. I suggest we
+will eventually need some kind of periodic low-level mechanism to insure
+consistency, perhaps in the form of a worm (network daemon) that slithers
+over the distributed data base using strategies similar to the above and
+hollers if consistency violations are found.
+
+Comes the Domain Police. You first heard it here.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426433&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426434&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426434&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

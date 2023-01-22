@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Negative caching (was Maybe every host should have an MX record)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926972&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926974&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926974&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500006&r=1&w=2">Negative caching (was Maybe every host should have an MX record)</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-01 23:59:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926973&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926973&q=raw">body</a>]</b>
+
+Rudy,
+
+Agreed, the thing to do within the existing framework is negative
+caching.  Long overdue.  I would go so far as to venture a guess that
+there is more network traffic caused by -bad- queries than by good
+ones, given the number of bad mail headers floating around.
+
+As a point of information, you have an alternative to picking the
+negative TTL out of thin air: use the MINIMUM value from the SOA RR of
+the zone closest to the (bad) target name.  Ie, when you get "name
+error" looking up OZ.AI.MIT.EDU, use the MINIMUM value from the SOA
+for AI.MIT.EDU.  Of course, you can lose trying to get that SOA RR,
+but presumably in the vast majority of cases you will be able to get
+the SOA iff you can get the authoritative name error.
+
+I say "simple" because adding this feature adds all sorts of hair to
+the code that parses incoming answer packets, since the SOA may not be
+on hand at that point.  But that's an implementation detail which can
+be solved if you want the result badly enough (and have a strong
+stomach).
+
+There should be a default negative TTL included in the bootstrap
+information, in case you can't even get the SOA for the root.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926972&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926974&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926974&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'X.500' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026881&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026883&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026881&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200020&r=1&w=2">X.500</a>
+From:       <a href="?a=95837785400018&r=1&w=2">Steve Benford &lt;sdb%computer-science.nottingham.ac.uk () NSS ! Cs ! Ucl ! AC ! UK&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-29 14:51:58</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026879&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026879&q=raw">body</a>]</b>
+
+I have read the recent comments on directory services with great interest
+and as a European who has been following the developments of X.500 closely
+(although not actually participating) you might find my viewpoint
+interesting.
+
+X.500
+-----
+X.500 will be the first ISO/CCITT international standard for Directory Services
+and is due to be accepted this year. The standard is defined by 7 sections
+giving detailed descriptions of protocols, services etc. I believe that
+X.500 will be a good first standard and although the following comments
+point out several missing areas they are not to be taken as an "assassination"
+attempt.
+
+Yes X.500 is an attribute-based naming service and from some points of view
+could be described as flexible. It allows more flexibility in
+the definiton of information types than the arpa domain naming scheme allows
+and includes mechanisms for defining the structure of the name space and of
+directory information (schemas) which will be useful if the directory is
+really to operate on a global scale.
+
+My feeling is that although many claims have been made by researchers
+about the role of X.500 in supporting many different communications services
+(and even future services such as for "group communication") the design
+has been mainly influenced by electronic mail considerations.
+This has resulted in a fundamentally sound name server but it is not clear
+whether the DS will meet more complex requirements. Immediate drawbacks are:
+
+	Lack of an access control mechanism (it was in a previous version
+		but dropped due time pressures - it should reappear in the 
+		next standard)
+	Lack of facilities to dynamically define new attribute and entry
+		types (i.e. new schemas)
+	Lack of support for management of the system itself 
+		(e.g. tools to atomatically reconfigure the system as
+		servers come and go)
+
+X.500 has not totally ignored these problems - they are for future study.
+
+
+Management services
+------------------
+
+More generally, X.500 does not support any relational features allowing
+the expression and manipulation of the relationships between network
+entities. I feel that the reason for this is that the technical problems in
+building such a system have not been solved. This functionality must be
+included in some system (not necessarily the DS) if future services are to be 
+supported. For example: 
+
+	How can we represent groups, entities and the relationships between 
+	them?
+
+	How do we manage LANs with complex many-many relationships between
+	users, groups, hosts etc.?
+
+	How do we name "objects" such as documents and conferences as
+	well as communication entities? 
+
+I am not saying that all of this belongs in the DS, however there is some
+link between such requirements and a global naming service and researchers
+should re-examine the DS in the context of more general management
+and distributed naming problems.
+
+
+Relationship to the Arpa world
+------------------------------
+
+The above is not intended to rip X.500 to pieces, it is only my opinion
+of where future research must head. X.500 may provide a sound international
+standard (and this is what we need if we want interconnection) and the
+RFC group should pay very close attention to what X.500 has to say.
+In fact, if it were not to late, I would like to see them accept X.500
+instead of producing their own standard and attempt to build an 
+implementation because what we really need is
+experience which can be put back into the next ISO/CCITT study period.
+
+Other projects
+--------------
+
+There are a number of European projects in this area which may provide
+you with useful information.
+
+	1. The Thorn project (large scale joint European effort)
+
+	2. RARE (European implementors working group)
+
+For more information on these talk to Steve Kille (steve@cs.ucl.ac.uk)
+
+I can also supply a number of papers and further opinions
+on this area on request.
+
+Steve Benford
+
+
+	
+
+	
+  
+
+<b>[<a href="?l=namedroppers&m=95837783026881&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026883&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026881&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

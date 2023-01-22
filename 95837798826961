@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Monitoring your nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826958&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826960&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826958&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826964&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100011&r=1&w=2">Re: Monitoring your nameserver</a>
+From:       <a href="?a=95837817800007&r=1&w=2">Alan S. Watt &lt;swatt () noc ! net ! yale ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-17 11:54:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826961&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826961&q=raw">body</a>]</b>
+
+
+It seems obvious the only meaningful way to monitor a nameserver is
+toss requests at it and check the results.  The Internet Rover package
+you can get free from Merit has code to do this.  You can also
+use or perhaps modify dig (Domain Internet Groper) to the same end.
+
+I have Rover running to monitor all the campus nameservers.  Every
+few minutes or so it will hit them with a "1.0.0.127.in-addr.arpa"
+lookup request.  This of course doesn't tell you everything is working
+properly, but if a nameserver can't manage this much, it's time to
+look at it.
+
+So far, I haven't seen any nameserver failures which can still
+pass this test.
+
+	- Alan S. Watt
+	  High Speed Networking, Yale University
+	  Computing and Information Systems
+	  Box 2112 Yale Station
+	  New Haven, CT  06520-2112
+	  (203) 432-6600 X394
+	  Watt-Alan@Yale.Edu
+
+
+Disclaimer:  "Make Love, Not War -- Be Prepared For Both"
+		- Edelman's Sporting Goods [and Marital Aids?]
+
+<b>[<a href="?l=namedroppers&m=95837798826958&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826960&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826958&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826964&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

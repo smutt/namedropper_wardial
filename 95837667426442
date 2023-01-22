@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'nameserver test' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426437&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426443&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    nameserver test
+From:       <a href="?a=95837660000001&r=1&w=2">Charles Hedrick &lt;HEDRICK () RUTGERS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-15 22:14:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426442&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426442&q=raw">body</a>]</b>
+
+I believe that the nameserver for RUTGERS.EDU is now set up properly. We
+had made a mistake in generating the database that caused it not to be
+able to find any of our data.  I have decided to be conservative.
+Currently our database includes only hosts in RUTGERS.EDU, and isn't set
+up to do anything optional.  Some hosts to test it with:
+  RED.RUTGERS.EDU - should return 128.6.0.2 and 10.1.0.89
+  RUTGERS.EDU - a nickname for RED.RUTGERS.ARPA
+  GREEN.RUTGERS.EDU - should return 128.6.0.3
+I am in the process of updating our normal host tables so that these
+hosts will consider these to be acceptable nicknames.  Currently our
+primary names are still the old ones: RUTGERS.ARPA and RU-GREEN.ARPA.
+(We don't talk to our own name server to find out our name, since there
+is no resolver running yet.)
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426437&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426443&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

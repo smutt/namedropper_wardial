@@ -1,0 +1,70 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogus name server record' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827071&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827081&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827073&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300034&r=1&w=2">Bogus name server record</a>
+From:       <a href="?a=95837818000021&r=1&w=2">James Fielding &lt;jamesf () BRL ! MIL&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-24 20:06:52</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827070&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827070&q=raw">body</a>]</b>
+
+    I have spent the last several days attempting to track down the source of
+the bogus wildcard record that has been "infecting" name servers on the
+Internet and, in particular, the name servers here at the BRL. The bogus
+wildcard record causes the infected name server to return NS records for
+TELECOM, NEXTSERV, and MTECV1 when queried for a non-existant top level domain,
+such as "*." or "foo.", etc. One of the effects of this misinformation is a
+nameserver timeout when sendmail tries to resolve an address, resulting in mail
+that languishes in the queues.
+    
+    I started my debugging efforts with our root server aos.brl.mil. I reloaded
+the name server database, verified that aos was clean, set debugging level to
+16, and waited until the server had the bogus record. I found that aos received
+a datagram requesting an MX record for UKW.KW (Kuwait), retrieved the NS
+records for the KW domain, and forwarded the query to the first of the two
+name servers (sh.cs.net and relay.cs.net). The return datagram from sh.cs.net
+(192.31.103.3) contained the bogus information, which aos cached. Aos then
+forwarded the query to relay.cs.net (192.31.103.4) and, eventually, received
+the same bogus information. Since both servers for KW had been tried, and aos
+didn't have a valid answer, an answer was sent to the originator of the MX
+request with a return code of SERVFAIL. Aos was now infected and would return
+the bogus information whenever queried for an NS record for a non-existant top
+level domain.
+
+    At this point, I commented out the NS records for the KW domain in the
+root.zone file and reloaded the server at aos. Its been 48 hours and aos has
+not been reinfected. In addition, aos has also handled queries concerning the
+KW domain by sending an answer with return code NXDOMAIN. I performed the
+same debugging test on vgr.brl.mil and was able to confirm the same method of
+infection. However, because vgr is not a root name server, I am currently not
+able to protect it from reinfection.
+
+    I want to stress that this is in no way a claim to have discovered the
+source of the problem, nor is it an attempt to point fingers at either
+sh.cs.net or relay.cs.net as the cause of the bogus record. I am merely stating
+the results of my efforts to find out why/where/how the nameservers at BRL are
+becoming infected. Any comments or suggestions for further investigation will
+be appreciated.
+
+					Thank you,
+
+					James L. Fielding
+
+<b>[<a href="?l=namedroppers&m=95837798827071&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827081&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827073&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

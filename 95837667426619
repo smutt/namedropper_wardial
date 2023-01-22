@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mailers use MD and MF' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426618&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426620&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426623&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800018&r=1&w=2">Mailers use MD and MF</a>
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-12 13:20:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426619&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426619&q=raw">body</a>]</b>
+
+
+    The unanimous opinion of the notes (all but one of which also
+went to namedroppers) I've gotten in response to my last letter
+is that it makes sense to have both MD and MF records for a single host.
+If people are willing, I'd like to take this discussion one step
+further and nail down what we expect a mailer to do with with MD
+and MF records.  The notes I got seemed to have pretty similar
+ideas, and we might as well canonize it, before all the mail
+systems come out with their own (different) rules.
+
+    Here is the set of rules I think comes closest to what people
+want (heavily borrowing from Paul Milazzo's message).  The two
+key points are that the MFs are tried immediately, if the MD host
+isn't reachable (no fancy delays, etc.) and that if a host
+doesn't list any mail records, it is assumed to be its own
+MD, while simply listing an MF says "always forward".
+
+Here the rules I think people are headed towards:
+
+    Given a host name a mailer should do a MAILA query on that
+domain name.  If the MAILA query returns nothing look up the Internet
+address of HOST.  If this lookup fails, reject the message, otherwise try
+to deliver the message to the Internet address.
+
+    If the MAILA query succeeded, first try to deliver to the MD host
+(if any).  If you cannot reach the MD host, try any MF hosts listed.
+Try to contact each MF until either there are no MFs remaining, or one
+of them has accepted or rejected the message.  (Paul's idea of
+not trying MFs on unreachable networks is a nice touch here).
+
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh or craig@sh.cs.net (CSNET)
+craig@loki.bbn.com (ARPA)
+{decvax,ihnp4,wjh12}!bbncca!craig (USENET)
+
+<b>[<a href="?l=namedroppers&m=95837667426618&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426620&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426623&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

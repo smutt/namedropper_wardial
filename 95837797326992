@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Subnetting and in-addr.arpa domain, how ?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326986&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326987&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Subnetting and in-addr.arpa domain, how ?
+From:       <a href="?a=95837817000048&r=1&w=2">zaphod.mps.ohio-state.edu!usc!snorkelwacker!ira.uka.de!fauern!tumuc!lan!charly.b</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-14 9:07:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326992&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326992&q=raw">body</a>]</b>
+
+
+My problem is the following:
+
+We have some subnets for different institutes. I wan't to give them
+the full authority for their own domains. That's no problem for
+the normal name to address mapping. But how should I do it for the
+inverse mapping?
+
+This is the sittuation:
+
+129.187.187.[1-63]  are the addresses for e16.physik.tu-muenchen.de
+129.187.187.[64-127] are the addresses for e20.physik.tu-muenchen.de
+
+I have the authority for 187.187.129.in-addr.arpa, how can I delegate
+the authority for the [64-127] bunch of addresses ?
+
+Any suggestions are welcome.
+
+Sincerely,
+Klaus Steinberger
+
+Klaus Steinberger               Beschleunigerlabor der TU und LMU Muenchen
+Phone: (+49 89)3209 4287        Hochschulgelaende, D-8046 Garching, West Germany
+BITNET:  K2@DGABLG5P            Internet: k2@charly.bl.physik.tu-muenchen.de
+
+<b>[<a href="?l=namedroppers&m=95837797326986&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326987&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

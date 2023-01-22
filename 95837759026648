@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Host nicknames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026647&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026649&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026651&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800039&r=1&w=2">Host nicknames</a>
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198601">1986-01-16 11:07:20</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026648&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026648&q=raw">body</a>]</b>
+
+I would like to question this policy of limiting nicknames for several
+reasons.
+
+First let me make clear what I mean by nickname.  Imagine that the
+Berkeley people decided to rename UCBVAX.BERKELEY.ARPA to be
+GATEWAY-TO-EVERYWHERE.BERKELEY.ARPA (in some sense more meaningful
+than the former and hence a better name).  We might then define 
+UCBVAX.BERKELEY.ARPA as a nickname for the latter.  However, the
+unqualified BERKELEY would not be a valid nickname as we clearly
+don't want top-level domains to proliferate like this.
+
+Now, why should we have nicknames?  One obvious reason given is that
+hosts sometimes change names so we want to make the old names remain
+valid for a while.  Two other reasons are that some good names are
+long and hence annoying to type (see example above), and that it's
+sometimes hard to remember the exact form of a name, so you provide
+nicknames to make near-misses match (e.g., UCB-VAX vs UCBVAX).
+
+Now, why shouldn't we have nicknames?  I've just re-read Ken
+Harrenstien's original message of many months ago, and he only appears
+to offer two reasons.  
+
+First is to limit the size of HOSTS.TXT.  Well, as I recall, HOSTS.TXT
+is being phased out soon anyway.  So why not simply limit the number of
+nicknames recorded in HOSTS.TXT instead of trying to establish a policy
+for domain server databases as well?
+
+The second reason is to prevent people from playing games with
+nicknames.  He gives an example where someone from THINK.COM wanted to
+set up nicknames in such a way that replies to messages from any machine
+in the THINK.COM subdomain would get routed back through their central
+mail machine, which would then route the message to the recipients home
+machine.  All I can say is that (a) there is another solution to this
+particular problem (namely have the originating mailers include a
+REPLY-TO line in the header), and (b) trying to limit the proliferation
+of nicknames may not be the best way to prevent people from playing this
+game, or many others.  The person who thought of this hack didn't
+understand several points about the Internet mail system, and I'd
+claim that increasing their understanding is the proper way to solve
+this problem.
+
+My final point is a political one.  There is a notion that the NIC
+"delegates authority" to domain servers run by other organizations.
+Now, we would clearly hope that the people who run these servers would
+abide by the NIC's official policy regarding nicknames, but I wouldn't
+be surprised if in practice they allow people to register as many
+nicknames as they want.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026647&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026649&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026651&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

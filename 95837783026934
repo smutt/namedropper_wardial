@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: A proposal - Regional Domain"' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026932&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026937&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026937&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400009&r=1&w=2">Re: A proposal - Regional Domain"</a>
+From:       <a href="?a=95837785600012&r=1&w=2">stride!mitch () gr ! utah ! edu  (Thomas Mitchell)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198808">1988-08-18 0:39:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026934&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026934&q=raw">body</a>]</b>
+
+In article &lt;1588@edison.GE.COM&gt; rja@edison.GE.COM (rja) writes:
+&gt;
+&gt;  I'll just say that I'm rather less than comfortable with the increasing
+&gt;use of "pseudo-domains."  I'm very much in favor of the domain system and
+
+Me too. Domains are a clever way of sorting addresses. One of
+their strengths is that they are divorced from the physical
+region of the site.  That is not always useful.
+
+If the three letter codes used by the airlines were reserved for
+geographic regions corresponding to the airport service area we
+may be able to build useful 'local' and 'regional' networks and
+routing.  Since these codes are already standard something might
+come of it.
+
+Mailers then could attempt to just get it close and let some
+other machine modify the address for final delivery.  I expect
+half of the long distance UUCP mail makes two crossings.  One
+long distance call is to the domain then back with a real
+destination.
+
+This could be a big cost advantage to all large domains (except
+AT&amp;T).
+
+Opinions??
+
+Examples:
+
+RNO -- Reno Intl. Airport would identify the Reno northern Nevada
+	area. My address might be  "mitch@stride1.stride.COM.RNO"
+
+ERK -- Newark Airport for Northern New Jersey
+
+LAX -- Los Angeles.
+
+NOTE: Why not AT&amp;T you ask.  Well they are the phone company.
+
+Start in LA for a message 
+	To: joeuser@amachine.ATT.COM
+You pay the bill from LA to New Jersey they make enough to
+pass it back to a machine in Los Angeles.  Now if the address is 
+	To: joeuser@amachine.ATT.COM.LAX
+much of the long distance toll could be avoided.
+
+This is a good Idea to reduce the instruction set of uucp routing So:
+Copyright 1988 All Rights Reserved World Wide.  Pattent may be pending.
+
+-- 
+Thomas P. Mitchell (mitch@stride1.Stride.COM)
+Phone: (702)322-6868	TWX: 910-395-6073	FAX: (702)322-7975
+MicroSage Computer Systems Inc.
+Opinions expressed are probably mine. 
+
+<b>[<a href="?l=namedroppers&m=95837783026932&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026937&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026937&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

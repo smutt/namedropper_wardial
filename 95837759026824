@@ -1,0 +1,63 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'One Way Addresses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026822&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026825&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    One Way Addresses
+From:       <a href="?a=95837783700011&r=1&w=2">"J. Spencer Love" &lt;JSLove () MIT-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198611">1986-11-21 9:09:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026824&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026824&q=raw">body</a>]</b>
+
+Pardon my side issue, but why are transmit-only addresses in the domain
+database at all?  They can only cause trouble, since attempts to send to
+them will fail.  Packets coming from them don't have this problem, since
+the host knowns who it is and what its interface addresses are.  I see
+the purpose of these records as announcing contact points, and a
+transmit-only interface is not a contact point.
+
+I realize that it is useful to be able to do an inverse query to display
+in human-readable format where the packet are coming from.  It might
+even happen that mailers get the A records for the host in the HELO
+record and compare.
+
+Supporting the send-only addresses for inverse queries only would be a
+good way to deal with this problem.  In particular, supporting the
+addresses for the IN-ADDR domain could provide for network level
+debugging and tracing.  Not all the domain servers implement inverse
+queries and/or the IN-ADDR domain, and those that do may not find it
+convenient to make this change, but it could be useful.  Such an
+addition to the spec deserves at least brief consideration.
+
+I don't think that this would be incompatible in the field.  MIT-Multics
+sees a lot of mail, and there are still mailers out there which send
+non-domain addresses in their HELO records.  Attempts to verify such
+names will likely fail.  For this and other reasons I don't think it
+likely that a serviceable implementation can be depending on reverse
+resolution for some sort of mail security.  Thus, the removal of the
+offending A RRs from the database should not deny service to the hosts
+in question.
+
+If the security issues involving gateway, host and user authentication
+are better dealt with in the future, and the designers provide and
+require secure domain server implementations, then a new RR type can be
+invented to give out the transmit only addresses.  I don't expect this
+to be needed.
+
+<b>[<a href="?l=namedroppers&m=95837759026822&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026825&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

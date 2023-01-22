@@ -1,0 +1,95 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Root server change' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326927&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Root server change
+From:       <a href="?a=95837817000005&r=1&w=2">DDN Reference &lt;NIC () NIC ! DDN ! MIL&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-06 17:24:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326928&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326928&q=raw">body</a>]</b>
+
+********************************************************************** 
+DDN MGT Bulletin 72              DCA DDN Defense Communications System   
+6 Apr 90                         Published by: DDN Network Info Center
+                                     (NIC@NIC.DDN.MIL)  (800) 235-3155
+
+
+                        DEFENSE  DATA  NETWORK
+
+                         MANAGEMENT  BULLETIN
+
+The DDN MANAGEMENT BULLETIN is distributed online by the DDN Network
+Information Center under DCA contract as a means of communicating
+official policy, procedures and other information of concern to
+management personnel at DDN facilities.  Back issues may be read
+through the TACNEWS server ("@n" command at the TAC) or may be
+obtained by FTP (or Kermit) from the NIC.DDN.MIL host [192.67.67.20]
+using login="anonymous" and password="guest".  The pathname for
+bulletins is DDN-NEWS:DDN-MGT-BULLETIN-nn.TXT (where "nn" is the
+bulletin number).
+**********************************************************************
+
+                    NIC.DDN.MIL HOST ADDRESS CHANGE
+                 AND ROOT DOMAIN SERVER ADDRESS CHANGE
+
+In order for the NIC to provide better service, and because of the
+phase-out of the ARPANET, the following changes have taken place and
+are effective immediately (6 April 1990).
+
+NIC.DDN.MIL
+  The new address for host NIC.DDN.MIL is 192.67.67.20.
+
+  The old ARPANET address for the NIC, 10.0.0.51, is no longer
+  available, due to the phase-out of the ARPANET.
+
+  The old MILNET address for the NIC, 26.0.0.73, will continue
+  to be valid until 1 June 1990, after which service to this address
+  will be discontinued.
+
+ROOT DOMAIN SERVER
+  The NIC's root domain server will run on a new host,
+  NS.NIC.DDN.MIL at address 192.67.67.53.
+
+  The old root server will continue to run on NIC.DDN.MIL
+  until 1 June 1990.
+
+New host tables and domain server files produced by the NIC will
+reflect the new addresses.
+
+Users should update host tables, domain server boot files, 
+manuals, and documentation to reflect the new addresses.
+
+
+The current list of root servers follows:
+
+	   NS.NIC.DDN.MIL               192.67.67.53
+	   A.ISI.EDU                    26.3.0.103
+					128.9.0.107
+	   AOS.BRL.MIL                  128.20.1.2
+					192.5.25.82
+	   C.NYSER.NET                  192.33.4.12
+	   GUNTER-ADAM.AF.MIL           26.1.0.13
+	   NS.NASA.GOV                  128.102.16.10
+					192.52.195.10
+	   TERP.UMD.EDU                 128.8.10.90
+
+-------
+
+<b>[<a href="?l=namedroppers&m=95837797326926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326927&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

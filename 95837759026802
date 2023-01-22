@@ -1,0 +1,67 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Is anyone using MB/MR/MG/MINFO records yet?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026804&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026803&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500016&r=1&w=2">Is anyone using MB/MR/MG/MINFO records yet?</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-14 15:11:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026802&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026802&q=raw">body</a>]</b>
+
+Well, I disagree with you on whether mailers should follow forwarding
+paths for you (I'm for it) but I think this is getting into the area
+of religion.  I would comment, though, that when I see 50% of the mail
+in my retransmission queue being from somebody in California to
+somebodyelse in California because of forwarding trails, I tend to
+want a fix.
+
+But in the case of the distributed mailsystem approach, there is a
+major benefit to doing it via domains.  I do indeed have LCS.MIT.EDU
+as a nickname for a machine (XX), but what if that machine is down for
+several days due to serious hardware failure?  Happens to any machine
+one or two times a year (freqency proportional to the number of people
+depending on the machine to be up, of course.)  If the only support
+for "user@lcs.mit.edu" is via XX, I'm screwed.  If it's in the domain
+system, things still work except for people who actually read their
+mail on XX, and even there there's hope because those people can
+temporarily route their mail somewhere else.
+
+Also, if you carry the idea of having a central mail node per site to
+its logical conclusion you get a machine like MC.LCS.MIT.EDU, which is
+used exclusively for mail (no CPU time to spare for anything else).
+Would you believe a dedicated mail machine that manages to get into
+the BBN top-ten traffic list every few weeks?  Don't try this at home
+unless you have a spare mainframe or two sitting idle....
+
+I agree that nobody really understands what the impact of queries
+flying everywhere will be.  Needs research, but needs to be
+implemented before anybody can do traffic analysis.
+
+Note that much of the overhead problem with domain queries in general
+can be aleviated by making extensive use of zone transfers at off
+hours.  I suspect that it would be a lot less overhead if all the big
+mail sites kept a local copy of the root zone to avoid having to query
+all the .ARPA names, etc.  The root servers can of course tune their
+parameters (SOA fields, when they give a REFUSED reply to an AXFR
+request, etc) to keep the loading tolerable.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837759026803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026804&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026803&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Submission for fa-namedroppers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927050&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927052&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927050&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927052&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500035&r=1&w=2">Submission for fa-namedroppers</a>
+From:       
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-23 9:11:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927051&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927051&q=raw">body</a>]</b>
+
+Path: ufcsv!daemon
+From: Scott Bradner &lt;sob@husc6.harvard.edu&gt;
+Newsgroups: fa.namedroppers
+Subject: Re: BITNET-Internet Gateway
+Message-ID: &lt;9291@ufcsv.cis.ufl.EDU&gt;
+Date: 23 Nov 87 09:11:02 GMT
+Sender: daemon@ufcsv.cis.ufl.EDU
+Lines: 17
+
+Harvard offers to be a primary or secondary nameserver for bitnet MX
+records if the bitnet "powers" and the NIC ok it.
+
+Note that MX records are the only sure way to get this to work
+since some bitnet sites are now using a domain style return address
+that refers to a host that has no current record. Also note that
+only the bitnet nodes that are not part of a currently legit domain
+need to be added, assuming that the operators of the other domains have
+( as we at harvard have ) added their bitnet hosts to their namederver
+databases even if they do not have a local path to that node. If they have
+not, it might get a bit strange.
+
+The ideal setup would have the MX record point to the gateway that is the
+fewest bitnet hops away from the requested node.
+
+scott bradner
+sob@harvard.*
+
+<b>[<a href="?l=namedroppers&m=95837781927050&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927052&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927050&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927052&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

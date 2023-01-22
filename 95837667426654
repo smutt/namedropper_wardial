@@ -1,0 +1,71 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain Heirarchy &amp; IN-ADDR domain server assignments.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426653&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426655&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426655&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800029&r=1&w=2">Domain Heirarchy &amp; IN-ADDR domain server assignments.</a>
+From:       <a href="?a=95837693400026&r=1&w=2">Chris Lindblad &lt;CJL%MIT-OZ () MIT-MC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-20 19:24:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426654&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426654&q=raw">body</a>]</b>
+
+Here's a problem that I can't figure out reading anything, that I
+thought someone might have anything to say.
+
+I want to set the name servers for the 52.128.IN-ADDR.ARPA domain to be
+say, PREP.AI.MIT.EDU, HERMES.AI.MIT.EDU, and GUTENBERG.AI.MIT.EDU.
+MKL@SRI-NIC won't do it, because he says that then NIC would have to
+know about the AI.MIT.EDU domain. Instead, he wants to set the servers
+to the 52.128.IN-ADDR.ARPA domain to be the same as those for the
+MIT.EDU domain, and then those servers should delegate further to the
+servers I wanted. This sounds like the wrong thing, because I'm not
+about to give up without a fight authority over the IN-ADDR domain
+corresponding to the network number assigned to the MIT AI lab to an
+entity that is not the MIT AI lab.
+
+Does NIC have to know about some domain, for example AI.MIT.EDU, in
+order to say that the servers for some IN-ADDR.ARPA subdomain, like
+PREP.AI.MIT.EDU? If yes, then isn't this a bad thing? Doesn't this force
+the delegation of authority over the IN-ADDR.ARPA domain to follow the
+delegation of authority over the domain in which the server machines are
+named?
+
+    Date: Friday, 20 December 1985  16:36-EST
+    From: Mark Lottor &lt;MKL at SRI-NIC.ARPA&gt;
+
+    OK, I was a bit confused.  I think you are too.  Here is what
+    I think should be happening, and I think our IN-ADDR file
+    is correct at this time.  MIT.EDU has authority over your domain
+    AI.MIT.EDU.  Therefor MIT.EDU is required to know about the
+    servers for AI.MIT.EDU, we are not.  In our INADDR file we
+    currently have a pointer stating that for queries of net
+    128.52 you should go ask the MIT.EDU servers.  Those servers
+    should then tell the querier to go ask the AI.MIT.EDU servers.
+
+    I.E. If I ask the nic for info on 1.2.52.128.IN-ADDR.ARPA,
+    it gives me the names of the MIT.EDU servers.  I would
+    then query them, and they would give me the names of
+    the AI servers.  
+
+    I think you should send your in-addr requests off to the
+    MIT.EDU domain maintainer then...
+
+    Mark
+
+<b>[<a href="?l=namedroppers&m=95837667426653&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426655&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426655&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

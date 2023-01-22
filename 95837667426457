@@ -1,0 +1,67 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Namesolving from MILNET' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426456&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426458&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Namesolving from MILNET
+From:       <a href="?a=95837662100003&r=1&w=2">mills () dcn6</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-23 20:50:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426457&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426457&q=raw">body</a>]</b>
+
+Folks,
+
+We have domain namesolvers installed now in fuzzballs in Germany and in
+several Ford and U of Michigan hosts with rickety plumbing to the ARPANET.
+The fuzzball in Germany is on MILNET and resolves everything from the NIC
+at its MILNET address, while the other fuzzballs resolve only non-ARPA
+domains from the NIC at its ARPANET address.
+
+Today the NIC has been bobbing up and down, while the ARPANET/MILNET
+service seems badly congested, so I have been watching to see how well
+things like the mail system cope. Among the interesting things observed:
+
+1. Our mail system insisted on checking that a mail destination was valid
+   (for possible forwarding) before accepting a recipient with a 2xx
+   reply. If not, a 5xx reply was returned. Now, however, the validity
+   checking can return less than an authoritative "no," so a 4xx reply
+   needs to be returned in that case.
+
+2. There were lots of places in the system where the local host name
+   was needed, like in the SMTP herald, for example. However, in our
+   zeal for delayed binding the name was not bound until actual use,
+   thus the poor host may come up empty when it tries to resolve its
+   own name! We haven't given up on that, but do now return the [n.n.n.n]
+   format "name" when the namesolver returns a non-authoritative "no."
+   (What happens if the namesolver returns an authoritative "no" when
+   a host attempts to resolve (inversely) its own name is a topic for
+   further study...).
+
+3. An exhaustive search to verify names as the mail comes in is probably
+   not a Sterling idea if the receiving host does not cache. In the case
+   of a noisy link to a name server, as I observed today, the mail
+   sender can be delayed a lot as each recipient grinds through the
+   retry timeouts. In order to minimize holding times, our mail sender
+   already resolves all of the host names in the mailbag before trying
+   to contact the destination hosts.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426456&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426458&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

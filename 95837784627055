@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Pilot Project: Hosts Table To Be Available Over Internet' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627053&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627052&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627056&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400010&r=1&w=2">Re: Pilot Project: Hosts Table To Be Available Over Internet</a>
+From:       <a href="?a=95837786600015&r=1&w=2">ai.etl.army.mil!hoey () ames ! arc ! nasa ! gov  (Dan Hoey)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-19 16:52:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627055&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627055&q=raw">body</a>]</b>
+
+&gt;In article &lt;353@nisca.ircc.ohio-state.edu&gt; bernstei@hpuxa.ircc.ohio-state.edu (Dan Bernstein) writes:
+&gt;   As a pilot project, we are going to make available to the Internet
+&gt;   a hosts table.
+&gt;
+&gt;   Sites with reliable name server access should not need this table.
+
+Actually, name servers don't help much with some questions that a host table is
+good for.  Like ``What is the NIC's name?'' and ``There's some host called
+QUABBIN something something and what is the whole name?''.  I wonder if the new
+host table will help us answer the question ``Somebody's name server is putting
+out a host name with a comma (,) in it'' that was the subject of a few notes
+earlier.  Come to think of it, I'd like to know if there are any wierd
+characters floating around the DNS.
+
+Such questions could be easier asked of some sort of server that searches a
+host table, rather than giving you the whole table to search.  Also, that
+server could incrementally maintain its database.  But I don't see anyone
+RFCing such a service.
+
+Dan
+
+<b>[<a href="?l=namedroppers&m=95837784627053&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627052&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627056&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

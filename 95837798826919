@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826929&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826926&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826931&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">Re: CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=95837817200005&r=1&w=2">mcsun!inria!mirsa!jerry.inria.fr!huitema () uunet ! uu ! net  (Christian Huitema)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-09 7:59:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826919&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826919&q=raw">body</a>]</b>
+
+I was amazed by the whole debate. It started from one simple
+constatation, i.e. that the introduction of a ".cs" country code would
+break the heuristics which currently allow a Janet user to send a mail
+to either "user@edu.foo.bar.cs" or "user@cs.bar.foo.edu". Obviously, one
+does not need much thinking to discover that one only needs to list all
+the ".cs" subdomain in the gateway to fix the heuristics; has there are
+probably a dozen such domains, this is no big deal.
+And, no, this is not a prerequisite to connecting Czechoslovakia.
+
+But then, one see a number of people discovering that the Brits live in
+an island, that they drive on the wrong side of the road, that their
+screw are screwed in the wrong way, that they have all sorts of exotic
+metrics (like, how many grains do you count in a stone?), and that their
+universities are registered under ".ac.uk" rather than ".gb" (why not
+".en" + ".we" + ".sc" + ".ni", by the way?). The funny thing is that
+they believe that there is nothing wrong with that, that driving on the
+left side is not any more dangerous than driving on the right side of
+the road; they probably start eating their eggs the wrong way too... At
+a time when all cities of all industrial countries look more and more
+alike, we should be glad of their efforts to maintain some diversity!
+
+Still, one may observe that allowing both "user@edu.foo.bar.cs" and
+"user@cs.bar.foo.edu" is akin to driving both on the left side and on
+the right side simultaneously. No doubt that the heuristic will be
+stressed again and again...
+
+Christian Huitema
+
+<b>[<a href="?l=namedroppers&m=95837798826926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826929&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826926&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826931&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'On bakeoffs and tigersolvers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426444&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426446&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    On bakeoffs and tigersolvers
+From:       <a href="?a=95837662100003&r=1&w=2">mills () dcn6</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-17 2:02:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426445&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426445&q=raw">body</a>]</b>
+
+Folks,
+
+I rebuilt our fuzzball namesolver to do an end-order traverse of the search
+tree using data accumulated from various name servers along the way. The
+algorithm currently retries the (same) server up to three times at
+three-second intervals. If a server responds with a list of other name
+servers, the process recurses on this list and returns to where it left off
+only in none of them work. The entire history of servers is kept in order to
+suppress duplicates and potential loops. All that was fun to do, not too
+hard and increased the code size only slightly.
+
+Following is a set of scenarios which I hope demonstrate my conclusion that
+our shy little namesolver, having evolved to a tiger, needs such teeth. In the
+script the lines beginning "conn" represent requests to resolve the name as
+argument (default domain is "arpa"). The lines beginning with a time hack
+represent a response from the server at the address shown, with the response
+code following. Note that "name not found" means only that no answer records
+were returned. Success is indicated by "listening" followed by an "open" line
+with the resolved address. The lines beginning "new entry" represent an ns
+record returned by the server indicated in the time-hack line just below,
+while the lines beginning "duplicate" represent ns records which are already
+in the search tree.
+
+The annointed, slightly edited script follows. Note that I intentionally gave
+the servers a hard time, like allegedly confusing hosts and domain names.
+
+A close friend (in local tables):
+
+conn dcn1
+?INET-(PIN)-I-Open [128.4.0.1]
+
+A good buddy (in close-friend's name server, which contains an authoritative
+copy of the ARPA domain for this test):
+
+conn isid
+00:34:00 Server	[128.4.0.1]	I-Listening...
+?INET-(PIN)-I-Open [10.0.0.27]
+
+The NIC returns two servers for the symbolics.com domain, the first of which
+responds joy for the name given:
+
+conn riverside.scrc.symbolics.com
+      New entry	[192.10.41.21]
+      New entry	[192.10.41.144]
+00:34:27 Server	[10.0.0.51]	W-Name not found
+00:34:28 Server	[192.10.41.21]	I-Listening...
+?INET-(PIN)-I-Open [192.10.41.21]
+
+Same thing happens with the bbn.com domain, except there are now five servers
+to try:
+
+conn bbna.bbn.com
+      New entry	[10.3.0.5]
+      New entry	[192.1.2.68]
+      New entry	[8.5.0.4]
+      New entry	[10.1.0.5]
+      New entry	[192.1.2.67]
+00:35:04 Server	[10.0.0.51]	W-Name not found
+00:35:06 Server	[10.3.0.5]	I-Listening...
+?INET-(PIN)-I-Open [10.3.0.5]
+
+We try a nickname in the ucla.edu domain and find yet more joy:
+
+conn ccn.ucla.edu
+      New entry	[10.2.0.1]
+      New entry	[10.3.0.1]
+00:35:39 Server	[10.0.0.51]	W-Name not found
+00:35:41 Server	[10.2.0.1]	I-Listening...
+?INET-(PIN)-I-Open [10.1.0.1]
+
+Gushers of joy from berkeley.edu domain. Note that nic had to be tried twice:
+
+conn ucbarpa.berkeley.edu
+?INET-(PIN)-I-Closed
+00:36:22 Server	[10.0.0.51]	W-Name server not responding
+      New entry	[10.0.0.78]
+      New entry	[128.32.0.4]
+      New entry	[10.2.0.78]
+      New entry	[128.32.0.10]
+00:36:23 Server	[10.0.0.51]	W-Name not found
+00:36:25 Server	[10.0.0.78]	I-Listening...
+?INET-(PIN)-I-Open [128.32.0.4]
+
+However, joy is not boundless, as we see in the rice.edu paddy:
+
+conn rice.edu
+      New entry	[192.5.58.6]
+      New entry	[128.42.1.1]
+      New entry	[192.5.48.5]
+00:36:53 Server	[10.0.0.51]	W-Name not found
+00:36:56 Server	[192.5.58.6]	W-Name server not responding
+00:36:59 Server	[192.5.58.6]	W-Name server not responding
+00:37:02 Server	[192.5.58.6]	W-Name server not responding
+00:37:06 Server	[128.42.1.1]	W-Name server not responding
+00:37:09 Server	[128.42.1.1]	W-Name server not responding
+00:37:12 Server	[128.42.1.1]	W-Name server not responding
+00:37:13 Server	[192.5.48.5]	I-Listening...
+?INET-(PIN)-I-Open [192.5.58.6]
+
+The first two of the name servers supplied by nic failed to respond, but the
+last one did, all of which took over twenty seconds. Now we try berkeley.edu
+and joy is definitely rationed:
+
+conn berkeley.edu
+      New entry	[10.0.0.78]
+      New entry	[128.32.0.4]
+      New entry	[10.2.0.78]
+      New entry	[128.32.0.10]
+00:37:35 Server	[10.0.0.51]	W-Name not found
+      Duplicate	[128.32.0.10]
+      Duplicate	[10.2.0.78]
+      Duplicate	[128.32.0.4]
+      Duplicate	[10.0.0.78]
+00:37:36 Server	[10.0.0.78]	W-Name not found
+00:37:39 Server	[128.32.0.4]	W-Name server not responding
+00:37:43 Server	[128.32.0.4]	W-Name server not responding
+00:37:46 Server	[128.32.0.4]	W-Name server not responding
+      Duplicate	[128.32.0.10]
+      Duplicate	[10.2.0.78]
+      Duplicate	[128.32.0.4]
+      Duplicate	[10.0.0.78]
+00:37:47 Server	[10.2.0.78]	W-Name not found
+00:37:51 Server	[128.32.0.10]	W-Name server not responding
+00:37:54 Server	[128.32.0.10]	W-Name server not responding
+00:37:57 Server	[128.32.0.10]	W-Name server not responding
+?PING-W-Name server not responding
+
+The nic returned four name servers which were tried in turn. The 10.0.0.78
+server returned the same four servers, which were not saved in the search
+tree. The next server at 128.32.0.4 failed to respond at all. Then the
+10.2.0.78 server returned the same four servers, which were discarded.
+Finally, the 128.32.0.10 server failed to respond and the namesolver gave up.
+The code "name server not responding" was returned to the client as the last
+internal code found, which is not probably the best thing, since more
+information is available. We'll fix that.
+
+Here's the case for the cme.edu domain, which is represented by three entries
+in the nic data base, but all came up empty:
+
+conn cmu.edu
+      New entry	[128.2.254.132]
+      New entry	[128.2.254.137]
+      New entry	[128.2.254.155]
+00:38:12 Server	[10.0.0.51]	W-Name not found
+00:38:15 Server	[128.2.254.132]	W-Name server not responding
+00:38:18 Server	[128.2.254.132]	W-Name server not responding
+00:38:22 Server	[128.2.254.132]	W-Name server not responding
+00:38:25 Server	[128.2.254.137]	W-Name server not responding
+00:38:28 Server	[128.2.254.137]	W-Name server not responding
+00:38:31 Server	[128.2.254.137]	W-Name server not responding
+00:38:34 Server	[128.2.254.155]	W-Name server not responding
+00:38:37 Server	[128.2.254.155]	W-Name server not responding
+00:38:41 Server	[128.2.254.155]	W-Name server not responding
+?PING-W-Name server not responding
+
+Just for fun, we try rutgers.com, but the nic knows that and says so:
+
+conn rutgers.com
+00:39:24 Server	[10.0.0.51]	F-Name does not exist
+?PING-F-Name does not exist
+
+Rutgers.edu joins the joy club:
+
+conn rutgers.edu
+      New entry	[10.1.0.89]
+      New entry	[128.6.0.2]
+00:39:37 Server	[10.0.0.51]	W-Name not found
+00:39:39 Server	[10.1.0.89]	I-Listening...
+?INET-(PIN)-I-Open [10.1.0.89]
+
+Purdue.edu likewise finds joy:
+
+conn purdue.edu
+?INET-(PIN)-I-Closed
+      New entry	[192.5.48.5]
+      New entry	[192.5.58.6]
+      New entry	[128.42.1.1]
+00:39:51 Server	[10.0.0.51]	W-Name not found
+00:39:52 Server	[192.5.48.5]	I-Listening...
+?INET-(PIN)-I-Open [10.0.0.37]
+
+Symbolics.com servers are all working, but return no records for the host
+symbolics.com, which I consider a valid but undignified response:
+
+conn symbolics.com
+?INET-(PIN)-I-Closed
+      New entry	[192.10.41.21]
+      New entry	[192.10.41.144]
+00:40:27 Server	[10.0.0.51]	W-Name not found
+00:40:28 Server	[192.10.41.21]	W-Name not found
+00:40:29 Server	[192.10.41.144]	W-Name not found
+?PING-W-Name not found
+
+We conclude those servers don't know whether the host symbolics.com exists,
+or not and, what's more, nobody in the world does. This may not be what those
+servers meant, but it's sure what they said.
+
+This round of baking seems to indicate that consistency is improving, but the
+authoritative issue seems still in doubt. I would argue that a name server
+should take some care in structuring its data so that "name not found"
+conclusions, as in the Symbolics case above, can be minimized.
+
+I continue to be worried about the size of these datagrams, especially when
+they start to zing and fragment in lossy, small-packet, packet-radio nets.
+Even tigersolvers seldom if ever need the server names themselves - only the
+addresses in the additional section are required. The domain names in the
+authority section are required only for caching and then only if different
+from the query. In fact, I could imagine a case where a name server itself had
+no host name and thus no a records, but that is straying from the point.
+
+These tests were done in the early evening when the ARPANET traffic had
+slacked off a bit. I noticed earlier in the day a significant increases in
+delay, loss and retries, especially in the case of the TOPS-20 servers. In
+some tests, which I unfortunately didn't record, our tigersolver had to walk
+the entire search tree in truely heroic fashion, retrying several servers
+several times, before finding one with the requested data.
+
+Note that the tests shown here only wound down three levels of the search
+tree. Tests such as those previously reported with berkeley.edu can wind down
+more levels than that, but this has been observed only when oscillating
+between previously tried servers. The tigersolver algorithm avoids that by
+amputating duplicates.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426444&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426446&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

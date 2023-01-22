@@ -1,0 +1,451 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'SIGCOMM '88 INFO' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026909&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026911&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    SIGCOMM '88 INFO
+From:       <a href="?a=95837785000014&r=1&w=2">garcia () tsca ! istc ! sri ! com</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-25 15:38:20</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026910&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026910&q=raw">body</a>]</b>
+
+All,
+
+Enclosed is the advance program and registration form for the 1988 ACM
+SIGCOMM symposium.  SIGCOMM is THE ACM symposium on computer
+communications.  This year we have a very strong technical program,
+consisting of three days of conference papers, plus one tutorial day.
+
+For more information about hotels and on-campus accommodations, please
+contact Stanford University directly (415/723-3126).
+Please note that VERY limited on-campus accommodations are available.
+
+To expedite the registration process, you can send print outs of the
+attached forms with payment.
+
+Sincerely,
+
+JJ Garcia-Luna
+General Chair, SIGCOMM 88
+
+-----------------------------------------------------------------------
+
+			    ACM SIGCOMM 88 SYMPOSIUM
+ 			        ADVANCE PROGRAM
+		 Communications Architectures and Protocols
+			      August 16-19, 1988
+		  Stanford University, Stanford, California
+
+
+				  SYMPOSIUM
+			      August 17-19, 1988
+
+
+				August 17, 1988
+
+9:00 - 10:00
+Session 1: Keynote Session
+	General Chair: J.J. Garcia-Luna-Aceves, SRI International, USA
+	Program Chair: L. Landweber, University of Wisconsin, USA
+	Student Paper Award: J.J. Garcia-Luna-Aceves, SRI International, USA 
+	Keynote Address: Donald Nielson, SRI International, USA
+
+10:30 - 12:00
+Session 2: Local/Metropolitan Area Internets 
+Chair: D. Anderson, Unviversity of California, Berkeley, USA
+
+     Topological Analysis of Local-Area Internetworks
+     (G. Trewitt, Stanford University) --- Student Paper
+     Dynamic Resource Allocation in a Metropolitan Area Network
+     (K. Maly, C. Overstreet, Old Dominion Univ.; 
+     X. Qui, China State Shipbuilding Corporation, Peoples Republic
+     of China; and D. Tang, Chengdu University of Science &amp;
+     Technology, Peoples Republic of China)
+     Optical Interconnection Using ShuffleNet Multihop Networks in
+     Multi-Connected Ring Topologies  
+     (M.J. Karol, AT&amp;T Bell Laboratories, USA)
+
+1:15 - 2:45
+Session 3: Routing 
+Chair: L. Chapin, Data General Corporation, USA
+
+    Landmark Routing:  Distributed Name-Based Routing for Very 
+    Large Networks 
+    (P.F. Tsuchiya, Mitre, USA)
+    Pitfalls of a Certain Class of Distributed Routing Algorithms	
+    (R. Perlman and G. Varghese, DEC, USA)
+    Multicast Routing in Internetworks and Extended LANs
+    (S.E. Deering, Stanford University, USA) --- Student Paper
+
+3:15 - 5:15
+Session 4: Transport Level and Operating System Issues 
+Chair: S. Lam, University of Texas at Austin, USA
+
+     Design of an x-Kernel 
+     (N. Hutchinson and L. Peterson, Univ. of Arizona, USA)
+     Exploiting Recursion to Simplify RPC Communication Architectures
+     (D.R. Cheriton, Stanford University, USA)
+     Service Specification and Protocol Construction for the Transport Layer 
+     (S.L. Murphy and A.U. Shankar, Univ. of Maryland at College Park, USA)
+     A Network Management Language for OSI Networks
+     (U. Warrier, A. Relan, Unisys Corporation, USA; 
+     O. Berry, IBM Science and Technology, Israel; 
+     and J. Bannister, The Aerospace Corporation, USA)
+
+7:00 pm - on
+Banquet
+
+
+				August 18, 1988
+
+8:30 - 10:00
+Session 5: Lessons of the Internet 
+Chair: J. Mogul, Digital Equipment Corporation, USA
+
+    Some thoughts on the DARPA Internet Architecture 
+    (David Clark, MIT, USA)
+    The Fuzzball 
+    (D.L. Mills, University of Delaware, USA)
+    Development of the Domain Name System 
+    (Paul Mockapetris, USC Information Sciences Institute, USA)
+
+10:30 - 12:00
+Session 6: Local Area Network Architecture 
+Chair: R. Cheung, Hewlett-Packard, USA
+
+     Optimizing Bulk Data Transfer Performance: The Packet Train Model
+     (C. Song and L.H. Landweber, University of Wisconsin, USA)
+     --- Student paper
+     A Mesh/Token Ring Hybrid-Architecture LAN 
+     (C. Kang, The American University, USA;
+     and J. Herzog, Oregon State University, USA)
+     Tree LANs with Collision Avoidance: Protocol, Switch Architecture,
+     and Simulated Performance
+     (T. Suda, S. Morris, and T. Nguyen, 
+     University of California, Irvine, USA)
+
+1:15 - 2:45
+Session 7: Very High Speed Networking 
+Chair: D. Farber, University of Pennsylvania, USA
+
+    An Analysis of Memnet - An Experiment in High Speed Memory Mapped
+    Local Networking (G. Delp, A. Sethi, University of Delaware, USA;
+    and D. Farber, University of Pennsylvania, USA)
+    --- Student paper
+    The VMP Network Adapter Board (NAB): High-Performance Network
+    Communication for Multiprocessors 
+    (H. Kanakia and D. Cheriton, Stanford University, USA) --- Student paper
+    Fast Circuit Switching in Fiber Optic Networks
+    (I. Chlamtac, A. Ganz, and G. Karmi, University of Massachusetts, USA)
+
+3:15 - 5:15
+Session 8. Measurement and Management 
+Chair: V. Cerf, Corporation for National Research Initiatives, USA
+
+     A Pseudo-Machine for Packet Monitoring and Statistics
+     (R.T. Braden,  USC Information Sciences Institute, USA)
+     Knowledge-Based Monitoring and Control: An Approach to
+     Understanding the Behavior of TCP/IP Network Protocols
+     (B.L. Hitson, Stanford University, USA) --- Student paper
+     Measured Capacity of an Ethernet
+     (D.R. Boggs, J.C. Mogul, and C.A. Kent, DEC, USA)
+     Distributed Testing and Measurement across the Atlantic Packet
+     Satellite Network (SATNET)
+     (K. Seo, BBN, USA; J. Crowcroft, UCL, England; 
+     P. Spilling, Norwegian Telecommunications Administration, Norway;
+     J. Laws, Royal Signals and Radar Establishment, Englanand;
+     and  C. Topolcic, BBN, USA)
+
+5:30 - 7:00
+Reception
+
+				August 19, 1988
+
+8:30 - 10:00
+Session 9: Communication Protocol Design and Testing 
+Chair: D. Mills, University of Delaware, USA
+
+    A Multicast Transport Protocol 
+    (J. Crowcroft and K. Paliwoda, University College London, England)
+    Experience with Test Generation for Real Protocols
+    (D. Sidhu and T. Leung, Iowa State University, USA)
+    Performance Models for Noahnet
+    (G.M. Parulkar, A.S. Sethi, D.J. Farber, University of Pennsylvania, USA)
+
+10:30 - 12:00
+Session 10: Broadcast Issues 
+Chair: D. Sidhu, Iowa State University, USA
+
+     A High Performance Broadcast File Transfer Protocol
+     (J.S.J. Daka, A.G. Waters, University of Essex, England)
+     Specification and Verification of Collision-Free Broadcast Networks 
+     (P. Jain and S.S. Lam, University of Texas, Austin, USA)-- Student Paper
+     Delivery and Discrimination: The Seine Protocol
+     (M. Gouda, University of Texas at Austin, USA;
+     N. Maxemchuk, U. Mukherji, and K. Sabnani,
+     AT&amp;T Bell Laboratories, USA)
+
+1:15 - 2:45
+Session 11: Congestion and Topology Control 
+Chair: J.J. Garcia-Luna-Aceves, SRI International
+
+     An Explicit Binary Feedback Scheme for Congestion Avoidance in
+     Computer Networks with a Connectionless Network Layer
+     (K.K. Ramakrishnan and  R. Jain, DEC, USA)
+     Congestion Avoidance and Control 
+     (Van Jacobson, Lawrence Berkeley Laboratory, USA)
+     A Protocol to Maintain a Minimum Spanning Tree in a Dynamic Topology
+     (C. Cheng, I. Cimet, P. Kumar, Northwestern Univ., USA)
+
+
+3:00 - 5:00
+Session 12: Panel on Internet Engineering
+Chair: P. Gross, Mitre, USA
+Panelsists to be announced
+
+--------------------------------------------------------------------------
+
+
+
+				   TUTORIALS
+				August 16, 1988
+				9:00 am - 5:00 pm
+
+	            1. INTEGRATED SERVICES DATA NETWORKS:
+			  NARROWBAND AND BROADBAND
+			      (Mario Gerla, UCLA)
+
+
+				   Abstract
+
+ISDN is one of the newest " buzzwords " in the communications arena.
+The concept is extremely appealing: by integrating various services (
+voice, data, video etc.) in a common network we will be able to achieve
+lower operating costs, higher efficiency, better
+availability/maintainability and higher flexibility in the introduction
+of new services.This concept is now becoming a reality, and both users
+and service providers are taking into account the potential of ISDN's
+in formulating their plans.
+
+This seminar will review the evolution of the ISDN concept during the
+past few years,will discuss the standard recommendations, will compare
+implemen- tation alernatives and finally will report on recent field
+trials.  In organizing this seminar , the attempt was to maintain a
+good balance between design principles, standard recommendations and
+actual network implementations.
+
+
+		                Outline
+
+	- Why integrated services
+	- Narrowband and Broadband ISDN's
+	- Standard recommendations
+	- ISDN backbone implementation alternatives
+	   ( Packet/Circuit/Hybrid switching)
+	- ISDN routing and flow control
+	- Service integration in MAN's and LAN's
+	- Field trials
+	- Future trends
+
+                              Biography
+
+Professor Mario Gerla received the PhD degree in engineering from the
+University of California, Los Angeles (UCLA), in 1973.  From 1973 to
+1976, he was Network Planning Manager at Network Analysis Corporation.
+&gt;From 1976 to 1977, he was with Tran Telecommunications, Los Angeles,
+where he participated in the development of integrated packet and
+circuit networks.  In 1977, he joined UCLA and is now a Professor in
+the Department of Computer Science.  His research interests include the
+design and control of distributed computer communications systems and
+networks, and the development of high-speed local area networks.
+ 
+
+   		2. MULTI-HOP TOPOLOGIES, BRIDGES AND ROUTERS
+			   (Radia Perlman, DEC)
+
+			         Abstract
+
+A Local Area Network (LAN) allows direct communication between any
+stations directly connected to the LAN.  Route computation and
+forwarding nodes are not necessary.  However, technology and
+performance constrains the topology, distance, and number of stations
+of a single LAN.  Thus a network usually needs to grow beyond the
+limits of a single LAN.  One method of interconnecting LANs is through
+"Bridges".  Two different schemes for interconnecting LANs are being
+standardized by two different subcommittees of the IEEE 802 committee,
+which is standardizing LANs.  These two schemes are "spanning
+tree/transparent" bridges, and "source routing" bridges.  Another
+method of creating a network with multiple links is through "routers".
+These too are being standardized by various committees.  "Routers"
+perform the "Network Layer Protocol" as defined by the ISO reference
+model.
+
+This tutorial will briefly review the ISO reference model.  It will
+explain the two bridge schemes, and contrast their functionality and
+performance.  It will explain the functionality of the Network Layer,
+and explain design alternatives for meeting this functionality.  The
+emphasis will be placed on the design of a "connectionless" style of
+Network Layer.  No background other than intellectual curiosity is
+required.  Emphasis is on protocol concepts rather than specifics of
+the schemes, or mathematical analysis.
+
+                               Outline
+
+     o   ISO Reference Model Review (20 minutes)
+     o   LAN review -- CSMA/CD, token ring, token bus (15 minutes)
+     o   Bridges -- Spanning Tree, Source Routing, Comparisons (1 1/2
+         hours)
+     o   Network Layer functionality -- connection oriented vs
+         connectionless, routing, fragmentation and reassembly,
+         autoconfigurability, addressing (45 minutes)
+     o   Routing Algorithms -- "Distance Vector" vs "Link State" (2
+         hours)
+     o   Depending on time and interest, remaining time can be spent
+         exploring the design implications of:
+         -   interoperability of spanning tree and source routing
+             bridges
+         -   Network Layer autoconfigurability
+         -   Design implications of hierarchical networks; subnetwork
+             partition problem, subnetwork autonomy
+
+                              Biography
+
+Radia Perlman is a consulting engineer at Digital Equipment
+Corporation.  She designed the spanning tree algorithm used by
+Digital's bridges and adopted for use by both bridge standards
+(transparent bridges and source routing bridges).  She also was
+responsible for the design and specification of the Network Layer in
+Digital's Network Architecture, aspects of which have been adopted by
+ISO for use in the standard connectionless Network Layer.
+
+She has taught as adjunct faculty at the graduate schools of Wang
+Institute and University of Lowell, and at the Wang Summer Institute.
+She received the B.S.  and M.S.  degrees in mathematics at MIT, and is
+currently pursuing a Ph.D.  degree in Computer Science at MIT. 
+
+
+-----------------------------------------------------------------------
+
+                        TUTORIAL AND SYMPOSIUM REGISTRATION
+
+
+Please check applicable fees:
+
+
+					ADVANCE			REGULAR
+				     (before 7/25/88)
+
+	TUTORIAL 1:
+____	ACM members			$200			$250
+____	Non-members			 250			 300
+____	Full-time students**		 100 			 150
+
+	TUTORIAL 2:
+____	ACM members			$200			$250
+____	Non-members			 250			 300
+____	Full-time students**		 100 			 150
+
+	SYMPOSIUM*:
+____	ACM members			$200			$250
+____	Non-members			 250			 300
+____	Full-time students**		 100			 150
+
+
+* Reception and banquet fees will be included in the recidence hall
+  registration package.
+
+** Student registration must be accompanied by a copy of valid full-time
+   student ID. Must be ACM member.
+
+TOTAL PAYMENT MUST BE INCLUDED IN US$.  $____________.
+
+Advance registration payment must be received by July 25, 1988.  After
+that date, please wait to register at the Symposium itself.  Make
+checks payable in US$ to ACM SIGCOMM.  There will be a $10.00 Surcharge
+on foreign banks.
+
+Please return tutorial and symposium registration form and complete
+payment to: Dr.  J.J.  Garcia-Luna-Aceves, SRI International, 333
+Ravenswood Ave., Menlo Park, CA 94025, USA; tel: (415) 859-5647;
+e-mail: garcia@sri.com.
+
+
+----------------------------------------------------------------------------
+
+	                   APPLICATION FOR RESIDENCE HALLS
+
+
+Room and meal payments are due upon arrival.  DO NOT PAY IN ADVANCE.
+All payments must be in $US dollars, and made in cash, traveler's
+checks, or personal checks from a U.S. Bank  made payable to
+Stanford University.
+
+A VERY LIMITED number of rooms in Stanford University are available on
+a first-come, first-served basis.  Complete this form and return it, no
+later than July 25, 1988, to Dr. J.J. Garcia-Luna-Aceves, SRI International, 
+Menlo Park, CA 94035; Tel: (415) 859-5647; e-mail: garcia@sri.com.
+
+
+RATES:
+
+PLAN I - Room for 4 nights (Mon., Tue., Wed., and Thurs.) and 10 meals
+from Tue. breakfast thru Fri. lunch (omitting Wed. Dinner).
+
+	Single room - $102.00,    shared room - $76.00
+	      meals     95.00           meals - $95.50
+		       -------			-------
+		      $197.50                  $171.50 per person
+
+
+PLAN II - Room for 3 nights (Tues., Wed., Thurs.) and 7 meals
+(breakfast and lunch on Wed., Thurs., Fri., and dinner on Thursday.
+
+	Single room -  $76.50,    shared room - $57.00
+	      meals     65.00           meals - $65.50
+		       -------			-------
+		      $141.50                  $122.50 per person
+
+EXTRA NIGHT'S STAY: single room - $25.50, shared room - $19.00 per person.
+
+CHILDREN: 10 yrs.  old and under are charged half rate for housing and
+meal package. 
+
+
+RESIDENCE HALL REQUIREMENTS:
+
+Name: ____________________________________________________________
+	Last				First		Middle
+
+Address: _________________________________________________________
+	 _________________________________________________________
+	 _________________________________________________________
+
+____ Plan I,  ____ Plan II
+____ Single,  ____ Double
+____ Female,  ____ Male
+____ Smoking, ____ Nonsmoking
+
+Preferred rommate: ________________________________________________
+Date and time of arrival: _________________________________________
+Date and time of departure: _______________________________________
+
+
+_________________________________________________________________________
+
+<b>[<a href="?l=namedroppers&m=95837783026909&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026911&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

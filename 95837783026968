@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mailing list domain - MX records only?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026967&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026969&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026967&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026970&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400015&r=1&w=2">Mailing list domain - MX records only?</a>
+From:       <a href="?a=95837785600020&r=1&w=2">stjohns () beast ! DDN ! MIL (Mike St !  Johns)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-16 22:23:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026968&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026968&q=raw">body</a>]</b>
+
+Hmm - my memory is hazy, but isn't there an SMTP response which says
+&lt;foo&gt; isn't here, hes at &lt;bar&gt; and I ain't gonna forward it?
+
+I wonder if any hosts can automatically parse the smtp response and
+automatically redirect the message.
+
+The thing we could do that doesn't require ANY hacks to the system
+(except the naming) is use an address form like
+&lt;list-name&gt;@&lt;list-name&gt;.maillist.  I'm not saying I like having to
+double the name, but at least it would work.
+
+Mike
+
+<b>[<a href="?l=namedroppers&m=95837783026967&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026969&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026967&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026970&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

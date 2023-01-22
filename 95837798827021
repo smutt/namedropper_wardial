@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain name service default MX forwarder doesn't seem to work' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827022&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827027&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300020&r=1&w=2">Domain name service default MX forwarder doesn't seem to work</a>
+From:       <a href="?a=95837817800040&r=1&w=2">bbs!karl () uunet ! uu ! net  (Karl Denninger)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-25 16:38:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827021&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827021&q=raw">body</a>]</b>
+
+We have local domain name service implemented (we'll set up for "real" root
+servers and the like when our Internet link goes in).  As part of this, we
+have one mail server, which exports /usr/spool/mail to all our workstations
+and each workstation has their mail service pointed back at the mail host.
+
+So far so good.
+
+BUT, we want to have the Internet (when installed) think that anything in
+our domain should have it's mail handled by the mailhost.  Now, if I read
+the manuals and specs right, what I should do is insert something like this
+into our domain files:
+
+*.naitc.com.	IN	MX	0	nis.naitc.com.
+
+Which ought to, if I recall correctly, send all the mail for our domain to 
+the mailhost (nis) for disposition.
+
+Only problem is -- it doesn't work.  It appears that in.named ignores the 
+fact that I put a period on the end of the domain name, and adds the domain 
+again! Thus, I end up with a MX for "*.naitc.com.naitc.com"!  ARGH!  This 
+is &gt;not&lt; what I wanted! :-)
+
+Leaving off the domain entirely gives the same result!  This doesn't make
+sense... 
+
+The real strange thing is that we also have a line in the zone file that reads:
+
+*.mcs.com.	IN	MX	0	bbs.naitc.com.
+
+Which works as one would expect -- a query for "mcs.mcs.com" returns a mail
+handler of "bbs.naitc.com".
+
+If I insert:
+
+print		IN	MX	0	nis.naitc.com.
+
+In the zone file it also works as I would expect and says that the machine
+"print.naitc.com" has a mailhost of "nis.naitc.com".
+
+What's up?  Any gurus care to explain why the first example doesn't work, and
+the second two do?  Is our in.named just plain broken?  Should we bitch
+loudly to Sun (not that it will do any good) or get a PD copy of in.named
+(if one exists) and compile that?
+
+We're running SunOS 4.1.
+
+--
+Karl Denninger	AC Nielsen
+kdenning@ksun.naitc.com
+(708) 317-3285
+Disclaimer:  Contents represent opinions of the author; I do not speak for
+	     AC Nielsen on Usenet.
+
+<b>[<a href="?l=namedroppers&m=95837798827019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827022&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827027&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

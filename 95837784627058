@@ -1,0 +1,82 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'IETF-OSI-OR Agenda for Hawaii' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627057&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627059&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627060&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400011&r=1&w=2">IETF-OSI-OR Agenda for Hawaii</a>
+From:       <a href="?a=95837786600018&r=1&w=2">hagens () cs ! wisc ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-20 14:18:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627058&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627058&q=raw">body</a>]</b>
+
+The IETF-OSI-OR group has changed its name to IETF-OSI-X.400.
+
+IETF-OSI-X.400 will meet on tuesday (Halloween) in Hawaii 
+(Bring your Phill Gross Mask!).
+
+The morning will be spend reviewing scope and issues, whereas the afternoon
+will be spent hammering out some problems. The Domain WG has been invited 
+to attend the meeting. 
+
+NOTE TO DOMAIN WG MEMBERS: if you are not interested in the problems
+X.400 faces, then you should skip the morning. However, if you do, you
+may not understand the motivation for the afternoon's work. Note also that
+OSI bashing will be limited 1 BBU (British Bashing Unit -- approx 5 minutes)
+per hour, not to exceed 8 BBUs in a 24 hour period.
+
+NOTE TO ALL: please read RFC 987 before attending.
+
+NOTE TO DOMAIN WG MEMBERS: please read ISO 7498-1, 7498-3, TR 8509,
+9834 et al, 8824, 9594 et al, CCITT X.400, X.402, X.403, X.407,
+X.408, X.411, X.413, X.419, X.420, GOSIP V2, NIST stable agreements,
+and minutes of last NIST-RASIG, NIST-X.400, NIST-X.500 implementation
+workshop meetings before attending.  :^)
+
+
+Rob
+
+				Agenda 
+		IETF-OSI-X.400 (was OSI-OR)
+
+
+am		+ Announcement of new name
+		+ Status of the quest for "NREN"
+		+ Review of Scope
+			- 822 &lt;-&gt; X.400 gateway issues (RFC 987 and successors)
+			- X.400 operational issues in a dual protocol internet
+
+		+ Review of Issues
+			- 822 &lt;-&gt; X.400 Gateways
+				RFC 987 gateway background
+				Table Maintenance
+				Locating a Gateway
+				ORAddress Structure
+
+			- X.400 Operation
+				Routing to destination or 822 gateway
+				Use of Internet Technology
+				Mixed Stacks
+				MTA names
+				Use of "NREN"
+
+		+ Presentation of a new, unified address structure
+
+pm		+ Enumerating, prioritizing, and discussion of major tasks
+
+<b>[<a href="?l=namedroppers&m=95837784627057&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627059&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627060&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'leading digits in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926845&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800022&r=1&w=2">leading digits in domain names</a>
+From:       <a href="?a=95837784200018&r=1&w=2">mark () cbpavo ! mis ! oh ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-22 12:18:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926844&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926844&q=raw">body</a>]</b>
+
+It has been pointed out that the RFCs specify that domain names must
+begin with a letter, not a digit.  Not knowing this, we've registered
+a domain name 3Com.COM, which has been in the tables for about 6 months.
+No problems arose, until someone poking around in the database happened
+to notice it and pointed it out.
+
+I asked the NIC whether we should change the RFC or change the domain
+name.  (Obviously, we'd prefer 3Com to keep their domain name, it's a
+much better fit with the name of the company, and they've been using
+the name.)  The answer wasn't clear.  Apparently the original motivation
+for disallowing leading digits was to make it easy to recognize whether
+a string is a host name or a numeric IP address like 192.11.2.1.  (4.2BSD
+doesn't have any trouble with this, but some other systems might.)  This
+only matters in the context of a host name, not a domain name.  3Com is
+on UUCP, not on the Internet, so nobody is going to telnet to them.  It
+only matters within the context of MX mail.
+
+It was suggested that we should ask this list.  Have you noticed any
+problems due to 3Com.COM being in the tables?  Do you expect any?  If
+you do have a problem, how serious is it?  Is it worthwhile to uproot
+an existing domain name, for example?  Or should we just have it apply
+to future domain registrations?
+
+Thanks,
+
+	Mark Horton
+	mark@stargate.com
+
+<b>[<a href="?l=namedroppers&m=95837781926843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926845&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

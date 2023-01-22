@@ -1,0 +1,62 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Misbehavior in DNS Clients' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627035&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627041&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400002&r=1&w=2">Misbehavior in DNS Clients</a>
+From:       <a href="?a=95837785600017&r=1&w=2">postel () venera ! isi ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-09 13:35:58</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627036&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627036&q=raw">body</a>]</b>
+
+
+----- Begin Included Message -----
+To: postel@venera.isi.edu
+Subject: DNS and the NIC
+Date: Mon, 09 Oct 89 12:54:46 PDT
+From: Paul Mockapetris &lt;pvm@venera.isi.edu&gt;
+
+The NIC and other servers running my code keep fairly detailed
+statistics.
+
+For the period 5-Oct to 7-Oct here are some highlights:
+
+Distribution by host:
+
+ 3.8% from 129.250.1.1		PGHSUN.PREPNET.COM	NO IN-ADDR!
+12.1% from 129.126.13.191	unregistered from KODAK.COM domain
+25.1% from 129.6.32.4 		DURER.CME.NIST.GOV	NO IN-ADDR!
+ 5.1% from 127.0.0.1 !!!!!!!!!!
+
+The percentages are of all DNS packets arriving at the NIC.  These are
+just the high poles under the tent.  There are lesser offenders.
+
+Note that 3 of the 4 are from hosts which are grossly misconfigured in
+the DNS database.  I'll bet they are not set up any more reasonably
+for anything else.
+
+The last is from the UNIX loopback address!  I could change the server
+to throw away packets from 127.0.0.1, but why should we wait until
+they get to the NIC?  Why not throw them away in gateways!  I wonder
+how many non-DNS packets are transmitted from 127.0.0.1.
+
+paul
+----- End Included Message -----
+
+<b>[<a href="?l=namedroppers&m=95837784627033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627035&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627041&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

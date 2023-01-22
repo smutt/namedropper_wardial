@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Why Germany lies about the DE. domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327010&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400002&r=1&w=2">Re: Why Germany lies about the DE. domain.</a>
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () Gipsi ! Gipsi ! Fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-22 19:11:18</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327009&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327009&q=raw">body</a>]</b>
+
+	What comes to A records, those could well point to nonconnected hosts
+	prodived that there always is at least one MX record pointing to a
+	connected one.  
+
+We have several MX records listed.  Some hosts (mostly those in Europe,
+and to some extent Australia) can deliver mail to us directly.  Other
+hosts go via the Fnet mail gateway, inria.inria.fr.  This works quite
+well, since the INRIA people do a hell of a job keeping availability
+up (especially in the light of scarce resources and uncooperative
+carriers).
+
+You have to be careful with the term "connected", since it is relative
+to where you stand.  I can reach many German hosts, but no US hosts.
+Am I connected?  Are they?
+	
+	Finally, it should be possible to register in-addr.arpa domains for
+	nonconnected networks (if the first paragraph holds), but so far
+	hostmaster@nic.ddn.mil has refused to do so.
+
+Yes, we were stung by this also.  I couldn't use remote resources
+because many sites couldn't "authenticate" (ahem, such as it is) our
+host (via the .rhosts hack).  I'm still a little irrate about the
+US-centric or "cultural imperialism" that someone recently mentioned
+about the NIC.  If you can register in a domain (whether your name-
+servers are reachable from the NIC or not), you should be able to
+register in the in-addr.arpa domain as well (in fact, it should be
+required that you register this within some short interval after
+getting your network number assigned, since many sites don't bother
+to do this).  [Paul &amp; Jon:  what is the latest word on this from the
+Powers That Be?]
+
+There is no ARPAnet "backbone" anymore, and the US shouldn't be
+considered the backbone for the international Internet that is
+growing.
+
+If the domain name system is supposed to give distributed authority
+for naming, why do I still feel that this NIC holds all the cards?
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837797327011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327010&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

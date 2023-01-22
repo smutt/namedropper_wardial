@@ -1,0 +1,135 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: X.25 and ISDN RRs for DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826925&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826920&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    re: X.25 and ISDN RRs for DNS
+From:       <a href="?a=95837817600010&r=1&w=2">Robert Ullmann &lt;Ariel () Relay ! Prime ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-08 15:34:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826924&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826924&q=raw">body</a>]</b>
+
+
+Hi,
+
+[this message didn't seem to make it to the TCP-ISDN list,
+ and wasn't sent to NameDroppers, so I am quoting the whole
+ thing, instead of the usual excerpts]
+
+&gt; Date: Wed, 08 Aug 90 14:38:22 +1000
+&gt; From: Bob &lt;smart@mel.dit.csiro.au&gt;
+
+&gt; I think the general idea of the proposed draft RFC is excellent.
+&gt; I would like to quibble at some details.
+
+&gt; 1) The RT records are to be used by the network layer. Like
+&gt; all network activity this should work without reference to
+&gt; domain names. It seems more correct to make this an
+&gt; extension of the in-addr.arpa domain
+
+&gt;  17.128.in-addr.arpa.     IN     RT     10  sh.prime.com.
+
+&gt; is a route to a whole class B network (128.17). Alternatively
+
+&gt;  17.18.19.20.in-addr.arpa. IN     RT     30  relay.prime.com.
+
+&gt; is a route to a specific host.
+
+I did think about this. In my view, the domain system (at least
+in the Internet class) is all about binding FQDNs to attributes.
+The "pointer" zones are only a particular inverted index to the
+domain records.
+
+If the IP address exists, there should be a PTR record; if it
+exists, it should point to a valid FQDN, and (all) the other
+RRs can be placed there.
+
+I'm not terribly worried about the layer mixing: either way,
+we are already assuming that the IP (internetwork-layer) router is
+making a DNS (application-layer) request.
+
+Also: for a multi-homed host, there is no particular association
+between its IP addresses and the X25 or ISDN address(es): it
+is perfectly all right to call it with the "off-side" IP address.
+
+The other reason for binding name-&gt;(X.25/ISDN) is for protocols
+not involving IP at all; both SMTP and TP/IX are the particular
+examples I am interested in.
+
+&gt; 2) The X25 and ISDN types should be network types parallel to
+&gt; IN not parts of the IN network info. E.g.
+
+&gt;   Relay.prime.com.     X25     A     311061700956
+&gt;                        ISDN    A     150887929603217 003
+
+In my view: IN is not a "network type". It is an Object Class, in
+this case the class of all objects known as "Internet Hosts".
+
+The information clearly belongs to the Internet class.
+
+&gt; Records of the form
+
+&gt;   31106700956.x25-addr.arpa.     IN     X25     x.y.edu
+
+&gt; should mean that host x.y.edu will accept X25-over-IP calls
+&gt; for X.25 address 31106700956 using some to-be-defined protocol
+&gt; for running X.25 over IP. I would point out that CISCO have
+&gt; such a protocol and might release it (my guess: they would
+&gt; release it if there was a threat of some other protocol
+&gt; becoming a standard).
+
+Interesting. Problem: either you have a very large, very flat,
+and *very* hard to administer zone; or you have to figure out
+how to delegate parts of the X.121 address-space. Any ideas?
+
+&gt; Similarly for IN ISDN. Yes ISDN over IP could be used to provide
+&gt; telephone/fax/whatever connectivity to workstations with IP
+&gt; connectivity. It may not be as clearly desirable as IP over ISDN
+&gt; but it is possible and whatever the theoretical difficulties I
+&gt; suspect it would work fine in practice in many situations.
+
+Seems to me any given protocol (voice/fax/whatever) would best be
+run on TCP (or ISO TPn, or TP/IX-TP), then you could run (e.g.)
+voice/TCP/IP/ISDN everywhere instead of voice/ISDN. &lt;grin&gt;
+
+&gt; 3) It is possible to imagine access to X25 and ISDN A records from
+&gt; boxes which don't run IP. So it would be nice to define a protocol
+&gt; for accessing the DNS over raw X.25 and raw ISDN networks. Since
+&gt; the DNS can be accessed by UDP and TCP this shouldn't be hard.
+
+Quite so. Something I am prototyping. Basically, you call with
+PRID C0F66035 and use the TCP DNS encapsulation (16-bit count
+precedes each DNS packet, DNS packets do not correspond necessarily
+to X.25 L3 M-data sequences).
+
+On ISDN, you use X.25 bearer capability, and user-user setup element
+selecting X.244 (X.25 PRID/UDATA), in turn selecting C0F66035. (thus
+calls gated ISDN-&gt;PSDN or vice versa work properly) All of which might
+be the subject of a future RFC.
+
+This parallels the method of doing IP/ISDN on the switched service with
+user-user selecting X.244 PRID = CC, which also (theoretically) works
+across ISDN/PSDN gates.
+
+&gt; Bob Smart &lt;smart@mel.dit.csiro.au&gt;
+
+Robert Ullmann
+Prime Computer
+
+<b>[<a href="?l=namedroppers&m=95837798826925&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826920&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

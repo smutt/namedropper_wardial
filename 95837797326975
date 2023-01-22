@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Why does DDN lie about the de domain?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326973&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326976&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326973&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200030&r=1&w=2">Why does DDN lie about the de domain?</a>
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-05 13:35:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326975&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326975&q=raw">body</a>]</b>
+
+On 4 May 90 19:18:10 GMT, eckert@fauern.UUCP  (Toerless Eckert) writes (i.a.)
+
+               ... . Intentionally there are two zones for the de.
+   domain, one is the official internet zone, and lists all those
+   subdomains in de that have aquired full internet connectivity only,
+   and MX records for the other domains. This zone is serveres
+   primarily by uunet.uu.net, with the other US servers being secondary
+   for that zone.
+
+   The other zone, that contains all information about the ever changing
+   accessible netz in germany is on unido.informatik.uni-dortmund.de.
+   Sites using the DNS in germany usually have a forward onto
+   that machine to get all those domainnames correctly resolved.
+
+   The reasons for this are obviously that we still cannot enter domains
+   in  the official DNS zones, that are not US-internet connected.
+
+The way the de. domain is set up now IS a kind of lie. Furthermore, no
+one has seen fit to tell sites in other parts of Europe of the setup,
+although we have better routing to the German net: From our site (in
+Denmark) we can reach two of the three IP addresses that unido
+advertises for tupac-amaru.informatik.rwth-aachen.de. .
+
+I think that if a host has an official IP number it should be in the
+DNS even if it is not connected to anything. When people try to
+connect they will get an ICMP Host/Net Unreachable message from the
+nearest gateway, which will tell them what the real problem is and
+keep them from bothering the domain administrator. (In the Danish part
+of NORDUNET we have had several active subnets with no Internet
+connectivity; these were announced in the DNS, and no one complained
+that I know of.)
+
+In our case, as we won't (and shouldn't) forward queries to unido, we
+can only let the resolver have this information if we set one of our
+BIND's up as a secondary for de. with unido as the primary. If this
+practice proliferates, each site on the net may have to change its
+nameserver setup on a daily basis if it wants to keep up with routing
+changes all over the network: Changes no one informs about.
+
+Maybe the NIC should be charged with maintaining a SERVERS.TXT which
+tells where to get the supplementary information which cannot be had
+through the root servers.
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcvax!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837797326973&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326976&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326973&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

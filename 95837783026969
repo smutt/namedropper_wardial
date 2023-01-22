@@ -1,0 +1,76 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'gratuitious munging of ats in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026968&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026970&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026976&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400020&r=1&w=2">gratuitious munging of ats in domain names</a>
+From:       <a href="?a=95837785600026&r=1&w=2">mailrus!emv () csd1 ! milw ! wisc ! edu  (Edward Vielmetti)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-19 1:05:27</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026969&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026969&q=raw">body</a>]</b>
+
+
+(hope this makes it over the atlantic)
+
+I just saw a piece of mail bounce because a mailer along the way
+mis-handled an @.  Some headers for your perusal:
+
+
+Received: by umix.cc.umich.edu (5.54/umix-2.0)
+      id AA13705; Sun, 18 Sep 88 09:33:19 EDT
+Message-Id: &lt;8809181333.AA13705@umix.cc.umich.edu&gt;
+Received: from UKACRL.BITNET by CUNYVM.CUNY.EDU (IBM VM SMTP R1.1) with BSMTP id \
+                0161; Sun, 18 Sep 88 09:36:42 EDT
+Received: from RL.IB by UKACRL.BITNET (Mailer X1.25) with BSMTP id 2364; Sun,
+ 18 Sep 88 14:33:22 BST
+Received: from RL.IB by UK.AC.RL.IB (Mailer X1.25) with BSMTP id 2363; Sun, 18
+          Sep 88 14:33:22 BST
+Via:      UK.AC.MAN.AT.STAR; 18 SEP 88 14:33:18 BST
+Date:     18-SEP-1988 14:32:17 GMT
+From: USER%STAR.@.MAN.AC.UK@CUNYVM.CUNY.EDU
+To: username@UB.CC.UMICH.EDU
+Sender: JANET "USER@UK.AC.MAN.AT.STAR" &lt;USER%STAR.@.MAN.AC.UK@CUNYVM.CUNY.EDU&gt;
+Mailer:   Janet_Mailshr V3.1 (19-Aug-1988)
+
+Unfortunately, it appears as though the mailer along
+the way might have been umix - because of a ruleset
+that looks like this:
+	R$+ at $+	$1@$2
+with the comment
+	"at" -&gt; "@" for RFC 822
+
+I've seen that sendmail ruleset in more than one package,
+so I'm wondering what the recommendation should be:
+
+	'at' not recommended as a component in domain names
+	&lt;user at host&gt; syntax not supported any more
+
+I'm sure that there are other domain name components that would
+give existing software fits (imagine what a domain name like
+'ibm.com.cc.umich.edu' would do to a mailer in the cc.umich.edu
+domain that used the bind resolver routines.)
+
+Comments?  I'm not sure how to proceed here, especially if the
+UK mail ends up being important.
+
+--Ed
+Edward Vielmetti, U of Michigan computing center, mail group
+
+
+<b>[<a href="?l=namedroppers&m=95837783026968&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026970&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026976&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

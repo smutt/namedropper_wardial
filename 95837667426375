@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'overlapping domains and hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426374&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426376&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426382&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900044&r=1&w=2">overlapping domains and hosts</a>
+From:       <a href="?a=95837475100016&r=1&w=2">Larry Peterson &lt;llp () Purdue ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198503">1985-03-11 14:31:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426375&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426375&q=raw">body</a>]</b>
+
+Could someone shead light on the following issue? I am wondering
+whether a site/domain name like "Purdue", which has several
+subdomains, like CS, CC, etc. is both the name of a host (purdue is
+currently a registered host), as well as the name of a domain. My
+question has to do with identifying mail recipients with an address
+of the form user@Purdue.EDU rather than user@merlin.cs.Purdue.EDU.
+We are able to do this in the pe-domain world by pulling a trick --
+we give one of our hosts the same name as our organization. Do we have
+to pull this same trick in the domain world, or can we avoid naming
+one of our hosts "purdue" and still support a name like user@purdue.edu?
+The same question applies at lower levels. Can I send mail to
+user@cs.purdue.edu without having to name one of my hosts cs.purdue?
+
+The bottom line is this. Do domain names only support sending mail to
+user@host.domain... (where I may give my host the same name as
+my site), or does it support names of the form user@domain, where
+I don't have a host named after my domain (at least not specifically,
+I understand that the name server will return the Internet Address
+of "some" host(s)).
+
+Larry
+
+<b>[<a href="?l=namedroppers&m=95837667426374&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426376&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426382&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

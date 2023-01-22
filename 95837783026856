@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  HINFO RDATA -- it makes a difference' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026854&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026857&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026854&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026857&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200013&r=1&w=2">Re:  HINFO RDATA -- it makes a difference</a>
+From:       <a href="?a=95837785400006&r=1&w=2">mark () cblpf ! ATT ! COM (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-20 11:56:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026856&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026856&q=raw">body</a>]</b>
+
+I'm not sure what you mean by "file syntax" - it's not even totally
+consistent within UNIX systems.  Berkeley allows up to 255 chars
+between slashes, System V only counts the first 14, and V9 returns
+errors for more than 14.  However, the basic notion of /a/b/c or ..
+or c/d, with distinct upper/lower case, is the same.  I don't have
+a POSIX spec handy, but I am not sure POSIX addresses filenames
+other than for /usr/include purposes.
+
+If you're concerned about filesystem semantics, there are variations
+there, too, especially when you take RFS and NFS into account.
+They are mostly pretty subtle, involving locking or keeping a file
+open after it's unlinked.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837783026854&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026857&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026854&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026857&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

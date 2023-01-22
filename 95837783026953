@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TTLs from secondary servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026951&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    TTLs from secondary servers
+From:       <a href="?a=95837785400014&r=1&w=2">"Stuart Levy" &lt;slevy () uc ! msc ! umn ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-11 3:17:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026953&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026953&q=raw">body</a>]</b>
+
+I sent a note to the BIND list last night describing a problem we've
+encountered because BIND (e.g. 4.8) secondary servers send out RR's
+with TTL values of {zone minimum} - {time since last refresh from primary}
+(clamped at 2 minutes if &lt;= 0) rather than just using the zone minimum TTL
+as I'd assumed.
+
+After rereading RFC 1035, I'm wondering whether BIND is wrong.  Maybe
+secondaries really should just use the "minimum" value without considering the
+time since last refresh, so long as the expiration interval hasn't elapsed.
+Any opinions?
+
+	Stuart Levy
+
+<b>[<a href="?l=namedroppers&m=95837783026951&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

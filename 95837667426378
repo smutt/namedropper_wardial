@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'root'ed vs. relative domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426377&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426379&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426379&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900046&r=1&w=2">root'ed vs. relative domain names</a>
+From:       <a href="?a=95837692300012&r=1&w=2">ralph%ucbmonet () Berkeley (Ralph Campbell)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198503">1985-03-14 16:58:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426378&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426378&q=raw">body</a>]</b>
+
+Work has been going on here at Berkeley to integrate the nameserver
+into a real working environment. It is fairly clear to me that
+that there needs to be a mechanism for specifying and distinguishing 
+domain names that are relative to some 'home' domain verses
+fully qualified domain names. Granted this just involves
+the resolver portion and abbreviated names should always be expanded
+before being sent to any name servers; however, it would be nice
+if abbreviations worked in a consistent manner at all locations.
+
+I propose that resolvers should have the notion of a local domain
+(read from a file or whatever) and that domain names that
+do not end in a '.' be appended with the local domain name. Thus
+mail to 'ralph@ucb-arpa' from some host within 'berkeley.edu.' would
+expand to ralph@ucb-arpa.berkeley.edu.
+
+The trailing '.'  convention is already used by the master file format
+for initializing the nameserver data base (i.e., don't append the 'origin'
+to names that end in '.').
+
+<b>[<a href="?l=namedroppers&m=95837667426377&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426379&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426379&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

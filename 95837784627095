@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'A bug in BIND 4.8.1' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627094&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627096&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    A bug in BIND 4.8.1
+From:       <a href="?a=95837786600038&r=1&w=2">mailrus!uwm.edu!cs.utexas.edu!samsung!shadooby!terminator!terminator.cc.umich.ed</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-11 20:06:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627095&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627095&q=raw">body</a>]</b>
+
+There seems to be a problem with the z_auth flag becoming
+unset in ns_req() and later not being reset after a
+successful update.  This results in a SERVFAIL result for
+zones which actually have up-to-date data.
+
+The problem occurs when a secondary zone becomes stale.  In our 
+particular case, ns_maint() would get called for one zone, it would 
+be serviced, and although another zone would need an update seconds 
+later, the maint_interval of 900 would prevent the update from occuring 
+before the zone would get marked stale.
+
+However, the z_auth flag is not reset by endxfer() if the status of
+the zone is XFER_UPTODATE; the flag is only reset if the zone
+is actually refreshed (and the status is XFER_SUCCESS).
+
+This can be fixed by resetting zp-&gt;z_auth inside of the
+XFER_UPTODATE case inside endxfer():
+
+&gt;				case XFER_UPTODATE:
+&gt;					/* zone data is OK */
+&gt;					zp-&gt;z_auth = 1;
+&gt;					zp-&gt;z_state &amp;= ~Z_SYSLOGGED;
+
+Also, the new maint_interval value of 900 seems to be on the high
+side.  A zone can linger stale for nearly fifteen minutes.  The old
+value was 300, and that seems more reasonable.
+--
+Bryan Beecher, U-M Information Technology Division  (+1 313 747 4050)
+Domain:	bryan@terminator.cc.umich.edu  Path: mailrus!terminator!bryan
+
+<b>[<a href="?l=namedroppers&m=95837784627094&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627096&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

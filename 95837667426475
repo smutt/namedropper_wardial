@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'O. K., So now what do I do?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426474&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426476&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426480&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100035&r=1&w=2">O. K., So now what do I do?</a>
+From:       <a href="?a=95837693200014&r=1&w=2">fouts () AMES-NAS ! ARPA (Marty)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-21 9:57:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426475&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426475&q=raw">body</a>]</b>
+
+
+     I'm more than a little confused about what I should do next and
+could use some advice on how to procede:
+
+     Ames-nas is a gateway to a class C network (ames-nas-net) and is
+homed on net 26.  It is one of two networks here at Ames, the other
+belonging to a seperate organization within Ames.
+
+     We have obtained and made partially operational the Berkeley name
+server / resolver code "BIND" and are technically ready to start
+experimenting with being a subdomain.
+
+     Herein lies my problem:  Ames is a NASA research center, and
+currently the only NASA site directly attached to the network.  Of
+course, eventually other NASA sites will come onto the net.
+
+     I realize that the issues I am about to raise need to be solved
+within NASA, but I am interested in opinions and technical aspects of
+how others within the community are handling them:
+
+     I assume that eventually, NASA will be a subdomain of (GOV?, MIL?,
+ARPA?) that AMES will be a subdomain of NASA and that we (NAS) will be
+a subdomain of AMES.  However, we're ready to start now, AMES as a
+whole will be somewhat behind us, and NASA as a domain probably won't
+occur until there are multiple centers on the net.
+
+     The question is: do we start out being the NAS domain as a
+subdomain of one of the top level domains, become NAS.AMES.TOP when
+AMES as a whole is ready and eventually become NAS.AMES.NASA.TOP when
+NASA becomes a domain; do we take the opposite extreme of being all of
+those domains at once (provided we can find peers etc.) and then give
+over authority as the rest of NASA becomes available; or is there a
+different course of action?
+
+Marty
+
+----------
+
+<b>[<a href="?l=namedroppers&m=95837667426474&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426476&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426480&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

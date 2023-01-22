@@ -1,0 +1,125 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MHS to ARPA gateway, name space issues' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426519&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426520&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    MHS to ARPA gateway, name space issues
+From:       <a href="?a=95837693400011&r=1&w=2">cbosgd.ATT!mark () seismo ! CSS ! GOV (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-18 16:55:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426521&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426521&q=raw">body</a>]</b>
+
+We're in the process of writing a document specifying a recommended
+standard for gatewaying between ARPA domain style addresses and
+MHS (X.400) style attribute addresses.  We're trying to work with
+anyone else who is interested in the same issues - if you are interested
+and haven't heard from me, please drop me a line (mark@Berkeley or
+mark@seismo should be properly forwarded to mark@cbosgd.ATT.UUCP.)
+
+One issue which has come up is trying to determine how cleanly the
+MHS "global naming tree" can be made to correspond to the ARPA domain
+tree name space.  The two seem to have many similarities, especially
+when you look at the latest proposal for the directory services.
+Both have countries at the top level, and organizations right under
+the countries, although there are some basic differences.  For example,
+MHS elements need not be unique under their parent, rather there can
+be extra attributes stuck in to resolve the ambiguities.  (For example,
+if there are two "Vortex" organizations in the "US" country, both can
+be directly underneath "US" in the name tree, with the same spelling,
+but the sender would have to specify a geographic name, zip code,
+phone number, or telex number to resolve the ambiguity.  This also
+applies to subdomains ("organizational units") in a similar way.
+
+Another difference is that the MHS stuff requires countries at the
+top of the domain tree, period.  (There is some notion of having
+international organizations whose names really are unique, but this
+doesn't seem completely baked yet.)  ARPA allows country domains, but
+it also has these extra three domains: EDU, COM, and GOV.  There are
+several possible views of this from the MHS side: EDU, COM, and GOV
+are organizations within US, or they are organizational units within
+the ARPA org within the US, or they are three psuedo-countries which
+are to be interpreted as US.  Another possibility is to declare that
+the org is ARPA in the US country, and that the LHS and RHS of the
+domain address are domain defined attributes (which explicitly means
+the ARPA tree and the MHS tree are different.)
+
+On the other side of the coin is how the MHS world appears from the
+ARPA side.  It could be integrated as intended, in which case the two
+worlds would be part of one name space (and some cooperation and
+recognition of authority would be needed), or the whole thing could
+be marked as part of MHS by creating an MHS top level ARPA domain
+(or by using the PUB top level ARPA domain, since that one seems
+intended for the public nets, ala X.25, which will almost certainly
+go MHS, leaving PUB unused.)
+
+There is a draft proposal written up, aimed at integrating X.400
+and RFC920.  Since that was written I've read the directory proposal,
+which is different enough that the gateway would have to be
+structured differently (e.g. 2nd level domains become organizations
+instead of Administration Management Domains [e.g. common carriers],
+and people's names are arbitrary character strings like "John J. Smith
+Jr." instead of 4-tuples of last name, first name, middle initials,
+and generational qualifier.)  I can send our draft gateway proposal
+to anyone interested.
+
+In general, I'd like to invite the participation of anyone else who
+is working on this issue or interested in it, so we can work together.
+
+Very very briefly, an MHS O/R Address like
+	Country	US
+	ADMD	ATT
+	PRMD	Foobar Inc.
+	Title	Vice President
+	PName	John Q. Smith
+becomes, in the current proposal, in 920 syntax:
+	/PName=John_Q._Smith/Title=Vice_President/PRMD=Foobar_Inc.@ATT.US
+and in the directory oriented version, would be something like
+	Country	US
+	Org	Foobar Inc.
+	Title	Vice President
+	PName	John Q. Smith
+becoming
+	/PN=John_Q._Smith/T=Vice_President@Foobar.US
+or possibly even
+	/PN=John_Q._Smith/T=Vice_President/O=Foobar_Inc.@US.PUB
+or
+	/PN=John_Q._Smith/T=Vice_President/O=Foobar_Inc./C=US@PUB
+
+I'm mentioning this to the list because full integration may require
+ARPA to make a few changes to RFC920, like becoming more liberal about
+what characters are allowed in domain names on the RHS, or restricting
+what subdomains of countries can look like, so that they would fit into
+the same name space as MHS.  Also, some of you may be involved with MHS
+and interested in these issues.
+
+The claim has been made that "eventually" (which means anywhere from 1
+to 15 years, depending on whom you talk to) the ARPA world will have to
+change to fit into the MHS world, and that MHS will become dominant,
+like the post offices and telcos (and run by the same people.)  I personally
+think this claim is true, but don't know what time frame to assign to it.
+In any case, I hope everyone will take this seriously and learn more
+about MHS.  Ignoring it won't make it go away, and it's probably very
+different from what most people on this list would have designed.  (Notice,
+for example, that mailing addresses are not character strings, but are
+sequences of typed and tagged data, in a binary format, which I'm just
+making up a printing representation for in the examples above.)
+
+	Mark Horton
+
+<b>[<a href="?l=namedroppers&m=95837667426519&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426520&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

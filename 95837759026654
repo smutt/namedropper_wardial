@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Test Domain Database' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026652&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026655&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Test Domain Database
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198601">1986-01-22 15:54:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026654&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026654&q=raw">body</a>]</b>
+
+
+    Having spent considerable time testing domain software recently I've
+come to feel the need for a documented domain test suite and test database.
+
+    Unless someone has done this already, I'm planning to create a sub-domain
+of cs.net  (e.g. test.cs.net) which contains various interesting test cases
+(such as CNAME RRs which point across domains, a list of MX RRs which will
+cause the truncation bit to be set, at least one example of every RR, 
+wildcard names, etc.).  Has anyone tried to do this already?  Does anyone
+have suggested cases for the test suite?
+
+    I'll document the test suite and post to name-droppers if there is enough
+interest.
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh or craig@sh.cs.net (CSNET)
+craig@loki.bbn.com (ARPA)
+
+<b>[<a href="?l=namedroppers&m=95837759026652&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026655&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

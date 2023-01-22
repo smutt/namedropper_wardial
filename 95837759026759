@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  well ...?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026757&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026760&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026757&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026772&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500007&r=1&w=2">Re:  well ...?</a>
+From:       <a href="?a=95837783700018&r=1&w=2">jordan () ucbarpa ! Berkeley ! EDU (Jordan Hayes)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-12 21:11:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026759&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026759&q=raw">body</a>]</b>
+
+	From: Rich Zellich &lt;zellich@ALMSA-1.ARPA&gt;
+
+	You can't drop non-domain addresses from HOSTS.TXT because of
+	all the MilNet hosts, which are \not/ yet required to use
+	domain addressing.
+
+Wait, maybe there's some confusion here. I thought all of the Internet
+(including the MILNET portion) was to adopt domain-style addresses
+(i.e., you had to at least join the ARPA top-level domain, administered
+by the NIC).  It was my understanding that the MILNET was holding off
+on the switching to the newer domains (EDU, COM, etc.) and also holding
+off on the usage of servers to implement the hostname &lt;-&gt; address
+mapping.
+
+	The host I'm sending this message from, for instance, will not
+	accept a domain address and I must occasionally "grep"
+	HOSTS.TXT to get the old-style address so I can edit a reply
+	address.
+
+Not to sound like Mark Crispin (hi mark!) but your mailer should be
+fixed.
+
+/jordan
+
+<b>[<a href="?l=namedroppers&m=95837759026757&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026760&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026757&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026772&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

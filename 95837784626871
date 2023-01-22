@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How do I use nslookup to get all of the top domains?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626873&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626868&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900019&r=1&w=2">Re: How do I use nslookup to get all of the top domains?</a>
+From:       <a href="?a=95837786200003&r=1&w=2">mcvax!kth!draken!chalmers!cs.chalmers.se!lindberg () uunet ! uu ! net  (Gunnar Lindberg</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198904">1989-04-18 10:37:44</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626871&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626871&q=raw">body</a>]</b>
+
+In article &lt;11503@s.ms.uky.edu&gt; david@ms.uky.edu (David Herron) writes:
+&gt;If you were to have your local server (somehow) do a 'zone' transfer
+&gt;of '.' from one of the root servers then the local server would have
+&gt;the list of all the valid top-level domains.  hm, putting a 'secondary'
+&gt;line in for '.' should be enough.
+
+Sorry, but that doesn't work. "nslookup ls" does exactly this and if
+you do "ls ." all you get is a list of the official root servers.
+
+Actually I don't think there is a way to find all top level domains
+(except via ftp from SRI-NIC.ARPA, domains.txt :-).
+
+	Gunnar Lindberg
+
+<b>[<a href="?l=namedroppers&m=95837784626872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626873&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626868&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

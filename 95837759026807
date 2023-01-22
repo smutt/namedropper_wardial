@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'More root domain servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026806&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026808&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026809&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500019&r=1&w=2">More root domain servers</a>
+From:       <a href="?a=95837693200005&r=1&w=2">Ron Natalie &lt;ron () BRL ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-22 0:45:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026807&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026807&q=raw">body</a>]</b>
+
+
+Bearing in mind the recent discussion at the Internet Engineering Task
+Force meeting.  Here is a list of possible sites for installing additional
+root domain servers.
+
+HOST : 10.3.0.14 : C.CS.CMU.EDU,CMU-CS-C.ARPA,CMU-CS-C,CMU-20C,CMUC : DEC-2060 : \
+TOPS20 : TCP/TELNET,TCP/FTP,TCP/SMTP,TCP/FINGER,ICMP,UDP/DOMAIN : HOST : 10.0.0.44 : \
+XX.LCS.MIT.EDU,MIT-XX.ARPA,MIT-XX,XX : DEC-2060T : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP,TCP/TIME,TCP/DAYTIME,TCP/SYSTAT,TCP/FINGER,UDP/DOMAIN : \
+HOST : 10.0.0.79, 192.5.6.1 : \
+TOPS20.DEC.COM,DEC-TOPS20.ARPA,DEC-TOPS20,DEC-2136,DEC-CHIP : DEC-2060T : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP,ICMP : HOST : 10.1.0.79 : \
+MARLBORO.DEC.COM,DEC-MARLBORO.ARPA,DEC-MARLBORO,DEC,MARKET : DEC-2060T : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP,ICMP : HOST : 10.0.0.89, 128.59.16.20 : \
+CS.COLUMBIA.EDU,COLUMBIA-20.ARPA,COLUMBIA-20,CUCS20 : DEC-2060 : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP : HOST : 10.2.0.119 : \
+RADC-TOPS20.ARPA,RADC-TOPS20,RADC-20 : DEC-2040T : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP : HOST : 26.1.0.13 : GUNTER-ADAM.ARPA,GUNTER-ADAM : \
+DEC-2060 : TOPS20 : TCP/TELNET,TCP/FTP,TCP/SMTP : HOST : 26.0.0.61 : \
+STL-HOST1.ARPA,STL-HOST1,STL1 : DEC-2040 : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP,TCP/DAYTIME,TCP/SYSTAT,TCP/FINGER,TCP/TCPSTAT,TCP/TTYTST,TCP/PWDGEN,TCP/TIME \
+: HOST : 26.0.0.67 : AFSC-HQ.ARPA,AFSC-HQ,HQAFSC : DEC-2040T : TOPS20 : \
+TCP/TELNET,TCP/FTP,TCP/SMTP :
+
+-Ron
+
+
+<b>[<a href="?l=namedroppers&m=95837759026806&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026808&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026809&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

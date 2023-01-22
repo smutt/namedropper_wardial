@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Mail Source Routing' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627074&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627076&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627076&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400016&r=1&w=2">re: Mail Source Routing</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198911">1989-11-08 16:17:55</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627075&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627075&q=raw">body</a>]</b>
+
+
+	The case of the mail routing is different, for the very purpose of the
+	application is to apply relaying of messages. One could expect that
+	intelligent mail routers will acquire somehow a knowledge of the "mail
+	network" topology, and use that for choosing the best destination.
+	After all, this is exactly what the UUCP mailer do!
+
+Christian:
+
+    This is precisely what MX does.  It specifies, in an abstract way,
+the prefered mail path to a site.
+
+    Your example of getting one message into France is well-taken, but
+is essentially a matter of mixing mailer topology (how mailers interact)
+and physical topology (how the wires are strung).  You want mailers to
+know about wires so that only one copy of a message flows over a particular
+wire.  Long ago, when we were designing MX, it was clear that mixing mailer
+topology and physical topology didn't work very well in a fully connected
+network such as the Internet -- and that we could solve 90% of our problems
+using mailer topologies.  (Note too, that SMTP will send only one
+copy until the last possible moment, based on MX information).
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837784627074&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627076&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627076&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

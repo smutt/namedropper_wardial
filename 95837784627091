@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Minimum configuration for BIND?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627090&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627093&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Minimum configuration for BIND?
+From:       <a href="?a=95837786600035&r=1&w=2">eru!luth!sunic!ericom!erix.ericsson.se!per () BLOOM-BEACON ! MIT ! EDU  (Per Hedeland)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-08 10:19:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627091&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627091&q=raw">body</a>]</b>
+
+Please excuse me if this question is too implementation-specific for this
+group, it's the most appropriate forum I have access to, and I know there are a
+lot of BIND experts out there...
+
+Background: BIND version 4.8 (altho I've tried the enhanced version from UofT
+as well), on mostly SunOS (i.e. BSD Unix) systems. No connection to the
+Internet (yet?), but some use of BIND on the internal network, wishing to
+increase this usage by making it easy to set up additional servers, possibly
+accessed via Yellow Pages (no flames please!:-).
+
+I thought the forwarders + slave functions would be just the thing for this,
+i.e. all that should be needed would be a named.boot file with
+
+forwarders addr1 addr2 ...
+slave
+
+where addr1 etc would of course indicate more knowledgeable servers. A minimum
+of data, no additional files to keep track of, etc.
+
+Unfortunately, this doesn't seem to work - the server still wants to know of at
+least one root server, to be specified in the cache file. Given this, it will
+(at startup) as far as I can see check with the forwarder(s) for current root
+servers, i.e. it is not critical that the cache file is correct/updated, but it
+all seems rather pointless, since this server will never send a request
+directly to the root servers.
+
+And the problems don't end with this; although the server is now running fine,
+'nslookup' refuses to talk to it. This is apparently because nslookup wants to
+find out the server's host name by doing an inverse query with the IP address
+as "answer" - this will quite naturally fail unless the server has previously
+been asked to look up the IP address for it's host name, which may well never
+happen in this scenario. (If nslookup had instead made a PTR query for this, it
+would have worked fine.)  Putting the server's host name and IP address in the
+cache file doesn't seem to be enough to get around this, and I can't see any
+other sensible way of making sure that it has that data (except by making it a
+secondary server, of course, which I would prefer not to).
+
+Any and all suggestions on how to get this (i.e. a minimum BIND configuration,
+not necessarily the way I tried) to work would be appreciated. Private e-mail
+preferred, I will summarize to the list/group if interest warrants.
+
+--Per Hedeland
+per@erix.ericsson.se  or
+per%erix.ericsson.se@uunet.uu.net  or
+...uunet!erix.ericsson.se!per
+
+<b>[<a href="?l=namedroppers&m=95837784627090&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627093&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

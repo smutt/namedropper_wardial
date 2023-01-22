@@ -1,0 +1,38 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426457&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426459&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837693200011&r=1&w=2">Richard Johnson &lt;raj () uci-icsa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-24 14:21:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426458&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426458&q=raw">body</a>]</b>
+
+Probably the version you have is complete but you're getting caught
+by the same error I did.  The README file is wrong.  You MUST
+do a make in the "res" directory FIRST in order to make "libresolv.a"
+and THEN include "libresolv.a" when ld'ing the nameserver in the
+"ns" directory.
+
+------------------------------------------------------------------------
+Richard Johnson                             raj@uci.arpa          (ARPA)
+UCI ICS Research Systems Manager            ucbvax!ucivax!raj     (UUCP)
+
+<b>[<a href="?l=namedroppers&m=95837667426457&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426459&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

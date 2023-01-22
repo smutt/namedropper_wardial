@@ -1,0 +1,80 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mail Source Routing' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627078&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627080&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627076&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627080&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400016&r=1&w=2">Re: Mail Source Routing</a>
+From:       <a href="?a=95837786600029&r=1&w=2">mcsun!sunic!chalmers!lindberg () uunet ! uu ! net  (Gunnar Lindberg)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198911">1989-11-15 17:53:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627079&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627079&q=raw">body</a>]</b>
+
+In article &lt;8911081805.AA15425@jerry.inria.fr&gt;
+	Christian.Huitema@MIRSA.INRIA.FR (Christian Huitema) writes:
+&gt; [ ... MX ...]
+&gt;3- This assume that the INTERNET is fully connected + that all
+&gt;destinations can be reached with the same ``cost''.
+&gt;
+&gt;Well, the fact is that assumption 3 is false. It is sometime difficult
+&gt;to enter a campus network (try Berkeley), and it is costly to cross a
+&gt; ...
+
+I supose it doesn't make any difference what a netw.adm. at a Swedish
+University says in this debate, but still it needs to be said:
+
+The Nordic countries have been connected to the Internet for almost
+exactly one year now and except for some initial routing problems
+(which is not at all surprising given the size of the Internet!)
+things have worked well.
+
+We, (chalmers.se) started really using MX records in the beginning
+of February this year and have not had more severe problems than we
+have on campus (no, although not perfect we're not extremely bad :-).
+I have actually "tried Berkeley" quite a few times and can not report
+of any worse problems than long character delays. Since we only have
+a single link to the Internet we (or the US :-) get somewhat isolated
+when that link breaks, but that's a fact of life.
+
+What has caused problems, though, is sending mail to domains within
+Europe, where the DNS often gives us to a host somewhere in the US,
+while we possibly should hand the mail to some host here in Europe.
+Even worse - we might get the address of a host in Europe, which we
+either can't reach at all (usually the US can't reach it either!)
+or we are not allowed to connect to.
+
+Now, instead of suggesting various kludges to the DNS I think we
+should go ahead and start building a European Internet - now!
+
+There's no fancy new technology involved, so technically it can be
+done in *very* short time. While we're waiting for real standards,
+a number of people will have a useful service and we may get some
+experience from working with big, real, networks. Later, when the
+standards are stable we migrate into them, just as everybody else.
+
+Finally: I am aware of the work that is going on to create a real
+European Internet and I do hope that work will be a success. Still,
+I cannot understand why that is not considered part of any official
+European networking strategy - why Europe should wait instead of
+getting something non-standard (but operational) in the air today,
+use it while waiting for standards and finally migrate to standards.
+
+
+	Gunnar Lindberg
+
+<b>[<a href="?l=namedroppers&m=95837784627078&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627080&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627076&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627080&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

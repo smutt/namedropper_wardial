@@ -1,0 +1,107 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  RD/RA/AA/chaching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927029&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927031&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927036&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500027&r=1&w=2">Re:  RD/RA/AA/chaching</a>
+From:       <a href="?a=94756883100011&r=1&w=2">solomon () cs ! wisc ! edu (Marvin Solomon)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-20 7:56:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927030&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927030&q=raw">body</a>]</b>
+
+My first reaction to recent discussion about this topic was that people
+were confusing "non-authoritative" with "useless".  On reflection, I realized
+that real problem is how to deal with negative information, and decided
+that the "right" solution is to introduce a new feature for replies:
+"negative resource records".
+
+Consider David Plummer's scenario:
+
++---------------+
+| Workstation   |               +---------------+
+|w/ local cache |&lt;=============&gt;|               |
++---------------+               | Site resolver |
+                                |      aka      |
+        ...                     |Site Nameserver|&lt;===&gt; Big-I Internet
+                                |               |
++---------------+       RD-&gt;    |recursion avail|
+| Workstation   |&lt;=============&gt;|cache for site |
+|w/ local cache |   &lt;-RA, AA?   +---------------+
++---------------+
+
+To summarize his discussion, he asks whether the authoritative bit
+should be set in responses by the site resolver to workstations
+	(1) when the answer is the result of recursion
+	(2) when the information comes from its cache.
+He concludes that (1) should be authoritative and considers 3 answers
+for case (2):
+	Authoritative
+	Non-authoritative
+	Don't use the cache (obviously silly).
+
+I think the solution is to realize that it isn't the information (RR's)
+that is authoritative or not; rather, it is the *absence* of RR's.
+That's why the authoritative bit applies to a response, not to an
+individual RR.  If I send an MX query to a server and get back an
+authoritative response with NOERROR but an empty answer section,
+I can conclude the name has no MX records.  If the answer isn't authoritative,
+I can't conclude anything about MX records.  But if I do get back RR's,
+I should believe them, authoritative or not.  (The 'authority' concept was
+not designed to track down and kill bogus information!)
+
+Most cache designs, however, simply cache RR's, losing their grouping
+into responses, and hence losing negative information.  There have
+been various proposals lately for "negative caching", but they
+haven't extended to "negative answers".
+
+Hence my modest proposal:
+Provide a way to flag a RR as being "negative", for example
+	FOO.BAR.EDU MX --NONE--
+(I don't really mean to use "--NONE--" as a reserved value; some other
+encoding of negative RR's should be devised.)  Such entries can be
+entered in a cache in response to *absence* of positive counterparts
+in an authoritative response, AND CAN BE RETURNED IN ANSWERS.
+
+In the above scenario, the site server *never* returns authoritative 
+responses to the workstations (except for information about local names).
+However, when it receives the first query about a name not in its cache, it
+relays the query to an authoritative server, and caches both positive
+and negative information.  The workstation shouldn't care that
+it gets non-authoritative responses so long as it gets the information
+it wants.
+
+There remains the problem of assigning a time to live to such generated
+negative RR's.  This problem as been discussed at length in this group,
+and I have little to add, except to point out that if the authoritative
+server returns negative RR's, it can assign appropriate TTL's as
+it chooses.
+
+Finally, this disussion also helps answer a question posed in another
+message from David Plummer:  How do we convey the information that
+a name does not correspond to any host?  My response is another
+question:  Why would anybody care?  If I want to know whether the
+name is useful as a mail destination, whether I can connect to it
+via IP, or whether it is a VAX, I can look for MX, IN A, or HINFO
+records, respectively.  If I want to know whether I can connect to it
+at all, I have to look for class=X address rescords for all classes
+I know or care about.  Wildcard queries help me find out such info
+from an authoritative server without playing "twenty questions".
+Negative RR's help me get such info from non-authoritative servers.
+
+<b>[<a href="?l=namedroppers&m=95837781927029&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927031&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927036&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

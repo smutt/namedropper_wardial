@@ -1,0 +1,102 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026899&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026903&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837693600015&r=1&w=2">Steve Kille &lt;steve () Cs ! Ucl ! AC ! UK&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-11 9:36:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026900&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026900&q=raw">body</a>]</b>
+
+larry,
+
+Let me make some comments on your messages and some of the replies.
+
+First, there is clearly a need for a service which is more attribute
+oriented, to provide "searchability" and "guessability".  I am very
+interested in this problem.
+
+Second, if you do not yet have a copy of X.500/DIS 9594, you should get one
+as a VERY high priority.   
+
+The X.500 stuff is important, and I believe that it should be the basis for
+any service of this kind - unless there are some very fundamental problems
+of your requirements which cannot be met with an X.500 solution.  This
+should clearly not preclude experiments with other structures, but this is
+not the time to introduce non-standard services!
+
+There is a little confusion in the messages between X.400 and X.500.
+X.400(84) introduced the attribute structured O/R Address, which for
+pragmatic reasons has nasty things such as Administrative Management Domains
+wired in.  The initial intention of the X.400 deesigners is that this name
+form would be the basis of the Directory (X.500) Name.  In fact, there has
+been a substantial (and rapid) evolution, and the X.500 structure is much
+cleaner.
+
+As noted by several of you, there are many deficiencies of X.500.  I would
+suggest that most of these are not inherent.  There was a real requirement
+to produce a standard for the CCITT 1988 deadline, and some aspects were
+omitted.  There is substantial effort to fill the gaps over the next 2-4
+years.  The important point is that the information structure, and a basic
+protocol to access it have been reached.  This includes a powerful, but
+controllable searching capability.  The structure gives a good balance
+between being "relational" and flexible at the local level, but retaining
+sufficient global structure to be implemented in an efficient way.  The
+framework is defined so that it is easy for X.500 users to define their own
+structures (object classes and attributes).  This makes X.500 into a good
+building block.
+
+
+You asked for a list of activities in this area, so let me describe the
+relevant ones I know about.
+
+There are a number of groups looking at different aspects of getting
+directories into service:
+  - NBS SIG 
+  - EWOS (European Workshop on Open Systems - the new European profiling
+  umbrella group)
+  - RARE (The real European Academic Research Network, which has an active
+  directory group, looking in particular at MHS and FTAM related problems.
+  They will be setting up pilot services, possibly in conjunction with THORN).
+  - JNT Directory Group (to organise UK AC Directory services)
+  - DTI Implemtors group (ostensibly a UK implementors forum)
+
+THORN is an Esprit project, which has a mix of Industrial and Research
+partners, including UCL.   There are two current activities of interest:
+ 1) A pilot exercise using an ECMA TR-32 based system (an X.500 precursor),
+ being done by various Research Groups (primarily in UK, France, and
+ Germany).   This is in principle an open pilot, but you have to use 
+ real networking (X.25 + TP0).   I will be able to provide a (short) paper 
+ on this in a few days time.
+
+ 2) A development of a full X.500 system.  This will evolve into real
+ procucts from the manufacturers, but should also be available to the
+ research community at reasonable cost.  
+
+UCL has also developed a lightweight X.500 system (called QUIPU), which we
+are experimenting with in the context of ISODE.  I will send further
+information in this in a month or two's time.    
+
+
+Steve
+
+  
+
+<b>[<a href="?l=namedroppers&m=95837783026899&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026903&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

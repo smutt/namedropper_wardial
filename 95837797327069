@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Politics of domain naming sytles (unc.edu)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327066&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327071&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327067&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400027&r=1&w=2">Re: Politics of domain naming sytles (unc.edu)</a>
+From:       <a href="?a=95837817200039&r=1&w=2">agate!shelby!lindy!rt-jqj!jqj () ucbvax ! Berkeley ! EDU  (JQ Johnson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-08 4:41:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327069&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327069&q=raw">body</a>]</b>
+
+One minor point on in-addr.arpa delegation:  it can only be effectively
+delegated if the address ranges of the subgroups happen to fall on byte
+boundaries.  If my domain happens to correspond to a class B network
+that uses address mask 255.255.255.128 (subnetted along organizational
+boundaries), I'd have to delegate 126 different pieces (one for each
+possible address!) to the organization controlling the subdomain.  Ugly.
+
+Of course, if you don't mind the above, then you shouldn't mind
+delegating lots of disjoint pieces of your network to the
+suborganization.  In the limit, you can delegate individual addresses,
+and thus can have in-addr.arpa delegation even if your network is not
+subnetted.  But it's messy!
+JQ Johnson                              voice: 415-723-3078
+Manager, Special Projects               Internet: jqj@jessica.stanford.edu
+Networking and Communications Systems
+Pine Hall Rm 125-A 
+Stanford University
+Stanford, CA 94305-4122
+
+<b>[<a href="?l=namedroppers&m=95837797327066&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327071&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327067&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

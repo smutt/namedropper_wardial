@@ -1,0 +1,98 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Mail Gateways and MX RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026659&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026662&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026659&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026664&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800044&r=1&w=2">Re:  Mail Gateways and MX RR's</a>
+From:       <a href="?a=95837783700010&r=1&w=2">solomon () gjetost ! wisc ! edu (Marvin Solomon)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-26 18:06:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026663&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026663&q=raw">body</a>]</b>
+
+It looks like the old routing problem comes back again.  First it
+was "solved" at the network level, then rediscovered that the
+internet level (EGP), and now at the mail level.
+
+Consider the Arpanet routing algorithm.  It consists of two parts:
+a distributed algorithm for constructing a map of the network as a
+weighted graph (i.e., with a "cost" on each edge) and an algorithm
+for routing using the graph.  The latter part is over 20 years
+old; it's called "Dijkstra's algorithm".  The source node uses Dijkstra's
+algorithm to calculate the shortest path to the destination and sends the
+packet one hop along that path.  There's no need to include the path with
+the packet, only the destination, since the next node will be using the
+same map and the same algorithm and will therefore come up with the same
+path.  (It's easy to see that if the shortest path from A to C goes through
+B, the shortest path from B to C matches the tail of the path from A to C).
+To handle cases where the tables change while a packet is in transit--thus
+potentially causing a loop--a maximum-hop-count scheme is used to discard
+looping packets.
+
+Now it would seem that the MX records describe a weighted graph and we
+could use a similar algorithm.  Consider Craig's example:
+
+    ; mail thru RELAY preferred over SEISMO
+    *.ATT.COM.	IN	MX	10	RELAY.CS.NET.   ; CSNET relay
+    *.ATT.COM.	IN	MX	20	SEISMO.CSS.GOV. ; UUCP gateway
+
+This says that the "cost" of the link to RELAY.CS.NET is 10.  But a
+link has two ends.  So the question is, "The cost of the link to
+RELAY.CS.NET from where?"  The problem is that everyone uses the same
+tables, but link costs have to be described in terms of both source
+and destination.  This table says that the best way to get to A.ATT.COM
+is via RELAY.CS.NET, *regardless of you're coming from*!  That is patently
+ridiculous.  For example, if the sender is on A.ATT.COM, it certainly
+doesn't make sense to route mail through RELAY.CS.NET.  This particular
+case is handled by what may be described as a klude:  First check whether
+you're already where you're going before consulting the table.  Unfortunately
+the kludge doesn't generalize as Craig's example shows.  A second-level
+kludge might say "see if you're only one hop from the destination; only
+if you aren't, should you consult the table".  For example, SEISMO, when
+trying to send mail to A.ATT.COM may consult (say) pathalias to determine
+that it can send the mail "directly" using uucp, and avoid looking in
+the nameserver database.  Obviously, this doesn't generalize to still more
+complicated cases.
+
+&gt;From this I conclude that MX records are not a solution to the mail
+routing problem.  Instead, we some other mechanism.  I don't pretend
+to know a final solution, but let me throw out some half-baked ideas.
+
+Consider the mail world to be composed of a set of "mail systems"
+connected by "mail relays"--hosts that happen to be in two or more mail
+systems and are willing to pass mail.  Examples of mail systems are the
+Internet, the PhoneNet component of CSNET, BITNET, the UUCP net, etc.
+What do I need to know to get mail to a given destination?  At the very
+least, I need to know the mail system(s) containing the destination,
+the mail system(s) containing the source (me), and a map indicating how
+mail systems are connected by relays.  If I want to do "shortest path"
+routing, I also need to know the "distance" from me to each of the
+relays in my local mail system(s), the distance to the destination from
+each relay in the destination mail system(s), and a map indicating the
+distance between each pair of relays that share a mail system.
+The existing MX records seem to have a combination of some of this
+data, but not all of it, and not in a form that allows one to extract the
+parts.  For example,
+    *.ATT.COM.	IN	MX	10	RELAY.CS.NET.   ; CSNET relay
+seems to say something to the effect of
+"A.ATT.COM is in some mail system reachable from 'here' (perhaps the
+CLASS IN means that 'here'='Arpa Internet mail system'?) via the
+RELAY.CS.NET relay, and the distance from 'here' (from anywhere in the
+Internet?) to the relay is 10.
+
+<b>[<a href="?l=namedroppers&m=95837759026659&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026662&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026659&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026664&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Prioritizing addresses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027028&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027031&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Prioritizing addresses
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-23 2:43:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027029&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027029&q=raw">body</a>]</b>
+
+It would be nice if name servers could usefuly sort addresses for the
+client by usefulness, but it's not possible within the current DNS.
+The server has no way of knowing what nets the client might have
+access to, or what kinds of policy based routing constraints the
+client might be under, or even if the client is acting on behalf of
+some other machine with completely different parameters.  Having the
+servers sort addresses anyway is probably harmless, but if you really
+care about this kind of thing, you'll have to do somewhere near the
+client (this might be on some local machine acting as what CMU used to
+call a "super-resolver" rather than on the client's own machine, but
+the issues are essentially the same).
+
+The TOPS-20 domain resolver code (actually the user interface) does
+attempt to sort the list of addresses.  The scheme uses the DEFAULT
+and PREFERED scheme described by Mark Crispin in a previous note, with
+the addition of subnet masks in versions of TOPS-20 that grok subnets.
+In order to support the large number of varients of the TOPS-20 IP
+code (almost as many as there are machines left to run it) the smarts
+of the sorting code are in a plug-in routine that assigns a "goodness"
+value to an IP address based what this machine knows about its own
+network interfaces from its configuration file and what it knows about
+the rest of the world from its routing tables.  We supply a default
+version of this routine that works with the vanilla DEC IP code, and
+sites that care enough to change it to support subnets and multi-homed
+hosts can supply their own version.  I urge the plug-in approach on
+anyone seriously thinking about a portable implementation of this kind
+of functionality.  No matter how clever your code is, somebody will
+want it to do something a little different for a new site or operating
+system or hardware or....
+
+For the curious, here's just the header comments (MACRO-10 code for
+those who can read it is available as part of the CHIVES distribution)
+from the version of the "goodness" routine running on XX.LCS.MIT.EDU;
+this particular version understands subnets and multiple homing but
+would not be particularly clever if it found itself running on, say, a
+quadruply-homed host with two ethernets and two PSNs.
+
+        SUBTTL Host address prioritization
+
+; Routine to determine a host address "Goodness"
+; Accepts:  T1/ host number
+; returns:  T2/ goodness
+;
+; The value returned in T2 is a positive integer which indicates the
+; desirability of this address. Larger numbers indicate more desirable
+; addresses. This routine is used to order addresses returned by the
+; resolver for presentation to the user.
+;
+; Priority rankings:
+;
+;               7 : address is directly connected to preferred subnet
+;               6 : address is directly connected to any subnet
+;               5 : address is directly connected to the preferred net
+;               4 : address is directly connected to an available net
+;               3 : a gateway to the host's net is on the preferred net
+;               2 : a gateway to the host's net is on an available net.
+;               1 : host is at least 2 hops away..
+;               0 : address is believed to be down
+
+We thought about further extending this ranking system but decided
+that past the second hop it is really an instance of the generalized
+routing problem that so many of our friends are getting research money
+to solve, so we called it quits.  Further discussion of that kind of
+thing belongs on the TCP-IP list, not Namedroppers.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837783027028&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027031&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

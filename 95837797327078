@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327077&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327080&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=95837784800013&r=1&w=2">Rich Wales &lt;wales () CS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-10 2:03:23</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327078&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327078&q=raw">body</a>]</b>
+
+Regarding Jon Postel's message to the NAMEDROPPERS list:
+
+	The country codes are to be taken from the list in
+	ISO-3166 which was set up in 1981.  In that list
+	the two letter code for Czechoslovakia is CS.
+
+As I understand it, many people in the UK (where they use "big-endian"
+domain names that start with the top level) are concerned about what
+will happen if "CS" does become a top-level domain -- since this will
+presumably break the heuristics their gateways use to determine if a
+domain name needs to be reversed.
+
+(For example, consider a certain university in the US, whose computer
+science department uses the domain name "CS.UCLA.EDU".  How are the UK
+mail relays going to know that this is not in fact a reverse-ordered
+form of a Czechoslovakian domain name "EDU.UCLA.CS"?
+
+What's the current thinking on this?  I suppose someone could try and
+suggest that everyone help the UK out by abandoning the use of "CS" as
+a bottom-level domain -- but, realistically, this is unlikely to occur.
+
+Is this the straw that is going to break the back of the UK's domain
+name ordering, and force them to switch to "bottom-level-first" now,
+rather than try to "stick it out" until X.400 takes over the world?
+
+-- Rich Wales &lt;wales@CS.UCLA.EDU&gt; // UCLA Computer Science Department
+   3531 Boelter Hall // Los Angeles, CA 90024-1596 // +1 (213) 825-5683
+   "This is yet another example of how our actions have random results."
+
+<b>[<a href="?l=namedroppers&m=95837797327077&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327080&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

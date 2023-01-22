@@ -1,0 +1,62 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Why can't Sendmail always find hosts?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326859&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326861&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326861&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400037&r=1&w=2">Why can't Sendmail always find hosts?</a>
+From:       <a href="?a=95837816800013&r=1&w=2">zaphod.mps.ohio-state.edu!sol.ctr.columbia.edu!IDA.ORG!stoltz () tut ! cis ! ohio-state</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199002">1990-02-07 17:34:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326860&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326860&q=raw">body</a>]</b>
+
+Can someone tell me why sendmail would not be able to resolve a
+host name, but nslookup can?  I am getting several messages back from
+sendmail saying the host is not found, yet sometimes other messages
+get through to this host. I am not sure if this is a problem with
+sendmail or with the Domain Name Service, so I am posting this to
+both groups.
+
+Let me give you our configuration before I explain the problem in
+more detail.  I am running SunOS 4.0.3 and Sendmail with MX support 
+(from SUN) for access to DDN.  I am also running named.  My mail host
+is all the Domain server for our organization.  I have this host also
+setup as the prefered mail exchanger for our Domain.
+
+The PROBLEM:  Someone will try to send mail to a person on a host on
+the DDN.  As postmaster I get mail back saying that the host is
+unknown.  When I notice this I run nslookup on my mail and Name
+server host and nslookup will give me back an address.  Most of the
+time it is a Non-authoritative answer.  Sometimes if I try to ping
+the host it is down.  In this case I would expect sendmail to queue
+up the message for delivery later. 
+
+What could be causing this?  Do I have sendmail or named configured
+incorrectly?
+
+Thanks for any help. 
+
+Bill
+
+--------------------------------------------------------------------------
+Bill  Stoltz					    Internet:  stoltz@ida.org
+Institute for Defense Analyses
+1801 N. Beauregard St.
+Alexandria, Va 22311				Voice:  (703) 845-2119
+
+<b>[<a href="?l=namedroppers&m=95837797326859&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326861&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326861&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

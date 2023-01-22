@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  mail strategy in a partly-converted world' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026828&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026828&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200006&r=1&w=2">Re:  mail strategy in a partly-converted world</a>
+From:       <a href="?a=95837785200008&r=1&w=2">steve () cs ! umd ! edu (Steven D !  Miller)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-12 15:14:43</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026826&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026826&q=raw">body</a>]</b>
+
+   With the mail system I hope soon to install, I'd hoped to satisfy the
+host table folks while not losing some of the benefits of the domain name
+system.  Something you allude to worries me here, though; more on that
+in a minute.
+
+   I'd been planning on having all mail leaving the UMCP Computer Science
+department (for example) appear to be From: user@cs.umd.edu.  I'd then have
+MX records that look like:
+
+	CS.UMD.EDU.	IN	MX	10 mimsy.umd.edu.
+			IN	MX	20 brillig.umd.edu.
+			IN	MX	30 tove.umd.edu.
+
+or something like that, and then have a host table entry like:
+
+	HOST: 128.8.128.8 : MIMSY.UMD.EDU,CS.UMD.EDU : ...
+
+   In this case, most of the mail going to CSD would end up at mimsy.  I
+suspect that is a substantial fraction, but by no means all, of the mail
+coming into the UM campus, and mimsy is a 11/780-5, so I'm hoping that it
+could deal with the load.
+
+   (Aside:  it might be nice if people's mail delivery software would sort
+MX records by precedence, and then use exchangers of equal precedence in
+random order.  That way, I could even out the precedence above and actually
+share the load, instead of just providing an illusion of load sharing that
+only becomes real when, say, mimsy is down.)
+
+   Your comment about having problems because Berkeley.EDU was an alias
+disturbs me.  You mean that host-table users actually have problems because
+of this?  Please tell me more...
+
+   I'd also hoped to use the smail package and have my outgoing UUCP mail
+appear with domain-based addresses.  That raises more backward-compatibility
+issues than host tables vs. domain servers, but I want to try it just to see
+how many hosts can't deal with the new addressing scheme.  (I'm also
+providing a sendmail.cf hack so that people can send UUCP mail From:
+mimsy!user if they wish, so that intermediate sites can do the same old
+gross things to the headers if that's what it takes.)
+
+   I guess it's obvious that my opinion is obviously more in the "damn the
+torpedoes" camp.  If that turns out to have been the wrong thing to do, I
+may back off from that position.  I'm hoping that it's not the wrong
+approach.  I'm also hoping that everyone who converts to the new standards
+will make converting a bit more attractive to those who might otherwise stay
+mired in the past...and/or, at least, more attractive to the sales and
+support people with whom they deal.
+
+   Does anyone else have opinions to offer on my approach, or on the wisdom
+of such an approach in general?
+
+	-Steve
+
+Spoken: Steve Miller    Domain: steve@mimsy.umd.edu    UUCP: uunet!mimsy!steve
+Phone: +1-301-454-1808  USPS: UMIACS, Univ. of Maryland, College Park, MD 20742
+
+<b>[<a href="?l=namedroppers&m=95837783026828&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026828&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

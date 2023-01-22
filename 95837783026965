@@ -1,0 +1,176 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'give 'em a ticket' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026964&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026966&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    give 'em a ticket
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-15 14:34:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026965&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026965&q=raw">body</a>]</b>
+
+
+Just for fun, a domain ticket.  Give 'em to folks whose servers don't
+work.  This is a postscript document and revised copy of the one I
+sent to the IETF.
+
+Craig
+
+--cut-here---
+
+/box-10 {	% x y box
+    newpath
+    moveto
+    0 10 rlineto
+    10 0 rlineto
+    0 -10 rlineto
+    -10 0 rlineto
+    stroke
+} def
+
+newpath
+72 80 moveto
+72 720 540 720 8 arcto 4 { pop } repeat
+540 720 540 72 8 arcto 4 { pop } repeat
+540 72 72 72 8 arcto 4 { pop } repeat
+72 72 72 720 8 arcto 4 { pop } repeat
+stroke
+
+/Helvetica-Bold findfont 24 scalefont setfont
+306 (Domain Name System Infraction) stringwidth pop 2 div sub 670 moveto
+(Domain Name System Infraction) show
+
+/Helvetica findfont 16 scalefont setfont
+306 (DNS Inspection Services.  Dr. P.V. Mockapetris, Chief Inspector) stringwidth pop \
+2 div sub 645 moveto (DNS Inspection Services.  Dr. P.V. Mockapetris, Chief \
+Inspector) show
+
+72 635 moveto
+540 635 lineto
+stroke
+
+/Helvetica-Bold findfont 15 scalefont setfont
+95 600 moveto
+(IP Address of Offender:) show
+5 0 rmoveto
+108 0 rlineto
+stroke
+
+95 570 moveto
+(Domain Name of Offender:) show
+5 0 rmoveto
+176 0 rlineto
+stroke
+
+72 550 moveto
+540 550 lineto
+stroke
+
+/Helvetica-Bold findfont 15 scalefont setfont
+105 520 moveto
+(Violations) show
+
+/Helvetica findfont 11 scalefont setfont
+
+90 500 box-10
+105 500 moveto
+(Operating an Unauthorized Root Server) show
+
+90 480 box-10
+105 480 moveto
+(Operating a Bogon Server) show
+
+90 460 box-10
+105 460 moveto
+(Backup Server on Same Network) show
+
+90 440 box-10
+105 440 moveto
+(CNAME Alias has additional RRs) show
+
+90 420 box-10
+105 420 moveto
+(Improper Zone Delegation) show
+
+90 400 box-10
+105 400 moveto
+(Use of Undefined RR Types) show
+
+90 380 box-10
+105 380 moveto
+(Server Gives Incorrect Replies to Queries) show
+
+/Helvetica-Bold findfont 15 scalefont setfont
+339 500 moveto
+(Citations) show
+
+/Helvetica findfont 11 scalefont setfont
+324 480 box-10
+339 480 moveto
+(Use of MD and MF RRs) show
+
+324 460 box-10
+339 460 moveto
+(Failure to Use MX RRs) show
+
+324 440 box-10
+339 440 moveto
+(Long Search Lists) show
+
+324 420 box-10
+339 420 moveto
+(RR Timeouts in Server Don't Match) show
+339 407 moveto
+(Those of Delegating Parent) show
+
+324 390 box-10
+339 390 moveto
+(Using Pre-4.8 BIND Software) show
+
+72 210 moveto
+540 210 lineto
+stroke
+
+/Helvetica-Bold findfont 15 scalefont setfont
+95 175 moveto
+(Date:) show
+95 (Date:) stringwidth pop add 175 moveto
+5 0 rmoveto
+108 0 rlineto
+-36 0 rmoveto
+15 20 rlineto
+-51 -20 rmoveto
+15 20 rlineto
+stroke
+
+95 140 moveto
+(Inspector:) show
+95 (Inspector:) stringwidth pop add 140 moveto
+5 0 rmoveto
+216 0 rlineto
+stroke
+
+/Helvetica findfont 10 scalefont setfont
+95 90 moveto
+(For authorization, see codes RFC-1034, RFC-1035) show
+
+showpage
+
+
+<b>[<a href="?l=namedroppers&m=95837783026964&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026966&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domain database update utilities' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626842&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626845&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900007&r=1&w=2">domain database update utilities</a>
+From:       <a href="?a=95837786000003&r=1&w=2">hubert () bogachiel ! ms ! washington ! edu (Steve Hubert)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198903">1989-03-06 11:49:50</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626844&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626844&q=raw">body</a>]</b>
+
+Has anyone written an updating tool for use in updating domain
+databases (preferably in C)?  It would probably be menu driven and
+be used mainly to allow a user to add a new domain (host).  It would
+prompt the user for various common RRs supplying default answers
+where appropriate.  There would be as much validation as possible on
+the data entered.  There would also probably be methods for updating
+an existing entry and deleting an existing entry.  Of course, it would
+only be executable by a select group of people.
+
+If someone else has done some of this and is willing to give it to me
+I won't have to start from scratch.  Thanks.
+
+Steve Hubert
+University of Washington
+hubert@cac.washington.edu
+
+<b>[<a href="?l=namedroppers&m=95837784626842&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626845&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

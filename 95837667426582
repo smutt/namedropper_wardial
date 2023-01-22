@@ -1,0 +1,88 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain Names and CSNET' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426584&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426585&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426583&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600047&r=1&w=2">Domain Names and CSNET</a>
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-30 14:26:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426582&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426582&q=raw">body</a>]</b>
+
+
+    After reading some of the recent messages on this mailing list we
+at CSNET thought it might be appropriate to tell people what we have
+adopted as our policy on domain names, and how we are planning to
+advise our sites.
+
+    In essence we have decided that CSNET sites should NOT include
+service related information in their domain name (like .CSNET or
+CS.NET) but should instead register in the domain which
+seems most appropriate (like EDU or COM).  So a CSNET site which
+you now mail to as STATEU.CSNET, will become STATEU.EDU or some
+such.  We are looking at ways of making this registration easy
+on our members, many of whom have only nodding acquaintance with
+the realities of the Internet.
+
+    We chose to encourage sites to register in the descriptive
+domain because it seemed unreasonable to expect the average mail
+user to remember that an educational institition should have a name
+that ends in .EDU, unless they get their mail thru CSNET (or
+UUCP, etc.) in which case you must use .CSNET or .UUCP, etc.
+It seemed that the whole point of domains was to get rid of this
+confusion.
+
+    There is a domain CS.NET. which is only used by the CSNET
+support hosts like RELAY.CS.NET (aka CSNET-RELAY.ARPA) and
+SH.CS.NET (where most of the CSNET staff actually works and
+keeps their mailboxes).  This domain is now registered with
+the NIC and we are in the process of getting rid of most of the
+old .ARPA names (we are keeping CSNET-RELAY.ARPA and CSNET-SH.ARPA
+around as CNAMES during the transition).
+
+    One should note that there are some interesting consequences
+of this decision.  First is that many if not most CSNET sites can
+only be reached via RELAY.CS.NET.  They do not have Internet
+addresses and the only way they participate in the Internet is
+that mail can be sent to and from them via the relay.  As a result
+their entries in the domain databases are simply going to be an MF
+record saying send anything addressed to (for example) STATEU.EDU
+to RELAY.CS.NET.  As the conversion goes into effect, people with
+mailers that don't know how to cope with MF records are going to
+discover that they can't reach CSNET sites.  We may try to make
+this problem easier by rewriting addresses as they go thru the
+RELAY to read JOE%STATEU.EDU@RELAY.CS.NET, but that seems distasteful.
+
+    The second problem is one I've already broached with regard
+to domain IL.  We've got a lot of sites out there which are gateways
+into large local mailsystems.  We (and this is probably the Internet
+community collectively) are going to have figure out how we want
+to deal with registering all these hosts, which can only be reached
+via mail.  The domain servers could be innundated with mail related
+RR's and we should at least begin to think about whether there
+are better solutions (like wildcarding and deferred authentication?).
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@SH.CS.NET (csnet-sh.arpa)
+craig@LOKI.BBN.COM (bbn-loki.arpa)
+{decvax,ihnp4,wjh12}!bbncca!craig
+
+<b>[<a href="?l=namedroppers&m=95837667426584&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426585&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426583&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

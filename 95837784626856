@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'would it make sense ....' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626855&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626857&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626857&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900013&r=1&w=2">would it make sense ....</a>
+From:       <a href="?a=95837785600023&r=1&w=2">david () g ! ms ! uky ! edu  (David Herron -- One of the vertebrae)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198904">1989-04-12 16:14:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626856&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626856&q=raw">body</a>]</b>
+
+To have the answers a master nameserver for a domain vary
+depending on who is asking the question?
+
+The example that prompted this question is a site may want to
+vary the order of the MX records it returns depending on whether
+the questioner is local or distant.  If it's a distant questioner
+I may want to tell them something like
+
+	IN	MX	0 &lt;given-host&gt;
+	IN	MX	1 s.ms.uky.edu
+	IN	MX	2 e.ms.uky.edu
+	IN	MX	3 g.ms.uky.edu
+	IN	MX	4 ncc.uky.edu
+	IN	MX	5 b.ee.engr.uky.edu
+	IN	MX	100 uunet.uu.net
+
+But for one on the local net I may want to either not return an MX
+record or return one *only* listing the given host, or a list like
+above but headed by the given host and not containing the questioning host.
+
+-- 
+&lt;- David Herron; an MMDF guy                              &lt;david@ms.uky.edu&gt;
+&lt;- ska: David le casse\*'      {rutgers,uunet}!ukma!david, david@UKMA.BITNET
+&lt;- 
+&lt;- The problem with mnemonics is they mean different things to different people.
+
+<b>[<a href="?l=namedroppers&m=95837784626855&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626857&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626857&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

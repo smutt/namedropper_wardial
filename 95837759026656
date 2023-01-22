@@ -1,0 +1,131 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain fine points' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026655&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026657&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Domain fine points
+From:       <a href="?a=95837693400019&r=1&w=2">MOCKAPETRIS () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-19 18:23:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026656&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026656&q=raw">body</a>]</b>
+
+Recent usage has turned up the need for some additional clarification of
+the interactions between * usage in QCLASS and labels, the AA
+(authoritative answer) bit in the header and the NE (name error) return
+code.
+
+---------------------------------------------------------------
+
+NE signifies that the server had authoritative information to suggest
+that the name does not exist.  NE is improper if the server was acting
+on the basis of cached information.
+
+---------------------------------------------------------------
+
+If the QCLASS in the query is * (or some other yet to be defined QCLASS
+which matches multiple classes), then the server should only set AA if
+it was authoritative for all of the matching classes.  As a practical
+matter, for QCLASS=*, the server should never set AA.
+
+A similar problem occurs for QCLASS=*, when at least one class was
+available to the server and a NE condition was present.  Theoretically,
+all domain trees should be identical across classes for purposes of name
+existence tests.  However, this is unlikely to be the case.  Thus it
+might be that the name exists in one class but not in another, or even
+that NE is appropriate for one class and REFUSED is applicable to
+another.  The suggested procedure is that for QCLASS=*, the error code
+may contain any appropriate error, regardless of class, and that the
+requester be responsible for unravelling the conflict.  The server is
+responsible only for not returning a no-error response.  In addition,
+the name server should return whatever valid information is available.
+Thus if a query could obtain information for one class, but wanted to
+set REFUSED for another, the response would contain RRs in the answer
+section but also have REFUSED in the response code.
+
+Given these difficulties, it is recommended that the use of IN in
+the QTYPE field yields much simpler semantics.
+
+---------------------------------------------------------------
+
+* is also becoming common in databases.  For example, the COM domain
+contains an entry of the form:
+
+*.ATT.COM. MX 10 ATT.COM.
+
+This entry implies that a query for FOO.ATT.COM or BAR.ZAP.ATT.COM
+will return a MX which has the matching owner name.  That is a query
+for FOO.ATT.COM returns:
+
+FOO.ATT.COM. MX 10 ATT.COM.
+
+rather than something with a * in it.  The only way to get *s in a
+response is to have them in the query.  For example ask for *.ATT.COM
+and get:
+
+*.ATT.COM. MX 10 ATT.COM.
+
+The question then becomes "Does that mean that I will never get a NE for
+any name that ends in ATT.COM?"  The answer is that name errors are
+still possible.
+
+If we suppose that the COM zone has no other RRs below ATT.COM, then a
+NE will never happen for any query below ATT.COM, even if the query was
+for TYPE=A information, not MX.  The reason is that if we attempted to
+restrict * "name creation" based on QTYPE, then what if we cache the
+response to an MX or * query?  It seems silly that we might believe that
+we have valid information of a non-existent name.
+
+NE can only occur if the COM zone has other RRs below ATT.COM.  For
+example (with apologies to TPC personnel), suppose it also contained the
+RR
+
+PACIFIC-BELL.ATT.COM. NS LA.PACIFIC-BELL.ATT.COM.
+
+which states that the PACIFIC-BELL.ATT.COM domain has been delegated.
+Then the *.ATT.COM RR has no effect on the outcome for queries ending in
+PACIC-BELL.ATT.COM.  Normally you would just go ask
+LA.PACIFIC-BELL.ATT.COM about it.  Even if the delegated zone is on the
+same server, THE * RRs IN ONE ZONE HAVE NO EFFECT ON NAMES IN OTHER ZONES.
+
+Similarly if the zone containing the *.ATT.COM RR had
+
+B.ATT.COM. MX 20 USC-ISIB.ARPA.
+
+Then queries for B.ATT.COM would return the MX to ISIB, and queries for
+A.B.ATT.COM. would get a name error.
+
+Of course if the zone manager just wanted to special case B.ATT.COM,
+the database might contain:
+
+*.ATT.COM.   MX 10 ATT.COM.
+B.ATT.COM.   MX 20 USC-ISIB.ARPA.
+*.B.ATT.COM. MX 10 ATT.COM.
+
+In effect the B RR cuts off the effects of the *.ATT.COM RR, and the
+*.B.ATT.COM RR starts a new effect, which happens to leave only
+one name uncovered.
+
+---------------------------------------------------------------
+
+Some servers don't obey these rules.  They should be fixed.
+
+paul
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026655&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026657&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

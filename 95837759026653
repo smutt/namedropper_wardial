@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Nicknames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026651&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026652&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Nicknames
+From:       <a href="?a=95837693600009&r=1&w=2">Joe Weening &lt;JJW () SU-AI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198601">1986-01-20 6:32:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026653&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026653&q=raw">body</a>]</b>
+
+Isn't the "right" way to handle the THINK.COM situation to use MB records?
+These provide the desired feature of mailing to domains that aren't the
+names of hosts.  Craig Partridge's recent solution (MX records for
+THINK.COM pointing to the hosts that will relay the mail for it) is the
+closest approximation using MX records, which are preferable until MB gets
+more support; and in fact it looks like a better way to specify the
+redirection of mail for entire domain rather than anything MB provides.
+
+The attempt to use CNAMEs fails to satisfy the axiom that the domain named
+by a CNAME record must not have any other sort of record.  It is very
+confusing to say, on the one hand, that THINK.COM is a real domain, i.e.,
+the parent of GODOT.THINK.COM and all the other names in it, and on the
+other hand that THINK.COM is not a real domain but a nickname for
+something else, which is what the CNAME means.
+
+This brings up another question in my mind: are CNAMEs useful at other
+than the bottom level of the domain tree?  E.g., if SU.EDU were made a
+CNAME for Stanford.EDU and someone tried to use the domain SAIL.SU.EDU,
+would this be translatable to SAIL.Stanford.EDU?  This would be useful,
+but you can see that it would break down with THINK.COM as a CNAME for
+RELAY.THINK.COM because there would be no way to normalize this name;
+there is a potential infinite loop.  (Detectable, if you're careful.)
+
+						Joe
+
+<b>[<a href="?l=namedroppers&m=95837759026651&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026652&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

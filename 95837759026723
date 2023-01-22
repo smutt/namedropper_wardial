@@ -1,0 +1,118 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The Domain Name System in general and problems with it in particular.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026722&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026724&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026724&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300025&r=1&w=2">The Domain Name System in general and problems with it in particular.</a>
+From:       <a href="?a=95837784000004&r=1&w=2">HWB () GW ! UMICH ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-06 5:25:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026723&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026723&q=raw">body</a>]</b>
+
+The situation is deteriorating.
+
+Paul Mockapetris mentioned some while ago that "there isn't enough pain
+here to play the game right".
+ 
+Should we only allow entries in the domain data bases that have also
+primary names in the NIC hosts.txt file?
+ 
+Can we either push the domain server/resolver issue through or should we
+rather scrap the whole issue as unworkable since not every one conforms
+and probably will not do so for quite some time?
+ 
+ 
+Here is one story (out of a many others that happened earlier) about this:
+  
+Among other things I am responsible for the UMICH.EDU domain. There are two
+nameservers which play the game right, are pretty up to date in their versions
+and, as they should, close to different IMPs and homed in different domains.
+ 
+Now, even though the University of Michigan is connected to the Internet
+some people in our engineering department love and use their CSNET Phonenet
+connection (which itself is not subject to discuss here). They would like 
+to use names in the UMICH.EDU domain and asked me to put, e.g., 
+EECS.UMICH.EDU in there, MX and/or A pointing to the CSNET-Relay (or 
+alternatively to some host in UMICH which is connected to the Internet).
+I told them that I'd put it in there but that this won't buy them a whole
+lot since only fairly few people use name resolvers for outgoing mail.
+Well, now I start getting complaints from sites on the Arpanet which don't
+know how to get to these machines, since their names are not in their
+/etc/hosts files. Face it guys, not even the home of the domain godfather
+on the Arpanet resolves addresses for outgoing mail so far (well, at least
+not as of a month or so ago when I tried it out). What happened was that
+somehow (can we ever avoid these things) the address EECS.UMICH.EDU
+appeared somewhere, without the relieving @CSNET-RELAY.ARPA (or at least
+@RELAY.CS.NET) at the end. Let me point out that this does not necessarely
+need to be something that happened that the CSNET-Relay machine itself.
+Problem was that people then could not reply to mail, obviously. What is
+CSNET up to? Is the requirement to put @CSNET-RELAY at the end until
+everybody is using resolvers? Otherwise I am not sure why the push for 
+CSNET sites is so hard to go for domains, since they couldn't use 
+domain-only names in the interim.
+ 
+I talked to Ken Harrenstien a while ago about the problem that if someone
+puts nicknames into hosts.txt lines that some "better" mailers will replace
+a nickname with the primary name. I asked him about the implications of
+multiple lines in hosts.txt with the same Internet address but pointing to
+different primary names. His response was that there should be a one-to-one
+correlation between an Internet address and a primary name since some things
+could break otherwise.
+ 
+Thinking about these mail funnel machines (like CSNET-Relay, MIT-Multics, 
+etc.) it appears that there is a requirement for multiple primary names
+for the hosts that these funnels are agents for. These primary names are
+needed for the interim until domain name resolvers are used for outgoing
+mail in at least 95 percent of the mail originating machines. It seems that
+this would only be possible if the funnel machines have as many Internet
+addresses as they have hosts to serve as agents. If such a machine is
+located within some Internet net something like an acceptance mask for
+Internet addresses (not completely unlike subnet masks some layers down
+below) could be used if this needs to be done for multiple mail destinations.
+A host like CSNET-RELAY should probably allocate a whole Class B Internet
+Network Number for this and suck all the traffic to this net up as if it
+was destined for just the current CSNET-RELAY address, while having
+multiple primary names for all these numbers in hosts.txt. Someone mentioned
+to me that the acceptance of multiple IP address would require a kernel
+modification in 4.2bsd systems. Has any one done this already?
+ 
+Are there some better solutions for this, for the case that you don't want
+to see %s in mail addresses? We have a very similar problem here at the
+University of Michigan where we need to feed multiple non IP/TCP machines
+(which understand SMTP on top of async lines and X.29/X.25 lines) with mail
+from the Internet. An obvious choice here, again, would be to use a mail
+agent machine, in which case we'd get the CSNET-RELAY problems locally.
+
+
+I do of course realize that at least most of these problems came up and
+were discussed before. On the other hand I get more and more the impression
+that the distribution and use of the domain name system is stagnating at
+this point of time; with a few pushers (probably mostly the BBN-CSNET folks)
+and all the others waiting for all the others to complete the conversion.
+I understand that at least machines at MIT and Maryland as well as
+CSNET-SH, Seismo and Fuzzballs are resolving names for outgoing mail. But
+what about all the others? Will something ever happen before the Milnet
+decides on a conversion plan? It looks to me as if it is not quite clear
+right now whether the domain name system should be completely pushed through
+very soon or rather be abandoned at least for the forseeable future.
+
+	-- Hans-Werner Braun
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026722&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026724&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026724&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

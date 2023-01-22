@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  in-addr.arpa domains outside the USA.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327021&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327023&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327021&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400014&r=1&w=2">Re:  in-addr.arpa domains outside the USA.</a>
+From:       <a href="?a=95837817200012&r=1&w=2">sdd.hp.com!uakari.primate.wisc.edu!samsung!munnari.oz.au!ditmela!smart () ucsd ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-30 0:56:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327022&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327022&q=raw">body</a>]</b>
+
+In article &lt;21626@boulder.Colorado.EDU&gt; huntting@sel.bldrdoc.gov (Brad Huntting) writes:
+&gt;
+&gt; This would distribute some of the load of the in-addr.arpa domain
+&gt; away from the root, and cut down on unnecessary long haul queries.
+&gt;
+It may be a bit late for Brad's scheme. I have an alternative.
+
+Context: We are all familiar with schemes which tunnel IP packets through
+other networks: DECNET, LU 6.2, and many more. Recently someone (Phil Karn?)
+proposed a scheme for tunnelling IP packets over an IP network. The objective
+in that case was to reconnect a Class A network which had multiple links
+to the Internet and had become internally partitioned. I have an alternative
+use for such a scheme.
+
+There are many situations where we would like to contact the nearest host
+with property X. X might be "holds the GNU software" or "is an e-mail
+gateway to BITNET" or "is a nameserver for IN-ADDR.ARPA". Now one thing
+the Internet already knows how to do is find the shortest route from us
+to a particular network. So I propose that we create logical networks which
+are actually spread across the Internet and are internally connected by
+IP over IP tunneling.
+
+Let's suppose that all BITNET gateways are on network 193.1.1. There are
+various ways we could find the nearest host in this network. We could
+send an echo request to 193.1.1.255 but that might be unfriendly. We
+could try to contact 193.1.1.0 assuming that that means any host in 193.1.1.
+We could set it up so that clients contact 193.1.1.1 and the first host
+that that arrives at will pretend to be 193.1.1.1 -- but having multiple
+hosts pretending to be the same host seems unwise. Use of host number 0
+to mean "any host in this network" seems like the best idea to me, but
+I could well be ignorant of problems that this would cause. You need a
+mechanism for the caller to convert the 193.1.1.0 destination address to
+the address of the actual destination once a response has been received:
+it mustn't keep using 193.1.1.0 or subsequent packets might go to a 
+different host.
+
+Incidentally it would be nice if IP in IP tunneling could be done at the
+IP level, and not have to go up to the UDP level. This can be achieved if
+we add a new IP type field (alongside TCP and UDP) for IP-IN-IP. 
+
+Actually for some of the proposed applications there would be no need for
+these logical networks to be internally connected, but breaking IP semantics
+to that extent seems dubious.
+
+Bob Smart &lt;smart@mel.dit.csiro.au&gt;
+
+<b>[<a href="?l=namedroppers&m=95837797327021&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327023&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327021&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

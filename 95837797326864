@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Question about structure of domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326863&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326865&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Question about structure of domain names
+From:       <a href="?a=95837816800017&r=1&w=2">twwells!bill () uunet ! uu ! net  (T !  William Wells)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199002">1990-02-11 2:44:55</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326864&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326864&q=raw">body</a>]</b>
+
+Well, I'm hoping this is the right newsgroup. Here's my questions:
+I have this program that sifts through my newsfeed looking for
+domain names (among other things). Not being a domain name expert,
+I've guessed that the format for a domain name is
+[-_+a-zA-Z0-9]+(\.[-_+a-zA-Z0-9])+ with the last part being from a
+restricted set.
+
+This is insufficiently specific; for example, it often gets things
+with components that are entirely numeric. It occured to me that
+such things might be ill-formed, in which case I could just ignore
+them.
+
+So what are the rules for forming domain names?
+
+Two points: it may be that this is adequately answered in an RFC
+somewhere. If so, feel free to tell me the RFC number; I can RTFM
+if I know which FM it's in! Also, one answer would be: try to
+connect to it and see if it works. True. But since I'm not even on
+the Internet, that's *expensive*. So I want to filter out as many
+names as possible before I actually do the query.
+
+(Why do I care if I'm not on the Internet? I moderate
+comp.archives and am looking for postings of anonymous FTP
+archives. Yes, I do have ways to get to the Internet but they are
+all long distance calls.)
+
+I don't read this newsgroup so please e-mail your responses. If
+there is any interest, I'll post a summary.
+
+---
+Bill                    { uunet | novavax | ankh } !twwells!bill
+bill@twwells.com
+
+<b>[<a href="?l=namedroppers&m=95837797326863&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326865&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

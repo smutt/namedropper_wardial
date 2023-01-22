@@ -1,0 +1,263 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'interesting answer from decwrl.dec.com causing nslookup to dump core' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626930&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626932&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626935&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900032&r=1&w=2">interesting answer from decwrl.dec.com causing nslookup to dump core</a>
+From:       <a href="?a=95837786000006&r=1&w=2">mcvax!kth!draken!tut!etana!jh () uunet ! uu ! net  (Juha Hein{nen)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-09 11:43:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626931&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626931&q=raw">body</a>]</b>
+
+What do you say about the trace below?  I tried the same query (9th of
+June) on many machines in several organizations and it always failed.
+Looks like there is something badly out of ourder.  On the other hand,
+nslookup shouldn't dump core whatever the answer is.
+
+-------------------------------------------------------------------------
+etana% nslookup
+Default Server:  funet.fi
+Address:  128.214.1.1
+&gt; set d2
+&gt; decwrl.dec.com
+decwrl.dec.com
+Server:  funet.fi
+Address:  128.214.1.1
+
+res_mkquery(0, decwrl.dec.com., 1, 1)
+------------
+SendRequest(), len 32
+    HEADER:
+        opcode = QUERY, id = 2, rcode = NOERROR
+        header flags:  query, want recursion
+        questions = 1,  answers = 0,  auth. records = 0,  additional = 0
+
+    QUESTIONS:
+        decwrl.dec.com, type = A, class = IN
+
+------------
+truncated answer
+------------
+Got answer (1009 bytes):
+    HEADER:
+        opcode = QUERY, id = 2, rcode = SERVFAIL
+        header flags:  response, truncation, want recursion, recursion avail.
+        questions = 1,  answers = 64,  auth. records = 0,  additional = 0
+
+    QUESTIONS:
+        decwrl.dec.com, type = A, class = IN
+    ANSWERS:
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 19
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.9.1
+    -&gt;  decwrl.dec.com
+        type = A, class = IN, ttl = 166555, dlen = 4
+        inet address = 128.45.1.1
+    -&gt;  decwrl.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.pa.dec.com
+    -&gt;  decwrl.pa.dec.com
+        type = CNAME, class = IN, ttl = 85947, dlen = 2
+        canonical name = decwrl.dec.com
+
+------------
+Segmentation fault (core dumped)
+etana%
+
+<b>[<a href="?l=namedroppers&m=95837784626930&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626932&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626935&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

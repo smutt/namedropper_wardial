@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Misbehavior in DNS Clients' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627042&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627043&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627042&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627048&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400002&r=1&w=2">re: Misbehavior in DNS Clients</a>
+From:       <a href="?a=91677896900001&r=1&w=2">Steve Hubert &lt;hubert () cac ! washington ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-11 17:25:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627044&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627044&q=raw">body</a>]</b>
+
+I wonder if it might not be useful to regularly publish a list of the top 20 DNS
+clients or maybe a list of all the top clients which surpassed some particular
+percentage of the total DNS traffic similar to the list that Paul sent out
+recently.  Heaven forbid any of my systems should appear there but I think I'd
+rather know about it than not know.  Seems like it might be a useful, if coarse,
+diagnostic tool to whittle away at the worst offenders.  On the other hand, I
+suppose that many of the worst offenders wouldn't be reading this list.
+
+Steve Hubert
+Networks and Distributed Computing, Univ. of Wash., Seattle
+hubert@cac.washington.edu
+
+-------
+
+<b>[<a href="?l=namedroppers&m=95837784627042&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627043&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627042&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627048&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

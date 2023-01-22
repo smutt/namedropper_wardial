@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'HINFO &amp;&amp; rfc1010 &amp;&amp; rfc1033' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327095&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327097&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327095&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327096&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900006&r=1&w=2">HINFO &amp;&amp; rfc1010 &amp;&amp; rfc1033</a>
+From:       <a href="?a=95837784000031&r=1&w=2">John R. Dunning &lt;jrd () STONY-BROOK ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-13 14:13:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327103&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327103&q=raw">body</a>]</b>
+
+    Date: 13 Jul 90 04:46:51 GMT
+    From: zaphod.mps.ohio-state.edu!samsung!sol.ctr.columbia.edu!seth@tut.cis.ohio-state.edu \
+(Seth Robertson)
+
+[...]
+    I suppose the other question might be does any program use the HINFO
+    field.  
+
+Yes.  Symbolics' "Genera" software environment uses HINFO information to
+tell what kind of host it's talking to, so that it can then know things
+like that host's pathname syntax, as well as being able to deal with
+things like vagaries in various FTP implementations, etc.  The list of
+kinds of hosts that it recognizes is derived from the official
+(RFC1010?) list of system names.
+
+We also use WKS info, when we can get it.
+
+
+<b>[<a href="?l=namedroppers&m=95837797327095&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327097&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327095&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327096&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

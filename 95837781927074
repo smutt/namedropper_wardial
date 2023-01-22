@@ -1,0 +1,197 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'What is a mailbox?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927073&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927075&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    What is a mailbox?
+From:       <a href="?a=95837784800015&r=1&w=2">Alfred Ganz &lt;ganz-alfred () YALE ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-03 9:58:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927074&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927074&q=raw">body</a>]</b>
+
+
+This is an attempt at sorting out what a "mailbox" as in mailbox binding means.
+I believe that a lot of the arguments I have seen over the last few weeks are
+due to the fact that different people talk about different things using the
+same terms without giving definitions. I have tried to define several
+constructs some of which we may later on agree that they can be combined.
+However, in order to identify all mechanisms mentioned in previous messages
+I would like to delay the process of combining constructs until we have some
+agreements as to what we mean.
+
+
+mail-accounts and their names
+
+In the following I am going from the assumption that mail messages originate
+from and end up at something called (for lack of a better word) a mail-account
+on a specific host. I make the following assumptions about mail-accounts:
+1) They have unique names among all the mail-accounts on a host
+2) They are the origin of mail messages
+3) They are the ultimate destination for mail messages
+4) They are owned by a person (we can be a little vague here with respect to
+   "logical persons", I hope)
+
+Note that the entity of interest here is the name of the mail-account, which
+may well be different from the "account name". This may among other reasons be
+because:
+1) Real account names may take forms that are not suitable for the rest of the
+   world to look at (e.g. 314159)
+2) Real account names may not be intended for the rest of the world to know
+   (e.g. we want to keep them secret)
+3) The system actually associates messages to something different than
+   accounts.
+I would expect that final delivery may involve some mapping. However, the use
+of a mail-account name will also allow us to be more narrow in our definition
+of how mail-account names must look.
+
+In a world in which hosts are uniquely named (e.g. using the current domain
+naming system), combining the names of mail-accounts with their respective
+host names will provide unique names for all mail-accounts.
+
+
+persons, person-references and person-addresses
+
+As has been pointed out by others, we would often like to send mail to a person
+by using the persons name and the (hopefully unique) name of an organization
+the person is or was associated with. I believe that in order to make such a
+method of identification useful we will have to let people be associated with
+multiple organizations, and we will have to support multiple names for people
+(e.g. multiple spellings of names, nicknames).
+
+In the following I will call (again for lack of a better name) such a unique
+identfication of a person a person-reference. I am making the following
+assumptions about person-references:
+1) They are unique among all person-references
+2) A real person may be known by more than one person-reference (e.g. a person-
+   reference where the person used to be; talking about stale information...)
+3) Each person-reference identifies either a person-address or another
+   person-reference (associated with the same person in most cases I would
+   presume)
+4) There may be chains of person-references. Each chain of person-references
+   identifies a person-address for which some mail-authority guarantees
+   delivery of mail messages
+
+In the above I have introduced the terms mail-authority and person-address,
+about which I make the following assumptions:
+1) A person-address may represent a logical entity (e.g. a mailing list) as
+   well as a real person
+2) mail-authorities have unique names
+3) A mail-authority controls the person-addresses associated with that
+   authority
+4) A mail-authority specifies the forwarding scheme for person-addresses under
+   its control (e.g. it will provide MX type information identifying a host
+   that will perform delivery)
+
+I have not fully thought through the mail-authority concept, but I think we
+do need something of that kind. Here are some other comments:
+1) A person-address would presumably identify a mail-account or a mailing list,
+   but this information may be private to the area of the mail-authority
+2) person-addresses may be replaced with person-references as people move
+   around from place to place. This suggests that a human user may not be
+   cognicant if what he uses is a person-reference or a person-address, and
+   we should therefore support interchangeable use of the two constructs
+3) while person-addresses are unique, forwarding schemes are probably the same
+   for large groups of them, I believe the system should reflect this
+
+
+mailing lists
+
+I am aware of several ways in which mailing lists are currently being used.
+Three examples are:
+1) There are lists of person-references which include references to people all
+   over the country as well as to other lists (e.g. namedroppers@sri-nic).
+2) There are lists of person-references which are mostly local within a
+   mail-authority (e.g. namedroppers-yale@cs.yale.edu).
+3) There are lists of mail-accounts which specify the preferred delivery for
+   people with multiple mail-accounts.
+
+These usages are very diverse and I am not sure yet if we should bring them all
+under one hat, but for the moment I will try to do so. Note that this will in
+particular require that mailing lists may contain both mail-account names and
+person-references. Here then are some assupmtions about mailing lists:
+1) All mailing lists are controlled by some mail-authority
+2) Mailing lists may contain person-references and mail-account names
+3) Mailing lists may be identified by person-addresses (Note that this means
+   that list expansions occur after forwarding of the message according to the
+   forwarding scheme mentioned earlier)
+4) Mailing lists will be placed with mail-authorities in a fashion that
+   attempts to minimize distribution traffic (i.e. to the extent possible
+   mailing lists will mainly contain entities for delivery within the
+   controlling mail-authority, I know that this doesn't help with the large
+   mailing lists like namedroppers, but I don't see what could be done there).
+
+Here are some comments about mailing lists:
+1) One of the critical issues associated with mailbox binding is where to do
+   expansion of lists. I currently think that if we support hierarchies of
+   lists and place the sublists at the proper places (e.g. all the Yale people
+   on namedroppers in a local sublist), expansion within the mail-authority
+   should be about as good as we can get without a tremendous amount of list
+   munging.
+2) If alternatively we would want to support message originator expanded lists,
+   person-references would also be permitted to identify mailing lists. I don't
+   think this would affect the rest of my definitions. Note BTW that
+   introduction of such lists in an evolutionary fashion would probably require
+   that list expansion by the message originator be voluntary.
+3) Leaving expansion of mailing lists with mail-authorities has the potential
+   of completely ignoring the definitions for them in the M? record context.
+   I am not advocating this.
+4) Mailing list expansion will require differentiation between mail-account
+   names and person-references. One of the questions to be asked is if
+   mail-account names should ever be known outside of the mail-authority in
+   which they are defined.
+
+
+The mapping into the M? record world
+
+The above definitions would need the recognition of at least one new construct,
+the mail-authority (if we consider the "organization" to be the same as the
+mail-authority). But more importantly, it would introduce information into the
+nameserver scheme of things that is restricted to access from within the
+mail-authority. True, the information could well be public, but one wouldn't
+want anybody from outside the area of the mail-authority to use it. I am not
+enthused about this since I don't like to introduce new concepts unless they
+are well justified. I see this clearly as a major subjet of discussion.
+
+Other than the new mail-authority, I think MR records would nicely represent
+person-references, and MG records entries in mailing lists. The major
+difference between RFC-883 and the above is the meaning of the MB record. It
+would need to represent three of information, some of which is accessible only
+from within the mail-authority. I would therefore see the following MB kind
+records:
+MB1 records represent person-addresses to the outside world. Their presence
+    promises deliverability, they refer to MB2 records.
+MB2 records are of an MX kind and provide the forwarding scheme.
+MB3 records represent person-addresses inside the mail-authority and contain
+    either a mail-account name or a reference to a mailing list.
+In addition I would expect that the ultimate place of delivery would contain
+mapping information to define the internal construct associated with the
+mail-account name (I view this as totally hidden inside the destination host).
+
+
+Epilogue
+
+The mailbox you ask? It could be a person-reference, a person-address or a
+mail-account name. If we make sure that all person-names are different from
+all person-addresses and from all mail-account names, we can even make it
+all of the above (which is really what has been going on quietly in some
+places for quite a while).
+
+I am sorry this got so long. I hope it will at least cause some reactions. AG
+
+<b>[<a href="?l=namedroppers&m=95837781927073&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927075&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

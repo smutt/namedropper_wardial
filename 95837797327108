@@ -1,0 +1,457 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Proposal for use of DNS to store RFC 987, etc mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327109&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327111&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327112&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900007&r=1&w=2">Proposal for use of DNS to store RFC 987, etc mappings</a>
+From:       <a href="?a=95837786600018&r=1&w=2">hagens () cs ! wisc ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-16 9:46:20</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327108&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327108&q=raw">body</a>]</b>
+
+GentlePeople,
+
+I have enclosed a draft of a proposal that Bruce Cole and I
+have been working on. This proposal describes how the internet DNS
+can be used to aid in the storage/distribution of RFC 987, etc
+mapping tables. These tables will be important to the interoperation
+of RFC 822 based mail and OSI X.400 (MHS).
+
+We will be discussing the proposal as part of the X.400 WG meeting at
+the Vancouver IETF.
+
+The proposal has been implemented and tested on a trial basis at
+the University of Wisconsin.
+
+Rob
+
+                              Draft Proposal 
+
+                 for the use of the Internet DNS to maintain 
+                  RFC 987/RFC 1148 Address Mapping Tables 
+
+                       Bruce Cole (cole@cs.wisc.edu)
+                     Robert Hagens (hagens@cs.wisc.edu)
+Draft RFC                                                      May 1990
+
+
+1.0 Introduction
+
+     RFC987 describes a set of mappings between the X.400 (1984) series of
+protocols and the RFC822 mail protocol, or protocols derived from RFC822.
+That document addresses conversion of services, addresses, message envelopes,
+and message bodies between the two mail systems.
+     This draft RFC is concerned with one aspect of RFC987; the mechanism for
+mapping between X.400 O/R addresses and RFC822 domain names.  As described in
+Appendix F of RFC987, implementation of the mappings requires a database which
+maps between X.400 O/R addresses and RFC822 addresses.  A possible mechanism
+for use of the internet DNS to store, retrieve and maintain these mappings
+is proposed.  This mechanism is of potential use to internet hosts acting as
+X.400/RFC822 gateways.
+
+Definitions
+
+    dmn-orname: text encoding of O/R address as defined in
+	section 4.1.3 of RFC987.  This representation of X.400 O/R
+	addresses allows storage and retrieval of O/R addresses
+	by the Internet DNS, without syntactical extensions to the DNS.
+
+    domain-name: text encoding of a domain name
+
+    &lt;domain-name&gt;: Internet DNS encoding of a domain name, as defined
+	in RFC1035, section 3.3.
+
+    owner-name: The name of a particular node in the DNS namespace to
+	which one or more resource records belong.  Also known as
+	the name field of a DNS resource record.
+
+2.0 Motivation
+
+     Implementations of RFC987 gateways require that a database store address
+mapping information for X.400 and RFC822.  This information must be
+disseminated to all RFC987 gateways.  In the internet community, the DNS has
+proven to be a practical means for providing a distributed nameservice.
+Advantages of using a DNS based system over a table based approach for mapping
+between O/R addresses and domain names are:
+
+	1. It avoids fetching and storing of entire mapping tables by
+	every host that wishes to implement RFC987.
+
+	2. Modifications to the DNS based mapping information can be made
+	available in a more timely manner than with a table driven approach.
+
+	3. Organizations avoid the administrative costs associated with
+	maintaining mapping tables throughout their network.
+
+	4. Allows the specification of backup gateways (in case of failure)
+	through the use of a priority field.
+
+
+
+Cole &amp; Hagens                                                   [Page 1]
+
+Draft RFC                                                      May 1990
+
+
+
+3.0 Proposed Resource Records
+
+     Using RFC987's assumption of an asymmetric mapping between X.400 and
+RFC822 addresses, two separate relations are required to store the mapping
+database.  We propose two new DNS resource record types, TO-X400 and TO-822,
+which are to be used to translate between X.400 and RFC822 addresses.  The
+owner-name field of the new resource records can be thought of as keys used to
+reference the RFC987 mapping data.  The data format and meaning of these new
+resource records is as follows:
+
+TO-822 (resource record type 20, decimal)
+
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    |                  PREFERENCE                   |
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    |                WILDCARD-COUNT                 |
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    /                 DOMAIN-NAME                   /
+    /                                               /
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+
+TO-X400 (resource record type 21, decimal)
+
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    |                  PREFERENCE                   |
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    |                WILDCARD-COUNT                 |
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+    /                  DMN-ORNAME                   /
+    /                                               /
+    +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+
+where:
+
+PREFERENCE      A 16 bit integer which specifies the preference given to
+                this resource record among others of the same type and
+		owner-name.  Lower values are preferred.
+
+WILDCARD-COUNT	A 16 bit integer.  If the information being returned
+		by this resource record is not derived from a wildcard
+		resource record, then this field contains the value zero.
+		Otherwise, this field indicates the number of components
+		explicitly matched by a wildcard resource record.
+		Specifically, a non-zero value N specifies that the rightmost N
+		components of owner-name were used to find the wildcard
+		resource record information.  Note that the value of this
+		field is computed by authoritative nameservers, and is not
+		specified in a master file for a zone.
+
+
+
+
+Cole &amp; Hagens                                                   [Page 2]
+
+Draft RFC                                                      May 1990
+
+
+DOMAIN-NAME     A &lt;domain-name&gt; which specifies the domain-name of a host
+		willing to receive RFC822 mail.
+
+DMN-ORNAME      A &lt;domain-name&gt; which specifies the dmn-orname of a host
+		willing to receive X.400 mail.
+
+TO-X400:
+     Given an owner-name representing an RFC-822 domain-name, return an
+X400 O/R address in dmn-orname syntax.  There can be multiple TO-X400 records
+associated with one owner-name, indicating a set of X.400/RFC822 gateways for
+one domain name.  The preference field is used to indicate the relative
+priorities of these multiple records.  In the event of a delivery failure, an
+alternate X.400 gateway of equal or lesser priority can be chosen, such as is
+done with the DNS MX resource records. (see RFC974).
+
+TO-822:
+     Given an owner-name representing an X.400 O/R address in dmn-orname
+syntax, return an RFC-822 domain-name.  The preference and wildcard-count
+fields are interpreted in the same manner as for TO-X400 records.
+
+4.0 Usage
+
+     The RFC987 mapping information is stored in the DNS in a tree structure.
+The TO-X400 records occupy space within the already existent tree of domain
+names.  The TO-822 records occupy a new tree whose nodes are domain names in
+dmn-orname syntax.  O/R attributes are stored in the tree hierarchically with
+the most significant attributes occupying root domains, and the least
+significant attributes occupying leaf nodes of the DNS.  The root nodes of
+this new tree represent O/R country attribute-value pairs.  For example, C$US
+and C$UK are valid root domain names.
+
+     The dmn-orname information associated with TO-X400 and TO-822 resource
+records do not represent full O/R address, they are merely templates which
+specify those fields of the O/R address that are used by the mapping
+algorithm.  A subset of the possible X.400 O/R attributes are used when
+performing conversions between RFC822 and X.400 O/R addresses.  The attribute
+names allowed in a dmn-orname, listed in descending order of significance are:
+
+Name				Number that may be specified in dmn-orname
+
+Country				Exactly 1
+ADMD				0 or 1
+PRMD				0 or 1
+Organization			0 or 1
+Organizational Unit		0 or more
+
+     When an O/R address is written in dmn-orname syntax, the attributes are
+ordered from left to right in ascending order of significance.  O/R attribute
+names not listed in the above table (such as the surname attribute) do not
+appear in dmn-ornames used by the mapping procedure.  When an attribute is
+
+
+
+Cole &amp; Hagens                                                   [Page 3]
+
+Draft RFC                                                      May 1990
+
+
+omitted from the dmn-orname, no other attributes of less significance may be
+included.
+
+     Dmn-ornames and domain-names are used as the lookup keys to retrieve
+RFC987 mapping information from the DNS.  A non-existent domain response from
+the nameserver indicates that there is no RFC987 mapping information in the
+DNS for the given key, and the DNS search is complete.  A non-error response
+also completes the DNS search.  Wildcard resource records can be used to
+allow multiple keys to map to one node in the DNS namespace.  (See also
+RFC1034, section 4.3.3, wildcards.)
+
+     If the returned resource record contains a non-zero WILDCARD-COUNT field,
+then the longest possible match of the supplied lookup key does not include
+all components of that key.  For a lookup key of M components and a
+WILDCARD-COUNT field with value N, a non-zero value for N indicates that the
+leftmost M-N components of the lookup key were not explicitly matched.
+Assumptions are made as to the mapping of the unmatched components.  There are
+two cases:
+
+1. RFC822-&gt;X.400
+     Map all remaining domain-name components to additional O/R
+attribute/value pairs.  The next attribute assigned corresponds to the
+attribute of next lower priority than the lowest attribute type already
+assigned.  The new attribute is assigned a value which is the same as the most
+significant unmapped domain-name component.  If the last assigned attribute
+type was an OU (organizational unit), then any additional attribute
+assignments will be to OUs, with less significant attribute-value pairs
+written to the left of other attribute-values.  Order and significance of
+domain-name components are preserved by this scheme.
+
+2. X.400-&gt;RFC822
+     Of the remaining dmn-orname components, only those which correspond to
+attributes at least as significant as the OU attribute type are mapped.  The
+attribute values from these components are added to the domain-name returned
+by the DNS lookup, and are mapped in the same order as they appear in the
+dmn-orname.  Those attributes less significant than the OU attribute are used
+in the construction of the left hand side of the RFC822 address.  The
+translation of the left hand side of the 822 address is specified by RFC987.
+
+Example:
+    Assume DNS is populated with the following wildcard resource record:
+    "*.OU$CS.O$UW-MADISON.PRMD$XNREN.ADMD$ .C$US."	IN TO-822 0 cs.wisc.edu
+
+    Given the O/R address
+    	/PRMD=XNREN/ADMD= /S=hagens/OU=DIP/OU=CS/O=UW-MADISON/C=US/
+    determine the corresponding RFC822 domain name.
+
+    Step 1. The address is rewritten in dmn-orname syntax as:
+    	OU$DIP.OU$CS.O$UW-MADISON.PRMD$XNREN.ADMD$ .C$US
+    (The /S=hagens attribute value pair is dropped since it is less significant
+
+
+
+Cole &amp; Hagens                                                   [Page 4]
+
+Draft RFC                                                      May 1990
+
+
+    than an OU attribute.  The attribute order is rewritten according to the
+    dmn-orname restriction specifications.)
+
+    Step 2. Perform the DNS lookup:
+    	"OU$DIP.OU$CS.O$UW-MADISON.PRMD$XNREN.ADMD$ .C$US."
+    The nameserver returns the domain-name: cs.wisc.edu, with preference 0,
+    and a wildcard-count of 5.
+
+    Step 3. Since the wildcard-count field is non-zero, the nameserver
+    response indicates that the dmn-orname component OU$DIP was not
+    explicitly matched.  The unmapped attribute value "DIP" is prepended
+    to the domain-name returned by the DNS lookup to produce the domain-name
+    "dip.cs.wisc.edu".
+
+     RFC987 specifies that translation from one address space to another may
+occur in 2 ways. The above method of translation (lookup from the mapping
+database) is used when sub-trees of the different name spaces are associated
+via mapping information.  The fall back method of translation (encoding in the
+other address space's format) is used when table lookup fails.  However, in
+this case, the translation is less sophisticated.  The fall back method
+amounts to encoding the address in the other system's format.  RFC987
+specifies default rules that may be used to perform this encoding.  These
+rules specify the manner in which an RFC822 address may be encoded in X.400,
+and vice versa, by means of domain defined attributes.
+
+5.0 Administration of mapping information
+
+     Not all RFC987 gateways will be able to use the internet DNS to map
+between O/R addresses and RFC822 domain names.  Hosts without access to the DNS
+are expected to obtain full mapping tables (in RFC987 Appendix F format) from
+a master table via RARE-WG1.  Hosts with DNS access should be able to obtain
+full mapping information from the DNS namespace.  This implies that there will
+be two separate copies of the mapping database, one in table form, and the
+other within the internet DNS namespace.
+
+Use by DNS sites:
+     All TO-X400 and TO-822 records will be stored in DNS zones.  The
+authoritative information for any particular zone may be delegated to any
+nameserver supporting the TO-X400 and TO-822 resource records.  The root
+nameservers for the TO-X400 and TO-822 information delegate zones to the
+authoritative nameservers, and assume authority for those sections of the DNS
+tree that have not been delegated.  Note that the root
+nameservers for these records are not necessarily the same nameservers which
+are root nameservers for the internet address class.  (See next section).
+     For zones not already delegated to a nameserver, the root nameservers
+will initialize these segments of the DNS tree with the mapping information
+obtained via RARE WG1.  This allows DNS sites to receive up to date information
+for data which is not maintained by the DNS.
+
+Use by non DNS sites:
+
+
+
+Cole &amp; Hagens                                                   [Page 5]
+
+Draft RFC                                                      May 1990
+
+
+     As mentioned, non DNS sites will obtain all their mapping
+information using RARE-WG1.  In order for the master table-based version of
+the database to be up to date and complete, changes made to the DNS version
+must propagate into the table-based version.  DNS sites could use a program to
+parse their zone files into tables formatted as in RFC987 Appendix F.  The
+output could then be delivered to the site which maintains the master RARE-WG1
+tables.
+
+
+6.0 Which address class to use?
+
+     It can be convenient for these records to be stored in the same DNS zones
+as other resource record types, such as internet address records.  It seems
+reasonable to store these records in the internet address class since the
+TO-X400 records refer to owner-names which are already present in the internet
+address class.  In our initial implementation of these new DNS records, the
+records are assigned to the internet address class.
+     Conceivably, these records could be placed in a new address class such as
+an ISO address class.  This would allow the zones containing TO-X400 and
+TO-822 records to be delegated independently of already existing DNS zones.
+This could be particularly useful if it is desired to keep the root
+nameservers for this mapping data separate from the current internet root
+nameservers.  If these nameservers are not separate, then it is expected that
+the existing root nameservers will be given the new burden of loading RARE WG1
+information into the DNS.
+     Note that the scope of wildcard resource records are bounded by the
+presence of resource records that occupy subdomains of the wildcard
+record.  If the scope of wildcard records is affected by resource records from
+different address classes, then wildcard records can be affected in
+non-intuitive ways.  For example the records:
+    *.B.A.	IN	MX	0   B.A.
+    C.B.A.	HS	TXT	"data"
+
+would cause internet address class MX queries for any domain name ending in
+C.B.A to not match the above wildcard record.  If a separate address class is
+to be used for the TO-X400 and TO-822 records, it is preferable for wildcard
+records to not be affected by resource records from other address classes.
+
+7.0 Summary
+
+     Internet DNS nameservers wishing to provide this mapping information need
+to be modified to support two new resource record types, and possibly a new
+address class.  Additional modifications are required to support the
+WILDCARD-COUNT field used by the new resource record types.
+     Usage of these extensions provide RFC987 gateways with the advantages
+listed in the motivation section.  These advantages are important for the
+administration of RFC987 gateways.
+     The existence of two copies of the O/R address vs domain-name mapping
+database is proposed.
+     Software to convert between the textual representation of DNS resource
+
+
+
+Cole &amp; Hagens                                                   [Page 6]
+
+Draft RFC                                                      May 1990
+
+
+records and RFC987 appendix F tables can be used to keep both copies of the
+database current.
+
+8.0 References
+
+   [CCITT] CCITT SG 5/VII, "Recommendation X.400," Message
+   Handling Systems: System Model - Service Elements, October 1984.
+
+   [PP] Kille, S., "PP Installation and Operation", Volume 1, December 1989.
+
+   [RFC 974] Partridge, C., "Mail routing and the domain system",
+   RFC 974, CSNET CIC BBN Labs, January 1986.
+
+   [RFC 987]  Kille, S., "Mapping Between X.400 and RFC 822",  UK
+   Academic Community Report (MG.19) / RFC 987, June 1986.
+
+   [RFC 1026]  Kille, S., "Addendum to RFC 987", UK Academic Community
+   Report (MG.23) / RFC 1026, August 1987.
+
+   [RFC 1034]  Mockapetris, P., "Domain Names - Concepts and
+   Facilities", RFC 1034, USC/Information Sciences Institute, November
+   1987.
+
+   [RFC 1035]  Mockapetris, P., "Domain names - Implementation and
+   Specification", RFC 1035, USC/Information Sciences Institute,
+   November 1987.
+
+   [WG] OSI-X.400 Working Group Meeting, October 1989.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Cole &amp; Hagens                                                   [Page 7]
+
+<b>[<a href="?l=namedroppers&m=95837797327109&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327111&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327112&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

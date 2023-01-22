@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BITNET-Internet Gateway' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927034&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927041&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500028&r=1&w=2">BITNET-Internet Gateway</a>
+From:       <a href="?a=95837785000004&r=1&w=2">BITNET Board of Trustees &lt;BOARD%BITNIC.BITNET () wiscvm ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-20 16:04:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927038&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927038&q=raw">body</a>]</b>
+
+The City University of New York, Princeton University, Cornell University, and
+Massachusetts Institute of Technology have each committed to provide gateway
+service for electronic mail between the BITNET network and the Internet.
+
+Current gateway services provided by the University of Wisconsin (WISCVM) will
+end on December 15, 1987.  Prior to that date, at least two of the above
+announced gateways will be in operation in parallel with WISCVM - there will
+be no interruption in gateway services.
+
+Prior to a regionalization plan and significant coordination with the
+Internet, the most expeditious approach is to name the first few gateways the
+same, namely, INTERBIT.  That would mean that any gateway-destined mail that
+landed at any INTERBIT node would be appropriately handled.  This change will
+be reflected in the December DOMAIN NAMES file which is used for MAILER
+generation; users need not do anything - mail will go automatically to the
+closest gateway.  This is a transition measure necessitated by the time frame,
+by the complexity of more desirable solutions, and by the need to coordinate
+more with the Internet.
+
+Plans are to regionalize gateway service between the networks in order to
+balance traffic flow and increase reliability.  Several other institutions are
+seriously considering functioning as gateways.  An analysis of topologically
+best locations for such gateways will be conducted under the auspices of the
+BITNET Board of Trustees' Technical Committee; and the BITNET Network
+Information Center will coordinate regionalization plans and associated
+software modifications.
+
+(Please note reference to Internet, rather than ARPANet, and Internet's
+inclusion of ARPANet, NSFNet, NYSERNET and the other regional networks.)
+
+
+BITNET Board of Trustees
+
+<b>[<a href="?l=namedroppers&m=95837781927033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927034&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927041&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

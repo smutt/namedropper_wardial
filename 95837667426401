@@ -1,0 +1,125 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Status report' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426400&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426402&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Status report
+From:       <a href="?a=95837692300021&r=1&w=2">mills () dcn6 ! arpa</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-30 19:43:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426401&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426401&q=raw">body</a>]</b>
+
+Folks,
+
+You might be interested in a short note describing the horrors and status
+of the conversion of our fiesty nest of fuzzballs to the domain-name system.
+
+First off, we had badly undercounted the number of places in our fuzzware
+requiring translation of name to address and address to name. Formerly, both
+of these things was handled by frequently updated copies (reformated) of the
+NIC HOSTS.TXT file distributed to two-dozen or so fuzzballs scattered all over
+the world. As a development step, one of the fuzzthings now supports a
+domain-name server with a static cache of the ARPA domain (derived from
+HOSTS.TXT), while some others have only the local hosts in their caches and
+still others have none at all; however, all caches include name-server entries
+for all top-level domains. No dynamic caching is used, although the
+namesolvers do make use of multiple servers, including some on TOPS-20 and
+4.2bsd Unix systems.
+
+Now, every nonlocal translation requires a flitter of datagrams across the
+local swamp, which is a porcupine sort of things with quills all over the
+country, and sometimes outside. Interestingly enough, with strategically
+placed name servers, resolution via the net is often faster than local disk
+accesses, which is one reson why we didn't build dynamic caches. Some places,
+surprising and not, requiring either actual translation or verification:
+
+1. Every host mentioned for a user-initiated connection request (TELNET, FTP
+   and all sorts of miscellaneous other TCP and UDP things).
+
+2. Every host mentioned when a user constructs or answers a message, both
+   to map nicknames to principal names and to catch errors.
+
+3. Every host appearing as a destination for outbound mail as the mail is
+   actually sent. Our system doesn't bind the address until then so we can
+   handle name mobility for PCs, etc.
+
+4. Every host appearing as a destination for incoming mail to be delivered or
+   forwarded, as well as the last previous host on the return route. We don't
+   verify the HELO host name as corresponding to the semder's address, but
+   eventually might.
+
+5. Every time the local host binds a connection request from somewhere else,
+   since we chose to log the calling host name. This happens for all TCP
+   services, including TELNET, FTP, SMTP, MPM, TIME, printer spoolers,
+   operator intercoms...
+
+6. In the case of very-mobile fuzzlings with no cache entries at all (except
+   name servers), every time the name of the local host is required, such as
+   when the user runs a network-related application program.
+
+Obviously, ours is an extreme case and was designed so that a personal host
+could come up anywhere in the address world and, through a transaction with
+its name-server agent, could cause everything from mail to old bills to find
+it. The traffic could of course be reduced with careful use of dynamic caches.
+We will get around to that presently.
+
+Current status and problems
+
+The namesolvers work properly with the TOPS-20 name servers at NIC, ISIB and
+ISIF, although all three presently have out-of-date data bases with respect to
+HOSTS.TXT and do not appear to support the IN-ADDR domain. As expected, we
+have had problems with the NIC multi-home "feature," which appears to randomly
+select one of its addresses without regard for which one the datagram arrived
+at. Rather long delays for the first datagram following a lull sometimes
+causes our namesolvers to time out unneccessarily. All of the above except the
+IN-ADDR problem have been documented before, of course.
+
+The fuzzball namesolvers also work properly with the name servers at Berkeley
+and Symbolics, as well as the BIND system we have installed on a Sun
+workstation. (We are still hunting suspected bit-order critters in the BIND
+namesolver routines.)
+
+So far, nobody outside our swamp seems to have claimed the fuzzball name
+server first-crash award, but Charles Hornig managed to bounce a message all
+the way back to Symbolics after the receiving fuzzball argued with another
+fuzzball, a TOPS-20 and a couple of Symbolics machines before finally
+resolving the address. 
+
+Parting shots
+
+As usual, our shop tries to keep the rest of you honest by implementing
+supposedly big things in underpowered hosts. A bare-boned name server really
+needn't be very big. For instance, the complete hash-coded fuzzball data base
+for the ARPA and IN-ADDR domains provides both normal and inverted access
+using about 90K bytes with an average of slightly more than one disk operation
+per access and a maximum of three. The namesolver itself, including all code
+and data segments for linking with application programs, is about 2500 bytes.
+The stand-alone name server, part of a multi-purpose UDP datagram server, is
+only slightly larger.
+
+We are planning to experiment with moderately volatile name-server data bases
+(with dynamics in the order of a few minutes to an hour) in order to support
+dynamic mailbox binding using people names as host names. We are also
+planning, at least on an interim basis, to bring up a name-server server for
+the old IEN-116 protocol used by our IBM PCs.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426400&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426402&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

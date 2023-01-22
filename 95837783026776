@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Your (Thinking Machine's) namespace database' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026775&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026777&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Your (Thinking Machine's) namespace database
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-03 12:28:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026776&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026776&q=raw">body</a>]</b>
+
+For various reasons, I had reason to poke around the domain database for
+think.com, specifically the names Think.COM and Zarathustra.Think.COM.
+What I found is probably not in line with the intent of the domain
+system, though it may be technically legal.
+
+There are two servers for Think.COM: Think.COM itself and CCA.CCA.COM.
+That's OK.
+
+Each server when asked various questions about Think.COM and
+Zarathustra.Think.COM gives the same answer, except for asking for the
+Start of Authority for Think.COM.  Think.COM has a serial number of 158
+but CCA has a serial number of 157.  This update may have been rather
+recent and indeed I wasn't able to get a connection to Think.COM for a
+few days.
+
+When asked about the canonical name for Zarathustra.Think.COM, each
+authoritatively says there is none.  This would be OK except for the
+following.
+
+When asked for the Internet address(es) of Zarathustra.Think.COM, each
+gives three addresses:
+	192.5.104.218,
+	10.4.0.6, and
+	192.31.179.26
+When asked for the Internet address(es) of Think.COM, each gives two
+addresses:
+	10.4.0.6, and
+	192.5.104.218
+These are the same as the first two addresses of Zarathustra.Think.COM.
+This would lead just about anybody to believe these are really the same
+host.  Then why isn't there a canonical name record?  And why do the two
+different versions of the host not have the same set of addresses?
+
+The other inconsistency, and this is probably just a spazz, is that the
+RNAME of the SOA record specifies PostMaster.Think.COM.Think.COM.  There
+is no MB record for this name (CCA gives RCODE=NAME-ERROR).  It probably
+wants to be just PostMaster.Think.COM, and thus I've addressed this note
+to PostMaster@Think.COM, and for grins also addressed it to
+PostMaster.Think.COM@Think.COM and PostMaster@Think.COM.Think.COM.
+
+<b>[<a href="?l=namedroppers&m=95837783026775&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026777&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

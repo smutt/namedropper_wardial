@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bad MXer relay.eu.net for .ch domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327022&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327024&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327029&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400015&r=1&w=2">Bad MXer relay.eu.net for .ch domains</a>
+From:       <a href="?a=95837817200013&r=1&w=2">munnari.oz.au!metro!news () uunet ! uu ! net  (Jim Richardson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-30 3:44:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327023&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327023&q=raw">body</a>]</b>
+
+Correctly addressed mail to some sites in Switzerland is sometimes being
+bounced, apparently because of an error in the nameserver configuration.
+
+For example, ethz.ch has the following MX records:
+
+	ethz                MX    10   chx400.switch.ch
+	ethz                MX    20   relay.EU.net
+
+Now chx400.switch.ch has an A record, but relay.eu.net does not seem to exist.
+It has no A record; the only information in DNS relating to it seems to be
+
+	relay.eu.net	preference = 10, mail exchanger = mcsun.eu.net
+
+If chx400 is down or unreachable, sendmail tries relay.eu.net, and the message
+is returned to the sender with a "Host unknown" error.  Note that sendmail
+should *not* be expected to take note of a "second level" MX record like the
+one for relay.eu.net.
+
+Should the ethz preference 20 MX record (and other similar records for other
+Swiss domains) refer to mcsun.eu.net instead of relay.eu.net?
+
+Mail to the domain contact and the postmaster hasn't had any apparent effect.
+
+Apologies in advance if I've misinterpreted the problem and it is at my end
+somehow: if so, advice would be appreciated.
+--
+Jim Richardson
+Department of Pure Mathematics, University of Sydney, NSW 2006, Australia
+Internet: jimr@maths.su.oz.au  ACSNET: jimr@maths.su.oz  FAX: +61 2 692 4534
+
+<b>[<a href="?l=namedroppers&m=95837797327022&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327024&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327029&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

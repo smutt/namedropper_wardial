@@ -1,0 +1,275 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Who's bad?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927025&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927030&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Who's bad?
+From:       <a href="?a=95837785000002&r=1&w=2">MOCKAPETRIS () A ! ISI ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 22:26:28</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927029&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927029&q=raw">body</a>]</b>
+
+One of the problems with the root service is that there are a lot of
+host sourcing bad requests of various flavors.  While I realize that
+many people have better things to do than to play with their domain
+software, I believe that a little peer pressure could go a long way
+toward cleaning up the mess.
+
+I suggest that you check the following list to determine whether your
+hosts are good, bad or ugly.  Sending bogons or too many requests are
+the issues.  Busy hosts may need to send a lot of requests, but some
+of the traffic really looks excessive.  I'd also appreciate it if you
+could send me (not the list) a message identifying good and bad
+implementations/versions; I'll send out a summary.
+
+For the purposes of this discussion, a bogon is a domain packet
+received by the server which is a response, not a request.  Most
+bogons appear to ask for the NS RRs for the root.  The TOPS-20 root
+servers don't respond to bogons, and I believe newer versions of BIND
+also toss bogons.  Please don't "fix" your machine by having it clear
+the response bit; there is no good reason to ask for root server
+changes every minute anyway.  They just don't change that often.
+
+The statistics are for the root server on ISIA
+between 19-Nov-87 03:20:22 and 19-Nov-87 21:11:22)
+
+Name server requests:28654 Bogons:50085 Parse fails:1
+27.8 queries/min 48.5 bogons/min 0.0 parse failure/min
+
+(That's right, the server is ignoring almost 2/3 of its input)
+
+(In the following table, the Start column gives the raw count of
+packets from the specified Host, and the Done column is the number of
+responses sent.  More than 99% of the difference is due to bogons.
+The %Done column is the percentage of good traffic from the specified
+host.  The average time is elapsed ms between reading the packet and
+finishing with it, and only includes good transactions.  No, I don't
+totally understand the time differences; yes, the times are a bit
+suspect, but there are some wierd factors involved.
+
+For example, the first host, ADS.ARPA, seems well behaved.  It sent in
+102 requests and got 102 answers.  The second in the list, 128.6.14.2,
+sent in 1654 bogons, all of which were ignored. Its bad.)
+
+Name server client host distribution
+
+ Start %All   Done %Done Avg time Host
+   102  0.1    102 100.0    186.5 128.229.1.24	ADS.ARPA
+  1654  2.1      0   0.0 ******** 128.6.14.2	
+  1633  2.1      1   0.1    108.0 36.8.0.8	PESCADERO.STANFORD.EDU
+  1369  1.7    554  40.5     66.6 35.1.1.10	UMIX.CC.UMICH.EDU
+  1223  1.6     36   2.9    416.1 128.121.8.1	
+  2868  3.6   1884  65.7     56.1 192.11.34.1	
+  1234  1.6      0   0.0 ******** 128.83.138.12	RATLIFF.CS.UTEXAS.EDU
+  1218  1.5      0   0.0 ******** 128.163.128.51	
+   767  1.0      0   0.0 ******** 128.52.22.14	PREP.AI.MIT.EDU
+   233  0.3    233 100.0     39.4 129.3.1.3	
+  3022  3.8   3022 100.0     91.1 35.2.64.64	
+   523  0.7    523 100.0     82.1 26.1.0.3	
+  1272  1.6      0   0.0 ******** 128.97.16.21	
+   971  1.2      0   0.0 ******** 128.52.32.13	WHEATIES.AI.MIT.EDU
+   959  1.2      0   0.0 ******** 36.63.0.171	
+   214  0.3    214 100.0     42.6 128.10.2.5	PENDRAGON.CS.PURDUE.EDU
+  1369  1.7      0   0.0 ******** 128.32.142.25	
+  1087  1.4     15   1.4    459.3 192.11.34.5	
+  1331  1.7      0   0.0 ******** 128.49.5.1	MPLVAX.NOSC.MIL
+   973  1.2      0   0.0 ******** 128.32.139.100	
+   148  0.2    148 100.0    158.3 26.0.0.73	SRI-NIC.ARPA
+  1240  1.6      0   0.0 ******** 128.163.128.6	
+  1265  1.6      0   0.0 ******** 128.218.1.16	
+   759  1.0     15   2.0    367.9 128.36.0.1	YALE.ARPA
+    49  0.1      0   0.0 ******** 192.5.39.2	DEWEY.UDEL.EDU
+  1118  1.4     14   1.3    307.3 192.12.69.1	ARIZONA.EDU
+  1321  1.7      0   0.0 ******** 192.31.152.33	ROSETTA.COM
+  1517  1.9      0   0.0 ******** 128.128.16.1	AQUA.WHOI.EDU
+  1402  1.8      0   0.0 ******** 128.97.16.17	
+   306  0.4    306 100.0     21.2 128.10.2.1	PURDUE.EDU
+  1355  1.7      0   0.0 ******** 128.97.16.103	
+  1187  1.5      0   0.0 ******** 128.112.34.19	
+  1127  1.4      1   0.1    164.0 128.6.4.16	CAIP.RUTGERS.EDU
+  1248  1.6      0   0.0 ******** 128.32.136.12	LILAC.BERKELEY.EDU
+  1390  1.8      0   0.0 ******** 128.97.16.13	
+  1346  1.7      0   0.0 ******** 128.52.32.4	
+  1088  1.4      0   0.0 ******** 36.22.0.8	CASCADE.STANFORD.EDU
+  1140  1.4      0   0.0 ******** 128.112.28.1	
+   384  0.5      0   0.0 ******** 192.26.85.1	NORTHWESTERN.ARPA
+   655  0.8      0   0.0 ******** 128.101.32.8	CS-GW.D.UMN.EDU
+   568  0.7    568 100.0    238.9 10.2.0.94	UMN-REI-UC.ARPA
+  1374  1.7      3   0.2     67.3 10.0.0.91	WARD.CS.WASHINGTON.EDU
+  1369  1.7      0   0.0 ******** 128.32.131.135	
+  1277  1.6      0   0.0 ******** 192.11.34.4	
+  1367  1.7      0   0.0 ******** 128.32.142.70	
+  1305  1.7      0   0.0 ******** 36.2.0.102	
+  1646  2.1      0   0.0 ******** 128.6.14.9	
+  1039  1.3      0   0.0 ******** 128.112.6.40	MIND.PRINCETON.EDU
+   304  0.4     58  19.1    214.6 128.36.0.3	YALE-BULLDOG.ARPA
+   887  1.1    887 100.0     51.4 128.2.13.21	LANCASTER.ANDREW.CMU.EDU
+     9  0.0      9 100.0    130.4 18.62.0.6	EDDIE.MIT.EDU
+   340  0.4    340 100.0     68.5 26.5.0.73	TWG.ARPA
+    46  0.1     46 100.0    187.6 128.121.51.1	JVNC.CSC.ORG
+   424  0.5    424 100.0    149.2 26.3.0.103	A.ISI.EDU
+   125  0.2    125 100.0    258.7 128.32.136.9	JADE.BERKELEY.EDU
+    12  0.0     12 100.0     62.8 26.1.0.34	LBL-CSAM.ARPA
+  1359  1.7      0   0.0 ******** 192.12.221.4	CSD4.MILW.WISC.EDU
+   131  0.2    131 100.0    178.3 128.6.5.46	
+   716  0.9    716 100.0     62.3 128.6.4.7	RUTGERS.EDU
+   177  0.2    177 100.0    214.8 128.91.2.13	SUPER.UPENN.EDU
+   842  1.1    842 100.0     53.9 128.197.2.62	BUCSD.BU.EDU
+     3  0.0      3 100.0    257.7 18.26.0.92	THEORY.LCS.MIT.EDU
+    55  0.1     55 100.0     13.0 36.2.0.101	
+     4  0.0      4 100.0    197.8 128.97.28.19	ULYSSES.CS.UCLA.EDU
+    30  0.0     30 100.0    279.6 128.109.130.5	
+   148  0.2    148 100.0     76.4 10.3.0.89	COLUMBIA.EDU
+     7  0.0      7 100.0     81.0 18.26.0.99	
+   150  0.2    150 100.0    200.2 128.32.136.22	VIOLET.BERKELEY.EDU
+   469  0.6    469 100.0    110.1 192.5.23.6	BRL-VGR.ARPA
+    65  0.1     65 100.0    446.4 10.2.0.78	UCBVAX.BERKELEY.EDU
+    59  0.1     59 100.0     32.9 15.255.17.2	
+   119  0.2    119 100.0    225.8 35.1.192.4	ACAL.EECS.UMICH.EDU
+    29  0.0     29 100.0     78.5 35.1.128.32	
+    42  0.1     42 100.0     54.0 35.1.128.16	CITI.UMICH.EDU
+    68  0.1     68 100.0     57.1 192.5.48.2	MORDRED.CS.PURDUE.EDU
+   102  0.1    102 100.0    331.8 128.9.0.32	VENERA.ISI.EDU
+   112  0.1    112 100.0     65.1 128.15.0.24	INTREPID.S1.GOV
+     1  0.0      1 100.0     14.0 128.210.0.5	L.CC.PURDUE.EDU
+    49  0.1     49 100.0     13.2 36.22.0.35	
+     2  0.0      2 100.0     17.5 128.2.250.134	
+    85  0.1     85 100.0     85.2 128.205.1.2	
+    48  0.1     48 100.0     85.6 192.12.63.14	
+    41  0.1     41 100.0    190.3 128.102.18.3	AMES.ARPA
+   185  0.2    185 100.0     33.4 192.12.15.31	BNLX.ARPA
+     8  0.0      8 100.0    268.6 128.61.1.251	TROLL-GW.GATECH.EDU
+     4  0.0      4 100.0    116.8 128.46.151.1	NEWTON.PHYSICS.PURDUE.EDU
+   242  0.3    242 100.0     51.8 128.15.16.16	TERMINUS.S1.GOV
+     1  0.0      1 100.0     34.0 128.109.130.91	
+   171  0.2    171 100.0     80.7 192.5.23.2	BRL-VMB.ARPA
+   125  0.2    125 100.0    164.0 192.5.23.8	SEM.BRL.MIL
+     4  0.0      4 100.0    191.5 128.2.222.217	
+    19  0.0     19 100.0    169.7 129.4.16.70	TRWIND.TRW.COM
+    73  0.1     73 100.0    188.7 10.1.0.111	GATEWAY.MITRE.ORG
+   172  0.2    172 100.0     94.3 128.135.4.2	ODDJOB.UCHICAGO.EDU
+    95  0.1     95 100.0     20.4 36.12.0.135	
+    20  0.0     20 100.0    119.1 128.42.17.10	
+     4  0.0      4 100.0     80.8 128.91.254.1	
+    42  0.1     42 100.0    100.6 128.32.137.13	ERNIE.BERKELEY.EDU
+     1  0.0      1 100.0     33.0 128.104.30.17	
+    21  0.0     21 100.0    347.5 128.2.254.132	G.GP.CS.CMU.EDU
+    30  0.0     30 100.0     54.5 26.16.0.18	ABS6.ARPA
+    33  0.0     33 100.0    168.3 10.1.0.37	ASC.CC.PURDUE.EDU
+    14  0.0     14 100.0      4.3 36.2.0.104	
+     9  0.0      9 100.0    142.9 128.2.254.137	K.GP.CS.CMU.EDU
+    10  0.0     10 100.0     74.9 128.32.137.5	
+    77  0.1     77 100.0    264.7 26.6.0.106	VAX.DARPA.MIL
+    54  0.1     54 100.0    119.4 192.5.19.1	ICS.UCI.EDU
+   146  0.2    146 100.0    111.6 192.5.19.31	ROME.UCI.EDU
+    43  0.1     43 100.0    140.2 128.114.130.3	UCSCC.UCSC.EDU
+    16  0.0     16 100.0     22.8 36.2.0.103	
+    22  0.0     22 100.0    190.6 128.92.192.16	PRESTO.IG.COM
+    21  0.0     21 100.0    187.4 128.138.240.1	BOULDER.COLORADO.EDU
+   715  0.9    715 100.0    124.7 10.7.0.2	SUN.COM
+    10  0.0     10 100.0    461.4 10.0.0.4	CS.UTAH.EDU
+    16  0.0     16 100.0    348.5 192.12.141.129	UUNET.UU.NET
+   194  0.2    194 100.0    125.4 192.5.23.3	BRL-SMOKE.ARPA
+    47  0.1     47 100.0    173.9 128.3.254.23	LBL.GOV
+    66  0.1     66 100.0     79.0 192.5.25.4	BRL-ADM.ARPA
+    18  0.0     18 100.0     63.6 10.4.0.17	TIS.ARPA
+   114  0.1    114 100.0     41.9 10.5.0.25	POTOMAC.ADS.COM
+     9  0.0      9 100.0    187.2 192.12.216.4	VAXC.STEVENS-TECH.EDU
+    53  0.1     53 100.0    113.9 128.174.30.3	
+     4  0.0      4 100.0    113.0 128.2.254.157	ROVER.RI.CMU.EDU
+    15  0.0     15 100.0    145.1 26.4.0.103	ADA-VAX.ISI.EDU
+    93  0.1     93 100.0    340.1 128.174.5.50	UXC.CSO.UIUC.EDU
+    25  0.0     25 100.0    184.3 128.32.135.1	BACH.BERKELEY.EDU
+    33  0.0     33 100.0    132.8 128.99.0.1	NRTC.NORTHROP.COM
+    29  0.0     29 100.0    158.2 128.99.0.16	ISD.NRTC.NORTHROP.COM
+     3  0.0      3 100.0     17.3 128.92.192.12	KIWI.IG.COM
+    46  0.1     46 100.0    212.7 10.11.0.20	SCCGATE.SCC.COM
+     8  0.0      8 100.0    153.3 128.54.2.129	AMOS.LING.UCSD.EDU
+     1  0.0      1 100.0    123.0 10.5.0.54	TYBALT.CALTECH.EDU
+     8  0.0      8 100.0     39.9 128.2.254.143	ISL1.RI.CMU.EDU
+     2  0.0      2 100.0    420.0 128.2.250.71	
+     2  0.0      2 100.0     26.5 128.138.238.18	
+     2  0.0      2 100.0     59.5 128.2.220.17	
+     5  0.0      5 100.0    102.8 128.104.39.10	
+    42  0.1     42 100.0    203.5 10.4.0.96	LINC.CIS.UPENN.EDU
+     1  0.0      1 100.0     34.0 18.70.0.59	
+   140  0.2    140 100.0    134.9 128.63.8.5	APG-5.ARPA
+   115  0.1    115 100.0     65.2 127.0.0.1	
+    12  0.0     12 100.0    192.6 128.97.28.28	LANAI.CS.UCLA.EDU
+   739  0.9    739 100.0     33.7 15.255.16.26	
+   839  1.1    839 100.0     29.5 15.255.16.5	
+     8  0.0      8 100.0    129.9 128.97.28.26	MAUI.CS.UCLA.EDU
+     2  0.0      2 100.0      6.5 128.148.55.4	
+   838  1.1      0   0.0 ******** 128.193.32.5	CHROMA.CS.ORST.EDU
+    23  0.0     23 100.0     27.5 36.8.0.154	
+     1  0.0      1 100.0    219.0 128.32.132.1	
+    19  0.0     19 100.0    107.8 26.2.0.95	ANGBAND.S1.GOV
+     8  0.0      8 100.0    150.1 128.2.250.16	WB1.CS.CMU.EDU
+    36  0.0     36 100.0    263.8 10.7.0.82	SH.CS.NET
+    90  0.1     90 100.0    173.8 128.62.1.126	
+    10  0.0     10 100.0     45.7 192.5.23.40	BRL-SVC.ARPA
+     2  0.0      2 100.0    605.5 128.210.0.2	I.CC.PURDUE.EDU
+    28  0.0     28 100.0     93.4 128.2.11.131	ANDREW.CMU.EDU
+     7  0.0      7 100.0     97.0 128.210.2.2	J.CC.PURDUE.EDU
+    11  0.0     11 100.0    229.1 128.118.6.4	
+   170  0.2    170 100.0     87.4 10.0.0.94	CS.WISC.EDU
+    25  0.0     25 100.0     70.6 10.0.0.31	CCA.CCA.COM
+    52  0.1     52 100.0    113.9 128.6.4.61	ELBERETH.RUTGERS.EDU
+   165  0.2    165 100.0    182.1 10.4.0.5	RELAY.CS.NET
+    13  0.0     13 100.0    102.6 35.1.1.7	MCR.UMICH.EDU
+    12  0.0     12 100.0     98.6 128.193.32.1	CS.ORST.EDU
+    63  0.1     63 100.0    283.2 128.182.65.2	B.PSC.EDU
+     1  0.0      1 100.0     33.0 128.2.217.32	
+     6  0.0      6 100.0    140.2 18.10.0.86	MILO.LCS.MIT.EDU
+    14  0.0     14 100.0     94.3 128.46.129.15	EE.ECN.PURDUE.EDU
+     1  0.0      1 100.0     94.0 128.122.129.7	VLSI1.ULTRA.NYU.EDU
+    25  0.0     25 100.0     13.2 36.8.0.136	
+     7  0.0      7 100.0    216.9 128.210.0.4	K.CC.PURDUE.EDU
+   115  0.1    115 100.0    146.1 128.39.2.2	IFI.UIO.NO
+     4  0.0      4 100.0    120.8 128.46.129.30	EI.ECN.PURDUE.EDU
+    22  0.0     22 100.0    186.7 192.5.220.1	BLUTO.SCC.COM
+     1  0.0      1 100.0     15.0 192.5.143.102	
+     6  0.0      6 100.0    222.7 26.0.0.58	NYU.EDU
+    18  0.0     18 100.0    147.6 36.19.0.210	GSB-HOW.STANFORD.EDU
+     7  0.0      7 100.0     69.4 26.6.0.53	EGLIN-VAX.ARPA
+    95  0.1     95 100.0     50.9 128.102.16.1	VIKING.ARC.NASA.GOV
+     9  0.0      9 100.0    102.4 26.9.0.21	NMFECC.ARPA
+     1  0.0      1 100.0     36.0 128.2.220.59	
+    20  0.0     20 100.0    140.8 128.105.2.1	SPOOL.WISC.EDU
+    16  0.0     16 100.0    150.6 128.42.1.4	IAPETUS.RICE.EDU
+   120  0.2    120 100.0    118.4 10.0.0.44	XX.LCS.MIT.EDU
+    20  0.0     20 100.0     69.3 128.118.6.2	PSUVAX1.PSU.EDU
+     1  0.0      1 100.0    218.0 128.2.250.68	
+    21  0.0     21 100.0    201.0 26.7.0.16	DECWRL.DEC.COM
+     9  0.0      9 100.0     41.8 128.45.0.52	SONORA.DEC.COM
+    18  0.0     18 100.0     61.8 128.63.9.2	BRL-IBD.ARPA
+    29  0.0     29 100.0    273.4 128.9.0.33	VAXA.ISI.EDU
+    17  0.0     17 100.0    167.5 128.32.137.7	CAD.BERKELEY.EDU
+   179  0.2    179 100.0    185.4 128.182.65.1	A.PSC.EDU
+     2  0.0      2 100.0     16.5 18.72.0.41	
+    16  0.0     16 100.0    180.8 128.122.130.1	GBA.NYU.EDU
+    31  0.0     31 100.0    114.9 36.8.0.46	SCORE.STANFORD.EDU
+     1  0.0      1 100.0    291.0 128.6.21.5	
+     8  0.0      8 100.0    276.8 128.45.0.5	
+     6  0.0      6 100.0    199.8 128.150.55.10	
+     7  0.0      7 100.0    182.4 192.5.48.3	MERLIN.CS.PURDUE.EDU
+ 10163 12.9   8894  87.5     89.8 ***** Others *****
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781927025&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927030&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

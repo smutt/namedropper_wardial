@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'the Mail Forwarder problem' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926754&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926756&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926756&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500038&r=1&w=2">the Mail Forwarder problem</a>
+From:       <a href="?a=95837784200018&r=1&w=2">mark () cbpavo ! mis ! oh ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198701">1987-01-14 13:07:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926755&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926755&q=raw">body</a>]</b>
+
+In the process of making recommendations for sites that want to
+forward mail between UUCP and ARPA, a fairly tricky problem has
+come up.  I wonder if people on this list have already solved this,
+or have any suggestions.
+
+Consider a machine which is on N networks, especially where N &gt; 2.
+(HARVARD.HARVARD.EDU is on ARPA, CSNET, UUCP, and BITNET, for example.
+DECWRL.DEC.COM is on ARPA, ENET, and UUCP.  There are no doubt more.)
+
+This machine gets a message for foo@bar.mumble.com.  It has to figure
+out which of the N networks to drop the message into.  The syntax of
+the message gives no clue, in accordance with the spirit of domains.
+
+The machine has at its disposal a lookup routine for each network that
+it's on.  For ARPA, it has a resolver.  For UUCP, it has a pathalias
+lookup routine that looks in a local disk file.  I don't know what CSNET,
+BITNET, and ENET provide, but I would guess they involve looking in a disk
+file.
+
+Each network routine might respond with one of the following answers:
+
+(a) That name is on my network, and I can send to it directly.
+
+(b) That name is reachable through my network, and I can forward to
+another host that will get it there.
+
+(c) I never heard of that name.
+
+For each of the names "bar.mumble.com", "mumble.com", and "com", you
+may get a different answer to the above.  In particular, for "com",
+you'll almost certainly not get answer (c) from any network.
+
+OK, now so much for theory.  In practice, we have to deal with things
+like this:
+
+(1) You might get (a) back from more than one network, if the remote
+destination is on both networks.  Then you have to order the nets so
+you'll pick the best one.  If it's up.
+
+(2) Some networks may not be able to distinguish between (a) and (b).
+UUCP, in particular, can't tell the difference easily.
+
+(3) I don't know of any software that even attempts to deal with this
+at the current time.
+
+(4) I don't know what CSNET, BITNET, ENET, and EAN do.
+
+Any information about possible solutions, and about how this might be
+handled for some of the other networks, would be appreciated.
+
+	Mark Horton
+	mark@cbpavo.MIS.OH.ATT.COM	(if you speak MX)
+	cbosgd!mark@seismo.css.gov	(if you don't, and shame on you for
+					not supporting RFC 973/974!)
+	mark@cbosgd.UUCP		(if you don't understand the above.)
+
+<b>[<a href="?l=namedroppers&m=95837781926754&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926756&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926756&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

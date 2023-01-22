@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Zone transfer security' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926923&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926924&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926923&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000024&r=1&w=2">Re:  Zone transfer security</a>
+From:       <a href="?a=95837783700018&r=1&w=2">jordan () ucbarpa ! Berkeley ! EDU (Jordan Hayes)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-12 10:32:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926925&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926925&q=raw">body</a>]</b>
+
+	From: nowicki@Sun.COM Fri, 11 Sep 87 14:01:51 PDT
+
+	Mostly we need to educate people that knowing a machine's
+	name does not change the security of that system.  Having
+	an unlisted phone number does not prevent crank phone calls.
+
+WIN makes a good point, but if you have your HINFO fields up-to-date
+and one says "vax-11/750 old-broken-4.2BSD" it's close to telling
+the world that "my house, which you can't miss because I just
+painted it bright green, has a door lock that does not work and I
+am at the office during the day" ... crank phone calls are often
+random, but industrial espionage is directed, and giving someone
+an easy tool to figure out your weaknesses is kind of suicidal.
+
+Bill is right -- you can't stop the ability to *randomly* hit
+machines, as you can't stop random crank phone calls, but unlisting
+your phone number will stop directed crank phone calls, at least
+temporarily.  Harpers Magazine notes this month that a full 1/2 of
+all telephone numbers in Los Angeles are presently unlisted.
+
+I know of at least one other "silicon valley company" that is
+waiting until they close a bunch of holes before converting to a
+domain server.
+
+I think that's at least on the right track -- it also may be why
+we're seeing a large lag time for all of .ARPA going away ... :-(
+Security on the network has become a big problem overnight, far
+faster than those working on the problems of "securing" a system
+have been able to deal with it ...
+
+/jordan
+
+<b>[<a href="?l=namedroppers&m=95837781926923&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926924&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926923&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

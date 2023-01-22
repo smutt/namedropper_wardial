@@ -1,0 +1,76 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS design guidelines' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827013&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827014&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827013&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300015&r=1&w=2">Re: DNS design guidelines</a>
+From:       <a href="?a=95837817200032&r=1&w=2">"Cricket" &lt;cricket () winnie ! corp ! hp ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-21 17:52:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827015&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827015&q=raw">body</a>]</b>
+
+
+    I was wondering if there are any recommended guidelines for 
+    architecting DNS for a site (~1500 nodes).  For example,  # of 
+    authoritative servers, # of resolvers per node, locality (e.g. 
+    no more than 1 bridge or repeater away, etc.)?  Any RFC's or 
+    other documents I can reference?
+    
+
+We've got a couple of very large domains within HP:  the Cupertino
+site domain, cup.hp.com, and the Fort Collins site domain, fc.hp.com.
+
+Our recommendations to their administrators when bringing up the
+domains were:
+
+- Delegate authority to fewer than 8 nameservers.  If you delegate to
+  more than eight, the authority records and additional records won't
+  all fit in one packet.
+
+- But remember to delegate authority to all authoritative nameservers 
+  remote from your site (pretty much common sense).  If you have a
+  particular division or site that does a lot of business with you,
+  they're probably a good choice for a secondary.
+
+- You can have additional nameservers onsite that are authoritative
+  for your "forward" (i.e., name to address) domain.  Just point
+  resolvers at them and don't delegate to them.
+
+- Place an authoritative nameserver on each subnet, in case of router
+  problems.
+
+- On the nameservers which you don't delegate to, you may only want
+  to secondary for the in-addr.arpa domain(s) "local" to that
+  nameserver.  That obviates the need to synch named boot files
+  between those nameservers and the primary.
+
+- Each major cluster probably deserves some kind of nameserver.  If
+  you're already overloaded (e.g., administratively, or in terms of
+  update load) with authoritative nameservers, use caching-only
+  nameservers, which are considerably less taxing.
+
+There are lots of other subtle issues regarding forwarders &amp; such. 
+I'd be happy to talk to you about them (even though you're the
+competition!) if you're curious or have special concerns.
+
+cricket
+
+hostmaster@hp.com
+
+<b>[<a href="?l=namedroppers&m=95837798827013&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827014&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827013&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

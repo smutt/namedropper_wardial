@@ -1,0 +1,96 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Plummer's proposal' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026743&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026750&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026750&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300032&r=1&w=2">Plummer's proposal</a>
+From:       <a href="?a=95837784000014&r=1&w=2">Dave Crocker &lt;dcrocker%engr.ub.com () CSNET-RELAY ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-05 8:51:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026744&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026744&q=raw">body</a>]</b>
+
+Over recent months, I have seen several proposals/analyses for giving
+users a way to traverse the domain tree.  Since it does not sound, so far,
+as if any have gained immediate acceptance, I wonder if we should consider
+the question of point of view.
+
+The proposals, including Plummer's, have attempted to give users full
+tree-traversal power.  Obviously, one cannot criticize this goal.  The
+tree is there.  It needs to be traversed.  If you limit the ability, you
+will find users who are stymied.
+
+Unfortunately, most users, most of the time, get lost with complexity and
+too much power.  An "average" user puts little time into learning; s/he
+has a job to do and constantly learning and analysing a mail system, text
+editor, etc. are not tasks that they get rewarded for.
+
+If we want domain name specification to be easily learned and processed by
+average users, we must keep to a few, very simple rules.  I'd like to say
+that I know what those rules should be, but the best I can offer at the
+moment are a few suggestions:
+
+1.  A user may specify a complete domain name.  Having a period at the
+end seems like a reasonable trick to distinguish relative, versus absolute,
+specifications.  This one rule means that users always can get to any leaf
+on the tree.  
+
+Any additional rules are for convenience, so we must balance the convenience
+of keystrokes against the conveniences of guessing which keys to push.
+
+Two types of convenience opportunities look as if they will be common
+for users:
+
+	A.  Intradepartment, where A.Engr.Company.Com needs to send to
+	    B.Engr.Company.Com, and
+
+	B.  Interdepartment, where A.Engr.Company.Com needs to send to
+	    to B.Mktg.Company.Com.
+
+There is a peculiar case where A.Mktg.Company.Com needs to send to
+B.WRegion.Mktg.Company.Com, but I suspect that the structure ought to
+have the first name be A.HQ.Mktg.Company.Com.
+
+(My list is biased, but any list will be.  To the extent that there
+are objections to the suggestions in this note, I'd like to request that
+the focus be upon generating example specification situations that we
+are trying optimize.)
+
+Both A and B are handled by the rule:
+
+2.  A user specification which does not end in dot is relative to the
+user's own domain name.  Each field of the user specification replaces
+one field from that domain string.  (The "peculiar case" therefore is not
+handled.)
+
+That's all.
+
+There is some chance that users can juggle these two rules, although
+the second one has enough complexity to be bothersome.
+
+As to the questions of separator character and direction of specification,
+these seem like straightforward human factors.  If we are concerned about
+making the "best" choices, then we need to run some tests with "typical"
+users to find out which character and which direction they learn the
+easiest and can generate and comprehend the quickest.  My vote is to
+keep the period and keep the right-hand anchor.  But, then, I'm not
+a typical user.
+
+Dave
+
+<b>[<a href="?l=namedroppers&m=95837759026743&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026750&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026750&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

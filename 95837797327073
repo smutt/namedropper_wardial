@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: centralizing versus distributing' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327072&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327074&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327072&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400030&r=1&w=2">Re: centralizing versus distributing</a>
+From:       <a href="?a=94756885200007&r=1&w=2">sob () tmc ! edu (Stan Barber)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-08 17:39:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327073&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327073&q=raw">body</a>]</b>
+
+I agree with David that the use of a real DBMS with built-in distributed
+features (such as Sybase, Oracle or Ingres, for example) would be a good
+solution. This would provide the edit checking (to prevent hostname and
+address duplications as well as validation) necessary to reduce the headaches
+of the NIC Designate. 
+
+However, I don't know if all sites are willing or able to purchase a commercial
+DBMS for this purpose. There are many network management platforms becoming
+available now that use commerical DBMS for storage of network management
+data. Perhaps those vendors could be encouraged to extend their work to
+handling the DNS in the manner David described. With DNS and SNMP, such
+products would be more attractive. Bundle in X.500/Kerberous and they become
+hard NOT to buy.
+
+Are any of the vendors of SNMP management platforms using commerical DBMS 
+working on this?
+
+STAN
+
+<b>[<a href="?l=namedroppers&m=95837797327072&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327074&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327072&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

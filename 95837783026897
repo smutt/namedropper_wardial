@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND: Semi-random selection' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026896&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026901&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026894&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200016&r=1&w=2">BIND: Semi-random selection</a>
+From:       <a href="?a=95837785400027&r=1&w=2">John Lekashman &lt;lekash () orville ! nas ! nasa ! gov&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-09 10:24:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026897&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026897&q=raw">body</a>]</b>
+
+
+   Possibly to force certain traffic to be put on certain nets. If its known
+   that heavy traffic comes from 2 sites who can be directed to use different
+   networks based on the IP address returned by a RR query, it may be
+   advisable to try and force the sites to use a particular network to avoid
+   heavy usuage on 1 network. Thus by not allowing random selection
+   heavy congesting. 
+
+I don't think the name server is the appropriate place for this sort
+of functionality.  Routing belongs to gateways.  Admittedly, the
+routing paradigms for multi-homed hosts are somewhat broken.  Routing
+by name inference is also broken.  One cannot rely on a particular
+order of responses.  One might (big might here) desire to make certain
+interfaces preferred.  In bind, this is currently done with the
+sortlist option in the boot file for all names.  One might desire
+a way of specifying for each individual host.
+   
+   As an aside:
+     At NASA this forced routing is done for traffic on hyperchannel. After
+   some tests that I performed this week I noticed that by forcing certain
+   traffic to take particular routes I was able to maximize performace
+   while limiting collisions (or contention) on the network. When the mapping
+   wasn't done overall performace went down for all connections (or at least
+   a good deal of them).
+
+As an additional aside:
+Not quite.
+At NASA (ARC NAS program for those of you curious which part of NASA)
+this 'forced routing' is done at the IF layer, as the multiple
+interfaces are currently all on the same network.  The name server
+doesn't get involved at all.  In fact, the only programs here that
+currently even call the name server are some of the mailers.
+
+The forced routing you did was choosing a different gateway, which
+the nameserver didn't get involved in at all.  
+
+						john
+
+<b>[<a href="?l=namedroppers&m=95837783026896&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026901&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026894&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

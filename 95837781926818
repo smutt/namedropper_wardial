@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Name server database pollution' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926819&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926820&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926823&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800019&r=1&w=2">Name server database pollution</a>
+From:       <a href="?a=95837693400018&r=1&w=2">Louis A. Mamakos &lt;louie () trantor ! UMD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-10 9:30:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926818&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926818&q=raw">body</a>]</b>
+
+I've notice some very distressing events over the past few days.  Two of my
+name servers for UMD.EDU (TERP.UMD.EDU and SNOOPY.UMD.EDU) have had their
+databases corrupted by some external agent.  The host TRANTOR.UMD.EDU has
+had an additonal (bogus) A record inserted.  What makes this interesting is
+that the A record which appears out of thin air/ethernet is TRANTOR's old
+address, from about 4 or 5 weeks ago.
+
+I have doubled checked the files that the databases are initialized from, and
+there is no sign of this old address.  Further, the TTL for this bogus A
+records is different from the TTL of the other records.  I can only conclude
+that this bogus entry arrived in the additional info section of some reply.
+
+I'm running BIND 4.5 on a UNIX system.  Has anyone else experienced anything
+like this?   Is this an isolated instance?  Am I going crazy? (Yes!)
+
+Funny, we talked about just this sort of thing happening at the last INENG
+meeting...
+
+Louis A. Mamakos
+Keeper of the name callers
+Univ. of MD
+
+<b>[<a href="?l=namedroppers&m=95837781926819&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926820&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926823&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

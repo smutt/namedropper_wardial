@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: 2 dots (was Re: shared library versions of resolver routines for SunOS ?)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326950&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re: 2 dots (was Re: shared library versions of resolver routines for SunOS ?)
+From:       <a href="?a=95837817000023&r=1&w=2">phoenix!fine!viktor () princeton ! edu  (Viktor Dukhovni)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-15 16:32:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326953&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326953&q=raw">body</a>]</b>
+
+k2@charly.bl.physik.tu-muenchen.de (Klaus Steinberger) writes:
+
+&gt;ang@theory.lcs.mit.edu (William S. Ang) writes:
+
+
+...
+&gt;Yeah, but here in Germany we have an deeper hierarchy in the domains,
+&gt;so the simple solution of counting two dots is not very good!
+...
+[ &gt;Names here look like: charly.bl.physik.tu-muenchen.de ]
+...
+
+	I Agree.
+
+The resolver could keep track of the depth "D" of names on the local branch,  and not
+try to construct names strictly deeper  than D + 1.  Thus for a three level
+site,  one can stop after two dots.   This even allows sites with
+a mixture of four level and five level domains to abbreviate local names,
+and yet not do "absurd" lookups on local FDQNS. 
+
+The + 1 is needed to allow a user from a four level branch to use a short form
+for a five level name.  The assumption is of course that "vast" ( &gt;= 2 ) gaps
+do not exist between the depths of the various branches.
+
+	This should take care of most situations,  and still save three level sites
+from doing lookups on some.where.com.our-name.edu. (3+1 = 4  and the above rule
+dictates not to construct "default" names 5 or longer.)   
+
+Of course five level sites will try to tack on their local names to three level "foreign"
+FDQNs  but the majority of lookups are "local"  so most of the benefit of the "2 dot"
+optimization are still realized.
+
+	One can even use such a rule to reduce the number of "wasted" local lookups in
+four (or more) level sites,  so that one can skip appending
+	math.princeton.edu
+to
+	gauss.stanford.edu
+and just try
+	gauss.stanford.edu.princeton.edu
+before trying the unmodified name.
+	
+
+	Any nay votes?  I might actually implement this over the summer as we
+(princeton.edu) switch to 4 levels from the current 3.
+
+-- 
+	Viktor Dukhovni &lt;viktor@math.princeton.edu&gt;	: ARPA
+		&lt;...!uunet!princeton!math!viktor&gt;	: UUCP
+	Fine Hall, Washington Rd., Princeton, NJ 08544  : US-Post
+		+1-(609)-258-5792		 	: VOICE
+
+<b>[<a href="?l=namedroppers&m=95837797326950&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

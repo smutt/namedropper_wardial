@@ -1,0 +1,38 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: root'ed vs. relative domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426379&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426381&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426379&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900046&r=1&w=2">Re: root'ed vs. relative domain names</a>
+From:       <a href="?a=95837692300014&r=1&w=2">ralph%ucbarpa () Berkeley</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198503">1985-03-15 15:32:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426380&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426380&q=raw">body</a>]</b>
+
+I have been using the 'if not dots, then append the domain' approach
+for awhile. One problem is if you want to have subdomains like
+ralph@pearl.cs and ralph@cory.ee, then they won't have 'berkeley.edu'
+appended. I think that having the trailing '.' is more general
+and just as simple to understand as the single label approach. 
+The second thing to note is that I am implementing this at the resolver
+level. I'm just as likely to ask for NS records for 'arpa.' as 
+address records for 'arpa' (mapped to 'arpa.berkeley.edu.').
+I want to distinguish between this cases unambiguously.
+
+<b>[<a href="?l=namedroppers&m=95837667426379&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426381&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426379&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

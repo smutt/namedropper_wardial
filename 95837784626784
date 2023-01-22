@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'DOMAIN IETF MEETING?   TYPE OF SERVICE for DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626785&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626786&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700020&r=1&w=2">DOMAIN IETF MEETING?   TYPE OF SERVICE for DNS?</a>
+From:       <a href="?a=95837785600032&r=1&w=2">AIKEN () NMFECC ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-25 12:41:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626784&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626784&q=raw">body</a>]</b>
+
+&gt;From AIKEN@CCC.MFENET on 25-JAN-1989 12:23:32.30 PST
+Subject &amp; Phone: IETF for DOMAIN and DNS type of service
+
+
+I'm fairly new to the INTERNET so I might have missed something, but I saw the
+list of IETF meetings for Austin Texas and didn't see anything about a DOMAIN
+IETF meeting. Are there no more problems to deal with? I'm interested in who
+is thinking about and discussing the Domain overlap/intersection/collision
+between the INTERNET and ISO name space its impact on how to provide a name
+server that addressses both domains. 
+
+I have put up a name server and am trying to "munge" old code to use the
+name server in lieu of old static tables.  I have multiple needs for the
+name service where one class of user whishes to get immediate feed back as to
+whether the request can be resolved out of the name servers current cache,
+another class of user wants to get the name resolved no matter what and is
+willing to wait until it gets it, and yet a third class of users who don't want
+to wait for the resolution if its not in cache but still wants the name server
+to effect the translation recursively if at all possible and have the user
+application decide if it wants to retry for a resolution later (after the
+recursive resolution by the name server has effected the resolution to now be
+in cache).  Has anyone thought of a type of service argument one could pass
+to the name server that would achieve this : see below
+
+    class 1 -   Name server returns "no host/domain" indicator if not in its
+                local cache
+
+    class 2 -   Name server recursively tries (across the INternet if necessary)
+                to do the resolution
+
+    class 3 -   Name server will return "no host/domain" indicator if not in
+                its local cache BUT also fires of the search to resolve the name
+                /net/domain/etc. and will cache the results for later if the
+                resolution is successfull. The wait or retry is up to the
+                application.
+
+    Class N  -   ???????????????
+
+
+I'd appreciate any comments or information or ideas  regarding this matter.
+Thanks in advance.
+
+Bob Aiken
+NMFECC
+Lawrence Livermore LAbs
+Livermore,CA, 94550
+415-422-4474
+aiken@nmfecc.arpa
+
+<b>[<a href="?l=namedroppers&m=95837784626783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626785&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626786&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How can I act as an MX for another domain?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827030&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827032&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827034&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300024&r=1&w=2">How can I act as an MX for another domain?</a>
+From:       <a href="?a=95837818000002&r=1&w=2">swrinde!cs.utexas.edu!hellgate.utah.edu!uplherc!giga!markb () ucsd ! edu  (Mark Baran</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-26 19:31:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827033&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827033&q=raw">body</a>]</b>
+
+I hope this is an appropriate group to pose my question.  Anyway, here goes:
+
+For the sake of discussion call my site MYDOMAIN.COM and call the other
+site OTHER.COM.  I am connected to OTHER.COM via uucp.  OTHER.COM is not
+connected to the internet, but I am willing to act as a mail exchanger on
+the internet for OTHER.COM.  I have added the following MX record to my
+nameserver:
+
+	OTHER.COM.   IN   MX  10   MAILHOST.MYDOMAIN.COM.
+
+What happens is that everyone in MYDOMAIN.COM knows that MAILHOST is
+acting as the mail exchanger for OTHER.COM, but no one else on the
+internet knows that I am OTHER.COM's mail exchanger.  I suppose
+since OTHER.COM is outside my zone of authority that NIC needs to
+be told of this arrangement.  Does anyone know what needs to be
+done?
+
+-- 
+Internet: markb@slc.unisys.com			uucp: ...!giga!markb
+	  markb@signus.utah.edu
+
+Joe Hill, 75 years ago Nov. 19, 1915.  We Never Forget.
+
+<b>[<a href="?l=namedroppers&m=95837798827030&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827032&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827034&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

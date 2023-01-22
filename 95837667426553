@@ -1,0 +1,101 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain class for chaos' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426552&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426554&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426554&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600034&r=1&w=2">Domain class for chaos</a>
+From:       <a href="?a=95837693400024&r=1&w=2">MOCKAPETRIS () USC-ISIC ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-04 12:58:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426553&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426553&q=raw">body</a>]</b>
+
+Some members of the MIT Chaosnet community have suggested that chaos be
+allocated a domain class.  The principal purpose, at least at present,
+is to map between chaos net addresses and host names.
+
+This message describes my perception of the issues in creating this new
+class, but should not be taken as being an edict or even as a
+preliminary design; I do hope that it encourages the Chaos community to
+develop a standard which is compatible with the Internet domain class
+and the domain protocols in general.  In any case, chaos deserves a
+class regardless of what they do, and I have allocated class 3 and
+acronym CH (for master file purposes).
+
+For those unfamilar with Chaos, the basic idea is that we want to be
+able to map between domain names for hosts and chaosnet address, which
+are 16 bit numbers.  An additional problem is that there are multiple
+chaosnet address spaces, which aren't connected, and hence there isn't
+one space.
+
+The general form of the proposed solution is that Chaos class type A RRs
+include a Chaos system or net identifier of some sort along with the 16
+bit address.  Note that the Chaos class is using exactly the same name
+space as the Internet class, although the identical name space doesn't
+imply that data will be present in both classes.  That is, if a host has
+both a chaos and internet class adddresses it will have the same name in
+both classes, though some hosts may well have RRs in only one class or
+the other.  (Note that we assume that Chaos will encode types with
+internet parallels identically with those of the Internet class.)
+
+The choices which have been proposed for the Chaos net identifier are:
+
+	1) A 16 bit encoded type.
+	2) A domain name
+	3) A variable length character string (similar to the HINFO data)
+
+Since the Chaos community has a tradition of character strings, the
+suggestion is the equivalent of a label, represeted using either (2) or
+(3), where (3) seems to be a marginally better choice.  The label
+restriction says that, by convention, the string will not contain
+imbedded spaces or blanks, and will be 63 characters or less.
+
+The address to name support requires the equivalent of the IN-ADDR.ARPA
+domain.   The suggestion is that the address to name space for the chaos class
+be of the form:
+
+&lt;host number&gt;.&lt;subnet&gt;.&lt;chaos net id&gt;.&lt;origin&gt;
+
+The &lt;host number&gt; field corresponds to the low order 8 bits of a
+Chaosnet address.  The suggested format is a decimal string similar to
+that used in the IN-ADDR.ARPA domain.  (Some want octal for historical
+reasons.)
+
+The &lt;subnet&gt; field corresponds to the high order 8 bits of a Chaosnet
+address.  It will use the same representation as the &lt;host number&gt;.
+
+The &lt;chaos net id&gt; is a label corresponding to the character strings in
+the A RRs for class CH.  If the chaos net ID format changes, this too
+will change.
+
+The &lt;origin&gt; is a well known domain.  Perhaps 'CH-ADDR.&lt;something&gt;'.  In
+any case, I'd rather have someone in the Chaos world pick it / get
+others to accept it.
+
+There are other major issues related to who will be responsible for the
+chaos zone which effectively allocates the chaos net IDs, implementation
+of this new zone's servers, etc., and refining the definition of the NS
+and SOA RRs for this new environmen, but is seems worthwhile to solve
+the multiple chaos problem first.
+
+This first use of multiple classes should provide for interesting times.
+
+paul
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426552&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426554&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426554&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

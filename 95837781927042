@@ -1,0 +1,94 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: RD/RA/AA/caching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927040&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927041&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927026&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927055&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500024&r=1&w=2">Re: RD/RA/AA/caching</a>
+From:       <a href="?a=95837785000005&r=1&w=2">karels%okeeffe.Berkeley.EDU () ucbvax ! Berkeley ! EDU (Mike Karels)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-21 21:25:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927042&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927042&q=raw">body</a>]</b>
+
+In response to your explicit questions:
+
+&gt; Question 1: If the answer it gets from the Internet is authoritative,
+&gt; should it relay the answer to the workstation with the authoritative bit
+&gt; still set?  I think so.  Otherwise, What's the point of Recursion
+&gt; Desired?
+
+AA should be set; the site resolver just resends the received reply
+after storing answers in its cache.
+
+&gt; Now suppose some other workstation asks the exact same question of the
+&gt; Site Resolver with Recursion Desired in a very short amount of time.
+
+&gt; Question 2: What happens?  Options:
+&gt;  a  The Site Resolver returns the data in the cache without
+&gt;     Authoritative Answer set.
+&gt; 	Question 2a: Why should the second workstation get an answer
+&gt; 	    different than the first workstation?  (Namely, a difference
+&gt; 	    in Authoritative Answer.) 
+&gt; 	Question 2b': Why should the workstation now be burdened with
+&gt; 	    going to the Internet to get authoritative data?  What if it
+&gt; 	    isn't connected to the Internet?
+
+The data should now be returned without AA set, indicating that it is from
+the cache.  The second workstation should get a different answer both
+in this respect, and that the answer should include an authority section
+including the server(s) from whence the answer was derived.  The TTL
+should be decreased by the time difference between the two responses.
+
+My question, in response to 2b, is why should the workstation feel
+obligated to go the the authoritative source?  If it trusts the site
+resolver and its cache, it ought to be sufficient to use the site resolver's
+answer.  Yes, I know, this makes some assumptions; let's examine them,
+because this is a useful configuration and ought to be made workable.
+First, I believe that a resolver, site-wide or otherwise, ought to group
+related data, such as addresses for a host or servers for a domain,
+and ought to discard all related data when any of it times out.
+(The current version of BIND does this, in fact.)  Then, when a client
+queries for a single type (e.g., addresses for a host), it can be sure
+that the answer it receives is complete.  This leaves the problem
+of wildcard types (or classes, which are potentially worse, as the
+servers are not necessarily the same).  For queries with wildcard
+types, either the client is willing to accept partial information,
+or wishes to quickly determine whether anything is known locally
+(I think you mentioned this in one of your messages recently).
+
+In the future, I'd like to have the servers remember the type of query
+used to retrieve data in the cache, so that answers can be known to be complete.
+For example, the results of a request for type ANY can be assumed complete
+for the shortest time in any of the records returned.  (This may be
+problematical, actually; more transient traits may exist, and an SOA
+may need to be consulted for a minimum value.)  Even this capability
+leads to a question: when a server receives a request for type ANY,
+and it has information not known to be complete, when it has not asked
+for all information, should it return partial information from the cache?
+Unfortunately, there is no mechanism for the client to convey its wish
+for complete vs. partial information.  It might be nice to define
+the AA bit in a query as meaning a request for complete, if not authoritative,
+information.  For now, I believe that a server should return possibly-partial
+information in response to such a query.  A client wishing definitive
+information of a given type (A, MX, etc.) should be requested explicitly
+to determine its existence, and a response to such a query should include
+all or none of the records of that type for the name and class.
+
+		Mike
+
+<b>[<a href="?l=namedroppers&m=95837781927040&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927041&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927026&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927055&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

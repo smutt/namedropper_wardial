@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'START-OF-AUTHORITY serial numbers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926918&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926920&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926917&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926920&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000026&r=1&w=2">START-OF-AUTHORITY serial numbers</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-10 18:13:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926919&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926919&q=raw">body</a>]</b>
+
+    Date: Thursday, 10 September 1987  14:29-EDT
+    From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+
+    How many sites maintain this field when they make changes to their
+    database?  How many sites SHOULD maintain it?  My impression is that
+    everybody should maintain it.  Is it possible to depend on its proper
+    maintenance?  What are the consequences of depending on proper
+    maintenance when it is in fact not maintained?
+
+    By polling around the Internet a little:
+      EDU has a serial of 13 (from SRI-NIC.ARPA)
+      COM has a serial of 13 (from SRI-NIC.ARPA)
+      GOV has a serial of 13 (from SRI-NIC.ARPA)
+      MIT.EDU has a serial of 0 (from BITSY.MIT.EDU)
+      AI.MIT.EDU has a serial of 0 (from PREP.AI.MIT.EDU)
+      LCS.MIT.EDU has a serial of 0 (from XX.LCS.MIT.EDU)
+      BBN.COM has a serial of 0 (from BBN.COM)
+      Symbolics.COM has a serial of 0 (from RIVERSIDE.SCRC.Symbolics.COM)
+      CMU.EDU has a serial of 0 (from DIST.FAC.CS.CMU.EDU)
+
+    By this small amount of poking, it looks like only the NIC takes this
+    field seriously.
+
+Rob Austein pointed out my numbers are wrong.  All the serial numbers of
+the above are actually quite large (more than 300), except for MIT.EDU
+which is 2 and Symbolics.COM, which is 8.  I don't know if this is
+correct or not.
+
+My above questions still stand, as well as a new one: What systems do
+NOT have an automatic way to ensure this number increases when the
+database changes?
+
+<b>[<a href="?l=namedroppers&m=95837781926918&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926920&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926917&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926920&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

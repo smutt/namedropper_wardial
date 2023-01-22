@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'named configuration' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827093&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827097&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827103&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500011&r=1&w=2">named configuration</a>
+From:       <a href="?a=95837818000036&r=1&w=2">mcsun!ukc!tcdcs!swift.cs.tcd.ie!gerry () uunet ! uu ! net</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-06 16:01:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827096&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827096&q=raw">body</a>]</b>
+
+
+We would like to set up an authoritative named server for a domain on a
+machine that is someway down the domain tree, e.g. we would like
+joe.bloggs.house_a.city to be the principal authoritative server for
+the city domain. We would also like to be able to answer queries
+from john.doe.house_b.city as well as from jack.bloggs.house_a.city.
+Is this possible? It says so on page 13 of RFC882. We run ULTRIX 4.0
+on a 5820 with about a dozen diskless 2100s but I have not been able
+to correctly set up the named.* files. Could somebody send me some
+simple examples.
+				Thanks,
+					Gerry O'Brien,
+					Dept. of Computer Science,
+					Trinity College Dublin
+					Ireland
+
+					gerry@cs.tcd.ie
+
+<b>[<a href="?l=namedroppers&m=95837798827093&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827097&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827103&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

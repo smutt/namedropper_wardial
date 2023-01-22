@@ -1,0 +1,37 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  leading digits in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926844&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926847&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926844&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926847&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800022&r=1&w=2">Re:  leading digits in domain names</a>
+From:       <a href="?a=95837661700004&r=1&w=2">Liudvikas Bukys  &lt;bukys () rochester ! arpa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-22 16:48:13</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926845&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926845&q=raw">body</a>]</b>
+
+I believe the best answer is that if software wants to have a special
+case kludge then it should be the established one, i.e., numeric IP
+addresses should look like [192.11.2.1].  I recommend that 3com.COM
+be allowed to stay, and the non-numeric first-letter restriction be
+removed.  (I hope this doesn't get abused.  I don't think 3COM is abusing it.)
+
+Liudvikas Bukys
+bukys@cs.rochester.edu
+
+<b>[<a href="?l=namedroppers&m=95837781926844&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926847&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926844&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926847&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

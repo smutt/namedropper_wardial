@@ -1,0 +1,71 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'gateway naming convention' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026805&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026805&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700037&r=1&w=2">gateway naming convention</a>
+From:       <a href="?a=95837785200028&r=1&w=2">hi!cyrus () hc ! dspo ! gov  (Tait Cyrus)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-27 19:58:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026804&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026804&q=raw">body</a>]</b>
+
+
+Question.
+
+I have a machine (SUN 3/160 SunOS 3.4) that is currently a gateway
+between a class B address (129.24 -- netmask 255.255.248.0) and a class
+C address (192.31.154 -- default netmask).  My question is, "Since a
+single machine name can't have two differnet IP addresses, what naming
+convention should be used for a machine that has two different
+interfaces?"  The way things are set up currently are as follows:
+	The machine name is "hi.unm.edu" on the class C side (192.31.154.1)
+	and "unmhc-dev-gw.unm.edu" on the class B side (129.24.13.10).
+	An echo `hostname` produces: hi.unm.edu
+
+Is this ok?  Should "hi.unm.edu" be on the class B side and
+"unmhc-dev-gw.unm.edu" be on the class C side?
+
+The reason I ask this question is because someone here at UNM said
+that the way we are doing things was incorrect and sited the following
+from RFC 1032:
+	One of the guidelines in effect in the domain-naming system is
+	that a host should have only one name regardless of what networks
+	it is connected to.
+I read this to be that whenever a gateway talks to the 'outside' world, that
+the name it uses has to be the same regardless of the network it is talking
+over.  This in NO way restricts the name given to any of the different machines
+interfaces.
+
+Am I full of it in making these assumptions or am I correct?  How are other
+machines set up?  Is there an RFC that deals with this?
+
+Thanks in advance for any help and/or suggestions.
+
+-- 
+    @__________@    W. Tait Cyrus   (505) 277-0806
+   /|         /|    University of New Mexico
+  / |        / |    Dept of Electircal &amp; Computer Engineering 
+ @__|_______@  |       Parallel Processing Research Group (PPRG)
+ |  |       |  |       UNM/LANL Hypercube Project
+ |  |  hc   |  |    Albuquerque, New Mexico 87131
+ |  @.......|..@    
+ | /        | /     e-mail:      
+ @/_________@/        cyrus@hc.dspo.gov
+
+<b>[<a href="?l=namedroppers&m=95837783026803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026805&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026805&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

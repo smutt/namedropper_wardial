@@ -1,0 +1,89 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Manually forwarded mail -- delayed during exposure-test.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327121&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327131&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Manually forwarded mail -- delayed during exposure-test.
+From:       <a href="?a=95837817400026&r=1&w=2">root () nexus ! yorku ! ca</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-19 16:42:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327124&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327124&q=raw">body</a>]</b>
+
+  The following message was placed in the York University dead-letter office
+in error, during testing of a new smtp server.
+  The postmaster apologizes for the inconvenience!
+
+--dave
+
+
+---------
+Received: from jerry.inria.fr by NIC.DDN.MIL with TCP; Tue, 17 Jul 90 04:11:47 PDT
+Received: by jerry.inria.fr
+	(5.61+++/IDA-1.2.8) id AA01140; Tue, 17 Jul 90 13:12:20 +0200
+Message-Id: &lt;9007171112.AA01140@jerry.inria.fr&gt;
+To: S.Kille@cs.ucl.ac.uk, hagens@cs.wisc.edu, cole@cs.wisc.edu
+Cc: rare-wg1@switch.ch, ietf-osi-or@cs.wisc.edu, namedroppers@nic.ddn.mil
+Subject: Re: Proposal for use of DNS to store RFC 987, etc mappings 
+In-Reply-To: Your message of 17 Jul 90 10:35:19 +0100.
+             &lt;1217.648201567@UK.AC.UCL.CS&gt; 
+Date: Tue, 17 Jul 90 13:12:11 +0200
+From: Christian Huitema &lt;Christian.Huitema@mirsa.inria.fr&gt;
+
+Rob,
+
+I read your note, and think that we should work towards its fast
+finalisation, perhaps clarifying a few points. 
+
+My first remark concern the mapping ``towards X.400''. You follow-up
+the mechanism which was first introduced in RFC-987, to build up a
+hierarchical name as a sequence of ``typed'' tokens, e.g. a top
+level "C$FR", a second level "ADMD$ATLAS", etc. This has the
+advantage of precision, but it has also one serious disadvantage,
+i.e. requiring the setting up of a complete new tree. I feel that
+this kind of mapping is in fact contradictory with the whole
+philosophy of RFC-987/1048, where after some specific top levels (C,
+ADMD, PRMD) the next hierarchical tokens are mapped directly to DNS
+name parts.
+
+A specific start of the tree is certainly necessary, as the
+subdomains of e.g. "C=FR" bear few relations with those of ".FR".
+This could easily be provided by setting up a pseudo top domain for
+"x400", in much the same way as "in-addr". But then, there is no
+need to insist on the presence of the "C$" or "OU$" prefixes;
+one should rather try to use the aliasing mechanism already
+present in the DNS, in order to discover that e.g.
+"cea.cea.atlas.fr.x400" is in fact the same domain as "cea.fr". This
+has two advantages:
+	* the same tree can be used at the lower levels,
+	* there is no need for a specific "to-rfc" record.
+This can also introduce my second remark, regarding routing and the
+choice of gateways. If the naming heirarchies are in the same tree,
+there is no need of inventing new routing mechanisms; you can as
+well use the MX records! Indeed, there is at that point the need to
+support X.400, hence the need to define a PSAP record associated to
+the MX host, but this may be another matter...
+
+My other remarks are much in the same line as Steve. I don't see
+much need for a preference counter in the "to-x400" records, and I
+don't see why the wildcarding mechanism should be different from
+the one used for the MX records...
+
+Christian Huitema
+
+<b>[<a href="?l=namedroppers&m=95837797327121&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327131&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

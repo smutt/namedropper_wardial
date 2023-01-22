@@ -1,0 +1,108 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND 4.8.1 statistics gathering' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326957&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326960&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    BIND 4.8.1 statistics gathering
+From:       <a href="?a=95837817000001&r=1&w=2">umich!terminator!terminator.cc.umich.edu!bryan () CS ! YALE ! EDU  (Bryan Beecher)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-25 20:58:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326958&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326958&q=raw">body</a>]</b>
+
+The posting from pma@cnd.hp.com the other week (which contained
+the patch to record the origin of incoming root NS records)
+reminded me that some places out there might be interested in
+gathering some statistics on nameserver use.
+
+We've added one line to ns_req() that syslogs each incoming
+query.  (This creates some large syslog files at our site, but
+since we only keep one week's worth on disk, it isn't too bad.)
+
+We run a shell script nightly that produce three kinds
+of information:
+
+	1.  The source of incoming queries sorted by IP
+	    address.
+
+	2.  The domain names that were sent to the 
+	    nameserver sorted alphabetically.
+
+	3.  The types of queries that were sent to the
+	    nameserver.
+
+The reports look something like this (many lines deleted):
+
+Nameservice statistics for umich.edu for period ending Apr 23 23:55
+Total queries received:  49561
+
+Part I -- query sources
+
+Number  Source (by name if available)       IP address
+------  -----------------------------       ----------
+ 33470  umich.edu                           [35.1.1.91]
+  1204  citi.umich.edu                      [35.1.128.16]
+  4219  crim.eecs.umich.edu                 [35.1.192.2]
+	:
+	:
+     1  SUC1A.HARRIS.COM                    [192.52.236.6]
+     1  transarc.com                        [192.54.226.1]
+     1  crl.dec.com                         [192.58.206.2]
+
+Part II -- queried names
+
+Number  Queried name
+------  ------------
+   378  26.1.1.35.in-addr.arpa
+     1  26.1.250.128.in-addr.arpa
+     1  26.5.1.35.in-addr.arpa
+	:
+	:
+     1  zug.csmil.umich.edu.umich.edu
+    83  zurich.csmil.umich.edu
+     7  zurich.csmil.umich.edu.umich.edu
+
+Part III -- query types
+
+Number  Type
+------  ----
+     2  1096
+ 17650  A
+ 19925  ANY
+  4938  CNAME
+     2  HINFO
+    63  MB
+    63  MG
+  4144  MX
+  2770  PTR
+     2  SOA
+     2  WKS
+
+If anyone is interested in getting the script that does this, they
+can pick it up from terminator.cc.umich.edu as part of our BIND
+package in ~ftp/unix/bind4.8.1.tar.Z.  Also, you don't necessarily 
+have to run our named, just add a line to ns_resp() (near the "finish:" 
+label) that does this:
+
+	syslog(LOG_INFO, "XX /%s/%s/%s", 
+		inet_ntoa(from-&gt;sin_addr), dname, p_type(type));
+--
+Bryan Beecher, U-M Information Technology Division  (+1 313 747 4050)
+Domain:	bryan@terminator.cc.umich.edu  Path: mailrus!terminator!bryan
+
+<b>[<a href="?l=namedroppers&m=95837797326957&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326960&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

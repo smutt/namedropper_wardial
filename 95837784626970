@@ -1,0 +1,62 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'named-4.8++ &amp; FORMERR' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626971&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626972&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626972&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200011&r=1&w=2">named-4.8++ &amp; FORMERR</a>
+From:       <a href="?a=95837786400012&r=1&w=2">mcvax!kth!sunic!chalmers!cs.chalmers.se!lindberg () uunet ! uu ! net  (Gunnar Lindberg)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198907">1989-07-21 16:28:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626970&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626970&q=raw">body</a>]</b>
+
+I'm not 100% sure about this, but hopefully people with more knowledge
+about "named" and the DNS can check it out. We've recently switched to
+named-4.8++, with asynchrous xfer (and *that's* just a dream!).
+
+If, however, we try to find the address of an unknown host in a
+domain that has wildcards MX's, "named-4.8++" seems to get into
+a more or less infinite loop (more precisely, it seems to handle
+empty replies - i.e. with "ancount == 0" - in a strange way). Our
+log files also got filled up by a lot of messages like:
+    "FORMERR resp() from 192.48.96.2 size err 29, msglen 29"
+
+Going through the "diffs" between 4.8 och 4.8++ I found something
+strange in named/ns_resp.c, ns_resp():
+
+	if (hp-&gt;qdcount) {
+		n = dn_skipname(cp, msg + msglen);
+		if (n &lt;= 0)
+			goto formerr;
+		cp += n;
+		GETSHORT(type, cp);
+		GETSHORT(class, cp);
+		if (cp - msg &gt;= msglen)		/* &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt; */
+			goto formerr;
+	}
+
+In 4.8 the test was "if (cp - msg &gt; msglen)" and the "&gt;=" seems
+to make "named-4.8++" simply drop empty responses and instead send
+out new questions over and over.
+
+I've changed the test "back to 4.8" and it seems to work OK, but since
+I'm not a "named" expert perhaps somebody else could verify this.
+
+	Gunnar Lindberg
+
+<b>[<a href="?l=namedroppers&m=95837784626971&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626972&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626972&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

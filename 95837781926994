@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Changes at the root servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926993&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926996&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Changes at the root servers
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-12 17:08:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926994&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926994&q=raw">body</a>]</b>
+
+Effective immediately, the root server on A.ISI.EDU will begin
+distributing SOA RRs in the authority section for the purpose of
+allowing negative caching as described in the new domain RFCs.  (The new
+RFCs have been available in draft form for some time, and should hit the
+street real soon as real RFCs.)  Assuming that this does not cause severe
+problems, the new server code will be distributed to other TOPS-20 root
+servers in the near future.  Please inform me of any problems.
+
+Measurements on the root servers have shown that they are processing a
+bogon flux approximately equal to the useful packet rate, with bursts
+exceeding the useful packet rate.  The suggestion has been made that the
+root servers discard a real packet from host X for every bogon received
+from X.
+
+The death watch continues for the root server on C.ISI.EDU.  A one week
+reprieve has postponed the burial at C from tomorrow to next week.
+Presumably Jason was unavailable.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781926993&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926996&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

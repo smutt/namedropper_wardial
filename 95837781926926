@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'half remembered host names:  modernize whois' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926924&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926928&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926929&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000028&r=1&w=2">half remembered host names:  modernize whois</a>
+From:       <a href="?a=95837784600024&r=1&w=2">enger () sccgate ! scc ! com (Robert M !  Enger)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-12 14:22:34</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926926&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926926&q=raw">body</a>]</b>
+
+Whois provides the functionality required by the forgetfull person.
+Unfortunately, whois may no longer be complete.  Lots of hosts are
+known only to the domain name system.  
+
+Finding peoples names will eventually be impossible as well.  As it is
+now many people are not entered into the whois database.  What happens
+in the future when there are too many people, and too many hosts to 
+be put in the data base of an aging DEC behemoth (or even a modern
+data base server machine)?
+
+Maybe we should start thinking about expanding domain name (or something)
+to replace whois.  Something that can provide for a distributed
+database.  A way to querry the local server, and if not satisfied with the
+reply(s) received, requerry in such a manner that a request is placed to 
+the server above with wider scope, etc.  Thus many name lookups which
+are local (such as on a campus or large company) would never go above
+the local server, but there would be a way to querry for all names
+with some string in them, etc, net wide, by trying servers higher
+and higher up the ladder.
+
+I'm sure there are problems with this idea.  There always are.  But there
+are also problems with the status quo.  It seems that something will have
+to be done.  The domain name system seems like it might be a good 
+starting point.
+
+Bob Enger
+
+<b>[<a href="?l=namedroppers&m=95837781926924&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926928&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926929&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

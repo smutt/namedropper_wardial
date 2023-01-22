@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: POP server for Sys V' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627092&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627091&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627085&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400020&r=1&w=2">Re: POP server for Sys V</a>
+From:       <a href="?a=95837786600034&r=1&w=2">dzoey () umd5 ! umd ! edu  (Joe Herman)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-08 3:43:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627090&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627090&q=raw">body</a>]</b>
+
+In article &lt;3402@brazos.Rice.edu&gt;, dboyes@rice.edu (David Boyes) writes:
+
+&gt; There's probably enough interest for anyone posessing such a
+&gt; beast to post to the group at large; if you disagree, tell me
+&gt; about your server in private mail.
+
+I don't know if this will help.  I wrote a POP server based on the
+one done at NOSC for 4.3 and AIX.  AIX is a SYS V derivitive that
+includes a socket library.  If your version of SYS V has a socket
+library I'll be happy to send you a copy.
+
+				Joe Herman
+				U. of Md.
+
+dzoey@terminus.umd.edu
+
+
+
+
+
+-- 
+"Everything is wonderful until you know something about it."
+
+<b>[<a href="?l=namedroppers&m=95837784627092&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627091&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627085&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

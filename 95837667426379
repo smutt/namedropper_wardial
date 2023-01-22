@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: root'ed vs. relative domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426378&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426380&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426378&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426380&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900046&r=1&w=2">Re: root'ed vs. relative domain names</a>
+From:       <a href="?a=95837692300013&r=1&w=2">ihnp4!hou3c!ka () seismo ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198503">1985-03-15 13:04:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426379&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426379&q=raw">body</a>]</b>
+
+Here is another idea:  append the 'home' domain to any domain name
+that doesn't contain a period.  For example, the host name 'ucb-arpa'
+would be expanded into 'ucb-arpa.berkeley.arpa' if the home domain
+were 'berkeley.arpa', while a host name like 'hou3c.att.uucp' would
+be left unchanged.
+
+If this approach is used, addresses in which a user name appears
+directly under a top level domain name will cause problems, because
+an address like 'user@edu' will be transformed into 'user@edu.berk-
+eley.arpa'.  Is it safe to assume that such addresses will not occur
+in practice?
+				Kenneth Almquist
+
+<b>[<a href="?l=namedroppers&m=95837667426378&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426380&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426378&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426380&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Invalidating Caches' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926778&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926780&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Invalidating Caches
+From:       <a href="?a=95837784400002&r=1&w=2">Jon Crowcroft &lt;jon () Cs ! Ucl ! AC ! UK&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-27 17:02:08</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926776&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926776&q=raw">body</a>]</b>
+
+Scuse my ignorance, but I have just had to temporarily take over managing
+the internet bit of the UK name space, and at the same time introduce
+a few names to be known to the universe. Trouble is, our old bind
+guru left, and appears to have set our names with a
+40 day ttl !!
+
+How do I prod everyone to say their caches of our namespace are
+invalid, or am i barking up the wrong b-tree,
+
+jon
+
+<b>[<a href="?l=namedroppers&m=95837781926778&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926780&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

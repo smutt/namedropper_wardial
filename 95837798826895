@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Domains Created in July 1990' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826892&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826893&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826892&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100003&r=1&w=2">Re: Domains Created in July 1990</a>
+From:       <a href="?a=95837817600022&r=1&w=2">swrinde!zaphod.mps.ohio-state.edu!samsung!umich!sharkey!cfctech!rphroy!math.lsa.</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-02 0:12:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826895&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826895&q=raw">body</a>]</b>
+
+In article &lt;90.214.00:41:09@ira.uka.de&gt; nipper@iramu1.ira.uka.de (Arnold Nipper) writes:
+
+   host -t ns bonn.edu.
+   bonn.edu NS OLYMP.CS.BONN.EDU
+   bonn.edu NS PIB1.PIB.BONN.EDU
+
+ah, but
+
+stag ~ % telnet olymp.cs.bonn.edu smtp
+Trying 131.220.4.1 ...
+Connected to olymp.cs.bonn.edu.
+Escape character is '^]'.
+220 olymp.informatik.uni-bonn.de Sendmail 4.0/SMI-4.0 ready at Thu, 2 Aug 90 02:11
+:52 +0100
+quit
+221 olymp.informatik.uni-bonn.de closing connection
+Connection closed by foreign host.
+
+looks like the bonn.edu name isn't the primary one, or perhaps they are
+schizophrenic like *.toronto.edu/*.utoronto.ca.
+
+--Ed
+
+Edward Vielmetti, U of Michigan math dept &lt;emv@math.lsa.umich.edu&gt;
+
+<b>[<a href="?l=namedroppers&m=95837798826893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826892&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826893&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826892&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

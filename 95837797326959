@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'are glue records good enough?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326960&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326964&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    are glue records good enough?
+From:       <a href="?a=95837817000025&r=1&w=2">cs.utexas.edu!samsung!uakari.primate.wisc.edu!uflorida!mlb.semi.harris.com!thrus</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-26 8:23:58</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326959&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326959&q=raw">body</a>]</b>
+
+Let's say you have a host, X.Y.Z, which has multiple IP addresses,
+and it is a name server for Y.Z.  Is it necessary to list all its
+addresses in zone Z as glue records, if you don't care that name
+server lookups be able to use all of the addresses (there are
+redundant name servers available)?  Should a name server doing a
+recursive lookup for the A RR's for X.Y.Z query X or another
+nameserver for Y.Z for this information, or should it be satisfied
+with the glue records it got by querying the nameserver for Z?
+
+If the name server doing the lookup is happy with the glue
+records, there is no way to get all of X's addresses unless
+they are all listed as glue.  This is how BIND 4.8.1 works,
+and it is a pain to have to notify the NIC every time you add/delete
+an interface on X if Z is one of the top level domains.
+This "misconfiguration" does not normally result in any extra DNS
+traffic, just slightly reduced odds of contacting X, and possibly
+through a non-optimum route.
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797326960&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326964&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

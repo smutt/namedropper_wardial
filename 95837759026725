@@ -1,0 +1,208 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Contact names, WKS RRs, redesigning known universe' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026724&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026726&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026722&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300024&r=1&w=2">Re: Contact names, WKS RRs, redesigning known universe</a>
+From:       <a href="?a=95837783700011&r=1&w=2">"J. Spencer Love" &lt;JSLove () MIT-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-06 12:19:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026725&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026725&q=raw">body</a>]</b>
+
+    Date:  4 June 1986 17:56 edt
+    From:  Rob Austein &lt;SRA at XX.LCS.MIT.EDU&gt;
+    Subject:  Contact names, WKS RRs, redesigning known universe
+
+    I'd like to (belatedly) second Joe Weening's suggestion that we use
+    the domain system to supply a contact name service.
+
+Forgive me please, but I think this is a bad way to implement a contact
+name facility.  While possible in principle, it is like transporting
+lumber on a motorcycle.
+
+    If we were designing the Internet from scratch, I'd say to use
+    Chaosnet style contact names, which are a big win.  But we're not
+    designing from scratch.
+
+I have suggested methods for phasing in contact names in my comments on
+Benson Margulies' proposal for a named-service service on the TCP-IP
+list.  (I would be happy to supply copies of the entire correspondence
+since I joined in.  There are at least 500 lines of it, be warned.)
+
+    Using the domain system would solve two distinct problems that have
+    arisen lately.  One is the contact-names problem under discussion on
+    TCP-IP, the other is the inadaquacy of the current IN WKS RR format
+    (see NAMEDROPPERS archives for details).
+
+The inadequacy of the IN WKS RR is addressed by the service list of the
+named-service service, which could list all the services by name giving
+port numbers.  This is a sparse listing, which doesn't list unused
+ports, not a bit map, and the port numbers are not restricted to the
+range 1-255.  However, a TCP or other stream connection is required, it
+may be too large to fit in a UDP datagram.
+
+    Here's my proposed RR formats
+
+    &lt;service&gt;.&lt;domain-name&gt;        IN       SERV      &lt;ip-address&gt; &lt;port&gt;
+    &lt;service&gt;.&lt;domain-name&gt;        CH       SERV      &lt;chaos-address&gt;
+
+Can databases contain RRs like
+
+    TELNET.*                       IN      SERV       &lt;SELF&gt; 23
+
+Otherwise, the database may become much larger.  I was under the
+impression that wildcards were only permitted at the left end of the RR,
+so I don't expect this to work.
+
+    We might also want to put RRs for all the standard services (ie, the
+    ones known to the protocol czar) in at the root node.  This would be
+    useful for people who want to code with a contact name approach, and
+    shouldn't be too much overhead.
+
+The overhead of using a domain resolution is already significant, but
+there is no reason to consider this a separate resolution since you may
+have to look up the host name anyway.  Instead of looking for an A
+record, look only for the A record if the SERV record is not found.
+However, if the SERV record is not found, then two additional lookups,
+one for the A record and the other for the global service record may be
+needed.  That would increase overhead.
+
+This is a half measure, since there is no way to specify a service
+globally for a portion of the domain tree.  Either it is for each and
+every host, or it is for the whole world.  If the ATT.COM domain wished
+to run a private protocol on nearly every machine, they would either
+have to petition the NIC for a root SERV RR, much like asking for a well
+known port, or add a great many RRs to their database.
+
+    I think this proposal solves serveral problems without creating any
+    new ones.  It is not the optimal solution to the contact name problem,
+    but it will work and uses existing technology.
+
+How about administering it?  Using the named-service service, you ask
+the host which is offering the service.  If you use the domain system,
+the host must deal with the domain administrator for the local domain to
+offer a service.  This will only be extra work for experimental and
+esoteric services, but it is an additional obstacle in the path of
+offering the service.
+
+This seems like an attempt to generalize the experience of the mail
+specific RRs.  In that case, you could generalize more.  Suppose a host
+has more than one address, and offers a service (e.g., TELNET) on all of
+its ports.  Should the SERV RR have a list of addresses, or should it
+have a SERV RR for each address?  Should the RR be able to specify a
+domain name or list of domain names instead of an address or list of
+addresses?  If a list of addresses or domain names, should there be
+preference weights?  You could replace the MX RR with a SERV RR for
+SMTP.
+
+An example of transactions with a hypothetical service multiplexor
+follows.  The service multipleor might incorporate some builtin services
+to permit queries that might otherwise be addressed by the domain
+system, including the complete set of A records, and the WKS records for
+each IP protocol.  I have used MIT-MULTICS.ARPA as an example.  We don't
+yet have a net 18 (MIT network) address, so that part is forged, but the
+rest is correct.  All but the last transaction are requests of the
+multiplexor, the last is the use of a named service, so the first line
+the user sends selects the service, and the second line is to the
+selected server.  The indentation is for illustration only.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      HELP
+    SERVER&gt;    Provide a contact name or builtin name.
+               Builtin names are HELP, LIST-ADDRESSES, LIST-PROTOCOLS,
+               and LIST-SERVICES.
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      LIST-ADDRESSES
+    SERVER&gt;    IP 10.0.0.6
+               IP 18.28.0.40
+               TYMNET 3106003002
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      LIST-SERVICES
+    SERVER&gt;    You must provide a protocol name or number to list its
+               services.  Use LIST-PROTOCOLS to obtain a protocol list.
+               Example:  LIST-SERVICES TCP
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      LIST-PROTOCOLS
+    SERVER&gt;    IP
+               TCP
+               UDP
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      LIST-SERVICES IP
+    SERVER&gt;    ICMP   1
+               TCP    6
+               UDP   17
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      LIST-SERVICES TCP
+    SERVER&gt;    FTP        21
+               TELNET     23
+               SUPDUP   4095
+               LPD       515
+               ECHO        7
+               DISCARD     9
+               SMTP       25
+               TIME       37
+               FINGER     79
+    CLOSE.
+
+    OPEN TO SERVICE MULTIPLEXOR TCP PORT.
+    USER&gt;      FINGER
+               JSLove/W
+    SERVER&gt;    --User--  -- Full Name --      Idle -- Location --
+               JSLove    Spencer Love              W91-219C, x2091 - port 4
+                    Work:  MIT W91-219C;  617-253-2091
+                    Home:  1061 Mass Ave #3, Arlington, MA  02174;  617-648-8883
+    CLOSE.
+
+Note that we run two services on ports which are not well known.  The
+LPD server accepts files to print from Unix systems, and the SUPDUP
+service is experimental and probably broken, so it is not offered on the
+standard SUPDUP port.  This information could never have been conveyed
+by a WKS RR.  If we were actually running a service multiplexor, we
+would probably name port 4095 "SUPDUP-TEST" to convey the risky nature
+of the service.
+
+The formats are not cast in stone, or even air, although an ASCII stream
+rather than a set of binary records is assumed.  Additional information
+could easily be added, if a specification is ever produced.  For
+example, if a service is to be handled by another host, or only on a
+subset of the available addresses, this could be indicated somehow.
+
+The advantages of a service multiplexor are that it would be relatively
+easy to add the service side to Unix or Multics, and requires little
+work on the user side.  A TCP connection must be established to a
+multiplexed service anyway, and the handoff only requires two extra
+packets.  The multiplexor is available whenever the host is.
+
+The advantage of the domain system approach is that domain servers
+already exist, and it isn't necessary to modify every service machine
+which takes advantage of the service.  However, domain servers may be
+unreliable, the service overhead may be higher, the administrative
+overhead is definitely higher.
+
+<b>[<a href="?l=namedroppers&m=95837759026724&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026726&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026722&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

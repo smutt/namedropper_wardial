@@ -1,0 +1,139 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'[Jem Taylor &lt;taylor%cs.glasgow.ac.uk@Cs.Ucl.AC.UK&gt;: Top level domains - do not use as bottom !]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926799&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926803&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926803&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800014&r=1&w=2">[Jem Taylor &lt;taylor%cs.glasgow.ac.uk@Cs.Ucl.AC.UK&gt;: Top level domains - do not use as bottom !]</a>
+From:       <a href="?a=95837692300018&r=1&w=2">Ole Jorgen Jacobsen &lt;OLE () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-07 3:02:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926800&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926800&q=raw">body</a>]</b>
+
+FYI:
+                ---------------
+
+Return-Path: &lt;mailgroup-request@Cs.Ucl.AC.UK&gt;
+Received: from Cs.Ucl.AC.UK by SRI-NIC.ARPA with TCP; Tue 7 Apr 87 02:46:59-PDT
+Received: from ucl-cs-vax2 by mv1.Cs.Ucl.AC.UK   via Ethernet with SMTP
+           id aa04421; 7 Apr 87 9:38 WET
+Received: from Cs.Ucl.AC.UK by vax2.Cs.Ucl.AC.UK   via List-Channel  id aa01740;
+          7 Apr 87 11:37 BST
+Received: from mv1.cs.ucl.ac.uk by vax2.Cs.Ucl.AC.UK   via Ethernet with SMTP
+           id aa01721; 7 Apr 87 11:33 BST
+Received: from cs.glasgow.ac.uk by mv1.Cs.Ucl.AC.UK   via Janet with NIFTP
+           id aa04238; 7 Apr 87 9:24 WET
+From: Jem Taylor &lt;taylor%cs.glasgow.ac.uk@Cs.Ucl.AC.UK&gt;
+Date: Sat, 4 Apr 87 12:10:43 GMT
+Message-Id: &lt;27586.8704041210@alba.cs.glasgow.ac.uk&gt;
+To: csnet-forum@sh.cs.net, mailgroup@Cs.Ucl.AC.UK, nrs%aucc.ac.uk@Cs.Ucl.AC.UK
+Subject: Top level domains - do not use as bottom !
+Cc: Jem Taylor &lt;taylor%cs.glasgow.ac.uk@Cs.Ucl.AC.UK&gt;, 
+    Malcolm Atkinson &lt;mpa%cs.glasgow.ac.uk@Cs.Ucl.AC.UK&gt;, 
+    wjh%cs.glasgow.ac.uk@Cs.Ucl.AC.UK, zp%cs.glasgow.ac.uk@Cs.Ucl.AC.UK
+
+Further to the discussion last year about the implications of the
+need for addresses to be parsable in both ARPA and (UK) NRS domain
+orders, here is the current list of top-level domains of which I
+am aware. THESE NAMES SHOULD NOT BE USED FOR NEW BOTTOM-LEVEL DOMAINS.
+
+If the names below are used for bottom level domains, for example
+
+	cern.foo.EDU
+	^          ^
+Top in NRS order / Top in ARPA order
+
+then relays which attempt parsing in both orders cannot reliably parse the
+address EVEN WHEN GIVEN IN FULL. This is NOT a problem relating to completion
+of partial addresses and is of relevance to all persons creating new domains.
+
+-------------------------------------------------------------------------------
+  o   Additions and corrections welcomed.
+  o   There are no restrictions on the distribution of this list.
+  o   Relays mentioned below are for authorised UK sites only.
+  o   The set of country-codes defined by ISO will be added to this list as
+      soon as I have them from our University Library . . .
+
+-Jem Taylor.
+-------------------------------------------------------------------------------
+
+# Known top domains and their relays
+# 30-sep-86	Jem Taylor &lt;taylor@cs.glasgow.ac.uk&gt;
+# 12-nov-86	amended from CACM v.29 n.10 'Notable Computer Networks'
+# 03-apr-87	amended from NRS t.central and csnet news
+# Domain	Relay		Comment
+
+aristote	ean-relay.ac.uk #
+arpa		cs.ucl.ac.uk  	#USA temporary domain.
+au		ean-relay.ac.uk #Australia.
+bitnet		earn.rl.ac.uk   #Bitnet/Earn.
+cdn		ean-relay.ac.uk	#CDNnet, Canada.
+cern		ean-relay.ac.uk #CERN, Geneva, Switzerland.
+ch		ean-relay.ac.uk	#Switzerland.
+chunet		ean-relay.ac.uk	#Swiss University Network, Switzerland.
+com		cs.ucl.ac.uk  	#US commercial.
+csnet		relay.cs.net	#Computer Science Network, USA.
+de		ean-relay.ac.uk #
+dec		decwrl.dec.com	#Digital Equipment Corp (obselete, see dec.com).
+desy				#DESY, Hamburg, West Germany.
+dfn		cs.ucl.ac.uk   	#Deutsche Forshungsnetz, West Germany.
+dunet		ean-relay.ac.uk #
+e		cs.ucl.ac.uk   	#Spain.
+earn		earn.rutherford.ac.uk   #Bitnet/earn.
+edu		cs.ucl.ac.uk  	#USA education.
+fr		ukc.ac.uk	#France.
+funet		ean-relay.ac.uk #
+gov		cs.ucl.ac.uk  	#USA government.
+hasler		ean-relay.ac.uk	#Hasler Telecoms, Switzerland.
+i		cs.ucl.ac.uk   	#Italy.
+il		ukc.ac.uk	#Israel.
+iris		ean-relay.ac.uk #
+irl		ean-relay.ac.uk #Ireland.
+isanet		ean-relay.ac.uk #
+israel		ukc.ac.uk	#Israel.
+jp		ukc.ac.uk	#Japan.
+jpn		ukc.ac.uk	#Japan.
+junet		ukc.ac.uk	#Japanese University Network, Japan.
+korea		ukc.ac.uk	#Korea.
+kr		ukc.ac.uk	#Korea.
+mailnet		multics.mit.edu	#
+mil		cs.ucl.ac.uk  	#USA military.
+net		cs.ucl.ac.uk	#CSnet.
+nl		ukc.ac.uk	#Netherlands.
+nz		relay.cs.net	#New zealand.
+org		cs.ucl.ac.uk  	#USA non-profit.
+osiride		ean-relay.ac.uk #
+oz		ukc.ac.uk	#Australia (phasing out - see au. ).
+riup		ean-relay.ac.uk #
+se		ukc.ac.uk	#Sweden.
+sunet		ean-relay.ac.uk	#Swedish University Network, Sweden.
+surfnet		ean-relay.ac.uk #Netherlands.
+uk		cs.ucl.ac.uk	#United Kingdom.
+uninett		ean-relay.ac.uk	#Norwegian University Network, Norway.
+us		cs.ucl.ac.uk  	#USA other.
+uucp		ukc.ac.uk	#Usenet.
+
+-------------------------------------------------------------------------------
+
+ARPANet: taylor%cs.glasgow.ac.uk@{ucl-cs.arpa,cs.ucl.ac.uk}
+JANET:   taylor@uk.ac.glasgow.cs
+Mail:    J.A.Taylor, Computer Science, 17 Lilybank Gardens, GB-GLASGOW G12 8QQ
+UseNet:  mcvax!ukc!cs.glasgow.ac.uk!taylor
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926799&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926803&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926803&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

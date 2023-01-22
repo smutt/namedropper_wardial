@@ -1,0 +1,69 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'START-OF-AUTHORITY serial numbers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926929&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926921&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000026&r=1&w=2">START-OF-AUTHORITY serial numbers</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-13 17:41:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926928&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926928&q=raw">body</a>]</b>
+
+    Date: Friday, 11 September 1987  09:33-EDT
+    From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+
+    OK, so... Is it "reasonable" to remember the SOA serial number, and when
+    an object's TTL expires, instead of requerying the object, requery the
+    SOA serial number of the zone, and if it hasn't changed, update the TTLs
+    (using some appropriate value) of all objects in the zone?  This is
+    based on the contrapositive of "If any object is changed, the SOA serial
+    number is changed" which is "If the SOA serial number hasn't changed, no
+    object has changed."
+
+If you are obtaining and caching the SOA, I believe it would be
+"reasonable" to do the check and, if the serial hasn't incremented,
+update the TTLs of the affected RRs to min(old_TTL,SOA.MINIMUM).  This
+makes use of the fact that SOA.MINIMUM is defined as the floor value
+for TTLs in the zone.
+
+Problems with this approach, which have to be dealt with:
+1) You have to be absolutely sure which RRs came from which zones.
+2) You're stuck if somebody has a ridiculously small SOA.MINIMUM.
+3) You're screwed if somebody doesn't update their SOA.SERIAL, and you
+   have no way of knowing that you are screwed.
+
+(1) &amp; (2) don't seem insurmountable.  (3) is a bit of a problem.  You
+absolutely CAN NOT run a nameserver (as opposed to a resolver) this
+way, because of the danger of distibuting old data with incorrect TTLs
+due to problem (3).  This gets back to the old problems with 99999999
+TTLs and not believing everything you're told.
+
+One can, of course take the position that administrators who don't
+update their SOA.SERIAL fields deserve to lose.
+
+If this algorithm violates some basic design principle of the domain
+system, somebody please point it out.
+
+I do like the basic idea of being able to validate cached RRs on a per
+zone basis.  I'm not entirely convinced that it can be made to work
+reliably with the current database architecture.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926926&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926929&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926921&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

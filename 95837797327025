@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: BIND bug list' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327026&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327024&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327030&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400010&r=1&w=2">Re: BIND bug list</a>
+From:       <a href="?a=95837817200015&r=1&w=2">soleil!mlb.semi.harris.com!thrush.mlb.semi.harris.com!del () rutgers ! edu  (Don Lewi</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-30 9:46:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327025&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327025&q=raw">body</a>]</b>
+
+In article &lt;25358@netnews.upenn.edu&gt; hagan@DCCS.UPENN.EDU (John Dotts Hagan) writes:
+&gt;
+&gt;Anyways, it think it would be real neat of the resolver did some kind of
+&gt;performance/reliability remembering when going at its list of possible name
+&gt;servers to use.
+&gt;
+&gt;As it is now, we have three name servers for our campus (one is primary, and
+&gt;two secondaries).  One of the secondaries is listed first in everyone's
+&gt;resolv.conf (or equivilent list of servers), and then the primary, and then
+&gt;the second secondary.
+&gt;
+&gt;When the first listed secondary dies (either named dumps core and leaves, or
+&gt;the system is toasted), everyone's resolver gets slow since it patiently tries
+&gt;to query the first listed name server, then after a timeout moves on the the
+&gt;next one, and so forth.  However, it does not remember that it just had some
+&gt;trouble with the first server, and tries it again for the next request.
+
+You might want to list each of these first in one third of the hosts in
+order to better distribute the load.  This way, only 1/3rd of the hosts
+will slow down when one of the servers dies (but this will happen three
+times as often).
+
+&gt;
+&gt;It would be great if the first user who tries a telnet (or whatever) suffered
+&gt;the hit once for that host, then other tries would quickly just go at a working
+&gt;name server.  Perhaps dead name servers could be routinely retried and some
+&gt;stats kept on them (I think bind already does this sort of thing when dealing
+&gt;with the list of root servers, so at least there is some precedent for this
+&gt;kind of behavior).
+&gt;
+Well, there is sort of a problem here.  You probably have no such thing
+as *the* resolver.  Everything that you run that wants to do host&lt;-&gt;address
+translation uses the resolver library routines and is a separate instance
+of a resolver.  Each time you fire up telnet, it starts up from scratch
+and has no history available concerning the status of the various servers.
+If a particular process does a lot of host&lt;-&gt;address translations, then it
+probably could figure out what was going on and make use of this
+information, but if it only does one translation, by the time it figures
+out which server is the hot one to use, it has no further need to use it.
+I suppose that you could read this information from a file and update it,
+but then you have to be able to handle multiple simultaneous accesses and
+updates to this file 8-(
+
+If you are running a somewhat modern BIND (&gt;4.8?), then you can run it
+on each host and configure it to forward all its queries to the campus
+servers.  BIND appears not to keep track of the performance of its
+forwarders, so I suppose that would be better if it did something like
+what it does for the root servers.  Running BIND on each host also has
+the advantage that the answers to frequently asked questions are cached
+locally on the host which will reduce the load on the campus servers.
+Be forwarned that the forwarding stuff doesn't quite work right even in
+4.8.1.  Hopefully there will be a cleaner release soon.
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797327024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327026&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327024&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327030&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

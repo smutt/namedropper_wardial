@@ -1,0 +1,71 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: reservered names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926829&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926825&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926821&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800017&r=1&w=2">re: reservered names</a>
+From:       <a href="?a=95837784200018&r=1&w=2">mark () cbpavo ! mis ! oh ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-11 17:49:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926824&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926824&q=raw">body</a>]</b>
+
+	Jon, what if someone in the UK named their machine "EDU.ISI.UK"?
+	Are reversed names confusing, especially since the European standard is
+	to reverse the ordering of the name.
+
+There is more to this than just a European convention.  There is considerable
+momentum behind left-to-right names.  Phone companies, in particular,
+tend to use left-to-right, and both AT&amp;T and the CCITT communities seem
+to be as strongly a part of the left-to-right religion as they are a
+part of the connection-oriented religion.
+
+AT&amp;T is building steam toward proposing the syntax
+	/usa/att/oh/mis/cbosgd!mark
+for what you would think of as
+	mark@cbosgd.mis.oh.att.usa
+
+They use "usa" at the top level, being of the X.400 flavor.  The
+first address above is intended as a shorthand for
+	/c=usa/o=att/ou=oh/oh=mis/cn=cbosgd/!mark
+(note the similarity to RFC 987).
+
+The bang stuff is UNIX specific,
+and intended to show how hosts are addressed; the real mailing
+address would probably be
+	/usa/att/oh/mis/mark.horton
+which is short for
+	/c=usa/o=att/ou=oh/ou=mis/cn=mark.horton/
+
+The fact that the names look like UNIX filenames and similar to
+Datakit addresses is no coincidence.  (In fact, since both sendmail
+and mailx know how to mail to files if the name looks like a file,
+this similarity may actually cause a problem.)
+
+In any case, if ISO or CCITT ever adopted a right-to-left syntax,
+I'd teleport myself to Mars (the teleporter being more likely to
+be available than the CCITT right-to-left syntax.)  So far they
+have been reluctant to specify ANY syntax, although they tend to
+write things like
+	Country		USA
+	Organization	ATT
+etc which show their thinking.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837781926829&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926825&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926821&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

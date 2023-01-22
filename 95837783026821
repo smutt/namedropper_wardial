@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: private hosts and BIND modifications [long message]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026819&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026818&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026819&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026822&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200003&r=1&w=2">Re: private hosts and BIND modifications [long message]</a>
+From:       <a href="?a=95837785400001&r=1&w=2">Jim Bloom &lt;jb%cs.brown.edu () RELAY ! CS ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-07 17:42:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026821&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026821&q=raw">body</a>]</b>
+
+Add one more vote highly opposed to this idea.  Craig hit some of the key
+arguments.  When the domain system was younger, I saw an awful lot of mail
+getting out with hostnames that could not be found in either the host table
+or domain system.
+
+Let just say that anyone with a bit of knowledge could find out a fair
+amount about what types of host exists, their address, their hostnames
+(login prompts, mailers, ftp), etc.  You don't end up hiding much.  If
+you want to hide host names, use nondescriptive domain names such as
+host1.domain5.msc.umn.edu.  I can't tell much from this and I don't think
+anyone else can either.  This solves your problem with companies at least.
+
+As for gateways and terminal servers, I don't think there is any reason to
+keep them hidden.  Some of the terminal servers now available use the name
+server fopr host lookups and can connect to anyplace.  I would like to be
+able to track down where connections are coming from.
+
+					Jim
+
+<b>[<a href="?l=namedroppers&m=95837783026819&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026818&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026819&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026822&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'RD/RA/AA/caching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927028&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927042&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500024&r=1&w=2">RD/RA/AA/caching</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 12:15:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927026&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927026&q=raw">body</a>]</b>
+
+The spec doesn't come out and explicitly state how Recursion Desired,
+Recusrion Available, Authoritative Answer, and caching (especailly on a
+local site resolver/nameserver) interact.  Here's the situation at our
+site, and potentaially at many other sites.
+
+	+---------------+
+	| Workstation	|		+---------------+
+	|w/ local cache	|&lt;=============&gt;|		|
+	+---------------+		| Site resolver	|
+					|      aka	|
+		...			|Site Nameserver|&lt;===&gt; Big-I Internet
+					|		|
+	+---------------+	RD-&gt;	|recursion avail|
+	| Workstation	|&lt;=============&gt;|cache for site	|
+	|w/ local cache	|   &lt;-RA, AA?	+---------------+
+	+---------------+
+
+The purpose of the caches is to reduce network traffic.  The purpose of
+the site resolver is to reduce network traffic on the Big-I Internet by
+supporting a common cache for the entire site.  A site resolver could
+also be used to field domain request for workstations which are on some
+network other than the Internet.
+
+The first time a workstation asks for some data, it isn't in the local
+cache, so it asks the site resolver with Recursion Desired.  The site
+resolver, the first time, doesn't have it either, so it must go to the
+Internet for the answer.  Presumably it looks for authoritative data.
+When it gets the data, it enters it into its own cache (the one for the
+site) and then passes it back to the workstation.
+
+Question 1: If the answer it gets from the Internet is authoritative,
+should it relay the answer to the workstation with the authoritative bit
+still set?  I think so.  Otherwise, What's the point of Recursion
+Desired?
+
+Now suppose some other workstation asks the exact same question of the
+Site Resolver with Recursion Desired in a very short amount of time.
+
+Question 2: What happens?  Options:
+ a  The Site Resolver returns the data in the cache without
+    Authoritative Answer set.
+	Question 2a: Why should the second workstation get an answer
+	    different than the first workstation?  (Namely, a difference
+	    in Authoritative Answer.) 
+	Question 2b': Why should the workstation now be burdened with
+	    going to the Internet to get authoritative data?  What if it
+	    isn't connected to the Internet?
+ b  The Site Resolver, presumably because Recursion Desired is set, goes
+    off to the Internet in order to get authoritative data, and relays
+    the response.
+	Question 2b: What good is the site-wide cache?  It certainly
+	    isn't reducing traffic on the Internet now.
+ c  The Site Resolver, using some data-is-still-authoritative criterion,
+    returns the data in the cache, with appropriately reduced TTLs, with
+    the Authoritative Answer bit set.
+	This is what I'd like to do, and what I hope the intent of
+	    caching is supposed to allow.
+	Question 2c: What is the data-is-still-authoritative criterion?
+ d  Something else?
+
+This question applies to both valid data, no data and name-errors.  
+
+I have some ideas for the data-is-still-authoritative criterion, but I
+would first like to resolve the intent of the spec before fine tuning
+the criterion.
+
+<b>[<a href="?l=namedroppers&m=95837781927024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927028&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927042&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

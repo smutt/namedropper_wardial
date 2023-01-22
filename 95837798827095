@@ -1,0 +1,101 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Need help configuring name server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827094&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827093&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827081&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500002&r=1&w=2">Re: Need help configuring name server</a>
+From:       <a href="?a=95837817200032&r=1&w=2">"Cricket" &lt;cricket () winnie ! corp ! hp ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-06 13:51:08</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827095&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827095&q=raw">body</a>]</b>
+
+Randy,
+
+(My apologies if you've already gotten an answer to your question.)
+
+    A friend of mine has been having some problems configuring a name
+    server.   The primary master server is on a Sun and serves a LAN.
+    This LAN (LAN #1) is bridged to another LAN (LAN #2) so that both
+    LAN's appear as to be the same.
+    
+    The hosts on LAN #1 however are in a different zone than those on
+    LAN  #2.   Everything was running perfectly until the repeater to
+    LAN #1 went out, isolating LAN #1.  What he found was  that  when
+    using  nslookup,  when hosts were addressed by their non-expanded
+    name or alias, the address resolution would  occur  as  expected.
+    When a fully qualified name was used, the search would fail.  Ex-
+    ample:
+    
+            "abc" would obtain the address for abc.x.ab.com ok.
+    
+            "abc.x.ab.com" would fail.
+    
+    What appeared to be happening was that the  later  request  would
+    somehow filter up to LAN #1 , and then somehow get resolved.  The
+    question is why?  It seems that this is  not  a  normal  type  of
+    behaviour, and that all requests within a zone should be resolved
+    without going outside of the zone.
+    
+I think your friend's problem has to do with the search list.  A
+search list (pardon me if you know this already) is a list of domains
+appended to non-dot-qualified domain names in an attempt to figure
+out what the real domain name is.  In your friend's case, the search 
+list is
+
+x.ab.com
+ab.com
+(nothing)
+
+For example, if he types "telnet foo", the following domain names are
+looked up by the resolver:
+
+foo.x.ab.com
+foo.ab.com
+foo
+
+When the repeater failure segmented his network, the x.ab.com
+nameserver was isolated from the ab.com nameserver.  Now when your
+friend tried to "telnet foo", the first query that the resolver sent
+out was for foo.x.ab.com, which was answered by the local nameserver,
+authoritative for x.ab.com.  But if your friend tried to "telnet
+foo.x.ab.com", the resolver first looked up foo.x.ab.com.x.ab.com,
+which the local nameserver could immediately tell was bogus, and then
+foo.ab.com.
+
+foo.ab.com, I think, was the problem.  Only an ab.com nameserver
+could answer authoritatively, and none were available because of the
+network failure.  If the x.ab.com nameserver was unlucky enough not
+to have cached the NS records for ab.com (unlikely, as ab.com is its
+parent domain), it may have tried unsucessfully to get to the root 
+nameservers to find out what the ab.com nameservers were.
+
+Either way, the resolution probably stopped there.  I'm not sure of
+the internals, but I'd bet that gethostbyname() probably times out
+and doesn't go on to try the next element of the search list.
+
+In a situation like this, your friend could have advised his users to
+use either simple, one-part names (the ones that worked), or to dot-
+qualify the domain names to override the search list facility.  So,
+for example, they'd "telnet foo.x.ab.com."
+
+cricket
+
+hostmaster@hp.com
+
+<b>[<a href="?l=namedroppers&m=95837798827094&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827093&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827081&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

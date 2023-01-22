@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426649&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">re: Well Known Ports</a>
+From:       <a href="?a=95837693200023&r=1&w=2">Mark Crispin &lt;MRC () SIMTEL20 ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-17 17:38:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426650&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426650&q=raw">body</a>]</b>
+
+Rick Adams -
+
+     I see no evidence to back your assertion that "TOPS20 people
+are strongly dominant in deciding the final form of the various
+RFC's."  The only evidence of domination I have observed is that
+the people who tend to push through RFC's are strongly opposed to
+unnecessary OS or machine dependence.  If they weren't that way,
+there never would have been any Unix systems on the network at all
+because in the old days most of the network sites were PDP-10's
+running Tenex.
+
+     Your comment about host number to host name mapping amazes
+me.  I can see why a poor or kludgy implementation of naming would
+need this sort of function.  It's what older TOPS-20 software used
+too, before it was recognized that that sort of thing fell apart
+in a number of real operational situations.
+
+     Just because a piece of software was written for Unix does
+not automatically make it golden.  OS independence and flexibility
+in the face of a continually evolving and changing Internet is the
+whole name of the game.  A well-tempered Internet implementation
+should avoid any use of Internet addresses until the very last
+instance of composing and sending the actual datagrams across.  I
+admit this is a bit extreme, but in this day of multi-address hosts
+and multi-host addresses(!), I don't see much of a choice.
+
+-- Mark --
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426649&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426651&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

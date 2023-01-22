@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The US domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926779&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926776&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500033&r=1&w=2">The US domain</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-27 13:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926778&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926778&q=raw">body</a>]</b>
+
+Might I suggest that CNAME entries be added to the US zone so that
+people will be able to win with a name like XX.LCS.MIT.EDU.US if they
+want to type out all of that.  Ie, to use your analogy, it should not
+be illegal to use "USA" in a domestic letter, and at the moment even
+mail from outside will lose if it tries.
+
+If this wasn't clear, what I was proposing was just about ten entries,
+eg:
+
+COM.US.	IN CNAME COM.
+EDU.US. IN CNAME EDU.
+
+etc.
+
+Right now all that's in the US zone is 50 HINFO records for the States
+of the union and a couple of joke entries for ISI.
+
+If Canada wants to be part of the DDN/ARPANET COM/EDU/MIL/whatever
+setup, they can add the same kind of CNAMEs to the CA (or CAN) zone.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926779&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926776&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926779&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

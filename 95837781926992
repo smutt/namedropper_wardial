@@ -1,0 +1,71 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'recursion available vs virtual circuits' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926991&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926993&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926993&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500014&r=1&w=2">recursion available vs virtual circuits</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-11 13:58:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926992&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926992&q=raw">body</a>]</b>
+
+I get the impression some implementations have made "recursion
+available" mean "virtual circuit available."  I only have experimental
+evidence for this below.  On the bottom of page 11 of RFC 883 it says
+that recursive queries should be done over virtual circuits.  The
+"recursion available" flag is supposed to mean that the server will do
+recursion on behalf of the resolver.  It might imply that it can be done
+over a virtual circuit, but what it MEANS is that recursion is
+available.
+
+Evidence: SRI-NIC.ARPA and XX.LCS.MIT.EDU (and I think other TOPS 20
+implementations) do not set the recursion available bit in their
+responses, nor do they offer service over virtual circuits.  That's
+consistent.
+
+If I ask BRL-AOS.ARPA, a Unix system, about SWAN.SCRC.Symbolics.COM's
+Internet address, using datagrams, it give me referals if I don't ask
+for recursion.  If I do ask for recursion it goes looking for the answer
+and returns it without referals.  It does the same thing using a TCP
+virtual circuit asking for another host (to force it not to use it's
+cache).  When asking recursively it answers authoritatively.  This is
+all consistent.
+
+There's a bug however: After an RR enters BRL-AOS's cache, and I ask for
+the data without recursion, it gives a TTL of FOREVER.  When I then ask
+for the data with recursion, it still gives a TTL of FOREVER and doesn't
+have the authoritative bit set.  It does offer referals in both cases.
+I thought that if recursion was requested and available, then the answer
+would be authoritative.
+
+BITSY.MIT.EDU, another Unix system, does something yet different (with
+TCP virtual circuits; I didn't try UDP datagrams).  When I ask it for
+data that is in its cache, it returns the data with referals, with the
+correct TTL, independent of the recursion-requested bit.  When recursion
+is requested, it doesn't answer authoritatively.  If I ask
+non-recursively for data that is not in it's cache, it gives me the
+proper referals.  If I then ask recursively for the same data it sends
+me a FIN with no data.  Shouldn't it recursively go looking for the
+information?
+
+This basically comes down to one question: If I ask for data
+recursively, and the other side claims to offer recursion, shouldn't I
+expect to get back an answer and shouldn't that answer be authoritative?
+
+<b>[<a href="?l=namedroppers&m=95837781926991&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926993&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926993&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

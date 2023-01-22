@@ -1,0 +1,198 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Multi-homed hosts and which address to use' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026813&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026815&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026818&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500022&r=1&w=2">Multi-homed hosts and which address to use</a>
+From:       <a href="?a=95837693400014&r=1&w=2">Rich Wales &lt;wales () LOCUS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198611">1986-11-18 12:43:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026814&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026814&q=raw">body</a>]</b>
+
+I have been thinking lately about the following question, which doesn't
+at present seem to be very well addressed by the domain system:
+
+      When a host you want to communicate with has more than one
+      address (a "multi-homed" host), how do you decide which of
+      the possible addresses to try first?
+
+I've talked privately with a few people about this already, but I'd like
+to get some feedback from as many different perspectives as possible --
+hence this message.
+
+When a host you want to talk to is multi-homed, presumably you might be
+better off using one address rather than another.  As a simple example,
+if one of your options is an address on a network you are also on, you
+would almost certainly want to try that address first (and maybe not
+even bother with any other address).  Or, one address might be useful
+only for outgoing traffic (this was -- and presumably still is -- the
+case with CS.UCL.AC.UK), and anyone wanting to connect to that host had
+really better try a different address.
+
+Lots of software which has been (and is still being) used on the net
+ignores this issue entirely.  For instance, many past and present UNIX
+systems will use only the "first" address of a multi-homed host -- where
+"first" is defined by the order of the addresses in a HOST line in the
+NIC table, or the order of the type-A RR's in a reply datagram from a
+name server.
+
+Several possible solutions to this problem come to mind.  I am listing
+as many of them as possible below, and I would love to hear as many com-
+ments as possible (both "pro" and "con").  Please note, though, that I'm
+not necessarily advocating any of these solutions -- consider this list,
+if you will, to be a "brainstorm".
+
+==&gt; PROPOSAL:  Do nothing.  This whole issue really isn't a problem at
+    all, because:
+
+    ==&gt; The great majority of hosts have only one address anyway, so
+	time spent worrying about what to do with multi-homed hosts is
+	probably time wasted in the long run.
+
+    ==&gt; For hosts that aren't in your own local organization, it prob-
+	ably won't matter most of the time which of the several possible
+	addresses you use, since the big time-waster will be the long-
+	haul ARPANET hop anyway.
+
+    This "non"-solution, of course, does not address such unusual cases
+    as which address to access CS.UCL.AC.UK by.
+
+==&gt; PROPOSAL:  For your local network at least, set up appropriate rout-
+    ing info on each host (in UNIX, for example, this could be done via
+    "/etc/route add" commands referencing individual multi-homed hosts)
+    so that packets to multi-homed hosts will take the "best" paths no
+    matter which of the possible addresses are used.
+
+    ==&gt; This solution may have a certain conceptual appeal to it, since
+	it separates the "naming" and "routing" questions altogether for
+	the local multi-homed hosts.
+
+    ==&gt; If an organization has a lot of multi-homed hosts, this approach
+	could result in a *lot* of extra routing info for every host to
+	carry around and worry about.
+
+    ==&gt; While this could handle a local situation, it still doesn't take
+	care of non-local cases like CS.UCL.AC.UK.
+
+    ==&gt; What happens when someone intentionally *wants* to use a nor-
+	mally non-optimal route to get to a multi-homed host for some
+	reason?
+
+==&gt; PROPOSAL:  Each zone maintainer should arrange the addresses for his
+    multi-homed hosts in the "optimal" order (best address first).  Name
+    servers should make sure to preserve the ordering of RR's with the
+    same name/class/type.  Resolvers should return addresses in the same
+    order as they appear in datagrams from the name servers.
+
+    ==&gt; I don't think the name server spec (RFC883 and RFC973) says any-
+	thing at all about ordering of RR's with the same name/class/
+	type in a reply datagram.  Should it?  Do name servers in cur-
+	rent use preserve RR ordering anyway?
+
+	I somehow suspect |-} that there's *got* to be at least *one*
+	server out there which does *not* preserve RR ordering, because
+	the RFC's didn't require it to, and whose implementors would
+	scream "bloody murder" if such a requirement were imposed now.
+
+    ==&gt; This proposal implies that, for each multi-homed host, there is
+	a single optimal address order which is appropriate for the en-
+	tire net.
+
+	This might well be true outside the multi-homed host's local
+	network(s) -- since outside traffic will presumably all be sent
+	through some particular gateway, and multiple addresses could be
+	sorted according to how "close" they are to the outside gateway.
+
+	But if an organization has lots of local networks, connected by
+	numerous gateways here and there, the assumption that all local
+	hosts would want to use the same address order for connecting to
+	some other local host seems dubious.
+
+==&gt; PROPOSAL:  Name servers should be modified to determine an optimal
+    address order for multi-homed hosts, based on the address(es) of the
+    server host, and/or the address of the querying host.
+
+    Thus, for instance, a name server could return type-A RR's in a
+    "general public" order when replying to queries from outside the
+    local organization -- or, when a query came from one of the "local"
+    hosts, the server could return the addresses in an order most appro-
+    priate for the querying host.
+
+    Or, a name server might simply use the address order most appropri-
+    ate to the host on which it is running -- on the assumption that
+    outside queries are probably going to be directed to a server which
+    is as close as possible to the long-haul net (ARPANET/MILNET/etc.).
+
+    ==&gt; At least in the case of queries from outside the local organiza-
+	tion, a server situated within the organization is probably in a
+	much better position to tell outsiders how to get to a given
+	multi-homed host than the outside host itself would be.
+
+    ==&gt; If different hosts, on different networks, were to start giving
+	each other address info from their caches, these carefully hand-
+	crafted address orderings would likely get thoroughly jumbled.
+
+    ==&gt; A setup in which the server uses the network connectivity of its
+	own host, as a basis for defining address orderings in its reply
+	datagrams, is liable to fail miserably when a server is acting
+	as an authority for other organizations' zones.  (For instance,
+	AOS.BRL.MIL -- a "backup" master for the UCLA.EDU domain --
+	clearly has no possible way, based on the BRL network configura-
+	tion, of figuring out optimal address orderings for UCLA hosts.)
+
+==&gt; PROPOSAL:  Don't modify the name servers at all.  Instead, configure
+    the resolver routines on each host to sort multiple addresses in any
+    replies they may get, according to whatever is best for use on that
+    particular host.  (I understand TOPS-20 does something like this.)
+
+    ==&gt; This approach doesn't require one to assume that other hosts
+	have put any address-ordering "smarts" in their name servers.
+
+    ==&gt; Depending on how the resolver is implemented, having to read an
+	address-ordering configuration file could be costly.  (In UNIX,
+	for example, such a file might have to be read at least once by
+	each and every process which wants to do name-&gt;address lookups.)
+
+	Since most hosts have only one address each, some of this over-
+	head could be cut out by reading the address-ordering data only
+	when the host being queried about turned out to be multi-homed.
+
+    ==&gt; Special cases (such as which address to contact CS.UCL.AC.UK by,
+	or whether to contact SRI-NIC.ARPA via ARPANET or MILNET) could
+	be added as needed into the address-ordering configuration file
+	on each host.  However:
+
+	==&gt; Given enough special cases, the address-ordering files could
+	    easily get out of hand -- thus increasing the overhead when-
+	    ever a multi-homed host was encountered.
+
+	==&gt; More importantly, such "special-case" data -- distributed
+	    all over the Internet in individual address-ordering files
+	    -- would have a strong tendency to remain in place forever,
+	    even if addressing or other changes made it unnecessary or
+	    even undesirable.  (Compare:  ISIB is being decommissioned
+	    as a root server -- but how long is it liable to be before
+	    *everyone* has removed it from their server boot files??)
+
+-- Rich Wales // UCLA Computer Science Department // +1 213-825-5683
+	3531 Boelter Hall // Los Angeles, California 90024 // USA
+	wales@LOCUS.UCLA.EDU   ...!(ucbvax,sdcrdcf,ihnp4)!ucla-cs!wales
+"Sir, there is a multilegged creature crawling on your shoulder."
+
+<b>[<a href="?l=namedroppers&m=95837759026813&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026815&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026818&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

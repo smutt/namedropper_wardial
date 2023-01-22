@@ -1,0 +1,93 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: resolving .no hosts.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026938&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026942&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026938&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026941&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400010&r=1&w=2">Re: resolving .no hosts.</a>
+From:       <a href="?a=95837785600015&r=1&w=2">kehres () tis ! llnl ! gov (Tim Kehres)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198808">1988-08-21 9:00:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026939&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026939&q=raw">body</a>]</b>
+
+In your message you write:
+&gt; 
+&gt; I've seen several pieces of mail time out after three days
+&gt; &gt;from here at Michigan destined for sites in Norway because
+&gt; of host name lookup failures.  Our connections to the internet
+&gt; as a whole are as good as anyone could ask for.  anyone else
+&gt; having these problems?
+&gt; 
+&gt; In particular, I can't resolve tor.nta.no.
+
+I received the following message from Norway, a while back.  I believe 
+that it explains the current problem.
+
+Tim Kehres
+
+Forwarded Message:
+
+
+SUBJECT : temporary address change
+SENT BY : Harald Eikrem &lt;postmaster%vax.runit.unit.uninett@TOR.nta.no&gt;
+SENT TO : &lt;cmu-tek-tcp-request@cc.cmu.edu&gt;,
+          info-ibmpc-request@walker-emh.arpa,
+          info-mac-request@sumex-aim.stanford.edu,
+          info-unix-request@brl.mil, info-vax-request@kl.sri.com,
+          prolog-request@polya.stanford.edu, risks-request@csl.sri.com,
+          soft-eng-request%xx.lcs.mit@TOR.nta.no,
+          sun-spots-request@rice.edu, texhax-request@score.stanford.edu,
+          works-request@rutgers.edu, pcip-request@udel.edu,
+          security-request@aim.rutgers.edu, tcp-ip-request@sri-nic.arpa,
+          protocols-request@rutgers.edu, apollo-request@umix.cc.umich.edu,
+          header-people-request@mc.lcs.mit.edu,
+          ifip-gtwy-request@tis.llnl.gov, info-modems-request@simtel20.arpa,
+          ailist-request@ai.ai.mit.edu, info-hams-request@simtel20.arpa,
+          esperanto-request@lll-crg.llnl.gov,
+          transputer-request@tcgould.tn.cornell.edu
+DATED   : 11 Aug 1988 at 2316 PDT
+STATUS  : old, read
+
+Speaking for Uninett (yes double T), a x.400 based research network in
+Norway, and .no, the norwegian Internet domain, I announce that the
+norwegian network society loose its only US Internet satellitte link on
+Monday 15. of August.  This situation is expected to last until mid
+October.
+
+I kindly ask all list administrators to look up norwegian addresses in
+their respective distribution list(s), particularly those containing
+...%...uninett@tor.nta.no (nta-vax).  What I want you to do is route
+mail distribution via BITNET to our BITNET gateway norunix.bitnet,
+instead of tor.nta.no.  That is, the above address becomes e.g.
+     ...%...uninett%norunix.bitnet@cunyvm.cuny.edu
+
+(Inside BITNET, mail to the .no domain is always forwarded to norunix).
+
+When I know more about the upcoming of our satellitte link, I will inform
+you.
+
+If you receive messages from other norwegians asking for similar actions,
+I apologize.  If there are any questions I will attempt to answer.
+Thank you for the patience.   
+
+--Harald Eikrem   Runit, CC @ U of Trondheim, Norway
+                  &lt;postmaster%vax.runit.unit.uninett@tor.nta.no&gt;
+       becoming   &lt;postmaster%vax.runit.unit.uninett@norunix.bitnet&gt;
+       
+
+<b>[<a href="?l=namedroppers&m=95837783026938&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026942&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026938&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026941&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

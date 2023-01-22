@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'DNS implementations for UTS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827061&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827062&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    DNS implementations for UTS
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-17 0:44:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827060&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827060&q=raw">body</a>]</b>
+
+I have a problem: A number of our users access our machines with
+rlogin/telnet from a UTS machine (an Amdahl 5890-180E). That host runs
+on a woefully old and incomplete /etc/hosts. When I politely asked why
+it didn't run DNS so the users could access all our machines, the
+admin politely told me that he'd be delighted to be told how to do it.
+
+So: Can anybody tell me if it is possible to run a nameserver or
+resolver on a UTS system (and make rlogin, telnet and ftp use it), and
+if so, how to do it and/or where to get it.
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcsun!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837798827061&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827062&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Zone refresh and retry times' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026949&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026949&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400014&r=1&w=2">Zone refresh and retry times</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-08 13:34:05</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026948&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026948&q=raw">body</a>]</b>
+
+
+    I've recently had cause again to look at the refresh and retry times
+in the zones our domain servers backup up (74 zones at last count).  Of
+those zones, nearly 40% have a refresh interval of 1 hour and a retry
+time of only 5 minutes, but an expire time of 1,000 hours.  Clearly
+this is a bit much (a refresh time that is 1/1000 of the maximum time that
+your backup server can still distribute your data).
+
+    I suspect someone has been copying RFC examples again...  (Or I've
+been non-compose in recommending backup times in the past).
+
+    So far as I can tell, few zones get updated with a frequency even
+approaching once an hour.  Once a week is more like it.  Asking your
+backup server to ping check your server every hour is probably anti-social.
+I'd like to encourage people to use refresh times of at least 6 hours
+(and that retry time ought to go up too, to at least 15 minutes -- give
+your machine adequate time to reboot before we try to transfer again).
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837783026947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026949&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026949&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

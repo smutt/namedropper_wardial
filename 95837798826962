@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Monitoring your nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826959&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826963&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826959&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826965&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100011&r=1&w=2">Re: Monitoring your nameserver</a>
+From:       <a href="?a=90366299500004&r=1&w=2">Dan Schlitt &lt;dan () sci ! ccny ! cuny ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-17 19:52:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826962&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826962&q=raw">body</a>]</b>
+
+
+	
+	   A quick hack would be to have a cron job on occasion which either
+	   checks for the existance of critical processes &amp; start's 'em up.  Or
+	   just start's em &amp; lets the processes fight over how many of which kind
+	   are to be running.  Buuuut..
+	
+I think starting multiple nameds is a bad idea.  The second one finds
+that the port is busy and hangs around doing nothing worthwhile.
+
+	Ummmm....
+	
+	I would think that the right way of managing these things would be to
+	embed into them some piece of SNMP (the Simple Network Management Protocol),
+	and then have them all watched over by a network management station
+	which could get traps when the daemons die, arrange to have things
+	restarted, etc etc.  This would have the advantage of letting you watch
+	over a bunch of systems from a single vantage point if you wanted to.
+	
+	That said, I must confess that I don't know whether anyone has stuck
+	SNMP into bind (anyone?), whether there's a MIB defined, or anything
+	like that.  I know that Sun doesn't ship it in SunOS 4.0.3, and that
+	the DEC Ultrix 4.0 snmp/bind stuff appears to be amenable to such
+	treatment but hasn't been done.
+	
+	--Ed
+	
+Ed,
+
+That is the kind of thing that I was hoping to find out about.
+Sending signals to named and using the returned status lacks
+something in elegance.
+
+/dan
+	Edward Vielmetti, U of Michigan math dept &lt;emv@math.lsa.umich.edu&gt;
+	
+
+<b>[<a href="?l=namedroppers&m=95837798826959&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826963&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826959&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826965&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

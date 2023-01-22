@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Bakeoff cookies' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426441&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426437&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426441&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426437&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100016&r=1&w=2">Re: Bakeoff cookies</a>
+From:       <a href="?a=95837692300003&r=1&w=2">MILLS () USC-ISID ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-15 16:54:12</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426440&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426440&q=raw">body</a>]</b>
+
+In response to the message sent  15 May 85 15:07:04 EDT from HEDRICK@RUTGERS.ARPA
+
+Charles,
+
+I would assume there is nothing inherently wrong with having a domain
+and host of the same name. A query for RICE.EDU that lands at the
+RICE.EDU name server would result in the A record for the RICE.EDU in
+the answer section, while a query for x.RICE.EDU (for non-null x) would
+result in NS and A records in the authoritative and additional sections
+respectively. This would handle the case even if the host and name server
+had different addresses. I would think this a valuable feature, since
+today's hosts are probably going to evolve into tomorrow's domains.
+
+Thus, the appropriate response for RICE.EDU when there is in fact no
+host RICE.EDU should by this reasoning be an authoritative "no."
+
+Here's one for you: How can a busybody find out about the set of name
+servers for a particular domain without actually resolving something
+in that domain? By the above reasoning, you can't find the set of RICE.EDU
+servers by simply mumbling RICE.EDU to the NIC. You can try to resolve
+some j. random host in RICE.EDU and capture the name servers as
+they go by while the namesolver is chugging away or you can use the NS
+value in the type field of the query. THus, RICE.EDU might be a whole
+lot different depending on whether the A or NS types were used in the query.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426441&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426437&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426441&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426437&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

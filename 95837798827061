@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Compression in new DNS RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827058&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827060&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827063&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300031&r=1&w=2">Compression in new DNS RR's</a>
+From:       <a href="?a=95837818000017&r=1&w=2">eru!hagbard!sunic!mcsun!hp4nl!sci.kun.nl!cs.kun.nl!lwj () bloom-beacon ! mit ! edu  (Lu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-16 9:12:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827061&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827061&q=raw">body</a>]</b>
+
+Several new RR types introduced in RFC 1183 include domain names. The
+relevant types are AFSDB (18), RP (17), RT (21). Should name servers
+compress the domain names in these RR types ? From RFC 1123,
+Requirements For Internet Hosts, section 6.1.3.5 Extensibility:
+
+                 Compression relies on knowledge of the format of data
+                 inside a particular RR.  Hence compression must only be
+                 used for the contents of well-known, class-independent
+                 RRs, and must never be used for class-specific RRs or
+                 RR types that are not well-known.  The owner name of an
+                 RR is always eligible for compression.
+
+So, are the new RR types to be considered well-known ? If so, this
+creates a problem when resolvers and secondary name servers receive
+these RR's but do not know that they contain compressed domain names.
+This is also hinted at in RFC 1123:
+
+                 A name server may acquire, via zone transfer, RRs that
+                 the server doesn't know how to convert to printable
+                 format.  A resolver can receive similar information as
+                 the result of queries.  For proper operation, this data
+                 must be preserved, and hence the implication is that
+                 DNS software cannot use textual formats for internal
+                 storage.
+
+For secondary nameservers this should not be a problem, I think, since
+these can be updated when needed. But caching resolvers are more
+difficult to deal with.
+
+Comments or answers, anyone ?
+
+--
+Luc Rooijakkers                                 Internet: lwj@cs.kun.nl
+Faculty of Mathematics and Computer Science     UUCP: uunet!cs.kun.nl!lwj
+University of Nijmegen, the Netherlands         tel. +3180652271
+
+<b>[<a href="?l=namedroppers&m=95837798827058&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827060&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827063&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

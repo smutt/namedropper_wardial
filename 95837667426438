@@ -1,0 +1,82 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Bakeoff cookies' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426434&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426435&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426434&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426436&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100016&r=1&w=2">Re: Bakeoff cookies</a>
+From:       <a href="?a=95837662100001&r=1&w=2">Paul Milazzo &lt;milazzo () rice ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-15 14:30:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426438&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426438&q=raw">body</a>]</b>
+
+Dave:
+
+I'd like to comment on several of the points you raised:
+
+First, the first UDP packet you send to the RICE.EDU name server is
+*very* likeley to be lost while trying to open an X.25 connection at
+the link level between CSNET-PDN-GW and RICE.  In general the second
+will succeed, but since many resolvers seem to try their alternatives
+in strict rotation with one packet transmission per address, RICE.EDU's
+primary address will rarely see any queries.
+
+At the moment we have the same problem from our end.  When trying to
+resolve a query, RICE.EDU first tries the NIC, but the packet is lost.
+Next, it tries ISIF and succeeds, but ISIF has an old database, so we
+are usually told "No such domain".  Sigh...  At this point my only
+solution is to create just enough traffic to keep an X.25 channel open
+at all times.  What fun.  Also, are there any up-to-date root name
+servers other than the NIC?
+
+Second, in both your examples (Rice and Berkeley name servers), one
+problem was that you received no answer from the host's secondary
+address (the host interface further from DCN6).  I just tried
+UCB-ARPA.BERKELEY.EDU at both its addresses, and got responses.  I
+tried the same test on RICE.EDU from another host on our local network,
+and again got responses from both addresses.
+
+Hypothesis (untested):  Since both name server hosts in question are
+VAXen running BIND, perhaps they are returning the wrong source address
+in their response, and the Fuzzling is filtering out that packet.  I'll
+try to see whether that's the problem.
+
+Third, I believe you are correct in questioning the PURDUE.EDU
+records in the response from the NIC.  As Larry pointed out, the
+RICE.EDU and PURDUE.EDU name servers back each other up, and so you
+should get the entries:
+
+Type 2  domain name RICE.EDU  host name RICE.EDU
+Type 2  domain name RICE.EDU  host name PENDRAGON.CS.PURDUE.EDU
+
+as well as all three of the addresses you received.  On the other hand,
+the entries:
+
+Type 2  domain name PURDUE.EDU  host name PENDRAGON.CS.PURDUE.EDU
+Type 2  domain name PURDUE.EDU  host name RICE.EDU
+
+are completely irrelevant, and probably represent a minor bug in the
+NIC name server software.  I suspect that it was written with the
+implicit assumption that all name servers for a given zone would be in
+the same domain.
+
+                                Paul G. Milazzo &lt;milazzo@rice.ARPA&gt;
+                                Dept. of Computer Science
+                                Rice University, Houston, TX
+
+<b>[<a href="?l=namedroppers&m=95837667426434&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426435&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426434&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426436&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

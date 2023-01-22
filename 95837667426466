@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'More numbers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426465&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426467&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    More numbers
+From:       <a href="?a=95837661900004&r=1&w=2">Murray.pa () Xerox ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-03 15:51:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426466&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426466&q=raw">body</a>]</b>
+
+(Jon asked how big the cache was....)
+
+We never throw anything out of the cache. After running since late
+Saturday night, it contains 130 name=&gt;address entrys, 21 alias=&gt;name
+entrys, 47 bogus names and 84 address=&gt;name entrys.
+
+Each cache entry contains the server that provided the info and the TTL.
+When an entry is about to be referenced again, the TTL is checked. If it
+has expired, the previous source address is used to rejuvinate the
+entry. (If it's an alias=&gt;name entry, the corresponding name=&gt;address
+info gets rejuvinated as a side effect.)
+
+86% of the cache lookups get name=&gt;address records.
+ 6% get alias=&gt;name records.
+ 2% get bogus names.
+ 5% get address=&gt;name records.
+I don't collect enough info to distinguish name=&gt;address from
+nicname=&gt;name operations.
+
+18% of the probes to the server are name=&gt;address requests.
+47% are name rejuvinaton requests.
+ 4% are alias rejuvination requests.
+ 1/10% are bogus name rejuvinations. (I use a TTL of one hour.)
+10% are address=&gt;name requests.
+22% are address=&gt;name rejuvinations.
+(Again, I can't distinguish name=&gt;address from nicname=&gt;name.)
+
+The response times (from Xerox to NIC) are wonderful: 55% of the answers
+come back in under 300ms, 90% within 800ms. Of 998 probes, only 2 were
+lost.
+
+The cache miss rate is 19%.
+
+<b>[<a href="?l=namedroppers&m=95837667426465&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426467&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

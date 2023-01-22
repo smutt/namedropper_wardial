@@ -1,0 +1,70 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'DNS glue records and BIND 4.8' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827020&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827020&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300019&r=1&w=2">DNS glue records and BIND 4.8</a>
+From:       <a href="?a=95837817800038&r=1&w=2">munnari.oz.au!metro!usage.csd.unsw.oz.au!ccadfa!cjsv () uunet ! uu ! net  (Christopher</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-25 2:25:42</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827018&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827018&q=raw">body</a>]</b>
+
+I have a number of domains which I serve as primary: two forward
+domains, one reverse domain for our class B network and, of course,
+another reverse domain for net 127. 
+
+The question I have is in regard to the specification of glue records
+for servers outside my domains which perform secondary service for me -
+each of my domains (except 127, of course) has the same list of
+secondary servers. 
+
+When the same host is listed as a foreign secondary server in each of my
+domains, are the glue A records:
+
+1)	associated with the zone and host;
+
+	zone 1	-------	foreign server 1  ----	glue address 1a for 1
+		 \			   \--	glue address 1b for 1
+		  \----	foreign server 2  ----	glue address 1 for 2
+	zone 2	-------	foreign server 1  ----	glue address 1a for 1
+		 \			   \--	glue address 1b for 1
+		  \----	foreign server 2  ----	glue address 1 for 2
+
+or 2)	associated only with the host.
+
+	zone 1	-------	foreign server 1  ----	glue address 1a for 1
+		 \/			   \--	glue address 1b for 1
+		 /\
+	zone 2	-------	foreign server 2  ----	glue address 1 for 2
+
+In other words, should I put these glue A records into each zone, or
+only one? Or alternatively, how does BIND decide what A records to send
+with my zones when somebody transfers them. 
+
+Subsidiary question: must these A records be added to a zone or is any
+legitimate way of holding authoritative A records for these hosts adequate
+(e.g., by holding a secondary of the zone they are themselves defined in)?
+
+If the first case holds, must I add glue records to the reverse domain
+for my own servers, too, even though the zone should only be held by
+sites already holding that information as part of my forward zones?
+
+-- Christopher
+
+<b>[<a href="?l=namedroppers&m=95837798827017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827020&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827020&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

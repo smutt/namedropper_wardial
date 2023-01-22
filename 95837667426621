@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: some questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426620&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426622&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426620&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426625&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=89254001800001&r=1&w=2">re: some questions</a>
+From:       <a href="?a=95837693400029&r=1&w=2">ks () purdue-ecn ! ARPA (Kirk D Smith)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-13 0:08:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426621&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426621&q=raw">body</a>]</b>
+
+Thanks for the reply, Jon.
+A few notes..
+
+&gt; I'd suggest that you set up a name server inside the ECN world that is
+&gt; authoratative for all of Purdue, but not for any place else (e.g.,
+&gt; Rice).
+That is what I am working on now.
+
+&gt; I don't know about the Berkeley stuff of initializing all 
+&gt; hosts from a local file.  Somehow it sounds like a bad idea.
+I was confused about Berkeley.  I was looking at one of their authoratative
+servers, and I thought otherwise.  They are doing things right.
+
+&gt; As far as setting up a "46.128.IN-ADDR.ARPA" domain, i don't know if it is
+&gt; really necessary, and i don't think the NIC is prepared to delegate
+&gt; part of the IN-ADDR tree yet.  How often is there a request for
+&gt; IN-ADDR information?
+I see a relatively large need for the 46.128.in-addr.arpa domain.
+All authentication of remote login, remote shell, etc. under UNIX is done
+by looking at the source address on the socket, then mapping it to the
+name.  When the NIC is unreachable, we would not be able to do authentication.
+For us, the NIC is unreachable for large time blocks when our gateways go down.
+Hopefully, the NIC will be able to delegate this stuff soon.
+In the long run, I would think that they would want to do so.
+
+&gt; It should be fairly easy to change authorative
+&gt; servers but i don't think one would want to do it more than once a
+&gt; week.
+I think I have a relatively stable situation planned from the start.
+	
+Thanks again for the tips and thanks also to Kevin Dunlap for helping
+to clear up my confusion.
+
+				Kirk Smith
+				Purdue Engineering Network
+
+<b>[<a href="?l=namedroppers&m=95837667426620&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426622&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426620&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426625&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

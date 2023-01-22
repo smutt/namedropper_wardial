@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'empty RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926994&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926995&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    empty RR's
+From:       <a href="?a=95837784800006&r=1&w=2">&lt;mar () ATHENA ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-13 17:11:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926996&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926996&q=raw">body</a>]</b>
+
+Hesiod is a service here at Project Athena based on the domain name
+server.  It is used to store user's account info, remote file systems,
+and other configuration information.
+
+We have recently run into a problem where the system which builds the
+masterfile for our zone tried to create an empty RR, i.e.
+
+ 	jlb.grplist     HS      UNSPECA ""
+ 	jruser.grplist  HS      UNSPECA "jruser:9794"
+
+Bind failed to parse this, storing "jruser.grplist" as the
+unspecified-ascii-format value for jlb.grplist.ns.athena.mit.edu.
+I could fix the parser in bind, but it is not clear that this is a
+correct solution.
+
+&gt;From my reading of the RFCs, I didn't see any mention if empty RRs are
+allowed or not.  I suspect that bind may lose in some other places
+with empty records as well, but want to hear what the general
+consensus is on allowing empty records in the first place.
+
+BTW, this empty string was a mistake in our database, but we may yet
+find that we want such things.  For now we are skipping empty records.
+					-Mark
+
+<b>[<a href="?l=namedroppers&m=95837781926994&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926995&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

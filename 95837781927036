@@ -1,0 +1,186 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  RD/RA/AA/chaching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927035&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927037&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927030&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927056&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500027&r=1&w=2">Re:  RD/RA/AA/chaching</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-20 17:52:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927036&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927036&q=raw">body</a>]</b>
+
+    Date: Fri, 20 Nov 87 07:56:24 CST
+    From: solomon@cs.wisc.edu (Marvin Solomon)
+
+    My first reaction to recent discussion about this topic was that people
+    were confusing "non-authoritative" with "useless".  
+
+I'm not confused.  Non-authoritative means that the data may not be
+complete or may be obsolete.  The local telephone book is
+non-authoritative; directory information has the current data.  Useless
+means that having it doesn't do me any good and may do me harm.  A
+Brazilian phonebook won't help me call you.
+
+    On reflection, I realized
+    that real problem is how to deal with negative information, 
+
+Noooo!!!  My real problem is trying to figure out when I have complete
+information, whether or not it is authoritative.  There isn't a
+"complete-information" bit in records, so the best I seem to be able to
+do is overload the "authoritative-answer" bit.
+
+    and decided
+    that the "right" solution is to introduce a new feature for replies:
+    "negative resource records".
+
+Doesn't help.  If I ask somebody for an address record and get one back,
+how do I know there is just the one or if there are three?
+
+    Consider David Plummer's scenario:
+
+Feel free to use my scenario, but please note that you aren't answering
+my questions with it.
+
+    +---------------+
+    | Workstation   |               +---------------+
+    |w/ local cache |&lt;=============&gt;|               |
+    +---------------+               | Site resolver |
+				    |      aka      |
+	    ...                     |Site Nameserver|&lt;===&gt; Big-I Internet
+				    |               |
+    +---------------+       RD-&gt;    |recursion avail|
+    | Workstation   |&lt;=============&gt;|cache for site |
+    |w/ local cache |   &lt;-RA, AA?   +---------------+
+    +---------------+
+
+    To summarize his discussion, he asks whether the authoritative bit
+    should be set in responses by the site resolver to workstations
+	    (1) when the answer is the result of recursion
+	    (2) when the information comes from its cache.
+    He concludes that (1) should be authoritative and considers 3 answers
+    for case (2):
+	    Authoritative
+	    Non-authoritative
+	    Don't use the cache (obviously silly).
+
+    I think the solution is to realize that it isn't the information (RR's)
+    that is authoritative or not; rather, it is the *absence* of RR's.
+It's both, really.
+    That's why the authoritative bit applies to a response, not to an
+    individual RR.  
+So far, so good.
+    If I send an MX query to a server and get back an
+    authoritative response with NOERROR but an empty answer section,
+    I can conclude the name has no MX records.
+Yup.
+    If the answer isn't authoritative,
+    I can't conclude anything about MX records.
+Yup.
+    But if I do get back RR's, I should believe them, authoritative or not.  
+
+You should believe them, but unless authoritative is on, should you
+believe you got all of them?  Suppose the site resolver had 3 records,
+but two of them timed out and the authoritative server didn't answer.
+The site resolver at best can only return the one non-timed-out record.
+You can believe it, but it isn't all the information.
+
+    (The 'authority' concept was not designed to track down and kill
+    bogus information!) 
+
+I would debate both whether or not that was the design, and whether or
+not that should be the design.  Personally, I think if I get
+authoritative data, it should remove RRs that match the same question
+but aren't also represented in the authoritative answer.
+
+    Most cache designs, however, simply cache RR's, losing their grouping
+    into responses, and hence losing negative information.  There have
+    been various proposals lately for "negative caching", but they
+    haven't extended to "negative answers".
+
+Negative answers don't provide for grouping.  They provide for positive
+indications that there is no data.  This looks to be the same as an
+answer of length zero.
+
+    Hence my modest proposal:
+    Provide a way to flag a RR as being "negative", for example
+	    FOO.BAR.EDU MX --NONE--
+    (I don't really mean to use "--NONE--" as a reserved value; some other
+    encoding of negative RR's should be devised.)  Such entries can be
+    entered in a cache in response to *absence* of positive counterparts
+    in an authoritative response, AND CAN BE RETURNED IN ANSWERS.
+
+It looks you are moving the "There is no data" concept from being a
+property of the query to a property of the data.  In the implementation
+I'm working on, I'm putting in the ability to remember that there was no
+answer without having to represent it with data.
+
+    In the above scenario, the site server *never* returns authoritative 
+    responses to the workstations (except for information about local names).
+    However, when it receives the first query about a name not in its cache, it
+    relays the query to an authoritative server, and caches both positive
+    and negative information.  The workstation shouldn't care that
+    it gets non-authoritative responses so long as it gets the information
+    it wants.
+
+The information it wants is complete information.  If a host has three
+addresses, I want all three addresses.  If the site resolver can only give
+me one, I want to know that that is not complete.  If the site resolver
+gives me all three, I want to know that it is complete.  I cannot
+express that with a --NONE-- RR.
+
+    There remains the problem of assigning a time to live to such generated
+    negative RR's.  This problem as been discussed at length in this group,
+    and I have little to add, except to point out that if the authoritative
+    server returns negative RR's, it can assign appropriate TTL's as
+    it chooses.
+
+I agree they are related.  Generally, we all seem to be agreeing that
+the TTL is an attribute of the answer, not the data in the answer.  (The
+lifetime of the data in the authorities and addition fields is another
+issue.)
+
+    Finally, this disussion also helps answer a question posed in another
+    message from David Plummer:  How do we convey the information that
+    a name does not correspond to any host?  My response is another
+    question:  Why would anybody care?  
+
+Because there is a difference between non-existent hosts and unreachable
+hosts.  Some systems want to distinguish between the two.  If a host
+exists but is unreachable, other properties about the host may give me
+leads on who to contact in order to make it be reachable.  Most of the
+DECnet hosts in the world exist but are unreachable because DECnet
+doesn't yet have a widespread geteway system like the Internet does.
+That doesn't mean the host doesn't exist.
+
+    If I want to know whether the
+    name is useful as a mail destination, whether I can connect to it
+    via IP, or whether it is a VAX, I can look for MX, IN A, or HINFO
+    records, respectively.  If I want to know whether I can connect to it
+    at all, I have to look for class=X address rescords for all classes
+    I know or care about.  Wildcard queries help me find out such info
+    from an authoritative server without playing "twenty questions".
+    Negative RR's help me get such info from non-authoritative servers.
+
+I generally agree, and repeat that more complete cache management would
+also allow the same information as negative RRs provided the site
+resolver were allowed to answer authoritatively questions that are exact
+copies of previous questions and the associated answer data hasn't timed
+out.
+
+<b>[<a href="?l=namedroppers&m=95837781927035&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927037&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927030&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927056&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

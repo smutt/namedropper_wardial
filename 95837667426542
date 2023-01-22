@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Domain server WKS (Well Known Services)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426543&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426544&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426541&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426544&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600027&r=1&w=2">Re: Domain server WKS (Well Known Services)</a>
+From:       <a href="?a=95837693200017&r=1&w=2">JDELSIGNORE () BBNF ! BBN ! COM</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-17 15:17:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426542&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426542&q=raw">body</a>]</b>
+
+    
+&gt;The other thing that I noticed is that the root domain server at SRI-NIC.ARPA
+&gt;seems to be returning the wrong information.  Everything looks ok, expect for
+&gt;port 21 (FTP) which comes back as port 20.  I don't think my code is busted,
+&gt;and I was wondering if anyone else noticed this.
+
+Louie,
+
+I noticed the bug you mentioned long ago when modifing the ISI TOPS-20
+Domain Server code for use here at BBN.  The bug is specific to the
+TOPS-20 implementation and is easy to fix.  I thought I mentioned it
+to Paul Mockapetris, but maybe not.  The file &lt;DOMAIN&gt;PPLEGALS.TXT
+contains (among other things) a list of Internet Port numbers.  It
+appears when the file was created, it was simply "copied" from an
+Assigned Numbers RFC that lists port numbers and keywords.  The RFC
+listed the following:
+
+	Decimal	Keyword	Description
+	-------	-------	-----------
+	20	FTP	File Transfer [Default Data]
+	21	FTP	File Transfer [Control]
+
+When the program that builds the binary file from the text file looked
+up the keyword "FTP", it found the first (default Data) and stored
+that in the binary database.
+
+My solution was to change PPLEGALS.TXT and rebuild the database.  The
+change was to modify port 20 to read "FTP-DATA", not just "FTP".  That
+way, the keyword lookup routine will find port 21.  Therefore the lines
+in PPLEGALS.TXT should read:
+
+	20	FTP-DATA
+	21	FTP
+
+Regards,
+John DelSignore.
+
+<b>[<a href="?l=namedroppers&m=95837667426543&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426544&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426541&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426544&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND Nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026885&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026886&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    BIND Nameserver
+From:       <a href="?a=95837785400022&r=1&w=2">bridge2!jjr () Sun ! COM (Janardan Ramesh)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-02 9:45:27</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026887&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026887&q=raw">body</a>]</b>
+
+I have notcied some peculiarities in the domain name server running
+under SUn OS  ver 3.5. When it send back a name server reference
+from the cache, the addtional count is 1, but there are 2 records
+in the additional section (One NS record plus its glue).
+
+I was wondering whether anyone had a later version of the BIND,
+which fixes this problem. I would appreciate information as to 
+where I can find it.
+
+- J. Ramesh
+
+<b>[<a href="?l=namedroppers&m=95837783026885&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026886&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

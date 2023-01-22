@@ -1,0 +1,73 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'What's wrong with this named.db? (digest)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827051&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827056&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    What's wrong with this named.db? (digest)
+From:       <a href="?a=95837817800041&r=1&w=2">Joshua.R.Poulson () cyber ! widener ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-02 18:45:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827046&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827046&q=raw">body</a>]</b>
+
+Well, the results are in.
+
+There were quite a few things wrong with my named.db and I owe thanks to the
+following people:
+
+   kjd@mold.enet.dec.com
+   pvm@venera.isi.edu
+   cricket@winnie.corp.hp.com
+   map@gaak.LCS.MIT.EDU
+   ARIEL@RELAY.PRIME.COM
+   mdb@ESD.3Com.COM
+   dan@sci.ccny.cuny.edu
+
+and one other individual whose mail message was accidentally deleted (sorry).
+
+The new, improved, and operative named.db (for those who are wondering):
+
+$ORIGIN Widener.EDU.
+@          IN    SOA     aixps2.Widener.EDU. jrp.aixps2.Widener.EDU. (
+                         20       ; Serial
+                         3600     ; Refresh
+                         600      ; Retry
+                         3600000  ; Expire
+                         172800 ) ; Minimum
+           IN    NS      aixps2.Widener.EDU.
+aixps2     IN    MX      100   aixps2.Widener.EDU.
+           IN    A       192.55.239.55
+cyber      IN    MX      100   cyber.Widener.EDU.
+           IN    A       192.55.239.13
+
+The changes are numerous:
+
+  #  Addition of a period to the end of the $ORIGIN.
+  #  Addition of "IN" to almost all of the stanzas.
+  #  Addition of a contact for the SOA record.
+  #  A space before the end ')' in the SOA record.
+  #  A much larger minimum for the SOA (not required, but recommended)
+  #  Addition of arguments for MX records.
+
+Thank you everyone.
+
+Special thanks to kjd@mold.enet.dec.com for help with the BIND manual.
+
+--JRP [Now I must fix the named.boot file...]
+
+<b>[<a href="?l=namedroppers&m=95837798827051&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827056&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

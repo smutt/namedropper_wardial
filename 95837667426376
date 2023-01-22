@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Recognizing .arpa or not' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426375&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426377&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426377&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900045&r=1&w=2">Recognizing .arpa or not</a>
+From:       <a href="?a=95837661900001&r=1&w=2">sun!l5!gnu () Berkeley (John Gilmore)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198503">1985-03-12 15:23:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426376&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426376&q=raw">body</a>]</b>
+
+I complained to an Arpanet postmaster about his mailer not recognizing
+the name "sail.arpa".  Here's the response...
+
+------- Forwarded Message
+
+Date: 11 Mar 85  1755 PST
+From: Martin Frost &lt;ME@SU-AI.ARPA&gt;
+Subject: domain names   
+To: sun!l5!gnu@BERKELEY
+
+    For some reason Sail's mailer doesn't know its own name.
+    If you are going to support the alias "sail" you should support
+    it everywhere.  Or wipe it out everywhere.  The current situation is
+    just confusing.
+
+       ----- Transcript of session follows -----
+    &gt;&gt;&gt; RCPT To:&lt;gio@sail.ARPA&gt;
+    &lt;&lt;&lt; 550 I'm not host "SAIL.ARPA", in "RCPT To:&lt;gio@sail.ARPA&gt;"
+    550 gio@sail.arpa... User unknown
+
+To my knowledge, domain names are not yet implemented or required in
+the Internet, so we recognize exactly those versions of our host name
+that are registered with the NIC: SU-AI.ARPA, SU-AI, SAIL, and SUAI.
+
+SAIL.ARPA is not one of these.
+
+------- End of Forwarded Message
+
+Unfortunately when somebody tells me to send to "GIO@SAIL", I have to
+add ".arpa" to get it from MY network into HIS network.  I don't have
+access to any NIC databases to tell me that "SAIL" really means
+"SU-AI.ARPA".
+
+I thought the domain plan was far enough along that everybody on the
+Arpanet had to recognize and strip ".arpa" if they couldn't deal with
+it properly.  Here's a small quote from a "Draft" RFC of a year ago:
+
+RFC DRAFT                                                  February 1984
+Domain Implementation Schedule
+
+Policy Statement
+
+   The names of hosts will be changed to domain style names.  Hosts will
+   begin to use domain style names on 7-Mar-84, and the use of old style
+   names will be completely phased out before 2-May-84.
+
+   This applies to both the ARPA research hosts and the DDN operational
+   hosts.
+
+<b>[<a href="?l=namedroppers&m=95837667426375&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426377&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426377&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Proposal for use of DNS to store RFC 987, etc mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327143&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826848&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327143&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826848&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900007&r=1&w=2">Re: Proposal for use of DNS to store RFC 987, etc mappings</a>
+From:       <a href="?a=95837817400035&r=1&w=2">John Wagner &lt;MAINTCMS () pucc ! PRINCETON ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-25 10:46:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327142&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327142&q=raw">body</a>]</b>
+
+On Wed, 25 Jul 90 02:05:46 -0700 you said:
+&gt;Your point (and Steve's) about synch between RFC987/1148 mappings in DNS
+&gt;and in the necessary TABLES around rthe world for those who do not have
+&gt;DNS access is indeed a well foudned problem and worthy of serious
+&gt;discussion.
+
+&gt;Question:  Is it possible to devise some way to build the TABLES from
+&gt;the DNS records on some regular basis, rather than to just not really
+&gt;try (as seems to be the way we arrived at the current DNS vs NIC-TABLES
+&gt;situation).
+
+&gt;I fear that the only alernative so far advanced it for everyone to use
+&gt;the RFC987 TABLES, and forego use of DNS...\Stef
+
+Will this synchronization problem be any worse than the problem caused
+by having multiple versions of the tables in use worldwide?  My gut
+feeling is that the fewer copies of the table you have to distribute
+the better off you are.  Wasn't the table distribution problem one of
+the justifications for domain name servers?
+
+<b>[<a href="?l=namedroppers&m=95837797327143&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826848&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327143&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826848&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

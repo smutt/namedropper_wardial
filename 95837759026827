@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The true spirit of the domain system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026828&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    The true spirit of the domain system
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198611">1986-11-26 12:25:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026827&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026827&q=raw">body</a>]</b>
+
+As I understand it, the root servers don't have entries for *.BITNET and
+*.CSNET because this is *NOT* in the true spirit of the domain system.
+Domains are supposed to apply to organizations like Universities and
+corporations, not network topologies, which are much more likely to
+change.  Names of the form X.CSNET are a hack which should eventually go
+away.  If we have a University called UFOO which is connected to CSNet,
+the proper approach is to create a domain called UFOO.EDU , and create
+MX entries which forward *.UFOO.EDU to CSNet-Relay.  Yes?
+
+This, anyway, is a strict interpretation of the existing system.  Whether
+this is actually going to be done for BITNET sites as well I don't know.
+That is, the above looks good in principle, but whether people are 
+actually going to sit down and register every organization with a
+BITNET host in the domain tables, I don't know.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026828&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

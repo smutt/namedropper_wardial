@@ -1,0 +1,379 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'A possible DNS problem' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326904&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326906&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    A possible DNS problem
+From:       <a href="?a=95837816800031&r=1&w=2">jkim () NADC ! ARPA (J !  Kim)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-23 15:23:44</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326905&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326905&q=raw">body</a>]</b>
+
+TO: namedroppers
+
+I am trying to attach an ethernet network to our internet host.  We
+currently have an internet connection for one machine.  We will shortly
+be getting a domain of nadc.navy.mil.  The question is can I set up
+this domain and test it before the magic is done on NIC's end to
+approve our domain.  I have a set of named files that I used and failed
+with.  If anyone can see that I have a configuration problem I would
+appreciate it if you could tell me.  My problem is that with these files
+I can only get to the internet.  Attempts to get to the ethernet result
+in messages like "host unknown".  If I move a resolv.conf file in
+that says address 190.200.46.3 is the nameserver then the ethernet
+addresses will work and the internet will respond with "host unknown".
+
+Here is some background on the situation:
+
+Our current address is  NADC.ARPA (26.0.0.24)
+Our nickname is nadc.navy.mil
+We do not currently have a domain that we are an authority for
+
+I had a wild guess on this thing.  Could the problem be that all our 
+addresses are not registered as well as our domain nadc.navy.mil so that
+when we go out to resolve our addresses we can't find a domain of 
+nadc.navy.mil.  I just find it funny that no matter what I changed
+my netstat still showed NADC.ARPA as the address of our imp.
+
+Oh well if you notice anything wrong with my files let me know.  I suspect
+that it is not a problem with the files but a DNS problem.
+
+Jeff
+jkim@nadc.arpa
+
+rc.local
+----------------------------------------------------------------------------
+hostname nalcon.nadc.navy.mil
+
+ifconfig imp0 netmask milnet `hostname`
+ifconfig en0 netmask milnet `hostname`
+ifconfig de0 inet nalcon-gw -trailers up netmask 255.255.0.0 broadcast 190.200.46.3
+ifconfig lo0 localhost
+
+route add `hostname` localhost 0
+
+.
+.
+.
+hostid `hostname`
+----------------------------------------------------------------------------
+
+netstat -i
+----------------------------------------------------------------------------
+Name  Mtu   Network     Address            Ipkts Ierrs    Opkts Oerrs  Coll
+imp0  1006  milnet      NADC.ARPA           3156     0     1447     0     0
+de0   1500  190.200     nalcon              1417     0       80     0     0
+lo0   1536  127         localhost           1848     0     1848     0     0
+----------------------------------------------------------------------------
+
+netstat -r
+----------------------------------------------------------------------------
+Routing tables
+Destination      Gateway            Flags     Refs     Use  Interface
+NADC.ARPA        localhost          UH          2     1855  lo0
+localhost        localhost          UH          0        0  lo0
+136.149.2.4      26.14.0.51         UGHD        0        0  imp0
+129.32           MCLEAN-MB.DDN.MIL  UGD         0       15  imp0
+0.192.33.185     SAAD-GW.ARMY.MIL   UG          1       28  imp0
+0.192.31.147     NUWES-M1-GW.ARPA   UG          0        0  imp0
+0.0.128.202      CSOCNET-1.AF.MIL   UG          0        0  imp0
+0.0.128.190      BELVOIR-GW.ARMY.MI UG          0        0  imp0
+0.0.130.163      CRANE-GW.ARPA      UG          0        0  imp0
+0.192.26.89      JTELS-BEN1-GATEWAY UG          0        0  imp0
+0.192.33.5       CAC.ARPA           UG          0        0  imp0
+0.192.41.246     HQMAC-ASIFICS.AF.M UG          0        0  imp0
+0.192.16.173     NCAD-GW1.ARMY.MIL  UG          0        1  imp0
+0.192.35.88      ADELPHI-IM2.ARMY.M UG          0        0  imp0
+0.192.5.218      ARINC-NET1.AF.MIL  UG          0        0  imp0
+0.0.130.14       NLM-GW.NLM.NIH.GOV UG          0        0  imp0
+192.48.96        MCLEAN-MB.DDN.MIL  UGD         0       29  imp0
+0.192.26.20      NSYPTSMH-POE.ARPA  UG          0        4  imp0
+0.0.128.219      MILNETH.ORNL.GOV   UG          0       75  imp0
+bbn-net-temp     BBN-MILNET-GW2.DDN UG          0        0  imp0
+minet            BBN-MINET-A-GW.ARP UG          0        0  imp0
+0.192.12.100     OODIS01.AF.MIL     UG          0       18  imp0
+0.0.131.5        GRIFFISSNET-GW.AF. UG          0        1  imp0
+umdnet           CAMBRIDGE-MB.DDN.M UGDM        0       69  imp0
+0.192.31.174     CORONA-GW.ARPA     UG          0       13  imp0
+default          RESTON-DCEC-MB.DDN UG          0        0  imp0
+default          MCLEAN-MB.DDN.MIL  UG          0        0  imp0
+190.200          nalcon             U           1       51  de0
+129.33           CAMBRIDGE-MB.DDN.M UGD         0       14  imp0
+192.9.9          MOFFETT-FLD-MB.DDN UGD         0       17  imp0
+129.81           MCLEAN-MB.DDN.MIL  UGD         0       37  imp0
+128.153          MCLEAN-MB.DDN.MIL  UGDM        0        5  imp0
+brlnet5          BRL.MIL            UGD         0       24  imp0
+isi-net          MARINA-DEL-REY-MB. UGD         0       13  imp0
+mit-temp         CAMBRIDGE-MB.DDN.M UGDM        0       24  imp0
+192.35.82        MARINA-DEL-REY-MB. UGDM        0        2  imp0
+arpanet          26.0.0.104         UG          0        0  imp0
+milnet           NADC.ARPA          U           1      630  imp0
+merit            MARINA-DEL-REY-MB. UGDM        0        4  imp0
+129.99           ARC-PSN.ARC.NASA.G UGD         0        2  imp0
+130.43           RESTON-DCEC-MB.DDN UGD         0        1  imp0
+jtels-ben-gw     FTBNHRSN-PBAS-GW.A UG          0        0  imp0
+192.52.195       MOFFETT-FLD-MB.DDN UGD         0      152  imp0
+mit-ai-net       MCLEAN-MB.DDN.MIL  UGD         0       16  imp0
+128.148          MCLEAN-MB.DDN.MIL  UGD         0       90  imp0
+nrl-lan          RESTON-DCEC-MB.DDN UGDM        0       23  imp0
+ornl-msrnet      MILNETH.ORNL.GOV   UG          0        0  imp0
+192.33.4         CAMBRIDGE-MB.DDN.M UGDM        0       59  imp0
+brlnet           BRL.MIL            UGD         0       19  imp0
+brlnet1          BRL.MIL            UGD         0        0  imp0
+128.165          LANL.GOV           UGD         0        0  imp0
+137.29           ARSOCOMVAX.SOCOM.M UGD         0        0  imp0
+130.14           NLM-GW.NLM.NIH.GOV UGD         0        0  imp0
+130.46           DTRC-B1-GW.DT.NAVY UGD         0        0  imp0
+ypg-net-temp     YUMA-GW.ARMY.MIL   UG          0        0  imp0
+ames-net         MOFFETT.MT.DDN.MIL UG          0       20  imp0
+ames-net         ARC-PSN.ARC.NASA.G UGD         0        1  imp0
+brl-subnet       BRL.MIL            UGD         0        0  imp0
+brlnet3          BRL.MIL            UGD         0        2  imp0
+131.239          CAMBRIDGE-MB.DDN.M UGDM        0       17  imp0
+192.31.103       CAMBRIDGE-MB.DDN.M UGDM        0        1  imp0
+132.63           26.14.0.51         UGD         0        4  imp0
+131.63           26.26.0.13         UGD         0       10  imp0
+----------------------------------------------------------------------------
+
+named_dump.db
+----------------------------------------------------------------------------
+; Dumped at Wed Mar 21 21:46:04 1990
+; --- Cache &amp; Data ---
+$ORIGIN .
+ARPA	85581	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900319 1800 300 604800 86400 )
+.	85084	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900319 1800 300 604800 86400 )
+	517090	IN	NS	NIC.DDN.MIL.
+	517090	IN	NS	AOS.BRL.MIL.
+	517090	IN	NS	A.ISI.EDU.
+	517090	IN	NS	GUNTER-ADAM.AF.MIL.
+	517090	IN	NS	C.NYSER.NET.
+	517090	IN	NS	TERP.UMD.EDU.
+	517090	IN	NS	NS.NASA.GOV.
+	86286	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900315 1800 300 604800 86400 )
+mil	85162	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900319 1800 300 604800 86400 )
+	85672	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900312 1800 300 604800 86400 )
+	85620	IN	SOA	NIC.DDN.MIL. HOSTMASTER.NIC.DDN.MIL. (
+		900315 1800 300 604800 86400 )
+$ORIGIN 0.0.26.IN-ADDR.ARPA.
+97	517581	IN	PTR	PAXRIVER.MT.DDN.MIL.
+$ORIGIN 190.IN-ADDR.ARPA.
+200		IN	SOA	nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (
+		10000 10800 3600 3600000 86400 )
+		IN	NS	nalcon.nadc.navy.mil.
+$ORIGIN 46.200.190.IN-ADDR.ARPA.
+1		IN	PTR	devvax1.nadc.navy.mil.
+3		IN	PTR	nalcon.nadc.navy.mil.
+$ORIGIN 35.200.190.IN-ADDR.ARPA.
+2		IN	PTR	promulgate.nadc.navy.mil.
+$ORIGIN 0.127.IN-ADDR.ARPA.
+0		IN	SOA	nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (
+		10000 3600 300 3600000 14400 )
+		IN	NS	nalcon.nadc.navy.mil.
+$ORIGIN 0.0.127.IN-ADDR.ARPA.
+1		IN	PTR	localhost.
+$ORIGIN mil.
+NOSC	517090	IN	NS	TROUT.NOSC.MIL.
+	517090	IN	NS	TRANTOR.UMD.EDU.
+	517090	IN	NS	MANTA.NOSC.MIL.
+	85091	IN	A	26.1.0.3
+	85091	IN	A	132.249.16.12
+	85091	IN	A	128.49.16.7
+$ORIGIN NOSC.mil.
+TROUT	517090	IN	A	26.1.0.3	; 571
+	517090	IN	A	128.49.16.7
+MANTA	517090	IN	A	128.49.16.37
+$ORIGIN AF.mil.
+GUNTER-ADAM	517090	IN	A	26.1.0.13	; 553
+$ORIGIN DDN.mil.
+NIC	517090	IN	A	26.0.0.73	; 736
+	517090	IN	A	10.0.0.51	; 11881
+$ORIGIN navy.mil.
+nadc		IN	SOA	nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (
+		10000 10800 3600 3600000 86400 )
+		IN	NS	nalcon.nadc.navy.mil.
+		IN	MX	10 nalcon.nadc.navy.mil.
+		IN	A	190.200.46.3
+		IN	A	26.0.0.24
+		IN	WKS	26.0.0.24 tcp  echo ftp smtp 26 time domain 127 190
+$ORIGIN BRL.mil.
+AOS	517090	IN	A	128.20.1.2	; 11881
+	517090	IN	A	192.5.25.82	; 582
+$ORIGIN NASA.GOV.
+NS	517090	IN	A	128.102.16.10	; 1526
+	517090	IN	A	192.52.195.10
+$ORIGIN UMD.EDU.
+TERP	517090	IN	A	128.8.10.90	; 1526
+TRANTOR	517090	IN	A	128.8.10.14
+$ORIGIN ISI.EDU.
+A	517090	IN	A	26.3.0.103	; 582
+	517090	IN	A	128.9.0.107	; 9926
+$ORIGIN NYSER.NET.
+C	517090	IN	A	192.33.4.12	; 1272
+; --- Hints ---
+$ORIGIN .
+.	565849	IN	NS	NIC.DDN.MIL.
+	565849	IN	NS	AOS.BRL.MIL.
+	565849	IN	NS	A.ISI.EDU.
+	565849	IN	NS	GUNTER-ADAM.AF.MIL.
+	565849	IN	NS	C.NYSER.NET.
+	565849	IN	NS	TERP.UMD.EDU.
+	565849	IN	NS	NS.NASA.GOV.
+$ORIGIN AF.MIL.
+GUNTER-ADAM	565849	IN	A	26.1.0.13	; 684
+$ORIGIN BRL.MIL.
+AOS	565849	IN	A	128.20.1.2
+	565849	IN	A	192.5.25.82
+$ORIGIN DDN.MIL.
+NIC	565849	IN	A	26.0.0.73	; 1213
+	517090	IN	A	10.0.0.51
+$ORIGIN NASA.GOV.
+NS	565849	IN	A	192.52.195.10
+	517090	IN	A	128.102.16.10
+$ORIGIN UMD.EDU.
+TERP	565849	IN	A	128.8.10.90
+$ORIGIN CUNY.EDU.
+CUNYVM	565849	IN	A	128.228.1.2
+$ORIGIN ISI.EDU.
+A	565849	IN	A	26.3.0.103
+	517090	IN	A	128.9.0.107
+$ORIGIN NYSER.NET.
+C	565849	IN	A	192.33.4.12
+----------------------------------------------------------------------------
+
+named.boot
+----------------------------------------------------------------------------
+;
+;  @(#)named.boot     1.0     (NADC)     88/05/03
+;
+;  This is the boot file for the authoritive master name server
+;  for NADC.NAVY.MIL.  NOTE:  there should be one primary entry for
+;  each SOA record.
+;
+;
+directory    /etc                        
+
+; type    domain                source host/file                backup file
+
+cache     .                     named.cache
+primary   nadc.navy.mil         named.hosts
+primary   200.190.IN-ADDR.ARPA  named.rev
+primary   0.0.127.IN-ADDR.ARPA    named.local
+----------------------------------------------------------------------------
+
+named.local
+----------------------------------------------------------------------------
+;
+; @(#)named.local     1.0     (NADC)     88/05/03
+;
+@       IN      SOA     nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (
+                                1.0     ; Serial
+                                3600    ; Refresh -    1 hour
+                                300     ; Retry   -    5 minutes
+                                3600000 ; Expire  - 1000 hours
+                                14400 ) ; Minimum -    4 hours
+        IN      NS      nalcon.nadc.navy.mil.
+1       IN      PTR     localhost.
+----------------------------------------------------------------------------
+
+named.rev
+----------------------------------------------------------------------------
+;
+; @(#)named.rev     1.0     (NADC)     88/05/03
+;
+@       IN      SOA     nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (                   
+                                1.0     ; Serial
+                                10800   ; Refresh -    3 hours
+                                3600    ; Retry   -    1 hour
+                                3600000 ; Expire  - 1000 hours
+                                86400 ) ; Minimum -   24 hours
+        IN      NS      nalcon.nadc.navy.mil.          
+3.46    IN      PTR     nalcon.nadc.navy.mil.         
+1.46	IN		PTR		devvax1.nadc.navy.mil.
+2.35	IN		PTR		promulgate.nadc.navy.mil.
+----------------------------------------------------------------------------
+
+named.hosts
+----------------------------------------------------------------------------
+;
+; @(#)named.hosts     1.0     (NADC)     88/05/03
+;
+; Authoritative data for NADC.NAVY.MIL                             
+;
+@               IN      SOA     nalcon.nadc.navy.mil. sys.nalcon.nadc.navy.mil. (                   
+                                1.0     ; Serial
+                                10800   ; Refresh -    3 hours
+                                3600    ; Retry   -    1 hour
+                                3600000 ; Expire  - 1000 hours
+                                86400 ) ; Minimum -   24 hours
+                IN      NS          nalcon.nadc.navy.mil.
+                IN      MX          10 nalcon
+                IN      A           190.200.46.3
+                IN      A           26.0.0.24
+                IN      WKS         26.0.0.24  TCP  (telnet ftp smtp echo
+                                                      domain finger)
+                IN      WKS         26.0.0.24  UDP  (echo time tftp)
+localhost       IN      A           127.1
+nalcon          IN      A           190.200.46.3
+                IN      HINFO       VAX-11/780 UNIX
+                IN      WKS         190.200.46.3 TCP  (telnet ftp smtp echo
+                                                      domain finger)
+                IN      WKS         190.200.46.3 UDP  (echo time tftp)
+                IN      A           26.0.0.24
+                IN      WKS         26.0.0.24  TCP  (telnet ftp smtp echo
+                                                      domain finger)
+                IN      WKS         26.0.0.24  UDP  (echo time tftp)
+nadc			IN		CNAME		nalcon
+nalcon-gw		IN		CNAME		nalcon
+devvax1			IN		A			190.200.46.1
+                IN      HINFO       VAX-11/780 UNIX
+promulgate		IN		A			190.200.35.2
+----------------------------------------------------------------------------
+
+hosts
+----------------------------------------------------------------------------
+#
+# Host Database
+# This file should contain the addresses and aliases
+# for local hosts that share this file.
+# It is used only for "ifconfig" and other operations
+# before the nameserver is started.
+#
+# Choose a distinguished local network address for localhost.
+#
+127.0.0.1		localhost
+#
+26.0.0.24       nalcon nalcon.nadc.navy.mil
+190.200.46.3	nalcon-gw
+26.0.0.73		sri-nic.arpa sri-nic
+26.0.0.105		sac-milnet-gw.arpa sac-milnet-gw milsac
+26.0.0.104		dcec-milnet-gw.arpa dcec-milnet-gw mildcec
+26.0.0.103		milnet-gw.isi.edu isi-milnet-gw.arpa milisi
+26.2.0.73		sri-milnet-gw.arpa sri-milnet-gw milsri
+26.0.0.106		arpa-milnet-gw.arpa arpa-milnet-gw milarpa
+26.2.0.49		bbn-milnet-gw.arpa bbn-milnet-gw milbbn
+190.200.46.1    devvax1 devvax1.nadc.navy.mil
+190.200.35.2	promulgate  promulgate.nadc.navy.mil
+----------------------------------------------------------------------------
+
+<b>[<a href="?l=namedroppers&m=95837797326904&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326906&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

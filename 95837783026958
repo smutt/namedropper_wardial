@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Zone refresh and retry times' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026961&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026962&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026956&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400014&r=1&w=2">re: Zone refresh and retry times</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-12 18:44:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026958&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026958&q=raw">body</a>]</b>
+
+
+&gt; It sounds to me that there is an implementation (not protocol) bug to
+&gt; which you are particularly sensitive because of your role in backing up
+&gt; a lot of zones.  I can understand how for your situation you might want
+&gt; to restrict data values to ameliorate the pain you feel (until BIND is
+&gt; fixed), but it still doesn't sound to me like good advice for the
+&gt; general case.
+
+    Right -- I don't there's anything wrong with the protocol per se,
+and I'm sympathetic to the argument that BIND doesn't do this as well
+as one might like.
+
+    On the other hand, I do think there's an issue of how often you expect
+your backup server to check up on you.  I think calling it an implementation
+bug is overstating the case.  At some point, any implementation will hit a
+limit.  Perhaps JEEVES can stand having its primary servers hitting it every
+5 minutes but what if everyone made the refresh time 5 seconds?  We need
+some sort of agreement about how hard you push your backup servers.  As
+a large backup site, I'm pushing for people to be nice to their (shared)
+backup domain server.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837783026961&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026962&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026956&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

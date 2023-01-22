@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How to create /etc/hosts from zone' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827123&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827125&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827125&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500015&r=1&w=2">Re: How to create /etc/hosts from zone</a>
+From:       <a href="?a=95837818200010&r=1&w=2">usc!zaphod.mps.ohio-state.edu!know!pluto.hemel.bull.co.uk!pmoore () ucsd ! edu  (Paul</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-16 17:52:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827124&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827124&q=raw">body</a>]</b>
+
+sloey@ssd.kodak.com (Jim Sloey (253-7956)) writes:
+
+&gt;In article &lt;1990Nov15.185211.876@hemel.bull.co.uk&gt; pmoore@hemel.bull.co.uk (Paul Moore) writes:
+&gt;&gt;another possibility (ie resolving the problem of keeping hosts for stupid
+&gt;&gt;systems and needing a named database) is to keep the /etc/hosts as the
+&gt;&gt;master a use a utility to generate the named database from it.        
+
+&gt;I tried this for a while about 3 years ago, but found there was no way to
+&gt;keep MX, WKS, and HINFO fields updated without forcing structured comments
+&gt;into the host file. 
+The hp utility checks for the existance and $include files in the directory
+that it is building in (it looks for &lt;domain&gt;.spcl) that allow me to put
+MX records for major routes, include cnames etc. MX records for individual
+machines are genertaed automatically if you want. HINFO - good point!
+I still find it easier to keep a hosts files up to date (maybe I'm getting
+old!).
+
+<b>[<a href="?l=namedroppers&m=95837798827123&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827125&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827125&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

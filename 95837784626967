@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How to have a domain and a cname with the same name' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626966&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626968&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626966&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200006&r=1&w=2">Re: How to have a domain and a cname with the same name</a>
+From:       <a href="?a=95837786400009&r=1&w=2">Bob Stodola &lt;STODOLA () fccc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198907">1989-07-16 21:12:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626967&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626967&q=raw">body</a>]</b>
+
+Roy Smith writes...
+
+&gt;                               It would be convenient to have people on
+&gt;the outside simply send to person@phri.nyu.edu and have phri.nyu.edu be a
+&gt;nickname for phri.phri.nyu.edu, but I can't seem to figure out any way to
+&gt;do that.
+
+We had the same problem.  Our solution was to name a specific machine
+fccc.edu and then include a cname record for its old name (ampere.rm.fccc.edu)
+to point to that.  We picked a special IP address which would **ALWAYS**
+be fccc.edu, and got it in the NIC's host tables.  If we ever "shift our flag",
+we intend to renumber the existing fccc.edu to a new number and give the new
+"fccc.edu" the number reserved for it.  We found it a lot easier to make
+changes internally than to convince the rest of the net outside of the DNS
+to do so.
+
+<b>[<a href="?l=namedroppers&m=95837784626966&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626968&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626966&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

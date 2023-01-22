@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Maybe every host should have an MX record' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926971&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926973&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926971&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500005&r=1&w=2">Re: Maybe every host should have an MX record</a>
+From:       <a href="?a=95837784800014&r=1&w=2">Rudy.Nedved () H ! GP ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-01 17:53:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926972&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926972&q=raw">body</a>]</b>
+
+
+I would rather see the more effective solution of negative cacheing being used
+then hacks that increase the amount of data you have to manage and don't
+really solve the problem.
+
+Negative cacheing wins many times over for the end user especially in the
+current fragile Internet which is not doing too well in the reliability
+area because of congestion, routing screw ups and outages. It goes under
+the section in the latest domain RFC of running with what you got. Of course
+it contradicts the section that says the source of the information controls
+the lifetime of the information....if you obey the latter and lose
+connectivity....your service level drops significantly.
+
+Maybe the domain system people believe the Internet should be as reliable as
+the old Bell system and it will happen soon...if that is the case they should
+change their beliefs....it is not going to happen that soon...the subtle
+complexities of networking are very slowly spreading in the Internet world --
+look at debate between token ring and base band, at the confusion with MAP and
+the lack of compatability and completeness with the ISO protocols. A large
+number of the people involved in these issues are using TCP/IP and they
+still don't understand TCP/IP issues.
+
+The experience level gained by many people that have implemented and maintain
+parts of the domain system should now be used to design and implement the next
+generation of the domain system protocol and it should be happening now.  It
+is possible that the reason that this is not happening is because of fear that
+a new version would divide the people moving to the domain system and create
+confusion. With a global view, this is probably very true but if the next
+generation protocol is in developement and in the radical change
+stage...vendors and other software suppliers will not bother with using the
+protocol until people start recomending and demanding its usage...and the
+developers can control that.
+
+For the duration, a hack should be designed and documented for negative
+cacheing. First level hack, would be to have everyone to pick 12 hours or some
+value to use for a negative TTL.  Second level hack would be to either add an
+RR that gives a negative TTL or to add a bit to the header in the request that
+says an extended domain header is allowed to be sent back with a negative TTL
+before the QDCOUNT field. Overall, the domain system design goals should be
+made less contradictory and a new protocol should be designed based on the
+goals. A frank analysis of current and future internet expectations should
+be included with time frames and should include expectations for networks
+like BITNET and UUCP.
+
+We need the hack now for negative cacheing....let us pick a value and move
+on with learning about this first generation domain system. Believing that
+the first release of a system is the last is fatal.
+
+Cheers,
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837781926971&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926973&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926971&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

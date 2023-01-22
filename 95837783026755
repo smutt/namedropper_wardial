@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Problems with Australia' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927107&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026757&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026757&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700019&r=1&w=2">Problems with Australia</a>
+From:       <a href="?a=95837785200008&r=1&w=2">steve () cs ! umd ! edu (Steven D !  Miller)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198801">1988-01-04 9:15:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026755&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026755&q=raw">body</a>]</b>
+
+   I have one real and one (possibly) imagined problem when doing queries
+on things in the AU domain.  First, it was my impression that somewhere
+Out There, there was a box advertising a MX record like:
+
+	*.au.	IN	MX	10 uunet.uu.net.
+
+   If there's no record like this, that's liveable as far as I'm concerned.
+However, in poking about trying to find someone reasonable (like the person
+listed in the SOA record for AU), I found a query loop.  The nameservers for
+AU are supposedly ucbvax.berkeley.edu and seismo.css.gov.  If I ask ucbvax
+to give me the SOA record for AU, it refers me back to the root.  The same
+thing happens if I do a MX query.  If I do an ANY query, I get NOERROR,
+but no answers.  I'd ask seismo, but their network seems to be unreachable
+at the moment.
+
+   I have a sneaking suspicion that either ucbvax's nameserver needs a
+good swift kick, or that it's not supposed to be serving AU.  Does someone
+know the real truth?
+
+   Thanks.
+
+	-Steve
+
+Spoken: Steve Miller    Domain: steve@mimsy.umd.edu    UUCP: uunet!mimsy!steve
+Phone: +1-301-454-1516  USPS: UMIACS, Univ. of Maryland, College Park, MD 20742
+
+<b>[<a href="?l=namedroppers&m=95837781927107&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026757&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026757&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

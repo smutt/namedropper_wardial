@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'DOMAIN IETF MEETING?   TYPE OF SERVICE for DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626791&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626792&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626789&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700020&r=1&w=2">DOMAIN IETF MEETING?   TYPE OF SERVICE for DNS?</a>
+From:       <a href="?a=95837786000002&r=1&w=2">sollins () dill ! LCS ! MIT ! EDU (Karen R !  Sollins)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-27 13:07:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626790&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626790&q=raw">body</a>]</b>
+
+
+  Since the domain
+  system is (modulo a few rough edges) readily extensible to new QTYPEs
+  and QCLASSes, adding things such as ISO addresses shouldn't be too hard.
+  ISO names would be more problematic, though.  The set of allowable names
+  would have to be restricted to those that can be represented in the
+  hierarchical fashion that the domain system requires.
+
+I suspect that this would be fairly unsatisfactory.  Although X.500
+provides a hierarchy, each component of a full path name consists of a
+set of attributes.  This is an important aspect of X.500 and is the
+basis of much of its interesting and flexible functionality.
+
+  	In some circles, thought has been given to the opposite
+  approach, replacing the current domain system with X.500.  I believe
+  that Dave Clark's people at MIT are looking at whether this would be
+  feasible.  Unfortunately, full implementation of the X.500 spec is still
+  beyond the current state of the art in computer science .
+
+There are in fact a number of fairly complete implementations
+underway, most notably Steve Kille's Quipu project at UCL.  In
+addition, an incomplete list of other implementors includes Retix, U.
+of British Columbia, MIT (me), NIST, Wollongong, one or more in Italy
+(I'm not sure of the organizations there), KDD (Japan)...
+
+The real problem with saying that an implementation of X.500 is
+complete is that the spec is incomplete, so implementations must amke
+assumptions, which unless carefully designed will conflict with the
+assumptions made in other implementations, preventing interworking
+among them.
+
+			Karen
+
+<b>[<a href="?l=namedroppers&m=95837784626791&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626792&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626789&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

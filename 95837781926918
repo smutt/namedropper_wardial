@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Zone transfer security' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926919&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926915&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926923&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000024&r=1&w=2">Zone transfer security</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-10 16:31:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926918&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926918&q=raw">body</a>]</b>
+
+    Date: Thursday, 10 September 1987  12:49-EDT
+    From: lazear@gateway.mitre.org
+
+    Is it totally a local matter to decide if a real secondary server
+    is the one requesting a zone transfer?  Does anyone use the
+    secondary (name) server RR to check against requests (i.e., have
+    some automated security related to the authoritative database?
+
+Gee, and here I thought that it was a perfectly reasonable thing for a
+totally unknown machine to ask for a zone transfer, presumably because
+said requestor wants to cut down on the amount of UDP query traffic.
+Of course, the server administrator is permitted to cause requests to
+be rejected if there's some good reason, but I certainly don't think
+that the default should be to refuse transfers to everybody but your
+secondary servers.
+
+Eg, for the LCS.MIT.EDU machines I maintain, an awful lot of the mail
+traffic is to hosts in a small number of zones (a few universities, a
+few MIT spinoff companies, the other zones at MIT).  I see no reason
+why I shouldn't be able to cut daytime network load by doing zone
+transfers of these zones during the wee hours (SOA parameters
+permitting).  Of course there will be cases where one needs updates
+faster than once per day, but I suspect these cases are in the
+minority.  Such a scheme is not only beneficial to the machine
+requesting the transfers, it also helps batch the network overhead
+associated with the domain system to a time when the network and most
+hosts aren't as loaded.
+
+I would not advise this with the current bind architecture, but bind
+can be fixed, and (contrary to popular opinion) bind isn't the only
+program playing the domain game.
+
+Sorry, Walt, I know this isn't really what you meant, but the
+implications of your question seemed to be headed in the wrong
+direction.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926919&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926915&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926923&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Network names via DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326896&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326897&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326896&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326897&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200002&r=1&w=2">Re: Network names via DNS</a>
+From:       <a href="?a=91213931500004&r=1&w=2">Paul Mockapetris &lt;pvm () ISI ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-15 10:07:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326898&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326898&q=raw">body</a>]</b>
+
+The point is that the code will have nothing to look up unless
+somebody puts the data there.
+
+My view of what RFC1101 should have done was to have a NIC-created
+database which served as either a backstop or an initial database
+which would be delegated away a la IN-ADDR.ARPA.
+
+The folks at the meeting were adamant that the data be in the already
+allocated IN-ADDR.ARPA name space so that no new domains need be
+created.  Of course, the NIC wasn't thrilled by a new job to do.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837797326896&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326897&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326896&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326897&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Philosophical question - summary of responses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827077&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827080&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re: Philosophical question - summary of responses
+From:       <a href="?a=95837818000019&r=1&w=2">davy () erg ! sri ! com</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-29 16:41:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827078&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827078&q=raw">body</a>]</b>
+
+
+The question was:
+
+	Should there be an A record for a domain name itself?
+
+Out of 26 responses, 17 said "yes", 7 said "no", and 2 were ambivalent.
+
+Some of the arguments/reasons were:
+
+PRO:
+
+- It's the machine which will accept mail for the entire domain, plus will
+  accept FTP and TELNET connections.
+
+- Providing an A RR for the domain lets people with mailers that don't
+  understand MX records still send mail to you.
+
+CON:
+
+- The lookup of the PTR record for this address won't match what you get
+  via a forward lookup.  [Well, it will give you the proper hostname of
+  the machine instead of the domain name, but it's not like that's a
+  *wrong* answer.]
+
+OTHER COMMENTS RECEIVED:
+
+- No real reason to do it unless you hide hosts in the domain.  (I.e.,
+  send all mail as "From: user@domain" instead of "From: user@host.domain").
+
+- A newer convention than FTP to the domain name is to have a CNAME
+  for a host called "ftp" which points at the FTP host (e.g.
+  <a href="ftp://ftp.uu.net" rel="nofollow">ftp.uu.net</a>).
+
+- Ohio State has 4 A RRs for their domain name; each identifies one of
+  the central servers.  [As I understand it, NFS and such make these
+  machines all equivalent as far as network connections, FTP, etc. go.]
+
+- Some people made arguments based on whether there's actually a
+  machine with that name.  If so, then yes.  If not, then no.  [This
+  seemed like sort of a weird argument to me - names are whatever you
+  want them to be.]
+
+- A CNAME record for the domain is never appropriate.
+
+Thanks for all the responses.  I've decided that at least for our domain,
+having an A record for the domain name is the Right Thing to do.
+
+--Dave Curry
+SRI International
+
+<b>[<a href="?l=namedroppers&m=95837798827077&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827080&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

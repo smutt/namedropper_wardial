@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Question about authoritive answers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326920&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326922&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Question about authoritive answers
+From:       <a href="?a=95837816800042&r=1&w=2">zaphod.mps.ohio-state.edu!unix.cis.pitt.edu!dsinc!dsinc.DSI.COM!syd () tut ! cis ! ohio</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-05 13:18:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326921&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326921&q=raw">body</a>]</b>
+
+I have a question:
+
+   I run bind 4.8 and am administrator for dsi.com, I been wondering
+what is an authoritive answer?
+
+   I have the SOA records in my database for dsi.com, yet when I query
+the name server for myself, I get back a non-authoritive answer.
+Thinking, perhaps I have a bad database setup, I tried changing
+the server I was quering to several others including phlsun.prepnet.com
+and uunet.uu.net, and in each case queried itself about itself.  In each
+case I got back a non-authoritive answer.
+
+So, what is an authoritive answer and when should bind return one?
+When should a bind request demand one, an how?
+
+Please respond by e-mail, and I will summarize to the net.
+-- 
+=====================================================================
+Sydney S. Weinstein, CDP, CCP                   Elm Coordinator
+Datacomp Systems, Inc.                          Voice: (215) 947-9900
+syd@DSI.COM or bpa!dsinc!syd                    FAX:   (215) 938-0235
+
+<b>[<a href="?l=namedroppers&m=95837797326920&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326922&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

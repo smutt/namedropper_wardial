@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Subnetting and RFC 1101' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827098&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827101&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827101&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500012&r=1&w=2">Subnetting and RFC 1101</a>
+From:       <a href="?a=95837818000039&r=1&w=2">naucse!root () arizona ! edu  (Paul Balyoz)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-07 21:59:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827099&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827099&q=raw">body</a>]</b>
+
+
+I have a few questions on Subnetting (and domains) for anyone out there:
+
+Is it legal to use an address for a NETWORK such that the subnet portion
+is all zeroes?  For example, suppose that the class-B address 134.114
+has been assigned to you, and you use 8-bit subnetting (netmask
+is 255.255.255.0).  Does this mean that 134.114.0 can be used as a
+legal subnetwork, which can have hosts assigned below it (134.114.0.23),
+or must there be a non-zero value for the subnet portion (3rd octet)?
+
+How about 255 for the 3rd octet?  Seems like this should be OK,
+because your broadcast address would be 134.114.255.255, which,
+with the aforementioned netmask, is only broadcast for the network
+134.114.255 .
+
+			     ----------
+
+If this is legal, then I see a problem with the extensions described
+by RFC 1101.  Suppose addresses 134.114 are subnetted 255.255.255.0,
+but then subnet 134.114.0 is subnetted FURTHER: netmask 255.255.255.248!
+
+Both of those networks would have the SAME HOST-ZERO ADDRESS(!):
+
+		0.0.114.134.in-addr.arpa.
+
+They therefore cannot be described separately in the Domain Name Server
+resource-records, the way RFC 1101 says to do it.
+
+
+Facts/ideas/opinions, anyone?
+
+-- 
+Paul Balyoz, Software Specialist II    pab@naucse.cse.nau.edu
+Northern Arizona University            root@naucse.cse.nau.edu
+PO Box 15600, Flagstaff, AZ 86011      pab%naucse@arizona.edu
+NICname for whois: PB1                 ...arizona!naucse!pab
+
+<b>[<a href="?l=namedroppers&m=95837798827098&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827101&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827101&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

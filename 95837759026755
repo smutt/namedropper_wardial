@@ -1,0 +1,76 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  partially qualified names...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026754&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026756&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300034&r=1&w=2">Re:  partially qualified names...</a>
+From:       <a href="?a=95837784000007&r=1&w=2">mark () cbpavo ! cbosgd ! ATT ! COM (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-08 10:37:18</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026755&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026755&q=raw">body</a>]</b>
+
+&gt; Here we go with envelopes versus messages.  The presentation of the
+&gt; envelope should be under control of the user agent program.  If we
+&gt; believe that the across-the-net syntax is independent of the user
+&gt; interface, then we need strong statements that users should never see
+&gt; raw envelope data -- some agent should be turning it into
+&gt; human-comprenensible form.  If that means reversing the ends, adding a
+&gt; rooting character, or whatever, then so be it.
+&gt; 
+&gt; If we believe that there will never be real user interfaces, then we had
+&gt; best redesign the net format to be person-friendly.
+
+This is the philosophy taken by X.400, that the user interface can be
+whatever the implementor likes.  I don't buy that philosophy.
+
+The problem is that there needs to be a standard way for a human to
+write down a mailing address.  People will exchange mailing addresses
+via inband means (within the bodies of their mail) and by other media
+(business cards, pieces of paper, viewgraphs, etc.)  People also will
+want to exchange mailing lists.  Everything gets very confused if there
+is no standard syntax for doing this.
+
+The following is an actual signature found in message.  It is an
+example of the sort of thing that evolves when there are no standards
+(or too many standards.) Let's not adopt positions that encourge this
+sort of thing!
+
+	Mark
+
+--- enclosure follows
+
+Daniel M. Rosenblum, Ph.D. candidate,
+School of Urban and Public Affairs (SUPA), Carnegie-Mellon University
+
+CCnet (DECnet): DR01@CMCCTE or DR01@TE.CC.CMU.EDU or DR01@CMCCTE.#DECnet
+                CMSPVX::SPPHDR01 (VAX DECNET only)
+ARPAnet (Internet): DR01@TE.CC.CMU.EDU
+CSnet: DR01%TE.CC.CMU.EDU@CSNET-RELAY
+Mailnet: DR01%TE.CC.CMU.EDU@CARNEGIE.MAILNET
+BITnet: DR01%TE.CC.CMU.EDU@CU20B or DR01%TE.CC.CMU.EDU@CU20B.CCNET or
+        DR01@CMCCTE or DR01@CMCCTE.CCNET or DR01%TE.CC.CMU.EDU@WISCVM.
+           /seismo \   /"DR01@TE.CC.CMU.EDU"\
+uucp: ...!&lt; harvard &gt;!&lt;                      &gt;
+           \ucbvax /   \ TE.CC.CMU.EDU!DR01 /
+PaperNet: School of Urban and Public Affairs / Carnegie-Mellon University /
+          Schenley Park / Pittsburgh, PA  15213.
+SoundNet: (412)-268-2185
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026754&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026756&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026751&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

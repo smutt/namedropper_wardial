@@ -1,0 +1,63 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: domainmaster' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026771&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026772&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026769&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026774&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500004&r=1&w=2">Re: domainmaster</a>
+From:       <a href="?a=95837784000007&r=1&w=2">mark () cbpavo ! cbosgd ! ATT ! COM (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-18 20:28:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026773&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026773&q=raw">body</a>]</b>
+
+Just a reminder that the SOA field is not sufficient, although it
+may be a good start.  There are two fundamental problems.
+
+(1) I don't know of any RFC that requires all TCP/IP hosts supporting
+electronic mail to have a user interface command that will query a
+nameserver and print out this value.  This suggests that most will
+not have such a command.  This means the ordinary user has no way
+to get the information.
+
+(2) This one is more serious.  All the world's not the ARPANET.  There
+are lots of people who are not on the ARPA Internet and cannot query
+the appropriate nameserver to get the information.  There are also lots
+of zones which are subzones of parents that are not on the ARPA Internet,
+and so have no SOA record in which to place the information.  For example,
+if UUCP Zone domain ATT.COM allocates a subdomain cbosgd.ATT.COM, there
+is no place on the ARPA Internet where cbosgd.ATT.COM has a nameserver
+record whose SOA you can query.  (Nor should there be; the whole point
+of the tree structure is that ATT.COM can delegate the administration of
+its subdomains as it sees fit, without registering all its internal
+details on the Internet.)  ATT.COM, being a UUCP zone domain, has an MX
+record that says that all mail for *.ATT.COM gets sent via a mail forwarder.
+
+I think the "domainmaster" idea is a much better fit, although I'd prefer
+to see a shorter name.  (System V UNIX has trouble with names longer than
+8 characters, and "postmaster" isn't being widely implemented, partly
+because it's hard to do on a vanilla system.)  I suggest "registry" as
+one possible name, or "domains".
+
+One problem that would have to be solved is that all domains would have
+to support mail to them, even if they don't have hosts.  For example,
+"domainmaster@com" or "domainmaster@arpa" or "domainmaster@." would
+have to somehow be handled.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837759026771&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026772&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026769&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026774&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

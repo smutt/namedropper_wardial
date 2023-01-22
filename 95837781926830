@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'reserved names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926828&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926826&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926827&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800020&r=1&w=2">reserved names</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-13 10:06:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926830&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926830&q=raw">body</a>]</b>
+
+    Date: Sun, 12 Apr 87 22:03:56 MDT
+    From: lepreau@cs.utah.edu (Jay Lepreau)
+
+    Gee, sounds real simple, but I hope I'm not around on THAT flag day.
+
+    However, if the Internet went to rooted names, as several people pushed
+    for long ago, and which is still possible, a transition could be made.
+    Or just stay with rooted names, for then their parsing would not be
+    ambiguous.
+
+Thank you!!!  I admit to being partly responsible for the
+big-ender/little-ender discussion, but I'm not responsible for the lack
+of separation of two VERY DIFFERENT ideas: endedness, and rootedness.
+[Unlike MRC, I do have strong opinions about endedness, but it's obvious
+to me that we have to deal with one issue at a time, else they get
+tangled up.]  As I said last August, and which you repeat, the
+transition can be made.  Given these six addresses, without any
+knowledge of where they came from, which can be unambiguously parsed?
+	UK.ISI.EDU
+	.UK.ISI.EDU
+	UK.ISI.EDU.
+	EDU.ISI.UK
+	.EDU.ISI.UK
+	EDU.ISI.UK.
+?  Only the ones that are explicitly rooted.  In fact, you could allow
+BOTH endians in the presented representation (and maybe in the
+intermediate in-network representation, but I would discourage that).
+
+<b>[<a href="?l=namedroppers&m=95837781926826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926828&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926826&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926827&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

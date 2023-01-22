@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826922&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826925&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826918&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826920&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-08 14:55:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826917&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826917&q=raw">body</a>]</b>
+
+   From: dfk@mcsun.UUCP  (Daniel Karrenberg)
+
+   thorinn@DIKU.DK (Lars Henrik Mathiesen) writes:
+
+   &gt;Since the only way to get from Internet to Janet seems to be through
+	      ^^^^
+-----------------------------------------------------^^^^^
+   &gt;nsfnet-relay, and its only DNS name seems to be nsfnet-relay.ac.uk,
+   &gt;which is not a legal Internet host name either, we might as well use
+   &gt;the %-free form until such time as the Janet might decide to have
+--------------------^^^^^^^^^^^^^^^
+   &gt;their gateways follow Internet rules on the Internet side.
+	  ^^^^^^^^
+
+   You contradict yourself.
+If it must come to nitpicking: Actually not, because even if Janet had
+only one gateway now, it might get more before it got the naming
+matters straightened out.
+
+   Assuming that there is only one route is almost always wrong and
+   *always* shortsighted. In this case it is both.
+Note the ``seems''. I just checked with the DNS server for UK; if we
+assume Janet == ac.uk (I don't know if this is strictly true) then
+nearly all hosts on Janet which are not themselves connected to the
+Internet have a single MX record pointing to nsfnet-relay.ac.uk. (The
+single exception is buckingham.ac.uk which also MX'es mcsun.eu.net).
+
+Of course, many of these hosts may be reachable through UUCP, EAN,
+EARN, BITNET or other paths, but _there_is_no_mechanism_ that allows
+such routes to be found from the domain name of the hosts. In that
+sense, it is true that the only gateway from the Internet to Janet is
+nsfnet-relay.ac.uk.
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcsun!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837798826922&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826925&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826918&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826920&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

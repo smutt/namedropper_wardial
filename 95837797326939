@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Appending domain names to FQDNs' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326937&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326938&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Appending domain names to FQDNs
+From:       <a href="?a=95837817000012&r=1&w=2">usc!samsung!umich!terminator!terminator.cc.umich.edu!bryan () ucsd ! edu  (Bryan Beec</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-11 18:06:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326939&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326939&q=raw">body</a>]</b>
+
+In article &lt;ANG.90Apr11115530@mockingbird.lcs.mit.edu&gt; ang@theory.lcs.mit.edu (William S. Ang) writes:
+&gt;
+&gt;I have the same problem with resolver appending domain names to fullly
+&gt;qualified hostname.  Anybody has fix for this problem?  Will this be
+&gt;fixed in 4.1?
+
+Yes.  One of the changes I've made to the resolver library we use
+at U-M is to use the count of the number of dots in the name (which
+is already computed in res_search().  If there are two or more dots,
+we FIRST use the name as it is; and if this fails, then we domain
+extend.
+
+This can lead to unexpected results:  if I'm in domain d.e.f and
+I telnet to a.b.c, I will try to connect to a.b.c first, not
+a.b.c.d.e.f, and so if I really wanted to go to the latter and
+the former exists, the wrong thing happens.  In practice here
+this case seems to be the exception rather than the rule, and
+this small change has drastically cut down in the number of
+queries our nameservers handle every day (by maybe about 33%).
+
+The change is a small one in res_search() in res_query.c:
+
+	for (cp = name, n = 0; *cp; cp++)
+		if (*cp == '.')
+			n++;
+	if (n == 0 &amp;&amp; (cp = hostalias(name)))
+		return (res_query(cp, class, type, answer, anslen));
+|	else if (n &gt; 1) {
+|		ret = res_query(name, class, type, answer, anslen);
+|		if (ret &gt; 0)
+|			return (ret);
+|	}
+--
+Bryan Beecher, U-M Information Technology Division  (+1 313 747 4050)
+Domain:	bryan@terminator.cc.umich.edu  Path: mailrus!terminator!bryan
+
+<b>[<a href="?l=namedroppers&m=95837797326937&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326938&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

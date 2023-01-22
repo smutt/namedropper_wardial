@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mail from unregistered hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026701&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026704&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026704&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300014&r=1&w=2">Mail from unregistered hosts</a>
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198605">1986-05-06 11:27:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026702&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026702&q=raw">body</a>]</b>
+
+I think this topic is relevant to namedroppers rather than just to bind,
+where the discussion began.  The topic is: how should workstations which
+are not registered in HOSTS.TXT format their mail return-addresses so
+MILNET hosts can reply to them.  I.E., should they use
+
+		user%workstation@nic-registered-host
+	or	user@nic-registered-host
+	or	user@workstation
+
+First let me note that this topic is also relevant now for Arpanet
+hosts which are not running domain servers (which I imagine is still
+the majority).  
+
+And in fact there are several issues bound up here.  What do we do
+UNTIL Arpanet hosts are all supposed to be running domain servers?
+What do we do AFTER Arpanet hosts are all supposed to be running
+domain servers?  And should workstations deal with this problem differently
+than other nosts not registered in the NIC table, since perhaps
+people "don't really want to receive mail at their workstations"?
+
+So note there are three times of interest:
+	Now
+	When Arpanet hosts "all" have to run domain servers
+	When Milnet hosts "all" have to run domain servers
+
+Do we want the mail programs on every non-registered host changed at
+all three of these times?  Sounds like a lot of effort to me.
+
+One possible view is the following: it seems crazy to go and create
+this elaborate domain system and them try and circumvent it for a long 
+time because a few MILNET hosts don't use domain servers.  Perhaps
+we should ignore them.  This is probably largely a question of politics,
+but the numbers should also be of interest, i.g., we wouldn't worry if
+there were only 2 MILNET hosts.  I count roughly 370 of them (excluding
+TACs).  I wonder how many non-NIC-registered Internet hosts there are;
+does anyone have a clue?
+
+I won't suggest a technical solution, because in fact I think all
+of the above addresses are reasonable.  However, I will suggest the
+following:
+
+In order to reduce the approaching chaos, I suggest that the community
+adopt the following convention.  Consider an organization whose hosts
+are named within some domain, e.g., for Stanford it's  Stanford.EDU .
+This organization should have a host named  Stanford.EDU  which is
+registered with the NIC and which runs domain servers and can
+forward mail to every host within its domain.  This way, if all else
+fails some poor soul who can't automatically reply to
+buddy-holly.Stanford.EDU  can easily hand-craft a reply to  Stanford.EDU
+without having to spend a lot of time trying to figure out the name of
+some host within the  Stanford.EDU  domain which is both NIC-registered
+and can forward to buddy-holly  (e.g.,  Score.Stanford.EDU). 
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026701&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026704&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026704&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

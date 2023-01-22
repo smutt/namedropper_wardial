@@ -1,0 +1,140 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'My ten favorite domain server lossages' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426574&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426575&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426578&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600044&r=1&w=2">My ten favorite domain server lossages</a>
+From:       <a href="?a=95837693400024&r=1&w=2">MOCKAPETRIS () USC-ISIC ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-29 18:16:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426576&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426576&q=raw">body</a>]</b>
+
+In the course of debugging my resolver, I have found that a number of
+servers are responding in ways that range from mildly distasteful to
+downright antisocial.  I realize that the organizations running the
+servers may be mere accesories and not directly to blame, but rather the
+server writers or those who compose vague domain specs.  Hence, I
+appologize to the named ones, particularly those who have fixed the
+problems already.
+
+The top ten:
+
+1) The serial field of the SOA RR for a domain is supposed to be a
+continuously increasing (mod 2**32) value which denotes the version of
+the database.  The idea is that you can tell that a zone has changed by
+comparing serial numbers.
+
+Suspects: I haven't found any values greater than 1, which either means
+that we have seen remarkable stability, or else that nobody is playing
+the game by the rules.
+
+2) If a node has a CNAME RR, it isn't supposed to have any other RRs.
+This makes reasonable caching possible.
+
+Suspects: Too numerous to mention.
+
+3) If you send a query to a host with multiple addresses, it is supposed
+to respond from the address receiving the query.
+
+Suspects: Several, but RICE.EDU is the most interesting.  If you ask the
+NIC for RICE.EDU, it says that servers are RICE.EDU at 192.5.58.6 and
+PENDRAGON.PURDUE.EDU at 192.5.48.5. Fine.  Ask RICE.EDU, using
+192.5.58.6, for all information for RICE.EDU, and you get a message back
+from 128.42.3.2.  This address doesn't correspond to either data at
+RICE.EDU or the delegation from the root servers such as the NIC.
+
+4) If you use the IN-ADDR tree to get a host name corresponding to a
+Internet address, you are supposed to get a pointer (PTR) RR to the
+primary name of the host, not a list of aliases or whatever.
+
+Suspects: Several, for example the mysterious 128.42.3.2 from the
+previous item.
+
+5) Making up data.  For example, there are lots of servers who return
+RRs for the root servers with 99999999 in the TTL.  Some return RRs that
+suggest that ISIF is a root server.  (It was months ago, but is no
+longer.  I use it for testing.  I haven't updated its database since I
+started using it for testing.)
+
+One of the main ideas of the domain system is that everybody can get a
+chunk of the name space to manage as they choose.  However, you aren't
+supposed to lie about other parts of the name space.  Its OK to remember
+about other parts of the name space for caching or other purposes, but
+you are supposed to follow the TTL rules.
+
+
+Now it may be that you put such records in your server or whatever to
+ensure a server of last resort etc.  I suppose that's fine.  But if you
+export these in answers to queries, you should be shot.  These entries
+get put in caches and never die.
+
+Suspects: all BINDs.
+
+Suggested domain meta-rule:
+
+	If you must lie, lie to yourself.
+
+6) Backup servers which don't backup.  The rules say that your database
+should be available from redundant servers.  If you only have one
+computer, you can find a buddy, and back each other up.  But you don't
+just find the name of a buddy, you are also supposed to actually back
+each other up.
+
+7) All RRs with the same name, class, and type should have the same
+TTL.  The logic here is that all of them will timeout simultaneously if
+cached and hence the cache can be reliably used for QTYPES which don't
+match multiple types.
+
+Suspects: DECWRL.DEC.COM, GODOT.THINK.COM, LABREA.STANFORD.EDU for type=a
+	  Many others.
+
+8) Delegation information should be consistent at all of the delegator
+and delegatee zones.  For example, XXX delegates to ZZZ.XXX, the XXX
+and ZZZ.XXX servers should have identical lists of NS RRs for ZZZ.XX.
+Ideally, they should have the same TTLs.
+
+Suspects: RICE.EDU, BERKELEY.EDU and many others
+
+9) The domain system is supposed to preserve case, but be case
+insensitive.  However, it does nobody any good to put both RRs for
+domain name xxx and XXX in the data base - It merely makes caching
+ambiguous and decreases the efficiency of compression.  This consistency
+should also exist in the duplicate RRs that mark delegation in the
+delegator and delegatee.  For example, if you ask the NIC to delegate
+UZOO.EDU to you, your database shouldn't say uzoo.edu.
+
+Suspects: ucbvax.berkeley.edu, UCBVAX.BERKELEY.EDU
+
+10) Don't use aliases where they only can cause trouble.  For example,
+if you use a NS RR to mark delegation, use the primary name of the
+server in the RR rather than the alias - all you are doing is slowing
+resolvers down.  Similarly, don't use both the alias and the primary
+name.
+
+Suspects: If you ask ucbarpa.berkeley.edu about the BERKELEY.EDU zone,
+	  it will tell you that there are authoritative servers known
+	  as ucb-vax.berkeley.edu, ucbvax.berkeley.edu and
+	  ucbarpa.berkeley.edu itself.  The first two appear to be the
+	  same host ( or should be if they aren't.)
+
+
+paul
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426574&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426575&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426578&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

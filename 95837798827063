@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: compression in new DNS RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827062&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827064&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827061&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827064&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300031&r=1&w=2">re: compression in new DNS RR's</a>
+From:       <a href="?a=95837817600010&r=1&w=2">Robert Ullmann &lt;ARIEL () RELAY ! Prime ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-19 17:42:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827063&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827063&q=raw">body</a>]</b>
+
+Hi,
+
+I would think that compression must not be used for the
+RR data for any RRs &gt;= 16 (i.e. not in the RFC1035 set).
+
+My DNS implementation does not compress the RT referenced
+name. It also ran into serious trouble when I first collected
+"real" AFSDB RR's from the co-author's system; my DNS is a
+combined server/caching-server/resolver.
+
+There is a basic design problem in DNS here: if your system's
+resolver doesn't understand an RR format, your application
+can't use it if the RR data contains a compressed name.
+(using a general block-data LZ77 compression rather than
+the ad-hoc method would have been Real Neat. :-)
+
+I conclude that effectively:
+
+    DNS implementations MUST NOT compress names in the
+    data part of RR types which are not in the basic set
+    that MUST be implemented. (i.e. &lt;= 16 at this time.)
+    Owner names MAY (SHOULD) be compressed in any RR.
+
+The "basic set" that is required for internet hosts might
+be increased at some future date, but for now it is de facto
+defined by RFC 1035.
+
+Bind (in.named) seems to "solve" this problem by discarding
+RRs of types it doesn't understand during the receipt of
+zone transfers; none of the secondaries for PRIME.COM seem
+to have the X25 and RT RRs that RELAY.PRIME.COM has. Does
+anyone know if this observation is valid?
+
+Best Regards,
+Robert Ullmann
++1 508 620 2800 x1736
+
+<b>[<a href="?l=namedroppers&m=95837798827062&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827064&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827061&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827064&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

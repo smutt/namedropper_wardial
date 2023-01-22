@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DOMAIN IETF MEETING? TYPE OF SERVICE for DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626790&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626793&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626788&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700021&r=1&w=2">Re: DOMAIN IETF MEETING? TYPE OF SERVICE for DNS?</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-27 14:25:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626792&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626792&q=raw">body</a>]</b>
+
+The main problem is that X.500 is analogous to a 20 foot cube of fine
+marble.  Its proponents claim that it is made out of magnificent
+material, has great potential, and contains a work of art superior to
+Michelangelo's David.  Its critics see only a cube, sometimes in the
+middle of the road.
+
+In less abstract terms, while the specification and prototype
+implementations you mention do have impressive features and capabilities
+for data types, etc., you also have a "user-friendly" names that are not
+user-friendly to type, at least one prototype implementation that does
+not implement multiple name servers, and a distributed database
+specification which does not use its own services to keep track of
+redundant copies and/or database distribution information.  Of course,
+other implementations are already better, and missing features can be
+added.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837784626790&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626793&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626788&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

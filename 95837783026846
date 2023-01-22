@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domains and mail' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026845&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026847&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026845&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200010&r=1&w=2">domains and mail</a>
+From:       <a href="?a=95229988400016&r=1&w=2">Barry Margolin &lt;barmar () Think ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-15 11:56:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026846&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026846&q=raw">body</a>]</b>
+
+    Date: Thu, 14 Apr 88 20:06:45 PDT
+    From: Peter Karp &lt;KARP@sumex-aim.stanford.edu&gt;
+
+    This is a bit of a hack but we might consider taking advantage of
+    the almost-redundancy in the message header fields reply-to/from.
+
+    The idea is to put an MX'd domain in one and a host table domain in
+    the other.  For example, every piece of mail coming out of Berkeley
+    might have the header:
+
+	    From:  user%hidden-host@ucbvax.berkeley.edu
+	    Reply-to:  user@berkeley.edu
+
+    A receiving host which supports domains would simply reply to the
+    address in the Reply-to field.  A receiving host which doesn't use
+    domains would try to use the address in the Reply-to field, find itself
+    unable to resolve the hostname, then (hopefully) try the address in
+    the From field and succeed.
+
+    I realize this is a somewhat twisted interpretatin of rfc822, and
+    that perhaps some mailers wouldn't be smart enough to try From if
+    Reply-to failed.
+
+    Peter
+    -------
+
+I think this is very unlikely to work.  I think most mail-reading
+applications simply copy the appropriate addresses into the reply,
+without actually trying to resolve them.  By the time the message is
+handed off to the mail delivery service the information about the
+original message is gone, so would not be easy to revert to the From
+field.  If someone were going to go through the trouble of implementing
+the above, they might as well just implement domain support instead.
+
+                                                barmar
+
+<b>[<a href="?l=namedroppers&m=95837783026845&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026847&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026845&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

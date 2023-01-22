@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'"Be liberal in what you accept."  --  AI.MIT.EDU' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026861&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026863&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026803&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700032&r=1&w=2">"Be liberal in what you accept."  --  AI.MIT.EDU</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-21 12:55:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026862&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026862&q=raw">body</a>]</b>
+
+    Date: Tue, 23 Feb 88 20:46 EST
+    From: Chris Lindblad &lt;CJL@REAGAN.AI.MIT.EDU&gt;
+
+	Date: Mon, 8 Feb 88 12:53 EST
+	From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+
+	...
+
+	Assuming MIT isn't going to get more recent domain code on their
+	machines, how should I kludge my code to know to expect this lossage and
+	deal with it appropriately?  Should I use the part of the answer they
+	gave me (without the NS records)?  That doesn't quite work because the
+	authoritative bit isn't set.  Should I special case MIT as losing and
+	pretend it gives authoritative no-answer messages?  I'd like to be
+	liberal in what I accept, but I can't figure out how to do it.  (Fixing
+	the machines at MIT would be better, of course.)
+
+
+    We just yesterday installed a new version of the nameserver on our machines,
+    Berkeley UNIX bind version 4.7.3, that is supposed to work better.  It would
+    be interesting to know if it fixes the problems that you have pointed out.  We
+    have very little understanding of how the program works, and are trying real
+    hard to stay out of the hacking-of-somebody-elses-domain-code buisness.
+    Originally we were going to wait for the official "released' version of bind,
+    but it always seems to be just a few weeks away, so we gave up and just went
+    ahead and installed the beta test version.
+
+MIT: Sorry for the delay in cleaning out my mailbox.  Whatever is
+running at MIT now (on alpha-bits, wheaties and grapenuts) is correctly
+answering the questions that barfed before on PREP, HERMES and
+HEPHASTEUS(sp?).  Thanks.
+
+Namedroppers: The general question is still open: If I find other
+machines that barf on :start-of-authority and :name-server records,
+what should I do?
+
+<b>[<a href="?l=namedroppers&m=95837783026861&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026863&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026803&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

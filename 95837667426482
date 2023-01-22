@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Query on fate of host nicknames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426481&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426483&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426484&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100039&r=1&w=2">Query on fate of host nicknames</a>
+From:       <a href="?a=95837692300001&r=1&w=2">Rich Wales &lt;wales () UCLA-LOCUS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-25 13:48:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426482&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426482&q=raw">body</a>]</b>
+
+I assume the following statements are true.  If they aren't, I hope
+someone knowledgeable will speak up and correct my misconceptions.
+
+(1) I assume the deadlines in RFC921 are still good (July 15 for conver-
+    sion to the domain data base system; September 15 for phaseout of
+    the NIC host name table).
+
+(2) In those cases where hosts have new domain names in addition to the
+    old ".ARPA" names (e.g., "LOCUS.UCLA.EDU" and "UCLA-LOCUS.ARPA"), I
+    assume that both names will exist in the domain data base, at least
+    for a while (probably by having the ".ARPA" name entry be a CNAME RR
+    pointing to the new domain name entry).
+
+    Assuming the above is true, how long will the extra ".ARPA" names
+    be retained in the data base?
+
+(3) I assume that the non-domain "nicknames" currently in the host name
+    table will NOT be entered into the domain data base.  (This would
+    include all the old "official names" without the ".ARPA" suffix --
+    such as "UCLA-LOCUS".)
+
+    Hence, after July 15, I assume that no host will be either required
+    or expected to recognize or accept any non-domain "nickname" for any
+    host -- since such nicknames will not be in the domain data base.
+
+    In particular, I assume that if any host continues after July 15 to
+    use one of its old non-domain "nicknames" (such as the obsolete
+    ".ARPA"-less form of its name) in the return addresses ("From:"
+    lines) of mail it generates, the users of that host may not reason-
+    ably expect anyone else to be able to reply to their mail any more.
+
+    Assuming the above is true, is the NIC planning to take all of the
+    non-domain "nicknames" out of the host name table after July 15 --
+    leaving only the new domain names and the ".ARPA" names?
+
+-- Rich
+
+<b>[<a href="?l=namedroppers&m=95837667426481&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426483&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426484&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

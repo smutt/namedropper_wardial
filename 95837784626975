@@ -1,0 +1,39 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'a friendly query' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626974&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626976&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626977&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200014&r=1&w=2">a friendly query</a>
+From:       <a href="?a=95837786400016&r=1&w=2">bermgr%fwvg.span () Sds ! Sdsc ! Edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198907">1989-07-27 1:01:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626975&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626975&q=raw">body</a>]</b>
+
+Hi, I was told that someone on this mail group would be able to help me with
+a name server question.
+
+I have written a name server for VMS which runs with the CMU/TEK TCP/IP package.
+I need to know what the proper (most friendly?) response is to a query for
+type A records do a domain for which I am an authority but only have MX records
+for (i.e., it is not directly connected to the network).
+
+Thanks,
+Mark Berryman
+
+<b>[<a href="?l=namedroppers&m=95837784626974&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626976&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626977&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

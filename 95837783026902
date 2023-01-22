@@ -1,0 +1,123 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'more on attribute-based naming' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026903&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026906&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026904&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200027&r=1&w=2">more on attribute-based naming</a>
+From:       <a href="?a=95837784000018&r=1&w=2">"Larry Peterson" &lt;llp () arizona ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-16 9:42:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026902&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026902&q=raw">body</a>]</b>
+
+
+Thanks to Chris Moore for sending me the most recent X.500
+literature. The information I had on X.500 was piecemeal and
+out of date; I didn't want to make any comparisons with our
+effort based on it. Now that I've had a chance to read the
+new documentation, I think I can fairly represent the basic
+design ideas and point out where our two efforts differ. My
+comments are very much at the "big picture" level.
+
+MODELS: The two systems are based on different underlying models.
+Without going into a lot of detail, I see two basic issues.
+
+    (1) The X.500 model imposes a hierarchy on all objects, with
+	a few relational database properties sprinkled in. (The
+	relational database aspects of X.500 are not clear to me,
+	but claimed "out-of-band".) Operationally, X.500's global
+	tree is partitioned into name servers, not unlike the
+	domain system. In contrast, our model provides for a network
+	of independent name servers, each of which supports a logic
+	database view of the world. The objects within a given name
+	server are defined in a flat space and the relationship
+	between name servers is weaker than that in X.500.
+
+    (2) The X.500 model supports a combination of "search" and 
+	"list"	operations that allow clients to "browse" though 
+	the hierarchy. Clients are also	free to compose "filters"
+	that express one or more conditions that an entry must
+	satisfy in order to be returned. (This is about all that
+	was said about filters.) Rather than off-loading the
+	responsibility for composing filters to the client,
+	understanding and writing useful filters (we call them
+	resolution functions) is at the heart of our model: The
+	client asks that a particular resolution function be
+	applied to an "attribute-based name" (an unordered list
+	of attributes). This function basically	turns the attribute-
+	based name into a database query and solves it. One way of
+	looking at this is that we essentially define a new "query
+	language".
+
+Having pointed out these differences in the underlying models,
+I have no doubt that it is possible for X.500 to do everything
+we do, and vise versa.  The important point, at least from my
+perspective, is that our system has the right model for a certain
+set of problems and X.500 has the right model for another set of
+problems. (I can't say precisely what these two sets are, but
+I'm convinced they are not identical.) That leads me to my
+second major point...
+
+GOALS: I see the basic design goals of the two systems as being
+fundamentally different.  While this point is mostly conjecture,
+it is consistent with what people working on X.500 and X.400 say.
+Specifically,...
+
+     1) X.500 is an improved X.400, and	X.400 is a slightly more
+	flexible alternative to the domain system. (Question: Does
+	X.400 go away when X.500 is in place?) In other words, X.500's
+	primary objective is to support unambiguous "distinguished
+	names", and its secondary objective is to allow the user to 
+	browse the hierarchy when he has incomplete information. In
+	contrast, our position is that the domain system (and X.400
+	for that matter) already give us unambiguous names. We have
+	therefore adopted a model for the attribute-based system that 
+	is not constrained by the need to support distinguished names.
+
+     2) X.500 is currently tailored towards naming users, while we've
+	pretty much given the "yellow-pages" problem equal billing with
+	the "white-pages" problem. I admit that we have not pushed
+	either "color" as far as X.500 has pushed its solution to
+	naming users, but this is because we haven't been willing
+	to sacrifice our ability to name any one kind of object for
+	the sake of some other. (Again, I haven't been privy to any
+	X.500 discussions, so it is possible that the yellow-pages
+	problem has received more attention than is evident in the
+	documentation.)
+
+EXTERNAL FORCES: The external factors influencing the two systems are 
+different. As Steve Kille noted in his recent message:
+
+	"...There was a real requirement to produce a standard for
+	the CCITT 1988 deadline..."
+
+In contrast, our first priority is to do research and we all know
+that several interesting problems remain. Our second priority is 
+to "checkpoint" the underlying model of attribute-based naming in 
+the form of a protocol and an example implementation (i.e., the RFC). 
+That checkpoint does not have the clout of an ISO standard, but it
+will serve two useful purposes: (1) it will provide the scientific
+community with an extremely valuable service, and (2) it will provide
+a general and common research vehicle for myself and others to use
+to address the remaining problems. This last point is what makes
+any differences in the models and design goals, whether or not one
+can "work around them", so important.
+
+Larry
+
+<b>[<a href="?l=namedroppers&m=95837783026903&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026906&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026904&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

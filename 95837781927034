@@ -1,0 +1,162 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'mail' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927038&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927035&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927027&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927035&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=89189178200001&r=1&w=2">mail</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-20 17:26:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927034&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927034&q=raw">body</a>]</b>
+
+    Date: Thu, 19 Nov 87 10:31:54 PST
+    From: Peter Karp &lt;KARP@SUMEX-AIM.STANFORD.EDU&gt;
+
+    Before we get mired down in the bits, let's give an explicit statement
+    of the design goals for mail naming.  
+
+I'm game.  I assume these are design goals if we were allowed to start
+from scratch; not necessarily what the goals were that caused the
+current designs.  I notice that of the 7 issues you list, only one of
+them, the first, is directly about naming.  2 and 7 are about
+performance, 3 is about delivery and robustness, 4 is about
+functionality, 5 is about robustness and 6 is about economics.  I'm
+willing to talk about all these mailing issues instead of just naming.
+
+    I'm not familiar with an exhaustive
+    list of the goals people are trying to address, so it's sometimes hard
+    to tell what goal someone is trying to address in a given message.  I
+    wonder if we can agree on the goals, much less the design!
+
+    Here are the goals I can think of:
+
+0) Ability to address a person.  (As Karen Sollins pointed out, this
+moves the problem of uniquely naming a maildrop and ensuring the mailbox
+is unique at the maildrop (in the mailbox@maildrop syntax) to that of
+uniquely naming a person.
+
+    1) Ability to address a person at an organization without having to know
+    what machine they actually have an account on.  So if I know David
+    Plummer works at Symbolics I should be able to address mail to him at
+    Symbolics.COM without having to remember how to spell the name of his
+    LispM.
+
+I agree with this goal.  For people, it is a backup to addressing the
+person as a person.  It is also valid for addressing mail to non-people
+and/or mailing lists.  Nit: You don't deliver mail to my LispM anyway,
+you deliver it to a mailbox on another machine.  Look at the difference
+between the From: field, the Message-ID field, and the physical path.
+My LispM then reads it from that mailbox.  (My previous machine was
+called KOYAANISQATSI.  You wouldn't have liked remembering that name!)
+
+    2) Ability to minimize network and cpu resources required to deliver a
+    msg by remotely determining the binding of a valid mail name (e.g.
+    Plummer@Symbolics.COM) with the ultimate intended destination of a msg
+    sent to that mail name (Plummer's LispM).  The alternative is to simply
+    send the mail through Symbolics.COM and have it forward the mail to
+    Plummer's LispM.
+
+I agree that the ability would be nice.  I disagree it is necessary or
+desired, and I think history has some things to learn.  First, you may
+not have direct connectivity to the destination.  Even today we see a
+lot of % signs and ! that still do explicit mail routing.  It is
+possible for you to send mail to several of our customers, but it might
+be impossible for you to deliver it because they are connected with
+phone lines.  This is true by using domain name syntax and without %s
+and !s.  Finally there is the issue of all at once vs in jumps.  Both
+the US post office and the telephone company do things in jumps.  Using
+the post office example, if I send you a letter the post office isn'g
+toing to drive a car from my home in Cambridge, MA to yours in Menlo
+Park, CA.  Instead, the letter goes to a Cambridge post office, to
+Boston, to Logan Airport, to (probably SF airport), and then refining
+the target until it gets to your home.
+
+    3) Ability to specify multiple mail gateways between the Internet and
+    other networks, e.g. to specify that mail to any subdomain of Apple.COM
+    should be forwarded through FOO.COM.  As Bill Nowicki points out such
+    gateways could actually bridge parts of the Internet which have been
+    rendered non-connected at the IP (or EGP or whatever) level.  My
+    impression is that this issue is a lot more complicated than people have
+    thought because it's not at all clear how the gateway machine knows that
+    it's the gateway.  Does it only use information which is globally
+    available in the domain system, or does it have to be hardwired with
+    special information?  The latter seems very tricky, the former
+    potentially ugly unless it's done right.  I don't believe that MX
+    records handle this case correctly, although I confess I haven't read
+    that RFC very carefully.
+
+I agree that one syntax should let us send mail to inside of Apple.  I
+think MX records with some level of * declaring (e.g., it may require
+having *.Apple.COM *.*.Apple.COM *.*.*.Apple.COM *.*.*.*.Apple.COM, etc)
+currently allow this.  However, this raises another issue: is the name
+database that the rest of the Internet sees the same as the name
+database for what applications inside Apple see?  At least two cases:
+ 1  Does Apple also see the *.*.Apple.COM MX records?  If so, how do
+    they avoid mail loops which might be caused by continually sending
+    the mail to the same place the Internet folk do?
+ 2  Does Apple has some more explicit records that override the default
+    * records?  I think the answer is 'yes' and this answers the first
+    case.  But does the rest of the Internet see those records?  If so,
+    won't that confuse the Internet mailers into thinking they can send
+    direct instead of using the FOO.COM gateway?  If not, are we forever
+    resticted from being able to do anything other than mail with Apple?
+My guess is that Apple chooses how much data the rest of us sees, and
+arranges for enough data to be present on machines we can talk to.
+
+    4) Ability for a user to send mail from a host that won't receive mail,
+    yet to receive replies and error messages correctly.  It's not clear
+    to me that the domain system should handle this rather than a combination 
+    of RFCs 822 and 821 (munging the mail header and return path).
+
+Given the proliferation of workstations, this is becoming more and more
+of an issue.  I'm using such a workstation right now.  I'm not sure a
+naming system should be responsible for this.  I don't think the mailers
+should automatically invert the return path.  I think it is more proper
+for the mail composition program to provide a valid From: field that can
+be inverted (which is what various mail reading programs do for
+replying).  If the From: field can't be inverted, it might be better to
+seek human intervention than to try to do a physical return path.
+
+    5) Mail loops are to be avoided.
+
+"A mechanism to detect mail loops is needed."
+
+    6) Economic factors in delivery of a message should be expressable
+    within the system (e.g., local phone calls vs long distance).
+
+Which part of the system?  I can think of at least three places, and I'm
+not sure what the data would look like.  The three places are mail
+composition (human has control), delivery to ultimate target (can
+determine cost, modulo perhaps packet routing), and handing off to a
+forwarding mailer.
+
+    7) We should be able to validate a mail name in real time.  And more
+    generally, the Internet doesn't have the performance for complex
+    solutions.  We shouldn't have to query a dozen name servers and run wild
+    goose chases around the entire continent to deliver every lousy piece of
+    mail.
+
+There are two goals here in my eyes.  One is to validate a mail name in
+real/reasonable time.  The second is to allow for that validation to be
+cached so that performance doesn't go down the tubes.  I agree with both
+of those goals.
+
+    More suggestions?
+
+<b>[<a href="?l=namedroppers&m=95837781927038&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927035&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927027&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927035&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

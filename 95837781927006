@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: mail and what wildcards are for' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927002&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927002&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927004&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500019&r=1&w=2">re: mail and what wildcards are for</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-16 16:28:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927006&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927006&q=raw">body</a>]</b>
+
+    Date: Mon, 16 Nov 87 15:46:05 -0500
+    From: Craig Partridge &lt;craig@NNSC.NSF.NET&gt;
+
+    I'm afraid I'm confused here.  We can do what you want with MX plus
+    wildcards.
+
+Not really, but it's a little hard to explain why.  It mostly has to do
+with "Names don't mean anything.  Names name objects.  Objects mean
+something."  Maybe it's because I'm opposed to associating data (e.g., MX
+records) with names.  I associate data with objects and therefore there
+is no such thing as data which is associated with wildcard names.
+
+Turning the tables, do you agree that my scheme can also work?  Do you
+have any opinion on whether my scheme is any closer to reality?  (I'm
+not sure whether I want to try to persuade people based on closeness to
+reality.)
+
+	...
+    MX was designed (admittedly by committee) to allow you to generate
+    just about any mail routing behavior you desire.  It seems to me (in
+    my admittedly biased opinion) you are ragging on a mechanism that actually
+    works.
+
+The reason I'm ragging on the mechanism (which I admit works, and which
+you admit requires wildcards to work) is that I'm really ragging on the
+design behind the mechanism.  That may be where your confusion is.  It
+doesn't allow any behavior I want.  It allows the behavior that says:
+  "Use the MX record if it exists, else use the host address."
+It's simplistic and wildcarded data allows it to work.  I can imagine
+that the two major groups inside SCRC.Symbolics.COM (the people who use
+the released version of the system and the developers using the
+development version) might want to be in separate sites with separate
+mail servers.  Since we are both in the zone named SCRC.Symbolics.COM we
+either have to put MX records on each machine name, or live with the
+fact that half the mail will flow through the wrong machine (the one the
+default MX record points to).  I /cannot/ get the mail routing behavior
+I desire with wildcards.  I can get it by adding records, but I can do
+that in my scheme too.  My scheme also allows a reasonable thing to
+happen: ask the site what mail servers to use.
+
+<b>[<a href="?l=namedroppers&m=95837781927002&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927002&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927004&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mail Gateways and MX RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026661&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026661&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800044&r=1&w=2">Mail Gateways and MX RR's</a>
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-26 18:03:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026659&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026659&q=raw">body</a>]</b>
+
+
+    Pardon me for submitting this to two lists, but it looks like
+this may never have reached header-people (it has been 21 hours -- which
+is a bit long) and recent correspondence with some people suggests that
+it might be more appropriate on namedroppers (since it is fundamentally
+a domain problem).  If people disagree we can redirect discussion to
+the appropriate group.
+
+Craig
+
+------- Forwarded Message
+
+To: header-people@mc.lcs.mit.edu
+Subject: Mail Gateways
+Date: Tue, 25 Feb 86 15:42:42 -0500
+From: Craig Partridge &lt;craig@loki.bbn.com&gt;
+
+
+    I recently found myself wrestling with a mail related problem
+which I thought people on this list might (1) find interesting and
+(2) possibly shed new light on.  The problem is complex, and doesn't
+explain well without examples, so bear with me....
+
+    As some of you may know it looks as if, in addition to the Internet
+and CSNET, some substantial subset of the UUCP network and BITNET will
+convert to using domain names.  To make things more complicated, it
+also looks as if each of the physical networks (Internet, CSNET, UUCP
+and BITNET) will probably use slightly different systems for resolving
+domain names (UUCP will probably use tables on each machine, CSNET
+will at least partially relay on tables maintained on CSNET-RELAY along
+with the Internet domain database, etc.).  As a result, we are no
+longer going to be able to route mail based on names (.UUCP and .CSNET)
+or even format ('!' vs '%' or '@').
+
+    Having set up my stage, here's the basic problem.  There are several
+hosts which offer gateway service between the different mail networks.
+For example CSNET-RELAY (aka RELAY.CS.NET) between CSNET and the Internet,
+and SEISMO.CSS.GOV between UUCP and the Internet.  How are these gateways
+to decide how to route mail to a host, if that host is on more than
+one administrative network?
+
+    For example, imagine A.ATT.COM (a phoney host name).  ATT.COM is/will
+be on both CSNET and UUCP, and thus A.ATT.COM can be reached through
+either network.  Now I am on LOKI.BBN.COM, an Internet host, and
+mail to JOE@A.ATT.COM.  My mailer, since I am only on the Internet,
+queries the domain database and finds the following information (which
+is purely hypothetical -- I do not know which way ATT may choose
+to route their mail):
+
+    ; mail thru RELAY preferred over SEISMO
+    *.ATT.COM.	IN	MX	10	RELAY.CS.NET.   ; CSNET relay
+    *.ATT.COM.	IN	MX	20	SEISMO.CSS.GOV. ; UUCP gateway
+
+it tries to deliver to RELAY and fails and passes the message instead
+of SEISMO.  Now what is SEISMO supposed to do?  It is on the Internet,
+so it could wait for RELAY (the preferred Internet relay) to come up
+and then pass the message on to RELAY, or since it is on UUCP along
+with ATT, SEISMO can choose to send the message via UUCP.  Which
+is SEISMO expected to do?  I'm sort of inclined to say it sends to
+ATT via UUCP, despite the fact this may surprise people on the Internet.
+In other words, once mail reaches a gateway host it is considered to
+have crossed into the new network (if that makes sense).
+
+    But there are odd problems with this system.  What happens to mail
+for ATT originating on SEISMO.  SEISMO is an Internet host, and the
+domain system indicates that given their druthers, ATT would like Internet
+mail routed via CSNET.  Should SEISMO send to RELAY.CS.NET? 
+
+    More generally, the system suggests that mail within an administrative
+domain will tend to stay there. Mail originating within CSNET and destined
+for a host which is both on CSNET and UUCP, will stay within CSNET.  The
+CSNET relay, having been conditioned to believe that mail sent to it is
+destined for CSNET will not consult the Internet domain database for
+information about hosts it knows how to reach.
+
+    Does this feel like the right way to do things at the gateways?
+Has anyone got better suggestions?  Let me point out one small restriction
+here for those who have better ideas -- some mail systems split apart
+the functions of receiving and sending mail -- so it is highly likely
+that at the time the CSNET relay (or some other mail gateway) is 
+deciding where to send a message, it probably no longer knows from
+what network the message came in from (particularly if the names in
+the headers no longer convey this information).  So any scheme which
+says "if it comes in from this net, try to send it out the other net"
+probably doesn't work.
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh or craig@sh.cs.net (CSNET)
+craig@loki.bbn.com (ARPA)
+
+------- End of Forwarded Message
+
+<b>[<a href="?l=namedroppers&m=95837759026661&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026661&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

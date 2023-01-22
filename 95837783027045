@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Nameservers with incomplete information about a zone' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027044&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626770&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626770&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700014&r=1&w=2">Nameservers with incomplete information about a zone</a>
+From:       <a href="?a=95837785800032&r=1&w=2">Bruce Orchard &lt;Bruce.Orchard () scarecrow ! waisman ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198812">1988-12-30 3:18:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027045&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027045&q=raw">body</a>]</b>
+
+I have seen cases where a domain name server that was pointed to by an
+NS resource record does not have the full information about the zone.
+I think this is not allowed by RFC's 1034 and 1035.  They say that an
+NS resource record points to an authoritative server for a zone and
+that an authoritative server has complete information about the zone.
+
+That a server does not have complete information about a zone can be
+seen by doing a request to the server with no recursion requested.
+Then the server will respond to queries for which the information is
+not in its cache with a referral to a list of servers.  The list of
+servers may include the server itself.
+
+Bruce Orchard
+University of Wisconsin-Madison
+
+<b>[<a href="?l=namedroppers&m=95837783027044&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626770&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626770&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

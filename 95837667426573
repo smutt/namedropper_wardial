@@ -1,0 +1,76 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Wildcarding and Domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426572&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426574&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426574&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600043&r=1&w=2">Wildcarding and Domains</a>
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-29 14:32:05</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426573&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426573&q=raw">body</a>]</b>
+
+
+    We have recently received a request from Israel (domain IL) to
+be one of their nameservers.  In addition they have asked us to provide
+a somewhat special service, which has caused some mild debate
+here, and we thought we would consult the interested parties on
+the net for your views.
+
+    The domain IL is expect to eventually contain several hundred
+hosts (it currently has between 50 and 100), which are
+accessible only for mail.  Most of those hosts are accessed via
+RELAY.CS.NET, which forwards their mail via phone lines.  The
+rest can be reached via EARN.
+
+    As a result, the domain information for IL will only
+contain MAIL information (no Internet addresses), and every
+entry will simply be an MF RR, indicating that any mail to
+the given IL domain name is to be forwarded via RELAY.CS.NET.
+or some EARN gateway.
+
+    The folks behind IL have expressed interest in just 
+having us do a wildcard match -- i.e. any mailer asking about
+any name ending in IL will just be told to pass it on to
+RELAY.CS.NET for forwarding to Israel.  For hosts on
+EARN we might keep a list of those hosts to forward specially.
+In other words, we would not keep a list of the hundreds of hosts
+in IL but would recognize any name ending in .IL as valid
+
+    The major advantage is that we don't have to worry about
+coordinating the host information for an entire country.  (Is
+this name valid this week?).
+
+    The one disadvantage is that we would be creating a section
+of the domain space which is unverifiable.  You will never be
+able to establish (without mailing to it) that a given
+IL name is actually valid.  Since you can't reach the host
+except through mail anyway, it isn't clear this is a serious
+concern.  Is it better to have "user%site@IL" (verifiable) or
+"user@site.IL" (unverifiable)?
+
+    We'd be interesting in hearing views on both sides of the issue.
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@sh.cs.net or craig@csnet-sh (CSNET)
+craig@loki.bbn.com or craig@bbn-loki  (ARPA)
+{decvax,ihnp4,wjh12}!bbncca!craig (USENET)
+
+<b>[<a href="?l=namedroppers&m=95837667426572&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426574&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426574&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

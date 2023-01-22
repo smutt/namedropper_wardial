@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Plummer's proposal' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026753&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026755&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026750&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300032&r=1&w=2">Plummer's proposal</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-08 10:36:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026754&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026754&q=raw">body</a>]</b>
+
+Another, somewhat small but important, reason for left rooting.
+Consider completion in the fact of relative naming and mergine.
+Completion without tree traversal works today.  With a default of
+	Riverside.SCRC.Symbolics.COM
+one can type
+	Qua &lt;complete&gt;
+and it is "obvious" it means complete "Qua" in the "SCRC.Symbolics.COM"
+domain.  What isn't natural is something like
+	Whi.SWW+ &lt;complete&gt;
+Does this mean the host named "Whi" in the domain you get after
+completing "SWW" in the "Symbolics.COM" domain, or does it mean complete
+"Whi" in the "SWW.Symbolics.COM" domain.  The problem is that the thing
+being completed is textually separated from the completion request.
+
+With left rooting, it works similarly to our pathnames.  With a default
+of
+	.COM.Symbolics.SCRC.Riverside
+one can type
+	Qua &lt;complete&gt;
+and get
+	.COM.Symbolics.SCRC.Quabbin
+or one can type
+	+SWW.Whi &lt;complete&gt;
+and complete the name "Whi" in the ".COM.Symbolics.SWW" domain.
+
+I also agree with Benson: if we can't enforce separating the message
+from the envelope, we better make the network format person-friendly.
+
+<b>[<a href="?l=namedroppers&m=95837759026753&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026755&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026750&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

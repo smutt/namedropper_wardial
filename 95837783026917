@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Resolving partially qualified domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026916&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026918&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026916&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400004&r=1&w=2">Resolving partially qualified domain names</a>
+From:       <a href="?a=95837785400003&r=1&w=2">jas () proteon ! com (John A !  Shriver)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198807">1988-07-27 10:04:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026917&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026917&q=raw">body</a>]</b>
+
+You are confusing the protocol from the implementation.
+
+First of all, any domain name resolver implementation should involve
+cacheing.  Once you have resolved one name in the bellcore.com domain,
+you should never have to go back to the root again.  The bind
+implementation does not do cacheing in the resolver, nor does it do
+recursion there.  Instead, one has a local copy of bind (the
+nameserver) running, which is not authoritative for any domain, but
+merely serves as a cache and recursor for a group of machines running
+the resolver.
+
+As for shorthand names, what you do in the privacy of your machine is
+your business.  Indeed, bind can be configured to do this.
+
+However, RFC822 and other standards require that any address in a mail
+header be fully qualified.  Thus, someone (maybe sendmail) had better
+fully flesh out those shorthand names.  This may still be non-trivial
+to do with sendmail, but is absolutely essential.
+
+<b>[<a href="?l=namedroppers&m=95837783026916&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026918&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026916&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

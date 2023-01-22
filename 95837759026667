@@ -1,0 +1,100 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: mail gateways and mx rr's --- STOP !!!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026666&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026668&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026666&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026668&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300001&r=1&w=2">re: mail gateways and mx rr's --- STOP !!!</a>
+From:       <a href="?a=95837783700010&r=1&w=2">solomon () gjetost ! wisc ! edu (Marvin Solomon)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-28 8:05:18</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026667&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026667&q=raw">body</a>]</b>
+
+Well, I guess I was right about MX records being useless for "inter-internet"
+mail routing.  J. Spenser Love points out that the weight on an MX
+record COULD be interpreted as the weight of the cheapest path from the
+relay to the destination, notes that that information, by itself, is
+insufficient to solve the routing problem, and attempts to supply the
+missing information.  I would point out that he doesn't really address
+the problem of multi-hop interinternet routing (in which the source and
+destination mail systems are not directly connected), unless it is
+to be presumed that different mail systems have different name server
+data bases.  Jon Postel drives the final nail in the coffin by informing us
+that interpretating the MX weight as a path length is contrary to the
+intention of the spec.
+
+I guess that leaves us with a bona fide RESEARCH problem:  how to do
+interinternet mail routing.  Maybe the domain name system is a totally
+inappropriate tool for the problem.  If so, maybe this discussion
+should be moved to a different list (msggroup?  header-people? I can
+never remember which is which).  Maybe this isn't even a problem of
+interest to the DARPA Internet community.  If you believe that
+eventually Arpanet users will be able to route IP datagrams to any mail
+destination they wish to communicate with, then the problem will go
+away.
+
+I think the interinternet mail routing problem is of interest to the Internet,
+and the domain name server can help.  In my previous message, I listed the
+minimal set of facts needed by the source mailer:  The mail systems containing
+the source and destination hosts and the set of mail relays in the universe
+(together with the set of mail systems served by each one).  The latter
+table (of mail systems and the relays connecting them) is, for the forseeable
+future, a relatively small and slowly-changing database.  It would probably
+be adequate to maintain it by hand, although it might me nice to put
+it into the name server database.  That still leaves the requirement of
+a mapping from ALL mail destinations to mail systems.   Maybe the CLASS
+field could be used for that.  I never really understood what the CLASS
+was supposed to mean, and I guess nobody else does, since I've never heard
+of any class other than IN being used.  Let me suggest for a moment that
+CLASS be considered synonymous with what I've been calling "mail system".
+Thus the record
+	CSNET-RELAY.ARPA  A  IN  10.4.0.5
+means that CSNET-RELAY is in the Arpa Internet mail system and can be reached
+from elsewhere in that mail system by sending IP datagrams to 10.4.0.5.
+The record
+	WISCVM.WISC.EDU  A  BITNET  WISCVM
+means that WISCVM is in the BITNET mail system.  (In BITNET, the host
+name serves pretty much as an address).
+The record
+	HOOPLE.UNSD.SD.EDU  A  CSNET 1-800-555-1212
+would indicate that HOOPLE is in CSNET (more precisely, PhoneNet) and
+has a dialup at the phone number indicated.  (Actually, it might be
+more realistic to list every CSNET record as
+	FOO.BAR.GLARCH  A  CSNET  FOO.BAR.GLARCH
+since as far as anybody but CSNET-RELAY is concerned, the name of a
+PhoneNet host is its address).
+
+Assuming such records, and assuming that there is a table that lists
+all mail systems and how they are connected, the routing algorithm
+is straight-forward:
+	1. Use MX records to find the actual mail destination.
+	2. Find all 'A' records (in any class) for the source and destination.
+	3. If there is any class that contains records for both the source
+	   and destination, we are done:  Send the mail using mechanisms
+	   appropriate to the indicated mail system.
+	4. Otherwise, use the mail-system graph to find a path
+		MS0 -&gt; Relay1 -&gt; MS1 -&gt; ... -&gt; MSn-1 -&gt; Relayn -&gt; MSn
+	   where the source is in mail system MS0 and the destination is in MSn.
+
+While this algorithm is adequate, it doesn't take into account cost
+(and as I pointed out before, cost is important not only for efficiency,
+but to assure that everyone makes the same decisions, thus preventing loops).
+But this message is already much too long, so I'll leave the discussion of
+minimal cost routing for another day.
+
+<b>[<a href="?l=namedroppers&m=95837759026666&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026668&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026666&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026668&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

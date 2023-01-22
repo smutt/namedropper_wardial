@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MX and crock records.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626862&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626863&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    MX and crock records.
+From:       <a href="?a=95837786200001&r=1&w=2">"Rich DeJordy, x295" &lt;RAD () MATH ! AMS ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198904">1989-04-14 14:04:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626865&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626865&q=raw">body</a>]</b>
+
+Hello,
+
+
+     I am trying to understand the domain name service that we offer to the
+     net to resolve our Class B address.  There are two questions I have
+     now, and they are totally uninformed and (hopefully) simple.
+
+     1)  Both of our name servers are local, and when our gateway decides
+     to be tempermental, we are not resolving anything.  So, another site
+     has offered to provide backup DNS service.  In doing so, they wanted
+     me to change the refresh and retry intervals, the expiration limit,
+     and the Min RR TTL binding.  I can look up the effects of these
+     myself, but do I need to add NS records to my domain tables for the
+     other hosts?  All intuition tells me I should, but...
+
+     2)  In the zone files from before I got here, there was an entry for
+     *.AMS.COM to point to a specific node.  When I point this at my
+     VAXcluster, and users enter information wrong, (e.g. forget to append
+     .bitnet) it becomes @host.AMS.COM and then the VAX refuses to talk to
+     itself and I get failed messages.  I removed this record from the
+     domain name service, but am wondering if there's a way to resolve
+     *.AMS.COM to MATH.AMS.COM for non-local requests and still have them
+     be wrong for internal resolution?  (Is this part of my domain software
+     or of my mailer?)  (Why would I want to do/not do this for external
+     sites?) 
+
+     Thanks for any information this may provide.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837784626862&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626863&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

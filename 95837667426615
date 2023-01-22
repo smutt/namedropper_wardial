@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MD and MF for one host' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426614&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426616&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426616&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800016&r=1&w=2">MD and MF for one host</a>
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-11 9:30:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426615&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426615&q=raw">body</a>]</b>
+
+
+    I've been re-reading the RFC's and noticed that it is apparently
+legal for a host to have both an MF and an MD record.  I find this
+a bit confusing.  If a mailer gets both an MD and an MF for a single
+host which one is it supposed to use? If it always prefers one over
+the other, then listing both an MD and an MF is clearly wrong or at least
+a bad idea (since one or the other gets ignored).  But if the mailer
+is supposed to make some intelligent choice between the two choices,
+can anyone tell me how that choice should be made?
+
+    I've been trying to think of why one would want both an MD and
+an MF and have come up with two examples. They are:
+
+    1.  Just to describe the true mail situation.  For example,
+    anyone at BBN.COM can be reached by mailing to them at UNIX.BBN.COM
+    (or indeed to almost any host in BBN.COM).  Thus one might
+    list a host as accepting mail itself (MD) or as reachable thru
+    some of the BBN.COM. hosts (MF).   I think this practice should
+    be discouraged, since it is not clear that the MF record is
+    useful.
+
+    2.  To deal with intermittent links.  Imagine, for example, a
+    host (A) which is only reachable during certain hours from the Internet
+    (or only reachable thru a single gateway, or experimental link)
+    but which also has a direct link to another Internet host (B).
+    Here one might list A as being its own MD, but also list B as
+    an MF.  Here one would want a mailer to try to reach A, and failing
+    that, immediately send the mail on to B for forwarding, so B
+    can promptly pass the mail to A.
+
+    Note that a mailer's behaviour in the two situations is likely to
+be different.  In case 1, the MF is simply another way to reach a host
+you can always reach directly.  As such, the mailer should probably
+ignore the MF as not useful (if you can't reach the host it is because
+the host is probably down, and passing the mail on to the MF isn't
+going to change this situation).  In case 2, the MF record is very useful --
+it allows mail to reach the desired host faster.  Other examples
+may produce other results.  Anybody got any idea what a poor mailer
+is supposed to do about this?
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh or craig@sh.cs.net (CSNET)
+craig@loki.bbn.com (ARPA)
+{decvax,ihnp4,wjh12}!bbncca!craig (USENET)
+
+<b>[<a href="?l=namedroppers&m=95837667426614&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426616&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426616&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

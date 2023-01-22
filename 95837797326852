@@ -1,0 +1,63 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'plague of MAXQUERIES exceeded: why&amp;how?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326851&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326853&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326853&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400034&r=1&w=2">plague of MAXQUERIES exceeded: why&amp;how?</a>
+From:       <a href="?a=95837816800006&r=1&w=2">der Mouse  &lt;mouse () Larry ! McRCIM ! McGill ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199001">1990-01-25 11:51:45</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326852&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326852&q=raw">body</a>]</b>
+
+I give up.  I'm going to have to do something I normally don't and
+write to a mailing list I don't read.
+
+We're running bind 4.8, and (for a change, for me) it's stock: no local
+tweaks.  But recently (starting about at the beginning of this week,
+near as I can figure) we have been positively plagued with syslog
+messages about
+
+MAXQUERIES exceeded, possible data loop in resolving (some.name.here)
+
+and mail is getting stuck in the mail queue because this is
+(apparently) causing sendmail's request for MX records to return
+SERVFAIL responses.
+
+Requests for A records for the same names work fine.
+
+I have tried throwing away all cache files and resetarting (not just
+reloading) the nameserver.
+
+Anyone have any clue what's going wrong here?  I haven't any idea
+what's changed to make it start breaking.
+
+More to the point, anyone have any clue how to fix it, whether or not
+they know what's wrong?  Mail will start bouncing in two more days, so
+I'd like to fix this nowish.
+
+As I implied above, I'm not on namedroppers, so mail to the list won't
+get to me.  However, mail to my signature address should get to me, or
+if that fails and you're feeling nice, you could try @[132.206.1.1].
+
+					der Mouse
+
+			old: mcgill-vision!mouse
+			new: mouse@larry.mcrcim.mcgill.edu
+
+<b>[<a href="?l=namedroppers&m=95837797326851&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326853&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326853&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

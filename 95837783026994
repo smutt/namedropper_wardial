@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Has anyone used the TXT record?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026999&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026995&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026992&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400026&r=1&w=2">Has anyone used the TXT record?</a>
+From:       <a href="?a=95837785200039&r=1&w=2">fin () uf ! msc ! umn ! edu (Craig Finseth)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-28 14:47:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026994&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026994&q=raw">body</a>]</b>
+
+We have a network administration program that would like to use TXT
+records (it currently uses the non-standard but "supported" UINFO
+records).  Our format is:
+
+					for...
+
+	IN	UINFO	"DA:xxxx"	DECNET address
+	IN	UINFO	"EA:xxxx"	Ethernet address
+	IN	UINFO	"HL:xxxx"	host location (US Mail address/phone)
+	IN	UINFO	"ML:xxxx"	maintainer location ("   ")
+	IN	UINFO	"MI:xxxx"	maintainer info (Internet address)
+
+any RR that doesn't match one of these is perserved.
+
+(All of that info was for background: we do NOT expect that this
+format be standardized in any fashion.)  What we really want is some
+RR be available that can hold up to, say, 255 bytes of arbitrary data.
+
+Craig A. Finseth			fin@uc.msc.umn.edu [CAF13]
+Minnesota Supercomputer Center, Inc.	(612) 624-3375
+
+<b>[<a href="?l=namedroppers&m=95837783026999&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026995&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026992&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

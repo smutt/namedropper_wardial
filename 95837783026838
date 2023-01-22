@@ -1,0 +1,114 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'private hosts and BIND modifications, reply' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026830&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026832&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    private hosts and BIND modifications, reply
+From:       <a href="?a=95837785200039&r=1&w=2">fin () uf ! msc ! umn ! edu (Craig Finseth)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-13 11:30:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026838&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026838&q=raw">body</a>]</b>
+
+This is a reply to the various responses that I received about my
+"private hosts" message.
+
+The gist of the responses is that with "official" (I'll come to that
+in a moment) hidden hosts, the participants in the Internet would be
+faced with problems like:
+
+- How do you deal with a hidden host's probing or anti-social
+  behavior?
+
+- How do you deal with a hidden host's interesting or bogus packets?
+
+- Several people pointed out that modern terminal servers allow a user
+  to anonymously connect around the Internet at will.  How do you deal
+  with that capability (regardless of whether or not the terminal
+  server is private or not).
+
+On the plus side, if you can find out about the host, you might be
+more willing to help the host resolve its problems.
+
+Also, several people mentioned that "security through obscurity" is
+not an effective solution.
+
+
+I claim that the private hosts problem is a current problem and must
+be addressed by the Internet community.  (In other words, my proposal
+didn't create the problem and in fact may be part of the solution.)
+Perhaps I am somewhat cynical, but I would be surprized if there is a
+significant number of sites which don't already have private hosts of
+one sort or another (hence the earlier quotes around the word
+"official").  Private hosts can result from ignorance on the part of
+the domain administrator, organizational politics, kludges at
+supporting "private hosts," or simple mistakes and forgetfulness.  How
+do we deal with them?
+
+An Internet policy on private hosts would provide a framework on
+dealing with them.  Defining (quasi-)official support for private
+hosts might well make it easier to track down problem hosts because
+they would at least be registered somewhere where a responsible person
+could find them, instead of hiding in a kludged hole.  (That is what I
+meant by my proposal being part of the solution.)
+
+
+I also realized that I had left some relevant information out of my
+previous message:
+
+- I recognize that the proposal is not a complete privacy solution.
+  We have taken (and will take) additional steps including physical
+  separation of networks, limitations on IP routing, and
+  authentication in order to provide full privacy.  All these steps
+  will allow us to provide (1) better, more reliable service to our
+  customers and (2) more secure service.  Contrary to what one might
+  expect, doing (2) better makes it easier to do (1) better.
+
+- We program our terminal servers to only let users connect to local
+  hosts.  The now identified user can run telnet from there to connect
+  further.
+
+- We are already using "nonsense" (i.e., non-descriptive) host names.
+
+- Our private hosts (including terminal servers) are not directly
+  accessible from the Internet.  Thus, "ping"ing them would not work.
+
+- The reference to Multics was to clarify by example the discussion of
+  access lists.  However, I also subscribe to the idea of "security
+  by fully-examined design."  I did not mean to imply that the
+  proposal was by itself a complete solution.
+
+Our working rule on this issue is that if machine A can talk to (i.e.,
+exchange packets with) machine B, then A and B are not private with
+respect to each other.  (This rule is NOT transitive!)
+
+Conversely, if A and B are private with respect to each other, they
+cannot exchange packets.  Any such exchange is a prima facie privacy
+breach and must be fixed.
+
+These rules might form the basis of an Internet policy.  Something
+like, "its ok to have private hosts, but it is their administrator's
+responsibility to keep them to themselves."
+
+In summary, we're trying to be part of the solution, not the
+problem...
+
+Craig A. Finseth			fin@uc.msc.umn.edu
+Minnesota Supercomputer Center, Inc.	(612) 624-3375
+
+<b>[<a href="?l=namedroppers&m=95837783026830&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026832&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

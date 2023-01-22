@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'limiting data access by name servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027037&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    limiting data access by name servers
+From:       <a href="?a=95837785800025&r=1&w=2">pma%hpcndm () hplabs ! HP ! COM</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198812">1988-12-08 13:17:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027035&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027035&q=raw">body</a>]</b>
+
+
+With the advent of the TXT data type, general information can be stored
+in name servers.  Some of the information my be intended for the general
+public and some for "internal use only".
+
+Have there been discussions in the past for limiting access to the data
+contained in name servers?  If so, what were the issues?
+
+These are the limitations that I view as useful:
+
+	1) what hosts a name server will answer queries for
+	2) what hosts a name server will allow zone transfers
+	3) what hosts a name server will handle recursive queries for
+
+Since DNS packets do not contain enough information to handle this on 
+a per user basis, simple security can be handled on a per host or per
+network basis.  Thus, we could limit access to some or all of the data
+to the local host, the LAN, or specific networks.
+
+Has anyone considered tagging individual data or whole domains with
+access lists of IP addresses or network numbers?  These tags would need
+to be passed along with zone transfers.
+
+Paul Albitz
+pma%hpcndm@hplabs.hp.com
+
+<b>[<a href="?l=namedroppers&m=95837783027033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027037&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

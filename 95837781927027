@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'mail' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927020&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927019&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927034&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=89189178200001&r=1&w=2">mail</a>
+From:       <a href="?a=95837784200026&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! STANFORD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 10:31:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927027&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927027&q=raw">body</a>]</b>
+
+Before we get mired down in the bits, let's give an explicit statement
+of the design goals for mail naming.  I'm not familiar with an exhaustive
+list of the goals people are trying to address, so it's sometimes hard
+to tell what goal someone is trying to address in a given message.  I
+wonder if we can agree on the goals, much less the design!
+
+Here are the goals I can think of:
+
+1) Ability to address a person at an organization without having to know
+what machine they actually have an account on.  So if I know David
+Plummer works at Symbolics I should be able to address mail to him at
+Symbolics.COM without having to remember how to spell the name of his
+LispM.
+
+2) Ability to minimize network and cpu resources required to deliver a
+msg by remotely determining the binding of a valid mail name (e.g.
+Plummer@Symbolics.COM) with the ultimate intended destination of a msg
+sent to that mail name (Plummer's LispM).  The alternative is to simply
+send the mail through Symbolics.COM and have it forward the mail to
+Plummer's LispM.
+
+3) Ability to specify multiple mail gateways between the Internet and
+other networks, e.g. to specify that mail to any subdomain of Apple.COM
+should be forwarded through FOO.COM.  As Bill Nowicki points out such
+gateways could actually bridge parts of the Internet which have been
+rendered non-connected at the IP (or EGP or whatever) level.  My
+impression is that this issue is a lot more complicated than people have
+thought because it's not at all clear how the gateway machine knows that
+it's the gateway.  Does it only use information which is globally
+available in the domain system, or does it have to be hardwired with
+special information?  The latter seems very tricky, the former
+potentially ugly unless it's done right.  I don't believe that MX
+records handle this case correctly, although I confess I haven't read
+that RFC very carefully.
+
+4) Ability for a user to send mail from a host that won't receive mail,
+yet to receive replies and error messages correctly.  It's not clear
+to me that the domain system should handle this rather than a combination 
+of RFCs 822 and 821 (munging the mail header and return path).
+
+5) Mail loops are to be avoided.
+
+6) Economic factors in delivery of a message should be expressable
+within the system (e.g., local phone calls vs long distance).
+
+7) We should be able to validate a mail name in real time.  And more
+generally, the Internet doesn't have the performance for complex
+solutions.  We shouldn't have to query a dozen name servers and run wild
+goose chases around the entire continent to deliver every lousy piece of
+mail.
+
+More suggestions?
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781927020&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927019&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927034&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

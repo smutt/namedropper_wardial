@@ -1,0 +1,108 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Network Management Tool Catalog' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626981&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Network Management Tool Catalog
+From:       <a href="?a=95837786400017&r=1&w=2">stine () sparta ! com (Robert Havens Stine)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198908">1989-08-03 10:15:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626979&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626979&q=raw">body</a>]</b>
+
+(My sincere apologies to those of you who've already received this.)
+
+(Please forward replies to stine@sparta.com; I'm not on this list.)
+
+	Network Management Tool Descriptions Wanted
+
+The Internet Engineering Task Force (IETF) is now requesting entries
+for a catalog of tools for managing TCP/IP internets.  The catalog
+will be a compendium of the tools available to assist network managers
+in debugging and maintaining their networks.  Network management tools
+and LAN management tools (other than breakout boxes) will included.
+The IETF intends to publish the catalog as an RFC.
+
+Entries describing public domain, copyrighted, and commercial tools
+are solicited.  Vendors are encouraged to submit descriptions of their
+products.  Descriptions from knowledgeable users of commercial and
+noncommercial tools are also welcome.
+
+Tool descriptions should be objective, no more than two or three pages
+long, and should contain the following sections (where applicable):
+
+NAME
+     Whatever.  For those naming tools, be aware that there are already
+     many variants of "network monitor."
+
+KEYWORDS
+     For now, a best guess.  A uniform key-word list is under development.
+
+ABSTRACT
+     A brief description of the tool's purpose and characteristics.
+
+MECHANISM
+     How the tool works.
+
+CAVEATS
+     Warnings about tool impact on system performance, etc.
+
+BUGS
+     Most likely "none known."
+
+LIMITATIONS
+     Number of nodes that can be monitored, privilege required to operate,
+     etc.
+
+HARDWARE REQUIRED
+     What hardware does the tool run on, and what extra hardware is
+     is needed, if any.
+
+SOFTWARE REQUIRED
+     What OS does the tool run under, and what extra software is needed,
+     if any.
+
+RELATED ANALYSIS/POST PROCESSING TOOLS
+     reduction tools, graphics support, etc.
+
+AVAILABILITY
+     How to obtain the tool, and whether it is in the public domain,
+     copyrighted, or commercially available.  This will not include pricing
+     information.
+
+The format for the entries is as above: section headings capitalized and
+left-justified, with section text indented five spaces.
+
+An IETF review panel will edit all catalog entries.  Though
+contributors will be given final authority to approve or disapprove
+revisions to their submissions, the IETF reserves the right to exclude
+entries that do not meet its editorial criteria.  Editing of the
+catalog will be completed this November.
+
+The deadline for tool descriptions for the first edition of the
+catalog is 1 October 89.
+
+Send tool descriptions or requests for further information to:
+
+  Robert Stine              phone: (703) 448-0210
+  SPARTA, Inc.              fax:   (703) 734-3323
+  Suite 1070                email: stine@sparta.com
+  7926 Jones Branch Drive
+  McLean, VA 22102
+
+<b>[<a href="?l=namedroppers&m=95837784626978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626981&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

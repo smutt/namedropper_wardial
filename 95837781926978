@@ -1,0 +1,164 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Lessons from the current domain name system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926977&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926979&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926987&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500008&r=1&w=2">Lessons from the current domain name system</a>
+From:       <a href="?a=95837784800013&r=1&w=2">Rich Wales &lt;wales () CS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-05 16:05:13</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926978&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926978&q=raw">body</a>]</b>
+
+Below are some of my observations on the current domain name system.  I
+would like to stir up some comment on these ideas, as well as any other
+gripes or wishes people may have about the current system.
+
+I'm looking for ideas on the design of the domain name system itself --
+as opposed to gripes about specific existing implementations (such as
+BIND).  Imagine that you could run an bug-free name server, and consider
+what problem areas would remain because they are inherent in the current
+design of the domain name system.
+
+Rather than think of patches to the current model, try to think in terms
+of what you would prefer to see done differently, assuming that a brand-
+new domain system could be built *totally* from scratch.
+
+If time permits, I may draft an RFC suggesting a possible structure for
+a "second-generation" domain system.  (I haven't yet sought any author-
+ity to do this -- but, presumably, no authority is necessary to *talk*
+about a possible new design! :-})
+
+Even if it turns out to be infeasible to "start over", I would hope that
+this kind of discussion could point up ways in which the existing domain
+system could be improved.
+
+-- Rich Wales // UCLA Computer Science Department // +1 (213) 825-5683
+	3531 Boelter Hall // Los Angeles, California 90024-1596 // USA
+	wales@CS.UCLA.EDU           ...!(ucbvax,rutgers)!ucla-cs!wales
+"Sir, there is a multilegged creature crawling on your shoulder."
+
+========================================================================
+
+QUERYING
+
+    The "authoritative answer" concept needs to be clarified -- how much
+    of a reply with the AA bit set represents authoritative data?  Maybe
+    each individual RR should have an "authoritative" bit.  Or, there
+    could be separate "authoritative" and "non-authoritative" sections
+    in a reply.
+
+    Maybe servers should maintain separate "authoritative" and "non-
+    authoritative" caches, and look at the authoritative data first when
+    trying to answer a query.
+
+    Is "inverse querying" really useful?  Is the "IN-ADDR.ARPA" domain,
+    inelegant as many feel it is, still the best solution for address-
+    to-name translations?
+
+    Is "completion querying" really useful?  Should this entire function
+    perhaps be deleted from the name server altogether, and left to the
+    resolver routines?
+
+    There should be a way to request an arbitrary set of RR types in a
+    single request.  (E.g.:  "Give me any WKS and/or A records".)
+
+    Maybe it should be possible to send queries about more than one name
+    in a single request.  (E.g., a resolver could do multiple-domain
+    "completion querying" by asking about all possibilities together.)
+
+CACHING
+
+    There should be a way of distinguishing, in the cache, between "I
+    have *some* RRs for this name, but there might be RRs of other types
+    that I haven't seen" and "I *know* I have *all* the RRs on this
+    name".  Currently, there is no way to cache a "type=ANY" reply and
+    later rely on the cache instead of going back to an authoritative
+    server, because there is no way to indicate whether the data for a
+    given domain name all came together (in response to a "type=ANY"
+    query), or whether it is simply the result of separate queries for
+    individual types (in which case there might be RRs of other types
+    on another server somewhere).
+
+    We need "negative caching".  This should include both "name doesn't
+    exist at all" and "name exists but has no RRs of given type".  The
+    TTL of a "negative" cache entry should be specified by the replying
+    name server -- just as is currently the case for "affirmative"
+    cached data.
+
+ZONES
+
+    Suppose a site wants to put all its users into the domain data base,
+    with MB/MR RRs (e.g., "wales.CS.UCLA.EDU IN MB Maui.CS.UCLA.EDU").
+    It might be desirable to put this user information into a separate
+    zone -- so that, for example, a remote site could be a backup server
+    for the UCLA.EDU zone without having to store the (probably huge)
+    amount of user info as well.  Under the current model, though, there
+    is no way to partition user mailbox info into a zone by itself.  Is
+    there a solution to this problem?  Should mailbox info be made into
+    a new class (since RRs in different classes must, by definition, be
+    in different zones)?  Maybe the whole user mailbox info idea needs
+    to be thought out again from scratch -- since, so far, it's hardly
+    been used at all anyway.
+
+    There should be two different types of RRs to identify name servers:
+    one type at the top of a zone (to identify all the servers for the
+    zone), and another type at the bottom of a zone (to refer queries to
+    another zone).  The current scheme, where a single NS RR type can
+    have two very different semantics (depending on whether there is an
+    SOA RR for the same name), is cumbersome and error-prone.
+
+    Should there be a way of asking a server what zones it is authori-
+    tative for?  Would there be any point in doing this?
+
+RESOURCE CLASSES
+
+    Should any classes other than CLASS=IN be officially defined at the
+    present time?  (Possibly a class for user mailbox info?)
+
+    Is CLASS=ANY really useful, or even desirable?  It certainly should
+    not be used indiscriminately, when CLASS=IN would clearly be better.
+
+    Maybe there could be a set of class numbers that are reserved for
+    local use/experimentation.
+
+EXTENSIBILITY
+
+    A problem with extending the current set of types and classes is
+    that the "name compression" scheme requires the receiver to "know"
+    which RR types use compression.  Is there a way to identify com-
+    pression as part of the RR itself, so that this "a priori" knowledge
+    will not be required?  One approach might be to have a field in each
+    RR specifying a number X, meaning that the RR's data field begins
+    with "X" domain names (which might or might not be compressed).
+
+ROBUSTNESS
+
+    What to do when a server falsely claims to be authoritative for a
+    zone (especially the root zone)?
+
+    What to do when A claims that B is authoritative for a zone, but B
+    claims to know nothing?  Even worse, suppose B claims to have no
+    info on a domain name, but instead refers queries to B (itself)!
+
+    Other situations where a name server might return bogus information?
+    How bogon-proof can we make the design?
+
+========================================================================
+
+<b>[<a href="?l=namedroppers&m=95837781926977&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926979&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926987&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

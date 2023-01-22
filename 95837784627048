@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Misbehavior in DNS Clients' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627047&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627049&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400002&r=1&w=2">re: Misbehavior in DNS Clients</a>
+From:       <a href="?a=95837786600011&r=1&w=2">mcsun!inria!mirsa!jerry!huitema () uunet ! uu ! net  (Christian Huitema)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-13 16:12:58</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627048&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627048&q=raw">body</a>]</b>
+
+This incident (finger looping and repeating the same request ad nauseam)
+appears to justify one of Paul Mockapetris remarks about the tuning of
+name servers, i.e. that we need both "positive caching" but also
+"negative cacheing". With negative cacheing, a name server will remember
+that a request for some &lt;name,info,domain&gt; was issued previously and
+failed, and will immediately report the failure to its client without
+polluting the net.
+
+Will this negative cacheing policy be implemented in the next release of
+"bind"?
+
+Christian Huitema
+
+<b>[<a href="?l=namedroppers&m=95837784627047&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627049&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

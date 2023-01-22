@@ -1,0 +1,135 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Can the IP domain system work with multi-level hosts?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026715&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026718&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Can the IP domain system work with multi-level hosts?
+From:       <a href="?a=95837783700011&r=1&w=2">"J. Spencer Love" &lt;JSLove () MIT-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-02 17:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026716&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026716&q=raw">body</a>]</b>
+
+This is a list of questions about secure implementation of the Internet DOMAIN
+system on Multics.  The Multics system is multi-level, which means that data
+with different security labels can co-exist within the system.  Multics is
+trusted to prevent information with a given label from being made available to
+a process with a authorization which is not a superset (includes equality) of
+the labels on the data.
+
+Within a Multics, the problem of correctly labelling the resource records and
+preventing unauthorized disclosure is well understood.  The questions concern
+the external behavior of the Multics.
+
+The terminology used below is partially drawn from recent discussions on the
+Security mailing list.  The idea of an access label maps more or less onto the
+IP security options.  For simplicity, I assume three possible states:
+unlabelled, or unclassified, labelled SECRET, and labelled TOP-SECRET.
+
+What is the correct security label of a resource record?  There is no
+labelling mechanism within the DOMAIN system, so there seem to be two
+possibilities:  all RRs are unlabelled, or the RRs inherit the label of
+the datagram or connection which contains them.
+
+If domains and RRs are unlabelled, then the entire map of the domain tree is
+effectively visible throughout the tree.  Thus, a user at a site on the
+unclassifield ARPAnet might be able to examine a subtree that contained only
+TOP-SECRET hosts.  Even if connectivity is restricted, it may be possible to
+query the caches of intermediate nameservers.
+
+If an RR can have a label, then there exists the possibility that queries with
+different labels could elicit different replies.  Can domains be concealed in
+this way?  Would a label apply to a domain name or to individual RRs?  Might
+differences other than whether the domain exists be determined by the label?
+
+If Multics process with the TOP-SECRET label attempts a domain query, this
+might result in unclassified network traffic.  The root domain servers are
+unclassified, even if the final result of the query is a host on a top-secret
+network.  The activity of the top-secret process is concealed from all
+unclassified processes on the Multics, but the same activity is visible from
+outside.  Note that the top-secret process is unable to communicate with the
+unclassified network.  Instead, it asks the local domain server to do the
+resolution.  The local domain server is a multi-class process which can
+communicate at both top-secret and unclassified.
+
+I see two ways to prevent this possibility: deny access to the domain system
+to all labelled processes, or require additional root domain servers on any
+network which can't carry unlabelled datagrams.  With the disappearance of
+host tables, denying access to the domain system is unacceptable.  Must we
+retain host tables for all labelled traffic?  It would lessen the trustedness
+problem.
+
+If the root domain servers permitted zone transfers, a multi-level host or
+gateway in each secure part of the domain hiararchy could handle requests with
+the TOP-SECRET label.  Otherwise labelled queries can't even get to the root
+server, although recursive requests to multi-level domain servers might be
+possible.  Since the root servers do NOT permit zone transfers, it is possible
+to envision write-down paths, which enable the top-secret process to place
+data where an unclassified machine might read it.
+
+Labels at the IP level are used to route datagrams.  For example, consider a
+single-level network where all datagrams are top-secret.  Every datagram must
+carry the TOP-SECRET label, so no datagram on that wire can ever get onto the
+ARPAnet, which is a single-level network at the unclassified level.
+
+Replies can't be labelled using a label associated with a domain or an RR.
+The replies must have the same label as the query or the reply may not make it
+back to the originating host.  Thus, a multi-level domain server would have to
+label an RR TOP-SECRET if the query was top-secret, even if the RR were
+classified merely SECRET.
+
+If the requesting host then wishes to make the same query at SECRET, it can't
+use the data in its cache, because it doesn't know the real label of the RR.
+Instead, it must go out over the network again with a new query just to see if
+the information is available under the different label.  In addition,
+connectivity might not be available at the new level.
+
+On the other hand, if all RRs are unlabelled, then an unclassified process on
+a multi-level machine might be able to obtain domain information at from
+nameservers attached to top-secret networks.  Again, the unclassified process
+would not be able to do this directly, but would instead make the request of a
+local multi-level domain server process.  The server process would be able to
+make the top-secret connection and obtain the data, assuming the host was
+attached to a top-secret or multi-level network.  The server process would
+be permitted to deliver the result to the unclassified process because the RRs
+themselves would be unlabelled.
+
+Without knowing the labels appropriate to a nameserver, topological
+considerations and multi-level networks can make it significantly harder to
+actually contact a nameserver.  If the requesting process is SECRET, the local
+network is multi-level, and the remote server is TOP-SECRET, the remote server
+might never respond.  If RRs are always unlabelled, this is wrong.
+
+Much of the difficulty could be eliminated or at least reduced if there were
+some way to determine what the minimum (required) and maximum (required +
+optional) labels for a host are.  A single level host would have no optional
+labels.  This could be accomplished by an access label RR.  Alternatively, a
+redefined or extended nameserver (NS) RR could provide the minimum label set
+for a domain.
+
+Is such an RR already defined and I just don't know about it?  Are other
+solutions to the problems implemented?
+
+In order to eliminate a possible write-down channel, we have considered having
+the Multics domain server give out only NS RRs in response to all queries that
+originate from the network which we can't answer authoritatively.  This
+behavior seems antisocial, but prevents other hosts from determining the
+contents of our cache (we claim to know only about the root server if
+necessary).  Does anyone have strong opinions on this matter?
+
+<b>[<a href="?l=namedroppers&m=95837759026715&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026718&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

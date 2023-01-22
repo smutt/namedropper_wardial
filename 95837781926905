@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Summary: What is a Host Name?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926904&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926906&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926898&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000016&r=1&w=2">Re: Summary: What is a Host Name?</a>
+From:       <a href="?a=95837784000008&r=1&w=2">Ben Cranston &lt;ZBEN () UMD2 ! UMD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198707">1987-07-26 18:06:34</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926905&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926905&q=raw">body</a>]</b>
+
+&gt; Date: Thu, 23 Jul 87 12:52:08 GMT+0100
+&gt; From: "Lawrence J. Kaufman" &lt;lkaufman@bbncc-eur.arpa&gt;
+&gt;&gt; From:  Bruce Orchard &lt;ORCHARD/BRUC@scarecrow.waisman.wisc.edu&gt;
+&gt;&gt; ...a list of host names that other hosts think of as your host name ...
+&gt;&gt; ...The strangest one is scarecrow.waisman.wisc.edu.arpa,
+                                                      ^^^^
+&gt;&gt; which is what a few BITNET sites think of as our name.
+
+Many Bitnet hosts are attempting to do routing based on textual matches on
+the host name.  For example, anything ending in ".ARPA" would be routed to
+one relay host, and anything ending in ".INFNET" would be sent to another.
+The example cited might arise when a host's pointer table had not yet been
+updated for ".EDU" but the sender relied on the added ".ARPA" to get the
+message to a relay that DOES understand ".EDU"...
+
+This is a kluge that will someday break down badly ...
+
+<b>[<a href="?l=namedroppers&m=95837781926904&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926906&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926898&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

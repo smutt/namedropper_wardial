@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  mail strategy in a partly-converted world' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026829&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026838&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026832&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200006&r=1&w=2">Re:  mail strategy in a partly-converted world</a>
+From:       <a href="?a=95837785400004&r=1&w=2">Eric Norman &lt;ejnorman%dogie () unix2 ! macc ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-12 19:53:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026830&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026830&q=raw">body</a>]</b>
+
+&gt; I have a strategy question for this group (at least, it seems the best match).
+&gt; It concerns mail addressing in a world that is still only partially converted
+&gt; to the name-domain system.
+
+&gt; for ucbvax in the host table.)  Using these return addresses has become
+&gt; less and less desirable, in part because poor ucbvax (a VAX 11/750) has
+
+On the other hand, it does have the advantage of at least getting the
+mail "on campus" instead of sitting in someones queue across the country.
+
+&gt; We are debating dropping the rewrite and using our domain names exclusively.
+&gt; Of course, this means that Milnet sites that have not converted will be
+
+&gt;From what I can tell, there's also a whole lot of non-Milnet hosts that
+don't yet have access to the domain system (HP, Apollo, NBI, Wang, et al)
+
+&gt; How are other sites addressing these issues?  My personal inclination
+&gt; is "Damn the torpedoes, full speed ahead"-- we should ignore the problems
+&gt; of hosttable-only sites and put the compatibility burden on them,
+
+What we're trying to do here is move toward departmental mail servers.
+I.e.  the only "names" that will appear in the host tables are of the
+"dept.wisc.edu" form.  One of the really hard problems here is getting
+the return addresses to be generated in this form.  There are an awful
+lot of folks without sendmail and without even Unix, you know.
+
+I understand that the "full speed ahead" approach may indeed put some
+pressure on some vendors.  On the other hand, it's adopting what seems
+to me to be somewhat of a snobbish attitude; i.e., if you don't have
+the "right stuff", you don't deserve to talk to us.
+
+-- Eric
+
+<b>[<a href="?l=namedroppers&m=95837783026829&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026838&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026827&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026832&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

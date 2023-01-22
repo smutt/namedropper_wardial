@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Namesolver bakeoff' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426421&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426423&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426423&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100015&r=1&w=2">Namesolver bakeoff</a>
+From:       <a href="?a=95837662100003&r=1&w=2">mills () dcn6</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-13 3:22:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426422&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426422&q=raw">body</a>]</b>
+
+Folks,
+
+Following is a summary of data collected on the COM and EDU name servers (none
+are known at present for the MIL and ORG domains). The tests were done on
+Sunday, 12 May at about 2200 UT.
+
+In the following list under comments, an "ok" means that an attempt to resolve
+something in the authoritative domain found joy. A "ping ok" means that an
+ICMP Echo found joy, but something went bust in the name service, as indicated
+by further comments. In a couple of cases the name service appeared to work,
+but an attempt to resolve an apparently bogus name either inside or outside
+what was believed to be the authoritative domain of the server resulted in
+neither an authoritative "no" nor another name server to try, which strictly
+speaking is not an error, but probably is not what is intended.
+
+Domain				Address		Comments
+--------------------------------------------------------------------------
+RIVERSIDE.SCRC.SYMBOLICS.COM.	192.10.41.21	ping ok. not authoritative
+STONY-BROOK.SCRC.SYMBOLICS.COM.	192.10.41.144	"	"
+BBNA.BBN.COM.			10.3.0.5	ping ok. UDP 53 black hole,
+						TCP 53 reset
+"				192.1.2.68	"	"
+"				8.5.0.4		"	"
+BBNG.BBN.COM.			10.1.0.5	"	"
+"				192.1.2.67	"	"
+RICE.RICE.EDU.			192.5.58.6	black hole
+"				128.42.1.1	black hole
+PENDRAGON.CS.PURDUE.EDU.	192.5.48.5	ok
+PENDRAGON.CS.PURDUE.EDU.	192.5.48.5	error - entered twice
+RICE.RICE.EDU.			192.5.58.6	error - entered twice
+"				128.42.1.1	error - entered twice
+CMU-CS-G.CMU.EDU.		128.2.254.132	ping ok, UDP 53 black hole,
+						TCP 53 reset
+CMU-CS-K.CMU.EDU.		128.2.254.137	"	"
+CMU-CS-PT.CMU.EDU.		128.2.254.155	"	"
+LOCUS.UCLA.EDU.			10.2.0.1	ok
+ATS.UCLA.EDU.			10.3.0.1	ok
+UCB-ARPA.BERKELEY.EDU.		10.0.0.78	ok
+"				128.32.0.4	ok
+UCB-VAX.BERKELEY.EDU.		10.2.0.78	ok
+"				128.32.0.10	ok
+RED.RUTGERS.EDU.		10.1.0.89	ping ok. UDP 53 black hole,
+						TCP 53 reset
+"				128.6.0.2	"	"
+	(MCC.ARPA???)		10.3.0.62	"	" (error?)
+
+Score: Out of two COM domains namesolving worked (with some reservations) in
+one and failed (no name server) in the other. Out of six EDU domains,
+namesolving worked in three and failed in three (black-holed in one, no name
+server in two). Three out of eight ain't too bad at this point.
+
+To Jake's NIC crew: Some entries in the EDU.ZONE file seem to be in error as
+indicated above.
+
+Dave
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426421&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426423&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426423&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

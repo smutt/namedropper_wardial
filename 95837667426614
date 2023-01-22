@@ -1,0 +1,89 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'some questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426612&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426615&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426620&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=89254001800001&r=1&w=2">some questions</a>
+From:       <a href="?a=95837693400029&r=1&w=2">ks () purdue-ecn ! ARPA (Kirk D Smith)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-10 17:25:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426614&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426614&q=raw">body</a>]</b>
+
+I am relatively new to the name server stuff, so my questions may
+be obvious, and the terminology may be incorrect, but who else could I ask?
+I also realize that although we have had a domain name server in place
+for quite some time, my corner of the internet is late in actually trying
+to use it.
+
+I am trying to install name servers on the Purdue Engineering Computer
+Network machines.  These are primary 4.2BSD and 4.3BSD machines, so
+some of my questions may be relevant to that specific implemenation,
+but most are general in nature.  Currently, the purdue network situation
+looks like this:
+
+	128.10		192.5.40		  128.46 (with ~8 subnets)
+	192.5.48	192.5.101
+			192.5.102
+      -------------   ---------------                ---------------------
+      |           |   |             |                |                   |
+IMP---| CS Dept. pucc-i     PUCC    pucc-j--------ecn-ed   ECN+others    |
+      |           |   |             | |              |                   |
+      ------------    --------------- |              ---------------------
+         |                            |
+        IMP                          IMP
+
+ECN is my area of interest.  Currently, we have about 30 machines with
+a combined user base of about 10,000.  Reliability of network
+services is a primary concern.  Currently, an authoratative
+nameserver exists in the CS Dept on a host called PENDRAGON.
+I am working on networking for the ECN group of machines
+on the right.  The current problem is that PUCC has very restricted
+operating hours, and we are "cut off" from the rest of the world
+for large fractions of the week.
+
+In setting up the nameserver stuff, I have to plan for extended times
+when our primary domain authority is unreachable.  My questions are:
+Is this really a problem?  If it is, should I then plan on redundant (2)
+authoritative nameservers within ECN?  Should they also be authorative
+for our sister domain "rice.edu"?
+
+Also, with the latest berkeley name daemon stuff, I noticed that they
+initialized the whole berkeley name space from a file on all machines.
+Is this an attempt to be operational even if the authorative name
+daemon is unreachable, or is this just an efficiency optimization?
+
+Also, I guess I should set up some authoratative nameservers for
+"46.128.in-addr.arpa" (and maybe purdue.edu).  Who do I contact
+to register such authority?  Also, how easy is it to change
+authoratative servers?  Would it possible to test the domain stuff
+on little used machines and move the authority to production machines
+later, or should I start out with the most obvious production choices?
+
+I realize that there are a lot of questions asked in this letter.
+Really what I am asking is: given my situation, how should I proceed
+in order to:
+1) guarantee reliable name service for both local and remote hosts.
+2) fit in well with the internet domain naming system.
+Suggestions are appreciated.
+
+			Kirk Smith
+			ks@gsp.purdue.edu
+			Purdue Engineering Computer Network
+
+<b>[<a href="?l=namedroppers&m=95837667426612&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426615&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426620&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

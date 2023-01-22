@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mail from unregistered hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026703&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026708&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026703&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026710&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300014&r=1&w=2">Mail from unregistered hosts</a>
+From:       <a href="?a=95837783700019&r=1&w=2">Jon Solomon &lt;JSOL () BUCS20 ! BU ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198605">1986-05-06 23:29:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026707&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026707&q=raw">body</a>]</b>
+
+We have this problem at BU because only one of our 6 class C networks
+is advertized. Any host not on the advertized must point to one that
+is. Fortunately for us this is a fairly simple change to our mail
+software (fiddling creatively with the sendmail.cf), and I suspect
+in most workstations it is fairly simple to add this hack only to
+remove it when everybody is running domains.
+
+I claim that there are really only two "timestamps" we have to
+worry about:
+
+	Now
+	When all internet hosts run domains. (MILNET or otherwise).
+
+I further claim that the user%workstation@nic-registered host (or in 
+our case "advertized host") is only needed until domains are fully
+implemented across the Internet.
+
+--JSol
+
+<b>[<a href="?l=namedroppers&m=95837759026703&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026708&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026703&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026710&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

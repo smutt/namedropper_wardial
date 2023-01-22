@@ -1,0 +1,140 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  recursion available vs virtual circuits' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927016&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926993&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927021&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500014&r=1&w=2">Re:  recursion available vs virtual circuits</a>
+From:       <a href="?a=95837785000001&r=1&w=2">hedrick () aramis ! rutgers ! edu (Charles Hedrick)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-18 21:12:33</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927017&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927017&q=raw">body</a>]</b>
+
+I think we actually agree on what a name server should do, but I'm not
+sure that the things we agree should happen are strictly speaking
+allowed by RFC883.  In my view, the spec only allows you to say
+something is authoritative when it comes directly from a server that
+is authoritative for the zone.  I just looked more carefully at the
+description of the "recursion desired" bit in rfc883.  It certainly
+implies that the query is pursued recursively until an authoritative
+result is given.  As far as I can see, this means that every recursive
+query would end up being forwarded to the actual authority for a
+domain.  I.e. cached information could not be used to respond to it.
+I believe it is OK to leave the authoritative bit on when you forward
+the response from the authority back to the original requestor,
+otherwise recursion could never be implemented at all.  But is seems
+fairly clear that you can only set authoritative when you are
+forwarding a response that you just got.  If you put the data in your
+cache, and then use the cache to answer a later question, that answer
+is coming from your cache, not from an authoritative server, and a
+strict reading of the RFC says that it is not authoritative.
+
+Now the problem with this is that recursion is normally used so that
+application programs don't have to have a complete resolver that knows
+how to follow a query back through the whole set of servers.  Rather,
+application programs simply ask a local name server to pursue the
+query for them recursively.  In this case, we specifically do not want
+the query to be pursued back to a final authority.  We want the answer
+to come from the cache if it is there.  Part of the point of using a
+recursive query rather than having the individual application pursue
+the request is that we want a single entity to do all the lookups so
+it can build up a strong cache.  That way, most of our answers can
+come from the cache.  So it seems clear that in practice, we want the
+name server to use its cache to respond to recursive queries.  (There
+is one alternative: to take seriously the distinction between resolver
+and name server which is implicit in RFC883.  See below for a
+description of a "resolution server" that would do these recursive
+queries.)
+
+So what has happened is that there has been a de facto modification of
+the spec to say that recursive requests can be answered from the local
+cache.  However those responses that come from the local cache still
+can't be flagged as authoritative.  This last vestige of conformance
+is the standard is about to fall as well.  We are about to start
+seeing negative caching.  Again, this is driven by necessity.  The
+primary driving force is the mail system.  The mail system must look
+for both address and MX records for each destination.  But
+destinations often have only one of these records.  In order to avoid
+having every request have to go out to the Arpanet, we have to cache
+the fact that a given host has no address or no MX.  Now we have
+already established that we will give answers from this cache even if
+the user sets recursion desired.  But it now appears clear that we are
+also going to have to set the authoritative bit.  The problem is that
+this is the only way to make it clear what a negative answer means.
+It is crucial to the mail system to know whether a name is known
+definitely not to exist, or whether we simply can't get the
+information at the moment.  The bind implementors, at least, seem to
+believe that the way to make this distinction is by using the
+authoritative bit.  That is, they do not accept a no as final unless
+it has authoritative set.  One might say that different error codes
+should be used to make this distinction.  For example, if we simply
+can't find the information, we might return "server failure", but if
+our cache shows that the name does not exist, we would return "name
+error".  Unfortunately, the RFC specifically says that name error can
+only be returned by an authoritative server, so this is no help.  It
+is clear that in practice, servers that practice negative caching are
+going to have to set authoritative for any case where they want to be
+understood as saying that a thing definitely does not exist, as
+opposed to saying that they can't find out at the moment.  This is a
+violation of the spec, but probably an unavoidable one.
+
+Now to some extent what I have been saying is still a discusion of the
+bind implementation rather than the spec, but in some cases it's hard
+to see what else you could do.  The one thing they could have done
+differently is to follow the hint in RFC883 and separate the name
+server and the resolver.  The picture in the RFC shows a resolver and
+a name server sharing a common database.  If they had really done it
+that way, this could solve a number of these problems.  Probably what
+would happen is that the existing bind code would be split between two
+programs, a pure name server and a "resolution server".  The
+resolution server would keep the cache, and would be responsible for
+tracking down names for applications.  The name server would keep the
+authoritative data on the local zones, and would just respond to
+requests for this information.  Indeed probably the name server
+wouldn't implement recursion, since there is no obvious need for it.
+When an application needed something looked up, instead of making a
+recursive request of the name server, it would make a request of the
+resolution server.  That server would only be talking to its own
+clients, and it would use some port other than 53.  For that reason,
+the protocol it used wouldn't need to follow any particular standard.
+The simplest thing for it to do would be to follow normal protocol,
+but to adopt the altered definitions of recursion and authoritative,
+as described above.  Since those definitions are just being used in
+private communications between the two halves of a resolver, it
+doesn't matter whether they follow the standard or not.  The name
+server would however implement the standard strictly.  But since
+nobody is depending on it to do resolution, it could afford to adopt
+the strict definition of recursion, or even refuse to do recursion.
+Similarly, it wouldn't necessarily have to do negative caching at all.
+(That could be done in the resolution server.)  So it wouldn't have to
+use an altered version of the authoritative reply bit.
+
+To carry this all one step further, it would be easy enough to make
+simple changes to bind to implement this.  Simply run two copies of
+bind, one as an official name server and the other as a resolution
+server for use by local applications.  The copy running as an official
+name server would have no cache, and would refuse all requests for
+recursive service.  The copy running as a resolution server would use
+a different port number, and would do all the stuff that the current
+bind does, plus negative caching.  Whether it is worth doing this
+is another question.  It's probably easier just to adopt the slight
+modifications in interpretation of recursion and authoritative that
+are needed to allow the same program to act as both a name server and
+a resolution server.
+
+<b>[<a href="?l=namedroppers&m=95837781927011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927016&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926993&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927021&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

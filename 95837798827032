@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: problems defining a root server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827031&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827023&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827031&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300018&r=1&w=2">Re: problems defining a root server</a>
+From:       <a href="?a=95837817200032&r=1&w=2">"Cricket" &lt;cricket () winnie ! corp ! hp ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-26 19:44:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827032&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827032&q=raw">body</a>]</b>
+
+
+       Looks like the ".."  in the SOA is giving you problems.  I can
+       understand why it might - I've never seen it before in my DNS life.
+       Maybe it's IBM value-added?  ;-) Certainly wouldn't enhance
+       portability of db files between implementations....
+
+    From this we deduce that your DNS life is under five years of age :-).
+
+Heck yeah.  Five years ago, I was still sneaking into R movies.  Almost.
+
+    Back before anybody had finished a DNS implementation, domain names in
+    master files never had trailing dots, TTLs were 16-bit quantities, and
+    ".."  was considered the correct way to refer to the root.  By the time
+    BIND and JEEVES (the first implementations) hit the streets, these
+    matters had been straightened out.  See RFCs 883 and 973 for further
+    historical details.
+
+I will, thanks.
+
+    If the VM code can't accept the modern notation, it's broken, but since
+    ".."  can't possibly mean anything useful in the modern notation, one
+    could argue that it's reasonable for the VM code to support it as a
+    form of upward compatability.
+
+I thought at first that it might refer to the parent of the current origin
+in some implementations, a la the UNIX filesystem.
+
+cricket
+
+<b>[<a href="?l=namedroppers&m=95837798827033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827031&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827023&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827031&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

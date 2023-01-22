@@ -1,0 +1,87 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MD, MF, and larger issues' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426630&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426632&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    MD, MF, and larger issues
+From:       <a href="?a=95837693400019&r=1&w=2">MOCKAPETRIS () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-15 14:30:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426631&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426631&q=raw">body</a>]</b>
+
+As the recent discussion of MD and MF types has illustrated, the domain
+system has created a need to refine the semantics of information
+available from the domain system.  Mail isn't the only issue; for
+example, the address RRs now make multiple host addresses available to
+many applications which didn't have them before, and we start wondering
+if order is important, how we select an address to use, etc.
+
+As a general principle, I believe that we should start thinking about
+the domain system as a general mechanism for distributing data and work
+on defining modular specs or guidelines for applications.  Mail is a
+good example.
+
+In any case, a couple of additional thoughts on MF and MD:
+
+The original idea was that MD was the destination and MF was something
+willing to eventually get it to the destination.
+
+Some group of organizations connected via a bad (intermittent, low
+bandwidth, or some such) link to the rest of the world might use MD/MF
+combinations to try to get mail over the bad link even when the
+destination was down.
+
+Similarly, an organization might choose to make a number of alternates
+available via MF partners to remove queueing requirements from senders
+on small hosts.
+
+A personal computer might access mail by calling up a big brother
+mail drop via POP or some other system to download mail.  In this case,
+the PC host might be represented as MFs exclusively.
+
+A sending host might prefer, given a destination that returns both MF
+and MDs, to believe that it would be faster/more reliable/more secure to
+wait for a MD to be available than to use the MFs.
+
+Perhaps we should deconceive MD and MF, and create a new RR called say,
+MX.  The data section for MX would carry multiple data items: a domain
+name for a mail agent (i.e. the contents of present MD and MFs), AND a
+integer "distance" value.  The distance value would be zero if the agent
+was the destination, and a number representing "closeness" to the
+destination otherwise.  The idea here is that smaller distance values
+should be selected in preference to larger ones, all other things being
+equal.  (It might be possible to figure out some good unit for
+"distance" but I'm not going to try and defend one.)
+
+The advantages of this scheme are:
+
+	Caching would be easier because we use a single data type.
+
+	Mail senders don't have to worry about two types.
+
+	Selecting between different MFs might be more rational.
+
+However, I'm not sure we want to replace our existing system with MX,
+even though its clearly better than the MD &amp; MF RRs we have now.
+I do suggest that we use these experiences when we design new RR types.
+
+paul
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426630&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426632&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

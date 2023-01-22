@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: MX clarification' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026998&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027000&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027012&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400029&r=1&w=2">re: MX clarification</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-31 12:25:27</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026997&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026997&q=raw">body</a>]</b>
+
+
+&gt; I recently wrote an MX mailer according (I thought) to RFC 974.  As I read
+&gt; it, one was supposed to eliminate MX records pointing to systems which
+&gt; don't sport SMTP WKS records.  I have found there are a large number of
+&gt; systems which have MX entries pointing to systems without WKS records.
+
+Bob:
+
+    You do conform to RFC 974.  Unfortunately, demanding people keep
+accurate WKS records proved to be a flop.  So you shouldn't bother to 
+check for WKS (indeed, the soon-to-be-release Host Requirements will
+declare the WKS requirement dead).
+
+Thanks,
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837783027001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026998&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027000&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027012&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

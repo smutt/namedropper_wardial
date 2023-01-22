@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'test nameserver at UCL' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426480&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426482&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426483&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100038&r=1&w=2">test nameserver at UCL</a>
+From:       <a href="?a=95837693200021&r=1&w=2">Andrew McDowell &lt;mcdowell () ucl-cs ! arpa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-24 11:52:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426481&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426481&q=raw">body</a>]</b>
+
+We're testing two DARPA nameservers (i.e. we're not registered yet),
+and we'd like people out there to test against us. Can you reach us? does the
+data we've fed our nameserver seem sensible? and so on. From your point of view,
+you might want to check that you can handle the delay you'll get. IP round-trip
+times between here and the states are about 2.5-3 seconds. we're getting about
+3-3.5 seconds delay for remote querys. We're also unusual in that we have our
+own top level domain- UK.
+
+ We have two nameservers, ns1.cs.ucl.ac.uk. on 128.16.5.2 and ns2.cs.ucl.ac.uk.
+on 128.16.6.1. Ns1 (BSD4.2VAX-UNIX running BIND) should be up all day except
+that it reboots itself in the small hours of the morning (our time). Ns2
+(BSD4.2SUN-UNIX, also BIND) may be down, especially overnight (our time).
+Most address records are *.cs.ucl.ac.uk, except that we also have a machine
+called cs.ucl.ac.uk, (giving us a mailbox on it for robert.cs.ucl.ac.uk., 
+who happens to have a pc, also named robert.cs.ucl.ac.uk).
+
+We have a lot of MF type records, establishing us as a
+mail forwarder for most of the UK ( check out your buffer lengths on 
+interactive-computing-facility.engineering.cambridge.ac.uk.).
+
+<b>[<a href="?l=namedroppers&m=95837667426480&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426482&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426483&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Choosing an Internet address' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426505&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426508&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426508&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600010&r=1&w=2">Choosing an Internet address</a>
+From:       <a href="?a=95837693400006&r=1&w=2">yenbut () uw-beaver ! arpa (Voradesh Yenbut)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-09 11:17:12</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426507&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426507&q=raw">body</a>]</b>
+
+Hi,
+
+We are using the BIND name server and we are experiencing a problem
+in using gethostbyname().
+
+Whenever a host has more than one Internet address, the gethostbyname()
+returns only the first one which may not be the right one.  One way to fix
+the problem is to put a list of preferred networks to match on in the
+routine as recently done at Purdue.  However, it seems to be impractical
+to me since I found that brl-tgr.arpa having the Internet addresses,
+192.5.21.4 and 192.5.23.4; both addresses are in unfamiliar networks and
+only one address that is usable.  There would be more of hosts like this
+one.
+
+I also noticed that the first Internet address found in NIC host table or
+returned from a name server at SRI-NIC or USC-ISIB is usually the right
+one for us.  However, when the adresses are in cache of BIND name
+server, it returns the addresses in reverse order.
+
+Is there any specific order in putting in Internet addresses in a name
+server database and returning them especially at the root name servers?
+Is there a better algorithm in choosing an Internet address without
+trying it?  Do I miss something?
+
+Voradesh Yenbut
+Computer Science Department
+University of Washington
+ARPA: yenbut@uw-oahu.arpa
+UUCP: uw-beaver!uw-oahu!yenbut
+
+<b>[<a href="?l=namedroppers&m=95837667426505&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426508&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426508&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

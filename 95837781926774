@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TTLs ignored?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926773&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926775&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    TTLs ignored?
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-26 17:12:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926774&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926774&q=raw">body</a>]</b>
+
+    Date: Thu 26 Feb 87 10:40:46-PST
+    From: Peter Karp &lt;KARP@sumex-aim.stanford.edu&gt;
+
+    So maby the spec should be changed to allow the SOA field to include
+    either a MINIMUM or a DEFAULT TTL for a zone.  What was the reason for
+    choosing a minimum instead of a default anyway?  (Should this discussion
+    move to namedroppers?)
+
+[So moved.]
+
+One could argue that TTLs should not be associated with records at all,
+but should instead be associated with zones.  This "fixes" several
+problems (and probably introduces a few in the process).  The only way a
+record could become invalid is if the zone has changed.  Therefore, when
+a zone becomes potentially out of date all the records of that zone
+become potentially out of date.  When you touch a record that is out of
+date, you query the zone.  If the zone isn't out of date, all records
+reset their (effective) TTLs.  If the zone is out of date, then even a
+recent record could be out of date, despite its TTL.  Optimizations
+could include asking the zone "What has changed since version N" so that
+you could automatically revive records that haven't been changed without
+explicitly revalidating them as well as explicitly marking records as
+out-of-date that are known to have changed, possibly doing the update in
+the background.  These ideas aren't new; the Symbolics namespace system
+has been doing this for about 3.5 years now.
+
+<b>[<a href="?l=namedroppers&m=95837781926773&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926775&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

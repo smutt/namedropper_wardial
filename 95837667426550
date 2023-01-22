@@ -1,0 +1,239 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Nameserver/resolver behaviour' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426549&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426551&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426551&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600032&r=1&w=2">Nameserver/resolver behaviour</a>
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-02 16:57:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426550&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426550&q=raw">body</a>]</b>
+
+
+    [It was suggested that I pass this inquiry on to namedroppers]
+
+------- Forwarded Message
+
+To: bind@ucbmonet.arpa
+cc: craig@LOKI.ARPA
+Subject: Bug in gethostbyname()
+Date: 01 Oct 85 16:14:41 EDT (Tue)
+From: Craig Partridge &lt;craig@LOKI.ARPA&gt;
+
+
+    [I do have this feeling I'm generating too much traffic on this list]
+
+    We just found a funny problem here.  In certain cases, we
+are getting reponses to address queries which contain only a CNAME
+record in the ANSWERS section, and the appropriate address
+record in the ADDITIONAL RECORDS section.  This only seems to happen
+when the local nameserver had to go out to another nameserver to
+resolve the name.  (Subsequent queries, which can be resolved by
+the local nameserver until the entries time out, get the address
+in the ANSWERS section).  I've appended a protocol of the error
+we see below.
+
+    My problem here is that because the address is in ADDITIONAL
+RECORDS, gethostbyname doesn't find any addresses -- with the
+result that telnet and other applications tell me the host
+is unknown.  And even after quickly looking over RFC 883, I don't
+know who is at fault.  Is the error in gethostbyname -- should
+it have to go looking in the AR section for the address answer to
+an answer query, or am I getting a bad packet passed thru from the
+remote nameserver?
+
+    Anyone know the answer?
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh (CSNET)
+craig@loki (ARPA)
+{decvax,ihnp4,wjh12}!bbncca!craig (USENET)
+
+- -----------------------------------------------------------------------------
+
+FIRST QUERY:
+
+res_mkquery(0, harvard, 255, 1)
+res_send()
+HEADER:
+	opcode = QUERY, id = 1, rcode = NOERROR
+	header flags:  rd
+	qdcount = 1, ancount = 0, nscount = 0, arcount = 0
+
+QUESTIONS:
+	HARVARD.ARPA, type = A, class = ANY
+
+got answer:
+HEADER:
+	opcode = QUERY, id = 1, rcode = NOERROR
+	header flags:  qr rd ra
+	qdcount = 1, ancount = 1, nscount = 6, arcount = 10
+
+QUESTIONS:
+	HARVARD.ARPA, type = A, class = ANY
+
+ANSWERS:
+	HARVARD.ARPA
+	type = CNAME, class = IN, ttl = 14400, dlen = 21
+	domain name = HARVARD.HARVARD.EDU
+
+NAME SERVERS:
+	HARVARD.EDU
+	type = NS, class = IN, ttl = 14400, dlen = 16
+	domain name = SEISMO.CSS.GOV
+
+	HARVARD.EDU
+	type = NS, class = IN, ttl = 14400, dlen = 21
+	domain name = HARVARD.HARVARD.EDU
+
+	CSS.GOV
+	type = NS, class = IN, ttl = 14400, dlen = 16
+	domain name = SEISMO.CSS.GOV
+
+	CSS.GOV
+	type = NS, class = IN, ttl = 14400, dlen = 24
+	domain name = CU-ARPA.CS.CORNELL.EDU
+
+	CORNELL.EDU
+	type = NS, class = IN, ttl = 14400, dlen = 16
+	domain name = SEISMO.CSS.GOV
+
+	CORNELL.EDU
+	type = NS, class = IN, ttl = 14400, dlen = 24
+	domain name = CU-ARPA.CS.CORNELL.EDU
+
+ADDITIONAL RECORDS:
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 10.0.0.25
+
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.5.11.5
+
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.12.25.5
+
+	CU-ARPA.CS.CORNELL.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 10.3.0.96
+
+	CU-ARPA.CS.CORNELL.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.5.36.3
+
+	CU-ARPA.CS.CORNELL.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.5.51.3
+
+	CU-ARPA.CS.CORNELL.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.12.10.3
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 10.0.0.9
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.5.66.1
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 14400, dlen = 4
+	internet address = 192.5.90.1
+
+
+SUBSEQUENT QUERY (until entries time out):
+
+res_mkquery(0, harvard, 255, 1)
+res_send()
+HEADER:
+	opcode = QUERY, id = 1, rcode = NOERROR
+	header flags:  rd
+	qdcount = 1, ancount = 0, nscount = 0, arcount = 0
+
+QUESTIONS:
+	HARVARD.ARPA, type = A, class = ANY
+
+got answer:
+HEADER:
+	opcode = QUERY, id = 1, rcode = NOERROR
+	header flags:  qr rd ra
+	qdcount = 1, ancount = 4, nscount = 2, arcount = 6
+
+QUESTIONS:
+	HARVARD.ARPA, type = A, class = ANY
+
+ANSWERS:
+	HARVARD.ARPA
+	type = CNAME, class = IN, ttl = 12360, dlen = 21
+	domain name = HARVARD.HARVARD.EDU
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 10.0.0.9
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.5.66.1
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.5.90.1
+
+NAME SERVERS:
+	HARVARD.EDU
+	type = NS, class = IN, ttl = 12360, dlen = 2
+	domain name = HARVARD.HARVARD.EDU
+
+	HARVARD.EDU
+	type = NS, class = IN, ttl = 12360, dlen = 16
+	domain name = SEISMO.CSS.GOV
+
+ADDITIONAL RECORDS:
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 10.0.0.9
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.5.66.1
+
+	HARVARD.HARVARD.EDU
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.5.90.1
+
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 10.0.0.25
+
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.5.11.5
+
+	SEISMO.CSS.GOV
+	type = A, class = IN, ttl = 12360, dlen = 4
+	internet address = 192.12.25.5
+
+------- End of Forwarded Message
+
+<b>[<a href="?l=namedroppers&m=95837667426549&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426551&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426551&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

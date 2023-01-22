@@ -1,0 +1,130 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Strange behaviour DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627058&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627060&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627064&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400012&r=1&w=2">Strange behaviour DNS</a>
+From:       <a href="?a=95837786600010&r=1&w=2">eru!luth!sunic!mcsun!hp4nl!nikhefh!a20 () bloom-beacon ! mit ! edu  (Marten Terpstra)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-20 15:28:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627059&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627059&q=raw">body</a>]</b>
+
+
+Hi,
+
+Here's something we found when playing around with our
+nameserver (BIND 4.8) :
+
+We ask for the NS records for the domain it. (this is Italy).
+First time, no answer is found. Then we ask for a non-existing
+host in the domain it , monkey.it. The DNS comes up with a 
+SOA record for it.
+If we again ask for the NS records for it. we now get an answer
+consisting of lots of nameservers for domain it.
+What went wrong the first time ?
+
+This is not a problem of dig because we also tried nslookup and this
+gave the same strange behaviour.
+
+Can anyone tell me what I or the DNS did wrong ?
+
+Here's a script to prove this all ...
+
+
+Script started on Fri Oct 20 16:13:01 1989
+
+$ dig ns it.
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; ns it. 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 6
+;; flags: qr aa rd ra  Ques: 1, Ans: 0, Auth: 0, Addit: 0
+
+;; QUESTIONS: 
+;;	it, type = NS, class = IN
+
+;; Sent 1 pkts, answer found in time: 0.0 sec 
+;; FROM: nikhefh to SERVER: default
+;; WHEN: Fri Oct 20 16:13:39 1989
+
+$ dig ns monkey.it.
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; ns monkey.it. 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NXDOMAIN, id: 6
+;; flags: qr aa rd ra  Ques: 1, Ans: 0, Auth: 1, Addit: 0
+
+;; QUESTIONS: 
+;;	monkey.it, type = NS, class = IN
+
+;; AUTHORITY RECORDS:
+IT	IN	SOA	SUN.CNUCE.CNR.IT  postmaster.ICNUCEVX.CNUCE.CNR.IT (
+			891020	;serial
+			86400	;refresh
+			1800	;retry
+			2592000	;expire
+			432000	;minim )
+	; 412449
+
+;; Sent 3 pkts, answer found in time: 17.960 sec  sent 2 too many pkts
+;; FROM: nikhefh to SERVER: default
+;; WHEN: Fri Oct 20 16:14:12 1989
+
+$ dig ns it.
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; ns it. 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 6
+;; flags: qr rd ra  Ques: 1, Ans: 4, Auth: 4, Addit: 5
+
+;; QUESTIONS: 
+;;	it, type = NS, class = IN
+
+;; ANSWERS:
+it	IN	NS	SUN.CNUCE.CNR.IT	; 518353
+it	IN	NS	ICNUCEVX.CNUCE.CNR.IT	; 518353
+it	IN	NS	N2NGW.NYSER.NET	; 518353
+it	IN	NS	WRATH.CS.CORNELL.EDU	; 518353
+
+;; AUTHORITY RECORDS:
+IT	IN	NS	SUN.CNUCE.CNR.IT	; 518353
+IT	IN	NS	ICNUCEVX.CNUCE.CNR.IT	; 518353
+IT	IN	NS	N2NGW.NYSER.NET	; 518353
+IT	IN	NS	WRATH.CS.CORNELL.EDU	; 518353
+
+;; ADDITIONAL RECORDS:
+SUN.CNUCE.CNR.IT	IN	A	192.12.192.4	; 518353
+ICNUCEVX.CNUCE.CNR.IT	IN	A	131.114.1.30	; 518353
+ICNUCEVX.CNUCE.CNR.IT	IN	A	192.12.194.1	; 518353
+N2NGW.NYSER.NET	IN	A	192.35.82.2	; 172753
+WRATH.CS.CORNELL.EDU	IN	A	128.84.254.10	; 52386
+
+;; Sent 2 pkts, answer found in time: 4.180 sec  sent 1 too many pkts
+;; FROM: nikhefh to SERVER: default
+;; WHEN: Fri Oct 20 16:14:47 1989
+
+$ 
+
+Script done on Fri Oct 20 16:15:09 1989
+
+
+-- 
+Marten Terpstra                                  National Institute for Nuclear
+Internet : terpstra@nikhef.nl 		                and High Energy Physics
+Oldie-net: {....}mcsun!nikhefh!terpstra	      (NIKHEF-H), PO Box 41882, 1009 DB
+Bitnet   : terpstra%nikhef.nl@hasara5.bitnet         Amsterdam, The Netherlands
+
+<b>[<a href="?l=namedroppers&m=95837784627058&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627060&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627064&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

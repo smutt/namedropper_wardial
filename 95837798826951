@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Monitoring your nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826950&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826955&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100011&r=1&w=2">Monitoring your nameserver</a>
+From:       <a href="?a=90366299500004&r=1&w=2">Dan Schlitt &lt;dan () sci ! ccny ! cuny ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-14 15:25:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826951&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826951&q=raw">body</a>]</b>
+
+
+A few days ago I posted a question to the BIND list.  I got a few responses
+but not as much as I expected.  This mailinglist is a little more active
+than the BIND list so maybe I can get a few more ideas from it.
+
+/dan
+
+To: bind@ucbarpa.Berkeley.EDU
+Subject: How do YOU tell if named has died?
+
+Two events yesterday prompt me to ask the assembled multitude the
+question in the subject line.  First, I discovered that while I was
+away on vacation named on one of our hosts died and nobody here at the
+time noticed its passing.  It didn't cause problems for anyone because
+it is only doing DNS for our local domain and is one of two
+secondaries.  The primary and the off-site secondary were both doing
+their job.  But we might not have been so lucky.
+
+Second, I read J. Van Bokkelen's new RFC (rfc1173) and was reminded of my
+responsibilities (which I obviously had been shirking).
+
+So how do folks arrange to get automatic notification in a timely way
+when their nameserver software dies?  Answers for diverse hardware
+running unix for me, but others may be interested in other cases.
+
+/dan
+
+<b>[<a href="?l=namedroppers&m=95837798826950&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826952&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826955&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

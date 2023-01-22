@@ -1,0 +1,128 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Subnetting and RFC 1101' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827101&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827103&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827101&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827108&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500012&r=1&w=2">Re: Subnetting and RFC 1101</a>
+From:       <a href="?a=95837818000041&r=1&w=2">smb () purdue ! edu  (Scott M !  Ballew)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-08 14:08:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827102&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827102&q=raw">body</a>]</b>
+
+In article &lt;2858@naucse.cse.nau.edu&gt; root@naucse.cse.nau.edu (Paul Balyoz) writes:
+
+&gt;Is it legal to use an address for a NETWORK such that the subnet portion
+&gt;is all zeroes?  For example, suppose that the class-B address 134.114
+&gt;has been assigned to you, and you use 8-bit subnetting (netmask
+&gt;is 255.255.255.0).  Does this mean that 134.114.0 can be used as a
+&gt;legal subnetwork, which can have hosts assigned below it (134.114.0.23),
+&gt;or must there be a non-zero value for the subnet portion (3rd octet)?
+
+While it is technically legal, we avoid it like the plague.  The reasons
+are numerous but basically all come down to, "someday, it will bite you
+in the ass."  Consider that a broken implementation, or one that still
+believes ONLY 0's broadcasts (are there still any of these?) may have
+problems with it.  Since you have 256 subnets to play with, it hurts little
+to loose this one.
+
+
+&gt;How about 255 for the 3rd octet?  Seems like this should be OK,
+&gt;because your broadcast address would be 134.114.255.255, which,
+&gt;with the aforementioned netmask, is only broadcast for the network
+&gt;134.114.255 .
+
+However, this is also the "all subnets" broadcast for net 134.114.
+What do you do now?  Again, we avoid this one and have now lost only 2
+of 256 possible subnets.  This has not been a problem.
+
+&gt;If this is legal, then I see a problem with the extensions described
+&gt;by RFC 1101.  Suppose addresses 134.114 are subnetted 255.255.255.0,
+&gt;but then subnet 134.114.0 is subnetted FURTHER: netmask 255.255.255.248!
+
+This becomes dangerous (different subnet masks for the same network).
+Consider the following topology:
+
+
+    A        B                        
+    |    1   |
+    +--------+
+             |
+             C
+          2  |
+        +----+
+        |     
+        D     	    	    E----The rest of the Internet
+        |          3        |
+        +----------+--------+
+                   |
+                   F
+               4   |
+            +------+
+            |
+            G
+
+Now, assign the following IP network/host addresses and masks:
+Net 1:  128.10.4.0      255.255.255.0
+Net 2:  128.10.3.128    255.255.255.128	    (7 bit host part)
+Net 3:  128.10.3.0      255.255.255.128
+Net 4:  128.10.2.0      255.255.255.0
+
+Host A: 128.10.4.1
+Host B: 128.10.4.129
+Host C: 128.10.4.2, 128.10.3.130
+Host D: 128.10.3.131, 128.10.3.3
+Host E: 128.10.3.4, (some address that doesn't matter)
+Host F: 128.10.3.5, 128.10.2.5
+Host G: 128.10.2.6
+
+Now consider the case when host G wishes to send a datagram to host B.
+It consults its routing table and routes it to F.  F consults its
+routing table and finds an entry for net 128.10.4.0.  What subnet mask
+does it use?  The one for subnet 2?  Subnet 3?  If it chooses the mask
+for subnet 2, it will correctly route this datagram to gateway D.  If
+it chooses the mask for subnet 3, it will incorrectly route this
+datagram to gateway E (default route).
+
+Assume it chose correctly and sent it to D.  D consults its routing
+tables and also finds an entry for 128.10.4.0.  However, it has only
+one subnet mask to choose from, namely the one for subnet 3.  It
+therefore incorrectly routes the message to gateway E and sends a
+redirect to gateway F.
+
+Assume, now, that gateway F sent the datagram to gateway E or that
+gateway D forwarded it to gateway E.  E consults its routing table and
+discovers an entry for 128.10.4.0.  If it chooses the 9-bit mask of
+its one and only subnet, it will incorrectly send a destination
+unreachable message to host G.  If, on the other hand, it somehow
+comes up with the correct 8-bit mask, it will route the datagram to
+gateway D (who will surely send it back to E).
+
+Now the question:  Is it really worth it to run different subnet masks
+on the same network?
+
+&gt;Paul Balyoz, Software Specialist II    pab@naucse.cse.nau.edu
+&gt;Northern Arizona University            root@naucse.cse.nau.edu
+&gt;PO Box 15600, Flagstaff, AZ 86011      pab%naucse@arizona.edu
+&gt;NICname for whois: PB1                 ...arizona!naucse!pab
+
+Scott Ballew
+Cypress Network Operations Center
+Purdue University Department of Computer Sciences
+
+<b>[<a href="?l=namedroppers&m=95837798827101&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827103&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827101&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827108&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

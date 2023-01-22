@@ -1,0 +1,116 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'NIC nickname policy' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426568&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426570&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    NIC nickname policy
+From:       <a href="?a=95837693400032&r=1&w=2">Ken Harrenstien &lt;KLH () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-22 17:55:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426569&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426569&q=raw">body</a>]</b>
+
+Several people have expressed confusion about the NIC's policy for
+registering host nicknames, and have somehow been led to believe that
+the NIC has something against second or third-level domain names.
+This message is an attempt to clarify our position and explain where
+the issue started.
+
+As far as the NIC host table is concerned, there is no distinction
+between a domain style name and and "old" host name; they are both
+just names.  The level, or number of domains in a name, is completely
+irrelevant.  The first name in a host entry is the official name which
+must be used in any external references to that host.  All other names
+are considered "nicknames".
+
+In order to reduce the size of the host table, we strongly discourage
+nicknames.  In general, the only valid reason for a nickname to exist
+is the fact that the nickname once was, or may become, the official
+name for that host.  When official names change, some period of
+overlapping existence is needed to allow time for the change to
+propagate to all hosts; not every site updates their copy of the host
+table every night.  Thus, a more accurate term for NIC "nicknames"
+would be "alternate names", since these are only intended to keep
+things working, rather than to allow everyone to use their favorite
+hosts on a first-name basis.  Nicknames intended for the latter purpose
+are best handled locally.
+
+There are still many old, short "first-name" nicknames which remain
+for various historical reasons.  The advent of the domain name system,
+with the mandatory change-over to domain-style names, is a great
+opportunity to start getting rid of them.  Meanwhile, we try to make
+sure that any new entries have no nicknames whenever possible.
+
+One of the philosophical goals we were aiming for while working out
+the structure of the domain name system was to end up with only ONE
+name for any particular host, even though this site might exist on
+different networks.  By using neutral top-level domains of COM, EDU,
+and the like, we hoped to avoid a multiplicity of names resulting from
+political claim staking (MC.MIT.ARPA = MC.MIT.CHAOS = MC.MIT.CSNET =
+MC.MIT.DOE = etc etc) and to encourage the selection of just one name
+which could then be used by all (or most) organizations and networks
+using a particular host.  This is the underlying basis for the "no
+domain nicknames" policy; it is not a technical problem, but rather a
+philosophy which we think will make life easier in the long run (and
+having maintained these lists for years, we do speak from experience).
+
+What is now causing confusion is the fact that many people have used
+the NIC host table as a way of vectoring their mail to different
+places at different times, by shuffling nicknames around.  This is not
+really how the table was meant to be used, and the creation of MF type
+records in the domain name system is a reflection of the fact that
+mail addressing is not the same as TELNET or FTP host addressing.
+
+In the particular case that started all this, Bruce Nemnich wanted to
+register GODOT.THINK.COM as an official name, with THINK.COM as a
+nickname.  The intent here was to have every machine in the THINK.COM
+domain fake up their return-path and sender-address to xyz@THINK.COM
+which would then relay responses to the appropriate place.
+
+Now, there is no inherent technical problem with simply sticking those
+names in our database.  However, this request was initially rejected,
+on the basis of our simple "no domain nickname" guideline, by the
+staff members who serve as HOSTMASTER.  When later they anxiously
+asked me for confirmation, I allowed as how "we could do it-- but it
+would be wrong."
+
+Remember, mailers are still required to use official host names in
+anything which goes out.  Supposing that we carried out the THINK.COM
+request, the THINK.COM hosts would be violating the requirement by
+using the "THINK.COM" nickname as part of the return address in their
+outgoing mail.  If they did this anyway, then any host which DOES
+follow the rules when responding to these messages will generate
+headers addressed NOT to THINK.COM, but to GODOT.THINK.COM.  And, of
+course, anyone responding to the secondary headers will never have
+seen any THINK.COM addresses!
+
+The solution that was adopted was simply to make THINK.COM the
+official name for one of their hosts.  No nicknames.
+
+Note that as long as mail addresses are the equivalent of host
+addresses, the domain name system will still need to remember "old"
+names, so that the stuff in your mail files remains useful for a
+reasonable time after some host has changed its name.  If people would
+like to discuss this further, I suggest using the HEADER-PEOPLE
+mailing list, as the problem is slightly more related to mail than to
+the workings of domain name servers.  But since I used NAMEDROPPERS too
+for this message, I'll understand if others go through the same vacillation and
+settle on both...
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426568&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426570&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

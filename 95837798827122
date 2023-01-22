@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How to create /etc/hosts from zone' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827121&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827120&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500015&r=1&w=2">Re: How to create /etc/hosts from zone</a>
+From:       <a href="?a=95837818200008&r=1&w=2">usc!zaphod.mps.ohio-state.edu!uakari.primate.wisc.edu!aplcen!haven!uvaarpa!murdo</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-15 23:44:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827122&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827122&q=raw">body</a>]</b>
+
+In article &lt;1667@devildog.att.com&gt; jrallen@devildog.att.com (Jon Allen) writes:
+   References: &lt;652@janus.Quotron.com&gt; &lt;19523@oolong.la.locus.com&gt;
+ It would be a work saver if I
+   could just update the DNS files and generate an appropriate /etc/hosts
+   for the dumb machines.
+
+I have constructed a tool that I call "gethosts" that can generate a
+hosts file from queries to the DNS for a domain. It has a variety of
+options, such as recursively descending a tree of subdomain servers,
+or appending the HINFO data to the lines in the hosts table, or
+inserting comments derived from "whois" queries to the NIC regarding
+the domain, and it even dumps inverse-address domains. Much of this
+capability makes gethosts useful for producing nicely formatted dumps
+of zones or trees of zones when one is exploring the Internet.  The
+code is a big (20_KB) Bourne shell script which contains an awk
+program which invokes nslookup in subprocesses and analyzes the
+output. I run it with GNU awk (gawk). It is not fast (I often do
+"gethosts domain.edu &gt;hosts.domain.edu &amp;" to run it in the
+background), and it has some bugs, but I frequently find it useful.
+You can get the code via anonFTP:
+
+	fits.cx.nrao.edu:/pub/src/gethosts.tar.Z	[14.8_KB]
+	[192.33.115.8]
+--
+
+Donald C. Wells, Assoc. Scientist  |        dwells@nrao.edu
+Nat. Radio Astronomy Observatory   |         6654::DWELLS
+Edgemont Road                      | +1-804-296-0277      38:02.2N
+Charlottesville, VA 22903-2475 USA | +1-804-296-0278(Fax) 78:31.1W
+
+<b>[<a href="?l=namedroppers&m=95837798827121&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827120&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827123&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bad root domain name server?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926804&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926804&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800015&r=1&w=2">Bad root domain name server?</a>
+From:       <a href="?a=95837783700007&r=1&w=2">Dave Johnson &lt;dbj () rice ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-07 22:30:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926801&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926801&q=raw">body</a>]</b>
+
+We recently changed the address of the machine RICE.EDU from 192.5.58.6
+to 128.42.5.1, and the hardware at the old address is going away soon.
+Unfortunately, we've been having trouble getting everybody to use the
+new address.  I have now tracked down at least part of the problem, and
+the cause seems to be a root domain name server with old data.
+
+According to the named.ca (version 1.9 of 87/02/06) distributed on the
+bind mailing list, the current root domain name servers are SRI-NIC.ARPA,
+C.ISI.EDU, A.ISI.EDU, and BRL-AOS.ARPA, and in fact when I ask SRI-NIC.ARPA
+for name servers for .EDU, this is the list I get back.  All of these
+except C.ISI.EDU have the correct new address for RICE.EDU and have
+serial number 870403 for the .EDU zone.  However, C.ISI.EDU still is
+giving out our old address and has only serial number 870326 for .EDU.
+Thus, anybody asking C.ISI.EDU for our address gets incorrect information.
+
+So, the question is: how can this happen?  Is C.ISI.EDU really a server
+for .EDU?  If not, why is it listed as such by SRI-NIC.ARPA?  Or,
+if it really is a .EDU server, why does it still have old data?  When
+is this going to be fixed?
+
+By the way, if anybody is still using text host tables or knows anybody
+who is, could you please make sure that they have the new address for
+RICE.EDU?  Thanks.
+
+                                        Dave Johnson
+                                        Dept. of Computer Science
+                                        Rice University
+
+<b>[<a href="?l=namedroppers&m=95837781926803&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926804&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926804&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

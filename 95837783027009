@@ -1,0 +1,244 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: are network names available from the DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027008&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027010&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027005&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027010&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400030&r=1&w=2">re: are network names available from the DNS?</a>
+From:       <a href="?a=95837784800007&r=1&w=2">gross () gateway ! mitre ! org (Phill Gross)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-01 22:33:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027009&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027009&q=raw">body</a>]</b>
+
+	
+&gt; My memory was that it had been assigned to an existing WG.  Phill?
+
+Unfortunately, no.  With the Domain group inactive, there is currently
+no group dealing with this issue explicitly.
+
+I renew my question to this mailing list -- Are there folks interested
+in joining an IETF Working Group to deal with this (and other) Domain
+issues?  For those of you unfamiliar with the IETF, I'll include below
+an article from the Sept issue of the ACE Connexions newsletter (this
+issue was distributed to all attendees of Interop 88).
+
+Phill
+-----
+
+
+
+.ce 2
+.ft B
+.ps +2
+The Internet Engineering Task Force 
+.ft R
+.ps -2
+
+Phill Gross
+
+.LP
+History
+.PP
+DARPA originally formed the Internet Activities Board (IAB) to 
+to oversee and coordinate work under DARPA's Internet Research
+Program.  It was decided to organize ``Task Forces'' in various
+areas of interest, such as Gateway Algorithms, End-to-End Services,
+and Privacy.  The chairs of these Task Forces together would compose
+the core of the IAB itself.  Dr. David Clark (MIT), chairs the IAB and
+Dr. Jon Postel (ISI) is the vice-chair.  Since the IAB had the 
+responsibility for the Internet protocol architecture, Clark and Postel
+also carry the weighty titles of The Internet Architect and the Deputy
+Internet Architect, respectively.  In keeping with their mission of 
+overseeing the Internet Research Program, the IAB's Task Forces all had a 
+distinctly research-oriented flavor.  
+.PP
+It wasn't long, however, before the IAB's success caught up with it.  There 
+should be no need to relate here how the Internet has grown in both size 
+and importance in recent years.  Along with this growth and success came 
+a subtle shift in the IAB's responsibilities.
+
+.LP
+Evolution
+.PP
+Before long, the IAB grew into the coordinating committee of the Internet,
+with responsibility to oversee new protocol specification.  In addition, 
+the original DARPA emphasis broadened out to include other agencies, 
+such as DCA and NSF.  Even more recently, five agencies (DARPA, DOE, HHS, 
+NASA, NSF) have joined together to form the Federal Research Internet 
+Coordinating Committee (FRICC).  The goal of the FRICC is to pursue 
+the networking recommendations laid out by the congressionally-chartered
+Federal Coordinating Committee on Science, Engineering and Technolgy 
+(FCCSET).  The FCCSET recommendations include building a high-speed 
+national internet within five years.  It was natural for the FRICC to 
+turn to the IAB for coordination and guidance in their efforts.
+.PP
+Therefore, the IAB now has wide agency involvement and has established 
+liasons with other R&amp;D bodies.  Throughout all this growth and evolution, 
+the Task Forces of the IAB, for the most part, have been successful in 
+maintaining their forward-looking research orientation.
+.PP
+However, one Task Force was particularly hard hit by the growth in the 
+Internet.  The original mission of the Gateway Algorithms and Data Structures
+Task Force (GADS), chaired by Dr. David Mills (University of Delaware),
+was to pursue research topics at the Internet layer, such as Internet routing.
+Even at its early meetings, the group found itself diverted from
+advanced topics to deal with more operational problems like how to
+adapt EGP for a large, diverse, operational Internet.
+.PP
+It soon became clear that another group was needed
+with a nearer-term focus.  Finally, at the IAB meeting in January 1986, it 
+was decided to divide the GADS group into the Internet Architecture Task 
+Force (INARC) and the Internet Engineering Task Force (IETF).  The 
+Architecture TF maintained the original research mission with Dave Mills 
+as chair, while the IETF absorbed the nearer-term engineering and technology 
+transfer responsibilities.  Mike Corrigan (OASD, then Technical Program 
+Manager for DDN) was the original chair of the IETF.
+
+.LP
+IETF Charter
+.PP
+The IETF was given the charter to identify and coordinate solutions
+for problems in the management, engineering,
+and operations of the Internet.  Furthermore, the IETF would act to
+identify problems in the Internet protocol architecture,
+recommend near-term and mid-term approaches, and help coordinate 
+prototyping efforts.  In summary, the IETF would not be concerned with 
+longer-term research topics, concentrating instead on nearer-term
+operational issues and mid-term protocol R&amp;D issues that would have a high 
+operational payoff without significant changes to the basic architecture.
+
+.LP
+Second Evolution
+.PP
+At first, the IETF meetings felt very much like the old GADS meetings,
+since many of the issues and participants were the same.  With continued
+growth, in particular with the advent of the original NSFnet, the IETF
+began to develop a much larger constituency.  Gateway vendors for
+the various NSF regional networks began to attend.  Finally in March 1987,
+the NSFnet Routing Group joined forces with the IETF, approximately
+doubling its size at that time, and the format was reorganized to
+take on its current structure.  
+.PP
+When Mike Corrigan moved to the Office of the Assistant Secretary of 
+Defense (OASD), the IAB invited the author to chair the group.
+It was around this period -- spurred by the merger with the NSFnet 
+Routing Group -- that the IETF
+began its real growth toward becoming a forum for government agencies, 
+contractors, university researchers, vendors, network users, and 
+industry R&amp;D labs.
+
+.LP
+New Format
+.PP
+After the NSFnet group joined, IETF meetings essentially became open forums.
+With this increased size and scope, it was necessary for the IETF to develop 
+a structure of its own.  Specific problem areas within the IETF are now 
+addressed by ``Working Groups''.
+.PP
+There were originally three Working Groups--Routing,
+Domains, and Performance.  In yet another measure of growth, there
+are now 18 Working Groups.  Five separate groups grew out of
+the original routing group.  These include efforts to improve the
+current EGP, to investigate a successor to EGP, to prototype an
+open IGP based on the proposed ANSI routing standard, and a routing
+advisory group for operational networks.
+.PP
+Other important IETF Working Groups that have received attention lately
+include Internet Host Requirements (an effort, chaired by Bob Braden
+of ISI, to define a standard host protocol operations; this will be a host
+analog to RFC 1009), CMIP-Over-TCP (CMOT) Network Management (chaired
+by Lee LaBarre of MITRE; to specify and prototype the use of ISO CMIP
+for network management within the Internet architecture), SNMP Extensions
+(chaired by Marshall Rose of TWG; to explore and define possible
+extensions to SNMP, as specified in RFC 1052), 
+Internet Management Information Base (MIB) (chaired by Craig Partridge of BBN;
+to define an Internet standard MIB for both CMOT and SNMP), and
+Serial Line IP (SLIP) (with three co-chairs; to specify the standard
+usage of IP over serial links).
+.PP 
+Many of the early Working Groups were established by the IETF chair.  More 
+and more, however, interested parties are asking to form Working Groups 
+under the auspices of the IETF.  The SLIP and CMOT groups fall into this 
+category, as do other groups on Public Data Network (PDN) routing, Telnet, 
+and Internet authentication.  It is probably fair to consider the RFC 
+1052-spawned groups on network management in this category, too.  This 
+is a new and promising trend and it indicates to me that activities under 
+the IETF are taking on a life of their own.  
+.PP
+For those who feel they have an issue that might be profitably addressed
+in this way, the rules for starting a Working Group are quite simple.  First, 
+the organizer must write a fairly narrow charter stating the goals and 
+expected duration of the group.  This will help both to justify the group 
+and to measure its progress.  Then, collect a reasonably small set of 
+active core participants and carry on electronic mail discussions or 
+hold separate meetings to work on the issue.  Finally, produce an RFC 
+or working paper to document the effort.  Working Groups are also expected 
+to report their progress at the IETF plenary meetings and to contribute 
+written status reports to the IETF Proceedings.
+
+.LP
+IETF Plenary Meetings
+.PP
+The IETF holds plenary meetings four times a year.  The Plenaries
+are three days long, with the first day and the morning of the
+second day devoted to Working Group breakout sessions.  The remainder
+of the time is divided between network status reports, Working Group
+reports, and technical presentations.  Proceedings are produced for each
+meeting, which include minutes of the plenary sessions, written
+Working Group reports, and all presentation foils.  The Network
+Information Center (NIC) at SRI has recently begun to act as a
+distribution point for IETF Proceediings.
+.PP
+The last IETF meeting was in June at the US Naval Academy, where 13
+working groups met and reported.  
+In addition to this heavy Working Groups activity, there were presentations
+on:
+.IP
+The organization and activities of the FRICC,
+.IP
+The early plans for how the Defense Research Internet (DRI)
+will eventually replace the Arpanet,
+.IP
+Canadian research networking efforts; this report was given
+by a representative from the Canadian National 
+Research Council (their analog to the US NSF),
+.IP
+Self-synchronizing network behavior by Van Jacobson,
+.IP
+Cray's success at achieving 200 Mbps TCP throughput.
+.PP
+Another highlight was a thorough
+report by Hans-Werner Braun of Merit, Inc. on the status of new NSFnet.
+The report was so glowing that Hans-Werner volunteered to host the
+October IETF at the University of Michigan to demonstrate the operations
+of the new NSFnet firsthand.
+
+.LP
+Mailing Lists and Additional Information
+.PP
+There are two main IETF mailing lists: ietf-tf@venera.isi.edu and
+ietf-interest@venera.isi.edu.  To join the interest list, send a
+request directly to westine@isi.edu.  To join the main IETF list,
+send a note to gross@ptt.lcs.mit.edu, with a brief statement explaining
+your interest in the IETF.
+.PP
+It is worth noting that many of the Working Groups now have mailing
+lists of their own.  For additional information on the IETF or any
+of its Working Groups, drop a note to gross@ptt.lcs.mit.edu.
+
+<b>[<a href="?l=namedroppers&m=95837783027008&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027010&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027005&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027010&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

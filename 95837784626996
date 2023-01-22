@@ -1,0 +1,140 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: CA.US domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626995&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626997&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626995&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626997&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200025&r=1&w=2">Re: CA.US domain</a>
+From:       <a href="?a=95837786400031&r=1&w=2">Ann Westine &lt;westine () ISI ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-08 8:42:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626996&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626996&q=raw">body</a>]</b>
+
+
+			    The US Domain
+
+The US domain is an official top-level domain in the Domain Name System
+(DNS) of the Internet community.  It is registered with the Network
+Information Center at SRI International (SRI-NIC).  The domain
+administrators are Jon Postel and Ann Westine at the Information
+Sciences Institute of the University of Southern California (USC-ISI).
+
+The US domain hierarchy is based on political geography, that is, the US
+domain is subdivided into states, then cities, and so on.  Any computer
+in the United States may be registered in the US domain.
+
+Typical host names in the US domain are:
+
+		VIXIE.SF.CA.US
+		DOGWOOD.ATL.GA.US
+		KILLER.DALLAS.TX.US
+		HOLODEK.SANTA-CRUZ.CA.US
+		GRIAN.CPS.ALTADENA.CA.US
+
+Because many computers in the United States are already registered in
+the COM, EDU, and other top level domains, relatively few computers are
+currently registered in the US domain.  The computers that are
+registered are primarily owned by small companies or individuals (and
+often located in homes).  It is expected than many more computers of all
+types and belonging to all sizes of organizations will be registered in
+the US domain.
+
+There is no change in the procedures for registration in, or operation
+of, other top-level domains such as COM, EDU, GOV, INT, MIL, NET, or
+ORG.  These domains are not being moved under the US domain.
+
+Registration of a host in the US domain does not grant permission to use
+the Internet or its component networks.  Any restrictions on sending
+mail through (or other use of) the Internet is independent of host
+registration in the US domain.  Registration in the US domain does not
+allocate any IP address, or cause registration in HOSTS.TXT.
+
+Currently, the US domain and all of its subdivisions (that is, states
+and cities) are managed by the US Domain Administrator.  At some time in
+the future the administration of individual states and cities will be
+transferred to appropriate responsible people.
+
+The codes for states are taken from the U.S. Postal Service ZIP Code
+Directory, and the names for cities may be either the full names of
+cities (with hyphens instead of spaces) or the short code for a city
+name from the Western Union list.
+
+The administrator of a company or the organizer of a group (or "domain
+park") of users with individual hosts may coordinate the registration of
+the group by forwarding all the information for the group to the US
+Domain Administrator.
+
+The explicit specific information for each host must be provided.  All
+fully qualified names must be unique.  If a host is not directly on the
+Internet an MX record is required pointing to an Internet host for
+forwarding.  The forwarding host must be directly on the Internet (that
+is, have an IP addresss), no "double MX-ing" is allowed.
+
+A group coordinator of, for example, the Computer Club in Chicago (CCC),
+could arrange to coordinate the registration of all the computers used
+by members of the club.  The registered names might have the form:
+
+	PC37.CCC.CHI.IL.US   MX   10   CS.UOFC.EDU
+
+Only hosts on the Internet can act as forwarding hosts.  Hosts on
+networks such as CSNET, UUCP, BITNET, must be registered with an
+Internet forwarding host.  When registering a destination host in the US
+domain with an MX record, the requester is responsible for also
+registering the destination host with the administrator of the
+forwarding host.  For example, when a messages is sent to
+"Susan@PC37.CCC.CHI.IL.US" it will be routed to the Internet host
+"CS.UOFC.EDU" as directed by the MX record.  The host "CS.UOFC.EDU" must
+know some way of delivering the message to the host "PC37.CCC.CHI.IL.US"
+(uucp, slip, whatever).  So the destination host (PC37.CCC.CHI.IL.US)
+must be known to (registered with) the forwarding host (CS.UOFC.EDU), as
+well as being registered in the US domain DNS database.
+
+The administrator of the destination host must make an agreement with
+the administrator of the forwarding host for the forwarding service.
+This agreement must be in place before the request for registration is
+sent to the US Domain Administrator.
+
+A section of the DNS database is called a "zone".  With careful
+coordination, a domain (like EDU) can be divided into several zones.
+This has been done for the EDU and COM domains to aid in the
+registration of hosts from the UUCP, CSNET and BITNET communities.  If a
+host is registered in UUCP, BITNET, or CSNET zone (as something.EDU or
+something.COM), it need not be registered in the US domain, unless a
+geographical name (something.city.state.US) is desired.
+
+It is the policy that a computer must have a single primary name, so it
+should not be registered in both US and COM (or both US and EDU).  It is
+possible to have "nicknames" for a brief period while a host name change
+is in progress.
+ 
+Wild card records are not currently allowed in the US domain.
+ 
+The US domain is currently supported by four name servers:
+
+VENERA.ISI.EDU, VAXA.ISI.EDU, HERCULES.CSL.SRI.COM, and NNSC.NSF.NET.
+
+There is no cost for registering a host in the US domain.
+
+For information on internet domains in general, see RFC-1034,
+Mockapetris, P., "Domain Names - Concepts and Facilities, and RFC-1035,
+Mockapetris, P., "Domain Names - Implementation and Specification.
+
+For more information about the US domain please contact Ann Westine at
+WESTINE@ISI.EDU.
+
+<b>[<a href="?l=namedroppers&m=95837784626995&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626997&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626995&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626997&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

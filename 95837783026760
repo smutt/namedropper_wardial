@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'USC-ISIC.ARPA, is this a known problem?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026759&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026761&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026761&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700021&r=1&w=2">USC-ISIC.ARPA, is this a known problem?</a>
+From:       <a href="?a=95837785200011&r=1&w=2">cpw%sneezy () LANL ! GOV (C !  Philip Wood)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198801">1988-01-13 10:49:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026760&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026760&q=raw">body</a>]</b>
+
+I found one of our domain name servers in a loop this am 1/13.
+I killed it with an illegal instruction signal to get a core dump.
+It stacked up like this:
+
+adb /etc/named /etc/domain/core.R
+$c
+urem(701,b) from _nlookup+7c
+_nlookup(5a9a1,7fffe240,7fffe238,0) from _nlookup+39
+_nlookup(5a998,7fffe240,7fffe238,0) from _nslookup+e6
+_nslookup(7fffe4e0,60400) from _ns_forw+fa
+_ns_forw(7fffe4d8,7fffe71c,2b,1677c,0,7,7fffe4cc) from 75a1
+_ns_req(7fffe71c,2b,1d5,0,1677c,7) from	5a62
+_main(0,7fffeb7c,7fffeb94) from	start+3d
+
+5a998:		USC-ISIC.ARPA
+5a9a1:		ARPA
+7fffe71c,0a/X
+7fffe71c:	200		100		0		31033201
+		31023239	39310332	6e690732	6464612d
+		72610472	6170
+
+If anyone can think of more cells to dump, let me know.
+
+Is the problem to do with the ARPA nameserver which includes a reference to
+USC-ISIC.ARPA which is a hostname that is not defined (either is USC-ISIB.ARPA),
+see below.
+
+
+The ARPA hosts.txt file version:
+
+; DoD Internet Host Table
+;  11-Jan-88
+;  Version number 705
+
+The ARPA domain cache:
+
+; Dumped at Wed Jan 13 01:09:55 1988
+; --- Cache &amp; Data ---
+$ORIGIN .
+arpa	28265	IN	SOA	SRI-NIC.ARPA. HOSTMASTER.SRI-NIC.ARPA. (
+		880108 1800 300 604800 86400 )
+.	546462	IN	NS	SRI-NIC.ARPA.
+	546462	IN	NS	A.ISI.EDU.
+	546462	IN	NS	C.NYSER.NET.
+	546462	IN	NS	TERP.UMD.EDU.
+	546462	IN	NS	GUNTER-ADAM.ARPA.
+	546462	IN	NS	NS.NASA.GOV.
+	546462	IN	NS	BRL-AOS.ARPA.
+	592040	IN	NS	USC-ISIB.ARPA.
+	592040	IN	NS	USC-ISIC.ARPA.
+
+<b>[<a href="?l=namedroppers&m=95837783026759&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026761&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026761&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

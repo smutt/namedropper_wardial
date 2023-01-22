@@ -1,0 +1,110 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND bug list' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326995&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326997&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327024&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400010&r=1&w=2">BIND bug list</a>
+From:       <a href="?a=95837817000050&r=1&w=2">zaphod.mps.ohio-state.edu!swrinde!emory!mephisto!uflorida!mlb.semi.harris.com!th</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-17 8:34:47</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326996&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326996&q=raw">body</a>]</b>
+
+Since the BIND mailing list appears to be aliased to /dev/null
+these days, I'm submitting my bug list to this news group in
+order to get the word out.
+
+The following is the list of bugs and deficiencies I know about
+in BIND 4.8.2 (they are also present in 4.8.1).
+
+* Zone transfers include A records for all name servers referenced in the
+  zone file.  Only those A records necessary as glue information should
+  be included.
+
+* If a name server is authoritative for a zone and a subzone, zone
+  transfers of the top zone incorrectly include all resource records
+  for the top domain of the subzone, not just the NS records.
+
+* Assume host A is the primary name server for Y.Z and secondary name
+  server for X.Y.Z, and B is is the primary name server for X.Y.Z and
+  secondary for Y.Z, and host C is secondary for both.  If host D is
+  substituted for host C as the third name server for both zones by
+  editing the appropriate primary zone files and signalling A and B to
+  reload these zone files, A and B will believe that C is still a
+  name server because it is still listed in the secondary backup files.
+  Zone transfers of these zones between A and B will include A, B, C,
+  and D as the name servers.
+
+* If an NS record refers to a non-existent host, BIND will repeatedly
+  query to find the address of the host.  This is a serious problem
+  when BIND thinks this is a root name server because its cache
+  has been polluted (GENTER-ADAM.AF.MIL).
+
+* If an NS record refers to hosts alias (the name listed by the NS
+  only has a CNAME record), BIND will notice that it does not have
+  an A record for this host and will repeatedly query for it.  This
+  is a serious problem when BIND thinks this is a root name server
+  because its cache has been polluted
+  (SRI-NIC.ARPA  IN CNAME NIC.DDN.MIL).
+
+* The RFC's state that when a resolver starts a secondary query to
+  find the address of a name server, the maximum number of queries
+  should be set to less than the number of queries remaining for the
+  primary query.  BIND does not implement this.
+
+* The RFC's state that resource records from a response should not
+  be mixed with those in the cache.  Either the cached records
+  should be retained or they should be replaced with those in the
+  response.  When BIND first starts, it queries the root name servers
+  for a list of the root name servers, and hopefully gets an
+  authoritative answer.  If at a later time BIND receives a list
+  of the root name servers in the authority/additional sections
+  of a response to some random query, it combines these with what
+  is in the cache.
+
+* The RFC's state that if a resolver receives a bogus answer from
+  a name server, it should be removed from the SLIST.  If BIND
+  receives a bogus delegation from a name server, it does not
+  do this.  If the remote name server has multiple addresses,
+  BIND will query the rest of them.
+
+* If BIND receives multiple identical recursive queries from the
+  same host address and port number, and with the same ID, it
+  will suppress the duplicates and only perform one set of queries
+  on the appropriate remote name servers.  If multiple clients on
+  several hosts or using different port numbers simultaneously
+  make the same query, BIND will start multiple sets of queries
+  to the remote name servers.  To reduce DNS traffic on the
+  internet, BIND should coalesce these queries.  Caching
+  temporary failure should also be considered.
+
+* If BIND is misconfigured to forward queries to itself, it
+  gets very confused.  BIND should remove the local host's
+  address(es) from the list of forwarders and log the error.
+
+* If a primary zone file is updated, BIND is signalled to reload
+  the zone file, and BIND reloads the zone file and detects an
+  error which causes it to mark the zone invalid, then an SOA
+  query for this zone in preparation for a zone transfer will
+  cause BIND to core dump.
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797326995&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326997&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327024&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

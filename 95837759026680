@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'relative naming' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026679&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026681&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026681&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300007&r=1&w=2">relative naming</a>
+From:       <a href="?a=95837783700016&r=1&w=2">"Paul M. Albitz" &lt;albitz () Purdue ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-11 11:18:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026680&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026680&q=raw">body</a>]</b>
+
+
+I have a question about domain naming.  
+
+Suppose our domain is as follows:
+
+			edu
+		      /
+		  purdue
+		/   |    \
+	     cs    ecn    cc
+	    / \     |    /
+	   w   x    y   z
+
+I am in the cs subdomain at host w.  To access host x, I can use the names
+x.cs.purdue.edu or x (for which the resolver tacks on cs.purdue.edu since
+it is my default domain.)
+
+To access host y, I must use the name y.ecn.purdue.edu.
+
+What I would like to do is access host y using the name y.ecn execpt that
+since it has a '.' in the name, it is assumed to be a fully specified domain 
+name.
+
+If I were to imagine the above structure as a UNIX file system tree and
+my current working directory is /edu/purdue/cs, I could access file y
+with ../ecn/y.  Is there any way to do this form of relative addressing
+in the domain naming scheme?
+
+Paul Albitz
+Computer Science Department
+Purdue University
+
+<b>[<a href="?l=namedroppers&m=95837759026679&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026681&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026681&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'nicknames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426403&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426405&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426409&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=92599971900002&r=1&w=2">nicknames</a>
+From:       <a href="?a=95837692300022&r=1&w=2">cbpavo.cbosgd.ATT!mark () seismo ! ARPA (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-01 12:58:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426404&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426404&q=raw">body</a>]</b>
+
+I disagree with Jon.  My experience so far is that nicknames are crucial.
+It is true that nobody will bother with A.ISI.USC.EDU as opposed to
+ALPHA.ISI.USC.EDU, but it's equally true that people will quickly become
+fed up with typing A.ISI.USC.EDU.  They want to type A and be done with it.
+When you have a cluster of machines on an Ethernet and you spend a lot of
+time moving from one machine to another or moving files around, you make
+a lot of references to the other machine.  They aren't going to be willing
+to type the whole domain string out for long until they look for a short cut.
+
+Remember that we are moving from a system of short names to a system of
+much longer names.  There is going to be public resistance to this move,
+it's hard to convince the users that we're running out of naming space
+for 3-10 character names.  Of course, the real issue is maintenence of
+the data, but try to explain this to a user who has never tried to keep
+a registry up to date.  In order to combat this resistance, we need to
+do things to make it relatively easy for users to get their jobs done.
+
+There are lots of other examples out there that have local nicknames or
+local abbreviations.  PBX systems let you just dial a 4 digit extension.
+You don't dial the area code for local phone calls.  When you look up an
+address in the phone book, it won't have the city, state, country, and
+zip code on it.  The post office will accept mail to "John Smith, 123
+Main St, City" where "City" is an abbreviation for the local city, state,
+and zip code.  Other networks mostly use simple names (because they are
+small enough to handle it trivially.)  Datakit has 3 level heirarchical
+names like CB/DK/OSGD but lets you type OSGD or DK/OSGD if the top parts
+of the address are the local names.
+
+I suspect that nicknames will move from the officially distributed top level
+name tables, to locally hidden and implementation dependent entities.  As
+long as the nickname gets fully expanded by the time any nonlocal entity
+sees it, there's no problem.  But local users are going to insist on
+nicknames.
+
+Let's all be sure that as we introduce local nicknames, we educate our
+users that these nicknames all have only local significance.  I get phone
+calls sometimes from users at the AT&amp;T Bell Laboratories, Holmdel, NJ site.
+I ask them what machine they are on, and they tell me "purple".  What
+they really mean is houxp, where the 'p' stands for "purple".  Holmdel
+nicknamed their computers after colors.
+
+On the other hand, the same user would never think of calling me in Ohio
+from his New Jersey office and leaving a message to call "Joe Blow at
+extension 4522".  They know better than this, since phone extensions
+are well understood by most of the general public.  (There are, of course,
+a few morons out there who can't even handle this right, but they are rare.)
+
+It is clear that users don't even understand the current convenentions
+for computer naming, because they are relatively new and not well documented.
+The domain scheme is even newer and even we don't completely understand it
+yet.  The users are going to want to do things like signing their mail
+SMITH@A, or mention that somebody elses address is JONES@B, and they will
+expect people to understand it, unless we educate them properly
+about what the overall name space looks like and what a local nickname is.
+Presumably all of you are producing some sort of tutorial documentation
+for your domain software, please be sure to make these issues clear, if
+you have any support for local nicknames.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837667426403&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426405&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426409&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

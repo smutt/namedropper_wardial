@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Putting up with sites not using nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627006&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627008&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627006&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627008&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200027&r=1&w=2">Putting up with sites not using nameservers</a>
+From:       <a href="?a=95837786400040&r=1&w=2">Rob Austein &lt;sra () lcs ! mit ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-18 14:13:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627007&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627007&q=raw">body</a>]</b>
+
+   Date: Tue, 12 Sep 89 23:50 EDT
+   From: Barry Margolin &lt;barmar@think.com&gt;
+
+   ...  The final answer is that MILNET sites simply aren't yet
+   required to run resolvers.  There is a schedule of conversion to
+   the domain system on the Arpanet and MILNET, and according to that
+   schedule resolvers are still optional on MILNET.
+
+According to RFC-1031, the deadline for conversion of MILNET hosts to
+the DNS is next month (October 1989), at which point the NIC host
+table will supposedly be discontinued.  Given the recent discussion,
+this seems unlikely, but as far as I know this is still the official
+schedule.  Anybody have any updates on this?
+
+--Rob Austein, MIT
+
+<b>[<a href="?l=namedroppers&m=95837784627006&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627008&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627006&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627008&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

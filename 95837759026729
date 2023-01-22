@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TTL's considered too short?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026726&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026730&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026730&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300027&r=1&w=2">TTL's considered too short?</a>
+From:       <a href="?a=95837784000005&r=1&w=2">William "Chops" Westfield &lt;BILLW () SU-SCORE ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-27 12:13:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026729&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026729&q=raw">body</a>]</b>
+
+It seems that most of the domain name servers out there are advertising
+a Time To Live of 3600 (one hour) for most of their records.  New
+sites are using this as an argument to make their TTL's 3600 too.
+
+Now to me, this seems awfully short.  Most mailers on busy systems
+wont even make it from one end of the retranmission queue to the
+other in less than an hour.  An hour is certainly a much shorter
+period of time than it usually takes to change the address of
+a machine (eg several days through the NIC or through stanford's
+"networks group").  Some hosts certainly aren't going to change
+anything anywhere near that quickly.
+
+It seems to me that the TTL ought to reflect the likelyhood of change
+of a data item, and perhaps the time necessary to physically make
+that change.  A default TTL of 12 hours seems a lot more reasonable,
+and It ought to be more like 100 hours for "stationary" hosts!
+
+What do other people think?
+
+(this is prompted by the fact that it seems to take quite a
+ long time to actually look up an address like oz.ai.mit.edu,
+ given things like poorly behaving gateways in between, and
+ so on...)
+
+BillW
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026726&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026730&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026730&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

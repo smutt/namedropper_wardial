@@ -1,0 +1,104 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'bogus root servers being advertised' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627031&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627029&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400001&r=1&w=2">bogus root servers being advertised</a>
+From:       <a href="?a=95837786400040&r=1&w=2">Rob Austein &lt;sra () lcs ! mit ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-08 14:33:27</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627032&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627032&q=raw">body</a>]</b>
+
+This is a fundamental design problem in BIND.  I (and other people)
+have said this before, I've published it, it still hasn't been fixed.
+I'll try saying it again in the (forlorn) hope that somebody will hear
+it this time.
+
+In brief, the problem is how one bootstraps a DNS resolver.  There are
+two methods currently in use: "cache preloading," and "safety belt."
+
+Cache preloading is what BIND does: you jump start your resolver with
+a bunch of hand-maintained RRs telling it all the things that it most
+needs to know to get started.  Note that, not coincidentally, this is
+also the information that it is most damaging to have wrong.  I'll get
+back to this.
+
+Safety belt is what JEEVES (Paul Mockapetris's resolver) and CHIVES
+(mine) do: you start your resolver with an empty cache but you give it
+a hand-maintained list of nameservers to contact when it's at a total
+loss for how to proceed.  In practice, the list of nameservers you use
+is identical to those you would preload into your cache if you were
+using cache preloading instead of safety belt.
+
+There is little practical difference between the two methods if either
+of two things are true: your resolver is not also a nameserver, or
+your bootstrap information is absolutely correct.  But BIND's
+architecture is such that all (full-service) BIND resolvers are also
+nameservers, and, as events have demonstrated time and time again, not
+everybody keeps their bootstrap information absolutely correct.
+
+There is a key difference between these two methods when both of these
+conditions are false: cache preloading allows you to mess up your
+neighbors, safety belt does not.  That is, assuming a resolver which
+is also a nameserver, with out-of-date bootstrap information, the
+difference is that cache preloading allows you to distribute bogon RRs
+of the worst kind (misinformation about the root), while safety belt
+leaves you with an empty cache and you don't distribute anything at
+all.  In either case the resolver with the bad information will
+probably be crippled, but at least, with safety belt bootstrapping,
+it's not creating a public hazard.
+
+Furthermore, there is this problem with cache preloading: you really
+don't want the preloaded information to time out, ever, because your
+resolver will be crippled.  So not only do we end up with bogon RRs in
+the global database, we end up with bogon RRs with TTLs of "99999999"
+(three years and some change).
+
+There are various techniques for better maintaining one's bootstrap
+information, but they all miss the fundamental point: DNS bootstrap
+information is inherently biodegradable, so resolvers have to be
+designed to minimize the bad effects of bad bootstrap data.
+Particularly in a world where (no offense, guys) there are people who
+have to be told that DNS bootstrap information can't just be copied
+from an installation manual without subsequent verification.
+
+I submit that this problem of bad bootstrap information is not new and
+is not going to go away.  Remember the death of USC-ISIB.EDU and how,
+months later, there were still people hammering on the machine's
+disconnected IMP port with DNS queries?  Now we have bogon NS RRs
+floating around that refer to machines that are still root servers,
+but under new names.  Do you get this feeling that you've seen this
+movie before?  Do you get this feeling you'll be seeing another rerun
+of this movie next year?
+
+I submit that it is high time that BIND was rewritten to use safety
+belt bootstrapping.  Please, Berkeley?  I would really rather have you
+fix your code than have to port my old TOPS-20 code to Unix (and then
+have to maintain the flea-bitten thing for years afterwards).  It's
+not hard to implement safety belt, I've done it, I know.  The CHIVES
+code is in PS:&lt;CHIVES.V1.SOURCE&gt; on WSMR-SIMTEL20.ARMY.MIL, if you
+want a working reference, it's even in C....
+
+Awaiting (without much expectation but with a little hope) a reply,
+
+--Rob Austein, MIT Lab for Computer Science
+
+"Those who do not learn from history, loop."
+
+<b>[<a href="?l=namedroppers&m=95837784627031&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627029&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

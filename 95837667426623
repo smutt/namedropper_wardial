@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mailers use MD and MF' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426624&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426626&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426619&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800018&r=1&w=2">Re: Mailers use MD and MF</a>
+From:       <a href="?a=95837693600015&r=1&w=2">Steve Kille &lt;steve () cs ! ucl ! AC ! UK&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-13 13:25:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426623&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426623&q=raw">body</a>]</b>
+
+
+
+         From:    Craig Partridge &lt;craig@ARPA.LOKI&gt;
+         Subject: Mailers use MD and MF
+         Date:    12 Nov 85 13:20:39 EST (Tue)
+
+
+
+         Here the rules I think people are headed towards:
+
+             Given a host name a mailer should do a MAILA query on that
+         domain name.
+Clearly the correct start.
+
+         If the MAILA query returns nothing look up the Internet
+         address of HOST.
+I would prefer not to see this lookup - i.e. it should be
+required that every RFC 822 domain has an associated MD and/or MF
+entry.   However, as RFC 882/3 read, and looking at real NS
+databases, this step is clearly needed.
+
+At this point, I will make two assumptions.
+        1) We are using class = IN
+        2) That this implies SMTP as the only Message Transport
+
+If the MAILA query suceeds, then I believe there is an
+implicaton of an A record with SMTP support.   Therefore it is
+quite reasonable to queue the message at this point (on the
+basis that it contains a valid domain).  Further lookups need
+only be done when an attempt is made to deliver the message.
+
+If the MAILA qury fails, but an A query suceeds, there is no
+implication of SMTP.   Therefore, a WKS query MUST be made, and
+the existence of SMTP support verified.  This will prevent
+wasting lots of CPU cyles on a host which does not have SMTP.
+
+
+         If this lookup fails, reject the message, otherwise try
+         to deliver the message to the Internet address.
+
+             If the MAILA query succeeded, first try to deliver to the MD host
+         (if any).
+         If you cannot reach the MD host, try any MF hosts listed.
+         Try to contact each MF until either there are no MFs remaining, or on
+              ***e
+         of them has accepted or rejected the message.
+Agreed (minimise hops) I can't see any other sensible reason for both
+types for one destination.
+
+
+        (Paul's idea of
+         not trying MFs on unreachable networks is a nice touch here).
+Surely this can apply to MD records as well?
+
+Steve
+
+<b>[<a href="?l=namedroppers&m=95837667426624&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426626&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426619&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

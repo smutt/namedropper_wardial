@@ -1,0 +1,80 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: What do you do when one domain swallows another?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826992&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300004&r=1&w=2">Re: What do you do when one domain swallows another?</a>
+From:       <a href="?a=95837817800024&r=1&w=2">hpcc01!cricket () hplabs ! hpl ! hp ! com  (Cricket Liu)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-06 18:02:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826990&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826990&q=raw">body</a>]</b>
+
+
+    A few months ago Millipore (registered domain millipore.com) acquired
+    BioImage (registered domain bioimage.com).  Bioimage has now been
+    connected via leased line to Millipore's tcpip network.  Neither
+    company directly connects to the Internet, Millipore's forwarder is
+    UUNET and Bioimage's is Sharkey at the University of Michigan.  The
+    problem is now that Bioimage (the company) is a part of Millipore (the
+    company) we need to merge the two domains.
+
+    Luckily, there is no problem for most of the machines.  The Bioimage
+    domain was never more than one machine, which is to say that
+    user@bioimage.com was the outerworld address.  The rest of the machines
+    are known as user@host.millipore.com.  So the problem is that we want
+    the one machine (known as Maize)
+
+"We call it Maize," eh?
+
+    to be addressable as both maize.millipore.com and bioimage.com.  There
+    is a large customer base that mails to bioimage.com so that must remain
+    for the time being.
+
+    Further complicating the matter, we want to discontinue the connection
+    with sharkey, using UUNET exclusively.
+
+    So, what do we do?
+
+Well, for the time being, the main thing you want to do is to change
+bioimage.com's MX record to point to uunet.uu.net.  (Once you let UUNET
+know that it'll be handling Bioimage's mail.)  You have to go the MX route:
+you can't make bioimage.com a CNAME (alias) record, because it already has
+NS records attached.  (I've never asked the NIC if they'd set up a
+second-level domain as a CNAME.  Anyone know if they would?)
+
+Next, make sure that whatever's on the other end of the uunet.uu.net UUCP
+connection (presumably something called "millipore.com", or that can handle
+mail addressed to "&lt;user&gt;@millipore.com") knows about bioimage.com.  The
+easiest way to do that, if you're running nameservers internally and aren't
+connected to the Internet, is to set up "bioimage.com" as an alias for
+"maize.millipore.com".
+
+That should do it for the short term.  Over time, you'll probably want to
+wean correspondents off of "bioimage.com".  The CNAME record pointing to
+"maize.millipore.com" should take care of most of that - a large proportion
+of correspondents simply reply to messages.  The rest is really a PR issue.
+
+You're lucky that Bioimage had such a small domain.  I once had to do this
+with a much larger one.
+
+cricket
+
+hostmaster@hp.com
+
+<b>[<a href="?l=namedroppers&m=95837798827001&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826992&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

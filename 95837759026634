@@ -1,0 +1,72 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'ATT.COM is now in the domain tree' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426657&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026635&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    ATT.COM is now in the domain tree
+From:       <a href="?a=95837693600007&r=1&w=2">cbpavo.cbosgd.ATT.UUCP!mark () seismo ! CSS ! GOV (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198601">1986-01-01 1:40:13</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026634&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026634&q=raw">body</a>]</b>
+
+On an experimental basis, the domain ATT.COM is now in the tree.
+This is significant because we aren't on the ARPA Internet, so
+there are MF entries for us.  Here's your chance to debug your
+MF code in your resolvers.  (Actually, we are connected to the
+DDN, as CSNET members, via BellCore, but the ARPA core gateways
+already have more networks than slots, so we can only get as far
+as BellCore before we get to places that can't get back.)
+
+The ATT.COM domain is forwarded through seismo.CSS.GOV, which
+will forward mail for ATT.COM to cbosgd.  cbosgd can route to
+any NAC registered machine in AT&amp;T, such as "mark@cbosgd.ATT.COM"
+which gets to user "mark" on machine "cbosgd".  We do not currently
+do anything reasonable with "m.r.horton@ATT.COM" although we probably
+should.
+
+Here are some useful addresses for testing:
+	mark@cbosgd.ATT.COM	Gets a real live person (me)
+	nobody@cbosgd.ATT.COM	Goes into a black hole
+	illegal@cbosgd.ATT.COM	Since there is no such user, you should
+				get your mail bounced back to you.
+
+I realize that 4.3BSD doesn't support MF yet in sendmail.  I understand
+there are already one or two versions of sendmail that support MF, so
+presumably it's only a matter of time before the official Berkeley copy
+handles it.
+
+Since this registration is experimental and also very new, cbosgd is
+not sending out mail stamped cbosgd.ATT.COM, but is instead using its
+better known name cbosgd.ATT.UUCP.  I realize that NIC has not registered
+a UUCP domain (in fact, we didn't apply for one since we weren't sure
+how we were going to configure our domains) but lots of places understand
+that address (or else what seismo mungs it into) anyway.
+
+The intention is that, eventually, other UUCP organizations will register
+with the NIC using MF (or whatever it evolves into.)  Also, there are other
+places that aren't reachable via SMTP (for example, BITNET and CSNET) which
+would be handled well with MF.  So it's probably worthwhile to make sure
+your mailers do the right thing with such entries.
+
+By the way, cbosgd is [192.11.2.1] if anyone believes they can get to
+us with TCP.  (And if you find a way, let me know!)
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837667426657&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026635&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How To Interpret MB and MG?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927018&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927022&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500021&r=1&w=2">How To Interpret MB and MG?</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 1:47:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927016&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927016&q=raw">body</a>]</b>
+
+
+Given this flurry of mail, and my recent role as the MAILB wet blanket
+("don't use MAILB queries lest your mailer keel over"), I thought it
+might be time for me to re-read RFC882/883.  I did, and concluded that
+MAILB queries will have to be redone, based in part on what we did
+with MX.  I present the ideas here to get some good debate started.
+
+To paraphrase a lot, the basic idea is that you do a MAILB query on
+a domain name which combines the username and the domain name, e.g.
+craig@bbn.com -&gt; craig.bbn.com.  To quote from page 54 of RFC883, there
+are several possible replies to such a query:
+
+    1.  no such domain -- the entry doesn't exist.  In our example,
+    proceed on to an MX lookup of bbn.com.
+
+    2.  The query returns an MR (mail rename) RR.  The mailbox name
+    is an alias, for example craig.bbn.com rewrites to craig.sh.cs.net
+    (craig@sh.cs.net).  Replace old name with new one and try again.
+    (Note we need MR RR's because we may also have a host with the
+    name of craig.bbn.com, and need to distinguish mailbox aliases
+    from CNAME aliases for hosts).
+
+    3.  The query can return an MB RR.  The MB RR is defined as
+    containing a host name in the data section, and you are to
+    mail the message to this host.
+
+    *I think this may be broken.  Certainly, we've taken the view
+    with MX RRs that you should be able to specify an ordered list
+    of destinations for a piece of mail.  And I think we should
+    do the same with mailboxes.  For example, craig@bbn.com is
+    a valid address on almost all BBN machines, and will be forwarded
+    on to the proper final destination.  I should be able to say
+    that mail to craig.bbn.com should be delivered to any one of
+    a dozen hosts.  Also, there's some ambiguity, now that MX's
+    exist about whether the right hand side should have an MX
+    lookup done on it -- the answer is that it shouldn't for the
+    same reason that recursive MX lookups (i.e. looking up the
+    MX of the MX) are forbidden.  Just because host A asserts that
+    it accepts mail for host B, does not mean that host C, which
+    accepts mail for A, should have to accept mail for B.*
+
+    4.  The query can return one or more MG RRs, which means the
+    mailbox was actually a mailing list.  Each MG contains a
+    mailbox on the right hand side.
+
+    *The specification doesn't say if the right hand side should then
+    be subjected to an MAILB query, although, I believe under the
+    current definition it must be.  This raises the daunting question
+    of whether the mailboxes in an MG can themselves be MGs.  I
+    think they can -- and that's almost certainly the wrong way
+    to do things.  It means that a mail exploder will end up
+    sucking a good part of mailing list across the network for expansion,
+    when we have reason to believe that it is more efficient to send
+    the mail to the list rather than the list to the piece of mail.
+    But I'm not sure MG RRs work unless we allow the expansion of
+    the right hand side.  (What good is a mailbox you can't lookup?).*
+
+    5.  The query returns MGs plus one MB.  The mailbox is
+    a list, and you can either expand yourself (using MG) or send
+    to the MB, which will handle the expansion for you.
+
+    *Note than in some cases you'll get a partial answer.  If you
+    keep the MG or MBs your cache, and the cache times for the MG
+    and MB RR's are different, either because the originating host
+    gave them different TTLs or because you queried for them
+    separately, it is possible to get either the MGs or the MB
+    instead of both.  In neither case is this fatal, just a
+    nuisance.*
+
+So the fun question is how to fix this problem, given that people seem
+to want some sort of mailbox binding...
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837781927017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927018&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927022&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

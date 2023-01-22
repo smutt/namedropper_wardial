@@ -1,0 +1,126 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: medical community' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026732&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026734&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026732&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026734&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300028&r=1&w=2">Re: medical community</a>
+From:       <a href="?a=95837784000008&r=1&w=2">Ben Cranston &lt;ZBEN () UMD2 ! UMD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198607">1986-07-14 16:53:45</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026733&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026733&q=raw">body</a>]</b>
+
+&gt; Date: Wed, 9 Jul 86 00:13:12 edt
+&gt; From: mark@cbpavo.cbosgd.ATT.COM (Mark Horton)
+&gt; Subject: medical community
+
+&gt; We are finding ourselves in a position where we have to establish a
+&gt; domain naming convention for the medical community....
+&gt; One possibility would be to put some of them in EDU and some in COM
+&gt; and some in GOV, depending on whether it's a university hospital, a
+&gt; private hospital, or the VA.  ...Another
+&gt; possibility is to put them under a new top level domain called MED.
+&gt; Yet another is to put them under a single subdomain somewhere else
+&gt; in the domain tree, perhaps MED.ORG, for example.
+
+I don't think you want to fragment the medical community by splitting it up
+among the existing top level domains.  These domains came into being mostly
+because the EXISTING Internet sites could be (relatively) easily split up
+this way.  Massive net additions, especially a bunch of medical sites being
+dumped onto the net, are going to require new, original thinking.  Just
+parroting the ARPA line isn't going to cut it...
+
+If I understand it correctly, the goal is to have a branch factor of about
+50 to 100 at each node in the tree.  If so, what WE have done in the EDU
+community might not have been the right thing.  Say there are 50 states,
+nearly each has a state university, some have two.  That's your 50 to 100
+right there, not even counting private universities or high school systems.
+
+BUT, UMD has many geographically separated campuses (heck, I just found out
+about the Diego Garcia campus last week!).  Suppose they each wanted their
+own domain?  UMBC.EDU (Baltimore Campus), UMES.EDU (Eastern Shore), etc.
+
+So far we're holding the line by giving out names like UMBC1.UMD.EDU but we
+were also forced to grant a CS.UMD.EDU to the Computer Science Department
+and an EE.UMD.EDU to Engineering.  The same pressures happen in the other
+root level domains, and I am deathly afraid of someday seeing a site name
+like Ralph-Spoil-Sport-Motors.COM pop up...
+
+Certainly there are more than 100 organizations worthy of the namespace.
+
+Had you thought about the existing organizations?  AMA.ORG?  If there is a
+national hospital association this might be the appropriate oranization to
+organize a namespace...  I would guess there is one for "not-for-profit"
+hospitals and another for "for-profit" ones, but then we are back to the
+split-up-among-COM-MIL-ORG non-solution again.
+
+I think questions of balance between the branch factor at the root and at
+ORG should be addressed here.  I also think a study should be made to think
+out just how the higher levels of an Internet should be organized.
+Unfortunately, I do not control ARPA money.  If I did, I think this kind of
+study should be a high-priority item.
+
+A secondary question is how to organize the domain internally.  Your proposed
+approach of CPMC.something is probably the best solution to THIS contract
+THIS year.  Is it the best solution in the long run?  You guys used to think
+in the long term back when you were the best phone company in the world...
+
+Do you want to organize it by specialty?  pathology.MED, surgery.MED, etc?
+By state?  What about multi-state organizations?  How is the AMA structured?
+How are the existing hospital organizations structured?
+
+Summary:  don't try to design in a vacuum, and don't insist on reinventing
+the wheel.  Find out how the medical community is presently organized, both
+on a personal and organizational level.  To the extent that these patterns
+satisfy people's needs, implement them.
+
+&gt; ...we're looking
+&gt; for a niche for the whole community, although we can't force anybody
+&gt; to register in a name space that we would be administering....
+
+Don't worry about this.  To a certain extent the domains are going to evolve
+in a Darwinian manner.  If a domain is managed in a careless or slovenly way,
+the marginal benefit of membership will not exceed the marginal cost, and it
+will become attractive for that member to establish membership in a competing
+(and perhaps better-managed) domain.  If what you design is good and useful,
+people will WANT to register.  (MY long distance company *is* ATT.)
+
+&gt; This all becomes more complex when X.400 is taken into account, since
+&gt; we must plan for the possibility that some day OSI will become dominant,
+&gt; and then we will have little choice but to convert to it.  It would be
+&gt; nice to have a naming convention that fits in reasonably will [sic] with
+&gt; the X.400 global naming tree.
+
+It would also be nice for the X.400 standards to be a bit more widely
+circulated.  We are having an (ahem) "discussion" on this very topic
+on the MAIL-L@BITNIC.BITNET mailing list right now, re: the
+Internet free-document policy vs. ISO copyrighting.
+
+--------------------
+
+These are just the mutterings of a slightly-burntout-computer-freak.  Treat
+them as 98% dross and 2% gold (if that much).  Is discussion of this topic
+taking place elsewhere, or has everybody else also decided to think before
+they speak?  :-)
+
+------
+                    umd5.UUCP       {seismo!umcp-cs,ihnp4!rlgvax}!cvl!umd5!zben
+Ben Cranston zben @ umd2.UMD.EDU &lt;= Kingdom of Merryland Sperrows 1100/92
+                    umd2.BITNET     "via HASP with RSCS"
+
+<b>[<a href="?l=namedroppers&m=95837759026732&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026734&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026732&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026734&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

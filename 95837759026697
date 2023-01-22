@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Relative naming; another scheme' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026695&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026696&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026694&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026696&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300011&r=1&w=2">Re: Relative naming; another scheme</a>
+From:       <a href="?a=95837693600009&r=1&w=2">Joe Weening &lt;JJW () SU-AI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-29 20:15:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026697&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026697&q=raw">body</a>]</b>
+
+Rudy,
+
+Yes, I see your problem.  From A.CS.CMU.EDU you want to be able to type
+"RUDY" and get RUDY.FAC.CS.CMU.EDU because it's the natural completion and
+happens to be a unique name.  Of course if someone created a host named
+RUDY.WARP.CS.CMU.EDU then you'd have a problem since they would be equally
+"good" completions.
+
+I'm glad we have much less of this at Stanford, where the decision has
+been to avoid creating subdomains for the time being.  As long as the
+namespace is of a manageable size, a single domain causes fewer headaches.
+Just because an administrative hierarchy exists doesn't mean you have to
+use it!
+
+Something I definitely advocate is the ability for each user to define
+"private" translations of nicknames into domain names (preferably fully
+specified).  These would be applied before any of the domain-name lookup
+mechanism gets to see the name.
+
+						Joe
+
+<b>[<a href="?l=namedroppers&m=95837759026695&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026696&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026694&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026696&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

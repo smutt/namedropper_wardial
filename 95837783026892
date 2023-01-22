@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'non-Internet QCLASSes' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026894&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    non-Internet QCLASSes
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198805">1988-05-06 15:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026892&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026892&q=raw">body</a>]</b>
+
+I know what the spec says, which is consistent with the design, which I
+disagree with.  That's all nice theory.  What about practice?  I'm
+running up against a wall.
+
+In addition to the Internet class (with it's addresses and well known
+services), I/Symbolics want to use other classes, such as chaosnet and
+dialnet, which also have addresses and well known services.  (In theory,
+there could be more, such as PUP, DECnet, XNS, etc.)  I'm having a hard
+time figuring out how to make our machines get all this information from
+the distributed (effectively only-Internet) domain database.
+
+The part of in the domain system I disagree with is that the data for
+the same name names but for different classes can be obtained by
+different sets of servers (one set of servers per class).  The original
+idea seemed to be for CSNET, but that was obsoleted a while ago
+(rightfully) but the concept still remained.  For example, I contend
+that all data for my machine, SWAN.SCRC.Symbolics.COM, should be
+obtainable from the same single set of name servers, independent of
+class.
+
+There are some "bugs" in implementations that make this hard.  The name
+server on SRI-NIC, when given a non-Internet qclass, responds with
+FORMAT-ERROR.  The -only- difference between the query and an internet
+query is the qclass value.  I believe it should give referals or
+authoritative data, just as it would for QCLASS=Internet.  BIND, on the
+other hand, response with REFUSED.  Neither of these are useful and are
+just making my life harder.
+
+What I'm contemplating doing sounds gross and disgusting, but I don't
+see any alternative.  Can anybody help?  It seems that I have to first
+search for some data in the IN class (such as host info, address, WKS).
+Doing that will get me in touch with the necessary servers for the IN
+class of data.  Then, violating the design, if I assume non-IN data
+resides in the same servers, I can ask them for the non-IN data.  If all
+of the registered servers respond with FORMAT-ERROR or REFUSED, then I
+will respond to the query as if I got an authoritative no-data response.
+And I will use the associated -Internet- SOA record as a timeout for the
+non-Internet no-data.  Furthermore, I will try to cache which servers
+don't like to talk about non-Internet data, and I will probably find
+some appropriate -Internet- SOA record as a timeout on that cache.  I've
+been banging my head against my desk for quite some time now trying to
+figure out how to do all of this.  The special case kludges and trying
+to avoid accidental recursion make for an ugly scene.
+
+Is there a better way?  I think I brought up this general problem 1 or 2
+years ago and got a mild response (I think reiterating the design of the
+spec).  Well, this is a practical issue.  What should I do?  Should I go
+ahead and by ugly and you folks should just be prepared to see
+non-Internet requests from time to time?  Or should we change the spec
+to say that all non-class-specific data is really not class specific and
+all of its ramifications?  (I can probably enumerate what needs to be
+done if this is a serious possibility.)
+
+<b>[<a href="?l=namedroppers&m=95837783026893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026894&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026877&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026876&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re:
+From:       <a href="?a=95837785400016&r=1&w=2">Marvin Sirbu &lt;ms6b+ () andrew ! cmu ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-28 14:05:18</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026875&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026875&q=raw">body</a>]</b>
+
+As JJ notes, the general problem of an attribute-oriented information service
+has been discussed for some time within CCITT and ISO and is the basis of the
+about-to-be approved X.500 directory service.
+
+One issue which came up clearly in the early IFIP 6.5 work and again in the
+CCITT/ISO work is the problem of partitioning an attribute-oriented database.
+(I won't elaborate on the reasons why you need to partition, they are the same
+reasons for shifting from a hosts table to the domain name system:
+decentralized administration, distribute the processing load, etc.)
+
+Essentially, the only efficient way to partition an attribute oriented database
+is by some particular attribute. -- e.g., the domain name system,which has two
+attributes, name and network address, is partitioned by name components.
+Imagine now that the attribute database is partitioned by name component and
+you are trying to find a particular machine with attributes (processor=68000,
+operating system=UNIX, registered users includes SIRBU).  Searching a
+distributed database that was partitioned by host name component  for matches
+with this set of attributes would be extremely costly.
+
+Indeed recognition of this problem is why X.500 finally admitted the necessity
+to include "Administrative Management Domain" as a key attribute in resolving
+O/R names.
+
+Alternatively, you must maintain multiple copies of the database, partitioned
+by key search terms.  For example, the French national electronic directory is
+actually replicated in triplicate.  One directory (the white pages) is
+partitioned by last name/first name and can be used to find a telephone number
+nationwide.  The other two are partitioned by Department (roughly the size of a
+County in the U.S.), and then further subdivided by either street address or
+profession (for yellow pages).  As a result, you cannot search for all entires
+with profession="Dry Cleaners" and street="Ave St. Louis" without querying
+every Departmental partition.
+
+Similarly, the telephone operator assistance databases are partitioned by area
+code and by "city".  Just try to get a phone number from the 617 operator for
+John Doe, "someplace on Cape Cod"..
+
+I conclude that we will need multiple hierarchies of servers, partitioned by
+key attributes, one of which *must* occur in every search.
+
+Marvin Sirbu
+
+<b>[<a href="?l=namedroppers&m=95837783026877&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026876&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

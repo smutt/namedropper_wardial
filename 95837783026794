@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Wisdom of server failure errors' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026793&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026795&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026793&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700033&r=1&w=2">Wisdom of server failure errors</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-09 9:43:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026794&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026794&q=raw">body</a>]</b>
+
+Here's the algorithm I'm implementing, (which is simplified to get the
+main points across).  I also have a list of servers.  I sort it based on
+when I got answers and when I got failures, so the order list can
+change.  When I ask a question, I (possibly re)sort the list, and scan
+down it.  I will continue down the list until I get an authoritative
+answer.  Therefore, server failures and no-responses are pretty much the
+same:  count that server as failing (for the next sort) and go on to the
+next.  Non-authoritative answers go into the database which gets used in
+the final event nobody answered authoritatively.
+
+In ideal circumstances, this will latch onto a winning server until that
+server loses.  When it loses (for whatever reason), it goes to the end
+of the line.  This is better than the Bind resolver (as described by
+you), since it doesn't have to timeout from the front of the list.  It
+is better than the TOPS-20 server (as described by you) since it treats
+server failure as "try later" and does advance to the next possibility.
+
+Note there are a lot of ways a server can lose.  In addition to not
+responding and server failure, 
+ - it can send malformed packets (as I sent mail about yesterday), 
+ - it can send back nothing (e.g., BITSY.MIT.EDU when asked to do a
+   recursive query on a TCP connection for a name it is 
+   not authoritative for closes the connection), 
+ - it can change the opcode (as I described about OCE.ORST.EDU which
+   appears to be caused by sun spots)
+ - It can reply with the reply/query bit still in the query position
+ - It can answer with a different ID.
+
+<b>[<a href="?l=namedroppers&m=95837783026793&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026795&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026793&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

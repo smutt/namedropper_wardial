@@ -1,0 +1,124 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: naming and routing' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426373&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426375&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426373&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900042&r=1&w=2">re: naming and routing</a>
+From:       <a href="?a=95837661900013&r=1&w=2">POSTEL () USC-ISIF ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198502">1985-02-08 16:41:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426374&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426374&q=raw">body</a>]</b>
+
+
+Mark Horton describes in gory detail how attempting to use a name server
+approach via mail over dial up lines is totally crazy.  I never 
+suggested otherwise, and i don't think anyone else did.  I don't know 
+how the people in uucp land plan to convert domain style names to route 
+information, but i don't expect them to try to use domain name servers 
+via computer mail sent over dial up lines!
+
+I expect that each host has some information about the names and routes 
+to other hosts it talks to frequently.  I don't expect any host to have 
+total knowledge of all the other hosts in the world.
+
+Mark makes an assumption about what a host should do with mail it does 
+not know what to do with (i.e., the name is not in the local table), he 
+says the host should give it to its "domain parent".  To me, this is not
+at all obvious.  (I am not sure that every node of the domain name tree 
+necessarily has a host associated with it.)  Certainly, if a host has 
+some mail that it does not know what to do with it should give it to 
+some smarter host.  The lines of communication, especially within a 
+protocol family or communication scheme need not have anything to do 
+with the domain name structure.
+
+I can imagine a host connected to the world only via the uucp 
+communication scheme that for perverse reasons known only to its owners 
+is called "NO-TECH.EDU".  This host may know about some other uucp 
+capable hosts in its neighborhood and be able to directly exchange mail 
+with them using uucp.  But, this host may not have much knowledge of the
+wider world and when asked to send mail to some host it never heard of 
+(say "F.ISI.USC.EDU", or "Q.CC.BBN.COM", or even "CBOSGD.ATT.UUCP"), it 
+punts by sending the mail to one of the hosts it does know that is 
+smarter about the wider world.   These other neighborhood hosts may be 
+known by any kind of domain style names, for example, they may be in the
+EDU domain, or the COM domain, or even the UUCP domain.
+
+This assumes that at some point this messages gets forwarded to a host 
+that does know the destination host and has it its tables a routing 
+procedure for that destination.  This does not require that there be 
+some smartest host that knows everything.  The knowledge can be 
+subdivided and portions stored in  a number of hosts.  It may help to 
+divide the knowledge according to the naming structure.  For example, 
+some host in the uucp communication scheme may take responsibility for 
+knowing all the uucp capable hosts in the EDU domain.  If some message 
+for a host in the EDU domain is forwarded to this host it can either 
+route it to the destination via uucp, possibly route it to the 
+destination via some other communcation scheme, or may not know of the 
+destination at all.  In the last case, this host may forward the message
+to a relay that interconnects the uucp communcation scheme with other 
+communication schemes (e.g., BITNET, MAILNET, CSNET, ARPA-Internet), the
+relay must attempt to find a way to route to the destination host in the
+other communication schemes.
+
+I think it is possible that if the source host and the destination host 
+are in the same communication scheme (e.g., uucp), that even though 
+their names have no obvious relationship  (e.g., NO-TECH.EDU and 
+HI-TEK.COM) a message can be delivered from one to the other without 
+leaving that comminication scheme.
+
+I don't think there is any evidence that "two disjoint TCP/IP networks 
+just don't work well".  The ARPA world (ARPANET and connected nets) and 
+the DDN world (MILNET and connected nets) are interconnected because the
+users in the two worlds have a strong need to share information, not 
+because there is any flaw in the protocols that makes separation 
+difficult.
+
+I really like the idea that the users of the uucp communication scheme 
+are  going to join together to have some coherent management.  I think 
+it is great that this management is exploring the various possible ways 
+to set up additional internal structure, based on various criteria.  I 
+would like to point out that i think it is not likely that this 
+management can force every host that has the uucp capability to use a 
+name that ends in ".UUCP".  If a host, X, at ISI, is uucp capable, its 
+name is going to be X.ISI.USC.EDU.  If some other uucp capable host has 
+message to send to this host X there had better be a way of doing the 
+message routing entirely within the uucp communication scheme.
+
+The conceptual problem i see is that some people still can't separate 
+the arbitrary administrative domain style names from communication 
+schemes.  Where this causes real problems is at the edges, where the 
+different communication schemes overlap.  I think it is really important
+that a host have exactly one official name that is used consistently on 
+all messages originated at that host.  There are lots of reasons for 
+this.
+
+I think the main point i'd like to make to the designers of naming and 
+routing mechanisms for communication schemes (e.g., uucp, bitnet, 
+mailnet, csnet (phone net), whatever) is:
+
+   If your "name to route" procedure includes the assumption that every 
+   host in your communication scheme has a name ending in a constant 
+   string (e.g., UUCP, BITNET, MAILNET, CSNET, WHATEVER), then you 
+   should go back to the drawing boards -- the names you have to deal 
+   with are completely arbitrary.
+
+--jon.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426373&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426375&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426373&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

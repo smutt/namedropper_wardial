@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Thinking Machine's namespace database' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026789&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026781&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026788&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700030&r=1&w=2">Thinking Machine's namespace database</a>
+From:       <a href="?a=95837785200024&r=1&w=2">SRA () xx ! lcs ! mit ! edu (Rob Austein)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-03 21:45:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026786&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026786&q=raw">body</a>]</b>
+
+We do the same thing at LCS.MIT.EDU.  The problem we are trying to
+work around is that there are still hosts out there that have domain
+resolvers but whose mailers don't grok MX RRs.  Many of our users sign
+their messages "user@LCS.MIT.EDU" or have business cards with that
+name, to hide useless and possibly transitory detail.  We can't use a
+CNAME RR from LCS.MIT.EDU to XX.LCS.MIT.EDU, because (1) it would
+create a loop, and (2) the spec forbids putting a CNAME at the same
+name as any other RRs, and we've got to put the SOA RR for LCS.MIT.EDU
+somewhere.  So we have A RRs for XX.LCS.MIT.EDU and for LCS.MIT.EDU,
+both with RDATA fields of 10.0.0.44, in the holy cause of Getting the
+Mail Through.  I agree with your assessment of technically legal while
+violating the intent, but making mail work is more important to us; we
+also got the NIC to add LCS.MIT.EDU as a nickname for XX in the host
+table, which should give some idea of how serious we were about this
+to people familiar with the kind of red tape involved in making
+changes to a registered ARPANET (net 10.0.0.0) host these days.
+
+I view it as a bug in the spec that CNAMEs apply to names rather than
+(name, type) pairs [actually, (name qtype) pairs, since one wants to
+allow for "*" to support the current behavior].  I brought this up
+once at an IETF domain working group session, but the response was, at
+best, lukewarm.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837783026782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026789&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026781&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026788&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

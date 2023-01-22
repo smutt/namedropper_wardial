@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'network node pointers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926874&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    network node pointers
+From:       <a href="?a=95837783700005&r=1&w=2">Mark Lottor &lt;MKL () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198705">1987-05-28 3:00:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926873&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926873&q=raw">body</a>]</b>
+
+A very common missing RR in name servers are the so called network
+node pointers.  These can be used to locate gateways, among other things.
+
+If you have the standard name to number and number to name RR's for
+gateways in your name servers zone files, you should make sure you
+also have the network node pointer.
+
+For example, if the GW.CSL.SRI.COM gateway has as one of it's 
+addresses 128.18.1.1 then in your IN-ADDR.ARPA zone file for
+that net you should also have an RR specifying:
+   
+18.128.IN-ADDR.ARPA.		PTR	GW.CSL.SRI.COM.
+
+And of course one for each network the gateway is on.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926874&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

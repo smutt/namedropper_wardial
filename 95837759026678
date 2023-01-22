@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: networks and addresses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026677&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026679&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026677&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300005&r=1&w=2">re: networks and addresses</a>
+From:       <a href="?a=95837783700015&r=1&w=2">SPEEKMAN () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198603">1986-03-31 16:41:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026678&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026678&q=raw">body</a>]</b>
+
+From: karels@monet.berkeley.edu (Mike Karels)
+To: MOCKAPETRIS@usc-isib.arpa
+Cc: craig@loki.arpa, namedroppers@sri-nic.arpa
+Subject: Re: networks and addresses 
+Date: Sat, 29 Mar 86 14:09:44 PST
+
+Hear, hear!  I would love to have as many as possible of the magic numbers
+handled by the name servers.  4.2BSD provided similar interfaces
+for looking up hosts, networks, protocol numbers, and port numbers.
+The first of these is now implemented by a name server, but the others
+still look through text files stored on each host.  Of course,
+the file of network names and numbers is still generated from the NIC
+host table.
+
+		Mike
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026677&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026679&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026677&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

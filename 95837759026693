@@ -1,0 +1,90 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Life on a root server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026691&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026692&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026695&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300012&r=1&w=2">Life on a root server</a>
+From:       <a href="?a=95837693400019&r=1&w=2">MOCKAPETRIS () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-29 16:37:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026693&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026693&q=raw">body</a>]</b>
+
+Recent speculation about name errors and on the network load generated
+by various relative naming schemes led me to do a short trace of
+activity on ISIC (one of the root servers).  Each line begins with the
+network name or address of the requestor, followed by the query,
+followed by the error code (Yes, that's right, only the lines without
+RCODE=3 are other than name errors.  No, I didn't delete reasonable
+traffic, you can find some if you look.)
+
+While there is some evidence of load due to partial name matching,
+the majority seems to be due to things that can be fixed.  What is
+#PUP and #CHAOS anyway?  I bet the QCLASS=* queries are getting repeated
+because of the non-authoritative name error problem.
+
+Are non-root servers getting bombarded with similar junk?
+
+paul
+
+15:53:15 DOMAIN:Log: 128.32.0.6 PTR IN 181.254.2.128.in-addr.arpa
+15:53:17 DOMAIN:Log: UCBARPA.BERKELEY.EDU A IN ge-crd.arpa
+15:53:19 DOMAIN:Log: UCBVAX.BERKELEY.EDU A IN ge-crd.arpa
+15:53:42 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:53:44 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:53:52 DOMAIN:Log: A.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:54:01 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:54:02 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:54:26 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:54:27 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:54:28 DOMAIN:Log: A.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:54:30 DOMAIN:Log: 18.63.0.4 A * omomomomomomomomomomomomomomomom.ARPA RCODE=3
+15:54:32 DOMAIN:Log: 18.63.0.4 A * omomomomomomomomomomomomomomomom.ARPA RCODE=3
+15:54:38 DOMAIN:Log: A.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:54:48 DOMAIN:Log: B.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:54:50 DOMAIN:Log: A.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:55:01 DOMAIN:Log: B.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:55:01 DOMAIN:Log: A.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:55:08 DOMAIN:Log: B.CS.UIUC.EDU A * uicsl.uucp RCODE=3
+15:55:28 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:55:29 DOMAIN:Log: ATHENA.MIT.EDU PTR IN 87.0.6.26.in-addr.arpa
+15:55:30 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:55:33 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:55:40 DOMAIN:Log: 128.32.0.6 A IN MCR.UMICH.EDU
+15:55:41 DOMAIN:Log: UCBARPA.BERKELEY.EDU A IN MCR.UMICH.EDU
+15:55:49 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:56:04 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:56:11 DOMAIN:Log: CU-ARPA.CS.CORNELL.EDU A * beaver RCODE=3
+15:56:12 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:56:14 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:56:15 DOMAIN:Log: CU-ARPA.CS.CORNELL.EDU A * beaver RCODE=3
+15:56:17 DOMAIN:Log: UCBVAX.BERKELEY.EDU A IN su-sonoma.arpa
+15:56:19 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:56:24 DOMAIN:Log: CU-ARPA.CS.CORNELL.EDU A * sdcarl RCODE=3
+15:56:25 DOMAIN:Log: CU-ARPA.CS.CORNELL.EDU A * beaver RCODE=3
+15:56:25 DOMAIN:Log: CU-ARPA.CS.CORNELL.EDU A * sdcarl RCODE=3
+15:56:41 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:57:05 DOMAIN:Log: XX.LCS.MIT.EDU A IN OZ.AI.MIT.EDU.#CHAOS RCODE=3
+15:57:13 DOMAIN:Log: SU-SCORE.ARPA A IN LOTS-B.#PUP RCODE=3
+15:57:15 DOMAIN:Log: SU-SCORE.ARPA A IN UCSC.CSNET RCODE=3
+15:57:25 DOMAIN:Log: 128.32.133.6 A IN MIT-STRAWB.ARPA
+
+
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026691&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026692&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026695&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

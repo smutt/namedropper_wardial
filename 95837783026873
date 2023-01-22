@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026874&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837784000018&r=1&w=2">"Larry Peterson" &lt;llp () arizona ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-27 13:14:13</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026873&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026873&q=raw">body</a>]</b>
+
+The domain naming system is an elegant mechanism when it's used
+as it was intended to be used: to map unambiguous, precisely
+specified names into simple, typed values. I'm disturbed every time 
+I hear suggestions to make the system do something that it's not very
+good at doing, such as dealing with fuzzy and partially specified 
+names, selecting a value to return based on "external" factors like
+load average or randomness, and knowing about complex values not
+directly related to the problem of learning an internet address
+(i.e., the recent HINFO discussion). It's not that the domain 
+system's underlying architecture isn't currently rich enough (or 
+can't be tweaked to be rich enough) to provide such functionality, but 
+when you look at the complete "wish list", you quickly realize that the
+domain system is not the right tool to solve all the naming problems.
+I want the host name to internet address mapping to be fast and 
+accurate, meaning domain name servers should remain as simple as 
+possible. The temptation to add new kinds of naming information to 
+the server's database and to fix the lookup algorithm to handle even
+the most trivial "neat trick" should be resisted.
+
+The solution, you knew there had to be a solution, is a higher level
+*attribute-based* naming system in which a client presents a name server
+with a set of attributes (properties) that describe one or more objects,
+the name server computes the set of objects identified by the attributes,
+and replies with the set of attributes it possesses about each identified 
+object. The attribute-based paradigm for identifying resources is powerful 
+enough to support white-pages services used to identify users and
+yellow-pages services used to identify network services. In fact, the
+domain system can be viewed as a trivial instance of an attribute-based
+naming system. This is because both the name and the address the domain
+system supports for an object are simply two attribute of the object.
+For example, "domain name is bodoni.arizona.edu", "internet address
+is 192.12.69.22", "architecture is 68020", and "mips is 2.5" are all
+valid attributes for a processor; the first two just happen to be
+less ambiguous. A client might submit the latter two attributes to
+learn the first two attributes, or vise versa.
+
+We believe most of the technical problems involved in building an
+attribute-based naming system have solved, we've implemented and 
+evaluated a prototype, and an internet task force is currently working 
+on a specification for such a naming system. Information on a draft
+RFC will be posted to this mailing list sometime in the near future.
+For now, I'd like to solicit comments (flames) on the subject, including
+pointers to any similar efforts. I'm particularly interested in hearing
+about the kinds of resources people want to be able to name and the 
+interesting attributes those resources might have.
+
+Cheers,
+Larry
+
+<b>[<a href="?l=namedroppers&m=95837783026872&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026874&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

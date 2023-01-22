@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Contact names, WKS RRs, redesigning known universe' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837779526738&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026723&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837779526738&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026725&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300024&r=1&w=2">Re: Contact names, WKS RRs, redesigning known universe</a>
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-05 12:26:45</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026722&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026722&q=raw">body</a>]</b>
+
+
+&gt; Here's my proposed RR formats
+&gt; 
+&gt; &lt;service&gt;.&lt;domain-name&gt;	 IN	SERV	&lt;ip-address&gt; &lt;port&gt;
+&gt; &lt;service&gt;.&lt;domain-name&gt;	 CH	SERV	&lt;chaos-address&gt;
+
+&gt; &lt;Service&gt; is the service name (contact name analog).  Domain name is
+&gt; the name of the host supporting it.  &lt;Ip-address&gt; and &lt;chaos-address&gt;
+&gt; are as in A RRs (note that &lt;chaos-address is two fields, see
+&gt; NAMEDROPPERS archives).  &lt;port&gt; is a 16 bit port number.  Chaosnet
+&gt; doesn't need this, since chaosnet has contact names, but it would be
+&gt; nice to be able to have a WKS analog for Chaosnet.
+
+    You'd better list the protocol as well.  The Internet uses more
+than TCP/IP.  How do I list my HMP or RDP services?  How do I advertise
+that I support the UDP nameserver port but not the TCP port (some hosts only
+have UDP nameservers)?
+
+Craig Partridge
+CSNET Technical Staff
+
+<b>[<a href="?l=namedroppers&m=95837779526738&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026723&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837779526738&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026725&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Where do personal machines fit in the domain hierarchy?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026837&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026836&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500030&r=1&w=2">Re: Where do personal machines fit in the domain hierarchy?</a>
+From:       <a href="?a=95837784200017&r=1&w=2">cfe# () andrew ! cmu ! edu (Craig F !  Everhart)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198612">1986-12-19 11:50:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026838&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026838&q=raw">body</a>]</b>
+
+X.400 makes some suggestions that are relevant here; in particular, para
+3.3.1 suggests that different management domains could choose different
+attributes.  I believe that it suggests:
+	- for commercial users: Country, organization name, organizational
+	unit, (position or role, surname, and given name)
+	- for residential users: Country, region, town, and street names;
+	number on street; surname, given name
+	- for ``architectural'' specification: country and management-domain
+	names, unique number within management domain
+(I parenthesized what's usually viewed in the 822 world as local-part rather
+than host name.)
+
+I believe that the evolved Arpa domain system has thus far been structured
+along ``commercial'' lines: the top-level nodes (at least, the ones that are
+used) are broad classifications of organizations.  But there's plenty of room
+for ``residential'' machines--given, of course, someone to run domain servers
+for them.  Why not ``mac-a.100.MainSt.Highland.Pittsburgh.PA.US''?  Mail
+could, in principle, be delivered to the users of that machine.  And if Main
+Street (or Highland Park, or Pittsburgh) got its act together, mail could be
+delivered to username@MainSt.Highland.Pittsburgh.PA.US (or
+username@Highland.Pittsburgh.PA.US, or username@Pittsburgh.PA.US).
+
+The name structure of these domains seems to depend in large measure on the
+decisions made by the domain authorities themselves.  We might like an
+organization like the US Postal Service to provide these services for
+residential customers, so that the hierarchy would resemble the residential
+address structure with which we're already familiar, and particularly since
+we then wouldn't have to provide the services ourselves.  But, really, why
+couldn't I set up a couple of servers for, say, the PA.US domain and apply to
+the NIC to be granted authority for it?  I could then put whatever I liked in
+it--in particular, I could stick in stub domains like Pittsburgh.PA.US and
+Highland.Pittsburgh.PA.US and myhouse.Highland.Pittsburgh.PA.US, so the
+machine in my house would have an Internet-recognized name.
+
+Just a thought.
+
+		Craig Everhart
+
+<b>[<a href="?l=namedroppers&m=95837759026837&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026836&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

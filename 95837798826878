@@ -1,0 +1,279 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain system records for X.25 and ISDN' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826877&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826879&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826927&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900012&r=1&w=2">Domain system records for X.25 and ISDN</a>
+From:       <a href="?a=95837817600010&r=1&w=2">Robert Ullmann &lt;Ariel () Relay ! Prime ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-30 21:19:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826878&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826878&q=raw">body</a>]</b>
+
+Hi,
+
+The following is a draft of a proposed RFC on DNS records for
+domain name to X.25 and ISDN bindings, submitted for your comments,
+criticisms, and flames.
+
+The intent is to define the syntax, and first level semantics; then
+to experiment with use of the bindings.
+
+The unpublished document on TP/IX is available only in PostScript
+at this time; send me mail if you would like a copy; feel free to
+redistribute it, but only in its entirety.
+
+With apologies to those subscribers to both NAMEDROPPERS (aka
+comp.protocols.tcp-ip.domains) and TCP-ISDN ...
+
+Best Regards,
+Robert Ullmann
+Prime Computer, Inc.
++1 508 879 2960 ext 1736
+Ariel@Relay.Prime.COM
+
+
+Network Working Group                                         R. Ullmann
+Request for Comments: DRAFT                         Prime Computer, Inc.
+                                                               July 1990
+
+
+
+
+
+
+              Domain Name System Records for X.25 and ISDN
+
+1. Status of this Memo
+
+This [DRAFT] memo describes an experimental representation of PSDN and
+ISDN addresses, in the DNS, as well as a route binding method for very
+large scale networks.
+
+This [DRAFT] memo specifies the Internet standard for the definition of
+DNS RR types 25, 26, and 27 in the Internet class.
+
+[The use of codes 25 to 27 has NOT been approved by Paul Mockapetris as
+of the date of this DRAFT, 30 July 1990]
+
+Distribution of this memo is unlimited.
+
+2. Introduction
+
+This memo specifies new RR types defined for use in the IN (Internet)
+class of the DNS [6, 7].  These include addresses for PSDN and ISDN
+service, and a new route-binding RR analogous to the MX RR for mail
+routing.
+
+There are several possible uses, all experimental at this time.  First,
+the RRs provide simple documentation of the correct address(es) to use
+in static configurations of IP/X.25 <A NAME="-5"></A><A HREF="#5">[5]</A> and SMTP/X.25 <A NAME="-8"></A><A HREF="#8">[8]</A>.
+
+The RRs could also be used automatically by an internet network-layer
+router, typically IP. The procedure would be to map IP address to domain
+name, then name to canonical name if needed, then following RT records,
+and finally attempting an IP/X.25 call to the address found.
+Alternately, configured domain names could be resolved to identify IP to
+X.25/ISDN bindings for a static but periodically refreshed routing
+table.
+
+This provides a function similar to ARP for wide area non-broadcast
+networks that will scale well to a network with hundreds of millions of
+hosts.
+
+Also, a standard address binding reference will facilitate other
+experiments in the use of X.25 and ISDN, especially in serious
+inter-operability testing. (The author knows from experience that the
+majority of work in such a test is establishing the n-squared entries in
+static tables.)
+
+
+Ullmann                                                         [Page 1]
+
+RFC DRAFT     Domain Name System Records for X.25 and ISDN     July 1990
+
+
+Finally, the RRs are intended for use in a proposal <A NAME="-9"></A><A HREF="#9">[9]</A> by the author
+for a possible next-generation internet.
+
+3. The X25 resource record
+
+The X25 record identifies the PSDN address in the X.121 <A NAME="-4"></A><A HREF="#4">[4]</A> numbering
+plan for the domain name. The address is represented as a string of
+decimal digits, beginning with the 4 digit DNIC (Data Network
+Identification Code).
+
+For example:
+
+    Relay.Prime.COM.   IN   X25       311061700956
+
+The encoded form is the ASCII representation of the decimal digits, as a
+&lt;character-string&gt;.  Type X25 is 25.
+
+4. The ISDN resource record
+
+The ISDN (Integrated Services Digital Network) record identifies the
+PSTN (Public Switched Telephone Network) number of the host, together
+with any DDI (Direct Dial In) and subaddress (SA) as defined by
+E.164 <A NAME="-2"></A><A HREF="#2">[2]</A> and E.163 <A NAME="-1"></A><A HREF="#1">[1]</A>, the ISDN and PSTN numbering plans.
+
+The number is represented as a string of decimal digits, beginning with
+the E.163 country code and ending with the DDI if any.  If a SA is
+present, it is represented as another string.
+
+For example:
+
+    Relay.Prime.COM.   IN   ISDN      150887929603217
+    sh.Prime.COM.      IN   ISDN      150887929603217 004
+
+The RR data is the ASCII representation of the decimal digits.  It is
+encoded as one or two &lt;character-string&gt;s, i.e. count followed by
+characters.  Type ISDN is 26.
+
+CCITT recommendation E.166 <A NAME="-3"></A><A HREF="#3">[3]</A> defines escape codes for the
+representation of ISDN addresses in X.121, and PSDN addresses in E.164.
+It specifies that the exact codes are a "national matter", i.e.
+different on different networks. An ISDN host may be able to use both
+the X25 and ISDN addresses, with local information added, but the
+addresses must be distinct in the DNS.
+
+5. The RT resource record
+
+The RT resource record provides a route-through binding for hosts that
+do not have their own direct wide area network addresses. It is used in
+much the same way as the MX RR.
+
+The format is one (usually small) integer, representing the preference
+
+Ullmann                                                         [Page 2]
+
+RFC DRAFT     Domain Name System Records for X.25 and ISDN     July 1990
+
+
+of the route. Smaller numbers indicate more preferred routes. This is
+followed by the domain name of the host to route through, which is
+expected to have at least one A, X25, or ISDN record.
+
+For example,
+
+    sh.prime.com.      IN   RT   2    Relay.Prime.COM.
+                       IN   RT   10   NET.Prime.COM.
+    *.prime.com.       IN   RT   90   Relay.Prime.COM.
+
+When a host is looking up DNS records to attempt to route a datagram, it
+first looks for RT records for the destination host, which point to
+hosts with address records (A, X25, ISDN) compatible with the wide area
+networks available to the host. If it is itself in the set of RT
+records, it discards any RTs with preferences higher or equal to its
+own.  If there are no (remaining) RTs, it can then use address records
+of the destination itself.
+
+Wild-card RTs are used exactly as are wild-card MXs.
+
+The concrete encoding is identical to the MX RR.  Type RT is 27.
+
+References
+
+<A NAME="1"></A><A HREF="#-1">[1]</A>   International Telegraph and Telephone Consultative Committee.
+      Numbering Plan for the International Telephone Service.
+      In CCITT Recommendations E.163.  IXth Plenary Assembly, Melbourne,
+         1988.
+      Fascicle II.2 ("Blue Book").
+
+<A NAME="2"></A><A HREF="#-2">[2]</A>   International Telegraph and Telephone Consultative Committee.
+      Numbering Plan for the ISDN Era.
+      In CCITT Recommendations E.164.  IXth Plenary Assembly, Melbourne,
+         1988.
+      Fascicle II.2 ("Blue Book").
+
+<A NAME="3"></A><A HREF="#-3">[3]</A>   International Telegraph and Telephone Consultative Committee.
+      Numbering Plan Interworking in the ISDN Era.
+      In CCITT Recommendations E.166.  IXth Plenary Assembly, Melbourne,
+         1988.
+      Fascicle II.2 ("Blue Book").
+
+<A NAME="4"></A><A HREF="#-4">[4]</A>   International Telegraph and Telephone Consultative Committee.
+      International Numbering Plan for the Public Data Networks.
+      In CCITT Recommendations X.121.  IXth Plenary Assembly, Melbourne,
+         1988.
+      Fascicle VIII.3 ("Blue Book"); provisional, Geneva, 1978; amended,
+         Geneva, 1980, Malaga-Torremolinos, 1984 and Melborne, 1988.
+
+
+
+
+Ullmann                                                         [Page 3]
+
+RFC DRAFT     Domain Name System Records for X.25 and ISDN     July 1990
+
+
+<A NAME="5"></A><A HREF="#-5">[5]</A>   J. T. Korb.
+      Standard for the transmission of IP datagrams over public data
+         networks.
+      RFC 877, Purdue University, September, 1983.
+
+<A NAME="6"></A><A HREF="#-6">[6]</A>   P. Mockapetris.
+      Domain Names -- Concepts and Facilities.
+      RFC 1034, ISI, November, 1987.
+
+<A NAME="7"></A><A HREF="#-7">[7]</A>   P. Mockapetris.
+      Domain Names -- Implementation and Specification.
+      RFC 1035, ISI, November, 1987.
+
+<A NAME="8"></A><A HREF="#-8">[8]</A>   Robert L. Ullmann.
+      SMTP on X.25.
+      RFC 1090, Prime Computer, February, 1989.
+
+<A NAME="9"></A><A HREF="#-9">[9]</A>   Robert L. Ullmann.
+      TP/IX: The Next Internet.
+      July, 90.
+      Prime Computer, Inc. (unpublished).
+
+Author's Address
+
+   Robert Ullmann 10-30
+   Prime Computer, Inc.
+   500 Old Connecticut Path
+   Framingham, MA 01701
+
+   Phone: +1 508 879 2960 x1736
+   Email: Ariel@Relay.Prime.COM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Ullmann                                                         [Page 4]
+
+<b>[<a href="?l=namedroppers&m=95837798826877&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826879&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826927&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

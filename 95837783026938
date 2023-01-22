@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: resolving .no hosts.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026935&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026939&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026935&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026939&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400010&r=1&w=2">Re: resolving .no hosts.</a>
+From:       <a href="?a=95837785600013&r=1&w=2">mailrus!emv () ames ! arc ! nasa ! gov  (Edward Vielmetti)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198808">1988-08-21 5:25:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026938&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026938&q=raw">body</a>]</b>
+
+In article &lt;647@mailrus.cc.umich.edu&gt; emv@mailrus.cc.umich.edu (Edward Vielmetti) writes:
+&gt;
+&gt;I've seen several pieces of mail time out after three days
+&gt;from here at Michigan destined for sites in Norway because
+&gt;of host name lookup failures.  
+
+solved now.  Chris Torek reports than Norway is off line for some
+number of weeks because of some changes they are making, and
+Rick Adams says I should be seeing MX records pointing to uunet.
+Sure enough, after I kill off the name server to flush out the
+cache, there's an MX 300 pointing to uunet.uu.net.
+
+One of the dangers of long ttl values, I guess - old bad data
+stays around in the cache.
+
+--Ed
+
+<b>[<a href="?l=namedroppers&m=95837783026935&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026939&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026935&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026939&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

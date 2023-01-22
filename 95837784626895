@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: why promote .gov and the like to the top?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626894&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626893&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626894&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900021&r=1&w=2">Re: why promote .gov and the like to the top?</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198904">1989-04-26 10:09:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626895&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626895&q=raw">body</a>]</b>
+
+Dave,
+
+I think your view is close to the mark.  The hierarchical name structure
+naturally wants to follow the delegation of control for chunks,
+subchunks, ... of the name space.  Right now, we are usually able to make
+the one name space conform to both control and organizational structure,
+although there are some exceptions, such as in-addr.arpa, which wants to
+be controlled along the lines of network allocation, not organizational
+structure.
+
+It gets ugly when we try to organize things according to two or more
+different metrics.  (No name can serve two masters?)
+
+The lesson here is that since control is a political issue, sooner or
+later politics come to the fore in naming structures.  The EDU and GOV
+domains are top level due to a political belief that such entities don't
+necessarily need their country in their name; I have even heard it said
+that GB is UK for a political reason.  I hasten to add that I don't
+think either of these came out of smoke-filled rooms of the Trilateral
+Commission or other evil body, they just fit the intuition of the people
+making the rules at the time.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837784626893&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626894&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626893&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626894&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

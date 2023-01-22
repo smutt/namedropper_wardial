@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Running BIND in slave mode and policy questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326870&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326871&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Running BIND in slave mode and policy questions
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () Gipsi ! Gipsi ! Fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199002">1990-02-23 20:33:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326869&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326869&q=raw">body</a>]</b>
+
+Hi.
+
+	I'm running BIND on a local nameserver that can talk to other
+nameservers (via forwarding) that can reach the root.  However, I've
+discovered two things:  first, you must give a root nameserver list
+even if you are running in slave/forwarding mode (which seems broken
+if I understand the point of it) and second, about every 3 seconds,
+I get a lot of lines in /usr/tmp/named.run (I have debugging on)
+having to do with:
+
+	10 root servers
+	check_ns()
+	findns: stale entry ''
+	sysquery: send -&gt; 192.33.166.11 (8) ...
+
+It seems that a lot of unnecessary traffic is being generated.  So,
+what is going on?  I am using the out-of-the-box version of bind
+that comes with SunOS 4.0.1.  If this is damaged, I can run 4.8.
+Any help is appreciated, please reply directly (though I do read
+this list, this may not be of general interest).
+
+And on another front...
+
+Paul, if you are reading this, can you tell my why getting an
+assigned network number doesn't automatically grant you authority
+for the in-addr.arpa domain that matches?  It seems to me that
+even if I am not "connected" as far as the NIC is concerned,
+there may still be hosts in my vicinity (ie. most of Europe) that
+want to be able to figure out the hostname attached to my packets
+(for mail, rlogins, etc).  This seems like a policy SNAFU on
+behalf of the DCA.  Can you illuminate me?  (PUNG...  PUNG...  Oh,
+damn!  They're probing.  Alright, lock-and-load you guys...)
+
+Thanks,
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837797326870&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326871&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

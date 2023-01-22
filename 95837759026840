@@ -1,0 +1,92 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Where do personal machines fit in the domain hierarchy?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026839&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026841&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500030&r=1&w=2">Re: Where do personal machines fit in the domain hierarchy?</a>
+From:       <a href="?a=95837784200018&r=1&w=2">mark () cbpavo ! mis ! oh ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198612">1986-12-20 13:28:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026840&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026840&q=raw">body</a>]</b>
+
+	X.400 makes some suggestions that are relevant here; in
+	particular, para 3.3.1 suggests that different management
+	domains could choose different attributes.  I believe that it
+	suggests:
+
+		- for commercial users: Country, organization name,
+		organizational unit, (position or role, surname, and
+		given name)
+
+		- for residential users: Country, region, town, and
+		street names; number on street; surname, given name
+
+		- for ``architectural'' specification: country and
+		management-domain names, unique number within
+		management domain
+
+While going along with X.400 has much to be said for it, some things
+worry me:
+
+(1) If we start to put home computers in the US domain, we have to accept
+that someday soon we'll be sharing that domain with the real X.400 universe.
+This raises some coordination issues, such as "will X.400 take us seriously?"
+(So far they haven't, after all, we aren't an international standard.  As
+yet, I don't know if any body in the USA with the charter to allocate the
+names, and the only implementor in the USA I've asked about this said they
+were using their own ADMD (as expected by today's X.400) which allows them
+to subdivide it any way they like, and hadn't thought about the directory
+sharing issues.
+
+(2) This structure is set up to handle zillions of home users.  In reality,
+so far there aren't all that many.  A survey a year ago found, in the USA,
+a total of 6 home computers registered on UUCP (compared to 400 companies,
+125 universities, 6 government orgs, 6 military.)  It is growing, but so
+far the explosive growth seems to be among small companies - there are lots
+of 1 or 2 person consulting companies out there with a UNIX machine.
+
+(3) As pointed out, postal addresses change when a person moves, and it
+would be nice to have a structure that doesn't change so easily.  (This
+may be a minor point.)
+
+&gt;From an implementation point of view, I think that 3rd level domains would
+be most expediant to implement at the current time.  A 2nd level domain
+service would have to spring up to form such a domain.  This doesn't mean
+this is the right way to do it, but unless we expect explosive growth in
+this area in the next 5 or 10 years, (outside of X.400) it may be best
+to take the currently easiest method.
+
+If we do that, where does the 2nd level domain go?  Could go under ORG,
+or under NET, or maybe even be merged in with the 1 man companies under
+COM 3rd level domains.  I kind of like ORG, from what I've read so far.
+
+How else do we organize it?  Seems to me that each 2nd level domain has
+to be all on one network, such as UUCP, in this category.  (We don't want
+the 4 networks worrying about each individual user.)  If there are to be
+more than 1 2nd level domain (no sense having a monopoly) on the same net,
+how should they divide up the users?  Could be geographic, or could be
+ad-hoc (people go to any one they like) or by first letter of last name,
+or the whole thing could be moot because of lack of interest.  (I only
+see one such 3rd level domain on UUCP for now.)  Personally, I lean
+toward ad-hoc.  That encourages competition and makes it easier to keep
+your address when you move, but it's kind of like using an ADMD.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837759026839&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026841&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026839&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: SMI Object Identifier Tree' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627087&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627090&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627087&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400019&r=1&w=2">Re: SMI Object Identifier Tree</a>
+From:       <a href="?a=95837786600036&r=1&w=2">amdahl!pacbell!tandem!kevinr () ames ! arc ! nasa ! gov  (Kevin J !  Rowett)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-06 23:04:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627092&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627092&q=raw">body</a>]</b>
+
+In article &lt;605@trwind.UUCP&gt; simpson@trwind.trw.com (Scott Simpson) writes:
+&gt;In RFC 1065 on SMI, it describes an OBJECT IDENTIFIER tree that looks
+&gt;something like
+&gt;    |		  |				  |	       |
+&gt; directory(1)   mgmt(2)			    experimental(3)  private(4)
+&gt;		  |					       |
+&gt;		 MIB(1)					     enterprises(1)
+&gt;			       
+&gt;This tree is a means to some end.  What is that end?  I understand that
+&gt;ASN.1 is a syntax notation for doing things like type model conversion
+
+ASN.1 is actually intended to allow protocol writers to express their
+procotols withouthaving to worry too much about how the bytes are
+represented either on the network or within various different kinds 
+of machines.  ASN.1 has a secondary purpose of keeping me in the pink,
+as I've writtne plenty of encoders/decoders/pseudo-compilers for 
+it's syntax. :-).
+
+&gt;and how so?  The SMI document lists paths down this tree (e.g.,
+&gt;1.3.6.1.2.1).  Why are these paths generated and how are they used?
+
+OBJECT IDENTIFIERS are just what they say.  A defined way to name
+something.  THe planet earth has agreed to form the above sited
+tree such that someone can always find there way.  Because OSI
+standards are planetary in nature, it's difficult to get everyone
+to agree to the same scheme.  Therefore, the tree at it's highest
+level was 'branched' by the three primary ( yes, I can count )
+standards serving organizations (ANSI in the US rolls up under 
+OSI, State department work in the US rolls up under CCITT).
+
+Each org then partitioned it's branches by some scheme that made
+local sense, all the way to the bottom.
+
+In short, there isn't a lot of rhyme or reason, and there is 
+no way yo ucan parse the tree without knowing all the political
+ins and outs of each issuing organization, but if the world
+continues to live by aligning it's self along political boundaries,
+you will never get a transfer syntax (BER is 2,1,1) confused with
+a SMI MIB type of item.
+
+kevinr@tandem.com
+
+&gt;the Comer book so I have a high level understanding of TCP/IP.
+                                                        ^^^^^^
+Welcome to ASN.1
+
+<b>[<a href="?l=namedroppers&m=95837784627087&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627090&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627087&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

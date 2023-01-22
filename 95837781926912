@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Clearly bogus entry in cs.cmu.edu name server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926911&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926913&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926913&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000023&r=1&w=2">Clearly bogus entry in cs.cmu.edu name server</a>
+From:       <a href="?a=95837784600018&r=1&w=2">William LeFebvre &lt;phil () rice ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198708">1987-08-21 14:13:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926912&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926912&q=raw">body</a>]</b>
+
+Just what is going on out at CMU?  There is very clearly a problem with
+the answers that their name servers are returning, especially for the
+machine named "g.gp.cs.cmu.edu".  This machine used to be called
+"g.cs.cmu.edu".  Querying for the old name gets us a CNAME record that
+points to "g.gp.cs.cmu.edu":
+
+	g.cs.cmu.edu
+	type = CNAME, class = IN, ttl = 436358, dlen = 17
+	domain name = g.gp.cs.cmu.edu
+
+This is just fine, but a query for "g.gp.cs.cmu.edu" gets both an
+address record and a CNAME pointing back at "g.cs.cmu.edu"!!
+
+	g.gp.cs.cmu.edu
+	type = A, class = IN, ttl = 436350, dlen = 4
+	internet address = 128.2.254.132
+
+	g.gp.cs.cmu.edu
+	type = CNAME, class = IN, ttl = 539693, dlen = 14
+	domain name = g.cs.cmu.edu
+
+What makes matters worse is that the CNAME record lives longer.  So,
+for awhile everything seems to behave correctly from the cache.  But
+when the address record times out and only the CNAME remains, we have a
+CNAME loop.
+
+Now, I'm no domain name guru, but even I can tell that something is
+clearly bogus here.  This is causing us some very serious problems and
+I for one would like to see this problem disappear pronto!  I have also
+seen this behavior on other machines at CMU (specifically, the "k"
+machine).  So the problem may not be limited to one machine.
+
+			William LeFebvre
+			Department of Computer Science
+			Rice University
+			&lt;phil@Rice.edu&gt;
+
+<b>[<a href="?l=namedroppers&m=95837781926911&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926913&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926913&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

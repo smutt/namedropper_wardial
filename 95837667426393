@@ -1,0 +1,93 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Class divisions in the brave new world' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426392&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426395&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Class divisions in the brave new world
+From:       <a href="?a=95837692300019&r=1&w=2">Gail Zacharias &lt;GZ%MIT-OZ () MIT-MC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-28 11:21:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426393&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426393&q=raw">body</a>]</b>
+
+I am somewhat confused by the concept of class, especially in RR's other
+than the obvious ones such as A or WKS.  Specifically I have some questions:
+
+1. SOA records: As I read the spec, zones of authority are allowed to break
+down not only along naming boundaries but along classes as well, and that's
+what the class field in the SOA record refers to.  A server may happen to
+be authoritative for domain FOO.COM in class IN but not in class CS, and in
+fact the RFC recommends that the data be kept in separate structures even
+within a single server.  The implication is that there are distinct
+'master files' for the two classes, with no requirement for coordination
+between them.  Consequently the name space really breaks down into
+[CS]FOO.COM and [IN]FOO.COM: a priori the CS zone tree may have domain
+names in it which don't appear at all the IN zone tree and vice versa, and
+the zones might even have the same names in use to refer to different
+hosts.  This would make the whole scheme useless for inter-network mail,
+since a name appearing in say, a mail header, gives no indication of the
+intended class.
+
+I would suggest that the spec explicitly require that each domain must
+insure that, in cases of any splitting of authority or information along
+classes, the name space itself must remain consistent.  I.e. a request with
+any domain and Class=IN can give an authoritative name error IF AND ONLY IF
+the same domain with Class=CS will give an authoritative name error, etc.
+(modulo updating delays when dealing with separate servers).  This might be
+achieved by having all servers, regardless of class, read the same master
+files (and possibly discard uninteresting data, such as A records for all
+other classes), but in any case, however it is achieved, it should be
+required.
+
+2. NS records: I assume the class field here refers to the class of the
+domain being served, not the class of the name server.  I.e. it has to do
+with the class in which authority is being delegated.  The rfc should state
+this explicitly.
+
+3. CNAME records: In keeping with my suggestion in 1, I think CNAME records
+should be class-independent.  I.e. hosts should not be allowed to have
+different nicknames in different classes.  Either all CNAME records should
+have class * or the rfc should require the same set of CNAME records for
+each class.
+
+4. MD/MB/MF records: Well, let's see.  One possibility is that the class
+field here refers to the host in the RDATA field, as in "If you're on the
+Internet, you can get mail to X.FOO.COM by connecting to the following
+host, which can then deliver the mail by whatever means", the implication
+being that the host in the RDATA field is in fact on the Internet (in the
+sense of having A-type RR's in that class) regardless of whatever/wherever
+X.FOO.COM itself is.  However, it seems to me that the possibility of
+delegation of authority along class lines would require that the class
+field be associated with the domain of the RR, not with any data in the RR.
+I.e. how can a server have authoritative data for X.FOO.COM if it delegates
+authority at FOO.COM for some subset of the classes.
+
+Ok, so the other possibility is that it refers to the class of the domain,
+as in "If you mean the Internet X.FOO.COM, you can send mail there by
+getting it to the following host somehow or other", with the specified host
+not necessarily being on the Internet.  It's up to the server to find out
+if/how it can get to the host, which it can do by e.g. type=A queries for
+the classes it understands, or by some non-domain-system means.  This makes
+a lot of sense, except that it seems to me that the there is absolutely no
+reason for the answer to this question to be any different from "If you
+mean the CSNet X.FOO.COM, you can send mail here via this host".
+
+5. MG/MR records: Under what circumstances would a mailing lists/alias be
+dependent on the class??
+
+<b>[<a href="?l=namedroppers&m=95837667426392&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426395&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

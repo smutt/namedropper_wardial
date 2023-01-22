@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain software chart' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626844&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Domain software chart
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198903">1989-03-02 19:38:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626842&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626842&q=raw">body</a>]</b>
+
+Hi,
+
+I'm compiling another Domain software catalog.  A summary of entries to
+date is shown below.  The full catalog (similar to RFC 1031) should be
+ready in a week or two.  If you want to add your software or BIND port,
+ask and I'll send you the questions for the full entry.
+
+This time I'm including a Consumer's reports.  Anybody gets to add their
+vote for thumbs up or down for any of these entries.  (Caustic comments
+at the editor's discretion.)  I'll publish a revised summary to the list.
+
+System		CPU/OS	NS	R	Contact/Comments
+			S/R Z	S/F
+			
+BIND 4.8	UNIX	Rec Z	Stub	karels@okeeffe.berkeley.edu
+
+JEEVES		TOPS-20	Std  	Full	pvm@isi.edu (UDP only,
+					resolver for TOPS-20 V5)
+
+CHIVES 1	TOPS-20	Std  	Full	bug-chives@lcs.mit.edu (ITS/VMS/UNIX
+					port someday, uses JEEVES name server)
+					
+SunOS 4.0	Sun	Rec	Stub			(BIND 4.7.3)
+SunOS 4.1	Sun	Rec	Stub	nowicki@sun.com	(BIND 4.8)
+
+PC/BIND 2.02	PC	Rec	Stub	info@ftp.com (BIND 4.8)
+
+NMS		PC/Sun/	Std	?	ucbvax!mtxinu!excelan!rick (?)
+(Excelan)		VMS
+
+Fuzzball	PDP/11	Std	Full	Mills@UDEL.EDU (subset, assembler)
+Namesolver
+
+DOMAIN		Xerox	no	Stub	kevin@xv.mit.edu (Integrated with
+		1108/9			Interlisp-D)
+
+_		UNISYS	No	Stub	sob@bcm.tmc.edu (BIND 4.8 port for
+					UNISYS 5000, other SysV with EXOS?)
+
+_		Xerox	no	Stub	jlarson.pa@xerox.com (Integrated
+					in Cedar environment)
+
+-		Harris	no	Full   orchard/bruc@scarecrow.waisman.wisc.edu
+		H series		(subset of functions)
+
+-		Multics	no	Full	beattie%pco@bco-multics.arpa
+
+-		VAX/VMS	no	?	vince.fuller@c.cs.cmu.edu
+
+McBIND		MAC	Rec	Stub	tom@citi.umich.edu (port of BIND 4.?)
+
+Symbolics	3600	?	Full	sned@pegasus.scrc.symbolics.com (see
+					discussion)
+
+IP/TCP FAL	IBM/VM	?	Stub	zohar@ibm.com (requires SQL/DS,
+					resolver is TCP only)
+
+<b>[<a href="?l=namedroppers&m=95837784626843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626844&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How to have a domain and a cname with the same name' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626953&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626948&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626955&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200006&r=1&w=2">How to have a domain and a cname with the same name</a>
+From:       <a href="?a=95837786400003&r=1&w=2">Roy Smith &lt;roy () alanine ! phri ! nyu ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-30 10:35:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626949&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626949&q=raw">body</a>]</b>
+
+	I run the phri.nyu.edu domain, in which there are a number of
+hosts, one of which is phri.phri.nyu.edu which has the master mail aliases
+data base (i.e. any mail addressed to person@phri.phri.nyu.edu will get
+forwarded to the proper host).  It would be convenient to have people on
+the outside simply send to person@phri.nyu.edu and have phri.nyu.edu be a
+nickname for phri.phri.nyu.edu, but I can't seem to figure out any way to
+do that.  If I do the obvious and put a CNAME record in:
+
+phri.nyu.edu.	IN	CNAME	phri.phri.nyu.edu.
+
+I get complaints about how phri.nyu.edu has both a CNAME and other
+information, which is illegal (I'm running BIND, if that makes any
+difference).  What is the right way to do what I want to do?
+
+<b>[<a href="?l=namedroppers&m=95837784626953&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626948&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626955&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

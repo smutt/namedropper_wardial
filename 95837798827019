@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS glue records and BIND 4.8' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827023&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827021&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827020&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827026&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300019&r=1&w=2">Re: DNS glue records and BIND 4.8</a>
+From:       <a href="?a=95837817800039&r=1&w=2">swrinde!zaphod.mps.ohio-state.edu!julius.cs.uiuc.edu!ux1.cso.uiuc.edu!mp.cs.niu.</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-25 14:05:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827019&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827019&q=raw">body</a>]</b>
+
+In article &lt;1918@ccadfa.adfa.oz.au&gt; cjsv@ccadfa.adfa.oz.au (Christopher JS Vance) writes:
+&gt;The question I have is in regard to the specification of glue records
+&gt;for servers outside my domains which perform secondary service for me -
+&gt;each of my domains (except 127, of course) has the same list of
+&gt;secondary servers. 
+&gt;
+&gt;When the same host is listed as a foreign secondary server in each of my
+&gt;domains, are the glue A records:
+&gt;
+
+ While I admit to being a non-expert, and possible mistaken on this - and
+doubtless I will be corrected in this case - I suspect you don't need any
+glue records at all.
+
+ As I understand it, the only time you need glue records is when you have
+an NS record for a subdomain of yours and are not yourself a name server
+for that subdomain.  Under any other circumstances the needed A-record
+can be found by the usual search methods starting at the root servers.
+
+ If, for example you are the primary name server for BAR.EDU, and the there is
+to be a subdomain  FOO.BAR.EDU, with SOA at HOST.FOO.BAR.EDU, then the official
+source about HOST.FOO.BAR.EDU, including its A-record, must be found from from
+HOST.FOO.BAR.EDU.  This is a vicious circle, and is the case where a glue
+record is needed.  The easiest way to provide the glue record is for you to
+be a secondary server for FOO.BAR.EDU, which is often the case.  If the
+name server for FOO.BAR.EDU is in BAR.FOO.COM no glue record is needed for
+the usual search paths should get an A-record for BAR.FOO.COM.  Actually it
+is my impression that in this case your nameserver probably does this search and
+keeps the A-record on hand anyway.
+
+ It is better to not have a glue record unless absolutely necessary, for
+otherwise this is another record which must be kept up to date, yet for
+which you are technically not responsible.
+
+ The conclusion is that wherever you delegate a subdomain, you should
+probably be a primary or secondary server yourself, in which case you need
+no glue record - it is already there.  You should never need glue records
+for reverse mappings.  The main need for glue records is for the root servers
+which handle so many subdomains they cannot possibly be secondary servers for
+most of them.
+
+ Hope this helps.   And if I am confused I hope someone corrects me.
+
+-- 
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+  Neil W. Rickert, Computer Science               &lt;rickert@cs.niu.edu&gt;
+  Northern Illinois Univ.
+  DeKalb, IL 60115.                                  +1-815-753-6940
+
+<b>[<a href="?l=namedroppers&m=95837798827023&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827021&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827020&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827026&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

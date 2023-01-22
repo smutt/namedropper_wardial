@@ -1,0 +1,78 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Putting up with sites not using nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627000&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627001&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627000&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627001&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200027&r=1&w=2">Putting up with sites not using nameservers</a>
+From:       <a href="?a=95837786400033&r=1&w=2">godiva.cis.ohio-state.edu!karl () tut ! cis ! ohio-state ! edu  (Karl Kleinpaste)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-13 2:52:27</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626999&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626999&q=raw">body</a>]</b>
+
+I may regret the day I built an email gateway.
+
+I built (the Internet side of) an email gateway into CompuServe.  It
+has at long last been announced reasonably formally by all parties
+concerned, and is passing a hefty quantity of mail - some 625 messages
+in the last 24 hours alone.  It's running fine, and modulo some
+difficulties mostly from the CompuServe side due to people being
+unfamiliar with the "culture" (read: addressing standards) in use Out
+Here, there are few complaints.
+
+However, I have heard from a dozen or more people, all on MILNet sites
+(significantly), who have difficulties because their systems don't use
+nameservers yet, and so they can't find compuserve.com directly.  They
+are all trying to be quite cordial, explaining the difficulty, which
+they understand quite well without exception, asking if something
+could be done or making suggestions about how to improve the
+situation.  The suggestions range from "get CompuServe registered with
+the NIC using the MX host's IP address" (absurd) through "change the
+MX host to tut.cis.ohio-state.edu instead of saqqara" (almost
+reasonable; but what good will it do in general if nameservers are not
+in use?) to "get saqqara.cis.ohio-state.edu registered with the NIC"
+(a definite possibility).
+
+But I must admit to a lack of understanding on why the Real Solution
+To The Problem, namely the installation of a nameserver and
+MX-cognizant mailer, poses such difficulty for MILNet sites.  Is there
+a good reason why a lack of nameserver support is still tolerated
+anywhere?  One person did mention in response to a similar question
+from me that in many cases the issue relates to defense contractors
+being budgeted for just so many things, and installation/support of
+new mailer technology isn't part of the deal.
+
+This is as close to a good reason as I've heard, but I have
+nonetheless come extremely close to making an open offer to _anyone_
+to install a trivial nameserver configuration and RFC-compliant
+sendmail setup in exchange for some flat consulting fee and root
+privileges on the system in question for one hour.  If I were actually
+to do so, I'd expect to be an extremely wealthy man by the end of next
+week.  It's not like any of these systems seems to need to do major
+NIC registration things and domain setup and all that - they just need
+to get a caching-only configuration in a nameserver, and a sendmail.cf
+that understands how to use MX records.  No sweat - I install things
+like that almost without thinking by now.
+
+Is there a good reason for no-nameserver tolerance?  Am I missing an
+important (and surely DoD-bureaucratic) justification for this
+foolishness?
+
+--Karl
+
+<b>[<a href="?l=namedroppers&m=95837784627000&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627001&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627000&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627001&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

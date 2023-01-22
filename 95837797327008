@@ -1,0 +1,90 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Visibility of MX (was German lies)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327007&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327011&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327010&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400013&r=1&w=2">Visibility of MX (was German lies)</a>
+From:       <a href="?a=95837817200005&r=1&w=2">mcsun!inria!mirsa!jerry.inria.fr!huitema () uunet ! uu ! net  (Christian Huitema)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-22 12:41:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327008&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327008&q=raw">body</a>]</b>
+
+In article &lt;20052021481237@don.waisman.wisc.edu&gt;,
+ORCHARD@DON.WAISMAN.WISC.EDU (Bruce Orchard) writes:
+|&gt;
+|&gt;     This is another instance of the "the answer depends on who is
+|&gt;asking" issue.  It has come up before with a desire to keep certain
+|&gt;clients confidential and a desire to avoid extra cross-Atlantic
+|&gt;hops in mail messages and a desire to select the BITNET gateway
+|&gt;closest to the sender (or the receiver).
+Then go on suggesting what to put in MX records, and an evaluation
+strategy based on e.g. "a node in Europe could drop all the MX records
+in North America..."
+
+There are in fact several problems, which all have the same root: for
+simplicity sake, the DNS was set up "has if all routes had the same
+cost", and the MX hosts should only indicate the hosts which are the
+most convenient for the receiver. One can think of two solutions for the
+problem, one based on "distances" and the other one based on "visibility".
+
+The solutions based on "distance" combine the MX "preference indicator"
+with a local preference attached to the relay host, and attempt to sort
+the relays on the sum of "MX preference" plus "local preference".
+Bruce's suggestion is a variation on that scheme, with a local
+preference function taking the value "0" (when the destination can be
+reached) or "infinite" (when unreachable). It is in fact very hard to go
+much further with the current scheme, as the preference indicators dont
+qualify as "distances"; nothing prevent some domain to allocate the
+preferences as "0:here, 1:nearby, 5:far-away", and some others to use
+"0:here, 10:same-campus, 20:same-region, 50:same-country"...
+
+*QUESTION: would it be possible to transform the MX so that they
+indicate a real "distance"? This would in particular make the "grouping"
+of transatlantic mail much more efficient.
+
+The solution implemented in Germany is based on "visibility". The idea
+is that some informations are visible only within some domains. For
+example, the FR domain contains some commercial subnets which are
+connected to the French infrastructure, but are not allowed to use the
+NSFNET; listing their sites in the MX records would be very helpful in
+France, but would be very unfriendly to our US partners, which will get
+the info (MX, A, etc), but will see their connection attempts fail
+because "this net is unreachable". The dumb systems will sit there and
+fail; the smarter will apply the strategy defined by Bruce; all will
+somewhat suffer. Hence the German "lies", which try to give "only that
+information which can be useful". The German implementation is in fact
+poor, because it also deprives the net from a lot of useful information;
+but one could imagine a smarter "visibility" rule by using the "class"
+information.
+
+The class field was originally inserted for taking care of different
+networks, e.g. IP and CHAOS. One could probably use it for defining
+visibility rules, e.g. "get an MX record in the German class for domain
+xxx.de" vs "get an MX record in the INTERNET class for domain xxx.de"
+(or in the European class for the fringes). Bringing different answer,
+e.g. the target host in one case, the German gateway in another, would
+be perfectly reasonable. 
+
+*QUESTION: How difficult would it be to instruct mailers to get their MX
+from one of several classes, and to instruct name-servers to send all
+related MX-RR in reply to a query?
+
+Christian Huitema
+
+<b>[<a href="?l=namedroppers&m=95837797327007&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327011&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327010&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

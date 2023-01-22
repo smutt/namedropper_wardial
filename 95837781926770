@@ -1,0 +1,333 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'IFIP 6.5 Conference Programme' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926769&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926771&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    IFIP 6.5 Conference Programme
+From:       <a href="?a=95837784200029&r=1&w=2">Einar Stefferud &lt;stef () nrtc-gremlin ! arpa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198702">1987-02-23 0:31:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926770&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926770&q=raw">body</a>]</b>
+
+------- Forwarded Message
+
+Subject: IFIP 6.5 Conference Programme
+From: Hugh Smith &lt;hugh%computer-science.nottingham.ac.uk@cs.ucl.ac.UK&gt;
+To: mailgroup@cs.ucl.ac.UK, msp%cs.qmc.ac.uk@cs.ucl.ac.UK, 
+    ifip6pt5%computer-science.nottingham.ac.uk@cs.ucl.ac.UK
+Date: Fri, 20 Feb 87 12:03:27 GMT
+
+*******************************************************************************
+
+                      IFIP WG 6.5 Working Conference on
+                          Message Handling Systems
+                        Munich, April 27 to 29, 1987
+
+ ------------------------------------------------------------------------------
+
+                               Final Program
+
+ ------------------------------------------------------------------------------
+
+
+Monday, April 27
+****************
+
+1000-1130  Opening Session
+           Chair: Peter Schicker, Chairman of IFIP WG 6.5
+
+           Welcome Address
+           IFIP WG 6.5 Report
+           Peter Schicker(*), Einar Stefferud(#), Hugh T. Smith(%)
+           (*)Zellweger Telecommunications AG, Hombrechtikon, CH
+           (#)Network Management Associates Inc., Huntington Beach, USA
+           (%)University of Nottingham, UK
+
+1130-1300  Session 1
+           "MHS Interconnection and Interworking"
+           Chair: Horst Santo, GMD, St. Augustin, FRG
+
+           "Interconnection of X.400 Systems and Notable Gateways"
+           Thomas Magedanz, Michael Tschichholz, Karl-Heinz Weiss
+           Hahn-Meitner Institut, Berlin
+
+           "X.400, Towards Global Connectivity"
+           Bernhard Laborie, Christian Huitema, INRIA, Rocquencourt, F
+
+           "MHS-PDS Interworking and Teleimpression Postale"
+           Jean-Bernard Stefani, SEPT, Caen, F
+
+           "A Gateway between COM and X.400"
+           Pierre Godelaine, Isabelle Debry, Andre Danthine
+           Universite de Liege, B
+
+1430-1600  Session 2
+           "Interconnection, Directory Services
+           Chair: Christian Huitema, INRIA, Rocquencourt, F
+
+           "Adaptation and Connection of KOMEX to X.400"
+           Robert Babatz, Manfred Bogen, GMD, St. Augustin, FRG
+
+           "Norman: A Multiple Protocol Mail Reading/Composing Program"
+           John Callahan, Mark Weiser, University of Maryland, USA
+
+           "Distributed Name Management"
+           Karen R. Sollins, David D. Clark, MIT, Boston, USA
+
+           "Addressing in an Office Procedure System"
+           Thomas Kreifelts, Peter Seuffert, GMD, St. Augustin, FRG
+
+1630-1800  Session 3
+           "Directory Services"
+           Chair: Ole Jorgen Jacobsen, SRI, Menlo Park, USA
+
+           "The ISO/CCITT Directory as a Distributed Data Base: Data Models"
+           Thomas Lenggenhager(*), Bernhard Plattner(*), Rolf Stadler(#),
+           Andreas Zogg(*)
+           (*)ETH Zurich, CH
+           (#)Universitat Zurich, CH
+
+           "The Design of a Directory System"
+           E. Bertino(*), F. Dilonardo(#), P. Penelli(#), F. Rabatti(*)
+           P. Romanazzi(#), C. Thanos(*)
+           (*)Instituto Elaborazione Informazione, Pisa, I
+           (#)CSATA, Bari, I
+
+           "MHS Use of Directory Service for Routing"
+           Steve E. Kille, University College London, UK
+
+           "Pilot Distribution Lists - Agents and Directories"
+           Steve Benford, Julian Onions, University of Nottingham, UK
+
+1830       Bayrische Brotzeit
+           Special Bavarian Get-together
+
+Tuesday, April 28
+*****************
+
+0900-1100  Session 4
+           "Group Communication"
+           Chair: Hugh T. Smith, University of Nottingham, UK
+
+           "The Use of Distribution Lists in MHS"
+           Christian Huitema(*), Juan Antonio Saras(#)
+           (*)INRIA, Rocquencourt, F
+           (#)ETSITM, Madrid, E
+
+           "Requirements for Group Communication - Support in Electronic
+           Communication"
+           Uta Pankoke-Babatz, GMD, St. Augustin, FRG
+
+           "Group Communication and Related Aspects in Office Automation"
+           Wolfgang Prinz(*), Rolf Speth(#)
+           (*)GMD, St. Augustin, FRG
+           (#)CEC, Bruxelles, B
+
+           "CRMM - A Distributed Bulletin Board"
+           Paul Andre Pays, Phillip Brun, Ecole Nationale Superieure de Mines,
+           Saint-Etienne, F
+
+           "Relation and Inheritance in Group Communication"
+           Thore Danielson(*), Trine Folkow(#), Per Wiggo Richardsen(#)
+           (*)GMD, St. Augustin, FRG
+           (#)University of Tromsoe, N
+
+1130-1300  Session 5
+           "Message Management"
+           Chair: Uta Pankoke-Babatz, GMD, St. Augustin, FRG
+
+           "Key Issues in Structured Messaging"
+           Paul Wilson, Computer Science Company Ltd, Slough, UK
+
+           "Electronic Message Processing: Aspects of Filing and Retrieving
+           Messages"
+           Bernhard Plattner(*), Franz X. Steinparz(#)
+           (*) ETH Zurich, CH
+           (#) Universitat Zurich, CH
+
+           "AMIGO: Document Storage and Retrieval"
+           Jakob Palme, QZ, Stockholm, S
+
+           "Use of SQL for Message Storage and Retrieval"
+           Jaime Delgado(*), Manuel Medina(*), Berthold Butscher(#),
+           Michael Tschichholz(#)
+           (*)ETSIT, Barcelona, E
+           (#)Hahn-Meitner Institut, Berlin
+
+1430-1800  Workshop Discussions
+           Discussion Topics include
+           -  Document Structure and Multi-media Messaging
+           -  Human Interfaces
+           -  Generic User Agent
+           -  MHS Interconnection
+           -  Access Protocols
+           -  Directories
+
+Wednesday, April 29
+*******************
+
+0900-1100  Session 6
+           Reports from Workshops
+           Chair: Einar Stefferud, Network Management Associates Inc.,
+           Huntington Beach, USA
+
+1130-1300  Session 7
+           "Access Protocols, Workstations, and Security"
+           Chair: Eric Lillevold, Norwegian Telecom Administration, Kjeller, N
+
+           "Enhancements to X.400 Recommendations for Personal Computer
+           Communication"
+           Masayuki Nomura, NTT, Tokio, J
+
+           "A Distributed User Agent: Concept and Implementation"
+           Nancy Green(*), Roland Tissot(#)
+           (*)EPFL, Lausanne, CH
+           (#)XMIT AG, Dietikon, CH
+
+           "ULLAR, a User Friendly and Flexible System for Handling
+           Electronic Mail, Messages, and Forms"
+           O. Lambert, V. Marcatte, SEPT, Caen, F
+
+           "A Large Scale Mail Service Based on Privacy"
+           Martin Turnbull, The Hatfield Polytechnic, Hatfield, UK
+
+1430-1600  Session 8
+           "Impacts of MHS"
+           Chair: Bernhard Plattner, ETH Zurich, CH
+
+           "Access to and Usage of Integrated Office Systems: Implications
+           for Organizational Communication"
+           Ronald E. Rice, Douglas Shook, University of Southern California,
+           USA
+
+           "The Use of Computer Conferencing by a University Faculty"
+           Paul J. Friedl(*), Jackie Schmidt-Posner(#), Ron Danielson(%)
+           (*)IBM, Palo Alto, USA
+           (#)Stanford University, USA
+           (%)Santa Clara University, USA
+
+           "The Impact of Naming on the Costs of a Computer Bulletin Board
+           System"
+           Judy L. Edighoffer, Keith A. Lantz, Stanford University, USA
+
+           "Legally Relevant Communication via MHS?"
+           W. J. Jaburek, Radio-Austria AG, Vienna, A
+
+1630-1720  Session 9
+           "Tools and Conformance Testing"
+           Chair: Peter Schicker, Zellweger Telecommunications AG,
+           Hombrechtikon, CH
+
+           "X.400 Conformance Testing - Quo Vadis?"
+           Ulf Beyschlag, Softlab, Munich, FRG
+
+           "PROSPECT, a Tool for Protocol Specification and Conformance
+           Testing"
+           Eugen A. Blau, Bernhard Plattner, Thomas Walter, ETH Zurich, CH
+
+1720-1730  Closing Session
+           Chair: Peter Schicker, Chairman IFIP WG 6.5
+
+- -----------
+
+1830-1930  IFIP WG 6.5 Business Meeting
+
+******************************************************************************
+
+Conference Language: English
+
+Venue:     Technische Universitat Munchen
+           South Campus
+           Lecture Hall S 0320
+           Entrance: Barer Strasse 23
+                 or: Arcisstrasse 16
+
+Conference Fee:  DM 340.00 (before April 1); DM 50.00 late registration fee
+           Fee includes:
+           -  conference participation
+           -  preprint of proceedings
+           -  Bayrische Brotzeit
+           -  refreshments
+
+For Registration please end the registration form with an enclosed Cheque in
+DM to the conference secretariat:
+           Message Systems '87
+           Mrs. H. Lind
+           Siemens AG
+           D-AP 11
+           Otto-Hahn-Ring 6
+           D-8000 Munich 83
+
+           Tf: +49 89 6364 5379
+           Telex:  5 21 090 d
+
+Late registration will also be accepted at the conference itself
+(no credit cards).
+
+Conference Office:
+           Institut fur Informatik
+           Technische Universitat
+           Conference Office MHS '87
+           Arcisstrasse 21
+           D-8000 Munich 2
+           Tf: +49 89 2105 8254
+
+Email:     ifip-mhs@infovax.informatik.tu-muenchen.dbp.de
+
+Transportation:
+A public bus (Flughafenbus) connects the airport with the main railway
+station. The conference site is within walking distance from the main
+railway station. Nearest underground station: Konigsplatz (U8); nearest
+tram station: Karolinenplatz (line 18).
+
+Hotel Reservation:
+NO hotel reservation will be done by the conference secretariat. On receipt
+of your registration, a map of Munich and a list of hotels (annotated) will
+be sent to you such that you can make direct bookings. Otherwise contact:
+           Landeshauptstadt Munchen
+           Fremdenverkehrsamt
+           Postfach
+           D-8000 Munich
+           Tf: +49 89 239 1237
+
+Registration Form:
+
+Name:            . . . . . . . . . . . . . . . . . . . .
+
+Organization:    . . . . . . . . . . . . . . . . . . . .
+
+Address:         . . . . . . . . . . . . . . . . . . . .
+
+                 . . . . . . . . . . . . . . . . . . . .
+
+                 . . . . . . . . . . . . . . . . . . . .
+
+Country:         . . . . . . . . . . . . . . . . . . . .
+
+Telephone:       . . . . . . . . . . . . . . . . . . . .
+
+Telex:           . . . . . . . . . . . . . . . . . . . .
+
+Email:           . . . . . . . . . . . . . . . . . . . .
+
+ ------------------------------------------------------------------------------
+
+------- End of Forwarded Message
+
+<b>[<a href="?l=namedroppers&m=95837781926769&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926771&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

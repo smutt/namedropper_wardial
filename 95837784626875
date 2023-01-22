@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'why promote .gov and the like to the top?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626870&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626872&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626876&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900021&r=1&w=2">why promote .gov and the like to the top?</a>
+From:       <a href="?a=95837786200006&r=1&w=2">munnari!uqcspe!bunyip!brolga!ggm () uunet ! uu ! net  (George Michaelson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198904">1989-04-18 8:10:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626875&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626875&q=raw">body</a>]</b>
+
+
+We are just gearing up for using bind 4.8 in anger here at U.Q. and
+I find myself bemoaning the top-level domain set.
+
+Ok: the Internet is predominantly a U.S. oriented beast, but does it
+*really* make sense to promote such "useful" triglyphs as .edu .gov .org 
+.com to "top level" status? I can see a case for the last two, since orgs 
+and companies are truly international in spirit, but .edu and .gov and .mil
+really don't cut it. -There are many entities which one might wish to
+address as thing.gov, and in "fairness" to all of them surely the U.S. ones
+could have accepted being qualified by a .us?
+
+
+	(1)	you shouldn't really have "similar" domain-names
+		occurring at two consecutive levels in a name
+
+	(uk experience suggests this is painful see uk.ac.co and uk.co)
+
+	(2)	if .gov is a top-level domain and you wish to institute
+		a .gov.&lt;country&gt; domain you can *never* use partially
+		specified names safely
+
+	(3)	one day (my prince will come...) the net is going to be
+		"more" than just a US socio-economic-military complex
+		tool and become global infrastructure.  -Will the U.N.
+		have to live with the state-of-amerika having userped 
+		the .gov domain? (1/27th :-)
+
+Australia has .edu.au and we'll soon be in direct contact with y'all 
+there in the big country. will anything break? anybody assuming *.edu
+means "all academic" rather than "all academic in the .edu top domain"?
+
+
+	
+so:
+	how many beasts will there *really* be that are globally designated
+	as domains?
+
+	will OSI-aligned networks be "accepting" .gov .mil .org or
+	will they be co-erced into /C=US/ADMD=ORG/ form?
+
+-george
+
+
+PS bind4.8 is lovely. if only the MB and MR and MG were not "experimental"
+(sigh) anyone got any code that uses 'em yet?
+-- 
+ACSnet: ggm@brolga.cc.uq.oz                    Phone: +61 7 377 4079
+Postal: George Michaelson, Prentice Computer Centre
+          Queensland University, St Lucia, QLD 4067 
+
+<b>[<a href="?l=namedroppers&m=95837784626870&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626872&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626876&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'glue == safety belt? (was Re: stale glue considered harmful)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326982&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326984&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    glue == safety belt? (was Re: stale glue considered harmful)
+From:       <a href="?a=95837817000041&r=1&w=2">swrinde!zaphod.mps.ohio-state.edu!uakari.primate.wisc.edu!uflorida!mlb.semi.harr</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-10 1:10:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326983&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326983&q=raw">body</a>]</b>
+
+What a coincidence!  I just thought of something like this yesterday.
+
+In article &lt;11464@ditmela.oz&gt; smart@ditmela.oz.au (Robert Smart) writes:
+&gt;I must be missing something. [Who said 20c in the dollar]. It seems
+&gt;obvious to me that glue records are exactly like root.cache records.
+&gt;In fact root.cache records are just glue records for ".". I don't
+&gt;see why there is a need for glue records other than A records,
+Actually, NS records in a zone deleting responsibility to a subzone
+sort of fall in the same category. 
+
+&gt;so I suggest a new sort of record
+&gt;
+&gt;    domain-name      IN    GLUE    192.193.194.7
+Actually, they don't need to be another record type at all.  The
+name server can distinguish glue RR's from regular A RR's because
+the glue RR's live at or below the level of the NS RR's delegating
+authority.
+
+&gt;
+&gt;These should appear in root.cache instead of A records as well as
+&gt;where glue A records appear now. Glue records should be used for 
+&gt;boot-strapping operations but should be otherwise ignored. They
+&gt;certainly should never be passed around. 
+If no other information is available, then it should be possible
+to pass them out, but with a 0 TTL, otherwise the client could
+get stuck.  See below.
+
+&gt;
+&gt;It might also be a good idea if, when a reply comes back with 
+&gt;extraneous address records pointing to name servers then these 
+&gt;should be converted from A to GLUE records. This will force us
+&gt;to find the real A record for the nameserver before we can continue
+&gt;but A records of name servers are likely to stay in the local cache.
+If the server that we are querying has actually already done the
+lookup for the real A record (or if it is actually authoritative
+for the zone containing the A record), then we should be able to
+cache it and use it as gospel.
+
+&gt;
+&gt;An alternative that might make transition easier would be to denote
+&gt;GLUE records by a particular TTL. You have to be careful then that that
+&gt;value never occurs as a real TTL.
+I believe that a TTL of zero is meant for purposes such as this.
+The recipient is allowed to use it once, but not hang onto it.a
+Unfortunately, I believe that there are name server implementations
+that do not respond kindly to 0 TTL's.
+
+Here is how I think it should work:
+	Host P.Y.Z is the name server for the Y.Z domain.
+
+	Host Q.X.Y.Z is the name server for the X.Y.Z domain.
+
+	The zone file for Y.Z contains an NS RR for X.Y.Z that
+	points to Q, and a glue A RR for Q.
+
+	When P starts up, it uses the glue NS and A RR's to
+	query Q for Q's address and the authoritative NS RR's (Q)
+	for X.Y.Z.  P installs these it its cache.
+
+	If P receives a non-recursive query for something.X.Y.Z,
+	(and it does not have the answer cached), it responds with
+	a referral to the nameserver(s) for X.Y.Z.  If P received
+	answers for its A and NS queries and has them cached, it
+	returns these in the authority and additional sections
+	of its response with the appropriate TTL.  If P does not
+	have this information in its cache, then it should return
+	the glue A and NS RR's with a TTL of 0.  The client would
+	then query for the authoritive NS and A RR's using this
+	glue.
+
+	When P's cached information gets close to timeout, P
+	should refresh it, so that other hosts that receive this
+	information from P are able to keep it cached longer.
+
+	It would be desirable if the authoritative NS information
+	for X.Y.Z would be incorporated into the glue in the
+	Y.Z zone file, but things don't break as badly as they
+	do now if this doesn't happen.  It would be best if this
+	update process could be automated.
+
+It looks like it there would be some traffic penalty on startup
+(imagine what happens when one of the root servers needs to be
+restarted), but there should be a decrease in traffic due to
+inconsistencies across zone boundaries.  If P is able to contact
+at least one of the X.Y.Z name servers, then it will be able to
+pass out the correct information about all of them.
+
+But, how much will this break?
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797326982&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326984&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'mail strategy in a partly-converted world' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026831&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026826&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026830&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200006&r=1&w=2">mail strategy in a partly-converted world</a>
+From:       <a href="?a=95837785400003&r=1&w=2">jas () proteon ! com (John A !  Shriver)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-12 15:59:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026827&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026827&q=raw">body</a>]</b>
+
+We've been even more agressive than Mike recently in our "the heck
+with hosttable hosts" strategy.  However, we have very different goals
+from him.
+
+As you can see from the headers of this message, I sent this message
+from monk.proteon.com, but the from: is only @proteon.com.  The name
+proteon.com is an MX record, presently pointing at monk.proteon.com.
+The goal is to completely hide our internal structure.  Whatever
+machine(s) the proteon.com MX points to will have complete lists of
+what machines to forward the mail to.  This way we don't have to
+confuse people outside of Proteon as to what machine to send mail to a
+person at.  Nor do we have to worry about people changing machines, or
+creating mail loops in trying to forward when they do so.
+
+Unlike Mike's older configuration of user%realhost@berkeley.edu, I
+beleive I am legal since what is right of the @ is a valid MX.  If
+berkeley.edu was not a MX, only a CNAME, then that was a problem.
+
+<b>[<a href="?l=namedroppers&m=95837783026826&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026831&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026826&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026830&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

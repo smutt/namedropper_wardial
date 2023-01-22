@@ -1,0 +1,99 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'A plea for care when faking top-level domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327117&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327119&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327125&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900008&r=1&w=2">A plea for care when faking top-level domains</a>
+From:       <a href="?a=95837817200002&r=1&w=2">cis.ohio-state.edu!karl_kleinpaste () tut ! cis ! ohio-state ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-18 13:18:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327114&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327114&q=raw">body</a>]</b>
+
+I know that, periodically, people have a need to fake a top-level
+domain for one reason or another.  No real argument with that;
+sometimes it seems to make sense.  But it becomes a real problem when
+the bogus information bleeds outside of your own domain.  In poking at
+my nameservers for nic.ddn.mil, the authority section contained the
+following fascinating set of purported root servers:
+
+| For authoritative answers, see:
+| .       0 IN    NS      NS.NIC.DDN.MIL
+| .       0 IN    NS      NS.NASA.GOV
+| .       0 IN    NS      TERP.UMD.EDU
+| .       0 IN    NS      A.ISI.EDU
+| .       0 IN    NS      AOS.BRL.MIL
+| .       0 IN    NS      GUNTER-ADAM.AF.MIL
+| .       0 IN    NS      C.NYSER.NET
+| .       0 IN    NS      munnari.OZ.AU
+| .       0 IN    NS      localhost
+
+Ahem.  Munnari should not be there, and I assure you that I'm making
+no attempt to arrogate root server status to myself.  The TTLs leave
+me feeling kinda woozy.
+
+Bunches of my nameservers are infected with this information, even
+some my slave servers doing nothing but serving workstation subnets.
+All four of my primary nameservers have it; three of those four also
+have more than one SOA RR for `.'; and one of those has no less than
+FIVE, two of which are bogons:
+
+.       85638 IN        SOA     NS.NIC.DDN.MIL HOSTMASTER.NIC.DDN.MIL(
+                        900716  ;serial (version)
+                        1800    ;refresh period
+                        300     ;retry refresh this often
+                        604800  ;expiration period
+                        86400   ;minimum TTL
+                        )
+.       68523 IN        SOA     NS.NIC.DDN.MIL HOSTMASTER.NIC.DDN.MIL(
+                        900712  ;serial (version)
+                        1800    ;refresh period
+                        300     ;retry refresh this often
+                        604800  ;expiration period
+                        86400   ;minimum TTL
+                        )
+.       12367 IN        SOA     NS.NIC.DDN.MIL HOSTMASTER.NIC.DDN.MIL(
+                        900709  ;serial (version)
+                        1800    ;refresh period
+                        300     ;retry refresh this often
+                        604800  ;expiration period
+                        86400   ;minimum TTL
+                        )
+.       10357 IN        SOA     Himmelsborg.dna.lth.se hostmaster.sunic.sunet.se(
+                        1990070502      ;serial (version)
+                        28800   ;refresh period
+                        7200    ;retry refresh this often
+                        604800  ;expiration period
+                        86400   ;minimum TTL
+                        )
+.       12562 IN        SOA     nic.nordu.net hostmaster.nic.nordu.net(
+                        900702  ;serial (version)
+                        28800   ;refresh period
+                        7200    ;retry refresh this often
+                        604800  ;expiration period
+                        86400   ;minimum TTL
+                        )
+
+Mental violence manifested before us all.  Yowza.  If it matters, I'm
+running UToronto BIND 4.8.2 on assorted Pyramids.
+
+Prettyplease, be careful when you do this sort of thing...
+
+--karl
+
+<b>[<a href="?l=namedroppers&m=95837797327117&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327119&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327125&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

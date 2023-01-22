@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426644&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426644&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">Re: Well Known Ports</a>
+From:       <a href="?a=95837661700009&r=1&w=2">Barry Margolin &lt;Margolin () MIT-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-16 3:09:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426645&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426645&q=raw">body</a>]</b>
+
+I don't think it is proper to use the standard WKS mechanism to store
+information about non-standard port assignments.  Such services are not
+"Well Known" in the sense of the intention of the WKS facility.  For
+instance, just because a host has bit 1030 turned on, it doesn't mean
+that it uses it for the service that the queryer assumes.  This is
+potentially true for ports less than 256, but in such a case the
+implementation is violating the standard.
+
+If a collection of systems are going to make use of a common extension
+port then they should also make use of a common extension to the
+nameserver facilities.  I don't recall whether the nameserver spec
+allows for such extension capabilities, but it should.  This is,
+unfortunately, not useful if the extension port is being used for a
+service which is intended to be promoted to "well known" status, as it
+means that the implementation must be changed on that day to use the
+standard WKS facility.  But this doesn't negate the point of my first
+paragraph, as two groups might be using the same port to test future
+standard protocols.
+                                        barmar
+
+<b>[<a href="?l=namedroppers&m=95837667426644&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426644&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

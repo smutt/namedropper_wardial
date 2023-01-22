@@ -1,0 +1,63 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Can non-Internet site handle others domains?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326944&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326953&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326944&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326952&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200018&r=1&w=2">Can non-Internet site handle others domains?</a>
+From:       <a href="?a=95837786400040&r=1&w=2">Rob Austein &lt;sra () lcs ! mit ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-15 12:35:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326950&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326950&q=raw">body</a>]</b>
+
+   Date: 13 Apr 90 02:49:07 GMT
+   From: Robert Elz
+
+   [Jeremy Brest asks why MX records aren't looked up iteratively...]
+
+   Several reasons .. for one, it would prevent
+
+	   A MX B
+	   B MX A
+
+   from working (just in case someone actually finds a use for that...)
+
+Back when XX.LCS.MIT.EDU and MC.LCS.MIT.EDU were both on the Internet,
+all SMTP-live hosts at LCS had MX RRs like the following:
+
+    FOO.LCS.MIT.EDU.  IN  MX  1 FOO.LCS.MIT.EDU.
+    FOO.LCS.MIT.EDU.  IN  MX  2 XX.LCS.MIT.EDU.
+    FOO.LCS.MIT.EDU.  IN  MX  3 MC.LCS.MIT.EDU.
+
+Hosts that weren't TCP/SMTP-live (ie, old MIT Chaosnet hosts) skipped
+the "self" MX.
+
+The idea was that mail that couldn't be delivered to a particular host
+would be queued locally so that we could intervene if the host in
+question were to be down for a while.
+
+XX and MC had MX RRs indicating that they backed each other up, and I
+can tell you from firsthand experience that this was a real lifesaver
+when one of these machines head-crashed itself into oblivion for a few
+days.
+
+So yes, this is a real configuration.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837797326944&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326953&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326944&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326952&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

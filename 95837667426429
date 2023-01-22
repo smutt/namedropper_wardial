@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Namesolver bakeoff' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426428&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426430&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426428&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426430&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100015&r=1&w=2">Re: Namesolver bakeoff</a>
+From:       <a href="?a=95837662100001&r=1&w=2">Paul Milazzo &lt;milazzo () rice ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-14 11:14:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426429&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426429&q=raw">body</a>]</b>
+
+Charlie:
+
+Thanks for giving the RICE.EDU domain another chance.  I hate being
+thought of as a "black hole", though the thin and leaky pipe through
+CSNET-PDN-GW makes that an all too frequent occurrence.
+
+______________________________________________________________________________
+RICE.RICE.EDU			192.5.58.6	Ok
+	Authoritative: Not found
+______________________________________________________________________________
+
+The name RICE.RICE.EDU is apparently the result of human error during
+the process of registering our domain.  Because of popular demand, it
+has now been added as a nickname for RICE.EDU, but the latter name is
+the correct one.
+
+______________________________________________________________________________
+RICE.RICE.EDU			128.42.1.1	Format Error reply to second
+						transmission from 192.5.58.6
+   I do not know why RICE.RICE.EDU complained of a format error;  maybe
+it cannot handle TYPE = *.
+______________________________________________________________________________
+
+EGAD!  I don't know either, but I'll look into it.  Your theory may
+have some merit, though I *thought* TYPE=* worked.  Thanks for pointing
+out this problem.
+
+				Paul G. Milazzo &lt;milazzo@rice.ARPA&gt;
+				Dept. of Computer Science
+				Rice University, Houston, TX
+
+<b>[<a href="?l=namedroppers&m=95837667426428&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426430&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426428&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426430&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

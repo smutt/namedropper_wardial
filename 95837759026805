@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Multiple mailing lists and MG RRs' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026804&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026806&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re: Multiple mailing lists and MG RRs
+From:       <a href="?a=95837693400014&r=1&w=2">Rich Wales &lt;wales () LOCUS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-20 13:02:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026805&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026805&q=raw">body</a>]</b>
+
+A comment on Rob Austein &lt;SRA@XX.LCS.MIT.EDU&gt;'s message:
+
+	Another thought.  Ever gotten tired of receiving five copies of
+	a message because it was (correctly) sent to five different
+	lists and you happen to be one of the few people who is on more
+	than one?  Happens all the time (around here, anyway).
+
+	A good implementation of a mailer that understood MG/MB/MR RRs
+	could figure all this out and send you only one copy (assuming
+	of course that the data is in the domain system).
+
+	Most mailers already do this kind of thing on a local machine
+	basis (I know COMSAT and MMAILR do), it'd be a nice feature to
+	be able to support on a larger scale.
+
+I agree with Rob that elimination of duplicate delivery in the face of
+overlapping mailing lists is a Good Thing.
+
+However, remember the old question of who should get the "rejection
+notice" in case an address on a mailing list is invalid.  I assume we
+all agree that rejection notices should go to the list maintainer --
+not the message sender (who has no control over the situation).
+
+With regard to expanding mailing lists via MG RR's, here are a few
+thoughts.  In connection with Rob's idea of merging multiple mailing
+lists, particularly note my point #3 below.
+
+(1) A mail system that does this also needs to ask for the MINFO RR for
+    the list, so that it can get the "error" address.  This apparently
+    needs to be done _before_ sending the message via SMTP, because the
+    error address belongs in the SMTP MAIL command.
+
+    It would do no good to wait and see if the SMTP receiver gave you an
+    error during message transfer before going off to ask for the MINFO
+    RR.  To be sure, if all SMTP "can't deliver mail" errors were known
+    during the SMTP connection, you could get away with such a tactic.
+    However, as we all know, the receiver might very possibly accept the
+    message from you without complaint, and then run into an error later
+    on.  If this were to happen, the receiving host could not reasonably
+    be expected to do anything except to return the failed mail to what-
+    ever address your mailer gave in the SMTP MAIL command (probably the
+    original sender, for lack of anythying better).
+
+(2) Since MAILB RR's really need to be acquired from the very start, I
+    assert that the MAILB query type ought to be expanded to return
+    MINFO RR's (in addition to MB, MG, and MR RR's).  Otherwise, you'll
+    have to send out a separate request for MINFO RR's after your MAILB
+    request gave you back one or more MG's -- and that's precisely the
+    kind of thing QTYPE=MAILB was presumably designed to avoid.
+
+(3) If you do merge multiple mailing lists in order to eliminate dupli-
+    cate delivery, what do you do if one address appears on two or more
+    different lists maintained by different people?  Which address do
+    you give in the SMTP MAIL command (since you can give only one)?
+
+-- Rich
+
+<b>[<a href="?l=namedroppers&m=95837759026804&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026806&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

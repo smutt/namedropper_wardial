@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Motherhood' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426417&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426419&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426417&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100012&r=1&w=2">re: Motherhood</a>
+From:       <a href="?a=95837692300027&r=1&w=2">Marvin Solomon  &lt;solomon%SJRLVM1.BITNET () WISCVM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-03 11:05:52</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426418&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426418&q=raw">body</a>]</b>
+
+Peter Karp is quite right to insist on clarifying terminology.  The
+terminological confusion between "nickname" and "abbreviation"
+is significant because it reveals confusion between two distinct
+concepts.  While we are on the subject, let me remind members of this
+list of a similar distinction: "nickname" vs "alias".  Whereas
+there is not universal agreement on the proper choice of terms,
+a useful convention is that my NICKNAME for you is an alternative
+name I like to use to refer to you, whereas an ALIAS for you is an
+alternative name that you would like others to be able to use to refer
+to you.  It seems to me that many of the so-called "nickname" examples
+(such as the CSNET examples provided by Dennis Rockwell) are really
+aliases.  They belong in the global database (CNAME records).
+Abbreviations should be handled by user interfaces or name resolvers,
+possibly with help from the name server mechanism.
+The lookup scheme (1) proposed Peter Karp looks like a nice
+way to provide abbreviations.  The "alternative name server" suggestion
+proposed by Jon Solomon (or was it Chris Kent?) might be a good way
+to provide nicknames shared by a limited community (as in Mark Horton's
+"purple" example).
+
+<b>[<a href="?l=namedroppers&m=95837667426417&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426419&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426417&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

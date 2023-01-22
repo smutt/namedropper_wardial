@@ -1,0 +1,38 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Isolated Domain;  How to do it?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326913&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326914&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326910&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200007&r=1&w=2">Re: Isolated Domain;  How to do it?</a>
+From:       <a href="?a=95837816800037&r=1&w=2">bu.edu!bu-it!kwe () bloom-beacon ! mit ! edu  (Kent England)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-28 22:06:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326912&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326912&q=raw">body</a>]</b>
+
+
+	The consensus was that the best way to isolate a domain is to make
+those name servers think they are root servers and don't tell them about
+any of the real root servers.  This can be done in the cache file.
+
+	Thanks to all who sent me helpful suggestions.  This list has
+taught me a lot about DNS.  This was just the latest nut to crack.  :-)
+
+	--Kent
+
+<b>[<a href="?l=namedroppers&m=95837797326913&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326914&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326910&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

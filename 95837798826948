@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: no inverse mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826949&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826947&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826949&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100009&r=1&w=2">Re: no inverse mappings</a>
+From:       <a href="?a=95837817400015&r=1&w=2">logicon.com!Makey () nosc ! mil  (Jeff Makey)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-13 21:25:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826948&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826948&q=raw">body</a>]</b>
+
+In article &lt;BOB.90Aug13093801@volitans.MorningStar.Com&gt; bob@MorningStar.Com (Bob Sutterfield) writes:
+&gt;I'd rather see a few sites with misconfigured inverse mappings
+&gt;becoming temporarily inconvenienced, than the entire world thrown into
+&gt;a tailspin because some yahoo laid UUNET low via a security hole that
+&gt;could have been avoided by disallowing non-inverse-mapped access.
+
+Bob, I hope you aren't really so naive as to believe that inverse
+mappings are somehow secure, that the mere existence in some
+resolver's cache of an .IN-ADDR.ARPA record for an internet address
+means that activity apparently emanating from such an address can
+always be traced to the person responsible.
+
+The idea that "the entire world" depends upon uunet is pretty amusing.
+It bothers me that I didn't see any smileys nor any hint that they
+were implied.
+
+                           :: Jeff Makey
+
+Department of Tautological Pleonasms and Superfluous Redundancies Department
+    Disclaimer: All opinions are strictly those of the author.
+    Internet: Makey@Logicon.COM    UUCP: {nosc,ucsd}!logicon.com!Makey
+
+<b>[<a href="?l=namedroppers&m=95837798826947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826949&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826947&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826949&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

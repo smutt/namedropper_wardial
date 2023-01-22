@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Can non-Internet site handle others domains?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326938&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326940&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326942&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200018&r=1&w=2">Can non-Internet site handle others domains?</a>
+From:       <a href="?a=95837817000014&r=1&w=2">tiamat!chromc!dynasys!jessea () uunet ! uu ! net  (Jesse W !  Asher)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-11 19:26:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326941&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326941&q=raw">body</a>]</b>
+
+I'm not sure what I'm asking, so I didn't know how to phrase the subject. :-)
+But, I'm interested to know if a USENET site could handle the routing for
+other USENET sites.  Example:  Let's say my site has a registered domain
+and I have a site that I connect to that is on Internet and is my MX
+forwarder.  I also have 10 other sites that _want their own domain_ instead
+of hiding behind mine.  Now, here's the question.  Is there a way that these
+ten sites (after registering, of course) can list my domain name as their
+MX forwarder?  In other words, is there a way that they don't have to have
+my Internet contact as the MX forwarder for them or do I just not know what
+I'm talking about?  I know that I can have machines use my domain -
+my domain is foobar.com and can have those systems be whatever.foobar.com.
+But that's not what I'd like to do.  Thanx in advance for any ideas...
+
+
+-- 
+Jesse W. Asher - Dynasys - (901)382-1705     Evening: (901)382-1609 
+6196-1 Macon Rd., Suite 200, Memphis, TN 38134  
+UUCP: {fedeva,chromc,autoz}!dynasys!jessea
+
+<b>[<a href="?l=namedroppers&m=95837797326938&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326940&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326942&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

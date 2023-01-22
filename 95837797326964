@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TTLs for NS delegations and glue records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326959&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326961&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326968&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200027&r=1&w=2">TTLs for NS delegations and glue records</a>
+From:       <a href="?a=95837817000028&r=1&w=2">mcsun!hp4nl!kunivv1!root () uunet ! uu ! net  (Privileged Account)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-26 14:25:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326964&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326964&q=raw">body</a>]</b>
+
+We are currently in the process of getting on the Internet. Because of
+this, I did some playing around with the DNS and discovered a few things
+of which I do not know wether they are right or not.
+
+A local nameserver here (Ultrix2.0) counts down TTLs on NS delegation
+records, as if they were cached. e.g the nameserver for zone X has a
+record
+	
+	Z.X	&lt;ttl&gt;	NS	A.Z.X
+	
+where the &lt;ttl&gt; is constantly decreasing. Know I know that it is not
+authorative for this data, but why should it count down the ttl ? After
+all, this record *does* presumably come from a local master file. Other
+nameservers I have queried do not seem to do this.
+
+The same happens with glue A records, e.g. for the above zone:
+
+	A.Z.X	&lt;ttl&gt;	A	d.d.d.d
+	
+Same question, except that the other nameservers *do* seem to do this.
+
+A last question: are glue records limited to A records only ? In the
+above example, would a record
+
+	Z.X	&lt;ttl&gt;	MX	M.Z.X
+
+make any sense in the X zone ? It is my understanding that a resolver
+would need to query the nameserver for Z.X anyway. The secondary
+nameserver for the X zone seems to treat this record like a cached one,
+even though it comes in with the zone transfer from the primary (and
+rightly so, since it is not authorative). But my question is: is this
+legal (according to the RFC's) / sensible ?
+
+--
+Luc Rooijakkers                                 Internet: lwj@cs.kun.nl
+Faculty of Mathematics and Computer Science     UUCP: uunet!cs.kun.nl!lwj
+University of Nijmegen, the Netherlands         tel. +3180612271
+
+<b>[<a href="?l=namedroppers&m=95837797326959&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326961&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326968&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

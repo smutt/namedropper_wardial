@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND: Semi-random selection' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026865&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026868&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026869&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200016&r=1&w=2">BIND: Semi-random selection</a>
+From:       <a href="?a=95837785400012&r=1&w=2">triceratops.cis.ohio-state.edu!karl () TUT ! CIS ! OHIO-STATE ! EDU  (Karl Kleinpaste)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-23 5:14:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026867&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026867&q=raw">body</a>]</b>
+
+We have a large, growing network of workstations.  When people want to
+get at them from home via terminal/PC and modem, they dial a Micom
+port selector, ask for a Bridge CS/1T at the "Host Name?" prompt, and
+from there they have to say "connect &lt;host&gt;.cis.ohio-state.edu" in
+order to get connected with a particular host.
+
+With the way we've got things set up, one Sun workstation is just
+about as good as any other.  In fact, if we've done our job right,
+they're utterly identical.  For the sake of load balancing, we'd like
+to have the users show up pretty randomly on the beasties in order to
+prevent any one (e.g.) Sun3/50 from getting overloaded with too many
+emacses or whatever.  So what we would like to be able to do is have
+the users request "connect sun.cis.ohio-state.edu" and get a
+randomly-selected Sun out of the set of Suns available.
+
+Has anyone implemented anything of this sort in named?  If so, is
+there a way I can get at your copy of named to pick out your
+modifications and adapt them to my own needs?
+
+On the assumption that no one has actually done so and I will have to
+do it myself, here's what I've got in mind thus far.  I haven't looked
+over the existing code any too closely yet, not having had the time to
+get really involved in it.
+
+I would like to be able to specify a new directive in my boot file,
+something like
+
+random	sun.cis.ohio-state.edu	128.146.29.0 128.146.28.0 128.146.27.0
+random	hp.cis.ohio-state.edu	128.146.8.100 128.146.8.101 128.146.8.102
+
+where the domain specified in the 2nd field is the `alias' by which a
+machine will be requested, and the subnets specified are the addresses
+which are matchable by that domain name.  I would want the number of
+available subnets to be fairly large; I already have 11 subnets worth
+of Sun3/50s which need to be made available.  In the second case,
+those are of course complete IP addresses, not subnet idents, because
+(as a special case for us) we have a set of HP 9000/300 workstations
+which live on our backbone ethernet that should be similarly
+addressable.
+
+Then the code which notices a `random' name request for an A record
+should search out the available set of hosts which are applicable and
+pick one as randomly as possible.  Alternatively, I would be quite
+partial to thoughts of a ruptime-style query to find a host with no
+users on it, and give preference to those machines, going for the
+totally random approach only if no zero-user machine is available.
+
+Does this look workable?  Is a new directive in the boot file the
+proper place to do this?  Is the number of addresses specifiable in a
+directive limited in all cases to the flat MAXNS limit?  (I suppose I
+could create a bunch of `random' sets if so, with 3 subnets apiece.
+sun[1234].cis.ohio-state.edu.  hp[123].cis.ohio-state.edu.  Ick.)  Any
+other Better Ideas?  I would greatly appreciate any critique and
+opinion about it.
+
+--Karl
+
+<b>[<a href="?l=namedroppers&m=95837783026865&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026868&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026869&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

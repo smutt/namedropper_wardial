@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'WKS records.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026788&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026791&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026788&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026792&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500015&r=1&w=2">WKS records.</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-07 12:33:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026790&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026790&q=raw">body</a>]</b>
+
+    Date: Sat, 4 Oct 86 19:57:33 EDT
+    From: Hans-Werner Braun &lt;hwb@MCR.UMICH.EDU&gt;
+
+    Hi:
+ 
+    With one exception (a host supporting the Diamond/X.400 package) I do not have
+    WKS records in my domain data base. Is someone verifying in any mailer
+    whether there is a TCP/SMTP available prior to exporting mail? I have the
+    impression that nobody cares anyway, so I left the WKS records out. I'd be
+    happy to change that in my data base if there are implementations around 
+    which "do it right".
+
+The Symbolics implementation tries to do it right, but because so many
+of the Internet site managers simply don't include the correct
+information, we are forced to kludge various services onto the hosts'
+lists.  An even bigger joke is that most domain servers, if you ask for
+the WKS records, do NOT support domain service!
+
+Our system has depended on a distributed (and accurate) network database
+of objects since Release 5 (April 83, I think).  The first joke we
+encountered was somebody advertising (in mail) the internet time service
+(WVVB?), but his HOSTS.TXT entry didn't say he supported that service.
+
+Please, folks, if you are going to implement a network database, make it
+correct and complete.  Some systems do care about that information, A
+LOT, and hopefully more and more systems will to.
+
+For those who want to continue reading, here's some motivation.  Our
+systems (LispMs) are moderately generic beasts when it comes to
+protocols and concepts.  I'll use two examples to illustrate why we care
+about a network database.  Suppose you want to login to some other host.
+You can't tell just be the type of host or what networks it is on what
+protocol to talk.  There are many possibilities.  There is SUPDUP of
+CHAOS, TELNET over CHAOS, SUPDUP over TCP, TELNET over TCP, CHAT over
+PUP, CTERM over DECNET, and a few home-brew ones.  What's worse is that
+some hosts support some subset of the above.  Some protocols are more
+desirable than others (SUPDUP is more desirable than TELNET).  Similarly
+some networks are more desirable than others (TCP is more desirable than
+CHAOS (end-to-end software checksum and larger packets)).  Only when you
+have complete knowledge of what protocols the other end speaks, and over
+what mediums you can get there, and what protocols the local machine
+knows how to speak can you make an educated guess as the "best" way to
+get from here to there.  The other example is file transfer.  Among the
+possibilities are QFILE over CHAOS, TCP/FTP over TCP, TFTP over UDP,
+NFILE (our own) over CHAOS, NFILE over TCP, NFS over TCP, ??? over
+DECNET, EFTP over PUP, ??? over XNS, etc.  Again, some hosts (in theory
+all hosts) can implement more than one, and only with complete
+information can a program make an educated guess.  Users should not have
+the burden of knowing how to get from here to there.  That's what
+computers and accurate network databases are for!!!
+
+<b>[<a href="?l=namedroppers&m=95837759026788&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026791&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026788&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026792&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

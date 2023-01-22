@@ -1,0 +1,40 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mailing list domain - MX records only?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026949&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026951&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026951&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400015&r=1&w=2">Mailing list domain - MX records only?</a>
+From:       <a href="?a=95837785600020&r=1&w=2">stjohns () beast ! DDN ! MIL (Mike St !  Johns)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-10 16:42:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026950&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026950&q=raw">body</a>]</b>
+
+I had kind of a strange thought - one of the biggest hassles about
+sending to mailing lists is finding out where they are kep in the
+first place.  This means FTPing the 3 files from the nic and pawing
+through them, and then hoping these files are up to date.
+
+What would the impact be of creating a domain  ("Mail.LIST"?)
+consisting of nothing but MX records pointing to mailing lists?  So
+instead of TCP-IP@sri-nic.arpa, I could send to TCP-IP@mail.list and
+still have it delivered.  
+
+Mike
+
+<b>[<a href="?l=namedroppers&m=95837783026949&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026951&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026951&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

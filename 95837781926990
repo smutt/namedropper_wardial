@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Wild QCLASS queries' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926989&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Wild QCLASS queries
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-11 12:59:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926990&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926990&q=raw">body</a>]</b>
+
+Page 37 of RFC 883 discusses QCLASS=*.
+
+One question I have is about the meaning of the sentence
+	"The name error condition is not meaningful for a QCLASS=*
+	 query."
+What exactly does that mean?  Does that mean the server should not
+generate a name error, or that the resolver should not believe any
+name error that is returned?  Or both?
+
+I did just a little poking around.  SRI-NIC.ARPA and XX.LCS.MIT.EDU both
+generate non-authoritative name errors when asking for Address records
+for names in zones they are authoritative for.  
+
+BITSY.MIT.EDU, on the other hand, returns an authoritative name error.
+This also seems to go against the second paragraph, which states it can
+be done by resetting the authoritative bit and performing the query in
+the classes that are loaded.
+
+Constructively: I suggest that the spec be changed so that BITSY's
+action is correct and the NIC's and XX's action is incorrect.
+Specifically, I suggest that all the data for a given name of all
+classes reside together in the same database.  In practice, I don't
+think this is incompatible with any existing situations.  In theory, I
+think having different class information reside in different places was
+a failed experiment and that ideally all the data about a name/object
+should reside together.  This would allow QCLASS=* to have authoritative
+meaning, and would be useful, for example, to find all the addresses of
+a host, not just Internet addresses.
+
+<b>[<a href="?l=namedroppers&m=95837781926989&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

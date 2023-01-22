@@ -1,0 +1,115 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Eglin/DDN address changes' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326955&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326957&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326957&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200021&r=1&w=2">Eglin/DDN address changes</a>
+From:       <a href="?a=95837817000024&r=1&w=2">"CALVIN GEORGE" &lt;george () uv4 ! eglin ! af ! mil&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-23 10:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326956&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326956&q=raw">body</a>]</b>
+
+Delivery Receipt: NO
+
+ 
+E G L I N   A F B
+                    I N T E R O F F I C E   M E M O R A N D U M
+
+                                        Date:     23-Apr-1990 10:37 CST
+                                        From:     Calvin R. George
+                                                  GEORGE
+                                        Dept:     AD/KRSSD
+                                        Tel No:   904 882 5498
+
+TO: See Below
+
+Subject: Eglin/DDN address changes
+
+Due to a reconfiguration of Eglin's PSN, the INTERNET
+addresses for Eglin's VAXEN changed late last week ( 19 Apr ). 
+The NIC was notified a week before the change ( as soon as we
+knew about it ) and were notified at the time of the change.
+
+This morning we still see INTERNET NAMESERVERS returning our
+old addresses. The host table we retrieved from the NIC this
+A.M. was dated 12 APRIL.
+
+Our customers are complaining about refused connections and
+non-delivery of mail. 
+
+PLEASE do what you can to update your namservers, hostables, and
+any static routes you may have to reflect these changes.
+
+Calvin George
+
+
+Distribution:
+
+TO:  _MAILER!                             ( _DDN[DOROSZ@GW2.HANSCOM.AF.MIL] )
+TO:  _MAILER!                             ( _DDN[KING%EIS.DECNET@HQAFSC-VAX] )
+TO:  _MAILER!                             ( _DDN[RIDEOUT@DDNVX1.AFWL.AF.MIL] )
+TO:  _MAILER!                             ( _DDN[NAMEDROPPERS@NIC.DDN.MIL] )
+TO:  _MAILER!                             ( _DDN[HOSTMASTER@NIC.DDN.MIL] )
+TO:  _MAILER!                             ( _DDN[MCDANIEL@HQAFSC-VAX.AF.MIL] )
+
+CC:  HERBERT A. SPIES                     ( SPIES )
+CC:  Brian Braziel                        ( BRAZIEL )
+CC:  DANIEL A. MAJORS                     ( MAJORS )
+CC:  BARBARA J. LINN                      ( LINN )
+CC:  Daniel Kellen                        ( KELLEN )
+CC:  FRANK K. ROSHTO                      ( ROSHTO )
+CC:  HOWARD H. WILSON                     ( WILSONH )
+
+
+
+E G L I N   A F B
+                    I N T E R O F F I C E   M E M O R A N D U M
+
+                                        Date:     23-Apr-1990 10:06 CST
+                                        From:     GEORGE
+                                                  GEORGE@MRGATE@UV6
+                                        Dept:      
+                                        Tel No:    
+
+TO:  GEORGE@A1
+
+
+Subject: New addresses for Eglin
+
+From:	UV2::LINN         "Barbara J. Linn" 19-APR-1990 09:07:26.06
+To:	WINS%"&lt;hostmaster@nic.ddn.mil&gt;",LINN,KELLEN,GEORGE
+CC:	
+Subj:	New addresses for Eglin hosts
+
+Dear Hostmaster,
+
+The new addresses for the Eglin hosts are operational.  
+
+		     Old Address       New Address
+		     -----------       -----------
+UV4.EGLIN.AF.MIL      26.6.0.53		26.2.0.53
+UV6.EGLIN.AF.MIL      26.0.0.53		26.1.0.53
+
+Please update these addresses for our nameservers in your root servers.
+
+Thank you,
+Barbara Linn
+Eglin AFB, FL
+
+<b>[<a href="?l=namedroppers&m=95837797326955&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326957&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326957&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

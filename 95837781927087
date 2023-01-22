@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927086&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927091&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837785000017&r=1&w=2">dmo () tut ! cc ! rochester ! edu (Denise Ondishko)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-14 8:50:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927087&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927087&q=raw">body</a>]</b>
+
+	From MAILER-DAEMON Tue Dec  8 19:21:54 1987
+	Received: by tut.cc.rochester.edu id AA11997 (5.52wj3); Tue, 8 Dec 87 19:21:46 EST
+	Message-Id: &lt;8712090021.11997@tut.cc.rochester.edu&gt;
+	Date: Tue, 8 Dec 87 19:21:46 EST
+	From: MAILER-DAEMON (Mail Delivery Subsystem)
+	Subject: Returned mail: Cannot send message for 3 days
+	To: MAILER-DAEMON
+	
+	   ----- Transcript of session follows -----
+	421 sri-nic.arpa.tcp-ok... Deferred: Connection timed out during user open with \
+sri-nic.arpa  
+	   ----- Unsent message follows -----
+	Received: by tut.cc.rochester.edu id AA25228 (5.52wj3); Sat, 5 Dec 87 19:18:02 EST
+	Message-Id: &lt;8712060018.25228@tut.cc.rochester.edu&gt;
+	Date: Sat, 5 Dec 87 19:18:02 EST
+	From: MAILER-DAEMON (Mail Delivery Subsystem)
+	Subject: Returned mail: Cannot send message for 3 days
+	To: &lt;namedroppers-RELAY@SRI-NIC.ARPA&gt;
+	
+	   ----- Transcript of session follows -----
+	421 rochway.ether... Deferred: Connection timed out during user open with rochway
+	
+	   ----- Unsent message follows -----
+	Received: from sri-nic.arpa by tut.cc.rochester.edu id AA29886 (5.52wj3); Wed, 2 Dec \
+87 19:13:59 EST  Received: from ALLEGHENY.SCRC.Symbolics.COM ([128.81.41.45]) by \
+SRI-NIC.ARPA with TCP; Wed 2 Dec 87 09:41:18-PST  Received: from \
+SWAN.SCRC.Symbolics.COM by ALLEGHENY.SCRC.Symbolics.COM via CHAOS with CHAOS-MAIL id \
+75065; Wed 2-Dec-87 12:41:25 EST  Date: Wed, 2 Dec 87 12:41 EST
+	From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+	Subject: timed out CNAME and non-timed-out data
+	To: namedroppers@SRI-NIC.ARPA
+	Cc: DCP@QUABBIN.SCRC.Symbolics.COM
+	Message-Id: &lt;19871202174155.8.DCP@SWAN.SCRC.Symbolics.COM&gt;
+	
+	The following situation probably doesn't occur and perhaps should never
+	occur, but if it did, what's the proper action?
+	
+	Suppose my cache has a timed out CNAME record for A.B.C and a
+	non-timed-out HINFO record for A.B.C.
+	
+	What should be done?  
+	 1  Should the HINFO record be returned, no questions asked?  
+	 2  Should a HINFO query be made of a server, which will either validate
+	    the CNAME record or return an appropriate HINFO record?
+	 3  Should a CNAME query be made of a server, which will either validate
+	    the CNAME or definitely invalidate (with negative caching, I guess)
+	    the CNAME and allowed the HINFO record to show through?
+	
+	
+
+
+<b>[<a href="?l=namedroppers&m=95837781927086&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927091&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

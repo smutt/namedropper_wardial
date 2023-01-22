@@ -1,0 +1,78 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Relative naming; another scheme' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026690&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026693&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026692&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300011&r=1&w=2">Relative naming; another scheme</a>
+From:       <a href="?a=95837783700017&r=1&w=2">Robert Lenoil &lt;LENOIL%DEEP-THOUGHT () EDDIE ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-29 15:22:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026691&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026691&q=raw">body</a>]</b>
+
+Here is my own proposal for a relative naming scheme:
+
+I'm at site xx.lcs.mit.edu and want to send mail to a user at
+oz.ai.mit.edu.  There are two other possible hosts that may cause
+problems here. The first is the host oz.ai, i.e. a host named oz in a
+top-level domain named ai.  The second is the host oz.ai.lcs.mit.edu,
+i.e. a host named oz in a subdomain named ai of the lcs subdomain.
+
+Now CMU and others have offered the solution of using a trailing dot to
+specify an absoute name; thus I would use "Joe@oz.ai" to send to
+oz.ai.mit.edu and "Joe@oz.ai." to send to oz.ai.  However, this system
+leads to no obvious solution for naming oz.ai.lcs.mit.edu.
+
+I propose the following: No dot implies include your own domain.
+Otherwise, use several dots to convey the rest of the name.  For each
+dot, pluck off one more subdomain and append the rest.  Under this
+system, the above addresses would be as follows:
+
+
+xx.lcs.mit.edu	-&gt; oz.ai.lcs.mit.edu	= oz.ai
+		-&gt; oz.ai.mit.edu	= oz.ai.
+		-&gt; oz.ai.edu		= oz.ai..
+		-&gt; oz.ai		= oz.ai...
+
+If there were yet another subdomain between lcs and ai, e.g.
+oz.ai.foo.lcs.mit.edu, it would be specified as oz.ai.foo, which is
+quite straightforward.
+
+The only drawback to this system is that hosts in completely different
+top-level domains (such as oz.ai) require several trailing dots.  One
+solution might be to adopt another character to signify an absolute
+name, so that a host like seismo.css.gov could be specified as
+"seismo.css.gov/", rather than "seismo.css.gov...".  To maintain
+compatability with those systems that have adopted CMU's idea, the
+meanings of the "." and "/" can be interchanged, so that the dot would
+have the same meaning as at CMU.  Thus the above addresses would become:
+
+xx.lcs.mit.edu	-&gt; oz.ai.lcs.mit.edu	= oz.ai
+		-&gt; oz.ai.mit.edu	= oz.ai/
+		-&gt; oz.ai.edu		= oz.ai//
+		-&gt; oz.ai		= oz.ai.
+
+Also note that from an implementation standpoint this system is wonderful,
+since there is no ambiguity in an address.  That means only one name has
+to be resolved, as opposed to the systems mentioned recently that require
+trying several names according to a suffix list, until a match is found.
+
+- Robert Lenoil
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026690&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026693&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026692&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Gratuitous use of the domain system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926943&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926940&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926943&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000035&r=1&w=2">Gratuitous use of the domain system</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-20 4:21:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926942&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926942&q=raw">body</a>]</b>
+
+    Date: Monday, 19 October 1987  20:43-EDT
+    From: karn@faline.bellcore.com (Phil R. Karn)
+
+    ....
+
+    1. The mail system that seems to run on most DEC-10's and -20s. It
+    insists on being able to turn the IP address on the incoming connection
+    back into a host name, and if the lookup fails, it refuses altogether to
+    accept the mail.  At best this can cause an unnecessary delay when
+    transferring mail; at worst it can block mail altogether (a bogus PTR
+    record escaped from our server last week and it broke mail to an SRI
+    DEC-10 site for the entire week).  If you're worried about mail
+    spoofing, the proper thing to do is to include the raw IP address (in
+    dotted decimal form) in the mail header. A paranoid user can always
+    translate it back into a host name himself should he care; most won't
+    bother.
+
+I'll answer this one, because it's my fault, sort of.
+
+You're somewhat confused about flavors of PDP-10s.  I don't think
+there's any mail system that runs on both TOPS-10 and TOPS-20;
+certainly the normal TOPS-20 mailsystem doesn't, and I'm pretty sure
+that's what SRI is running.  I'm also not aware of -any- domain
+software for TOPS-10.  Presumably the SRI machine you are talking
+about was running some derivative of the ISI TOPS-20 domain resolver
+as later modified by me and some people at Stanford.  If so, it sounds
+like they don't have the complete set of modifications.  The only way
+that MAISER (the TOPS-20 mail listener) will outright reject a message
+is if it thinks you are claiming to be it; ie, if faline is sending
+mail to XX and faline claims that it's name is "xx.lcs.mit.edu", XX
+will refuse to accept the mail, correctly so in my opinion.  At one
+point there was a bug that could cause this behavior; I fixed it a
+year ago at MIT, if SRI doesn't have it somebody there should contact
+me privately and we'll get it straightened out.  The point is that
+it's a bug that the vast majority of TOPS-20 machines don't have.
+
+I can't muster much sympathy for the case of a bogus PTR RR escaping
+your machine.  If you put bad data into the database you will lose,
+period.  GIGO.  Likewise, I don't buy the argument that it is
+antisocial for the SMTP listener to attempt to find out who it is
+talking to before deciding whether or not to accept mail; in fact, as
+one of the people maintaining COMSAT (the ITS mailer) I get flamed at
+because the ITS SMTP listener -doesn't- scrutinize names as they come
+in.  See below before you get upset at me, though.
+
+For reasons that are now ancient history, the ISI domain resolver is
+very poorly integrated with the TOPS-20 mailsystem.  This won't be an
+issue for much longer, because MIT has been developing a new TOPS-20
+domain resolver, which is currently in alpha test.  It'll be announced
+on the appropriate mailing lists when it is ready for general
+consumption.  Full mailsystem support for domains is also under
+development and will also be announced when the dust settles.  In the
+meantime, getting the mailsystem to work with either the ISI resolver
+or the MIT resolver is a non-trivial task and not to be undertaken
+without a doctor's prescription and a life insurance policy.
+
+Sorry for the long windedness, but you're throwing rocks at one of the
+few really solid programs that I've ever had the pleasure of working
+on, and it doesn't deserve the abuse.  'Nuff said.
+
+    In general, I think IP address -&gt; name translations should be avoided
+    altogether by network daemons unless they are absolutely necessary for
+    "real time" authentication purposes. This is the case with, e.g., rsh
+    and rcp, but NOT with the regular ARPA network applications.
+
+Good point.  Agreed (except for the last sentence), and I realize that
+this is part of what you were talking about in your SRI example.
+Agreed that there is a serious consistancy problem in maintaining two
+parallel trees containing the same data.  This is not news, I've been
+saying this to anybody who will listen for long enough that I have
+heard my name used as a tag for this argument.
+
+The main problem is one of inertia.  A lot of programs, for obvious
+reasons and on a number of systems, have been minimally modified to
+use the domain system the same way as they used to use host tables.
+The interface used by such programs typically consists of two
+functions that look as much like the old host table interface as
+possible, whether you call them gethostbyname() &amp; gethostbyaddr() or
+.GTHSN &amp; .GTHNS or whatever.  The third common function is something
+that just gets you raw domain RRs and lets the user program sort it
+out; loads of fun, that.  This was ok for the initial transition
+period when the primary concern was just keeping things from
+completely falling apart, but it doesn't really cut it any more.
+
+We've ended up adding a number of new functions to the new TOPS-20
+GTDOM% interface.  The key insight (obvious in retrospect) is that the
+domain system is a distributed database with a single key (the name),
+and that all tasks that can possibly supply a name to the user
+interface should do so.  Eg, the old algorithm for authenticating the
+name given in the SMTP HELO command was to take the IP address of the
+network connection, translate that to a name, possibly translate
+everything back and forth again to canonicalize the names, then
+compare the names for equality.  Our replacement for this is a
+function that takes an IP address and a name as arguments and returns
+a boolean value telling you if looking up that name gets you that IP
+address.  From the user's point of view it's not a serious difference,
+but from the resolver code's point of view there's a world of
+difference: in the first case you have to look up IN-ADDR RRs, in the
+second case you don't; the second case is also fewer queries.  We
+handled another case, hostname canonicalization, by having the
+name-&gt;address function return the canonicalized name in addition to
+the IP address.
+
+In other words, the the changes needn't be earthshaking, but they need
+to be done after careful thought.  Things that used to be quite
+straightforward need to be reexamined to see if underlying assumptions
+have changed.  With a few exceptions, the Internet community has been
+putting this problem off until some unspecified later date.  Well,
+it's later.  Welcome to the Future.
+
+--Rob
+
+["Yoyodyne Propulsion Systems: Making tomorow yesterday, today"]
+
+<b>[<a href="?l=namedroppers&m=95837781926940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926943&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926940&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926943&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

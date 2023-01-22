@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'questionable resolver code' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826930&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826935&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826937&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826934&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100008&r=1&w=2">questionable resolver code</a>
+From:       <a href="?a=95837817600042&r=1&w=2">Michael A. Patton &lt;MAP () lcs ! mit ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-10 12:56:58</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826938&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826938&q=raw">body</a>]</b>
+
+   Date: 10 Aug 90 05:28:52 GMT
+   From: unsvax!jimi!duke.cs.unlv.edu!greg@uunet.uu.net  (Greg Wohletz)
+
+					... the behavior is to append
+   the local domain name whenever the name does not end with a .  Hence
+   when I type ``ping jimi.cs.unlv.edu'' it causes queries like
+   jimi.cs.unlv.edu.cs.unlv.edu to be generated.
+
+This is the intended usage from the spec.  Names that end in a dot are
+fully specified and not intended for local interpretation.  Names
+without a dot at the end are potentially ambiguous.  They are tried
+with the suffixes from the search list.  Apparently your search list
+is ``cs.unlv.edu. .'' which is why it tries that long name first.  The
+extra query should only happen once per resolver client.  Once it
+caches that there is no listing under any ...edu.cs.unlv.edu then it
+won't ask about any other hosts that are local.  You shouldn't be
+affected that much by these.  If you want to avoid it completely, just
+specify the complete name (i.e. ``ping jimi.cs.unlv.edu.'') or
+configure your search list to include only ``.''.  Your suggestion
+prevents a very useful ability to abbreviate names in adjacent
+domains.
+
+<b>[<a href="?l=namedroppers&m=95837798826930&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826935&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826937&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826934&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

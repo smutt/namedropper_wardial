@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'bogus root servers being advertised' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627012&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627011&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400001&r=1&w=2">bogus root servers being advertised</a>
+From:       <a href="?a=95837786400043&r=1&w=2">jb () cs ! brown ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-03 14:44:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627010&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627010&q=raw">body</a>]</b>
+
+Over the past couple months, I have seen sri-nic.arpa, brl-aos.arpa
+and gunter-adam.arpa (yes, I mean the old names for these hosts)
+being listed as root servers.  I found one source of these and it
+seems to have been fixed, but there must be others.  What prompted
+this note was receiving these from one of the root servers today.
+
+Having these addresses in the cache cause BIND to send out one query
+per bogus server every time a query is forwarded to the root.  BIND
+is trying to get an address for these servers, but there are only
+CNAME records.  According to the RFCs, all NS records are supposed
+to point to the canonical name, but these addresses are violatiing
+this requirement.
+
+My guess is that these address are originating on hosts running old
+versions of BIND and loading an incorrect list of root servers.  These
+then get propogated from there by servers not being able to answer a
+query that was refered to them.  I realize that BIND should really
+be fixed to be less trusting in what it adds to its cache but that
+won't do anyting about those people running 2 year old software.
+
+
+On a different note, is there anything that can be done about the root
+servers having three different versions of the root domain according to
+their SOA records.
+
+				Jim Bloom
+
+<b>[<a href="?l=namedroppers&m=95837784627011&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627012&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627011&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

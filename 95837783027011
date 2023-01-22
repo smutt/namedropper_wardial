@@ -1,0 +1,118 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: splitting authority over nnn.nnn.in-addr.arpa.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027010&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027012&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027008&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400032&r=1&w=2">Re: splitting authority over nnn.nnn.in-addr.arpa.</a>
+From:       <a href="?a=95837785800012&r=1&w=2">elbereth.rutgers.edu!dorm.rutgers.edu!dpz () rutgers ! edu  (David P !  Zimmerman)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-03 19:16:43</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027011&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027011&q=raw">body</a>]</b>
+
+I'm still not sure exactly what you're doing.  Here's how I've set up
+the .DORM.RUTGERS.EDU subdomain.  Real simple, and it works:
+
+RUTGERS.RUTGERS.EDU is an authoritative nameserver for the RUTGERS.EDU
+domain.  Here are the relevant parts of its /etc/named.boot:
+-------------------
+primary   RUTGERS.EDU		/etc/named.hosts
+primary   6.128.IN-ADDR.ARPA	/etc/named.inaddr
+-------------------
+Here are the relevant parts of /etc/named.hosts:
+-------------------
+DORM		172800	NS	DORM.RUTGERS.EDU.	; .DORM.RUTGERS.EDU.
+		172800	NS	ELBERETH.RUTGERS.EDU.	; .DORM.RUTGERS.EDU.
+-------------------
+etc, etc.  Here are the relevant parts of /etc/named.inaddr:
+-------------------
+45	172800	IN	NS	DORM.RUTGERS.EDU.	; .DORM.RUTGERS.EDU
+	172800	IN	NS	ELBERETH.RUTGERS.EDU.	; .DORM.RUTGERS.EDU
+-------------------
+The DORM.RUTGERS.EDU subdomain currently only has the 128.6.45.*
+subnet allocated to it.  Future subnets can easily be added under it.
+Remember that this was all on RUTGERS.RUTGERS.EDU.  DORM.RUTGERS.EDU
+is the head honcho for the DORM subdomain, I just rcp the data to
+ELBERETH as a backup nameserver.  Here are the relevant parts of 
+DORM.RUTGERS.EDU's /etc/named.boot:
+-------------------
+primary DORM.RUTGERS.EDU	/etc/named.dorm.hosts
+primary 45.6.128.IN-ADDR.ARPA	/etc/named.dorm.inaddr
+forwarders			128.6.4.4 128.6.21.9 128.6.7.26
+slave
+-------------------
+Yes, I can still be a slave, it seems.  Here are the relevant parts of
+DORM's /etc/named.dorm.hosts:
+-------------------
+@	172800	IN	SOA	DORM.RUTGERS.EDU. DPZ.DORM.RUTGERS.EDU. (
+				 9 	;serial (version of this file)
+				  86400 ;refresh once a day
+				    600 ;retry refresh every 10 minutes
+				 604800 ;expire after a week
+				  86400 ;minimum TTL of a day
+				)
+	172800	IN	NS	DORM.RUTGERS.EDU.
+	172800	IN	NS	ELBERETH.RUTGERS.EDU.
+
+DORM.RUTGERS.EDU.	172800	IN	A	128.6.18.15
+			172800	IN	HINFO	SUN-3-160	UNIX
+			172800	IN	WKS	128.6.18.15 TCP SMTP
+			172800	IN	MX	0 DORM.RUTGERS.EDU.
+DORM			172800	IN	CNAME	DORM.RUTGERS.EDU.
+BRETT			172800	IN	CNAME	DORM.RUTGERS.EDU.
+
+TEST1				IN	A	128.6.45.1
+TEST2				IN	A	128.6.45.2
+TEST3				IN	A	128.6.45.3
+TEST4				IN	A	128.6.45.4
+TEST5				IN	A	128.6.45.5
+TEST6				IN	A	128.6.45.6
+TEST7				IN	A	128.6.45.7
+-------------------
+etc, etc.  Here are the relevant parts of DORM's /etc/named.dorm.inaddr
+(which is the hosttable magically folded, spindled, and mutilated into
+inaddr format):
+-------------------
+@	172800	IN	SOA	DORM.RUTGERS.EDU. DPZ.DORM.RUTGERS.EDU. (
+				 9 	;serial (version of this file)
+				  86400 ;refresh once a day
+				    600 ;retry refresh every 10 minutes
+				 604800 ;expire after a week
+				  86400 ;minimum TTL of a day
+				)	
+	172800	IN	NS	DORM.RUTGERS.EDU.
+	172800	IN	NS	ELBERETH.RUTGERS.EDU.
+15.18.6.128.IN-ADDR.ARPA.  IN PTR DORM.RUTGERS.EDU.
+1.45.6.128.IN-ADDR.ARPA.  IN PTR TEST1.DORM.RUTGERS.EDU.
+2.45.6.128.IN-ADDR.ARPA.  IN PTR TEST2.DORM.RUTGERS.EDU.
+3.45.6.128.IN-ADDR.ARPA.  IN PTR TEST3.DORM.RUTGERS.EDU.
+4.45.6.128.IN-ADDR.ARPA.  IN PTR TEST4.DORM.RUTGERS.EDU.
+5.45.6.128.IN-ADDR.ARPA.  IN PTR TEST5.DORM.RUTGERS.EDU.
+6.45.6.128.IN-ADDR.ARPA.  IN PTR TEST6.DORM.RUTGERS.EDU.
+7.45.6.128.IN-ADDR.ARPA.  IN PTR TEST7.DORM.RUTGERS.EDU.
+-------------------
+Whew.  And that's about it.  Again, we're running 4.8.
+
+Hope this helps.
+
+					David
+-- 
+David P. Zimmerman, the Dorm Networking Pilot Project, the UUCP Project, etc
+dpz@dorm.rutgers.edu          rutgers!dpz          dpzimmerman@zodiac.bitnet
+
+<b>[<a href="?l=namedroppers&m=95837783027010&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027012&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027008&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogus address for TERP.UMD.EDU root nameserver floating about' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827092&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827095&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827097&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500010&r=1&w=2">Bogus address for TERP.UMD.EDU root nameserver floating about</a>
+From:       <a href="?a=95837818000009&r=1&w=2">"Louis A. Mamakos" &lt;louie () sayshell ! umd ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-06 11:38:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827094&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827094&q=raw">body</a>]</b>
+
+
+I've noticed a bunch of errors being reported by our Proteon router
+which connected UMDNET to SURANET, and thus the rest of the Internet.
+There is a packet flux for packets being transmitted to 128.8.26.90.
+
+Hmm.. I think, this is pretty strange.  TERP.UMD.EDU, which is one of
+the root name servers, has an address which is fairly similar:
+128.8.10.90.  I guess that the bogus address is the "MILNET" version
+of TERP's "ARPANET" flavored address..  Really weird.
+
+Bouncing name server queries to the hosts in question indicate that
+they have an incorrect idea of what TERP.UMD.EDU's IP address is.
+Will you all please take a look at your root name server cache
+infomormation, and make sure that you have correct information?  I
+suspect that these bogus packets and the associated ICMP destination
+unreachable messages are using a non-trivial amount of bandwidth
+between the US and Europe.
+
+Let's try to track this down before it spreads very far.  I'm seeing a few
+packets per second being transmitted to the bogus address.
+
+louie
+
+<b>[<a href="?l=namedroppers&m=95837798827092&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827095&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827097&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

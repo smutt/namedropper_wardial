@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926913&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926916&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    How?
+From:       <a href="?a=95837784600020&r=1&w=2">Steve Wolff (DNCRI/NSF) &lt;steve () cerberus ! DNCRI ! NSF ! GOV&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198709">1987-09-08 18:09:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926914&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926914&q=raw">body</a>]</b>
+
+In the old days of host tables, if I knew any part (say gorn) of a dimly-
+and imperfectly remembered hostname, I could do "fgrep gorn /etc/hosts"
+(excuse the UNIX-centricity, please) and in a second or two I might be
+told "aragorn.stanford.edu" and maybe a few more to help jog my memory.
+I even had an alias ("h") for the command as I have a poor memory and so
+needed to use it often.
+
+Nowadays I don't really know how to get the same effect without spending an
+unconscionable amount of time in uninteresting conversation with one or more
+nameservers.
+
+Am I missing some zippy feature well-known to those who know it well?
+
+-s
+
+<b>[<a href="?l=namedroppers&m=95837781926913&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926916&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

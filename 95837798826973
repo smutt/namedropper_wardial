@@ -1,0 +1,62 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: no inverse mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826972&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826974&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826956&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826974&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100009&r=1&w=2">Re: no inverse mappings</a>
+From:       <a href="?a=95837817800016&r=1&w=2">eru!luth!sunic!chalmers!lang.cdg.chalmers.se!lindberg () BLOOM-BEACON ! MIT ! EDU  (Gun</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-28 14:57:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826973&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826973&q=raw">body</a>]</b>
+
+Now, I came late into this, so it's probably mentioned already. Anyway:
+
+In article &lt;3675.650616417@cs.nott.ac.uk&gt;
+    j.onions@computer-science.nottingham.ac.uk (Julian Onions) writes:
+
+&gt;           However, insisting on reverse lookup gives you two things.
+&gt;1) It forces maintainers to put more effort into getting their DNS
+&gt;system setup correctly. If they can't talk to you, and your important
+&gt;enough it is a good impetus. If people can survive with the status
+&gt;quo, there is no incentive to put effort into fixing broken things.
+
+Unfortunately, not everybody can get registered in the .IN-ADDR.ARPA
+domain, at least not today. To get a NS(.IN-ADDR.ARPA) registered you
+need to have "Connected Status", which in turn implies that you're
+allowed to access the Internet - the US Internet! Exactly what the
+requirements for "Connected Status" are I don't know, but I don't
+think you get it just by asking.
+
+On the Swedish IP network there are quite a few organizations that
+will never get "Connected Status" - some of them probably don't care,
+since all they need is access to their cooperating universities. If we
+were to enforce DNS lookups, all such cooperation would be impossible!
+
+Of course, there is the other way to solve the problem, i.e. to drop
+the requirement for "Connected Status" to register a NS(.IN-ADDR.ARPA)
+(the actual NS host will need to have "Connected Status", but that's
+another story). I would be surprised if this suggestion is in any way
+new, but I wanted to mention it anyway.
+
+
+	Gunnar Lindberg
+	Chalmers University of Technology
+	Gothenburg, SWEDEN
+
+<b>[<a href="?l=namedroppers&m=95837798826972&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826974&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826956&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826974&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

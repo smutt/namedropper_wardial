@@ -1,0 +1,119 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: RD/RA/AA/chaching (shoudn't this be caching?)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927057&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927059&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927060&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700001&r=1&w=2">Re: RD/RA/AA/chaching (shoudn't this be caching?)</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-24 17:00:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927058&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927058&q=raw">body</a>]</b>
+
+	    Date: Mon, 23 Nov 87 18:23:26 PST
+	    From: Paul Mockapetris &lt;pvm@venera.isi.edu&gt;
+
+		...
+	    No.  This is confusing complete answers with authoritative ones.
+		...
+	    What should we think about changing?
+		...
+
+	None of your suggested possibilities for changes included the
+	possibility of a mechanism to request and to report that the information
+	is complete, independent of authoritative.  (I think authoritative
+	implies complete, but that's minor.)
+
+I guess I wasn't clear enough.
+
+Lets separate the problem into three cases:
+
+1) Recursive responses (requested and available)
+
+2) Authoritative responses
+
+3) Non-recursive, non-authoritative
+
+Cases 1 and 2 are no problem.  The answers are complete.
+
+Let's look at case 3.  It occurs when a resolver (the client) asks a
+name server (the intermediate) for information which the intermediate is
+not authoritative for.  (I don't think the problem changes substantially
+if we postulate multiple intermediate levels, other than putting the
+good behaviour of intermediaries in series.)  Some or all of the
+information needed to answer the request may be in the intermediate's
+cache.
+
+In my prior response, I suggested the possibility that the intermediate
+pass back negative information.  If we do this, then if the client gets
+positive or negative information for all types covered by the QTYPE, the
+response is complete.  This has subtly different semantics than a single
+"complete" bit.  Suppose QTYPE=*.  Then a response might say "the MX RRs
+are thus and so, and there are no A RRs, I don't know about other
+types."  This uses more space in the packet than one bit, but allows
+a server to tell all it knows.
+
+I don't see why we would want to have separate ways to request complete
+and recursive service, given that a recursive response is complete.
+
+Some other factors to throw into the discussion:
+
+I do think that the user interface should be able to demand complete
+information.  There's no reason why it can't now.
+
+This problem may not be as bad as you make it out to be.  The cases we
+are worrying about are those where we query an intermediary and the
+intermediary happens to have all of the data to form a complete
+response.  Why is the client asking the intermediary in the first place?
+It would seem to me that the client should have been asking an
+authoritative server or its recursive server in the cache concentrator
+model.  If the intermediary has to go elsewhere to get complete
+information, why not just let the client do the job?  That way the
+client builds up the NS and A info it needs to go to the right servers
+the next time.
+
+Putting all of the information about a name in a single structure and
+never dividing it probably does simplify the model, although I find it
+hard to believe that you can carry this out completely.  To use domain
+parlance, maybe we should get rid of types, but I'm not so sure that
+multiple classes can/should be unified.  I HAVE REAL BAD FEELINGS ABOUT
+WHAT HAPPENS WHEN THE TYPICAL RESPONSE GETS FRAGMENTED.  Of course, this
+is an artifact of the current internet.  Note that we could essentially
+do this next week if everybody wanted to, just define the "last" type.
+
+Some intermediate aggregation a la MX for MD&amp;MF may be the most
+practical course.
+
+Completeness is tricky to implement in an intermediate in any case.  The
+presence of a data doesn't guarantee its completeness since the data may
+have come from glue RRs, different definitions at the parent/child
+boundary, or BIND hot caches.  Negative caching also tricky.  One virtue
+of just putting negative caching in resolvers and recursive servers is
+that we don't have to put up with other server's broken
+completeness/negative data.  I'm not believing that these changes will
+be quick or easy until bogons go away.
+
+I'd suggest that those of you who don't believe in discarding old data
+due to TTL at least modify your stand to discard old negative data and
+start up a "background" request whenever you use old positive data.  I'd
+like to see requests for C.ISI.EDU and B.ISI.EDU and probably ISIF.ARPA
+dry up some day.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781927057&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927059&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927060&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

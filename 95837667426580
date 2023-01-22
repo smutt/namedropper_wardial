@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'"white.sww.symbolics.com" is unknown to the net' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426579&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426581&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    "white.sww.symbolics.com" is unknown to the net
+From:       <a href="?a=95837661900010&r=1&w=2">Charles Hornig &lt;Hornig () SCRC-STONY-BROOK ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-30 11:39:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426580&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426580&q=raw">body</a>]</b>
+
+The message below is a result of a problem I have.
+White.SWW.Symbolics.COM is host which does not have an Internet address.
+There is a valid domain entry for it with a MF record through a host
+with an Internet address.  Should I register it with the NIC?  Will the
+NIC register a host without an address?  What good would it do?
+
+    Subject: Re: [Postmaster@SCRC-YUKON.ARPA: Unable to deliver letter]
+    From: the tty of Geoffrey S. Goodfellow &lt;Geoff@SRI-CSL.ARPA&gt;
+
+    i am happy to report that the Symbolics/CSL logjam has been
+    broken; I am unhappy to report that the NIC's host tables contain
+    nothing about "User@WHITE.SWW.SYMBOLICS.COM" so i can't reply to
+    your message and as such am routing it via RAND-UNIX which i hope
+    you will get sometime this year.  I would think it of interest to
+    Symbolics to register their hosts with the NIC so people like Bob
+    Kahn or other money bags sources can reply to messages, let alone
+    me.
+	
+	Date: Sat, 19 Oct 85 11:03 PDT
+	From: Michael Wahrman &lt;wahrman@WHITE.SWW.Symbolics.COM&gt;
+	Subject: [Postmaster@SCRC-YUKON.ARPA: Unable to deliver letter]
+	To: gary@SRI-CSL.ARPA, geoff@SRI-CSL.ARPA
+
+<b>[<a href="?l=namedroppers&m=95837667426579&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426581&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

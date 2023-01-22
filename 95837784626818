@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'proper domain name for "commercial" email providers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626814&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626819&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626814&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626819&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890900002&r=1&w=2">proper domain name for "commercial" email providers</a>
+From:       <a href="?a=95837785800030&r=1&w=2">Mike St. Johns &lt;stjohns () beast ! ddn ! mil&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198902">1989-02-15 14:26:44</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626818&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626818&q=raw">body</a>]</b>
+
+   Date: Wed, 15 Feb 89 09:37:41 EST
+   From: hubcap@hubcap.clemson.edu (Mike Marshall)
+
+   Rick Adams muses:
+    * What would be the proper domain name for something like MCImail or
+    * Compuserve's Information Service or Easylink?
+    * 
+   Well, it seems to me that the typical person using such a service might
+   be Joe Blow, an accountant from Nassau, NY.
+
+   His mail box should be jblow@acc.nassau.ny.us, and if he uses MCImail, he
+   should arrange for MCI to have an MX record for acc.nassau.ny.us on
+   their Internet host mci.com (I know there probably isn't such a host).
+
+I thought of this also, but it doesn't work.  Consider two such people
+from the same neck of the woods - one on MCI and one on Compuserve.
+There would be only one MX record and it would point to the wrong host
+for at least one of these poor souls.  The distinguishing part of the
+address (the person name) is on the wrong side of the "@".
+
+Mail-alias@jblow.acc.nassau.ny.us with an MX record and the
+appropriate software reading the mail for mail-alias would work I
+guess.  But what a grungy hack....
+
+Hmm...is it too late to throw away our at-signs?
+stjohns.beast.ddn.mil vs stjohns@beast.ddn.mil?
+
+Mike
+
+<b>[<a href="?l=namedroppers&m=95837784626814&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626819&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626814&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626819&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

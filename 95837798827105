@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Help me save a subdomain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827104&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827106&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Help me save a subdomain
+From:       <a href="?a=95837818200001&r=1&w=2">mccrave () ssd ! Kodak ! Com (Donna L McCrave (253-7148))</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-12 11:21:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827105&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827105&q=raw">body</a>]</b>
+
+I have a configuration question that I've been wrestling
+with for a couple of months and need the omnipotence of this
+mailing list to solve it.
+
+There is a subdomain here which is implementing a very strange
+set up that I believe is incorrect, but lack the expertise to
+inform the proper administrators just exactly why it won't work.
+
+Here is the setup:
+
+There is a subdomain, call it ABC.Kodak.COM.   There is a drive
+afoot to have several subdomains live under ABC, but to use
+CNAMES to hide this fact from the user community at large (both
+inside and outside of ABC).  So, for example, the mail hub
+is known as mailhub.ABC.Kodak.COM.  Under the new configuration,
+this will merely be a CNAME to the real name, 
+mailhub.PLANT1.ABC.Kodak.COM.  The A and MX records will be
+defined under the domain PLANT1.ABC.Kodak.COM.
+
+So there will be hundreds of CNAMES crossing subdomain boundaries!
+Intuitively, this seems really broken to me as it turns the
+tree structure into a privet hedge.
+
+Can anyone verify that this is a broken configuration, and if
+so, tell me exactly why?  They haven't believed me so far.....
+
+
+Donna McCrave
+mccrave@Kodak.COM
+
+<b>[<a href="?l=namedroppers&m=95837798827104&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827106&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How to force a zone update' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626983&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    How to force a zone update
+From:       <a href="?a=95837786400020&r=1&w=2">dgis!generous () uunet ! uu ! net  (Curtis Generous)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198908">1989-08-11 11:41:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626982&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626982&q=raw">body</a>]</b>
+
+
+Sometime back in April but not detected until recently, the serial number 
+field of the SOA RR for my domain (daitc.mil) got messed up.  The result was 
+that a serial number of 890000410 was propagated to the backup servers instead 
+of 890410 (in case not obvious, the serial number is based on the date of the
+update: 10-Apr-89).  No transfers have occurred since because of this problem.  
+
+Is there a way of `forcing` an update or flushing out the bogus information 
+without having to start using a new serial number scheme?
+I have gone through all of the available docs but found no clues.
+
+--curtis
+-- 
+Curtis C. Generous
+DTIC Special Projects Office (DTIC-SPO)
+ARPA: generous@daitc.mil
+UUCP: {uunet,vrdxhq}!dgis!generous
+
+<b>[<a href="?l=namedroppers&m=95837784626980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626983&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

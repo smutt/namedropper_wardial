@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Mail from unregistered hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026704&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026706&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026704&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026706&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300014&r=1&w=2">re: Mail from unregistered hosts</a>
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198605">1986-05-06 16:09:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026705&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026705&q=raw">body</a>]</b>
+
+Craig,  I think you think I said the MILNET user should mail
+to "user@Stanford.EDU" - I meant to suggest that the person should
+mail to  "user%workstation@Stanford.EDU" to avoid just the problem
+you suggest.  So  Stanford.EDU  should have to know about the workstation,
+NOT about the user (though Berkeley appears to prefer the latter...).
+I guess I wasn't clear on this.
+
+It isn't that much effort to make workstations make their outgoing
+address be "user%workstation@nic-known-host".  But add to this
+the considerations of the mail load this places on the nic-known-host,
+and the fact that all these workstations will have to be changed at
+some time in the future when we decide they don't have to do this
+anymore.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026704&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026706&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026704&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026706&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

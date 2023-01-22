@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Proposal for use of DNS to store RFC 987, etc mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826924&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826928&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826995&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900007&r=1&w=2">Re: Proposal for use of DNS to store RFC 987, etc mappings</a>
+From:       <a href="?a=95837817600033&r=1&w=2">cargille () cs ! wisc ! edu (Allan Cargille)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-08 15:02:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826925&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826925&q=raw">body</a>]</b>
+
+[from Harald Alvestrand]
+
+&gt; We will NEED:
+&gt; - A new version of the memo, with all the "maybe"s replaced by "is".
+&gt;   It would be nice for it to have official RFC status.
+&gt; - An organization that is willing to run the initial name server and
+&gt;   to make the tables on a regular basis.
+&gt; The RARE MHS Project Team is a natural candidate to make the tables, and
+&gt; I am investigating whether or not UNINETT can make the resources that
+&gt; are required for the name server available.
+
+Hello Harald (and everybody),
+
+I agree with the "Needs" listed above.  Rob Hagens is on holidays
+through this weekend, but I can say (for him) that a new version of the
+memo is being prepared and it will be submitted for RFC status.
+Wisconsin is another possible location for a name server.
+
+Bruce Cole, the other author of the memo, modified an early beta
+version of PP to support this lookup as part of his research.  Steve,
+would UCL be interested in distributing this support in PP?  We could
+also consider the possibility of making the necessary changes publicly
+available for PP.  Note that this would take additional work by Bruce
+or someone else, as PP has changed since Bruce's initial work.  Another
+point is that the software must deal with queuing in the case that the
+DNS lookup times out -- we would not want to lose the message or block
+everything else in the queue behind that message.
+
+allan
+
+<b>[<a href="?l=namedroppers&m=95837798826917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826924&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826928&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826995&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

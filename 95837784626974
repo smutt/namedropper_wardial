@@ -1,0 +1,36 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Reliable DNS server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626973&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626975&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626981&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200013&r=1&w=2">Reliable DNS server</a>
+From:       <a href="?a=95837786400015&r=1&w=2">kurt () hc ! dspo ! gov  (Kurt Zeilenga)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198907">1989-07-25 19:51:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626974&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626974&q=raw">body</a>]</b>
+
+I am slowily migrating most of the network services off our
+BSD/VAX.  I would like to move the main DNS server to a
+highly reliable system.  I would like to know what others
+have done, especially in the realm of using dedicated boxes
+(such as using a PC or standalone workstation).
+
+	-- Kurt
+
+<b>[<a href="?l=namedroppers&m=95837784626973&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626975&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626981&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

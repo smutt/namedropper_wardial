@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mail Source Routing (was Re: New Host-Requirement RFCs)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627072&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627074&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627072&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627074&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400015&r=1&w=2">Re: Mail Source Routing (was Re: New Host-Requirement RFCs)</a>
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () gipsi ! gipsi ! fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198911">1989-11-08 14:27:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627073&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627073&q=raw">body</a>]</b>
+
+	The Host Requirements Working Group did not feel secure enough about
+	this mechanism to actually require it (nobody really likes to be
+	dependent upon configuration data, that network administrators have to
+	set and may set wrong), but hoped that implementors will take the
+	suggestion seriously, since there is no apparent alternative.
+
+This is a danger developers live in constant fear of.  Still, my
+experience has been that administrators frequently don't configure
+something at all (if defaults exist) or configure it in the most
+plain-vanilla/out-of-the-box fashion possible.  It is rare that one
+actually tries his hand at it and mucks it up badly.  This being
+the case, if such a mechanism existed, and was not configured, then
+it would do exactly what is the case now:  nothing -- just return
+the addresses as the come in from the servers.  On the other hand,
+competent administrators (and those that began this discussion I
+would certainly consider competent, if mis-directed) should be able
+to figure out which networks are expensive and which aren't.
+
+At the worst, a standard tool could be devised for figuring out
+administrative metrics based on (1) reliability (2) hop-counts
+(3) delay (4) bandwidth (5) total utilization, etc. to assist in
+this configuration.
+
+But we seem to be sliding off the name service track, and I am not
+on the host configuration working group...
+
+-Philip
+
+P.S.	My initial statement holds true for most examples, with
+	sendmail being the exception that proves the rule (comme
+	on dit en francais)...
+
+<b>[<a href="?l=namedroppers&m=95837784627072&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627074&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627072&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627074&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

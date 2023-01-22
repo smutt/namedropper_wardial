@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Relative naming; another scheme' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026697&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026697&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300011&r=1&w=2">Re: Relative naming; another scheme</a>
+From:       <a href="?a=95837693400028&r=1&w=2">Rudy.Nedved () A ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-29 22:40:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026696&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026696&q=raw">body</a>]</b>
+
+Joe,
+
+Experience around CMU has shown is that a relative name resolving
+algorithm that is independent of some type of database does not
+work within a mildly adminstrative name space. We used to have
+such an independent algorithm but got into trouble because we
+have a CS.CMU.EDU, RI.CMU.EDU, ECE.CMU.EDU, FAC.CS.CMU.EDU,
+WARP.CS.CMU.EDU, ASSY.RI.CMU.EDU, etc. name space with nicknames
+or bottom levels names that were unique in most cases. The non-unique
+cases killed our hopes....preferences were dependent on the requestor.
+
+Another way is to look at the following two cases:
+
+    One of the old communial timesharing machines is called the "A"
+    by local people. A project starts up and has lots of machines and
+    prefers to call four of them A, B, C and D because of some reason
+    (say it is a multiprocessor with four processors). Because the
+    domain system has global names you can't deny them the "A" but
+    it causes problems with the name space.
+
+    The solution at CMU was that people using these machines would
+    see their "A" first in the search and people not using the machine
+    would see the communial "A" machine.
+
+    But given that the project was a subdomain called FOO and many of the
+    old machines did not have subdomains, the algorithm had to actually
+    go down a subdomain. For instance, I am on "A.CS.CMU.EDU" and their
+    is a machine called "RUDY.FAC.CS.CMU.EDU", the algorithm should
+    "see" RUDY if I telnet from A.CS.CMU.EDU since RUDY is a fairly
+    unique name across most of the three departments: ECE, CS and RI.
+
+Isn't it great dealing with such a human and contradicting thing like
+names and nicknames! A salesmen calls me Mr Nedved, the credit card
+companies call my E Rudolph Nedved and my friends call me Rudy.
+
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837759026697&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026697&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026698&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

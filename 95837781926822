@@ -1,0 +1,80 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Name server database pollution' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926823&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926821&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926823&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926829&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800019&r=1&w=2">Name server database pollution</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-10 16:16:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926822&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926822&q=raw">body</a>]</b>
+
+No, Louis, you're not going crazy.  We've been bitten by this too.  I
+enclose the postmortem of a problem that completely broke mail traffic
+between AI.AI.MIT.EDU and Sushi.Stanford.EDU for several weeks.  This
+was given local circulation (Namecallers@MC is our local domaineers'
+mailing list).  I didn't think to send it to Namedroppers; maybe I
+should have.  I would say that anybody still using the old version of
+bind mentioned herein should be shot, except that I wouldn't want to
+be on record as saying that half the unix maintainers on the Internet
+should be shot (I'd have to find some other opsys to put down... :-).
+
+--Rob
+
+Date: Friday, 16 January 1987  01:58-EST
+From: Rob Austein &lt;SRA@XX.LCS.MIT.EDU&gt;
+To:   Ramin Zabih &lt;RDZ@AI.AI.MIT.EDU&gt;
+cc:   BUG-Mail@MC.LCS.MIT.EDU, JAR@AI.AI.MIT.EDU, ZVONA@AI.AI.MIT.EDU,
+      BillW@SCORE.STANFORD.EDU, Namecallers@MC.LCS.MIT.EDU
+Re:   AI -&gt; SUSHI mail, again.
+
+    Date: Friday, 16 January 1987  01:34-EST
+    From: Ramin Zabih &lt;RDZ@AI.AI.MIT.EDU&gt;
+
+    I just talked to Bill Westfield, and it may be that AI-SUSHI mail is
+    now working.  SUSHI had a cache entry for the AI namespace that
+    directed it to GUTENBERG, which seems to be bogus.  I don't know where
+    it came from, but it's gone now, so perhaps things will continue to
+    work.
+
+Until last fall, there was no way to give bind special "out of band"
+data to use to bootstrap itself into knowledge of the database.  So a
+lot of records got added to local machines' initial cache load files
+with godawful long timeouts (eg, 99999999 which is over three years).
+Since this was in the cache, anybody who asked bind for that those RRs
+(which tended to be things like SOA, NS, and A records for each zone)
+stood some chance of getting the RR with the three year timeout
+instead of the normal one from the zone load files.
+
+GUTENBERG was decommissioned a month or three ago.  Bind has been
+fixed to do the same thing JEEVES does (it has a special list of
+bootstrap addresses).  But there are a lot of old copies of bind
+around, and the damage has already been done.
+
+Keep in mind that the domain system is a distributed database.  The
+only method for invalidating a RR is having the timeout expire.  We
+still have 2.5 years to go before that happens.  Short of shutting
+down EVERY nameserver on the net, AT THE SAME TIME, and flushing this
+RR if present, there is no way to get rid of the bugger before 1989.
+
+Remind you of the giant tapeworm at the end of Shockwave Rider?
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926823&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926821&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926823&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926829&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

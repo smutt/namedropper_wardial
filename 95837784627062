@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Could some one comment on the following resolver code!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627060&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627063&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Could some one comment on the following resolver code!
+From:       <a href="?a=95837786600020&r=1&w=2">gem.mps.ohio-state.edu!swrinde!cs.utexas.edu!ut-emx!jones () tut ! cis ! ohio-state ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-23 18:24:05</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627062&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627062&q=raw">body</a>]</b>
+
+
+If you look at the resolver gethostbyname you will find the following code:
+
+        if ((n = res_search(name, C_IN, T_A, buf.buf, sizeof(buf))) &lt; 0) {
+#ifdef DEBUG
+                if (_res.options &amp; RES_DEBUG)
+                        printf("res_search failed\n");
+#endif
+                if (errno == ECONNREFUSED)
+                        return (_gethtbyname(name));
+                else
+                        return ((struct hostent *) NULL);
+        }
+
+Basically the code says that it will not look in the local host table 
+unless the last errno was ECONNREFUSED.   Now the problem I have is that I have
+seen the following errno's from res_search, ENOBUFS, ETIMEDOUT, and ENETUNREACH
+on a cray.  They are all valid errors.  Shouldn't the local host table be 
+searched in these cases?  I would like for the code in gethostbyname to read
+as follows:
+
+        if ((n = res_search(name, C_IN, T_A, buf.buf, sizeof(buf))) &lt; 0) {
+#ifdef DEBUG
+                if (_res.options &amp; RES_DEBUG)
+                        printf("res_search failed\n");
+#endif
+
+             	return (_gethtbyname(name));
+        }
+
+
+Always look in /etc/hosts if you could not contact any of the nameservers.
+Can any body see any problems with this?
+
+Bill Jones
+UT CHPC SYSTEM
+
+<b>[<a href="?l=namedroppers&m=95837784627060&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627063&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

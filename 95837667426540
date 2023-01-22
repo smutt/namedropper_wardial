@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'inverse queries / PTR queries' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426539&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426541&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426547&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600026&r=1&w=2">inverse queries / PTR queries</a>
+From:       <a href="?a=95837662100002&r=1&w=2">Dennis Rockwell &lt;drockwel () CSNET-SH ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-16 17:16:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426540&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426540&q=raw">body</a>]</b>
+
+We were wondering how we are *supposed* to find a hostname given an address.
+We notice that inverse queries seem to work OK, and that PTR queries to
+&lt;reverse IP addr&gt;.in-addr.arpa seem to work OK, but we don't know which
+(if any) are going to be supported in the long run.
+
+We will gladly support the PTR-query database for our local nets if
+that would be what is desired of us (eg, 8.bbn.com) so that people can
+find our names.  Additionally, are we going to be, in effect, the
+authority for the domain named 8.in-addr.arpa, or is there going to be
+some other naming scheme, such as a CNAME for 8.in-addr.arpa pointing to
+8.bbn.com?
+
+Discussion?  Comments?  Are we off in some strange territory (it certainly
+doesn't look like Kansas)?
+
+Dennis Rockwell
+CSNET Technical Staff
+
+<b>[<a href="?l=namedroppers&m=95837667426539&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426541&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426547&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

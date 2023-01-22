@@ -1,0 +1,94 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Contact names, WKS RRs, redesigning known universe' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026720&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026722&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026722&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300024&r=1&w=2">Contact names, WKS RRs, redesigning known universe</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-04 17:56:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837779526738&q=mbox">message</a> or <a href="?l=namedroppers&m=95837779526738&q=raw">body</a>]</b>
+
+(This is going to TCP-IP because the discussion started there.  Any
+ followup should be conducted on NAMEDROPPERS, I think.)
+
+I'd like to (belatedly) second Joe Weening's suggestion that we use
+the domain system to supply a contact name service.
+
+If we were designing the Internet from scratch, I'd say to use
+Chaosnet style contact names, which are a big win.  But we're not
+designing from scratch.
+
+Using the domain system would solve two distinct problems that have
+arisen lately.  One is the contact-names problem under discussion on
+TCP-IP, the other is the inadaquacy of the current IN WKS RR format
+(see NAMEDROPPERS archives for details).
+
+Here's my proposed RR formats
+
+&lt;service&gt;.&lt;domain-name&gt;	 IN	SERV	&lt;ip-address&gt; &lt;port&gt;
+&lt;service&gt;.&lt;domain-name&gt;	 CH	SERV	&lt;chaos-address&gt;
+
+&lt;Service&gt; is the service name (contact name analog).  Domain name is
+the name of the host supporting it.  &lt;Ip-address&gt; and &lt;chaos-address&gt;
+are as in A RRs (note that &lt;chaos-address is two fields, see
+NAMEDROPPERS archives).  &lt;port&gt; is a 16 bit port number.  Chaosnet
+doesn't need this, since chaosnet has contact names, but it would be
+nice to be able to have a WKS analog for Chaosnet.
+
+The address fields are there for the same reason as in the WKS RR;
+some host might offer different services on different network
+interfaces.  I'm not convinced this is reasonable, but it was
+considered necessary in the original WKS format.  We might want to add
+a &lt;ip-protocol-number&gt; field to the IN class format, same logic (the
+analog for Chaosnet would be another text string)
+
+Examples:
+
+SMTP.XX.LCS.MIT.EDU	IN SERV		10.0.0.44	25
+TFTP.XX.LCS.MIT.EDU	IN SERV		10.0.0.44	69
+FILE.XX.LCS.MIT.EDU	CH SERV		MIT.EDU		2420
+TIME.XX.LCS.MIT.EDU	CH SERV		MIT.EDU		2420
+
+or (with protocols ids)
+
+SMTP.XX.LCS.MIT.EDU	IN SERV		10.0.0.44	6	25
+TFTP.XX.LCS.MIT.EDU	IN SERV		10.0.0.44	17	69
+FILE.XX.LCS.MIT.EDU	CH SERV		MIT.EDU		2420	CHANNEL
+TIME.XX.LCS.MIT.EDU	CH SERV		MIT.EDU		2420	SIMPLE
+
+We might also want to put RRs for all the standard services (ie, the
+ones known to the protocol czar) in at the root node.  This would be
+useful for people who want to code with a contact name approach, and
+shouldn't be too much overhead.
+
+Queries like {IN SERV *.XX.LCS.MIT.EDU} should work fine and give a
+series of RRs listing all funny IP protocols supported by XX.
+
+I think this proposal solves serveral problems without creating any
+new ones.  It is not the optimal solution to the contact name problem,
+but it will work and uses existing technology.
+
+Comments?
+
+--Rob
+-------
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026720&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026722&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026722&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

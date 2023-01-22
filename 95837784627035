@@ -1,0 +1,50 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'bogus root servers being advertised' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627036&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627034&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627034&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400001&r=1&w=2">bogus root servers being advertised</a>
+From:       <a href="?a=95837786400040&r=1&w=2">Rob Austein &lt;sra () lcs ! mit ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-09 13:54:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627035&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627035&q=raw">body</a>]</b>
+
+I don't know the problem has been fixed in BIND 4.8.  If it has, it's
+a pleasant surprise.  But so far I have not gotten an explanation
+that settles the question.  I agree that the behavior you describe is
+an improvement over my scenario.
+
+The crux of the matter is whether or not the bootstrap information
+that is loaded into BIND really RRs?  If the data is RRs and they are
+going into the cache and there is any way at all, under any
+circumstances, that they could possibly be communicated to another
+resolver, the problem has not been fixed.  If the bootstrap data just
+happens to look like RRs but is put in a completely separate "cache"
+from which it can never emerge to contaminate a neighbor, then the
+problem has been fixed.  In other words, what I'm objecting to is the
+insertion of bogon data into the global database as a side-effect of a
+resolver's bootstrapping process, not what a particular implementation
+chooses to call its bootstrap files.
+
+I would be happy to discover that my concern is based on obsolete
+information....
+
+--Rob Austein, MIT Lab for Computer Science
+
+<b>[<a href="?l=namedroppers&m=95837784627036&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627034&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627033&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627034&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

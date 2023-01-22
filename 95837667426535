@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Creeping confusion' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426534&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426536&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426534&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600023&r=1&w=2">Creeping confusion</a>
+From:       <a href="?a=95837661900010&r=1&w=2">Charles Hornig &lt;Hornig () SCRC-STONY-BROOK ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-05 10:22:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426535&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426535&q=raw">body</a>]</b>
+
+    Date: Wed, 4 Sep 85 19:07:04 PDT
+    From: Murray.pa@Xerox.ARPA
+
+    If our name resolver asks NIC about THINK-AQUINAS.ARPA, NIC tells us
+    it's an alias for AQUINAS.THINK.COM, and that the servers for THINK.COM
+    are THINK.COM and SCRC-PEGASUS.ARPA ([192.10.41.18]). We happen to ask
+    PEGASUS first. It tells us to go ask NIC (or ISIB or ISIC). At that
+    point, we give up.
+
+    I'm not sure what we should do in light of this finger pointing, but I'm
+    pretty sure that either PEGASUS or NIC is confused.
+
+THINK.COM and SYMBOLICS.COM have an arrangement where we each try to be
+the backup for the other.  Unfortunately, neither of us is doing it
+successfully at this point.  PEGASUS.SCRC.SYMBOLICS.COM knows about
+SYMBOLICS.COM, GODOT.THINK.COM knows about THINK.COM, and they don't
+talk.  Both servers are running the recent version of BIND.
+
+I don't really know what to do.  The THINK.COM expert is busy/away/etc.
+Our boot file follows, in case someone out there can tell us what's
+wrong.
+
+;
+;	boot file for name server (on pegasus.scrc.symbolics.com)
+;
+; type		domain		source file or host
+;
+domain		symbolics.com
+primary		symbolics.com		/ufs/sp/ssd/hornig/bind/master/sym-named.symbolics
+primary		sch.symbolics.com	/ufs/sp/ssd/hornig/bind/master/sym-named.sch
+primary		scrc.symbolics.com	/ufs/sp/ssd/hornig/bind/master/sym-named.scrc
+primary		spa.symbolics.com	/ufs/sp/ssd/hornig/bind/master/sym-named.spa
+primary		ssf.symbolics.com	/ufs/sp/ssd/hornig/bind/master/sym-named.ssf
+primary		sww.symbolics.com	/ufs/sp/ssd/hornig/bind/master/sym-named.sww
+secondary	think.com		10.4.0.6
+cache		.			/ufs/sp/ssd/hornig/bind/master/sym-named.ca		; initial cache data
+
+<b>[<a href="?l=namedroppers&m=95837667426534&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426536&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426534&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

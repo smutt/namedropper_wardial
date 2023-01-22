@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'3rd root server' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426498&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426500&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426500&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600005&r=1&w=2">3rd root server</a>
+From:       <a href="?a=95837661900004&r=1&w=2">Murray.pa () Xerox ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-29 16:15:50</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426499&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426499&q=raw">body</a>]</b>
+
+I suggest that we not bring up a 3rd server for a while. That will give
+us all a chance to debug our down-server code. No matter how hard we try
+to replicate things, there are going to be times when you can't contact
+any of the servers. I've chased a few bugs out of my code during the
+past week.
+
+My code now remembers a list of questions that can't be answered because
+the servers are down. This was a bit ugly because it rippled out to the
+next layer. The mail server, for example, now has to process the
+don't-know-yet answer from the name to address routine. This wasn't a
+big deal because the existing code to process the server-not-responding
+case does all the work.
+	
+PS: I thought of another thing that has to go on the list of common
+failure modes to be avoided: planned downtime. I can just see it now.
+It's 3AM on Sunday morning the week after 4.3 is released. The folks at
+Purdue and Rice both decide it's a great time to bring up the new
+software....
+
+<b>[<a href="?l=namedroppers&m=95837667426498&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426500&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426500&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

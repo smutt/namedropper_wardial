@@ -1,0 +1,76 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'To what zone do RRs in parallel with NS RRs belong?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326845&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400030&r=1&w=2">To what zone do RRs in parallel with NS RRs belong?</a>
+From:       <a href="?a=95837816800002&r=1&w=2">soleil!slopoke.semi.harris-atd.com!news () rutgers ! edu  (Don Lewis)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199001">1990-01-05 2:03:52</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326844&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326844&q=raw">body</a>]</b>
+
+I have a question that I can't find an answer to in the DNS RFCs.  To what
+zone does an resource record (MX or A) belong if it has the same domain name
+as an NS record?  Let's say I have the following two zone files.
+
+------- MY_ZONE ------------------------
+
+@	IN	SOA .....
+	IN	NS	foo
+	IN	NS	bar
+
+foo	IN	A	1.2.3.4
+bar	IN	A	1.2.3.5
+
+baz	IN	NS	plugh.baz
+	IN	NS	bar
+;	IN	MX	0	plugh.baz ; I don't think it should go here
+plugh.baz IN	A	1.2.3.6           ; This is glue
+
+
+------- BAZ_ZONE ------------------------
+
+@	IN	SOA .....
+	IN	NS	plugh
+	IN	NS	bar.myzone.stuff.
+	IN	MX	0	 plugh    ; I think it belongs here
+plugh	IN	A	1.2.3.6
+
+-----------------------------------------
+
+According to my understanding of the RFCs, the NS RRs for
+the plugh.baz.myzone.stuff domain belong to both zones.  But what about
+the other RRs for this domain?
+
+The reason that I am asking is that I ran across some curious behavior
+when doing zone transfers in BIND 4.8.1.  Using the above example (in
+which the MX record is only in the subzone file), I got different
+results when I did a zone transfer on "myzone", depending on whether
+the server for the tranfer was also the server for the "baz" subzone.
+When the server was also a server for the subzone, the tranferred
+zone file contained the MX RR from the subzone. If the server was
+not a server for the subzone, then the tranferred zone file did not
+contain the MX RR (no suprise here).  Is this a bug, feature, or no-op?
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@semi.harris-atd.com     PO Box 883   MS 62A-028
+UUCP:      rutgers!soleil!thrush!del   Melbourne, FL  32901              
+Phone:     (407) 729-5205
+
+<b>[<a href="?l=namedroppers&m=95837797326843&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326845&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326845&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

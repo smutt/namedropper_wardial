@@ -1,0 +1,69 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Can non-Internet site handle others domains?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326946&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326949&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326946&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326948&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200018&r=1&w=2">Re: Can non-Internet site handle others domains?</a>
+From:       <a href="?a=95837817000018&r=1&w=2">stan!dancer!imp () boulder ! colorado ! edu  (Warner Losh)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-13 3:10:29</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326947&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326947&q=raw">body</a>]</b>
+
+In article &lt;141@dynasys.UUCP&gt; jessea@dynasys.UUCP (Jesse W. Asher)
+writes:
+&gt;To be more specific, the mechanism that provide you with mail forwarding
+&gt;is the MX record, which has to point to a machine which has
+&gt;an A record, like so
+
+In article &lt;HGKHXQM@xavier.swarthmore.edu&gt; jeremy@cs.swarthmore.edu
+(Jeremy Brest) writes: 
+&gt;Maybe I'm entering this discussion a little late, but why is this so?
+&gt;It seems that when a mailer looks up a host and finds an MX record, it
+&gt;should then start at the top again and look up that host, again to see
+&gt;if it has an MX record.  This couldn't be difficult to implement, so
+&gt;why doesn't the protocol allow for this?
+
+You can have multiple MX records for a given host.  The defined
+algorithm for choosing the order to try these records is something
+like: 
+	1) Get all MX records for host n
+	2) Sort all MX records
+	3) If your local host is in the list, remove it and all other
+	   hosts that have a higher MX value.
+	4) Try the MX hosts in order from lowest to highest until the
+	   mail succeeds.
+
+Now, if you have to go out and get MX record for MX records for MX
+records, this entire process falls apart.  It would be very easy to
+get mail looping because you have A MXing for B MXing for A, etc.  The
+purpose of MX records is to tell mailers a *HOST* they can send your
+mail to, not some domain name that will handle the mail for you.  If
+you try to expand them beyond this limited functionality, you will be
+creating problems for old implementations, as well as making
+non-trivial to find mail loops easier to come into existence.
+
+*THAT* is why it is hard to implement.
+
+Just my two cents from a former VMS/SMTP/DECNET MAILER hacker.....
+
+-- 
+M. Warner Losh		Solbourne Computer
+imp@solbourne.com	(formerly warner@twg.com and warner@hydrovax.nmt.edu)
+
+<b>[<a href="?l=namedroppers&m=95837797326946&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326949&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326946&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326948&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

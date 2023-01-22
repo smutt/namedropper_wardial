@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Latest List of Root Servers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627012&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200029&r=1&w=2">Latest List of Root Servers</a>
+From:       <a href="?a=95837785600018&r=1&w=2">woods () handies ! ucar ! edu  (Greg Woods)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-03 19:14:43</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627013&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627013&q=raw">body</a>]</b>
+
+I was under the impression that this newsgroup was gatewayed to/from the
+"namedroppers" mailing list, but obviously this is no longer the case. An
+updated list of the root servers was posted to that list recently but I
+have not seen it here, so here it is. I got this from Jim Bloom at Brown
+(jb@cs.brown.edu).
+
+--Greg
+
+
+;
+;       @(#)root.cache  1.15    (Berkeley)      89/09/18
+;
+; Initial cache data for root domain servers.
+;
+
+.                       99999999        IN      NS      NIC.DDN.MIL.
+                        99999999        IN      NS      NS.NASA.GOV.
+                        99999999        IN      NS      TERP.UMD.EDU.
+                        99999999        IN      NS      A.ISI.EDU.
+                        99999999        IN      NS      AOS.BRL.MIL.
+                        99999999        IN      NS      GUNTER-ADAM.AF.MIL.
+                        99999999        IN      NS      C.NYSER.NET.
+
+;
+;  Prep the cache (hotwire the addresses).  Order does not matter
+;
+
+NIC.DDN.MIL.            99999999        IN      A       10.0.0.51
+NIC.DDN.MIL.            99999999        IN      A       26.0.0.73
+NS.NASA.GOV.            99999999        IN      A       128.102.16.10
+A.ISI.EDU.              99999999        IN      A       26.3.0.103
+AOS.BRL.MIL.            99999999        IN      A       128.20.1.2
+AOS.BRL.MIL.            99999999        IN      A       192.5.25.82
+GUNTER-ADAM.AF.MIL.     99999999        IN      A       26.1.0.13
+C.NYSER.NET.            99999999        IN      A       192.33.4.12
+TERP.UMD.EDU.           99999999        IN      A       128.8.10.90
+
+<b>[<a href="?l=namedroppers&m=95837784627012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627012&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

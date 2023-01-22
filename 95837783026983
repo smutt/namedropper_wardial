@@ -1,0 +1,91 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Conflicts between BRL-AOS.ARPA and AOS.BRL.MIL cause trouble?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026982&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026984&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400025&r=1&w=2">Conflicts between BRL-AOS.ARPA and AOS.BRL.MIL cause trouble?</a>
+From:       <a href="?a=95837785400012&r=1&w=2">triceratops.cis.ohio-state.edu!karl () tut ! cis ! ohio-state ! edu  (Karl Kleinpaste)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-18 20:43:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026983&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026983&q=raw">body</a>]</b>
+
+My nameservers lost their minds today, and I'm a seriously confused
+individual trying to find out why.
+
+I'm running BIND 4.8 on my Pyramids and BIND 4.7.3 on my Sun3/180
+fileservers on behalf of their clients.  The Suns are slaves to the
+Pyramids.  The Suns will be upgraded to 4.8 within the next day or so.
+
+Late this morning, I found that named on TUT.CIS.OHIO-STATE.EDU was
+trying to take over a CPU, to the tune of some 60+% utilization.
+Killing off and restarting named a couple of times didn't help.  I
+turned on debugging for a short while and found that the problem with
+Tut's named was that the Suns' named's were sending boatloads of
+requests for BRL-AOS.ARPA.  So I went to an arbitrary Sun and turned
+on debugging on that named, and found that it was querying for
+BRL-AOS.ARPA, after which named.run announced every time, "CNAME -
+more processing needed," and another query for BRL-AOS.ARPA would go
+out.  Tut was responding to every one with the CNAME AOS.BRL.MIL.
+
+I didn't know the cause, but I took a brute force approach of killing
+off all Sun named's, wiping their cache with a root-servers-only
+cache, and restarted them all.  Things calmed down for perhaps half an
+hour, and then they all started the same song and dance again.
+
+Since the conflict is something to do with AOS.BRL.MIL, I tried
+altering my root-servers-only cache file so as to show BRL-AOS.ARPA,
+just to see what it would do.  I killed/wiped/restarted all Sun
+named's again, and now the world is fine.  They've been running for
+over 2 hours since that last clean wipe, and all is sweetness and
+light - no overload conditions, no repeated queries.
+
+I'd like to know why the use of AOS.BRL.MIL would be causing me
+trouble.  I am 95% certain that I can reproduce the situation just by
+going back to a root cache file specifying AOS.BRL.MIL rather than
+BRL-AOS.ARPA, so if any new data might be needed, I am sure I can get
+it.  I asked around the root servers for info on BRL-AOS.ARPA and got
+pretty ordinary info from everyone except AOS.BRL.MIL itself, which is
+more than a little unusual.  Would anyone care to explain the presence
+of 2 HINFO records, or an MX aimed at the UK?  (I stripped off the
+additional info portion.)
+
+	<A NAME="-63"></A><A HREF="#63">[63]</A> [4:16pm] tut:/dino0/karl&gt; host -a brl-aos.arpa. brl-aos.arpa.
+	Using domain server:
+	Name: AOS.BRL.MIL
+	Address: 128.20.1.2 192.5.25.82 192.5.22.82
+	Aliases: brl-aos.arpa
+
+	brl-aos.arpa    86400 IN        CNAME   AOS.BRL.MIL
+	AOS.BRL.MIL     518400 IN       A       128.20.1.2
+	AOS.BRL.MIL     518400 IN       A       192.5.25.82
+	AOS.BRL.MIL     172800 IN       HINFO   vax-11/780      unix
+	AOS.BRL.MIL     360000 IN       MX      13 cs.ucl.ac.uk
+	AOS.BRL.MIL     360000 IN       WKS     128.20.1.2 tcp domain
+	AOS.BRL.MIL     360000 IN       WKS     128.20.1.2 udp domain
+	AOS.BRL.MIL     360000 IN       HINFO   logical-host    illogical-cpu
+
+BTW, YUMA.ARPA and BELVOIR-MAIL1.ARPA seem to have fallen off the face
+of the earth in the last couple of days, according to the root
+servers.  Caught me off guard for a couple mailing lists I manage.
+Any reason?
+
+Confused,
+--Karl
+
+<b>[<a href="?l=namedroppers&m=95837783026982&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026991&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026984&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

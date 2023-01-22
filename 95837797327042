@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: BIND bug list [Really:  client/resolver interface]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327041&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327043&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327041&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400020&r=1&w=2">Re: BIND bug list [Really:  client/resolver interface]</a>
+From:       <a href="?a=95837817200023&r=1&w=2">Philippe Prindeville &lt;prindeville () inria ! fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199006">1990-06-07 16:18:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327042&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327042&q=raw">body</a>]</b>
+
+	From: del@mlb.semi.harris.com (Don Lewis)
+	Date: Wed, 6 Jun 1990 16:42:21 EDT
+	Subject: Re: BIND bug list [Really:  client/resolver interface]
+	
+	&gt; 	&gt; 	If you use UDP to make queries, you can't distinguish
+	&gt;	&gt;	between:
+	&gt; 	&gt; 		1) name server is dead
+	&gt; 	&gt; 		2) query packet or response packet was lost
+	&gt; 	&gt; 		3) name server is taking a long time to find
+	&gt;	&gt;		   the answer
+	&gt; 	&gt; 	
+	&gt; Since cases 1 and 2 (above) are indeed problems, I will state again
+	&gt; that VMTP would distinguish between 3 and the previous two.  So
+	&gt; perhaps it is useful beyond the scope of recursive queries.
+	
+	Case 3 doesn't really happen (unless the server is seriously overloaded)
+	with non-recursive queries since the name server has all the information
+	needed for the answer already squirreled away.  I would be more
+
+Quite right -- sorry, I'm asleep at the wheel here (or mouse, as the case
+may be).
+
+	concerned with the extra overhead associated with VMTP since timely
+	responses will be received for the vast majority of non-recursive
+	queries.
+
+I don't think that VMTP is any more expensive than TCP (and probably
+much cheaper, especially since it has a superior acknowledgement
+mechanism).  Since it is in the kernel, it won't add much delay either.
+
+Actually, in our configuration, we use recursive queries quite heavily,
+since only our border-gateway (which is also a nameserver) can go off
+net.  For us, it would be a big win to use VMTP for recursive queries.
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837797327041&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327043&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327041&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

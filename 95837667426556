@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain class for chaos' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426557&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426560&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426555&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426560&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600034&r=1&w=2">Domain class for chaos</a>
+From:       <a href="?a=95837693400026&r=1&w=2">Chris Lindblad &lt;CJL%MIT-OZ () MIT-MC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-07 17:48:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426556&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426556&q=raw">body</a>]</b>
+
+I suggest the network identifier in the chaos class Address record be a
+domain name. This was option 2 in Paul's message. So a chaosnet address
+record might be:
+
+REAGAN.AI.MIT.EDU     CH  A    CH-ADDR.MIT.EDU 13065
+
+For address to name support, instead of composing a domain hierarchy
+just like IN-ADDR.ARPA as Paul suggested, we take the domain name to
+which that the address corresponds, and lookup the address in that
+domain. This is similar to IN-ADDR, but the issue of a root domain and
+central authority for chaosnet address domains disappears.
+
+For my example there might be a record in the CH-ADDR.MIT.EDU domain:
+
+13065.CH-ADDR.MIT.EDU   CH  PTR  REAGAN.AI.MIT.EDU
+
+I hesitantly agree with DCP that the chaosnet addresses shouldn't be
+split up into subnets, and should be expressed in octal. Chaosnets are
+supposed to be local area nets, and the advantages to splitting the
+address into host and subnet fields for distributed address translation
+might not be significant enough to outweigh the confusion the different
+format of address gives. I could easily be convinced otherwise, though.
+As a matter of fact, I'm not quite sure which is better.
+
+Pointer records like this?
+
+  65.26.CH-ADDR.MIT.EDU   CH  PTR  REAGAN.AI.MIT.EDU
+
+or like this?
+
+  13065.CH-ADDR.MIT.EDU   CH  PTR  REAGAN.AI.MIT.EDU
+
+<b>[<a href="?l=namedroppers&m=95837667426557&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426560&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426555&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426560&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

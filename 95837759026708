@@ -1,0 +1,36 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Mail form unregistered hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026707&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026709&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Mail form unregistered hosts
+From:       <a href="?a=95837783700020&r=1&w=2">Rich Zellich &lt;zellich () ALMSA-1 ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198605">1986-05-07 7:51:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026708&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026708&q=raw">body</a>]</b>
+
+Right now, with our multiple small unregistered hosts sitting more-or-less
+invisible behind registered host ALMSA-1, we're pretty much stuck with
+the user%unreg@registered form because of some users having accounts on
+multiple unregistered hosts.  We could, and did, use user@registered for a
+while, but now "user" could be on more than one "unreg" (it defaults to a
+preferred unreg if the "%unreg" is not present in the incoming address).
+-Rich
+
+<b>[<a href="?l=namedroppers&m=95837759026707&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026709&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

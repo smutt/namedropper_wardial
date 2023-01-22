@@ -1,0 +1,98 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  looking for those two letter codes..' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027018&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027016&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027018&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027016&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700002&r=1&w=2">Re:  looking for those two letter codes..</a>
+From:       <a href="?a=95837785800015&r=1&w=2">"H. Morrow Long" &lt;long-morrow () YALE ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-12 9:24:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027015&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027015&q=raw">body</a>]</b>
+
+
+&gt; Could someone send me or post a RECOGNIZED list of top level two
+&gt; letter country codes?  That is - those that I can query the domain
+&gt; system about.
+&gt; 
+&gt; Thanks,
+&gt; -- 
+&gt; Eliot Lear
+&gt; [lear@net.bio.net]
+
+  They are obtainable from sri-nic.arpa, ftp the file netinfo:domains.txt :
+
+; [SRI-NIC] NETINFO:DOMAINS.TXT		     23-Mar-88
+;
+; Only top-level domains are listed.  Information about subdomains
+; should be acquired by asking the top-level domain servers.
+;
+; Format of entries conforms to that of HOSTS.TXT (RFC952).
+; !!NOTE!! this is not the same as the original format!!
+;
+;	DOMAIN: &lt;addresses&gt; : &lt;name&gt; : [possible extra fields]
+;
+; The addresses given are those of Internet hosts which provide
+; a Domain Name Server for that domain.
+
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : ARPA :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : COM :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : EDU :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : GOV :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : MIL :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : NET :
+DOMAIN: 10.0.0.51, 26.0.0.73, 26.3.0.103, 10.1.0.17, 128.8.10.90, 26.1.0.13, \
+                128.102.16.10, 192.5.25.82, 128.20.1.2 : ORG :
+DOMAIN: 10.1.0.52, 128.9.0.32, 10.2.0.27, 128.9.0.33 : US :
+DOMAIN: 10.4.0.5, 128.89.0.93, 192.5.58.1, 10.7.0.82, 128.89.0.92 : DE :
+DOMAIN: 128.6.4.7, 192.5.25.82, 128.20.1.2, 192.12.141.25 : FR :
+DOMAIN: 10.4.0.5, 128.89.0.93, 192.5.58.1, 10.7.0.82, 128.89.0.92 : JP :
+DOMAIN: 10.4.0.5, 128.89.0.93, 192.5.58.1, 10.7.0.82, 128.89.0.92 : KR :
+DOMAIN: 10.4.0.5, 128.89.0.93, 192.5.58.1, 10.7.0.82, 128.89.0.92 : NZ :
+DOMAIN: 10.7.0.82, 128.89.0.92, 192.12.141.25 : IL :
+DOMAIN: 128.16.5.32, 128.16.8.3, 192.5.25.82, 128.20.1.2 : UK :
+DOMAIN: 128.39.1.2, 128.39.2.2, 128.39.4.5 : NO :
+DOMAIN: 192.12.141.25, 10.2.0.78, 128.32.137.3, 128.32.140.3 : AU :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : FI :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : NL :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : SE :
+DOMAIN: 10.4.0.5, 192.5.58.1, 128.89.0.93, 10.7.0.82, 128.89.0.92 : CA :
+DOMAIN: 10.4.0.5, 192.5.58.1, 128.89.0.93, 10.7.0.82, 128.89.0.92 : CH :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : MY :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : DK :
+DOMAIN: 128.6.4.7, 192.5.25.82, 128.20.1.2, 10.0.0.9, 128.103.1.1 : AR :
+DOMAIN: 192.12.141.25, 192.5.25.82, 128.20.1.2 : CL :
+DOMAIN: 192.12.141.129, 192.5.25.82, 128.20.1.2 : IS :
+DOMAIN: 192.12.192.2, 192.12.192.4 : IT :
+DOMAIN: 192.12.141.129, 192.5.25.82, 128.20.1.2 : AT :
+DOMAIN: 10.0.0.9, 128.103.1.1, 128.32.136.12, 31.4.0.10 : IRL :
+DOMAIN: 10.0.0.9, 128.103.1.1, 128.32.136.12, 31.4.0.10 : IE :
+DOMAIN: 192.12.141.25, 128.20.1.2, 192.5.25.82 : ES :
+DOMAIN: 10.0.0.9, 128.103.1.1, 128.32.136.12, 31.4.0.10 : PT :
+DOMAIN: 192.12.141.129, 128.20.1.2, 192.5.25.82 : BE :
+DOMAIN: 192.12.141.129, 192.12.141.25 : TH :
+DOMAIN: 10.0.0.9, 128.103.1.1, 128.32.136.12, 31.4.0.10 : SG :
+
+
+<b>[<a href="?l=namedroppers&m=95837783027018&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027016&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027018&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027016&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

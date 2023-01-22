@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'query on the available sources of the domain system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426631&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426633&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    query on the available sources of the domain system
+From:       <a href="?a=95837693600017&r=1&w=2">KAIST System Administrator &lt;hjpark%kaist.csnet () CSNET-RELAY ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-19 21:21:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426632&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426632&q=raw">body</a>]</b>
+
+We, Republic of Korea, are having the domestic network which is called
+System Development Network (SDN). We are trying to adopt the domain name
+system in SDN. Are there any sources of the domain system available to
+us?
+SDN have several tens of hosts and 5 LANs now, but the number of hosts 
+will is growing upto a few hundreds next year. Now, we have trouble to
+manage the list of all hosts in SDN, you know. SDN uses TCP/IP protocol
+and UUCP protocol together. The major system of SDN is UNIX system.
+We don't have fixed which scheme is used in SDN yet, but the first
+available method is installation and integration of the domain name
+system of ARPANET and the domain name system of UUCPnet. In addition to
+them, we are considering the recommendation of CCITT. Anyawy, we are
+trying to test the domain name system of ARPANET first. Who know the 
+available sources and have them? Please let me know them.
+Thanks for your attention.
+- Park
+
+<b>[<a href="?l=namedroppers&m=95837667426631&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426633&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

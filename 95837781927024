@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: mail and what wildcards are for' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927023&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927026&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927023&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500019&r=1&w=2">re: mail and what wildcards are for</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 11:41:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927024&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927024&q=raw">body</a>]</b>
+
+Here are some examples of sites and organizations, and I hope this
+clears up any confusion between the two, and why hosts are in sites and
+how mailer systems could take advantage of that.  
+
+A site is generally a collection of resources, such as computers and
+printers.
+
+MIT (The Massachusetts Institute of Technology) is an organization, and
+in domain-land it is currently called MIT.EDU.  There are several parts
+of MIT that are admistratively distinct, such as the Media Lab, the AI
+lab, LCS (Laboratory for Computer Science), etc, and have names like
+Media.MIT.EDU, AI.MIT.EDU and LCS.MIT.EDU.  These could be the names of
+sites, but for a couple reasons (mostly delegation of authority) these
+aren't.  As I said, sites are usually named c.c.d.e, so it is possible
+to have a site named AI.AI.MIT.EDU which is the AI site of the AI Lab.
+There might also be a ROBOT.AI.MIT.EDU site which is the site the
+robotics people use.
+
+A more geographic example is that of Symbolics the company, with a
+domain-land name of Symbolics.COM.  In Cambridge there is the Symbolics
+Cambridge Research Center (SCRC) which is domain-named
+SCRC.Symbolics.COM.  Again, this level is more administrative than
+site-level.  The site is would be called SCRC.SCRC.Symbolics.COM.  The
+QA department inside SCRC might have a site named QA.SCRC.Symbolics.COM
+and the VLSI people might be in the VLSI.SCRC.Symbolics.COM site.  The
+names of machines in all these sites might have the form
+name.SCRC.Symbolics.COM and wouldn't necessarily be burried under their
+site name.  Additionally, there are sites in field offices and
+California, perhaps with names like SGD.SWW.Symbolics.COM for the
+Graphics Division in Westwood.
+
+As I described before, sites are responsible for describing (and/or
+having) mail delivery and/or forwarding machines for mail destined for
+their site.  When mail is directed at a machine that doesn't support
+mail (e.g., when somebody reverses a physical return path), the mailers
+described by the machine's site take responsibility for the mail.
+
+<b>[<a href="?l=namedroppers&m=95837781927023&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927026&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927023&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

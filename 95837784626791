@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'GATEWAY PTRs' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626789&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626790&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    GATEWAY PTRs
+From:       <a href="?a=95837786000003&r=1&w=2">hubert () bogachiel ! ms ! washington ! edu (Steve Hubert)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-27 10:47:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626791&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626791&q=raw">body</a>]</b>
+
+Do people use GATEWAY PTRs as described on the bottom of page 10
+of rfc1033?  What are you supposed to do in the presence of subnets
+and gateways which route only between subnets?  For example, if
+G is a gateway between 128.n.a.0 and 128.n.b.0 should this be listed
+in a RR
+
+n.128.in-addr.arpa  and/or
+a.n.128.in-addr.arpa and/or
+b.n.128.in-addr.arpa   ?
+
+
+Are there patches to Bind 4.8 that are later than the tar version
+on ucbarpa (Aug. 88)?
+
+Steve Hubert
+University of Washington
+hubert@cac.washington.edu
+
+<b>[<a href="?l=namedroppers&m=95837784626789&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626790&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

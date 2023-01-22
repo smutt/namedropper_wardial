@@ -1,0 +1,86 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: creative use/abuse of cname records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026689&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026691&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026686&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300009&r=1&w=2">Re: creative use/abuse of cname records</a>
+From:       <a href="?a=95837783700016&r=1&w=2">"Paul M. Albitz" &lt;albitz () Purdue ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-28 13:51:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026690&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026690&q=raw">body</a>]</b>
+
+
+&gt;&gt; If the user wants to specify a domain name exactly, end it with a dot.
+
+&gt;&gt; When a domain name doesn't end in a dot, you try appending an ordered
+&gt;&gt; list of suffixes (a search list), one by one, until it works.  The
+&gt;&gt; default assumption is that the search list has a single entry, which is
+&gt;&gt; just the root.  Thus in the default case typing "B.ISI.EDU" is
+&gt;&gt; equivalent to "B.ISI.EDU."
+
+&gt;&gt; Maybe we would want our list here to be (1) "." (2) "ISI.EDU."
+
+&gt;&gt; Now there are a lot of ways to go.  The search list could be a constant
+&gt;&gt; for a particular host, might be specific to a user, specific to a
+&gt;&gt; user/application pair, or something else.  But this isn't a new
+&gt;&gt; idea (most file system do something like this) and it seems to be
+&gt;&gt; a well-understood idea that serves your purpose.
+
+This is the best idea I have seen yet.  Earlier arguments had suggested
+ending the *partial* name with a dot which seemed counter-intuitive but
+was backward compatible.
+
+How about taking your idea even further?  This particular policy will result
+in local queries failing the first time and succeeding the second.  If you 
+have subdomains, there would be even more failures before a success.  For
+us the list might be (1) "." (2) "cs.purdue.edu" (3) "ecn.purdue.edu" 
+(4) "cc.purdue.edu".  To get to i.cc.purdue.edu, there would be 3 failures
+first.
+
+How could we improve this?  Give the resolver a list of suffixes to match 
+against.  Instead of now choosing the suffixes in order, give it a partial
+string to match, and a suffix to apply when it matches.  For us in the cs
+department of purdue, the list could be
+
+		default with no dots 	"cs.purdue.edu."
+		default with no dots	"purdue.edu."
+		default with dot	"."
+		".ecn"	 		"purdue.edu."
+		".cc"			"purdue.edu."
+
+Thus, if a user wanted to get to machine "i" in the domain "cc", he could
+specify "i.cc", the resolver would match the ".cc" and supply "purdue.edu.".
+If he just said "x", it would result in "x.cs.purdue.edu" or "x.purdue.edu.".
+(The first failure, if it happened,  would be fast since it is local.)  If
+the name was "sri-nic.arpa", the resolver would only try "sri-nic.arpa." since
+it only matched the "default with dot".
+
+It's important if there are a list of suffixes that the resolver 
+choose the right one the first time.  It cuts down on the net traffic
+and the time the user has to wait to have the query succeed or fail.  
+
+This scheme would be easy to implement, add only a small amount extra cpu 
+effort, keep the failed queries down to a minimun, and provide enough 
+flexibility to tailor to your particular environment.  
+
+Comments?  Improvements?
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837759026689&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026691&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026686&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

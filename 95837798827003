@@ -1,0 +1,139 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain names in the UUCP Map' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826998&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826995&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827006&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300011&r=1&w=2">Domain names in the UUCP Map</a>
+From:       <a href="?a=95837817400015&r=1&w=2">logicon.com!Makey () nosc ! mil  (Jeff Makey)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-11 1:05:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827003&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827003&q=raw">body</a>]</b>
+
+For sites where the policy is to send mail via the internet whenever
+possible, I have been working on modifications to the the "pathalias"
+program to allow it to produce a UUCP Zone file for the DNS (Domain
+Name System).  Following is a summary of the results of my first test
+against the entire UUCP Map.
+
+Resolving thousands of domain names takes time, and the program ran
+for almost 4 hours late at night on a lightly loaded VAX-11/780 with a
+56 kilobaud MILNET connection.  Having a name server that caches
+negative replies would have helped a bit.
+
+There were 341 host names or aliases in the UUCP Map that have the
+appearance of being domain names (i.e., containing at least one dot)
+but in fact are not registered domain names.  Most notable were the 35
+entries in the bogus top-level domain .cdn, which apparently refers to
+the CDNnet network in Canada.
+
+There were 38 DNS lookup failures.  I expected to have trouble with
+some of the European domains, but the IP gateways must have been in a
+good mood that night.
+
+There were 2567 CNAME records generated for hosts with DNS MX and/or A
+records, such as:
+
+    uunet   IN      CNAME           uunet.uu.net.
+
+There were 3540 MX records generated for sites 1 hop off the internet,
+such as:
+
+    utzoo   IN      MX      95      gpu.utcs.toronto.edu.
+
+The precedence for the MX record is the cost as computed by pathalias
+from the forwarding internet host to the UUCP host.  MX records are
+generated only when the cost is 64535 (the maximum value allowed in
+the MX precedence field by bind 4.8) or less.  The top 5 MX hosts are:
+
+    internet host name      number of MX neighbors
+    ----------------------------------------------
+    uunet.uu.net                     1027
+    unido.informatik.uni-dortmund.de  218
+    hp4nl.nluug.nl                    124
+    inria.inria.fr                     79
+    sun.com                            73
+
+There were 7294 host names or aliases in the UUCP Map for which
+neither CNAME nor MX records were generated.  An internet-rooted
+pathalias output for them was produced, with each route beginning with
+a host with a DNS A or MX record, such as:
+
+    kremvax  oliveb.atc.olivetti.com!tolsoft!namei!walldrug!kremvax!%s
+
+An unmodified version of pathalias produced 19102 UUCP routes from the
+same map data.  Subtracting the 2567 CNAME records (13% of the total),
+3540 MX records (19%), and 7294 remaining routes (38%) leaves 5701
+host names or domains (30%) in the UUCP Map that can be resolved via
+the DNS.
+
+The standard pathalias output had an average hop count of 4.7 with a
+standard deviation of 0.9, and a maximum hop count of 10.  Virtually
+all of my first hops were to ucsd, a well-connected site in San Diego.
+Your mileage will vary.  The list of internet-rooted paths had an
+average hop count of 2.7 with a standard deviation of 0.7, and a
+maximum hop count of 7 (this does not take into account the fact that
+MX-only hosts are really 2 hops away).
+
+I am pleased by the results so far.  To speed things up I want to make
+changes to the resolver code to allow multiple DNS queries in
+parallel, but other than that the program is nearly done.  Look for
+the required patches to pathalias in a sources newsgroup near you in a
+couple of weeks.
+
+Certain social issues should be resolved before the use of this
+program and its output becomes too widespread.  Number one on the list
+is what the origin of the zone file should be.  The obvious choice --
+UUCP -- would get the Protocol Police extremely upset, but anything
+else would make all of those wonderful MX records cause more trouble
+than they solve.  Somewhat less ideal, but still satisfactory, would
+be for the benevolent administrator of some established domain to
+provide a subdomain (e.g., UUCP.FOO.COM) just for this data.  A
+long-term commitment to such service would be required to prevent
+scattered outbreaks of the next alternative: In the absence of a
+DNS-wide standard, individual sites are sure to DWTDWP (Do Whatever
+They Damn Well Please), which would result in a lot of unnecessary DNS
+traffic net-wide as they each periodically resolve some 6000 domain
+names.  No doubt there would also be an increase in the number of
+local unofficial UUCP top-level domains in the DWTDWP case.
+
+If a few sites that run smail volunteered, wildcard MX records
+pointing to them could be added to the zone file to take care of all
+of those sites that are more than 1 hop off the internet.  The rest of
+the internet sites would no longer have to worry about the UUCP Map at
+all.
+
+If there is sufficient interest, and if we can't get our collective
+act together and put this data into a publicly-available zone, a
+single site could periodically generate the zone file and
+internet-rooted paths and post them to an appropriate newsgroup with
+"inet" distribution.  (Together they currently consume about half a
+megabyte of disk space.)  This approach would probably make better use
+of internet resources than having lots of sites banging away at the
+DNS.
+
+This is submitted for your information.  I am just a postmaster who
+wants to make the most of the DNS.
+
+                           :: Jeff Makey
+
+Department of Tautological Pleonasms and Superfluous Redundancies Department
+    Disclaimer: All opinions are strictly those of the author.
+    Internet: Makey@Logicon.COM    UUCP: {nosc,ucsd}!logicon.com!Makey
+
+<b>[<a href="?l=namedroppers&m=95837798826998&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826995&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827006&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

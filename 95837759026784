@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: List of MX Hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026785&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026782&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500013&r=1&w=2">re: List of MX Hosts</a>
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198609">1986-09-27 23:34:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026784&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026784&q=raw">body</a>]</b>
+
+
+&gt; If you're running 4.3BSD, the sendmail that came with your system doesn't
+&gt; support MX.  However, Berkeley has a new sendmail that does support MX.
+&gt; If you have 4.3 and are on the ARPA Internet, I encourage you to install
+&gt; this version of sendmail.  If you have 4.2, I suspect it will work if you
+&gt; are otherwise using BIND, but I don't know for sure.  If you are using
+&gt; MMDF rather than sendmail, I believe CSNET has a version of MMDF available
+&gt; that will support MX.
+
+    There is a version of MMDF available that supports MX.  It went out
+on the 4.3 tape.  CSNET sites without 4.3 may obtain a copy from CSNET.
+Most other people should get a tape from the University of Delaware.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837759026782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026785&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026782&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

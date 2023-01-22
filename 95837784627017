@@ -1,0 +1,139 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: bogus root servers being advertised' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627014&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627015&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627015&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400001&r=1&w=2">Re: bogus root servers being advertised</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-04 14:28:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627017&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627017&q=raw">body</a>]</b>
+
+The problem here is that any documentation, code, or initialization
+files can get out of date.  Thus regardless of what BIND does right or
+wrong, there remains the question of how does one find out the current
+root servers?
+
+The recommended method is to send a query off to the DNS, and get the
+list right now, hot off the presses.  There are two choices:
+
+1.	The SRI-NIC is authoritative and primary for the root node.
+	Ask its server,	NIC.DDN.MIL.
+
+2.	If you cannot get to NIC.DDN.MIL, ask one of the other root
+	servers.  Since the root zone doesn't change much at all, you
+	don't have much of a chance of getting even slightly out of
+	date info.
+
+As an example, I tried to talk to NIC.DDN.MIL, but could not get
+through.
+
+I then tried A.ISI.EDU, which I happened to know is also a root
+server.  (Note that I am using DIG, because I happen to like it; adapt
+your procedures to whatever program you are using.)
+
+pvm 25% dig +norec @a.isi.edu . ns
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; +norec @a.isi.edu . ns
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa  Ques: 1, Ans: 7, Auth: 1, Addit: 9
+
+;; QUESTIONS:
+;;      ., type = NS, class = IN
+
+;; ANSWERS:
+.       IN      NS      NIC.DDN.MIL     ; 518400
+.       IN      NS      AOS.BRL.MIL     ; 518400
+.       IN      NS      A.ISI.EDU       ; 518400
+.       IN      NS      GUNTER-ADAM.AF.MIL      ; 518400
+.       IN      NS      C.NYSER.NET     ; 518400
+.       IN      NS      TERP.UMD.EDU    ; 518400
+.       IN      NS      NS.NASA.GOV     ; 518400
+
+;; AUTHORITY RECORDS:
+.       IN      SOA     NIC.DDN.MIL  HOSTMASTER.NIC.DDN.MIL (
+                        890928  ;serial
+                        1800    ;refresh
+                        300     ;retry
+                        604800  ;expire
+                        86400   ;minim )
+        ; 86400
+
+;; ADDITIONAL RECORDS:
+NIC.DDN.MIL     IN      A       26.0.0.73       ; 518400
+NIC.DDN.MIL     IN      A       10.0.0.51       ; 518400
+AOS.BRL.MIL     IN      A       128.20.1.2      ; 518400
+AOS.BRL.MIL     IN      A       192.5.25.82     ; 518400
+A.ISI.EDU       IN      A       26.3.0.103      ; 518400
+GUNTER-ADAM.AF.MIL      IN      A       26.1.0.13       ; 518400
+C.NYSER.NET     IN      A       192.33.4.12     ; 518400
+TERP.UMD.EDU    IN      A       128.8.10.90     ; 518400
+NS.NASA.GOV     IN      A       128.102.16.10   ; 518400
+
+;; Sent 1 pkts, answer found in time: 0.796 sec
+;; FROM: venera.isi.edu to SERVER: a.isi.edu
+;; WHEN: Wed Oct  4 11:34:22 1989
+
+Several points:
+
+The query asks for type=NS for the root, and is specifically directed
+at a root server with recursion turned OFF.  You really don't want to
+ask some random server, particularly with recursion on, since then you
+are just asking for somebody else's bad data.  Even if you ask one of
+the root servers, I suggest you leave recursion off, since some are
+BINDs and may go nonlinear if they have file problems or whatever.
+
+The SOA RR for the root uses date-based serial numbers.  Thus this
+version of the database is 890928.  Since the NIC typically updates
+things once or twice a week, I might suspect that it is a little out
+of date, so i might ask:
+
+pvm 30% dig +norec @c.nyser.net . soa
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; +norec @c.nyser.net . soa
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa ra  Ques: 1, Ans: 1, Auth: 0, Addit: 0
+
+;; QUESTIONS:
+;;      ., type = SOA, class = IN
+
+;; ANSWERS:
+.       IN      SOA     NIC.DDN.MIL  HOSTMASTER.NIC.DDN.MIL (
+                        890928  ;serial
+                        1800    ;refresh
+                        300     ;retry
+                        604800  ;expire
+                        86400   ;minim )
+        ; 86400
+
+;; Sent 1 pkts, answer found in time: 0.280 sec
+;; FROM: poneria.isi.edu to SERVER: c.nyser.net
+;; WHEN: Wed Oct  4 11:57:28 1989
+
+Appears to be the same; either they are both out of date or there
+hasn't been a change.
+
+Of course, if you don't have a query tool, you either need to get one
+(DIG is public FTP on Venera.ISI.EDU, nswhatever from BIND
+distribution) or if you have to be low tech, there is a text file at
+the NIC you can FTP.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837784627014&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627015&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627014&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627015&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

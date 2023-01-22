@@ -1,0 +1,78 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Strange behavior in BIND concerning $INCLUDE' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Strange behavior in BIND concerning $INCLUDE
+From:       <a href="?a=95837786600028&r=1&w=2">cs.utexas.edu!ut-emx!dlnash () tut ! cis ! ohio-state ! edu  (Donald L !  Nash)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198911">1989-11-10 19:45:43</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627078&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627078&q=raw">body</a>]</b>
+
+
+I have noticed a very strange problem with BIND when using $INCLUDE in
+zone files.  In an effort to make management of the utexas.edu domain
+easier, I would like to put each subdomain in its own file and $INCLUDE
+it into the zone file for utexas.edu.  Note that this is different than
+making each subdomain a separate zone and putting it a zone file.  I do
+not want to do this.  Each subdomain file starts with a $ORIGIN line,
+but no SOA record.
+
+The problem occurs when BIND reads the utexas.edu zone file and starts
+processing all those $INCLUDE files.  For every file it processes, it
+syslog()'s a "No SOA record" error message.  The way I read the BIND
+Operations Guide, $INCLUDE is just suppose to read the designated file
+and process it as if it were part of the original file (BOG 4.8, Section
+5.4.1), not start a new zone.  So if it is not starting a new zone, why
+does it care about not seeing SOA records?  Something is definitely
+wrong here.
+
+After it gets done complaining, the server continues to work, but not
+very well.  When I use nslookup to query the server, I get some strange
+results.  For example, if I try to zone transfer xx.utexas.edu, where
+xx is a subdomain but not a separate zone, I get a "Server failed"
+error message rather than the expected "No information" message.  If I
+edit the zone file and manually include all the subdomain files, thus
+getting rid of the $INCLUDE directives, then everything works properly.
+I get no "No SOA record" messages and zone transfers of xx.utexas.edu
+return the expected "No information" message.
+
+This confounds me greatly.  Either I'm interpreting BOG improperly, or
+the action of $INCLUDE is inconsistent with its description in BOG.  I
+would think that the two configurations I described would have identical
+results, but obviously they don't.  I would appreciate some enlightenment.
+
+This is all taking place under VMS 5.1-1 and MultiNet 2.1 (pre-release),
+which includes a port of BIND 4.8.  BTW, the server I'm doing this on is
+not one of the authoritative servers for utexas.edu.  It is a test
+server I'm using to try various configurations of BIND to see which one
+works the best and is easiest to manage.
+
+				Thanks,
+
+				Donald L. Nash
+
+				The University of Texas System
+				Office of Telecommunication Services
+
+SMTP:    don@nic.the.net
+BITNET:  DON@THENIC
+UUCP:    ...!cs.utexas.edu!emx!dlnash
+
+<b>[<a href="?l=namedroppers&m=95837784627076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

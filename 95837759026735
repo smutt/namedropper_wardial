@@ -1,0 +1,86 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: medical community (50-100 fanout)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026734&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026736&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re: medical community (50-100 fanout)
+From:       <a href="?a=95837784000007&r=1&w=2">mark () cbpavo ! cbosgd ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198607">1986-07-15 11:05:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026735&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026735&q=raw">body</a>]</b>
+
+Based on my experience on UUCP, you can fan out a lot wider than 50-100.
+I've seen fanouts of 1000 with no serious problems, although beyond
+that may be getting iffy.  Since the top couple levels give no idea
+of what net to forward to anyway, I'm not sure that difference in fanout
+buys you anything technically.  On the other hand, keeping the names
+short so people won't mind typing them is important.  Which would you
+rather send to: mark@cbosgd.ATT.COM, or mark@d.osg.cb.btl.att.com?
+The latter describes the organizational heirarchy better, but...
+
+I don't think EDU is going to be a problem for the domain system,
+especially since only the USA seems interested in domains that don't
+have their country at the top level.  (On the other hand, the minute
+the University of South Carolina applies for a domain, it's going to
+get interesting, and they ARE on UUCP.)  But I do have nightmares
+about COM, given the number of one-man companies out there.  And that's
+before every "Two-Guys-From-Italy-Pizza" starts to connect in.
+
+For those of you who aren't familiar with X.400, the last I heard (close
+to a year ago, now) they had a naming tree not that different from the
+ARPA one, but with some twists.  The top level is ALWAYS the country.
+The second level is ALWAYS the organization, and it goes down in
+"organizational units" from there.  But you don't have names for
+the nodes on the tree the way ARPA does.  Each arc is labelled with
+a boolean expression of attributes.  In the simple case, you'd have
+
+	(root)
+	    \ C=US
+	     X
+	      \ O=ATT
+	       X
+		\ OU=BTL
+
+You can imagine the blowup with all the orgs in the US right under the
+same parent.  To resolve the ambiguity, you can add attributes at each
+level to the boolean expression.  There are four possible attributes:
+Locality, Phone number, Telex number, or Postal code (e.g. zip code.)  Thus:
+
+			(root)
+			    \ C=US
+			     X
+  O=ISI &amp; LOC=Marina Del Rey/ \ O=ISI &amp; LOC=San Jose
+			   X   X
+
+What is the name for the lower right X?  It's the combination of the
+attributes.  There is no standard way to write this (standards committee
+never thought of it) but the IFIP RFC writes it
+	/C=US/O=ISI/LOC=San_Jose/
+At least, until another ISI springs up in San Jose, and then you have
+to add another attribute to resolve the ambiguity.  (I know of at least
+four organizations in the computing field called ISI.)
+
+I'm not trying to defend X.400, I personally think it's an abortion, but
+we expect to be forced to live with it.  As you can see, putting names
+under ORG works nicely with the TCP/IP world, but doesn't fit this at all.
+(I'm not sure what, if anything, would fit into X.400.)
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837759026734&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026736&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

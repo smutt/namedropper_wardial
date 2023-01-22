@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'change in host table' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426404&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426406&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426406&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100008&r=1&w=2">change in host table</a>
+From:       <a href="?a=95837692300023&r=1&w=2">Mark Crispin &lt;Crispin () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-01 13:23:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426405&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426405&q=raw">body</a>]</b>
+
+Folks -
+
+     I object vehemently to the way in which the introduction of domain
+names is being done to the NIC host table.  It introduces a "Flag Day"
+in which there will be hosts which use the new names as the primary name
+and other hosts which can't handle the new names at all.  My vehemence
+is because there is a simple way out of this problem.
+
+     The next NIC HOSTS.TXT file should NOT have the fully qualified
+domain names as the primary name.  RATHER, it should have the fully
+qualified domain names as NICKNAMES.  The idea here is that non-domain
+sites using HOSTS.TXT will be able to parse the domain names but not
+use them.
+
+     SOON thereafter (a week or so), make the fully qualified domain
+name be the primary name in HOSTS.TXT.
+
+     The idea is to introduce a 1-week transition period for HOSTS.TXT
+and have two milestones instead of just one.  This gives a week for
+everybody to start handling these new names in the host table without
+actually using them.
+
+     PLEASE!!  No more "Flag Days"!  I am seriously worried about a
+partition of the namespace happening between those who jump in and run
+the new host table right away and those who want to "wait and see" (or
+who, in one case, have their system programmer going away for the
+weekend).  I believe my alternative is both technically feasible and
+allows for a more graceful transition.
+
+-- Mark --
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426404&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426406&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426406&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

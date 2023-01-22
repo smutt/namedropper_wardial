@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Negative caching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926980&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926975&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926980&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=93610985600001&r=1&w=2">Negative caching</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-07 15:18:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926979&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926979&q=raw">body</a>]</b>
+
+    Date: Tue, 3 Nov 1987  13:36 EST
+    From: Rob Austein &lt;SRA@XX.LCS.MIT.EDU&gt;
+
+	Date: Tuesday, 3 November 1987  09:01-EST
+	From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+
+	My problem with negative caching is that a QUERY of
+	    type=* class=IN
+	can return all sorts of positive information, but no indication of
+	negative information, when in fact "everything missing" is negative
+	information.  For example, if I ask XX for FLUTE.LCS.MIT.EDU * IN I get
+	back an HINFO and an ADDRESS record.  Should I "invent" a negative reply
+	for WKS
+
+    No, because of the way that "default" RRs work (ie, RRs like
+    "*.LCS.MIT.EDU. IN HINFO POS CTSS").  I wouldn't make a negative cache
+    entry at all in this case.  I would make a negative cache entry if I
+    got some kind of authoritative error (including rcode=0 and no RRs),
+    indicating the QNAME, QCLASS, and QTYPE, and what the error was.
+
+    In other words, I'm not caching a deduction from positive answers, I'm
+    just caching the exact negative answer that I got.  The negative cache
+    (a misleading term, that) is just a way of avoiding sending an exact
+    repeat of a question that I've already asked.  I can see why you'd
+    want it to be more than that, but I don't think it's feasible.
+
+OK, so what's the point of QTYPE=*, except for human poking around?
+Even if the answer is authoritative, I think you are saying that because
+of *... records it isn't necessarily all the information.  So if I want
+a particular set of information I have to ask for each element of the
+set instead of the entire set?  Is that true?
+
+Related: Even if QTYPE=* authoritatively returns some number of address
+records, does that really mean I have all of them, or must I do a
+QTYPE=A request to make sure?  If the latter, I'm at a loss to see any
+useful way for a program to use QTYPE=*.
+
+<b>[<a href="?l=namedroppers&m=95837781926978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926980&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926975&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926980&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

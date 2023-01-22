@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Checking reachability of our domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627027&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627029&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627030&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200030&r=1&w=2">Checking reachability of our domain</a>
+From:       <a href="?a=95837786600001&r=1&w=2">eru!luth!sunic!mcsun!hp4nl!star.cs.vu.nl!sater () bloom-beacon ! mit ! edu  (Hans van S</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-06 16:24:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627028&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627028&q=raw">body</a>]</b>
+
+Since a couple of months our site has been added to the DNS name
+system, although we are not yet reachable from the American part of the
+Internet.  We do have MX records however, one of which is reachable.  I
+do have the strange feeling however that this has actually reduced our
+reachability. Some active mailing lists never send me anything anymore,
+and I have this feeling that I get less response out of news articles
+than I used to get. I could be boring but still....
+
+I wonder if some of you out there could check what you can find of
+cs.vu.nl from your part of the domain tree, for example try finding the
+address of the machine top.cs.vu.nl, and how your mailer reacts to my
+address sater@cs.vu.nl.  If you cannot reach me under that name I would
+still highly appreciate if you could send me the results using a
+different address, the first that springs to mind is
+sater%cs.vu.nl@uunet.uu.net, but you could even try sater@botter.uucp.
+
+This is a dangerous thing to ask, but I would be relieved if my machine
+collapsed under the mailload.
+
+	Hans van Staveren
+	Vrije Universiteit
+	Amsterdam, Holland
+
+<b>[<a href="?l=namedroppers&m=95837784627027&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627029&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784627030&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

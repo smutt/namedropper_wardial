@@ -1,0 +1,100 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Monitoring your nameserver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826967&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826969&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826965&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826972&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100011&r=1&w=2">Re: Monitoring your nameserver</a>
+From:       <a href="?a=95837817800012&r=1&w=2">swrinde!zaphod.mps.ohio-state.edu!samsung!munnari.oz.au!metro!cluster!necisa!boy</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-20 4:37:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826968&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826968&q=raw">body</a>]</b>
+
+In article &lt;7769@gollum.twg.com&gt; david@twg.com (David S. Herron) writes:
+&gt;
+&gt;This process will somehow take a list of processes to watch after.
+&gt;It will be the parent of all those processes, so that it will be notified
+&gt;of them dieing ..  It will have a number of actions it can do when
+&gt;the process dies, like wait awhile before starting a new copy, start
+&gt;one immediately, start one under some condition, etc.
+&gt;
+
+It's been done already.  Back in '83 or so Tim Long% at Sydney Uni
+Comp Sci rewrote init so it was far more flexible as a general
+purpose daemon controller.
+
+He had a file /etc/procs with entries like this:
+
+tty-console	/etc/login@ peb1200 /dev/console
+netd-basser40	/usr/spool/ACSnet/_lib/NNdaemon -I basser40
+skulk		/etc/skulk
+
+The first field was a handle for the process and the other fields
+were the program to run and its arguments.  All daemons were started
+by init and a naming convention was used so that a group of related
+processes could be controlled easily.
+
+There was no concept of init `state'.  But you could interrogate
+init and ask it what was going on.  To interrogate it you used
+a program called `toinit':
+
+    toinit &lt;command&gt; &lt;regular-expressions...&gt;
+
+The commands were (from what I can remember):
+
+    start	- start it
+    stop	- SIGTERM it and don't restart it
+    kill	- SIGTERM then SIGKILL
+    curtail	- don't restart it when it dies
+    status	- tell me what the state of world is
+    scanprocs	- re-read /etc/procs and incorporate any changes
+
+The regular expressions were matched against the first /etc/procs field
+(the handle for the process) and the appropriate action was taken
+on any of the matches.
+
+There were special entries in /etc/procs for a single user shell on the
+console for boot &amp; shutdown.  Startup was just a script that had the
+appropriate mounts and then a large `toinit start ...'.  Shutdown
+was just a `toinit stop tty-.* ...' and then some magic (I forget)
+to get a single user shell on the console (these machines were 32V
+VAX 11/780's).
+
+There were some bugs, but we fixed them and hacked in some more
+magic for auto-reboots.  The `magic' was usually just a `rc' like
+script that did the right things and then told init to start
+the appropriate stuff.
+
+With this approach you could control a _single_ entry, unlike the
+ghastly mess that is System V's /etc/inittab.  The IPC between
+`toinit' and `init' was a bit messy, but with a mounted process
+stream implementation (was this ever done John?) it can be
+done really cleanly.
+
+
+Boyd Roberts			boyd@necisa.ho.necisa.oz.au
+
+``When the going gets wierd, the weird turn pro...''
+
+-------
+% Bruce Ellis, Piers Lauder, John Mackin, Chris Maltby and myself
+  added mods and bug fixes over the years.
+
+@ getty/login were re-written into /etc/login.  /bin/login was unlinked.
+
+<b>[<a href="?l=namedroppers&m=95837798826967&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826969&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826965&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826972&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND 4.8.1 woes....nslookup wedged' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327036&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    BIND 4.8.1 woes....nslookup wedged
+From:       <a href="?a=95837817200020&r=1&w=2">fmbutt () mrbt ! sw ! stratus ! com (Farooq Butt)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199006">1990-06-05 0:14:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327035&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327035&q=raw">body</a>]</b>
+
+Dear BIND-experts:
+
+I am having a weird problem with BIND.  I have just set up the new
+bind 4.8.1 on my machine (mrbt.sw.stratus.com) as a _SECONDARY_
+nameserver and am having a hard time getting nslookup to deal with
+this new nameserver in a logical way.  The *only* problem I have left
+(and this is driving me batty) is the fact that when I start named and
+enter nslookup (I tried both nslookups; the one with 4.8.1 and the
+SunOS one) I get told:
+"*** Can't find server name for address 134.111.2.36: No information" 
+134.111.2.36 is the address of my machine.  Now the plot thickens...  
+if I do a:
+
+"&gt; server mrbt" 
+
+command in nslookup and then lookup "mrbt" (this takes about 8 seconds 
+or so....noticeably s l o w), I get an answer.  If AFTER this procedure 
+I go back into nslookup, I don't get the :
+"*** Can't find server name for address 134.111.2.36: No information"
+error message any more.  All I can gather is that I am somehow not 
+prepping my named correctly or I am missing something that I 
+should have added to my primary nameserver's 
+zone files (I *did* put in new "NS" entries 
+for the reverse-mapping zone-files and the "sw" zone file)....
+
+What's up...?????
+
+Mystified,
+Farooq Butt
+
+
+trace follows....
+--------------------------------cut here-----------------------------------
+
+mrbt# hostname 
+mrbt 
+mrbt# cat /etc/hosts 
+# 
+# If the yellow pages is running, this file is only consulted when booting 
+# 
+# These lines added by the Sun Setup Program from server bigbootay 
+# 
+134.111.2.36	mrbt mrbt.sw.stratus.com loghost mailhost  
+127.0.0.1	localhost 
++ 
+mrbt# cat /etc/resolv.conf 
+nameserver	134.111.2.36 
+nameserver	134.111.2.18 
+address		134.111.2.0 
+address		134.111.0.0 
+domain		sw.stratus.com 
+mrbt# nslookup 
+*** Can't find server name for address 134.111.2.36: No information 
+Default Server:  blublaze-gw.sw.stratus.com 
+Address:  134.111.2.147 
+ 
+&gt; mrbt 
+Server:  blublaze-gw.sw.stratus.com 
+Address:  134.111.2.147 
+ 
+Name:    mrbt.sw.stratus.com 
+Address:  134.111.2.36 
+ 
+&gt; ^D
+mrbt# nslookup 
+*** Can't find server name for address 134.111.2.36: No information 
+Default Server:  blublaze-gw.sw.stratus.com 
+Address:  134.111.2.147 
+ 
+&gt; server mrbt 
+Default Server:  mrbt.sw.stratus.com 
+Address:  134.111.2.36 
+ 
+&gt; mrbt 
+
+Server:  mrbt.sw.stratus.com 
+Address:  134.111.2.36 
+ 
+Non-authoritative answer: 
+Name:    mrbt.sw.stratus.com 
+Address:  134.111.2.36 
+ 
+&gt; ^D
+mrbt# nslookup 
+Default Server:  mrbt.SW.STRATUS.COM 
+Address:  134.111.2.36 
+ 
+&gt; ^D
+mrbt#  
+mrbt# ^D
+
+
+-------------------------------cut here----------------------------
+
+as you can see things seem to get hunky-dory after I set my 
+server to "mrbt" _and_ then look "mrbt" up.
+
+
+?
+
+<b>[<a href="?l=namedroppers&m=95837797327033&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327036&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

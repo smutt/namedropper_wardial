@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'usage of MAILB, MB, MG, MR etc.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926996&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926997&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    usage of MAILB, MB, MG, MR etc.
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-13 17:45:18</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926995&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926995&q=raw">body</a>]</b>
+
+
+&gt; We've come to the conclusion here at UCSD that a few of our mailbox
+&gt; handling problems can be solved by using the nameserver system on
+&gt; campus as a method of maintaining and distributing a sort of global
+&gt; mailbox mapping table.  Clearly something of this nature was intended
+&gt; when the MAILB, MB, MR, MG, and MINFO stuff was designed into the
+&gt; nameserver system.
+
+&gt; Yet I can find no suggestions for use, nor any mention of actual
+&gt; implementations of these features.  The early domain RFCs mention the
+&gt; possible uses, but offer no practical suggestions nor do they really
+&gt; define the semantics of each of the possible mailbox RRs.  RFC974
+&gt; denies any specification too.
+
+&gt; Is this uncharted territory?  Or have others used these RRs?
+
+
+Brian,
+
+I hope you will excuse my reply going to a larger list.
+
+It is not uncharted territory in that people have looked at
+the problem a little bit.  *BUT* the use of these RR's has not
+been seriously thought through and in an application as important
+as mail, I strongly urge that before anyone implement anything,
+they sit down a write a document explaining the semantics and intended
+uses of the RRs.
+
+I make this plea for two reasons:
+
+    - If everyone goes their own way, then mailers will not
+    interoperate.
+
+    - The MD/MF --&gt; MX experience (i.e. RFC974) suggests that unless
+    someone sits down and figures out how to use the RRs, we may
+    implement a mistake.  Only after some paper and pencil work,
+    did we discover that MD/MF would cause mail-loops.  By that
+    time several people had implemented MD/MF and we had to undo
+    all their careful work and put in MX RRs instead.
+
+I explicitly excluded MG/MB from RFC974 because they looked like
+a harder problem than MD/MF and RFC974 started as an attempt to
+standardize what people understood MD/MF to be.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837781926996&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926997&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

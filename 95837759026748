@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'partially qualified names...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026747&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026749&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026749&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300034&r=1&w=2">partially qualified names...</a>
+From:       <a href="?a=95837661700004&r=1&w=2">Liudvikas Bukys  &lt;bukys () rochester ! arpa&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-06 8:40:23</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026748&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026748&q=raw">body</a>]</b>
+
+Since the current canonical form for transport (for a fully-qualified name) is
+"no trailing dot", then the user interface should also use this convention.
+Otherwise, poor users will always be wondering what they have when someone
+sends them an address, or when they pluck an address out of an existing
+message.  (If we had to do it over again, I would have put a trailing dot at
+the root of a fully-qualified name, but it's too late for that now.)
+
+Given that, we need a way to recognize partially-qualified names.  I nominate
+the ellipsis "...".  While one dot will forever be suggesting an absolute root,
+three dots is a very natural notation for "there's more...".
+
+Liudvikas Bukys
+
+<b>[<a href="?l=namedroppers&m=95837759026747&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026749&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026749&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mail Source Routing' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627079&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627081&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627079&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400016&r=1&w=2">Re: Mail Source Routing</a>
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () gipsi ! gipsi ! fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198911">1989-11-16 13:43:43</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627080&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627080&q=raw">body</a>]</b>
+
+	I supose it doesn't make any difference what a netw.adm. at a Swedish
+	University says in this debate, but still it needs to be said:
+
+Au contraire, I think that the problems experienced by the more
+international community pose the real unknowns left to us (below).
+
+	What has caused problems, though, is sending mail to domains within
+	Europe, where the DNS often gives us to a host somewhere in the US,
+	while we possibly should hand the mail to some host here in Europe.
+	Even worse - we might get the address of a host in Europe, which we
+	either can't reach at all (usually the US can't reach it either!)
+	or we are not allowed to connect to.
+
+Given that the only hosts you are directly connected to are in the
+US, getting a US MXer isn't so bad.  But this reflects what typically
+happens: the US serves as the core for int'l traffic.  As Christian
+pointed out some weeks ago, when he (or I) send mail to DEC-PRL
+(Paris Research Labs), the mail feels compelled to go to DEC-WRL
+en route (that's 22,400km -- if I had a "frequent-mailer" program,
+I could earn tickets to an IETF in Hawaii or Cocoa Beach).  For both
+of us, we have full IP connectivity to DEC-PRL.  For administrative
+reasons (I assume), there are no MX records specific to PRL.
+
+Anyway, as we see a European (indeed, international) Internet (yes,
+with a big 'I') form, issues such as policy-based routing will become
+paramount.  I believe we are designing technical solutions with a
+definite political lean so that we are forced to engineer our
+networks as we would like to see them being built (yes, I am indeed
+questioning our technical objectivity).  As much as we would like
+to see a fully-connected internet, with DoD (or PTT, or the Ministry
+of Education, or whomever) footing the bill, this isn't going to
+happen ("You can't get there from here").  And our design should
+reflect this.
+
+	Now, instead of suggesting various kludges to the DNS I think we
+	should go ahead and start building a European Internet - now!
+
+Bien entendu!  The DNS does what it does satisfactorily, and if
+changes need to be made anywhere, it is in our basic philisophical
+premise that all IP addresses are created equal.  They aren't --
+some are more equal than others.
+
+The time is now for the sort of policy-based tools that have
+been discussed in the last couple of weeks on this matter.  Perhaps
+Bob would care to make (either personally or as Host-Req. honcho)
+some suggestions about the philosophy of such tools?
+
+I see a unique (and somewhat grotesque) mechanism that performs
+a weighted sorting of IP addresses based on long-term and transient
+reachability, administrative preference, type of service, and
+(quite significant) the basis of the application requesting the
+service.  Regarding the later, it might not be important if mail
+is delayed because of a short (&lt;30min), but it could be very
+important whose borders it crosses (for PTT laws), or who pays
+for the carriage.
+
+	There's no fancy new technology involved, so technically it can be
+	done in *very* short time. While we're waiting for real standards,
+	a number of people will have a useful service and we may get some
+	experience from working with big, real, networks. Later, when the
+	standards are stable we migrate into them, just as everybody else.
+
+Standards exist: one can run IP over X.25 demand-switched circuits.
+While this isn't the choice of preference, you can order it today.
+International ISDN service is more attractive, but is not wide
+spread (as I remember, Germany and Sweden are leaders in deployment).
+I would like to see an 802.2-like encapsulation scheme for ISDN/
+Q.931 (that is HDLC/LLC2 [or X.25 layer 2 -- it layer 3 that becomes
+truly offensive]).
+
+	Finally: I am aware of the work that is going on to create a real
+	European Internet and I do hope that work will be a success. Still,
+	I cannot understand why that is not considered part of any official
+	European networking strategy - why Europe should wait instead of
+	getting something non-standard (but operational) in the air today,
+	use it while waiting for standards and finally migrate to standards.
+
+Being new to European networking, I haven't heard anything except
+the rumours that make it to the East Coast.  I would like to hear
+more, and of course make whatever contribution I can...
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837784627079&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627081&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627079&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

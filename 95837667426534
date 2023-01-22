@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Creeping confusion' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426533&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426535&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426535&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600023&r=1&w=2">Creeping confusion</a>
+From:       <a href="?a=95837661900004&r=1&w=2">Murray.pa () Xerox ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-04 20:37:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426534&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426534&q=raw">body</a>]</b>
+
+When our resolver asks NIC about THINK-AQUINAS.ARPA, NIC tells us that
+it's an alias for AQUINAS.THINK.COM, and that THINK.COM is served by
+THINK.COM and SCRC-PEGASUS.ARPA. Our name server happens to probe
+PEGASUS first. It sends us back to NIC and ISI.
+
+Similarly, NIC tells us GYMBLE.ARPA an alias for GYMBLE.UMD.EDU, and
+that UMD.EDU is served by TRANTOR.UMD.EDU and BRL-AOS.ARPA. It tells us
+UMD.EDU is served by BRL-AOS.ARPA and TRANTOR.ARPA (and tells us their
+addresses). At this point, we give up.
+
+Usually I'm pretty neat about maintaining lists in the order that I get
+them, but somehow I managed to flip things over this time, so we tried
+the secondary server first. (Is "secondary" an appropiate concept? Is
+there a better term?) Now that I've fixed our code not to do that
+anymore, things seem happier. Anybody want to guess what's going to
+happen when the primary servers go down?
+
+Is this just my lucky day, or are you seeing crazy things like this too?
+
+------
+
+As long as I'm typing... I recently uncovered an interesting bug in our
+resolver.
+
+Our alias chasing code didn't try hard enough. When we get an answer in,
+all the info is inserted into the cache. Then we check the cache again.
+In the old days, when we were told that a name was an alias, we always
+got the addresses for the real name too. So the next time we looked in
+the cache, everybody was happy. Somebody recently fixed/changed
+something. Now we have to probe again. Our code is basically a loop
+getting closer to the right server each time around. The recursion to
+fully/correctly process the alias was missing.
+
+TOPAZ.ARPA was the test case I used initially, but THINK-AQUINAS.ARPA
+and GYMBLE.ARPA would also have triggered the problem.
+
+<b>[<a href="?l=namedroppers&m=95837667426533&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426535&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426535&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

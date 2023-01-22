@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  MX records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927081&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927083&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927078&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927098&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=87620675600005&r=1&w=2">Re:  MX records</a>
+From:       <a href="?a=95837784000023&r=1&w=2">nowicki () Sun ! COM (Bill Nowicki)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-07 13:20:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927082&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927082&q=raw">body</a>]</b>
+
+	Date: Sun 6 Dec 87 12:35:19-PST
+	From: David Roode &lt;ROODE@BIONET-20.ARPA&gt;
+	Subject: MX records
+
+	But perhaps people don't realize that the UU.NET domain service
+	for UUCP simply fabricates an MX record for each and every
+	x.UU.NET query given it.
+
+I think you are confusing "UUNET" with "UUCP".  UUNET is just one
+of several companies that provide UUCP for a fee. The only machines
+registered within the domain ".UU.NET" are the actual service
+machines (mail relays).  The organizations that are members of UUNET
+register in the top-level domain that is more appropriate for them,
+such as .EDU or .COM. The relaying is done by UUNET only for a small
+subset of the registered UUCP domains.  Many of them relay through
+machines much closer to them.  For example, "Adobe.COM" is registered
+in the UUCP zone, but relays through Sun.COM since it is just down
+the street from us.
+
+Similarly, each BITNET site should be registered in .EDU or .COM, with
+MX records pointing to nearby relaying sites, instead of having a
+single relay like WISCVM.  This is already being done slowly, starting
+with sites that are on the Internet: witness CUNYVM.CUNY.EDU,
+Forsythe.Stanford.EDU, etc.
+
+	-- WIN
+
+<b>[<a href="?l=namedroppers&m=95837781927081&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927083&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927078&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927098&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

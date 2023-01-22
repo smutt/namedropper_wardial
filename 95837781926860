@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  leading digits in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926857&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926861&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926857&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926861&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800022&r=1&w=2">Re:  leading digits in domain names</a>
+From:       <a href="?a=95837784200018&r=1&w=2">mark () cbpavo ! mis ! oh ! att ! com (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-24 17:23:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926860&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926860&q=raw">body</a>]</b>
+
+	It doesn't matter what kind of service a host supports (Mark claims
+	that 3Com.COM is okay since it's only got MX service, "like, no one is
+	going to go FTP'ing or anything" ... like, Mark, it's just a tag --
+	just a label.  All "domain names" are potential "hostnames" ... don't
+	go special-case-ing on us ...
+
+Not true.  3comvax.3Com.COM might be a potential host name, (if 3Com were
+still in the TCP/IP business, which they aren't) but 3Com.COM is not a
+host name, it's a parent domain name.
+
+An interesting related question is whether the name olds@3Com.COM is
+an allowed domain name even if 3Com.COM isn't a valid host name.  The
+way the mail system is set up, on the Internet, mail to a domain like
+3Com.COM can be MX'ed to 3comvax.3Com.COM so nobody actually opens a
+connection to a "host" 3Com.COM, indeed there needn't be any such host.
+Much like Mark.Horton@ATT.COM, there is no ATT.COM host, although there
+are 5 mail gateways into ATT.COM.  (There is no COM host, either.)
+
+I claim there is no reason for any host to ever try to open a
+connection to 3Com.COM, even if they were to eventually join the
+Internet.  There would never be a host called 3Com.COM.  Their
+hosts would all be something.3Com.COM, and even if they accept
+mail to user@3Com.COM, the MX system would direct it to a particular
+host.
+
+Is there anything wrong with this claim?
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837781926857&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926861&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926857&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926861&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

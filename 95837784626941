@@ -1,0 +1,101 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'What liberties may an MX'ing host take with delivery?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626942&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200004&r=1&w=2">What liberties may an MX'ing host take with delivery?</a>
+From:       <a href="?a=95837786200039&r=1&w=2">giza.cis.ohio-state.edu!karl () tut ! cis ! ohio-state ! edu  (Karl Kleinpaste)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-28 20:37:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626941&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626941&q=raw">body</a>]</b>
+
+A question has arisen (in comp.mail.sendmail) which has by now left
+behind questions of what sendmail does in certain situations and is
+instead a larger issue of what to do about MX'ing hosts.
+
+The situation: I write mail to, e.g., user@domain.edu.  There exists a
+single MX RR which stipulates that the MX host is forwarding.host.edu.
+My mailer then calmly passes this mail to that MX'ing host, expecting
+that the mail will be handled by forwarding.host.edu on its own.
+
+The problem is that forwarding.host.edu may fulfill its MX'ing service
+by generating a UUCP !-path route by which to get to domain.edu, and
+the potential exists for that route to pass back through my machine,
+with the FQDN as part of the path.  My mailer configuration (I happen
+to use sendmail, but the problem is not [I believe] necessarily
+specific to sendmail) takes any multi-hop !-path address and strips it
+to the rightmost domain spec, on the justification that a domain spec
+is an absolute address, and any preceding path information is
+unnecessary and superfluous.  That is, host1!host2!domain.edu!user is
+stripped to domain.edu!user and then converted to @-format as
+user@domain.edu.
+
+Naturally, this has just closed a mail loop, as my sendmail will now
+once again discover that the MX host is forwarding.host.edu, send it
+there, which will again generate the long !-path passing through my
+machine again, ad nauseum until a hopcount limit is reached and the
+mail is bounced back as undeliverable.
+
+I've been reading RFCs most of the day since this came up, trying to
+find an authoritative comment on how MX'ing hosts are supposed to
+perform their service.  974 and 103[345] stipulate a lot about how
+hosts which are *sending* mail must do things in RR preference order
+and so forth, but don't say much about what the receiving MX host
+should do once it has control of such a piece of mail, other than that
+it must not deliver to any host with a preference higher/worse than
+its own.
+
+Since the problem was first discussed, I find that the specific
+example in question is fidonet.org, which has a single MX RR aimed at
+handies.ucar.edu; Handies then does some local stuff to figure out
+which of several FIDONet gateways to use based on the specific FIDONet
+host stipulated, and so generates a !-path which may pass through
+hosts that want to do MX things about fidonet.org, and these paths
+themselves contain the domain name fidonet.org.  (Greg, please correct
+me if I've misstated the situation.)
+
+The longer I think about this, the less I like MX hosts generating
+long delivery paths (not necessarily UUCP !-paths) which pass through
+hosts not under the control of the same adminstrator as the MX host
+itself.  Any such paths depend on the behavior of the intermediate
+sites, which is unknown and unpredictable.  I'm very much inclined to
+say that any forwarding.host.edu must speak directly to the intended
+domain.edu in order to be a valid MX host.  "Speaking directly" may
+itself be somewhat indirect; if the administrator of
+forwarding.host.edu is also the person who manages the mailer and
+network configuration of host1 and host2, then a delivery path of
+host1!host2!domain.edu!user is still "speaking directly" and hence
+valid.
+
+I guess where I think the situation has really broken down is that it
+ought to be the responsibility of the mangers of the intended
+destination (fidonet.org, in this case) to provide more complete MX
+support in the DNS; that is, there should be MX hosts on a regional
+basis, via the subdomain definitions of fidonet.org.  The MX hosts
+should not be taking chances with what might happen on machines
+outside their sphere of influence.
+
+Can someone with more experience in this sort of situation shed any
+light?  Is there a right and wrong here, or are the RFCs too fuzzy to
+say which is The Way It Should Be?
+
+Confused,
+--Karl
+
+<b>[<a href="?l=namedroppers&m=95837784626940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626942&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

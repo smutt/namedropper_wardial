@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'bogus root servers being advertised' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627013&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627017&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627010&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627017&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400001&r=1&w=2">bogus root servers being advertised</a>
+From:       <a href="?a=95837786400045&r=1&w=2">"Stephen C. Pope" &lt;scp () sfi ! santafe ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-04 9:19:50</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627014&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627014&q=raw">body</a>]</b>
+
+
+
+on Tue, 03 Oct 89 10:44:39 -0400,
+jb@cs.brown.edu said:
+
+jb&gt; Over the past couple months, I have seen sri-nic.arpa, brl-aos.arpa
+jb&gt; and gunter-adam.arpa (yes, I mean the old names for these hosts)
+jb&gt; being listed as root servers.  I found one source of these and it
+jb&gt; seems to have been fixed, but there must be others.  What prompted
+jb&gt; this note was receiving these from one of the root servers today.
+
+...
+
+jb&gt; My guess is that these address are originating on hosts running old
+jb&gt; versions of BIND and loading an incorrect list of root servers.  These
+jb&gt; then get propogated from there by servers not being able to answer a
+jb&gt; query that was refered to them.  I realize that BIND should really
+jb&gt; be fixed to be less trusting in what it adds to its cache but that
+jb&gt; won't do anyting about those people running 2 year old software.
+
+
+Is bind 4.8 considered to be ``old''?  I found these bogus entries
+in my root.cache, straight out of bind 4.8.  In any case, they've
+been corrected here.
+
+Stephen Pope
+Santa Fe Institute
+scp@sfi.santafe.edu
+
+<b>[<a href="?l=namedroppers&m=95837784627013&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627017&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627010&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627017&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

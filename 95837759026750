@@ -1,0 +1,110 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Plummer's proposal' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026744&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026745&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026744&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026754&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300032&r=1&w=2">Plummer's proposal</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-05 13:51:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026750&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026750&q=raw">body</a>]</b>
+
+    Date:     Tue, 5 Aug 86 8:51:02 PDT
+    From:     Dave Crocker &lt;dcrocker%engr.ub.com@CSNET-RELAY.ARPA&gt;
+
+A few things to point out:
+
+Hierarchical file systems already exist that allow complete tree
+traversal.  The traversal rules are relatively simple and allow someone
+to "stay where one is," "go up," and "go down".  One example is Multics
+and its pathname-lookalike (Symbolics) LMFS.  Somebody at MIT had an
+idea to put all three motions in TOPS-20.  I don't know if Unix natively
+has such a concept.  I think the functionality gained by allowing all
+three outweighs the argument that people have to learn it.
+
+I also point out that the Multics, LMFS, TOPS-20 and Unix file systems
+are all rooted at the left, not the right.  Each of those 4 except
+TOPS-20 is explicitly rooted.  I'm not really sure how to categorize
+TOPS-20 rooting, since the syntax isn't uniform.  Explicit rooting helps
+in detecting absolute vs. relative (I guess we all agree on that).  Left
+rooting makes traversal more intuitive.
+
+I agree that additional rules are for convenience; full names may be
+specified at any time.
+
+I believe my proposal has a two-phase rule.  (The current assumption is
+that . are the separators and ^ goes up the tree.)  Using your example,
+with the syntax changed:
+
+   "Two types of convenience opportunities look as if they will be common
+    for users:
+
+	    A.  Intradepartment, where .COM.Company.Engr.A needs to send to 
+		.COM.Company.Engr.B, and
+
+	    B.  Interdepartment, where .COM.Company.Engr.A needs to send to
+		to .Com.Company.Mktg.B.
+
+    There is a peculiar case where .Com.Company.Mktg.A needs to send to
+    .Com.Company.Mktg.WRegion.B, but I suspect that the structure ought to 
+    have the first name be .Com.Company.Mktg.HQ.A.
+
+    (My list is biased, but any list will be.  To the extent that there
+    are objections to the suggestions in this note, I'd like to request that
+    the focus be upon generating example specification situations that we
+    are trying optimize.)
+    "
+
+I disagree that the peculiar case is "peculiar" in the sense that it is
+unimportant.  There is a machine called Bitsy.MIT.EDU and it might want
+to talk to AI.AI.MIT.EDU.
+
+Here are the complete rules needed to parse/relative/merge domain names.
+
+1. If the name starts with a ., it is an absolute name.
+2. Otherwise it is relative.
+   2a: For each (possibly 0) leading ^, strip .token from the end of the
+       default.
+   2b: Replace the last token of the output of 2a with the input
+       (including any dots).
+
+That's all.  It's pretty simple too.  I don't think this is complex or
+bothersome, but then I've been using Multics and/or LMFS pathnames for 8
+years now.
+
+    As to the questions of separator character and direction of specification,
+    these seem like straightforward human factors.  If we are concerned about
+    making the "best" choices, then we need to run some tests with "typical"
+    users to find out which character and which direction they learn the
+    easiest and can generate and comprehend the quickest.  
+
+This is a good idea.
+
+    My vote is to
+    keep the period and keep the right-hand anchor.  But, then, I'm not
+    a typical user.
+
+I've been convinced to keep the period.  For parallelism with existing
+pathname systems, I vote for a left hand anchor, especially if we are
+going to allow traversal since I think "^Mktg.B" is easier to comprehend
+than "B.MKtg^".  The reason is that (English speaking) people read and
+parse left to right, and understanding relative things intuitively
+requires parseing from anchor to leaf.
+
+<b>[<a href="?l=namedroppers&m=95837759026744&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026745&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026744&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026754&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

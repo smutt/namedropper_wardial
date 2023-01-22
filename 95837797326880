@@ -1,0 +1,80 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Can you do this?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326879&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326881&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326879&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400041&r=1&w=2">Re: Can you do this?</a>
+From:       <a href="?a=95837786000019&r=1&w=2">logicon.arpa!Makey () nosc ! mil  (Jeff Makey)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-06 21:17:46</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326880&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326880&q=raw">body</a>]</b>
+
+Declaring myself as the authority for the .BITNET and .UUCP
+pseudo-domains has the same consequences as the widespread practice
+declaring oneself the authority for the .0.0.127.IN-ADDR.ARPA domain.
+There are only two circumstances in which some other machine would see
+any of the "illegitimate" RRs carried by my domain server:
+
+    1) the other machine is configured as a secondary server (to my
+       primary) for one or both of these two pseudo-domains;
+
+    2) the other machine is configured to use mine as a forwarder.
+
+Both of these circumstances require deliberate actions on the part of
+the other machine's administrator, and I will not be held accountable
+if the administrator of some random site makes such a configuration
+change without understanding the consequences or consulting me
+beforehand.
+
+All I have done is taken information that used to be in my sendmail.cf
+file and moved it into the domain system -- where I feel it more
+properly belongs.  It is now somewhat easier for other sites to access
+this information, and that is either a bug or a feature depending on
+one's point of view.  Note that to make things difficult for other
+sites to really use my pseudo-domains the NS records list "localhost."
+as the nameserver.  I remain unconvinced that it is now so easy to use
+this information that it will, in fact, inadvertently be misused.
+
+In article &lt;9003042059.AA07389@jessica.Stanford.EDU&gt; almquist@JESSICA.STANFORD.EDU \
+("Philip Almquist") writes:
+&gt; 	If you doubt my contentions, ask most any host that makes heavy
+&gt; use of the domain name system for its list of root name servers.  The
+&gt; list will almost always include several obsolete or completely bogus
+&gt; entries
+
+These bogus RRs result from zone administrators wrongly putting lines
+such as:
+
+     .     IN     NS     SRI-NIC.ARPA.
+
+into the file that defines their zone.  Any primary or secondary
+server for such a zone will then list SRI-NIC.ARPA as a root
+nameserver along with the legitimate root nameservers.  Observe that
+the secondary servers for my registered domain do not resolve anything
+in my pseudo-domains.  If *they* don't inadvertently have the
+illegitimate RRs, I doubt anybody will.
+
+                           :: Jeff Makey
+
+Department of Tautological Pleonasms and Superfluous Redundancies Department
+    Disclaimer: Logicon doesn't even know we're running news.
+    Internet: Makey@Logicon.COM    UUCP: {nosc,ucsd}!logicon.com!Makey
+
+
+<b>[<a href="?l=namedroppers&m=95837797326879&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326881&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326879&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

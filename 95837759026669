@@ -1,0 +1,123 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'new root server coming &amp; some measurements' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026668&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026670&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    new root server coming &amp; some measurements
+From:       <a href="?a=95837693400019&r=1&w=2">MOCKAPETRIS () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198603">1986-03-05 12:59:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026669&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026669&q=raw">body</a>]</b>
+
+During February I rewrote the Domain nameserver for TOPS-20 to fix some
+bugs, implement MX, eliminate extra data that was causing spurious
+truncation problems, prepare for the introduction of dynamic updating,
+and improve its performance.  The new server was tested on ISIC for
+approximately two weeks out of the month, and no problems were reported.
+Since the last big change at the root servers caused problems for some
+sites, I wanted to warn the list that the new server will be phased in
+this month.  Its easy to tell if you are accessing the new server; it
+returns MX RRs rather than MD &amp; MF.  I'd like to hear of any problems.
+
+During the nameserver test period, some sketchy usage statistics were
+compiled.  Better data will be forthcoming.  Note that these statistics
+were only for ISIC, a fairly lightly loaded KL, and probably are not
+representative for the usage or performance on the other root servers on
+ISIB, SRI-NIC, or BRL.  Note that these statistics were only for the new
+server during its test periods.
+
+The ISIC nameserver is answering queries at the rate of approximately
+one every six seconds, averaged over days, or approximately 15K/day.
+The rate doesn't appear to change dramatically as a function of time of
+day.
+
+The response time of the server is measured from the time that the
+server starts work on a newly delivered UDP packet to the time that it
+calls the subroutine that queues the response packet for transmission,
+and thus does not include network transit time, or operating system
+delays.  For ISIC, the average service times was 44 milliseconds, with
+53% of the service times less than 15 milliseconds and 99% less than 285
+milliseconds.  Page faulting appears to be an important component of the
+results; FOR THE LOADS OBSERVED, the performance of the server improved
+with load because of decreased page faults.
+
+The server recorded usage for the addresses of its first 49 clients, and
+then all others lumped together.  Started at 9AM, the server filled all
+50 slots sometime before 5PM.  On its first shift, BRL-SMOKE used 31%,
+and two BERKELEY hosts used 10% each, with no other host or the "all
+others" slot using more than 7%, and most using less than a percent.  The
+"all others" slot climbed to 25% after a week.  I'm not sure what this
+means other than there's more than a handfull of hosts using Domains.
+
+Some separate measurements were also performed using a query program on
+ISIC (a net 10 host) launching queries at ISIC, ISIB, SRI-NIC (on both
+its net 26 and net 10 addresses) and BRL (at its various addresses).
+These measurements were performed with the old nameserver on ISIC so
+that the ISIB, ISIC, and SRI-NIC servers would be running identical code
+(new server expected to be better).  The measurements used about 1000
+queries each, and included all delays plus time for the query program to
+record answers in a file.  The tests didn't address the issue of trying
+alternate servers; during all runs only one root server was used.  (No
+server crashed during the tests, although some were occasionally down and
+couldn't be tested.)
+
+The results varied a great deal, even between different runs to the same
+nameserver.  Average per query times from 200ms (ISIC to ISIC) to 2400ms
+(ISIC to BRL) were recorded for the root servers.  These numbers should be
+taken with a few pounds of salt:
+
+	1K of queries takes time, and the tests for different servers were
+	not run in parallel, but in series.  Thus all comparisons had a
+	certain apples and oranges flavor.
+
+	The single worst performance observed was to ISIB, at 9PM local time,
+	when the load was not heavy but file backup was running.  Average
+	response time was 2900 ms for this test.
+
+	The NIC responded better at noon than it did at 3AM for two days
+	in a row, then reversed for the next three days.
+
+	Since the query program moved on to the next query as soon as it
+	got an answer, page faulting was decreased.  Inserting a 10 sec
+	delay between each of the 1K queries always made results worse,
+	and often produced performance curves that resembled the
+	California coastline rather than inverse exponential in textbooks.
+
+The only results that seem semi-solid rather than soupy are:
+
+	Decrasing the retransmission interval never helped FOR THESE
+	TEST CONDITIONS, and always hurt.  Within reason, the same results
+	should be expected for ARPANET hosts.
+
+	Significant packet loss only occurred with a low retransmission
+	interval that overloaded per process packet queues on TOPS-20.
+
+	From ISIC, on net 10, there wasn't a big difference between NIC
+	in 26 and NIC on 10, usually 25-200 ms, averaging 100 or so.
+	Given other information, this probably isn't representative.
+
+	The best choice out of a set of candidates isn't an obvious
+	function of network number or hop count.  For ISIC, the best
+	ranking was ISIC (no surprise), SRI (net 10), SRI (net 26),
+	ISIB, then BRL.  (Another user, who shall remain anonymous, uses
+	SRI, BRL, ISIB, ISIC as order because SRI gets updates first, BRL
+	runs UNIX, and ISIC runs experimental code more often.)
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026668&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026670&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

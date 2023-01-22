@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'gethostbyaddr' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426384&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426386&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426384&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426385&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837886900048&r=1&w=2">gethostbyaddr</a>
+From:       <a href="?a=95837475100016&r=1&w=2">Larry Peterson &lt;llp () Purdue ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-04 16:42:08</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426383&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426383&q=raw">body</a>]</b>
+
+
+Has anyone thought about the problem of doing inverse mappings
+of internet addresses to host names? It may just be a problem
+with the Berkeley version of the nameserver/resolver, but it
+seems to me that an inherent problem exists in knowing what
+name servers to query to do the addr--&gt;name mapping (i.e. the
+hierarchy is partitioned according to names, not addresses).
+In the case of the Berkeley name server, gethostbyaddr will
+work if the address is in the loacal cache (because a gethostbyname
+was recently done), but it will fail otherwise.
+
+For example, when one does a 'netstat' and not all the addresses
+are in the cache, the program fails. Granted, one normally would
+do a gethostbyname before there is any need to do gethostbyaddr,
+but then caches get cleaned out every so often too.
+
+I don't see a solution short of an exhaustive search. (Sorry if
+I'm rehashing a topic discussed earlier.)
+
+Larry
+
+<b>[<a href="?l=namedroppers&m=95837667426384&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426386&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426384&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426385&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

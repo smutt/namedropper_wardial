@@ -1,0 +1,92 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: How to use MX records in practice' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626784&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626786&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626783&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626787&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700019&r=1&w=2">re: How to use MX records in practice</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-25 20:48:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626785&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626785&q=raw">body</a>]</b>
+
+
+&gt;     1)	Look for MX(foobar.foo.bar.edu). If I find it, everything's
+&gt; 	just fine and I try to send to those hosts in turn.
+&gt;     
+&gt;     2)	Look for A(foobar.foo.bar.edu) and check that foobar has SMTP
+&gt; 	as a WellKnownService ("strongly encouraged"). Found =&gt; OK.
+
+    Right, except that almost nobody bothers with keeping their WKS
+RR's up to date, so no one bothers to do WKS.  They just try SMTP if
+they can find an A record.  (The Host Requirements RFC will make this
+the officially recommended practice).
+
+&gt; Now, what if I didn't get a usable answer (e.g. WKS didn't contain
+&gt; SMTP) what do I do? Do I just have to give up, "host/domain unknown",
+&gt; or is there more to do?
+
+    Return the mail as undeliverable.
+
+&gt; What I would like to do, but haven't seen in any RFC, is:
+&gt; 
+&gt;     3)	Look for MX(foo.bar.edu), MX(bar.edu) etc. until I get a
+&gt; 	positive reply or reach the top domain (.edu).
+&gt; 
+&gt; Could someone please tell me:
+&gt; 
+&gt;     +	Is this completely wrong?
+&gt; 
+&gt;     +	If not, why is it bad approach (I guess it is since it isn't
+&gt; 	mentioned in any RFC, although it's rather obvious).
+
+    Well, the thought I had when writing RFC 974 was that it wasn't
+clear you needed this practice.  The logic ran something like this:
+
+    (1) If you have a host on the Internet, you have to list A and PTR
+	records for it anyway, and some people believe you should
+	list HINFO and WKS too.  Asking you to list MX as well is
+	hardly a chore.
+
+    (2) The only cases where I knew of people who wanted all mail for
+	a domain like bar.edu, or *.mycountry delivered to one site
+	were folks who were off net.  They could use the simple expedient
+	of listing
+
+	    *.bar.edu	IN	MX myrelay.xx.net
+	    *.*.bar.edu	IN	MX myrelay.xx.net
+
+	and all mail would be delivered to their favorite relay.
+
+    (3) The third practice, of having all mail addresses to joe@bar.edu
+	is also easy to handle.  Name your hub host bar.edu and fix
+	every mailer in your campus to use addresses of the form
+	joe@bar.edu.
+
+&gt;     +	How should it be done instead? Does a name server have to
+&gt; 	provide MX records for *every* possible mail address within
+&gt; 	its domain (since "*" does not work if there exists a host
+&gt; 	with the same name - a rather common scenario)?
+
+    Well, yes.  I don't see what's wrong with that.  Many people generate
+    their domain tables with programs these days -- what's wrong with
+    listing an MX for each host?
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837784626784&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626786&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626783&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626787&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

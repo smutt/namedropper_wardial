@@ -1,0 +1,38 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Choosing an Internet address' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426518&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426521&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426518&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426530&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600010&r=1&w=2">Re:  Choosing an Internet address</a>
+From:       <a href="?a=95837693400009&r=1&w=2">Robert Cole &lt;robert () UCL-CS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-18 11:55:15</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426519&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426519&q=raw">body</a>]</b>
+
+I said there is/was an ICMP message, I believe it is the status
+message, I did not say we used it.
+We happen to have a console on the gateway, and an EGP implementation,
+with which we can probe the gateway. The ICMP message is not supported
+on our BBN gateway.
+I believe that Jon's Internet map would be as useful for a static
+table.
+
+Robert
+
+<b>[<a href="?l=namedroppers&m=95837667426518&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426521&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426518&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426530&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026876&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026882&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re:
+From:       <a href="?a=95837785400017&r=1&w=2">Debbie Deutsch &lt;ddeutsch () LABS-N ! BBN ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-28 18:21:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026878&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026878&q=raw">body</a>]</b>
+
+Marvin, you have hit upon another example of "unfinished business"
+within X.500.  As you point out, fast, low-overhead searches and
+large, distributed, relational databases don't mix.  Thus, the
+attributes used in X.500 names fall into (or are put into) a
+hierarchical relationship.  Distributing the database along the lines
+of this hierarchy makes it easier and to find faster to do searches
+with a complete name as a key, since the name can be directly mapped
+into the location of its associated entry.
+
+As it turns out, the hierarchy does not have to be used as a pattern
+for distributing the database.  (Internet nameservers work in an
+analagous way.)  The directory service agents can store information
+for multiple subtrees with different parent nodes.  Mechanisms are
+provided to help the DSAs to cope with this.  In these cases, the DSAs
+can store and make available whatever "knowledge" they've gained about
+the actual distribution of the database.  Alas, that information is in
+human-readable form only, suitable for administrators but not for
+processing by other DSAs.
+
+--Debbie
+
+<b>[<a href="?l=namedroppers&m=95837783026876&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026882&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

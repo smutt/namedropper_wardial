@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  My ten favorite domain server lossages' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426578&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426580&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426578&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600044&r=1&w=2">Re:  My ten favorite domain server lossages</a>
+From:       <a href="?a=95837693600001&r=1&w=2">smoot () pop ! UTEXAS ! EDU (Smoot Carl-Mitchell)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-30 8:20:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426579&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426579&q=raw">body</a>]</b>
+
+I have a few comments about your message:
+	
+	1) The serial field of the SOA RR for a domain is supposed to be a
+	continuously increasing (mod 2**32) value which denotes the version of
+	the database.  The idea is that you can tell that a zone has changed by
+	comparing serial numbers.
+
+Yep, we should do this and will in the future.
+	
+	5) Making up data.  For example, there are lots of servers who return
+	RRs for the root servers with 99999999 in the TTL.  Some return RRs that
+	suggest that ISIF is a root server.  (It was months ago, but is no
+	longer.  I use it for testing.  I haven't updated its database since I
+	started using it for testing.)
+
+What are the official root nameservers?  I have received no word on any 
+changes and still use ISIF as an alternate to SRI-NIC.ARPA.  
+	
+	9) The domain system is supposed to preserve case, but be case
+	insensitive.  However, it does nobody any good to put both RRs for
+	domain name xxx and XXX in the data base - It merely makes caching
+	ambiguous and decreases the efficiency of compression.  This consistency
+	should also exist in the duplicate RRs that mark delegation in the
+	delegator and delegatee.  For example, if you ask the NIC to delegate
+	UZOO.EDU to you, your database shouldn't say uzoo.edu.
+	
+We don't, but I had to write a case insensitive string comparision routine
+and use it to fix login and rcmd.c on our unix system.  Dumbly they are
+case sensitive about hostnames which may explain why some systems take
+the easy way out.
+
+Thanks for your comments.  They are appreciated.
+
+<b>[<a href="?l=namedroppers&m=95837667426578&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426580&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426578&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

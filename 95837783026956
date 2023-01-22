@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Zone refresh and retry times' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026957&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026959&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026957&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026958&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400014&r=1&w=2">re: Zone refresh and retry times</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-12 13:09:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026956&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026956&q=raw">body</a>]</b>
+
+
+Paul:
+    
+    Actually, the problem turns out to be somewhat trickier. 
+
+&gt; I don't understand why you worry about 2 packets per hour (one query,
+&gt; one response).  Even if the rate goes up to 24 packets per hour when a
+&gt; master is dead, this isn't much of an expense.
+
+    The problem is that my server has to fire up a task to check on the
+zone -- because my server has a huge memory image, that apparently still
+takes a while.  And during that time my server is unavailable.  Even
+if this is just a few seconds per zone, with 72 zones to backup, at
+one check per hour per zone, that's reduced my availability by several
+percent.  Checking a failed master every five minutes is worse.
+
+&gt; The real cost is copying the zone.  Admittedly, it can get out of hand
+&gt; if an administrator is making frequent changes to a large zone AND
+&gt; creating a new serial number each time, but the fix is simple: just tell
+&gt; the administrator to "batch" the updates with regard to updating the
+&gt; zone on a master server, unless the change is really urgent.
+
+    Transfering the zone is actually not so bad -- we fire up a separate
+task that loads the zone into a file that our server reads when the task
+completes.  The server can continue to answer queries after the task
+is started (this is the same task mentioned above, it checks if the zone
+needs updating and if so, does the transfer). We're working on optimizing
+the loading stage in named (David Waitzman just did some tuning that appears
+to have reduced the time needed to read a file by about 25%).
+
+    The bottom line is that, once the number of zones you back up is high,
+anything that perturbs your server's standard querying process is expensive.
+Admittedly, bind probably still needs tuning to handle this problem better --
+I'm working with what I've got.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837783026957&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026959&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026957&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026958&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

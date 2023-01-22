@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BITNET-Internet Gateway' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927047&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927046&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927041&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927048&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500028&r=1&w=2">BITNET-Internet Gateway</a>
+From:       <a href="?a=95837785000007&r=1&w=2">dms () wheaties ! ai ! mit ! edu (David M !  Siegel)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-22 16:24:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927045&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927045&q=raw">body</a>]</b>
+
+   Date: Sat, 21 Nov 87 23:03:58 EST
+   From: "Philip A. Prindeville" &lt;PAP4@ai.ai.mit.edu&gt;
+
+   What about setting up MX records for *.BITNET to go to these gateways?
+   One still has to explicitly route mail on the Internet to the correct
+   gateways...
+
+   -Philip
+
+This has been discussed before, and is an improper use of the domain
+naming system. Instead, there should be MX records for hosts on Bitnet
+that reflect the organization that the host is in, instead of the
+network the host is on.
+
+For example, "cunyvm.bitnet" really should be something like
+"vm.cuny.edu", with an MX pointing it to the appropriate gateway. 
+
+<b>[<a href="?l=namedroppers&m=95837781927047&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927046&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927041&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927048&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

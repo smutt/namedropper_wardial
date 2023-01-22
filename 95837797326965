@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How do I obtain complete DNS software for Suns?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326963&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326967&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    How do I obtain complete DNS software for Suns?
+From:       <a href="?a=95837817000029&r=1&w=2">metaphor!xymox.metaphor.com!philf () apple ! com  (Phil Fernandez)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-28 23:14:31</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326965&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326965&q=raw">body</a>]</b>
+
+
+I am looking to install a DNS name server and client BIND software
+here at Metaphor.  We run a Sun environment with several Sun 3 and
+Sparc servers and about 150 workstations, a mixture of Sun 3 and
+Sparcstations.  We run SunOS 4.0.3 or 4.1, and currently use YP for
+network name service.
+
+I would like to move the bulk of our name lookup services to a DNS
+server -- not because I think it's going to be of operational benefit
+in our environment, but as a training / experimental platform to learn
+some things before designing the name services environment for an
+upcomping product.
+
+Is there a freely-distributable DNS server for SunOS4 available
+somewhere on the Internet?  Does this distribution include client BIND
+software?
+
+I'd also appreciate any thoughts, insights, etc. that you might have
+to offer.
+
+I prefer responses by e-mail.
+
+pmf
+
++---------------------------+------------------------------------------------+
+| Phil Fernandez            |               philf@metaphor.com               |
+|                           |       ...!{apple|decwrl}!metaphor!philf        |
+| Metaphor Computer Systems | "Does the body rule the mind, or does the mind |
+| Mountain View, CA         |    rule the body?  I dunno..." - Morrissey     |
++---------------------------+------------------------------------------------+
+
+<b>[<a href="?l=namedroppers&m=95837797326963&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326967&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

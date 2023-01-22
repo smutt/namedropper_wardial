@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Proposal for use of DNS to store RFC 987, etc mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327136&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327138&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327136&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327140&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900007&r=1&w=2">Re: Proposal for use of DNS to store RFC 987, etc mappings</a>
+From:       <a href="?a=95837817400033&r=1&w=2">vcerf () NRI ! Reston ! VA ! US</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-24 20:27:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327137&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327137&q=raw">body</a>]</b>
+
+At the risk of injecting myself into this discussion late and without
+adequate preparation, it seems to me that the proposal that Rob makes
+has some of the features of the host.txt and DNS situation in the
+Internet. In that case, there are some (many?) hosts which the hosts.txt
+users cannot reach because there is no MX capability in the tables. Perhaps
+there are hosts in the tables which are not in DNS servers (because of
+local hacking on the tables?).
+
+In any event, the situation is fairly painful because the two sources
+of data (host.txt and DNS) are not fully aligned.
+
+I gather than Steve Kille is concerned that this could happen in the
+RFC987/DNS proposal as well if tables and DNS services are required.
+Steve Kille, who is here at CNRI for a couple of days, wandered into
+my office just a little while ago and made the observation that not
+all 987 gateways can reach DNS (hence the need for tables).
+
+Since I am reading old mail (away for a week without adequate connectivity...),
+this could be an issue you've already dealt with, but I thought I would
+echo what I surmise to be Steve K's concern.
+
+Vint
+
+<b>[<a href="?l=namedroppers&m=95837797327136&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327138&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327136&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327140&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

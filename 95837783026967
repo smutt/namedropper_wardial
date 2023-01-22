@@ -1,0 +1,72 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mailing list domain - MX records only?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026966&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026968&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026962&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026968&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400015&r=1&w=2">Re: Mailing list domain - MX records only?</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-16 13:29:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026967&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026967&q=raw">body</a>]</b>
+
+By the way, several people are a little confused about the fine points
+of this scheme.
+
+If, in the current DNS system and usage, you had say,
+Namedroppers@mail.list and TCP@mail.list then submissions to either
+would be directed at one or more mail exchanges, say SRI-NIC.ARPA and
+NNSC.NSF.NET.  That is, the database would contain:
+
+mail.list.	MX	10	SRI-NIC.ARPA.
+		MX	10	NNSC.NSF.NET.
+
+(Again, these hosts and preferences are just examples, you could set up
+more alternatives, fewer alternatives, different preferences, etc.)
+
+Note that for this part of the action, whether mail is sent to TCP-IP or
+Namedroppers has not yet entered into it.
+
+Once the submission gets to a mail exchange for mail.list, the mailer
+there might use the TCP-IP or Namedroppers part of the address to route
+the mail to the host or mailbox which is really going to do the
+exploding.  Thus, in the above example, both SRI-NIC.ARPA and
+NNSC.NSF.NET might know to send Namedroppers mail to
+SOMEWHERE-ELSE.Fresno.CA.US or whatever, and that host would do the
+automatic exploding, put it in an editor's mailbox for digestifying, or
+whatever else needed to be done.
+
+Thus although the mail exchanges for mail.list would have to know
+the identity of the host, mailbox or whatever that was going to do the
+exploding or whatever, they do NOT have to know the list membership or
+track changes in it.
+
+Furthermore, you could unilaterally decide to put this hack together
+assuming that you could get the NIC to allocate mail.list (or whatever
+name you chose) and could set up mail exchanges that knew, for example,
+to map mail sent to Namedroppers@mail.list to Namedroppers@SRI-NIC.ARPA.
+(Don't forget X-request as well as X for all X).
+
+Two closing comments: Of course you could put together something more
+exciting by using mailbox addressing.  Of course you can combine this
+scheme and a little pilot errror and fly this thing into a mail loop
+mountainside.
+
+Paul
+
+<b>[<a href="?l=namedroppers&m=95837783026966&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026968&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026962&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026968&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

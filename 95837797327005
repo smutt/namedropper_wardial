@@ -1,0 +1,95 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MILNet strikes again' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327003&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327007&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400012&r=1&w=2">MILNet strikes again</a>
+From:       <a href="?a=95837817200002&r=1&w=2">cis.ohio-state.edu!karl_kleinpaste () tut ! cis ! ohio-state ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-21 14:38:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327005&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327005&q=raw">body</a>]</b>
+
+In response to mail which claimed these headers...
+
+      Received: from MRMS-SRF-SUBIC.NAVY.MIL by tut.cis.ohio-state.edu (5.61-kk/5.900430)
+	      id AA04533; Sat, 19 May 90 09:46:27 -0400
+      Message-Id: &lt;9005191346.AA04533@tut.cis.ohio-state.edu&gt;
+      Date: 19 May 90 17:56:00 GMT-16:00
+      From: "LT Richard Johnson" &lt;code213@srf-subic.navy.mil&gt;
+      Subject: cis
+      To: "karl" &lt;karl@cis.ohio-state.edu&gt;
+
+...my reply bounced with...
+
+         ----- Transcript of session follows -----
+      550 "LT Richard Johnson" &lt;code213@srf-subic.navy.mil&gt;... Host unknown
+
+...and so I poked at nameservers, only to learn...
+
+      <A NAME="-68"></A><A HREF="#68">[68]</A> [9:35am] giza:/n/giza/0/karl&gt; host -a mil.
+      The following answer is not authoritative:
+      mil     84801 IN        SOA     NS.NIC.DDN.MIL HOSTMASTER.NIC.DDN.MIL(
+                              900517  ;serial (version)
+                              1800    ;refresh period
+                              300     ;retry refresh this often
+                              604800  ;expiration period
+                              86400   ;minimum TTL
+                              )
+      For authoritative answers, see:
+      .       348551 IN       NS      NS.NIC.DDN.MIL
+      .       348551 IN       NS      AOS.BRL.MIL
+      .       348551 IN       NS      A.ISI.EDU
+      .       348551 IN       NS      GUNTER-ADAM.AF.MIL
+      .       348551 IN       NS      C.NYSER.NET
+      .       348551 IN       NS      TERP.UMD.EDU
+      .       348551 IN       NS      NS.NASA.GOV
+      Additional information:
+      NS.NIC.DDN.MIL  454283 IN       A       192.67.67.53
+      AOS.BRL.MIL     454283 IN       A       128.20.1.2
+      AOS.BRL.MIL     454283 IN       A       192.5.25.82
+      A.ISI.EDU       454283 IN       A       26.3.0.103
+      A.ISI.EDU       454283 IN       A       128.9.0.107
+      GUNTER-ADAM.AF.MIL      454283 IN       A       26.1.0.13
+      C.NYSER.NET     454283 IN       A       192.33.4.12
+      TERP.UMD.EDU    466029 IN       A       128.8.10.90
+      NS.NASA.GOV     465470 IN       A       128.102.16.10
+      NS.NASA.GOV     465470 IN       A       192.52.195.10
+      <A NAME="-69"></A><A HREF="#69">[69]</A> [9:35am] giza:/n/giza/0/karl&gt; host -a navy.mil.
+      <A NAME="-70"></A><A HREF="#70">[70]</A> [9:35am] giza:/n/giza/0/karl&gt; host -a srf-subic.navy.mil.
+      Host not found, try again.
+
+No support for "navy.mil," and the host in question simply can't be
+resolved.  Various other nameservers tell me either the same thing or
+a clear "not found."  Just bloody wonderful.  aos.brl.mil says "not
+found."
+
+I'm really sick of MILNet domain trash.  And I'm even more sick of
+weak excuses for MILNet domain trash.  (Let me guess, pick one or
+more: "Old hardware"/"Inexperienced admin"/"No funding."  Did I get it
+right?)  I think I'll ignore mail from .mil sites hereafter.  It's
+safer and it'll cause me fewer headaches.  Late last week I had to
+deal with one of my users trying to reach someone@etd2.el.wpafb.af.mil
+-- that problem was MX RRs but no A RRs.
+
+If they can't co-exist peaceably with the rest of the Internet, I wish
+they'd just quit trying to interact with it.
+
+--karl
+
+<b>[<a href="?l=namedroppers&m=95837797327003&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797327007&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

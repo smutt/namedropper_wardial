@@ -1,0 +1,153 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Network Names and the DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027014&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783027030&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700001&r=1&w=2">Network Names and the DNS</a>
+From:       <a href="?a=95837785600017&r=1&w=2">postel () venera ! isi ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-09 11:16:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027013&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027013&q=raw">body</a>]</b>
+
+
+Hello:
+
+In the messages attached below are some thoughts making Network Names and
+Network Numbers available through the Domain Name System.  I think it is a
+good idea, and i think it can be done in a general way to make the DNS provide
+information on a number of network parameters, such as "Services and Port
+numbers", or "Protocols and EtherTypes".
+
+==============================================================================
+Date: Tue, 1 Nov 88 16:29:06 PST
+From: Mark Lottor &lt;MKL@SRI-NIC.ARPA&gt;
+Subject: network numbers/names
+To: stahl@SRI-NIC.ARPA, klh@SRI-NIC.ARPA, mimi@SRI-NIC.ARPA
+Cc: pvm@venera.isi.edu
+
+I talked to people at the IETF and others about providing just
+network number to network name translations.  We really should do
+this.  I heard that some people retreive the entire host table
+just so they can split out the network section.  So, here's the
+proposal of work to be done:
+  - Generate a file NETWORKS.TXT
+    (just the networks section of HOSTS.TXT)
+    This has apparently already been done (called stable??)
+  - Modify the HOSTNAME server to have a command NETWORKS or something
+    to retreive the list by.  This should be trivial.
+  - Generate new ZONE files for the domain system.
+    This is the hard part (work for MIMI?).
+
+In order that we don't have to write new domain server code and to make
+things as simple as possible, the proposal for adding stuff to the domain
+name system is like this, using NICNET (192.33.33) as an example.
+
+Add to IN-ADDR.ZONE:
+  0.33.33.192.IN-ADDR.ARPA.    PTR   NICNET.NETNAME.ARPA.
+
+Add to NETNAME.ZONE:
+  NICNET.NETNAME.ARPA.	       A     192.33.33.0
+
+And likewise for all networks.  Using this scheme network names can
+be looked up using the existing hostname lookup functions.  It also
+keeps all the netnames undelegated and with the NIC, where they are
+in the first place.
+
+Any comments?
+------------------------------------------------------------------------------
+
+To: gross@gateway.mitre.org (Phill Gross)
+Cc: braden@venera.isi.edu, craig@nnsc.nsf.net, fair@apple.com,
+        namedroppers@sri-nic.arpa, pvm@venera.isi.edu
+Subject: Re: are network names available from the DNS? 
+Date: Thu, 03 Nov 88 13:36:53 PST
+From: Paul Mockapetris &lt;pvm@venera.isi.edu&gt;
+
+This issue has been discussed in Namedroppers and the IETF Domain
+working group, and usually gets to, but not past, the following
+questions:
+
+Will this facility be used, or be another WKS or gateway list?
+
+The DNS used network names in the IN-ADDR.ARPA tree to list advertised
+gateways on networks, and used WKS to list services.  These were put in
+because comparable information was available from HOSTS.TXT.  However,
+because there wasn't a universal need for the information, there wasn't
+a universal urge to enter and maintain the data in the database.  MX
+worked because there was a clear need.  Various status programs seem to
+be the intended consumers of the network name facility, and it is not
+clear to some that they constitute sufficient pressure.  Of course, it
+might be worth while to have a facility "on the shelf" agaianst the time
+that HOSTS.TXT goes away.
+
+Are network names supposed to be unique?  What's a legal network name?
+
+In the DNS, the easiest way to generate unique names is to use domain
+names, just as we generate host names.  However this also means that
+network names start having dots in them, etc., and some object to this.
+This also provides an easy route for erosion of rules, witness host
+names starting with a numeric (e.g. 3com.com, 3m.com), lower case (e.g.
+Berkeley vs BERKELEY), or longer than whatever the HOSTS.TXT limit is,
+which are superficial to humans but does break software out there.
+
+Who assigns network names?
+
+Right now the NIC controls all network names, just as they control the
+address space.  Some would like this to continue, others would like to
+be able to name (and rename) their own networks, and feel that distributed
+management is the answer.
+
+Do we need network number=&gt;name mapping, network name=&gt;number mapping,
+or both?
+
+This is an issue if we have distributed name assignment, particularly if
+network names are not domain names like host names.  Obviously the
+network name to address mapping is the more difficult case.  We can do
+it, but there is a cost in the form of additional tree space to define
+and manage, and additional search time/complexity in queries.  This cost
+varies a great deal with the rules for names.
+
+- --------
+
+In my opinion:
+
+	The problem falls apart if the NIC continues to manage network names.
+
+	If a distributed system is desired, the key issues are whether or not
+	there is a real need to map network names onto numbers, and if so,
+	what the characteristics of network names should be.  Its easy to say
+	"yes" and "just as they are now" but this will cost a lot more than
+	a more restrictive system.
+
+paul
+==============================================================================
+
+Mark Lottor makes three proposals (1) to make a NETWORK.TXT file, (2) to
+make a NETWORKS command in the HOSTNAME server, and (3) to add network
+names to the DNS in a specific way.
+
+I think that points 1 and 2 are clear cut good things and should be done
+without further discussion.
+
+I think that point 3 (adding network names to the DNS) should be generalized
+and a brief memo proposing the general mechanism be circulated for comments.
+
+--jon.
+
+<b>[<a href="?l=namedroppers&m=95837783027012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027014&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783027030&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND version 4.8 released: come and get it!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026814&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026816&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    BIND version 4.8 released: come and get it!
+From:       <a href="?a=95837785000005&r=1&w=2">karels%okeeffe.Berkeley.EDU () ucbvax ! Berkeley ! EDU (Mike Karels)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-06 17:00:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026815&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026815&q=raw">body</a>]</b>
+
+The long-awaited BIND (Berkeley Internet Name-Domain software) version 4.8
+is now available.  It can be obtained by anonymous FTP from host
+ucbarpa.Berkley.EDU from file pub/4.3/bind.4.8.tar or pub/4.3/bind.4.8.tar.Z
+(compressed).  That file contains notes on the changes in this version
+and the installation procedure.  It also contains an updated version
+of the BIND Operations Guide.  This version replaces the last official
+release of BIND (4.5) and the last test release (4.7.3).  All sites running
+any earlier version of BIND are encouraged to upgrade.  This version
+fixes numerous bugs in previous versions, some of which cause repeated
+transmissions of recursive queries.  One such bug was recently fixed
+that is exercised by recent changes in the root servers for caching
+of negative responses.  Additional details on this subject are in
+an excerpt from the change list at the end of this message.
+
+Along with the updated server, this release includes new resolver features
+allowing per-user host aliases and multiple levels of searching for an
+incomplete name.  The hostname resolution procedure is described in a new
+manual page, hostname(7).  The sendmail mailer has been updated to use
+these facilities; sources for that version of sendmail will also be
+available on ucbarpa in a day or two.
+
+Announcements of new versions of BIND, bug fixes and discussion of current
+issues for sites using the Berkeley nameserver are found on the mailing
+list bind@ucbarpa.Berkeley.EDU.  Requests to be added to that list should
+be sent to bind-request@ucbarpa.Berkeley.EDU.  As that list has grown quite
+large, I would encourage sites with multiple subscribers to use local
+redistribution lists.
+
+		Mike
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+&gt;From the file CHANGES:
+
+There have been numerous changes to named, fixing most of the known
+bugs that can be fixed without major structural changes in the server.
+Several server configurations that failed before should now work.
+Certain robustness problems have been fixed, in particular bounds-
+checking when processing incoming packets.  Two changes have been made
+in preparation for negative caching: SOA records are sent in the authority
+section in negative responses with NXDOMAIN set, and a bug was fixed that
+caused confusion and repeated requests if a response had no error, no answer
+and an SOA in the authority section.  As such responses are already sent
+by other servers, and will be sent by the next release of BIND, it is
+important that all sites upgrade to this version as quickly as possible.
+
+The root "hint" cache and cache file remain the largest problem area,
+along with named's naivete in accepting bogus server's data.
+These will be addressed in the next release, along with asynchronous
+zone transfers, intelligent reloading of zone files, faster startup,
+and caching of negative responses.
+
+<b>[<a href="?l=namedroppers&m=95837783026814&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026816&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: are network names available from the DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027004&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027002&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027007&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400030&r=1&w=2">re: are network names available from the DNS?</a>
+From:       <a href="?a=95837784800007&r=1&w=2">gross () gateway ! mitre ! org (Phill Gross)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-01 9:06:38</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027006&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027006&q=raw">body</a>]</b>
+
+&gt; &gt; Is there some way to form a query to the DNS such that, given a network
+&gt; &gt; number (not a host address), I can get back the name of the network?
+&gt; &gt; (e.g. I have 128.32 and I want back "ucb-ether")....
+
+	
+&gt; I thought there was an IETF Working Group (domains?) chartered to take
+&gt; care of this?  I recall discussion of it at Annapolis, I believe.
+
+Bob,
+
+The IETF Domain group is inactive at this time, in part due to the feeling
+that their previously stated mission was complete.  However, I believe 
+raising up a new group to attack other issues is entirely appropriate.  
+
+So let me put a question to the namedroppers mailing list -- would there 
+be interest in joining a working group under the IETF to address this (and 
+other) DNS issues?  
+
+Those wishing to suggest a chair for such a group may do so in separate 
+mail to me.  Thanks.
+
+Phill Gross
+
+<b>[<a href="?l=namedroppers&m=95837783027004&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027002&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027007&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

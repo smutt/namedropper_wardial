@@ -1,0 +1,37 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: POP server for Sys V' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627089&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627086&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627089&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627090&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400020&r=1&w=2">Re: POP server for Sys V</a>
+From:       <a href="?a=90366297700024&r=1&w=2">James M Galvin &lt;galvin () TIS ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-05 16:26:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627085&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627085&q=raw">body</a>]</b>
+
+&gt; has anyone implemented a POP server for Sys V.3 machines,
+
+I did, but you will have to buy it.  I no longer work for The Wollongong
+Group, so this is not a commercial, but when I was there I wrote the one
+they are selling; it is really just the right modifications to the BSD
+based one included with MH, and it uses TWG TCP/IP.
+
+Jim
+
+<b>[<a href="?l=namedroppers&m=95837784627089&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627086&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627089&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627090&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

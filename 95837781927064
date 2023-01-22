@@ -1,0 +1,296 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: RD/RA/AA/chaching (shoudn't this be caching?)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927063&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927065&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927061&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927073&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700001&r=1&w=2">Re: RD/RA/AA/chaching (shoudn't this be caching?)</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-30 12:10:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927064&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927064&q=raw">body</a>]</b>
+
+    Date: Wed, 25 Nov 87 17:03:42 PST
+    From: Paul Mockapetris &lt;pvm@venera.isi.edu&gt;
+
+		Lets separate the problem into three cases:
+	
+		1) Recursive responses (requested and available)
+
+		2) Authoritative responses
+
+		3) Non-recursive, non-authoritative
+
+		Cases 1 and 2 are no problem.  The answers are complete.
+
+	    I disagree that case 1 is complete.  The problem is that there are
+	    really two subcases: Available/findable and not-available/not-findable.
+	    If the data is available or findable, then I agree the answer is
+	    complete.  But if the data is not available and cannot be found, the
+	    answer is not complete.  There is no way for a server to tell the
+	    requestor which of these two cases actually happened.	
+
+    It doesn't need to.
+
+I wasn't clear.  Suppose /some/ data is available, but it has timed out
+and isn't verifiable/findable.
+
+    If it doesn't have and can't get the information,
+    it has a failure on its hands.  Set server failure, pass back what you
+    have.
+
+&gt;From my reading of the (new) RFCs, that is not what server failure is
+for, and this is not how server failure works.  Specifically: RFC 1034
+page 34 says that if a server failure happens, the requestor should
+remove the server from the list of servers (or at least consider it
+temporarily unavailable).  That's wrong, because the server is fine, it
+is the link to other servers that is the problem.  Removing the server
+from a list just makes subsequent requests harder.  RFC 1035 page 27
+says RCODE = Server Failure means there is a problem with the server.
+Again, in my scenario it is not a problem with the server per se but
+with the communication to other servers.  Finally, I could find no
+mention in either of the RFCs (using string search for "fail") that
+gives any hint whether returned data with RCODE=server failure should
+even be looked at.  From the above two references to the RFCs, I'm
+inclined to believe that server failure is considered to be a "There's
+no data here" indication.
+
+	  Let's look at case 3.  It occurs when a resolver (the client) asks a
+	  name server (the intermediate) for information which the intermediate is
+	  not authoritative for.  (I don't think the problem changes substantially
+	  if we postulate multiple intermediate levels, other than putting the
+	  good behaviour of intermediaries in series.)  Some or all of the
+	  information needed to answer the request may be in the intermediate's
+	  cache.
+
+	  In my prior response, I suggested the possibility that the intermediate
+	  pass back negative information.  If we do this, then if the client gets
+	  positive or negative information for all types covered by the QTYPE, the
+	  response is complete.  This has subtly different semantics than a single
+	  "complete" bit.  Suppose QTYPE=*.  Then a response might say "the MX RRs
+	   are thus and so, and there are no A RRs, I don't know about other
+	  types."  This uses more space in the packet than one bit, but allows
+	  a server to tell all it knows.
+
+      No it doesn't.  How does a server say "There is one A record"?  As far
+      as I can tell, the only things it can say are "There are no A records"
+      and "Here are some A records" but there is no way to say "These are all
+      the A records."
+
+    If everybody plays by the same caching rule book, there will be as many
+    RRs as appear in the message.  Of course, the system allows for transient
+    inconsistency when databases change and GIGO.
+
+I don't understand this.  Here's a real life possibility that I am yet
+to see a satisfactory answer for.
+ 1  My work station recursively asks my site resolver for some info on
+    AI.AI.MIT.EDU.
+ 2  My site resolver eventually asks BITSY.MIT.EDU and BITSY says "Go
+    ask PREP, HERMES, etc" and here are some A records for those
+    machines.  Specifically, it gives on A record for HERMES.
+ 3  My site resolver goes and asks PREP about AI.AI.MIT.EDU, gets an
+    answer, and relays it to my workstation.
+ 4  The link between my site resolver and the outside world goes down.
+ 5  My workstation recursively asks my site resolver for the A records
+    of HERMES. 
+ 6  My site resolver, because of the link break in step 4, can't get the
+    info.  Yet it has /something/ in the cache due to a previous
+    on-the-side piece of data.  Glue I guess is the current term.
+What I WANT is to be able to send the data that I have to the
+workstation and tell it the data is incomplete, because it is.  There
+are three A records for HERMES, not just the one I /happen/ to have.
+Server failure is wrong, since my site resolver is quite happy.  Sending
+back no data is not useful.  Passing back the one A record is useful,
+but there is no way to tell the rest of the story.
+
+	  I don't see why we would want to have separate ways to request complete
+	  and recursive service, given that a recursive response is complete.
+
+      But it isn't!  Recursive service ATTEMPTS to be complete, but the
+      attempt may fail and therefore may be incomplete.
+
+    Maybe we need another error code which says, failed due to incomplete
+    data.  I'm not really sure that the application needs to know anything
+    more than "can't now, ask me later".
+
+I'm not sure I would consider this a "failure."  It's only a "failure"
+if the requestor requrested complete information.  If the requestor
+didn't ask for complete information and therefore can tolerate
+incomplete information, there is no failure.  But even then there is no
+way for the server to say if the information is complete or not!
+
+The applications that I'm concerned with (Symbolics LispMs) would like
+to have all information available.  "Can't now, ask me later" isn't very
+friendly, and I think is actually misleading.  It isn't the right
+response for "Here's what I have, I'm not sure it's everything, ask
+later and I may be able to figure out the rest."
+
+      How do I make the substrate guarentee completeness.  Please don't answer
+      that recursive implies complete, because I don't believe it as stated.
+      You might have good reasons to believe that, and I'd like to hear them,
+      and I'd like to hear your counterarguments to my arguments that the
+      implication is false.
+
+    Fine.  Recursive guarantees complete or temporary failure.  
+
+Well, that's a good answer, and I don't like it.  I don't like it
+because there's no mechanism to report "temporary failure" short of
+Server Failure, and from my reading of Server Failure as described
+above, that is much too drastic.
+
+    You seem
+    to think that the average applications will want to somehow play with
+    incomplete information.  I don't see that.
+
+Sigh.  Symbolics LispMs will and do want to play with incomplete
+information.  Really.  One of the most frustrating things is to know
+that some information exists but is under lock and key because some
+policy somebody made disallows it to be given out because it is
+incomplete.  The LispMs have mechanisms to say "Make sure you are
+valid/complete" and those mechanisms will try to get the information
+again.  It may fail again, and that failure will again be reported to
+the application.  The point is, it is up to the application to decide
+how paranoid it should be about completeness.  If the system (substrate
+or underlying Domain Name System) gets in the way, the application can't
+make a best-effort try.  LispMs have been doing this with its own naming
+system for 4 years now. You may personally not like this approach, but I
+don't think that gives designers the right to disallow it.  What's the
+famous quote?  "I may disagree with you, but I'll defend to the death
+your right to say it."
+
+	  This problem may not be as bad as you make it out to be.  The cases we
+	  are worrying about are those where we query an intermediary and the
+	  intermediary happens to have all of the data to form a complete
+	  response.  Why is the client asking the intermediary in the first place?
+	  It would seem to me that the client should have been asking an
+	  authoritative server or its recursive server in the cache concentrator
+	  model.  If the intermediary has to go elsewhere to get complete
+	  information, why not just let the client do the job?  That way the
+	  client builds up the NS and A info it needs to go to the right servers
+	  the next time.
+
+      What??  The client is a workstation.  The intermediate is a site-side
+      resolve/server that is trying to provide a cache for 200 such
+      workstations.  If you like, I can increase the domain Internet traffic
+      Symbolics alone generates by a factor of 200 without much trouble.  You
+      don't really want that, do you?
+
+    The point I was making was that if we eliminate from consideration the
+    hosts which appropriately use recursive service, and then eliminate
+    cases where the query goes to and authoritative server, and then
+    eliminate queries for a single type, and then eliminate cases where the
+    intermediate doesn't have the answer anyway, now we have defined the
+    set of cases where completeness and negative schemes, beyond those
+    in 1034-1035, are necessary/will help.
+
+I couldn't follow this.  The problem I have quoted (in my six-step
+scenario above) involves a host (a workstation) that appropriately requests
+recursive service of an site resolver that appropriately provides
+recursive service.  And that scenario raises a situation where
+completeness and negative caching are not sufficient to convey the real
+situation.
+
+	  Putting all of the information about a name in a single structure and
+	  never dividing it probably does simplify the model, although I find it
+	  hard to believe that you can carry this out completely.  To use domain
+	  parlance, maybe we should get rid of types, but I'm not so sure that
+	  multiple classes can/should be unified.  I HAVE REAL BAD FEELINGS ABOUT
+	  WHAT HAPPENS WHEN THE TYPICAL RESPONSE GETS FRAGMENTED.  Of course, this
+	  is an artifact of the current internet.  Note that we could essentially
+	  do this next week if everybody wanted to, just define the "last" type.
+
+      Classes in the Internet/Chaos/Dialnet/CSNET model should be unified.
+      New types of classes, in the host/user/maildrop/printer model, should be
+      created.  I don't understand what it is you are saying that will get
+      fragmented and why that's an issue at all.
+
+    I'm all for people unifying things, but its not a quick or easy process.
+    Fragmentation occurs in the internet when packets grow in size beyond
+    network-specific limits. When a packet gets fragmented, the pieces
+    traverse the internet/network separately.  The fragmentation/reassembly
+    process causes a significant performance and reliability hit. If you
+    make all of the data for a single name an unbreakable unit, packets are
+    bigger than if you can send individul RRs.  Bigger packets=&gt;more
+    fragmantation=&gt;more hits.  There's UDP considerations as well, but the basic
+    idea is that 600 byte and 100 byte datagrams are nowhere near comparable
+    in cost.
+
+I don't believe in datagrams for shipping anything other than trivial
+amounts of data.  That can open a whole other debate, I admit.  I would
+much prefer to always use TCP, let TCP choose the segment size for
+proper transmission between hosts, and have the substrate use a BYTE
+STREAM that is not allowed to know about segment/packet boundaries to
+parse data.  Byte streams just "do the right thing" and don't have any
+substrate-level fragmentation problems.
+
+	  Some intermediate aggregation a la MX for MD&amp;MF may be the most
+	  practical course.
+
+	  Completeness is tricky to implement in an intermediate in any case.  The
+	  presence of a data doesn't guarantee its completeness since the data may
+	  have come from glue RRs, different definitions at the parent/child
+	  boundary, or BIND hot caches.  Negative caching also tricky.  One virtue
+	  of just putting negative caching in resolvers and recursive servers is
+	  that we don't have to put up with other server's broken
+	  completeness/negative data.  I'm not believing that these changes will
+	  be quick or easy until bogons go away.
+
+      This is an implementation detail.  I hope you're not trying to stymie
+      functionality based on this argument.  I know a very good way to handle
+      completeness and negative caching for the system I'm working on.
+      Unix/bind may not implement completeness.  That would be too bad, but
+      why should that prevent me from being able to "do it right"?
+
+    I claim the negative caching scheme I proposed allows you to improve
+    a server without relying on upgrades by the rest of the world.  
+Agreed.  It's an improvement.
+    Your scheme requires the cooperation of others.  
+Agreed.
+    Given that you don't
+    want to be constrained by others, I don't understand why you aren't
+    agreeing with me.
+What I'm disagreeing with is that what you have done is enough to convey
+real-life information.  I believe that it is possible to implement
+complete-requested/complete-provided in a step-by-step basis.  Servers
+that don't support it will ignore complete-requested and won't return
+complete-provided and my site resolver (and possibly workstation) will
+have to deal with that appropriately.
+
+	  I'd suggest that those of you who don't believe in discarding old data
+	  due to TTL at least modify your stand to discard old negative data and
+	  start up a "background" request whenever you use old positive data.  I'd
+	  like to see requests for C.ISI.EDU and B.ISI.EDU and probably ISIF.ARPA
+	  dry up some day.
+
+      I don't know who else believes or plans to implement non-discarding.  On
+      the other hand, I did not see any Symbolics machines in your bogon list.
+      On the third hand, I never intended to send out stale data, negative or
+      positive, unless I was unable to get fresher information.  Of course,
+      this data is non-authoritative/non-complete, so the requestor can apply
+      its own paranioa criteria and may decide not to believe it.
+
+    Several prominent versions of BIND have the non-discarding "feature".  (If
+    pressed, I can find a site a hundred).  I applaud your bogon-free behaviour.
+
+My point here is that it is the requestor that should be allowed to
+apply the paranioa criteria.  But in order to do so, the server has to
+tell the truth, the whole truth and nothing but the truth.  Today, it
+tells the truth and (usually) nothing but the truth, but there is no way
+to determine if it is telling the whole truth.
+
+<b>[<a href="?l=namedroppers&m=95837781927063&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927065&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927061&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927073&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

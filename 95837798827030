@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS glue records and BIND 4.8' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827029&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827040&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300019&r=1&w=2">Re: DNS glue records and BIND 4.8</a>
+From:       <a href="?a=90366298700004&r=1&w=2">asp () uunet ! uu ! net (Andrew Partan)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-26 18:25:09</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827030&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827030&q=raw">body</a>]</b>
+
+;&gt;     The real problem is that named accepts non-authoratative updates for
+;&gt;     information that it is the authoratative server for (and thus the
+;&gt;     'infection' gets spread).  Named needs to be fixed to not do this.
+; Am I hallucinating, or do newer versions already do this?  I seem to
+; remember a message appearing on consoles 'round here that looked like:
+; 	    datagram from 15.0.200.33 port 53, fd 5, len 347 
+; 	    15.0.200.33 attempted update to auth zone 1 'sc.hp.com' 
+; 	    update failed (-10)
+; when glue conflicted with a server's authoritative data.
+;
+; cricket
+; hostmaster@hp.com
+
+If anyone has code to do this (or knows how to make bind.4.8.3 do this),
+please let me know - we sure could use it....
+
+Thanks,
+	--asp@uunet.uu.net (Andrew Partan)
+
+<b>[<a href="?l=namedroppers&m=95837798827029&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827040&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826866&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826870&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826866&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826870&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">Re: CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=95837817600002&r=1&w=2">sdd.hp.com!uakari.primate.wisc.edu!zaphod.mps.ohio-state.edu!rpi!uupsi!sunic!nuu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-29 20:44:55</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826867&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826867&q=raw">body</a>]</b>
+
+The saga continues...
+
+In article &lt;1990Jul29.235750.20841@kth.se&gt;, Per Andersson suggests:
+&gt;&gt; Let them be known as foo@bar.baz.janet or something.
+
+In article &lt;1990Jul29.103214.14864@robobar.co.uk&gt;, Ronald S H Khoo replies:
+&gt; I hope I'm right in reading sarcasm into this statement.  I thought we got
+&gt; away from network based addresses LONG time ago.
+
+Well, not yet.  Remember BITNET.  UUCP is still out there.  It could
+be a good solution to introduce JANET as a fake-domain until you guys
+clean up your act and get it right.
+
+&gt; Besides, you're mixing up two separate issues there:
+
+Excuse me, but I think you're the one who's mixing up things around
+here.  Your particular problem is that you have nonfunctional gateway
+software, and you pretend to make this a problem at the other side of
+the gateway.  Since I'm at the other side, and care about doing things
+right at this side, I get pissed each time some UK idea comes up to
+"adapt" the world to their silly ways.
+
+&gt; The technical issue:  the coloured book transport mechanisms officially
+&gt; used on JANET uses reversed names.  That's TRANSPORT.  UUCP transport is
+&gt; far worse, and yet it is possible to Get Things Nearly Right with UUCP.
+
+Wrong. Domain names are properly referred to as _session_ mechanisms,
+if you want to use that contrived ISO model.  I don't know the details
+about your colored books, and I don't want to, but I suspect that at
+the transport layer, you talk about some X.121 address or at least
+something to stuff into the address block of the call request packet
+of your very advanced X.25 network.  Likewise, we don't use domain
+names at the TCP-level, we translate the domain name into a 32-bit
+IP-address before TCP gets involved.  Domain names inhabit the app-
+lication layers in the Internet protocol suite.  There is nothing
+wrong about using domain names at the application layer that translate
+to UUCP node names somewhere at the transport layer, further enhanced
+by fancy telephone numbers.  People do that all the time.  There is
+even a draft out which considers ISDN addresses for Internet transport
+services (TP/IX).
+
+The problem with this insipid reversed name style is that it is up to
+the applications to do it right, and it wouldn't have been a problem
+if you UK types could get sufficiently intelligent designers from
+abroad to write your software.  Of course, since you're backwards, and
+your users won't exactly understand that all by themselves, they will
+use Internet domain names for addressing purposes.  So, you can choose
+between a major operation to educate the users to understand that UK
+is one way, the rest of the world is the other way, or a major oper-
+ation to get this silly JANET convention killed and safely buried.
+Nobody will mourn its passing.
+
+&gt; The current situation is in fact only minimally sub-optimal.  NRS
+&gt; addresses ARE valid Internet addresses -- The Internet domains under
+&gt; .UK belong to the NRS, that is all.  And yes, Piercarlo, they _are_
+&gt; Internet domains.
+
+Ah, I'm sorry to reveal a maximally sub-optimal and important
+distinction between NRS names and Internet domain names (not
+_addresses_, damn it!).  You've probably heard it before, so it
+shouldn't be new to you: NRS names are _reversed_ relative to the
+order used by the DNS.  Novel, eh?
+
+&gt; OK, so 99.9 % of the domains under .UK are just MX'd behind either the
+&gt; nsf.ac.uk or mcsun.eu.net (like me) but that's neither here nor there.
+&gt; Lots of North American domains are similarly MX'd behind uunet.uu.net,
+&gt; et.  al.  What's the difference ?
+
+The difference is:  &lt;suspenseful pause&gt;  They're REVERSED!
+
+God, this is getting to be really funny.
+
+&gt; Simple.  The NRS scheme requires that ALL addressable hosts are
+&gt; registered in the database.  The correct solution is to try the reversed
+&gt; addressed address for an EXACT match in the NRS database, and if it
+&gt; isn't there, then it isn't a valid NRS address, SO USE IT THE RIGHT WAY
+&gt; ROUND.  Some JANET-type oughta write up an RFC for this sorta thing :-)
+
+I hope no JANET-type will ever attempt such a horrible thing.  This is
+a JANET-local problem, and should properly concern not a single person
+off your particular island.
+
+There is no guarantee that FOOBAR.CS (Internet) and FOOBAR.CS (JANET)
+will not exist at the same time.  The correct way to do it is not to
+ask the Internet first, either, but to drop the JANET convention, or
+to successfully hide it from the rest of the world.  The latter is a
+truly major undertaking (as witness the current discussion), while the
+former is routine in comparison.
+
+&gt; The heuristics are similar to those you need for matching incomplete
+&gt; local addresses.  After all, a hypothetical jerry@complex.math.foo.edu
+&gt; who wanted to mail freddy@gizmo.cs.foo.edu might quite reasonably say
+&gt; that "mail freddy@gizmo.cs" should work as he expects, and only if
+&gt; gizmo.cs.foo.edu doesn't exist does he expect the mailer to look in
+&gt; Czechoslovakia.
+
+The Internet decided to deprecate this practice about two years ago.
+It is no longer relevant, precisely because of the problems that arise
+from its usage.  The Host Requirements RFC mandates use of Fully Qual-
+ified Domain Names in all instances.  This does not require heuristics
+or randomly-lose options, only simple algorithms.
+
+&gt; Whether it does or not should be a LOCAL policy issue and not impinge on
+&gt; the Internet at large.  I would personally prefer not to have lost the
+&gt; ability to mail the REAL gizmo.CS and REQUIRE FQDNs even internally
+&gt; ("so set up a mail alias" would be what I'd say) but that's a *LOCAL*
+&gt; policy issue.
+
+Wrong.  It ceases to be a local policy issue the day some unsuspecting
+individual discloses his address to another user.  This is also why
+that silly JANET convention has become a global problem: Some unsus-
+pecting users will give out their JANET-version address to some other
+unsuspecting users, and interoperability suffers, at the cost of
+frustrated users and postmasters wasting their time at both ends.  The
+rules for when it would be appropriate to use a local, abbreviated
+domain name are very complex.  It's not a string comparison, to put it
+that way.
+
+&gt; The kludge of trying to accept addresses either way round globally
+&gt; is just a bad kludge.  But it did mean that no decisions needed to be
+&gt; made, I guess.  Now the kludge is starting to get strained, perhaps
+&gt; someone will have to do something.  I must admit I'm glad it's not me.
+
+Someone, that is, from United Kingdom.  The problem is that all too
+many of your countrymen are so fucking glad it's not them that it's
+never going to happen.
+
+
+And the really sad thing is that this stupidity is wasting time all
+over the place.  Users can't get mail to work properly, signatures,
+letter heads and business cards advertise inappropriate addresses,
+postmasters get bugged by their users, people think that electronic
+mail in general doesn't work, manual authors devote a whole chapter to
+perverted addressing forms, lots of network people waste their time
+trying to cope with the problem, and hundreds of articles are written
+to denounce the silly Brits, and some silly Brits making a successful
+attempt to prove that there is no hope to get them to understand and
+change their ways.
+
+The person responsible for this idiotic decision should be flogged.
+
+Sometimes I think we would do lots of people a favor by _sinking_ the
+entire island.  I mean, taking out a five mile thick horizontal slab
+of land below sea-level and move it somewhere it could earn a more
+useful keep than it does today.  This would give real substance to the
+Atlantis myth, excepting of course that Atlantis was supposed to be a
+nice place with streets of gold.  That will have to remain a myth.
+
+I have a map of Europe on my wall that has a nice blue color off the
+northwest coast of France.  Beautiful.
+--
+[Erik Naggum]		Gaustadalleen 21	+47-256-7822
+&lt;erik@naggum.uu.no&gt;	N-0371 OSLO; NORWAY	+47-260-4427 (fax)
+
+<b>[<a href="?l=namedroppers&m=95837798826866&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826870&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826866&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826870&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

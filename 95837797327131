@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Special way to query DNS?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327124&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327126&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327123&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327138&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900009&r=1&w=2">Re: Special way to query DNS?</a>
+From:       <a href="?a=95837817400029&r=1&w=2">barmar () think ! com  (Barry Margolin)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-19 21:45:52</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327131&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327131&q=raw">body</a>]</b>
+
+In article &lt;4940@uafhp.uark.edu&gt; netnews@uafhp.uark.edu (Netnews) writes:
+&gt;   Is there any way to query the Domain Name Server(s) to ask for ALL the 
+&gt;MX records pointing to a certain host?
+
+No.  You would have to query every domain server in the world in order to
+do this, since there's no inherent restriction on who can have MX records
+pointing to a host.  There's nothing stopping a domain in Australia from
+pointing an MX record to my workstation in Massachusetts.
+--
+Barry Margolin, Thinking Machines Corp.
+
+barmar@think.com
+{uunet,harvard}!think!barmar
+
+<b>[<a href="?l=namedroppers&m=95837797327124&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327126&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327123&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327138&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

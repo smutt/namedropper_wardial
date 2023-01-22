@@ -1,0 +1,36 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND is ready!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426380&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426382&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    BIND is ready!
+From:       <a href="?a=95837692300015&r=1&w=2">ralph%ucbarpa () Berkeley (Ralph Campbell)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198504">1985-04-01 15:21:47</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426381&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426381&q=raw">body</a>]</b>
+
+A relatively stable version of the name server being used and developed
+at Berkeley is available for experimentation and use. It can be copied
+from ucb-arp with anonymous ftp under the name 'pub/bind.tar'. Please
+mail comments to ralph@berkeley. Documentation, sources, test programs,
+and example data base files are included. Have fun!
+				Ralph Campbell
+				Computer Systems Reseach Group
+
+<b>[<a href="?l=namedroppers&m=95837667426380&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426382&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

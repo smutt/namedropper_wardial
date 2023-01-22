@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How to create /etc/hosts from zone' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827124&w=2">prev in list</a>] [<font color="#c0c0c0">next in list</font>] [<a href="?l=namedroppers&m=95837798827124&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500015&r=1&w=2">Re: How to create /etc/hosts from zone</a>
+From:       <a href="?a=95837818200011&r=1&w=2">olivea!mintaka!ogicse!hakanson () apple ! com  (Marion Hakanson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-16 19:24:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827125&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827125&q=raw">body</a>]</b>
+
+In article &lt;1990Nov16.150818.5844@ssd.kodak.com&gt; sloey@ssd.kodak.com (Jim Sloey (253-7956)) writes:
+&gt;. . .
+&gt;I tried this [converting /etc/hosts to dns]
+&gt; for a while about 3 years ago, but found there was no way to
+&gt;keep MX, WKS, and HINFO fields updated without forcing structured comments
+&gt;into the host file. 
+&gt;Instead I wrote a shell program (makehosts) to create hosts from domain data 
+&gt;using nslookup and zone transfers. It is called from an editor (vins) which 
+&gt;locks the file and updates the serial field like vipw, then creates a new host 
+&gt;table using HINFO for the comments.
+&gt;Unfortunately, I left out the CNAMES, so my program won't help you much.
+
+I agree with taking the approach that the DNS files should be the
+master database, and that one should produce /etc/hosts files from
+them (if necessary).  I have not studied the recently-posted perl
+conversion script, but I did spend a lot of effort some time ago to
+produce one of my own.
+
+Actually, it is a hybrid, using a C program to pre-process the master
+files into a canonical form easily digested by Perl.  There's a Perl
+subroutine called "dns_getrr()" which returns the next resource-record
+from the master file, and I have a few other scripts which use this
+subroutine.  There's a simple one to automatically generate PTR
+records from A records, and there's a very involved one which produces
+/etc/hosts files.  The latter is pretty fancy, including CNAME's, and
+best of all (in my opinion), it produces a hosts file which mimics the
+action of the BIND resolver in tacking on default domains to short
+aliases (in almost all cases).  In other words, your /etc/hosts file
+will behave exactly like a DNS resolver, in all three directions
+(name-to-number, number-to-name, and alias-to-FQDN).
+
+It's not perfect, and it's not for everybody, but it works pretty
+well here, and it doesn't exercise any DNS servers to do its job.
+I call it the dnsparse kit, version 2.0.  You can retrieve it via
+anonymous FTP to host cse.ogi.edu, file pub/dnsparse-2.0.tar.Z.
+
+-- 
+Marion Hakanson         Domain: hakanson@cse.ogi.edu
+                        UUCP  : {hp-pcd,tektronix}!ogicse!hakanson
+
+<b>[<a href="?l=namedroppers&m=95837798827124&w=2">prev in list</a>] [<font color="#c0c0c0">next in list</font>] [<a href="?l=namedroppers&m=95837798827124&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

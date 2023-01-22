@@ -1,0 +1,123 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Visibility of MX (was German lies)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327015&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327012&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400013&r=1&w=2">Re:  Visibility of MX (was German lies)</a>
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () Gipsi ! Gipsi ! Fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-23 15:49:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327014&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327014&q=raw">body</a>]</b>
+
+	Date: 22 May 90 12:41:36 GMT
+	From: huitema%jerry.inria.fr%mirsa%inria%mcsun@uunet.uu.net  (Christian Huitema)
+	Subject: Visibility of MX (was German lies)
+	
+	...
+	The solutions based on "distance" combine the MX "preference indicator"
+	with a local preference attached to the relay host, and attempt to sort
+	the relays on the sum of "MX preference" plus "local preference".
+
+I think it should be a product, not a sum, but that is a very minor point.
+Also, "local preference" could be a policy-based routing metric.  It is
+agreed that hosts should not participate in routing decisions, but on the
+other hand hosts should be able to know the cost associated with one route
+versus another (perhaps in a uniform, normalized, protocol-independent
+fashion, by asking a "route-server").
+
+	Bruce's suggestion is a variation on that scheme, with a local
+	preference function taking the value "0" (when the destination can be
+	reached) or "infinite" (when unreachable). It is in fact very hard to go
+	much further with the current scheme, as the preference indicators dont
+	qualify as "distances"; nothing prevent some domain to allocate the
+	preferences as "0:here, 1:nearby, 5:far-away", and some others to use
+	"0:here, 10:same-campus, 20:same-region, 50:same-country"...
+
+First, it isn't important that they have magnitude, but just that they
+be ordered.  But, if you really want to give them magnitude, you can
+normalize them using the smallest number as the origin (ie. subtract
+this) and the largest number as the unit distance (ie. then divide by
+[largest - smallest]).  Of course, this will yield a real number between
+0 and 1, so all you systems programmers out there will have to get used
+to using floating point numbers, or at least scale it by 1000 (but I
+digress...).
+
+	*QUESTION: would it be possible to transform the MX so that they
+	indicate a real "distance"? This would in particular make the "grouping"
+	of transatlantic mail much more efficient.
+
+It all depends on what this distance is measured in, from where, and
+whether it is linear, cartesian, etc.
+
+	The solution implemented in Germany is based on "visibility". The idea
+	is that some informations are visible only within some domains. For
+	example, the FR domain contains some commercial subnets which are
+	connected to the French infrastructure, but are not allowed to use the
+	NSFNET; listing their sites in the MX records would be very helpful in
+	France, but would be very unfriendly to our US partners, which will get
+
+Why is it unfriendly?  It just means that the mail sits in their queue
+an extra 2 minutes while destination unreachables get returned from the
+primary MXer (or in our case, the initial SYNs fall into a black-hole).
+
+	the info (MX, A, etc), but will see their connection attempts fail
+	because "this net is unreachable". The dumb systems will sit there and
+	fail; the smarter will apply the strategy defined by Bruce; all will
+
+I have no sympathy for sites that do not try every MX host (or indeed,
+don't have MX capability).  Why make it easier for them to get by with
+non-compliance?
+
+	somewhat suffer. [ ... ]
+
+	The class field was originally inserted for taking care of different
+	networks, e.g. IP and CHAOS. One could probably use it for defining
+	visibility rules, e.g. "get an MX record in the German class for domain
+	xxx.de" vs "get an MX record in the INTERNET class for domain xxx.de"
+	(or in the European class for the fringes). Bringing different answer,
+	e.g. the target host in one case, the German gateway in another, would
+	be perfectly reasonable. 
+
+To quote another German [Goebels], "When someone starts talking about
+changing deployed protocols, I reach for my gun."  I don't think this
+is a good idea.  As for your above scenario with MX records, consider
+the following:
+
+I, the message sender, might be at a site with fairly good connectivity.
+It is possible that when I do an MX query, and have several answers
+returned to me, I might have multiple paths available to me.  Which path
+I take can be quite involved:  If I am a visiting researcher (say on my
+post-doc year) at IBM T.J. Watson and jointly on a NSF grant, I might
+want my mail to exit the IBM internet immediately, traverse the NSFnet,
+cross the Atlantic, and go to the German relay; if it is unreachable,
+to go via NSFnet-based relay (which may have its own connections).
+
+On the other hand, if I am an IBM employee (possibly also at Yorktown),
+then it might be better to have the mail traverse the IBM internal
+internet, and exit in Zurich for the most preferred MX host.  The
+reasons for this might be: privacy, delay, or desire to use your own
+resources rather than someone else's [!!].
+	
+So, distance is a measure (by whatever metric) between two points.  But
+with rich connectivity, you can be at several points at once.  So, it
+isn't all that simple...
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837797327012&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327015&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327012&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

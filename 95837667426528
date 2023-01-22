@@ -1,0 +1,79 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Some sites can't send to new domain names yet' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426527&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426529&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Some sites can't send to new domain names yet
+From:       <a href="?a=95837693400014&r=1&w=2">Rich Wales &lt;wales () LOCUS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-29 15:07:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426528&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426528&q=raw">body</a>]</b>
+
+The UCLA CS Department has now switched over to the use of its new
+domain-style host names (LOCUS.UCLA.EDU and ATS.UCLA.EDU) in the return
+addresses of outgoing mail.  We are still using the NIC host name table
+for name-&gt;address mapping, but we expect to have converted to the dis-
+tributed domain data base by summer's end.
+
+As soon as we started using the new names in our outgoing mail, I
+started contacting the maintainers of various mailing lists which send
+us their stuff, asking them to change their lists to start using our
+new domain-style names.  Since the domain names have been listed in the
+NIC host name table for several months now, I assumed that any host
+whose maintainers have picked up a new NIC table sometime within the
+last couple of months (!) should be able to send mail to LOCUS.UCLA.EDU
+irrespective of whether or not the other host was using the distributed
+data base yet.
+
+How could I have been so incredibly naive :-{ . . . .
+
+Yep, sure enough, I've already gotten a handful of replies from various
+and sundry locations indicating that they must (regretfully perhaps)
+continue to call us UCLA-LOCUS.ARPA for the time being -- because one
+aspect or another of their mail software refuses to cope with the name
+LOCUS.UCLA.EDU.
+
+I'm not going to post a list of hosts here, because I've only gotten
+back two or three such replies so far.  And, in at least one case, it
+wasn't clear whether the list maintainer involved was telling me that
+his software choked on the new names, even though they were in the host
+name table -- or that his host didn't have an up-to-date host name table
+-- or that he just assumed (albeit mistakenly) that his host could not
+handle domain names because it was still using the host name table
+rather than the domain data base!
+
+In any case, I guess I'll have to get ready for the inevitable set of
+requests from our local users that we should change back to the old
+names -- for the sake of mail stability -- until such time as everyone
+else on the net is able to handle the new naming scheme.  (Of course,
+this is no solution at all; if everyone switched back until everyone
+else was ready, then no one would have any incentive to fix their mail
+systems to handle the new names.)
+
+I don't currently plan to switch back, of course -- and I'm pretty sure
+I can probably hold off the tide of contrary opinion -- but if you do
+start seeing mail from "wales@UCLA-LOCUS.ARPA" again, you'll know why.
+
+-- 
+Rich Wales // UCLA Computer Science Department // +1 213-825-5683
+	3531 Boelter Hall // Los Angeles, California 90024 // USA
+	ARPA:   wales@UCLA-LOCUS.ARPA  -or-  wales@LOCUS.UCLA.EDU
+	UUCP:   ...!(ihnp4,ucbvax)!ucla-cs!wales
+
+<b>[<a href="?l=namedroppers&m=95837667426527&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426529&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

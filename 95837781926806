@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Top level domains - do not use as bottom !' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926805&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926807&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Top level domains - do not use as bottom !
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-08 15:48:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926806&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926806&q=raw">body</a>]</b>
+
+If I understand your message correctly, you are telling me that I should
+not have a host name e.ISI.EDU because it conflicts with Spain?  While I
+might be willing believe that a host named UK.ISI.EDU was in poor taste,
+I would also think it to be a good test of the domain naming mechanism.
+"Reserved" name components are a bad idea, and single letter reserved
+name components are the worst idea in recent memory.
+
+One reason to have a hierarchy is that you can create a unique name by
+concatenating a locally-unique local-part to a globally-unique global-part.
+Now it is true that you have to be able to tell the parts apart, or in the
+names we use tell which end is the root.  It is unfortunate that we don't
+all drive on the same side of the road in this regard, but why don't we
+just convert names when we cross the boundary?  It works for driving cars.
+
+In mail, we might be able to merge hierarchies and get a cleaner mail
+address space.  Reserved names make things dirtier, make innocents into
+outlaws (I had no idea e.isi.edu was illegal, and I suppose a.isi.edu
+will become so when the Arctic gets a reserved name), and seem to have
+no redeeming value.
+
+If there is any response, please copy me - I'm not on the original
+mailing lists.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781926805&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926807&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

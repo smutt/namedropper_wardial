@@ -1,0 +1,187 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Ideas on data caching, etc.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927075&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927077&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Ideas on data caching, etc.
+From:       <a href="?a=95837784800013&r=1&w=2">Rich Wales &lt;wales () CS ! UCLA ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-03 15:06:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927076&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927076&q=raw">body</a>]</b>
+
+Here are a few ideas I've been thinking about for a while regarding data
+caching, timeout, obsolescence, etc.
+
+I'm assuming in the following musings that it's "fair game" to talk
+about the possibility of doing a major redesign of the existing name
+server system -- different message contents, different algorithms, etc.
+Some of the things I think really do need to happen cannot, I believe,
+be done right without such a redesign (e.g., it isn't simply a question
+of returning more SOA RR's in replies).
+
+(1) Each piece of data returned by a server should be tagged with a
+    version ID.  One reasonable way to do this, I feel, would be to tag
+    each resource record with the root name and version number of the
+    zone from which it came (e.g., "this data for CS.UCLA.EDU comes from
+    version 1.123 of zone UCLA.EDU").
+
+    Doing this would most likely require a major redesign of the name
+    server message format.  For instance, a server reply could include a
+    "zone version" section, with one or more records identifying zones,
+    and each resource record in the reply could then point back to the
+    appropriate zone information (thus economizing on reply size if many
+    RR's came from the same zone).
+
+    This "version ID" would be kept in each server's cache, along with
+    the associated data, and passed along to any other server which
+    asked for it.
+
+    Tagging all data with a version ID would allow servers to do such
+    things as tell whether cached data may have been obsoleted by a new
+    version.  This could be done by noticing that newly acquired data
+    cites a later version of the same zone as data already in the cache,
+    and/or by directly querying an authoritative server for the current
+    version ID of a zone.  Conversely, if an authority for a zone says
+    that version such-and-so is still current, this means that all
+    cached data for that version of the zone is still OK.
+
+    I envision a two-part cache in each server.  One part would contain
+    resource records organized by domain name, as now.  The other part
+    would contain zone version info.  Each resource record would point
+    to the corresponding zone record; conversely, each zone record would
+    point to all associated resource records in the cache (e.g., via a
+    linked list).
+
+(2) All data associated with a given domain name should have the same
+    TTL value.  (This is actually *supposed* to be the case already, if
+    I remember the domain system specs.)  If all data for a given name
+    is required to have the same TTL, the problems of "negative caching"
+    and knowing you have all data for a name become much simpler.
+
+    Some, of course, have argued for object-oriented schemes that would
+    treat all data associated with a name (yes, David P., I know saying
+    it that way is not quite what you have in mind) as a single indivi-
+    sible unit.  Though this idea is surely worthy of study, I'm not yet
+    convinced that it is the *only* reasonable solution, and we should
+    realize that "partial data" algorithms may still be reasonable if
+    the problems we currently see are fixed.
+
+    Even with negative caching, I do not believe it is reliably possible
+    in the current system to be 100% certain that an answer from a cache
+    represents *all* the data associated with a domain name.  If all
+    cached data is identified as to zone version, though -- and if all
+    data for a given name in a given version of a zone must have the
+    same TTL -- and if you have "negative caching" -- then I think the
+    problem becomes soluble.
+
+(3) In fact, I think it would be useful to go further and mandate that
+    all data in a *zone* should have the same TTL value.  If you require
+    that all data in a zone should have the same TTL -- which can be
+    done simply by redefining the TTL to be an attribute of the zone as
+    a whole, rather than an attribute of each individual RR -- then a
+    server can do such things as "re-validate" a whole mass of cached
+    data if it gets more data from the same version of the same zone.
+
+    There is, of course, the problem that most zone updates do not
+    involve the entire zone, but only a handful of records in the zone.
+    Nevertheless, assuming that zones are updated relatively rarely
+    (which I think could mean that the interval between updates of a
+    zone is somewhat greater than the TTL for the zone), I think the
+    advantage of being able to re-validate lots of cached data all at
+    once outweighs the problem of calling into question an entire zone
+    because a new version exists.  (It's certainly better than the pres-
+    ent scheme, in which you have no clue as to whether cached data may
+    have been obsoleted.)
+
+(4) When data goes from an authoritative server to the cache of another
+    server -- and from that server to some other server -- it is wrong
+    to give that data a "new lease on life", by passing along the orig-
+    inal TTL without any indication of how long the data has sat in one
+    or more caches.  The fact that this occurs now is, I feel, a serious
+    flaw in the current system.
+
+    I would propose that data returned from a server's cache should have
+    *two* TTL fields.  One TTL would be the original TTL specified by
+    the authoritative server from which the data originally came.  The
+    second TTL would have been decremented by the total amount of time
+    the data had been cached by non-authoritative servers.  Thus, for
+    example, if the main TTL is 24 hours, and the data had been obtained
+    from an authority 3 hours ago, the "secondary TTL" would indicate 21
+    hours.  For data coming directly from an authoritative server, the
+    "secondary TTL" would by definition be the same as the main TTL.
+
+    (Again, I am assuming a major redesign of the reply format, in which
+    "zone" data would be associated with each resource record.)
+
+    In effect, the "secondary TTL" would provide an upper bound on how
+    long data can be considered "fresh" -- starting from the time said
+    data left an authoritative server.
+
+    If a server caches data from a given version of a zone, and later
+    gets more data from the same version of the same zone, the secondary
+    TTL value of that zone's data in the cache could be increased to be
+    equal to the secondary TTL of the new data (assuming the secondary
+    TTL of the new data were greater).
+
+(5) I believe it is reasonable to hang onto "timed-out" data (as opposed
+    to the current scheme, in which data must be discarded as soon as it
+    times out).  Timed-out data can be "re-validated" on a zone-by-zone
+    basis, as described above.
+
+    The "zone info" associated with data for each zone could include a
+    "must discard" time, similar to the "expiration" time in the SOA RR
+    of the current system.
+
+    Timed-out data could be returned in replies, but with a negative
+    value for the "secondary TTL" (see above).
+
+(6) When a new version of a given zone is detected, cached data for an
+    older version of the zone could still be given out for a while.  One
+    could even give out, for a single domain name, resource records from
+    two or more versions of the zone -- provided that each RR is identi-
+    fied as to zone version, and conflicts between RR's (or "negative
+    cache" indications) of the same time are resolved in favor of the
+    newer zone.  I see no problem with this, so long as all data has
+    version identification associated with it.
+
+(7) In addition to other zone-level data, a reply from a server could
+    rate the reliability of the data for that version of that zone --
+    perhaps using categories like the following:
+
+    (a) "I am an authority for this zone."
+
+    (b) "I'm not an authority for this zone.  The cached data in this
+	reply is from the most current version of the zone that I'm
+	aware of."
+
+    (c) "I'm not an authority for this zone.  I know there's a more
+	recent version of this zone, but the cached data in this reply
+	is the best I have for this particular domain name."
+
+    I think a combination of such a "rating system" and the "secondary
+    TTL" proposed above could help clear up much of the current confu-
+    sion as to how reliable a reply is -- by supplying more data than
+    the current "authoritative answer" bit flag can.
+
+-- Rich Wales // UCLA Computer Science Department // +1 (213) 825-5683
+	3531 Boelter Hall // Los Angeles, California 90024-1596 // USA
+	wales@CS.UCLA.EDU           ...!(ucbvax,rutgers)!ucla-cs!wales
+"Sir, there is a multilegged creature crawling on your shoulder."
+
+<b>[<a href="?l=namedroppers&m=95837781927075&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927077&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

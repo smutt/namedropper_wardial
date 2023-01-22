@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426648&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426650&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426650&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">Re:  Well Known Ports</a>
+From:       <a href="?a=95837693600007&r=1&w=2">cbpavo.cbosgd.ATT.UUCP!mark () seismo ! CSS ! GOV (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-17 9:46:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426649&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426649&q=raw">body</a>]</b>
+
+I would love to see the Berkeley protocols documented - in my opinion
+this is the one major flaw in some otherwise very useful protocols.
+If anyone at Berkeley is listening, please write up some RFC's on
+lpd, rlogin, rsh, ruptime, syslog, and whatever else you've invented.
+
+One comment on a "byte-per-protocol" representation - you don't have
+to go to two bytes but you can still handle ports &gt; 255 if you use
+the tricks that OSI uses for length codes.  Up to 127 means the port
+number, but if the high bit is set, the low 7 bits are the length
+of the data to follow.
+
+	Mark
+
+<b>[<a href="?l=namedroppers&m=95837667426648&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426650&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426650&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

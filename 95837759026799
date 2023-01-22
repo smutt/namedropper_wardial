@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Is anyone using MB/MR/MG/MINFO records yet?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026798&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026801&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026798&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026801&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500016&r=1&w=2">Re: Is anyone using MB/MR/MG/MINFO records yet?</a>
+From:       <a href="?a=95837784200001&r=1&w=2">Bill Barns  &lt;WWB.TYM () OFFICE-1 ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-13 10:33:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026799&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026799&q=raw">body</a>]</b>
+
+(Be forewarned, this is about a page long)
+
+I've been pondering using them at a point in the medium-term-future, but I'm 
+not rushing into it precisely because I'm not very confident that the dynamics 
+of such a mail world are well enough understood.  In other words, I'm afraid I 
+might be shooting myself in the foot if I did this now.
+
+I think I don't quite agree that MR should be just like CNAME, but I might yet 
+change my mind on that.  Not having to chase chains of pointers would indeed be
+nice, but CNAME only avoids this because it places the burden on the domain 
+admin to know the "real" name.  This is a more difficult problem for mailboxes 
+than it is for hosts, because mailboxes are more transient and migratory in 
+nature.  Wishing this problem away won't make it disappear - it just ends up in
+someone else's lap.  (If A@B moves to become A@C and B concurrently establishes
+A.B CNAME A.C, and then at some later date A@C moves again to become A@D and C 
+establishes A.C CNAME A.D, B is now "out of spec" through no fault of its own.)
+ The ultimate question is how much of whose effort it's worth to have "the 
+system" keep track of people's (mailboxes') migrations over long periods of 
+time, as opposed to having the people who generate mail take responsibility for
+knowing the current or immediately prior address.  There are other options too,
+and I suspect this is a religious question.
+
+I definitely think it would be inappropriate for every name mapping to be 
+represented by a MR.  It should be used judiciously.  It might be wise not to 
+rename Postmaster to something else, for example.  On the other hand, there are
+cases where MR is of great value.  I expect to suffer considerable pain about a
+year from now due to the lack of widespread implementation of it (or something 
+like it).  I expect to have to move a mailbox which has a mail volume of 
+perhaps 500,000 items a year.  It will be moving to a point which is rather 
+distant in Internet name space and beyond my administrative control.  Certainly
+I do not wish to receive and re-mail such a traffic volume for however long it 
+takes all the correspondents (mostly in foreign countries) to get and 
+understand the word that they should be mailing to some other host name.  Not 
+to worry, I have a plan for avoiding being sunk in mailforwarding, but if we 
+had a solid network-wide implementation of MR functionality, my plan could be a
+lot simpler.
+
+I think mailbox binding is a useful enough concept to be worth a try.  I do 
+have some doubts about whether the current formulation of it is a winning one. 
+On the other hand, I'm a little bit concerned that if nobody ever starts trying
+to use it, we'll never make any progress on improving the formulation.
+
+Perhaps it will occur that CCITT-ish directory services will be viable by the 
+time this becomes relevant anyway.  Or perhaps they will be invented and turn 
+out not to be viable because of a lack of sufficient real world experimentation
+to find the problem areas.  Even if Internet domain server style mailbox 
+binding does come into use, there will still be an issue of how to cope with 
+X.400ish addressing.  I had the feeling from what I've seen of the ARPA-MHS 
+address encapsulation schemes that there could be problems with the 
+ARPA-encoded MHS address having a local part of length &gt; 64, which would cause 
+real trouble for mailbox binding of X.400ish O/Rs on the Internet (and I 
+presume there will someday come to be a number of those).  I don't know enough 
+to point the way to the exit from this maze.
+
+Bill Barns  &lt;WWB.TYM@OFFICE-1.ARPA&gt;
+
+<b>[<a href="?l=namedroppers&m=95837759026798&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026801&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026798&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026801&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

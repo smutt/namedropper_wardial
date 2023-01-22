@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426647&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426647&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">Well Known Ports</a>
+From:       <a href="?a=95837693600014&r=1&w=2">Rob Austein &lt;SRA () MIT-XX ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-17 2:43:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426648&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426648&q=raw">body</a>]</b>
+
+First I would like to throw a little bit of empirical evidence on the
+philosophical fire here (followed by more philosophy).  All this talk
+about WKS representation caused me to go look through the NIC
+HOSTS.TXT table looking at services fields.  The high scorer was SAIL,
+with 14 services all told (TCP and UDP).  15 bytes will only represent
+up to port 120 with the bitmapping scheme.  Seems to argue for the one
+byte per protocol number representation, since most hosts don't have
+anywhere near this many services, even leaving out the issue of unix
+semi-well-known ports.  The typical case of UDP/TFTP,UDP/NAMESERVER,
+TCP/SMTP,TCP/TELNET,TCP/FTP clearly wins here, even if you make ports
+two bytes instead of one byte.
+
+Now the philosophy/religion.  People who don't like such may want to
+hit their "n" keys now....
+
+Some commonly used unix protocols would benefit from being written up
+in an RFC.  Even from having the RFC shot down and having to change
+the implementation.  Case in point, the lpd protocol, which is a real
+pain to implement from a non unix machine because unix assumes that
+the originating host is going to be calling from a low numbered port
+(that being unix's idea of security).  This is a clear violation of
+the normal usage of TCP.  At the same time, it really would be nice to
+have a remote spooling protocol, and lpd is the best option, simply
+because, as you point out, there are so many unix machines these days.
+Is it that hateful to have to write up a spec?  One that complies with
+the standards the rest of us use?  Obviously there are cases like uucp
+where you have problems with AT&amp;T, but in most cases I don't think
+that is the case.
+
+Being a twenex hacker I will not comment on whether or not the RFC
+moguls are twenex-centric (the ones here at MIT sure ain't).  You
+should be aware that those of us who don't use unix have the same kind
+of problems with all the "people" (nebulous) who think that if it runs
+on unix that is all that matters.  In any case, your example is
+broken.  Paul Mockapetris (a possibly twenex-centric RFC writer) was
+also the person who wrote the twenex resolver code.  Which does in
+fact do the address to name lookup, which is what I think you meant
+when you said "host number to host name mapping".  He even did it
+"right", ie, is using IN-ADDR to do the equivilent of gethostbyaddr().
+Whereas bind (or the old version we have here anyway) does this via
+IQUERY, which loses for reasons that have been discussed at great
+length on this list.  I am told that this has been fixed in the latest
+version of bind, but glass houses and stones and all that....
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837667426647&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426647&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426649&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

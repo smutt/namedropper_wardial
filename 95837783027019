@@ -1,0 +1,143 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027030&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837785800018&r=1&w=2">Richard Fox &lt;rfox () wkd4 ! nas ! nasa ! gov&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-14 15:56:44</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027019&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027019&q=raw">body</a>]</b>
+
+In the recent past there has been some talk about which IP address to use
+when the resolver returns more than 1 for a destination address. For the most
+part the problem has been past off as no problem. In most cases hosts have
+only address and are connected to only 1 network using this address.
+In this case, there is no problem of which address to use since there is no
+choice.  However, I believe that if the resolver
+returns more than 1 address for any given host the order can make a very
+big difference in network throughput. In this note I will describe the
+problem and then a solution that I am currently propagating throughout
+our machines.
+
+NETWORK TOPOLOGY:
+   There are 2 networks of concern, a Hyperchannel and an Ethernet. 
+There are a few gateways that connect up the networks together.
+There are some hosts that are only connected to hyperchannel, many only
+connected to ethernet, and many hosts which are connected to both networks.
+It is preferred that hosts talk over hyperchannel when possible. Thus, if
+two communicating hosts have both ethernet and hyperchannel connections,
+it would be preferred that hyperchannel be used.
+
+PROBLEM:
+   If we list all hosts in the named database with the hyperchannel address
+always preceding the ethernet address ( we are assuming that we are trying
+to give hyperchannel higher priority over ethernet) when a host does a 
+gethostbyname call hyperchannel will be returned as the first address in
+the address list. Programs like ping, telnet and ftp take this list and
+try to connect to the addresses in the order gethostbyname returns them in,
+thus, hyperchannel would be tried first. This works okay if both hosts are
+on hyperchannel. If the originating host is on ethernet only and the destination
+host is on both ethernet and hyperchannel this method would cause the
+originating host to use a gateway to get to the destination host. This is
+obviously not what we want to do. This condition is a very serious drawback
+on the resolver; causing extra network load, slower throughput rates, and
+conceivably overloaded gateways.
+
+POSSIBLE SOLUTIONS (bad):
+   A possible solution to the problem is to have multiple servers for the 
+domain where one server lists hyperchannel addresses first and the other 
+server lists the ethernet addresses first. Then make all hosts on ethernet
+only point to the name server that lists ethernet addresses first, and do 
+the same sort of thing for hosts on hyperchannel. This scheme breaks
+down though, when you add in a proteon network and with its
+priority. Also, the solution is
+harder to administer and is bad in the face of downed servers. 
+
+Another solution is to force users to specify which network they want by
+doing the following:
+		hosta		IN	hinfo	"no address listed"
+		hosta-ec	IN	A	ethernet
+		hosta-hy	IN	A	hyperchannel
+
+If the user wants to get to hosta they would have to specify by which network
+they would like to go. This is bad because it is not user friendly, requires
+the user to have more knowledge of the network, and is not as robust in the
+case of network outages.
+
+GOOD SOLUTION:
+   This solution introduces 2 new settings that can be set from the 
+configuration file. The options names are: 
+		subnet		&lt;ip netmask&gt;
+		network		&lt;ip address&gt;
+
+The network option allows you to prioritize the addresses based on the network
+they belong to. You can list MAXNETS (#define to be added to .h) network
+options in the order of precedence. Thus, if the resolv.conf file looked like:
+
+	..	
+	..
+	network	192.12.102.0
+	network 128.102.0.0
+	..
+	..
+
+the gethostbyname call would return all addresses from the 192.12.102 network
+first followed by any addresses from the 128.102 network, then any remaining
+addresses. 
+
+For example: host = 128.111.48.1, 128.102.16.1, 192.12.102.1  gethostbyname
+	would return the addresses in the following order: 192.12.102.1,
+	128.102.16.1,128.111.48.1
+
+
+If there are no network statements in the conf file then the gethostbyname will
+work as it currently does now. 
+
+The subnet options allows you to specify a mask to apply to the network
+options. Thus, if the resolv.conf file contained the following lines:
+
+	subnet 255.255.240.0
+	network 192.12.102.0
+	network 128.102.16.0
+	network 128.102.0.0
+
+and host = 192.12.102.1,128.111.48.1,128.102.16.1,128.102.192.1
+    gethostbyname would return the addresses in the following order:
+	   192.12.102.1,128.102.16.1,128.102.192.1,128.111.48.1
+
+It should be noted that in this example that 128.102.16.1 is returned before
+128.102.192.1 regardless of how listed in the database because the 128.102.16
+subnet has higher precedence than the rest of the 128.102 network.
+
+
+CONCLUSION:
+
+  I have tested this solution and it does work with no noticeable performance
+loss. As we put the resolver on our crays this will prove to save our gateways
+from quite a bit of unnecessary traffic. If anybody has any comments about
+the proposed solution then please do not hesitate to write.
+
+
+thanks rich
+
+rfox@amelia.nas.nasa.gov
+(415)694-4425
+
+<b>[<a href="?l=namedroppers&m=95837783027017&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027030&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

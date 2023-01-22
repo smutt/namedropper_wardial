@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Subnetting and RFC 1101' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827107&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827109&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827102&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500012&r=1&w=2">Re: Subnetting and RFC 1101</a>
+From:       <a href="?a=95837818000023&r=1&w=2">"H. Morrow Long" &lt;long-morrow () CS ! YALE ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-13 15:23:05</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827108&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827108&q=raw">body</a>]</b>
+
+
+
+
+In article &lt;2858@naucse.cse.nau.edu&gt; root@naucse.cse.nau.edu (Paul Balyoz) writes:
+
+&gt;&gt;Is it legal to use an address for a NETWORK such that the subnet portion
+&gt;&gt;is all zeroes?  For example, suppose that the class-B address 134.114
+&gt;&gt;has been assigned to you, and you use 8-bit subnetting (netmask
+&gt;&gt;is 255.255.255.0).  Does this mean that 134.114.0 can be used as a
+&gt;&gt;legal subnetwork, which can have hosts assigned below it (134.114.0.23),
+&gt;&gt;or must there be a non-zero value for the subnet portion (3rd octet)?
+
+&gt;While it is technically legal, we avoid it like the plague.  The reasons
+&gt;are numerous but basically all come down to, "someday, it will bite you
+&gt;in the ass."  Consider that a broken implementation, or one that still
+&gt;believes ONLY 0's broadcasts (are there still any of these?) may have
+&gt;problems with it.  Since you have 256 subnets to play with, it hurts little
+&gt;to loose this one.
+
+This did 'bite us' once.  We have a ZERO subnet ( 128.36.0.0 ) for historical
+reasons.  Someday we may change it to 128.36.1.0 if we are forced to, but
+we have no masochistic desires of the subnet/host renumbering kind currently.
+
+When we converted from a collection of class C nets to a subnetted class B
+we discovered that the HP9000 that was the gateway between our backbone
+and our HP 9000 net didn't handle subnetting correctly.  We contact HP and
+they told us that HP had written their own TCP/IP kernel code for HP-UX
+and it didn't recognized zero subnets.  We had to put our HPs back on a
+class C and used RTs with the subnet hack (and Suns with a similar arp hack)
+to spoof the HPs and non-4.3bsd subnet capable machines until they could be
+converted or discarded.  I don't know if HP-UX still has this aversion to
+ZERO subnets.  Allowing ZERO subnets (or not) is an option in the CISCO box
+configuration.
+
+
+--
+H. Morrow Long   Long-Morrow@CS.Yale.EDU   {harvard,cmcl2}!yale!Long-Morrow
+
+<b>[<a href="?l=namedroppers&m=95837798827107&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827109&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827102&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'The proper way to do address-&gt;name resolution' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926895&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926897&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926897&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000015&r=1&w=2">The proper way to do address-&gt;name resolution</a>
+From:       <a href="?a=95837784200028&r=1&w=2">"Philip A. Prindeville" &lt;PAP4 () AI ! AI ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198707">1987-07-16 1:31:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926896&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926896&q=raw">body</a>]</b>
+
+I have a (seemingly) straight-forward question about the proper
+way to do address to name resolution.  As far as I can tell,
+there are two methods:
+
+	Do an inverse query given the address and class, such as:
+
+		INVERSE(Class=IN,Type=A,Answer=1.2.3.4)
+
+	Or do a query of the form:
+
+		Query(Class=IN,Type=PTR,"4.3.2.1.in-addr.arpa")
+
+First, are both methods legitimate?  Second, are all servers
+capable of one mode or the other and if so which one?
+
+Thanks,
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837781926895&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926897&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926897&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

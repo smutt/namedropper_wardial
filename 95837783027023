@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027022&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027024&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837785800021&r=1&w=2">John Lyman &lt;lyman () csupwb ! ColoState ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-21 12:14:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027023&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027023&q=raw">body</a>]</b>
+
+
+   A few months ago, an issue came up where sendmail was trashing out 
+addresses that looked like "blob@mach.at.edu".  It was pointed out at the
+time that this was due to a rule that looks like:
+
+      R$+ at $+       $1@$2           "at" -&gt; "@" for RFC 822
+
+   No one proposed any solution other than removing that line.  Well I'll
+finally propose the solution that I implemented back then.  The reason
+that this rule doesn't work, is due to the fact that sendmail ignores
+the spaces.  The rule therefore, matches any occurrance of "at" that
+comprises a full token.  Sendmail determines that tokens are separated
+by spaces and the operators defined by the "o" macro.  So I suggest
+that you find the line which looks like:
+
+      Do.:%@!^/[]
+
+Add a line after it like this one:
+
+      CO. : % @ ! ^ / [ ]
+
+And then replace the previously mentioned rule with the following:
+
+      R$*$~Oat$~O$*       $1$2@$3$4
+
+   This will stop the gratuatious munging when "at" is surrounded by valid
+operators.  I tested this, and have been running it for about two months
+now, it works great.
+
+					John Lyman
+					University Computer Center
+					Colorado State University
+
+<b>[<a href="?l=namedroppers&m=95837783027022&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027024&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

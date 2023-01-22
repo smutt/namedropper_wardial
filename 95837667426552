@@ -1,0 +1,37 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Responses in additional info records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426551&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426553&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Responses in additional info records
+From:       <a href="?a=95837693200018&r=1&w=2">jas () proteon ! arpa</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-03 16:07:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426552&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426552&q=raw">body</a>]</b>
+
+Craig,
+
+My rather hacked-over version of bind does recursion, as I
+did not have a handy local server that would do recursion. I have
+thus not run into this sort of problem. THere, of course, is
+some inneficiency when you ask for x, get it as a name server,
+and then ask x where x is. At least I get an answer, eventually.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426551&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426553&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

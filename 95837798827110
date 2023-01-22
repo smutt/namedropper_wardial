@@ -1,0 +1,77 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BOGUS ROOT SERVERS!!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827113&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827111&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827111&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500018&r=1&w=2">BOGUS ROOT SERVERS!!</a>
+From:       <a href="?a=95837785600018&r=1&w=2">woods () handies ! ucar ! edu  (Greg Woods)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-14 0:18:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827110&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827110&q=raw">body</a>]</b>
+
+(This first started last Wednesday and has continued through this morning)
+
+We are having a serious problem with our name servers that APPEARS to be
+related to bogus root server data that is coming in from God knows where.
+Our configuration is that we have a primary server (ncar.ucar.edu a.k.a.
+handies.ucar.edu) which is the known server for our domain and is queried
+from the outside. We also have a server unknown to the outside which is
+configured as a secondary and is used as the forwarder by most of our
+internal machines (some internal machines still forward to the primary
+due to inertia; I don't control every server here so some of them are slow
+to change over as I have asked). (In case it matters, both are BIND 4.8.2,
+the primary is a Sun 4/280 running Sun OS 4.0.3, and the secondary is
+a Microvax II (a.k.a. boat anchor :-) running Ultrix 3.1)
+
+What happens is that when a machine is rebooted (or named is restarted), it
+goes into an infinite loop burning tons of CPU time and refusing to answer
+queries. It also ignores all signals (except 9, of course) which makes
+debugging a real pain. Empirical evidence shows that every time this has
+happened, I find the following bogus root servers in both the primary and
+secondary servers' caches:
+
+(root)  nameserver = MTECV1
+(root)  nameserver = TELECOM
+(root)  nameserver = NEXTSVR
+
+These appear with no domains and with no corresponding A record which I
+suspect may be the root of the problem (pun not intended, I swear). If
+this junk is NOT in the cache, then name servers using one of these as
+the forwarder can be started fine.  If this junk *is* present, then
+killing and restarting first the primary and then the secondary (which
+of course removes the junk) will allow other servers here to be
+restarted. Occasionally I also see "lbl.gov" show up as a root server,
+but if it is there without these other three, it does not seem to cause
+the problem to occur. It occurs to me that the probable reason for that
+is that lbl.gov is a legitimate name that can be looked up and an A record
+eventually found, even if it isn't really a root server.
+
+Has anyone else seen this? Does anyone have any idea what the &amp;^$%#@! is going
+on? I am familiar with how the DNS works on an administrative and conceptual
+level, but I am not familiar with BIND on a source code level, nor does
+the rather cryptic output you get when you turn debugging on make a whole
+lot of sense to me (the latter is a consequence of the former, I expect).
+Before I dive into the source code, I'd like to ask: is there any reason why
+data about the root domain coming in from outside should EVER be believed
+and cached?  Has anyone patched BIND to disallow this? Will I break the entire
+DNS if I do this here? :-)
+
+--Greg
+
+<b>[<a href="?l=namedroppers&m=95837798827113&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827111&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827111&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

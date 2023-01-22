@@ -1,0 +1,129 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mail Gateways and MX RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026662&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026666&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800044&r=1&w=2">Re: Mail Gateways and MX RR's</a>
+From:       <a href="?a=95837783700011&r=1&w=2">"J. Spencer Love" &lt;JSLove () MIT-MULTICS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-27 15:06:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026664&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026664&q=raw">body</a>]</b>
+
+The weighted graph model is applicable if you consider that the weight
+in the MX RR is the cost of reaching the final destination FROM the
+relay host.  The weight for the link from where you are to the mail
+relay is NOT included in the MX RR, and must be calculated some other
+way in similar units.  However, that is sufficient; you don't need the
+entire graph, or detailed knowledge of what happens beyond the mail
+gateway.  To rehash a tired example:
+
+    *.ATT.COM. IN MX   10  RELAY.CS.NET.
+    *.ATT.COM. IN MX   20  SEISMO.CSS.GOV.
+
+It all works if "10" is the length of the optimal graph path from
+RELAY.CS.NET to the typical host in the ATT.COM domain, and "20" is the
+length of the optimal graph path from SEISMO.CSS.GOV.  It is totally
+absurd to expect that an RR (which will be essentially the same no
+matter where on the internet you ask for it) should describe the cost
+for all parties.
+
+In this case, one need merely compute the length of the graph from where
+you actually are to SEISMO.CSS.GOV and RELAY.CS.NET and suitably
+increment the MX weights to arrive at the "true" costs of the mail
+paths.  Doing this in the general case may be a daunting problem, but as
+a special case for the internet, it seems reasonable to assume that one
+hop on a class C network (or subnet of a class B net, if supported) is
+cheapest, then one hop on a class B or subnetted A, then one hop on a
+class A, and finally the most expensive case is any multi-hop path.  One
+could get into discussions about assumptions for guessing relative costs
+(e.g., class C to class A cheaper than class C to class C) but short of
+sending ICMP echoes or route tracing, let's postpone that issue for
+another day.
+
+How about the following adjustments (in practice, a single homed
+internet host will need only 2 of the numbers):
+
+   Same host                  0
+   Same class C               4
+   Same class B               5
+   Same class A               6
+   Multi-hop                 10
+
+The "same host" adjustment is when the MX RR gives a weight for the host
+already holding the mail.  Note that that host must already know which
+path from it is of the indicated weight.  Thus, RELAY.CS.NET already
+knows that the path from itself to *.ATT.COM via CSNET is the one which
+has a cost of 10.  Likewise, SEISMO.CSS.GOV knows that the path via UUCP
+is the one that costs 20.
+
+Both mail gateways are on class A network 10, so I have set the weight
+of the path between them to 6.  The paths from SEISMO to *.ATT.COM are
+now 20 via UUCP and 16 via RELAY.CS.NET, so it should send the mail via
+the ARPAnet interface if at all possible.  The paths from RELAY.CS.NET
+are 10 via CSNET and 26 via SEISMO, so it will never normally use UUCP.
+
+What do we do if the CSNET link from RELAY.CS.NET is down?  If we send
+the mail to SEISMO, it will be promptly returned to RELAY.CS.NET.  This
+is not a problem for other hosts if RELAY.CS.NET is down; it is only a
+problem for RELAY.CS.NET.  I think it is necessary for a mail relay to
+stop accepting incoming SMTP connections in this case, so that everyone
+will send to SEISMO, and SEISMO will feel forced to use UUCP.  Such a
+draconian solution is appropriate only for mail gateways between only
+two networks, which have no local users or mailing lists who might want
+to receive mail, and only then when the queue is filled or the projected
+outage is long.  Otherwise, the SMTP must be smart enough (and fast
+enough) to refuse recipients on an individual basis in the hope that the
+mailer will send to those recipients by another path.  Are existing
+SMTPs really this smart?
+
+Note that my weights (4,5,6,10, etc.)  are only for the same of argument
+and should be varied for each host depending on actual network
+situations.  In sufficiently complex situations, there will still be
+loops.  Unless the MX records can be dynamically and automatically
+updated by the mail gateways using some new protocol or extension to the
+domain protocol, these loops may be of long duration, sufficient for
+5-day timeouts, etc.  Perhaps any message with more than 100 Received
+lines in its header should be automatically delivered to the local
+Postmaster for intervention, and not relayed.  (100 is too many, but
+with forwarded messages from some mail systems making it hard to sort
+out the new and old return path, I'd rather set this number high.)
+
+SEISMO should know more about the structure of UUCP than RELAY.CS.NET,
+so it might assign A.ATT.COM a distance of 18 and B.ATT.COM a distance
+of 22.  It might result in more efficient service if SEISMO can take
+advantage of a single hop UUCP link (weight 12) and send directly, but
+it could confuse the outside world (causing loops) if the weight of
+B.ATT.COM were used, since its weight is greater than the advertised 20.
+In this case, SEISMO should route the mail according to the advertised
+weight.
+
+How can we dynamically determine in a reliable manner the real costs of
+an internet route?  Other protocols have wished for an answer to this
+problem.  ICMP gives a mechanism for determing a hop-count, but no idea
+of the costs of the individual hops.  Or you can send echo packets and
+get a vague idea of the total round trip time.  Is there a way to ask
+your favorite gateway for its idea of the routing distance without doing
+all of EGP?  How about intervening network maximum packet sizes?  A new
+ICMP packet type might help:  a special echo packet that comes back with
+the minimum of the maximum packet sizes for all intervening gateways and
+the total round trip routing distance (summed from the intervening
+gateways' routing tables) in some standard units.  This would be the
+ideal thing to use for pinging...
+
+<b>[<a href="?l=namedroppers&m=95837759026662&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026666&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026663&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

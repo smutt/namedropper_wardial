@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Sockets in 386/ix' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827015&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827016&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Sockets in 386/ix
+From:       <a href="?a=95837817800035&r=1&w=2">uceng!sramacha () iuvax ! cs ! indiana ! edu  (Sridhar Ramachandran)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-21 20:31:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827014&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827014&q=raw">body</a>]</b>
+
+
+
+
+HI,
+
+I have been trying to port a version of our software on to the
+system running 386/ix. This is essentially SYS_V 3.2
+Unix. But the sockets facilities seem to be very hotch potch
+and I have been unable to port my software, which uses both
+Unix and INET domain sockets. From the documentation of 386/ix,
+I understand that they don't implement Unix domain sockets.
+Hence, I am trying to rewrite portions of our code that
+uses Unix domain sockets and change them to ise INET domain
+sockets. However, I haven't met with great success. I am not
+even sure that it'll work.
+
+I need Unix domain sockets to create a communication channel between
+two processes. I know that this could have been done with other
+IPC calls, but hey, I didn't write the original version. The call
+that the software uses to do this is a "socketpair" call.
+
+
+Does anyone on the net have any ideas about how this could be
+implemented using just INET domain sockets.
+
+Thanks in advance,
+Sridhar.
+
+<b>[<a href="?l=namedroppers&m=95837798827015&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827016&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

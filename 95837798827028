@@ -1,0 +1,72 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Degenerate cases of nameservice; is there a way to do this?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827031&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827036&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Degenerate cases of nameservice; is there a way to do this?
+From:       <a href="?a=95837817800040&r=1&w=2">bbs!karl () uunet ! uu ! net  (Karl Denninger)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-26 20:35:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827028&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827028&q=raw">body</a>]</b>
+
+We have an odd situation here.
+
+Right now we are not on the Internet directly.  We do, however, have
+nameservice running here (which is nearly a necessity with 200+ sites in the
+domain!) and thus have the root records pointed back at ourselves (yes, it's
+crude, but it works -- somewhat).
+
+The problem comes in when we try to use BIND to determine where to send mail
+to.  This is important because MX records are necessary for most of our
+hosts -- most of them don't know what SMTP is, and thus can't receive mail
+directly.  For these machines we'd like to have the mail dropped at one
+specific machine, in this case a system called "nis.naitc.com".
+
+Now, I can put the MX records in there, and nslookup tells me I've done
+good.
+
+Smail3, however, has one problem with this.  If I send mail to a site
+outside of our domain, I want it to default down to our smart-host entry
+(which is uunet) and end up going through uucp.  This SHOULD work, or so I
+thought -- but smail3's BIND router says "heh, I can't figure out how to
+route this, and since BIND is authoritative for all domains, I'll just defer
+delivery -- forever".
+
+This isn't good!
+
+Is there something we can do with the nameserver configuration that returns
+a hard error (ie: no such domain in existance) rather than what we get right
+now (it equates to a "file not found"), or should we code around it in
+smail's BIND driver?
+
+Anyone else out there need to do this (or have done this)?  Ideas?
+
+(Ps: Don't bother telling me we shouldn't be doing this -- we KNOW that to
+be the case.  But we need a way, nonetheless, to have mail come into these
+"degenerate" hosts, some of which can do outbound SMTP but not inbound, and
+have it get somewhere sane).
+
+--
+Karl Denninger	AC Nielsen
+kdenning@ksun.naitc.com
+(708) 317-3285
+Disclaimer:  Contents represent opinions of the author; I do not speak for
+	     AC Nielsen on Usenet.
+
+<b>[<a href="?l=namedroppers&m=95837798827031&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827036&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

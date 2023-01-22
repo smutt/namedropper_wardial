@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327080&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327082&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327080&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327082&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">Re:  CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=90366379700014&r=1&w=2">lazear () gateway ! mitre ! org</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-10 9:20:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327081&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327081&q=raw">body</a>]</b>
+
+It would seem that this is an example of where a translating,
+application-level gateway is required:  to map between one
+naming convention and another.  Sure, it's nice if you can do
+it by inspection (user@host vs /c=uk/o=btc/pn=pjones/), but
+when the forms are very close, you need to have more infrastructure
+to make the break a clean one.  There are gateways between BITNET
+and CSNET and MILNET, and the similarities in name formats are
+sorted out there.  But the end user needs to aim the message at
+the gateway...it doesn't get there by magic.  Perhaps it's time
+to bite the bullet and admit that there needs to be a more formal
+interface between the UK scheme and the rest of the Internet?
+Or, as was suggested, perhaps the UK scheme needs to be dropped
+in favor of "harmonization" of the domain name system.
+
+	Walt Lazear
+
+<b>[<a href="?l=namedroppers&m=95837797327080&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327082&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327080&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327082&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

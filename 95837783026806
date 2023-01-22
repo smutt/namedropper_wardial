@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: gateway naming convention' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026805&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026807&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026805&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026807&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700037&r=1&w=2">Re: gateway naming convention</a>
+From:       <a href="?a=95837785000005&r=1&w=2">karels%okeeffe.Berkeley.EDU () ucbvax ! Berkeley ! EDU (Mike Karels)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-28 23:22:33</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026806&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026806&q=raw">body</a>]</b>
+
+If you're using the domain system (nameservers), I suggest the following
+convention.  We use this at Berkeley.
+
+There should be one canonical name for a multihomed host.  That name
+should have resource records for each address, as well as any HINFO,
+MX or other records for the host.  In the address-to-name-mapping domain,
+all of the addresses should map to the canonical name.
+
+In addition, for each address that must be used without confusion
+(possibly, for example, when setting network addresses or in network
+debugging), there should be a name for just that address.  We use a name
+of the form "host-net.domain" or "host-interface.domain".
+
+Example:
+
+ucbvax		IN	A	10.2.0.78
+		IN	A	128.32.137.3
+		IN	HINFO	"vax-11/750" "unix"
+		IN	WKS	10.2.0.78 tcp  daytime chargen ftp telnet time domain finger
+		IN	WKS	10.2.0.78 udp  daytime chargen time domain
+ucbvax-spine	IN	A	128.32.137.3
+ucbvax-dmc	IN	A	128.32.140.3
+ucbvax-imp	IN	A	10.2.0.78
+
+		Mike
+
+<b>[<a href="?l=namedroppers&m=95837783026805&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026807&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026805&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026807&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

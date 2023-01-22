@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426467&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426468&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837693200008&r=1&w=2">(Chinheng Hong [CSR/Networks]) chinheng () lbl-csam</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-11 11:16:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426469&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426469&q=raw">body</a>]</b>
+
+HI:
+
+	Here are a few points I've on BIND :
+
+	1) BIND doesn't iterate through all name servers.
+
+		This is because ttl fields for most server records are 0.
+		AS a result, they are not entered in the cache and
+		NSLOOKUP() will subsequently fail to find them. So they
+		are never put in the name server queue to be tried.
+
+		Acoording to RFC883, one is not supposed to cache a RR
+		with ttl=0. However, the way BIND is written, the above
+		situation is difficult to changed. As a quick fix, I
+		changed the statement in DOUPDATE():
+		  from : if (ttl==0) return ((cp-rrp)+dlen);
+		  to   : if (ttl==0) ttl = 5 * 60;  /* keep  for 5 minutes */
+
+		This simple change results in those RR's with ttl=0 to be
+		kept in the cache for a short time. Hopefully this is
+		enough for the BIND to iterate through them  if necessary.
+
+		Any better suggestions ?
+
+	2) NS_MAINT never invoked ?
+
+		It seems to me that NS_MAINT is never called. The
+		statement " (void) signal(SIGALRM, ns_maint)" is
+		taken out in the MAIN() by  "/*   */".
+
+		can someone tell me why this is done. Is NS_MAINT()
+		incomplete ?
+
+	3) A small bug in NSLOOKUP()
+
+		When testing for duplicates in the for-loop;
+		the index in "&amp;qp-&gt;q_addr[n].sin_addr" should be "i"
+		instead.
+
+		I've also changed the for-loop to a while-loop as for-loop
+		executes at least once even if there is no entry in
+		qp-&gt;addr[] (n=0).
+
+	4) Name servers for the ROOT domain
+
+		I think the name serverss for root domain are :
+		   sri-nic.arpa and usc-isib.arpa.
+
+		Usc-isif.arpa is included in ns.ca which should not be
+		the case. I tried asking it about the name servers for
+		the domains COM and EDU and it failed.
+
+-- chinheng.
+
+
+		
+
+<b>[<a href="?l=namedroppers&m=95837667426467&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426468&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

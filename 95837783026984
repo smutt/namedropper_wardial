@@ -1,0 +1,41 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Conflicts between BRL-AOS.ARPA and AOS.BRL.MIL cause trouble?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026991&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026985&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026983&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026985&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400025&r=1&w=2">Re: Conflicts between BRL-AOS.ARPA and AOS.BRL.MIL cause trouble?</a>
+From:       <a href="?a=95837785800002&r=1&w=2">Louise Kokinakis &lt;lkoke () BRL ! MIL&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-19 17:43:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026984&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026984&q=raw">body</a>]</b>
+
+I don't really know why your servers were sick but:
+
+   Your nameserver appears to have an old address for AOS.BRL.MIL,
+   which shouldn't affect the server.  192.5.22.82 is a non-existent
+   interface.  The other two addresses are okay.  
+
+   As for the extra HINFO record and the MX record, that was our fault.
+   We are primary for the UK and this extra data snuck by us in their
+   files.  I don't think that should have affected your nameserver
+   either.
+
+Louise
+
+<b>[<a href="?l=namedroppers&m=95837783026991&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026985&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026983&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026985&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

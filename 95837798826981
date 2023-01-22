@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Host Naming Question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826982&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826983&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300001&r=1&w=2">Host Naming Question</a>
+From:       <a href="?a=95837817800019&r=1&w=2">rohvm1!madjk () cunyvm ! cuny ! edu  (John G Kinker)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-30 16:47:45</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826981&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826981&q=raw">body</a>]</b>
+
+We are setting up name servers and are currently trying to decide what to call
+various hosts.  For sake of discussion assume that a network, ignoring
+routers, looks like:
+
+                        ----internet-----
+                                 |
+                       hosta     |       hostb
+                         |       |         |
+                      --------subnet0----------
+                      |                       |
+             ------subnet1-----        ----subnet2----
+             |                |        |             |
+           hostc            hostd    hoste         hostf
+
+Now, if this is a business whose registered internet name is enterprise
+then to the internet community it is ENTERPRISE.COM.  That means, I
+think, that the nodes might be named:
+
+                     hosta.subnet0.enterprise.com
+                     hostb.subnet0.enterprise.com
+                     hostc.subnet1.enterprise.com
+                     hostd.subnet1.enterprise.com
+                     hoste.subnet2.enterprise.com
+
+I also think it would be reasonable to name hosts a and b:
+
+                     hosta.enterprise.com
+                     hostb.enterprise.com
+
+Now the question:  If all of the above is correct and valid, could one of
+the nodes on subnet0 be named just enterprise.com and still have all of
+the routing to other nodes work correctly?
+
+John G. Kinker                   MADJK at ROHVM1
+Computer Systems Associate
+Rohm and Haas Company
+PO Box 219; Bldg 64C, Rm C303
+Bristol, PA 19007
+215-785-8752
+
+<b>[<a href="?l=namedroppers&m=95837798826978&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826982&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798826983&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

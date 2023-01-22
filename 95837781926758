@@ -1,0 +1,103 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain Names -- DDN MGT Bulletin # 32' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926757&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926759&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Domain Names -- DDN MGT Bulletin # 32
+From:       <a href="?a=95837784200019&r=1&w=2">Jon Postel &lt;Postel () isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198701">1987-01-24 14:22:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926758&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926758&q=raw">body</a>]</b>
+
+
+
+********************************************************************** 
+DDN MGT Bulletin 32              DCA DDN Defense Communications System   
+22 Jan 87                        Published by: DDN Network Info Center
+                                    (NIC@SRI-NIC.ARPA)  (800) 235-3155
+
+
+                        DEFENSE  DATA  NETWORK
+
+                         MANAGEMENT  BULLETIN
+
+The DDN MANAGEMENT BULLETIN is distributed online by the DDN Network
+Information Center under DCA contract as a means of communicating
+official policy, procedures and other information of concern to
+management personnel at DDN facilities.  Back issues may be read
+through the TACNEWS server ("@n" command at the TAC) or may be
+obtained by FTP (or Kermit) from the SRI-NIC host [26.0.0.73 or
+10.0.0.51] using login="anonymous" and password="guest".  The pathname
+for bulletins is DDN-NEWS:DDN-MGT-BULLETIN-nn.TXT (where "nn" is the
+bulletin number).
+**********************************************************************
+
+              PHASE 1 OF THE DOMAIN NAME IMPLEMENTATION
+
+The DDN Network Information Center (NIC) is directed to remove all
+nondomain-style host names and nicknames from the Official DoD Host
+Table, NETINFO:HOSTS.TXT, by 31 March 1987.  After that time, names
+which do not conform to domain-style naming conventions, i.e. do not
+have ".domain" extensions, will not be allowed in either the Official
+DoD Host Table or the domain name servers.
+
+Nicknames, or aliases, will not be permitted in either the servers or
+the Official Host Table unless authorized.  Network mailers are
+required to use primary host names and to accept host names containing
+dots (.), as specified in the DDN mail protocols RFC 821 (MILSTD-1781)
+and RFC 822.  If mailers are not now adhering to these protocol
+requirements, they may experience mail delivery problems when the
+nondomain-style names are discontinued.  Users sending electronic mail
+should use primary host names in all mail destinations and sources.
+If nicknames are used, problems may arise in mail delivery.
+
+The NIC will notify Host Administrators as to which names or nicknames
+do not now conform.  Host Administrators may change nonconforming data
+by the usual procedure via Network Change Requests (NCRs) and Network
+Change Directives (NCDs), if they wish, before the 31 March 1987
+deadline.
+
+Host Administrators anticipating problems with this plan should notify
+DCA Code B652 (DCAB652@DDN1.ARPA), or via AUTODIN message, and the NIC
+Hostmaster (HOSTMASTER@SRI-NIC.ARPA) no later than 2 weeks prior to
+the scheduled cutover.
+
+In March of 1984, the DDN began the transition to domain-style names
+with the issuance of DDN Management Bulletin 22.  In that bulletin,
+all hosts were required to change their primary host names to contain
+".domain" extensions in accordance with RFC 897.  At the same time,
+all of the old-style names (without the ".domain" extensions) were
+automatically declared to be nicknames in the Official Host Table,
+NETINFO:HOSTS.TXT.  This use of old-style nicknames was allowed on an
+interim basis to make the transition to domain-style naming easier.
+Almost three years have passed, and this transition period must now
+come to a close.
+
+The transition to naming domains has progressed to the point where
+there are many domain name servers implemented and running.  In order
+to maintain interoperability between hosts on the DDN using the host
+table and hosts using the domain name servers, all hosts must be able
+to recognize domain-style names.  It is imperative that all transition
+names and nicknames be upgraded to domain-style names or be removed
+from NETINFO:HOSTS.TXT so that naming is consistent and so that all
+use of names adheres to the specification for domain names adopted in
+1984.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926757&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926759&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

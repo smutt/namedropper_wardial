@@ -1,0 +1,57 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'IETF Domain Working Group agenda?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827082&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827084&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    IETF Domain Working Group agenda?
+From:       <a href="?a=95837816800007&r=1&w=2">"Philip Almquist" &lt;almquist () jessica ! stanford ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-01 19:23:12</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827083&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827083&q=raw">body</a>]</b>
+
+	I am at least tentatively planning on holding a meeting of the
+DNS Working Group at the Boulder IETF meeting, and am soliciting
+opinions about what ought to be included on the agenda.
+
+	Is domain name service in the Internet a solved problem :~), or
+are there things we need to (and/or want to) work on?  This will
+probably be a half-day meeting.
+						Philip
+
+PS: As a possible starting point, I have enumerated below the projects
+    that are currently listed in the group's charter:
+
+      -  Adding load balancing capability to the DNS.
+      -  Adding DNS variables to the MIB.
+      -  Implementation catalog for DNS software.
+      -  Responsible Person Record.
+      -  Adding network naming capability to the DNS.
+      -  Evaluate short-term measures to improve, or at least
+	 describe the security of the DNS.
+
+    A few other issues that have been posed on various mailing lists
+    recently include:
+
+      - What do the ISDN RR types really mean?
+      - Should domaind have A records?
+      - Should there be a DECNET QCLASS?
+      - Compression in new RR types?
+      - (Yet another round of) bogus servers for "." and "*".
+
+<b>[<a href="?l=namedroppers&m=95837798827082&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827084&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

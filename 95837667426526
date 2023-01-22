@@ -1,0 +1,70 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Some sites STILL using non-domain nicknames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426525&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426527&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Some sites STILL using non-domain nicknames
+From:       <a href="?a=95837692300001&r=1&w=2">Rich Wales &lt;wales () UCLA-LOCUS ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-24 11:39:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426526&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426526&q=raw">body</a>]</b>
+
+I'm not sure whether it's worth it to mention this again, but . . .
+
+Quite a few sites are STILL sending out mail with old, non-domain-style
+host names in the return addresses.  (E.g.:  "fred@PODUNK-CS" -- instead
+of "fred@PODUNK-CS.ARPA", or maybe "fred@CS.PODUNK.EDU".)
+
+Since these names are NEVER (as far as I am aware) going to be included
+in the new distributed domain data base, any host which has completed
+the switch to the domain mechanism will no longer be able to reply to
+mail whose return address bears one of these old names.
+
+The following offenders were represented in the last week's worth of
+mail received here at UCLA-LOCUS.ARPA:
+
+  AERO2         CIT-VAX        ISI-VAXA      NRL-CSS       TOVE
+  AIDS-UNIX     CVL            LBL-CSAM      NYU-CMCL2     UCI-ICSA
+  ALMSA-2       GE-CRD         MARYLAND      RAND-UNIX     UCI-ICSD
+  BERKELEY      GREGORIO       MIT-COMET     SRI-SPAM      UTAH-CS
+  CIT-750       ISI-HOBGOBLIN  NCSC          SRI-UNIX
+
+One or two of the above-listed sites account for a LOT of mail.
+
+I suspect I will -- quite reluctantly -- end up hacking our outgoing
+mailer daemon to add ".ARPA" to non-domain-style host names before
+trying to look them up in the domain data base.
+
+On principle, I shouldn't have to do this kind of thing . . .
+and I don't really want to, because it's a Disgustingly Evil Hack . . .
+and it won't even work all the time (e.g., GREGORIO.ARPA is bogus) . . .
+
+. . . but as long as so many hosts continue to generate return addresses
+that have no hope at all of working under the domain scheme, I see no
+alternative if I am to continue to support a large (and frequently
+naive) community of users who are totally unprepared to figure out what
+to do if someone else's return address doesn't work.
+
+-- 
+Rich Wales // UCLA Computer Science Department // +1 213-825-5683
+	3531 Boelter Hall // Los Angeles, California 90024 // USA
+	ARPA:   wales@UCLA-LOCUS.ARPA  -or-  wales@LOCUS.UCLA.EDU
+	UUCP:   ...!(ihnp4,ucbvax)!ucla-cs!wales
+
+<b>[<a href="?l=namedroppers&m=95837667426525&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426527&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

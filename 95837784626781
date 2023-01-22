@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'navy.mil domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626780&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626782&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626782&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700018&r=1&w=2">navy.mil domain</a>
+From:       <a href="?a=95837783700013&r=1&w=2">stanonik () nprdc ! arpa (Ron Stanonik)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-17 12:49:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626781&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626781&q=raw">body</a>]</b>
+
+I notice there are no nameservers for the navy.mil domain.
+Apparently the root servers don't delegate navy.mil, but
+rather delegate the next level down; eg, usna.navy.mil.
+
+&gt;From RFC1034 I gather this is okay; ie, the root servers
+have an SOA for mil, and no NS records "in between".
+
+&gt;From RFC1033 (the SRI.COM example) I gather it's would have
+been okay for the root servers to include SOA and NS records
+for navy.mil, listing themselves.
+
+Is there any reason to prefer one way over the other; ie,
+given that a server will be authoritative for both a domain
+(mil) and subdomain (navy.mil), is there any reason to include
+SOA and NS records for the subdomain?
+
+Thanks,
+
+Ron Stanonik
+stanonik@nprdc.arpa
+
+<b>[<a href="?l=namedroppers&m=95837784626780&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626782&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626782&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Mail Source Routing (was Re: New Host-Requirement RFCs)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627067&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627069&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627067&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627069&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400015&r=1&w=2">Re: Mail Source Routing (was Re: New Host-Requirement RFCs)</a>
+From:       <a href="?a=95837786600025&r=1&w=2">intercon!amanda%intercon.com () uunet ! uu ! net  (Amanda Walker)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-29 3:24:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627068&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627068&q=raw">body</a>]</b>
+
+In article &lt;2560@munnari.oz.au&gt;, kre@cs.mu.oz.au (Robert Elz) writes:
+&gt; Well, it turns out, I believe, that MX records are simply not
+&gt; good enough for some real world situations.  Here's an example
+&gt; using purely the internet (so no arcane protocols, etc) and
+&gt; where everyone implements MX capable mailers, and uses the DNS.
+&gt;
+&gt; [... description based on Australia's current situation ...]
+&gt; 
+&gt; If anyone can suggest any (reasonable) magic solution to
+&gt; this problem, I would love to hear it.  Note: changing the
+&gt; nature of the A-G and G-B links is not reasonable, unless
+&gt; you're willing to put up the $'s to do it.  Continuing to
+&gt; support dual views of the nameservers is not the answer
+&gt; either, that will cease soon, then everyone will start having
+&gt; trouble getting mail to (some sites) in Aust, at least until
+&gt; the internal Australian links are upgraded, or until users
+&gt; learn the appropriate source route, and use it.
+&gt; 
+&gt; kre
+
+Well, this is so far perhaps the best argument I've yet seen, but I'm still
+not convinced; I'll try to explain why.
+
+The fact that talking to the gateway is more costly from one side (B) than
+the other seems to be what introduces the complexity, since it means you
+need different policies for the two sides for mail destined for B.
+
+&gt;From A:
+
+	If you can see B, deliver the mail.
+	If you can see G but not B, give the mail to G.
+
+This amounts to a wildcard MX for all of B pointed at G.
+
+&gt;From B:
+
+	If you can see the other B, deliver the mail
+	If you can see G but not the other B, try again later.
+
+This amounts to the absence of the aforementioned wildcard MX.
+
+Using source routing as you've described amounts to defaulting mail from
+A to case #2, which is about the same cost as #1 (I assume), thus allowing
+both sides to see the same DNS, which has wins for things other than mail.
+
+I still think that this policy should be handled automatically, rather than
+by every person who happens to want to send mail to B.  I think that some
+variation on the dual-nameserver idea is still the way to go, since what
+you want is for G to be a default mail handler for one side but not the
+other.  Perhaps something could be done based on the fact that in the cases
+where you want A sites to drop their mail on G, they won't be able to see
+the primary nameserver for B; however, having a secondary that gives different
+information than its primary strikes me as being bad magic...
+
+Yuck.  However, a primary nameserver for B that returns different MX
+information depending on who's asking seems to be the least of the several
+evils here.
+
+A smaller-scale version of the same problem is an organization with a good
+internal network and an up-sometimes link to the outside world (say, dialup
+SLIP).  The far endpoint should accept incoming mail from other sites, but
+you never want mail from inside to go across the link unless it really is
+destined for a host off of the internal network, even if the destination
+is down and the link (and thus the far endpoint machine, which can accept
+its mail) is up.
+
+--
+Amanda Walker &lt;amanda@intercon.com&gt;
+--
+"If your application does not run correctly, do not blame the
+operating system." -- Geoffrey James, _The_Zen_of_Programming
+
+<b>[<a href="?l=namedroppers&m=95837784627067&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627069&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627067&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627069&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

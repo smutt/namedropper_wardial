@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Why Germany lies about the DE. domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326997&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327000&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326997&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327000&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400002&r=1&w=2">Why Germany lies about the DE. domain.</a>
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-18 17:42:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326998&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326998&q=raw">body</a>]</b>
+
+   From: eckert@fauern.UUCP  (Toerless Eckert)
+
+   &gt;From article &lt;1608@mcsun.eu.net&gt;, by dfk@eu.net (Daniel Karrenberg):
+   &gt; For the .de zone there is no problem at all. Just include all data even
+   &gt; for hosts and sites without connectivity. Who is going to stop you?
+   &gt; On what grounds?
+
+   Anyway, i don't see the need for discussion here: it doesn't make a
+   difference for anyone that the zones are different, or does it - No,
+   it does not, as those who can't resolve domainnames from the states
+   couldn't even reach the associated nets in germany.
+
+If the world consisted only of Germany and ``the states,'' it wouldn't
+make a difference. But the Nordic countries, and probably much of
+Europe, CAN reach the German networks by other routes, and we DON'T
+want to kluge unido into our DNS caches. Please merge the zones.
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcsun!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837797326997&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327000&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326997&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327000&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

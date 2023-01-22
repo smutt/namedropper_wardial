@@ -1,0 +1,109 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'problem with bind' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026992&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026994&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    problem with bind
+From:       <a href="?a=95837785800010&r=1&w=2">JoAnn &lt;TKSJMI () UBVM ! CC ! BUFFALO ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-26 6:55:33</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026999&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026999&q=raw">body</a>]</b>
+
+
+ I guess bind-test is dead?  To add to this msg, before this 'problem'
+ started, this nameserver had been running bind 4.7.3 and Sun OS 3.4
+ with no problems/crashes for weeks...
+
+ JoAnn
+
+----------------------------Original message----------------------------
+
+ Hi - I am starting here with a general 'have you heard of this'
+ problem -
+
+ I run name service for buffalo.edu on a Sun 3/160.  Since mid September,
+ named has sporadically crashed, sometimes in really frustrating clusters,
+ sometimes not very frequently at all.  I have tried bsd bind4.7.3 +
+ bsd bind 4.8.  This sun has been from sos 3.4 to sos 4.0, which it is
+ now running.  The "Sun bind" has the exact same problem as the bsd bind.
+
+ So, it makes no difference what version of sos or bind I have used,
+ I still get the problem.  It seems to be related to processing queued
+ queries, but not all the cores pt to the same place in code.  But I
+ am not familiar at all with named source.  Here is a script, showing
+ the extent of my adb knowledge- along with some other stuff that may
+ help-
+
+ Any suggestions/comments???
+ thanks very much!
+ JoAnn
+
+Script started on Wed Oct 26 06:44:43 1988
+ns# pwd
+/usr/local/src/bind4.8/named
+ns# adb ./named ./core
+core file = ./core -- program ``named''
+SIGBUS 10: bus error
+$t
+bad modifier
+$c
+_retry(0x556e8)    + 5e
+_main(0x0,0xeffff20,0xeffff44) + eee
+from_addr/x
+_from_addr:
+_from_addr:    2
+
+_from_addr+2:    35
+
+_from_addr+4:    c021
+
+_from_addr+6:    40c
+
+_from_addr+8:    0
+556e8
+0x556e8:    2
+
+0x556ea:    210
+
+0x556ec:    0
+$q
+ns# dbx ./named ./core
+Reading symbolic information...
+Read 5939 symbols
+(dbx) where
+retry(qp = 0x556e8), line 350 in "ns_forw.c"
+main(argc = 0, argv = 0xeffff20, envp = 0xeffff44), line 637 in "ns_main.c"
+(dbx) quit
+ns# tail /usr/tmp/namedr .run
+
+datagram from 192.33.4.10 port 53, fd 8, len 472
+resp: nlookup(205.128.in-addr.arpa) type=6
+resp: found '205.128.in-addr.arpa' as '205.128.in-addr.arpa' (cname=0)
+send_msg -&gt; 192.33.4.10 (TCP -1 14082) id=1582
+write failed 9
+resend(addr=1 n=0) -&gt; 192.33.4.12 8 (53) nsid=527 id=1 416ms
+
+datagram from 192.33.4.12 port 53, fd 8, len 82
+send_msg -&gt; 128.205.2.4 (UDP 10 1229) id=1
+ns# ^D
+script done on Wed Oct 26 06:47:09 1988
+
+script done on Wed Oct 26 06:47:09 1988
+
+<b>[<a href="?l=namedroppers&m=95837783026992&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026994&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

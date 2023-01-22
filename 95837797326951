@@ -1,0 +1,42 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Machine name = domain name????' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326954&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200019&r=1&w=2">Machine name = domain name????</a>
+From:       <a href="?a=95837817000021&r=1&w=2">zaphod.mps.ohio-state.edu!usc!elroy.jpl.nasa.gov!zardoz.cpd.com!dhw68k!fedeva!dy</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-12 12:04:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326951&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326951&q=raw">body</a>]</b>
+
+I ran across something that I thought was a little strange.  There is 
+a Gould Powernode here and we were trying to arrange a hook up.  When
+we connect, however, I found that the machine name was not ddfoobar
+like it said in the uucp map, but rather the machine name was its
+full domain address:  xxxx.yyyy.mil   Is this normal in any sense of
+the word?  The site is connected via uucp to an Internet site and is
+registered in the uucp maps.  What's the deal here?  Thanx in advance.
+
+
+-- 
+Jesse W. Asher - Dynasys - (901)382-1705     Evening: (901)382-1609 
+6196-1 Macon Rd., Suite 200, Memphis, TN 38134  
+UUCP: {fedeva,chromc,autoz}!dynasys!jessea
+
+<b>[<a href="?l=namedroppers&m=95837797326940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326942&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326954&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

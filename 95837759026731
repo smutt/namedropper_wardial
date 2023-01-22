@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: TTL's considered too short?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026730&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026732&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026730&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300027&r=1&w=2">re: TTL's considered too short?</a>
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198606">1986-06-30 13:33:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026731&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026731&q=raw">body</a>]</b>
+
+
+Bill,
+
+    I agree that a TTL of 3600 seconds is too short (though I know
+I'm using them in my database right now -- I'll fix that).
+
+    On the more general philosophical questions,  I believe that
+part of the advantage of the domain server is that new information
+can be circulated fairly quickly.  I think that people should be
+tailoring their servers with the idea that any change they make
+to a set of RR's will be propagated to the rest of the net within
+24 hours or less.
+
+    I should point out here that my primary concern here is mail.
+If my host breaks and I want to re-route its mail, my database
+better be set up so that everyone will ask for MX RRs soon enough
+that I won't lose any mail because someone has held it for 3 days.
+
+Craig Partridge
+CSNET Technical Staff
+
+<b>[<a href="?l=namedroppers&m=95837759026730&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026732&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026730&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

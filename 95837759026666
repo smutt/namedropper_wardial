@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: mail gateways and mx rr's --- STOP !!!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026664&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026667&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026667&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300001&r=1&w=2">re: mail gateways and mx rr's --- STOP !!!</a>
+From:       <a href="?a=95837693400021&r=1&w=2">POSTEL () USC-ISIB ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198602">1986-02-27 20:56:20</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026666&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026666&q=raw">body</a>]</b>
+
+
+Hello.
+
+STOP !!!
+
+The MX records do not (repeat not) provide any information suitable for
+creating a routing procedure.  The number in the MX record is the
+preference stated by the destination for having mail to it delivered
+to the host named in that record.  That is, the destination is
+specifying that that host is designated as an agent at that preference
+level.  For example, if the records are:
+
+     FOO.ATT.COM IN MX 10 RELAY.CS.NET
+     FOO.ATT.COM IN MX 20 SEISMO.CSS.GOV
+
+Then FOO.ATT.COM is telling the world that it designates RELAY.CS.NET
+and also SEISMO.CSS.GOV to be agents for handling its mail, and that
+it prefers you to use RELAY.CS.NET if possible.
+
+It is a private matter between FOO.ATT.COM and its designated agents
+how the mail gets treated between them.  It is entirely wrong for the
+rest of the world to try to interpret any significance to the stated
+preferences or second guess the optimal path.
+
+The number in the MX RR in not intended to represent the cost of the
+subsequent treatment of the mail.
+
+The number in the MX RR is intended to be the destination's preference
+for having its mail handled by that agent.  This may be based on
+anything of the destinations choosing.  Maybe there is a private deal
+for the destination to pay for an extra disk at the most preferred
+agent, maybe the guy that runs the agent is an old drinking buddy of
+the guy that runs the destination, whatever.
+
+--jon.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026664&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026667&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837759026667&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

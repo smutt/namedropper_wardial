@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogons infest AOS.BRL.MIL' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026987&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026989&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Bogons infest AOS.BRL.MIL
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198810">1988-10-20 19:46:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026988&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026988&q=raw">body</a>]</b>
+
+It seems pretty clear that these bogon RRs came from the cache preload
+file (named.ca or whatever) on some machine that is also believed to
+be a nameserver for some zone or another.  Perhaps AOS's named asked
+that server a question directly, perhaps it's third party
+contamination.
+
+This problem provides a good illustration of my two biggest complaints
+against bind:
+
+1) The use of a cache preload file instead of safety-belt information
+   to boot (see RFC103{4,5}), making it necessary for every site
+   administrator running bind to hand maintain a list of root RRs, and
+
+2) The lack of firewalls in the design of bind that allow these bogons
+   to sneak into the Authority and Additional sections of the response
+   packet for any query that bind doesn't know the answer to.
+
+When you combine these two you get a situation that is inherently
+unstable.  All it takes to completely break things is a single name
+server with an out of date cache preload file.  Call that name server
+(A).
+
+Suppose that some resolver (B) asks (A) a question the answer to which
+(B) believes (A) should know.  Never mind why, maybe the RR that (A)
+has for this query is a CNAME pointing at a name in a zone that (A)
+isn't an authority for, maybe (A) doesn't know it's supposed to be a
+server, maybe (A) is an old buggy version of bind.  In any case, (A)
+responds with a redirection to some name server that it thinks might
+be better able to answer the question; odds are good that the
+nameservers it picks are the root RRs that it has in its cache preload
+file.  So (B) gets bogus root information and caches it.
+
+If (B) happens to be a name server (far from unlikely, since a site
+configured as a workstation/server environment probably puts both its
+name servers and its mailer daemons on a (relatively) small number of
+server machines), (B) will now distribute the bad cached data too.  If
+(B) is a root server, that's the ball game.  My guess is that this is
+what happened to AOS.BRL.MIL.
+
+Moral: If we ever get a chance to redesign all this stuff, we should
+make it a requirement that no server is allowed to distribute data
+from its own cache unless specificly requested to do so by the client.
+
+I claim that this specific request is exactly equivalent to the sense
+of the existing Recursion-Desired bit: if we're doing recursion, we
+may as well use the cache, but if we're not doing recursion, we should
+only answer questions for which we are authoritative.  If there are
+any protocol reasons (as opposed to implementation reasons) why this
+is a bad thing, please tell me.  Otherwise I'd like to see this
+stricture added to the host requirements RFC.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837783026987&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026989&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

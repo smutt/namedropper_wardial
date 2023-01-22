@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'How to use MX records in practice' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626784&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626785&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700019&r=1&w=2">How to use MX records in practice</a>
+From:       <a href="?a=95837785800036&r=1&w=2">mcvax!enea!kth!draken!chalmers!cs.chalmers.se!lindberg () uunet ! uu ! net  (Gunnar Lin</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198901">1989-01-23 17:46:32</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626783&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626783&q=raw">body</a>]</b>
+
+I've tried to grasp this from RFC974 &amp; RFC1032-35 but I think it could
+stand some discussion:
+
+Assume I want to send mail to user@foobar.foo.bar.edu. According to
+RFC974, pp 4-5, I think I should:
+
+    1)	Look for MX(foobar.foo.bar.edu). If I find it, everything's
+	just fine and I try to send to those hosts in turn.
+    
+    2)	Look for A(foobar.foo.bar.edu) and check that foobar has SMTP
+	as a WellKnownService ("strongly encouraged"). Found =&gt; OK.
+
+Now, what if I didn't get a usable answer (e.g. WKS didn't contain
+SMTP) what do I do? Do I just have to give up, "host/domain unknown",
+or is there more to do?
+
+What I would like to do, but haven't seen in any RFC, is:
+
+    3)	Look for MX(foo.bar.edu), MX(bar.edu) etc. until I get a
+	positive reply or reach the top domain (.edu).
+
+Could someone please tell me:
+
+    +	Is this completely wrong?
+
+    +	If not, why is it bad approach (I guess it is since it isn't
+	mentioned in any RFC, although it's rather obvious).
+    
+    +	How should it be done instead? Does a name server have to
+	provide MX records for *every* possible mail address within
+	its domain (since "*" does not work if there exists a host
+	with the same name - a rather common scenario)?
+
+Thanks in advance,
+
+	Gunnar Lindberg
+
+<b>[<a href="?l=namedroppers&m=95837784626782&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626784&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626785&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

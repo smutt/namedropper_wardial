@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain database problems' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926785&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926787&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800009&r=1&w=2">Domain database problems</a>
+From:       <a href="?a=95837784200026&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! STANFORD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198703">1987-03-05 12:05:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926784&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926784&q=raw">body</a>]</b>
+
+Given the frequency with which these problems are starting to arise,
+and will no doubt continue to arise, I think it's crucial to start
+thinking of heuristics which can be used to help enforce database
+consistency and correctness.
+
+Not being a database maintainer myself, not many spring to mind, but
+I will suggest the following:
+
+If a server delegates authority for another domain to another server,
+then an address record for that server MUST accompany the SOA record.
+
+And how about this: perhaps servers should periodically check that
+when they delegate authority, that they are able to contact at least
+one of the servers to which authority is delegated, and have a query
+answered.  Perhaps servers should check this every night.
+
+In general I think this system is going to fall appart if it relies
+exclusively on the correctness of the entries made by the thousands
+of people who maintain it.  We've already seen how easy it is for people
+to enter incorrect information due to misunderstandings of the system,
+and due to oversights.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926785&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926787&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

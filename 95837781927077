@@ -1,0 +1,67 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'MX records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927078&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=87620675600005&r=1&w=2">MX records</a>
+From:       <a href="?a=95837784400005&r=1&w=2">David Roode &lt;ROODE () BIONET-20 ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-06 12:35:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927077&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927077&q=raw">body</a>]</b>
+
+The recent flutter of messages concerning the need or lack thereof
+for a set of MX records in domain BIT.NET or BITNET made me wonder
+if people realize how MX records are being used.  The significance of
+BIT.NET vs. BITNET seems unimportant.  The idea of providing domain
+service for valid BITNET hosts seems worthwhile, even if only as
+a transition.  But perhaps people don't realize that the UU.NET
+domain service for UUCP simply fabricates an MX record for each
+and every x.UU.NET query given it.  This results in all mail being
+routed to one of the relays and processed or rejected there.  Some
+might say this is a travesty, and although I don't necessarily agree
+with that assessment, I think all should be aware how things are
+currently working.
+
+An incentive that could be provided for 'true' domain service
+would be to point out that routing efficiencies can be achieved
+if each BITNET site's MX response identifies the best relay
+host.  Since this is host-specific information, a real registry
+of all hosts would then have to be maintained in the mail
+system.  Ditto for  UUCP, except that the selection of
+a prefered relay is less geographical in nature due to multiple
+trunk mechanisms for UUCP-land (UUNET).  In both UUNET and BITNET,
+the selection of a prefered relay is relatively independent of
+Internet topology, currently, so the same response could be
+given to all requestors.
+
+As the Internet  increases in complexity, it would probably be
+worthwhile to include some additional information in MX responses
+which the requestor could use in selecting from a menu of relay
+possibilities.  For example, a host on NSFnet would probably prefer
+to relay through a fellow NSFnet site if one were available, unless it
+increased the cost for the UUNET or BITNET leg significantly.
+So, indicators of 'location' both within Internet and on
+the UUNET or BITNET side could be provided in MX response,
+say two numbers between 1 and 9.  Even though I believe there will
+eventually be one large Internet and no UUNET or BITNET, I think
+that is a long way off and I think this coordinate system would
+permit a large cost savings in the meanwhile.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781927076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927079&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781927078&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

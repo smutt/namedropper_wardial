@@ -1,0 +1,128 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Relative naming' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026698&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026700&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300007&r=1&w=2">Relative naming</a>
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-30 14:16:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026699&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026699&q=raw">body</a>]</b>
+
+This still looks relevant to me.  At least relatively relevant...
+Very careful reading will show how much progress we've made in
+the past year!
+
+		---------------------------------
+
+Return-Path: &lt;namedroppers-RELAY@SRI-NIC.ARPA&gt;
+Received: from SRI-NIC.ARPA by SUMEX-AIM.ARPA with TCP; Thu 2 May 85 16:14:15-PDT
+Received: from SUMEX-AIM.ARPA by SRI-NIC.ARPA with TCP; Thu 2 May 85 11:03:51-PDT
+Date: Thu 2 May 85 11:04:14-PDT
+From: Peter Karp &lt;KARP@SUMEX-AIM.ARPA&gt;
+Subject: Motherhood
+To: namedroppers@SRI-NIC.ARPA
+
+That was admittedly pretty vague; here are some more concrete suggestions
+for user interfaces.
+
+I guess my overall feeling here is that if you type "telnet mc", no
+system can be expected to correctly generate "mc.mit.edu" by blind
+search because the space is too large.  Nor should it be expected
+that such a short string uniquely expand into one full domain name.
+I think there are two directions we can proceed here (which are not
+mutually exclusive): provide a user interface with a number of
+heuristics which it can use to guess what full domain name the user
+actually means, or, provide the user interface with some background
+set of assumptions which it can use to uniquely expand  a string typed by
+the user into a full domain name.  All of my heuristics are based on
+locality of reference with respect to some metric - either time or
+distance within the domain name space.  I'd be interested to see others
+propose different general approaches to this problem.
+
+1) A mechanism which has been discussed on this list several times
+(I think) is being used in the BIND system, namely, distinguish
+between partially and fully qualified domain names, and attempt to
+resolve the former in the context of the executing host.  For example,
+if a name with no terminating dot is used to indicate a partially
+qualified name, and I type "sumex" from "score.csd.su.arpa.", resolvers
+would interatively attempt to resolve:
+	sumex.csd.su.arpa.
+	sumex.su.arpa.
+	sumex.arpa.
+	sumex.
+
+This should be computationally feasible since the height of the domain
+tree should be small and most queries should (or could be forced to) be
+to local servers.
+
+It also seems likely that this mechanism will support abreviation in
+most cases because people will most often name resources which
+exist in a parent domain because these resources are local with
+respect to organization.
+
+2) When Ralph Campbell and I were batting around ideas on this subject
+I made some other suggestions regarding an abreviation language.  He
+didn't like them because he felt they are too complex, and while I basically
+agree with him, perhaps the slow typers among you will like this.
+
+This is one way in which the system can translate a typed string to a
+full domain name by interpreting it in the context of the local host
+name.  This could be done by defining characters that might be called
+label operators in that they specify what labels to keep or drop from
+a base name when constructing the actual name.  For example, if one is
+on host "score.csd.su.arpa." and types "sail^^^", this might translate
+to "sail.csd.su.arpa.", while if one typed "sierra.ee^^" this might
+translate to "sierra.ee.su.arpa.".  Here the "^" is a "keep" operator in
+that it specifies how many labels from the right of the local host name
+to keep.  Alternately, we might define a "drop" operator "*" which
+specified the dropping of labels from the left, i.e., "sail*" would
+translate to "sail.csd.su.arpa.".
+
+3) In both of the above cases the local host name serves as a template for
+constructing fully qualified names.  The next natural extension is to
+allow multiple contexts which the user can define, i.e., a search path or
+a set of alternates.  Either of these opitons could be combined with (1)
+or (2) above so the system could make a lot more guesses or the user could
+specify a wider range of names.
+
+Thus, one might define an alternate context 1 called "ee.mit.edu."
+and one could then specify "xyzzy^^^1" to construct "xyzzy.ee.mit.edu.".
+
+4) While I don't really expect to see this, since I am in AI I should
+be bold and suggest that the user interface should maintain a
+profile of each user and interpret names the user types with respect
+to this profile.  Thus if I've typed "telnet oz.mit.edu." every day
+for the last week the system should know that for me MIT is in some
+sense "local", so it should guess at the correct interpretation when I
+type "telnet mc" tomorrow.
+
+
+I don't claim the syntax above is particularly elegant, but I think
+you get the idea.  All of the above functionality can reside in the
+resolvers, not the name servers.  Of course, many of the things I
+propose above are analagous to features of the Unix history mechanism.
+Do we have any languages designers out there who would care to suggest
+different approaches to this problem?
+
+Peter
+-------
+-------
+
+<b>[<a href="?l=namedroppers&m=95837759026698&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026700&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

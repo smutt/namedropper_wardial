@@ -1,0 +1,74 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Why Germany lies about the DE. domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326982&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326979&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326994&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400002&r=1&w=2">Why Germany lies about the DE. domain.</a>
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-09 18:21:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326981&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326981&q=raw">body</a>]</b>
+
+   From: eckert@fauern.UUCP  (Toerless Eckert)
+
+   1 The current setup is intentionally to allow full use of the DNS for
+     all those sites in germany who cannot currently reach the US-
+     or even european Internet, but who want to use the DNS nevertheless,
+     and not only for domainname to address resolution, but also vice versa.
+
+   2 Domains which have network reachability only within germany are DNS
+     registered with the DE. zone on unido (unido.informatik.uni-dortmund.de),
+     and have their according IN-ADDR.ARPA. zone set up in a similar way by
+     faked entries in the unido... DNS server. These domains have usually only
+     MX records to their preferred forwarder for E-mail in the official DE zone
+     on uunet.uu.net.
+
+   3 Domains under DE having aquired full US and European Internet connectivity
+     are also entered into the official DE zone on uunet.uu.net (and of
+     course on the DE zone on unido...).
+
+   4 All german DNS installations are obliged to use unido... as a forwarder,
+     so that those domains under (2) are correctly resolved, and not only those
+     from the DE zone, but the IN-ADDR.ARPA. zones too.
+
+   5 The administrative responsibility for the DE domain is handed to
+     the University of Dortmund, which runs unido..., this applies for
+     the official DE zone from uunet too. The DFN has no cards in the DNS,
+     but owns the DBP.DE zone.
+
+   ...
+
+I still want to know why you think that you have to do it that way.
+
+If the DE. zones on uunet and unido were made identical, which
+specific regulations would it break? Which specific organizations
+would take action against you for other reasons? Which specific
+functions of the network would cease to work?
+
+&gt;From what I know, the answers are none, none, and none, and nothing in
+your article contradicts this.
+
+On the other hand, I know that there are functions that would _start_
+to work if the zones were identical.
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcsun!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837797326980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326982&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326979&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326994&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

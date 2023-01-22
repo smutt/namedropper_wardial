@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Well Known Ports' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426646&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800028&r=1&w=2">re: Well Known Ports</a>
+From:       <a href="?a=95837693400010&r=1&w=2">Rick Adams &lt;rick () seismo ! CSS ! GOV&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-17 0:59:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426647&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426647&q=raw">body</a>]</b>
+
+Not all commonly used protocols can be documented by an RFC.
+
+For example, "every" unix host can run uucp. I applied for a well known
+host number for it. I can't write an rfc describing the protocol because
+1) it's a real bitch and 2) it would probably violate AT&amp;Ts trade
+secret restriction on the workings of the protocol. So, "everyone"
+uses port 540 instead of a well known one.
+(non-unix people can think of uucp as a spooled ftp. The current ftp
+does not allow for spooling file transfers if the host is down. This is
+a simplification of uucp, but reasonably accurate)
+
+There exist many well known protocols that do not have detailed
+documentation on the individual program. However, the code that
+implements these protocols is widely available, so hosts have
+no trouble using the protocol. 
+
+I think that there is too much emphasis on a protocol being usable on
+all machines. One should be able to have a well know port that is
+operating specific. e.g. the Berkeley rlogin protocol duplicates
+the functionality (in general) of telnet, but is much nicer to use
+between unix machines.
+
+I am concerned that the current practice of having an rfc describing
+the protocol is severly hampering the use of well known ports. 
+I know I don't have time to write an rfc describing uucp, but I
+have code that is reliable and is in use all the time. Many of
+these protocols are meaningless on non-unix machines (or
+virtually impossible to implement). 
+
+Since something like 60% of the internet machines are running Unix,
+perhaps it's time to rethink the requirements for obtaining a well known
+port. Otherwise, we might as well throw the idea away. Practice seems to
+prove the current scheme doesn't work. Most unix machines use the
+numbers in /etc/services as a defacto list of well  known ports, despite
+what the official list might be.
+
+A modification to allow the RFC to say something like "implements
+the unix specific protocol uucp/rcp/rsh/rlogin/etc might be adequate".
+
+On a slighly related note, given that Unix is becoming the dominant
+OS on the internet, it seems that the "people" (a deliberately
+nebulous term) involved in setting policy in general should have a
+much better working knowledge of Unix than they do. It seems that
+the TOPS20 people are strongly dominant in deciding the final form
+of the various rfcs. This may be an artifact of the systems available
+to them, but there have been several occasions when the lack of
+unix familiarity has shown itself. (A recent example is the
+"why would anyone use host number to host name mapping on a regular
+basis" discussion. The Unix implementations use it a lot. Apparently
+they are the only implementations that do).
+
+---rick
+
+<b>[<a href="?l=namedroppers&m=95837667426646&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426646&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837667426648&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

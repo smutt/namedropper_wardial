@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'New class?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426471&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426473&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426473&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887100034&r=1&w=2">New class?</a>
+From:       <a href="?a=95837693200015&r=1&w=2">Jonathan.McElravy () cmu-cs-ius ! arpa</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198506">1985-06-19 19:45:08</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426472&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426472&q=raw">body</a>]</b>
+
+Greetings,
+
+  Here at CMU, we have several (read many) hosts that are only accessible
+from CMU's local networks. We hesitate to enter these hosts into our
+database for the domain server since they are not accessible from outside
+the CMU context. On the other hand, we would like to do lookups on these
+hosts using the domain mechanism without creating special hacks within
+the servers and resolvers themselves.
+  We suspect that there are other sites out there that have situations
+that call for a "local only" designation and would like to bring up
+for discussion the addition of a LOCAL class.
+  We will have to work "local only" into CMU's system somehow. It would
+seem more advantageous for it to be facilitated in the domain scheme at
+large so others may make use of it as an existing feature.
+
+  Comments?
+
+						Jonathan McElravy
+						Carnegie-Mellon University
+						jm@cmu-cs-ius.arpa
+
+<b>[<a href="?l=namedroppers&m=95837667426471&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426473&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426473&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: A plea for care when faking top-level domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826847&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826852&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327141&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826850&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900008&r=1&w=2">Re: A plea for care when faking top-level domains</a>
+From:       <a href="?a=95837817400038&r=1&w=2">uflorida!mlb.semi.harris.com!thrush.mlb.semi.harris.com!del () g ! ms ! uky ! edu  (Don L</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-25 22:36:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826849&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826849&q=raw">body</a>]</b>
+
+In article &lt;1990Jul25.054936.25540@mel.dit.csiro.au&gt; smart@mel.dit.csiro.au (Robert \
+Smart) writes:
+&gt; In article &lt;1990Jul25.041622.15179@mlb.semi.harris.com&gt; \
+&gt; del@thrush.mlb.semi.harris.com (Don Lewis) writes:
+&gt; &gt; &gt; 
+&gt; &gt; &gt; I suggest that each root name server only service a limited constituency
+&gt; &gt; &gt; of networks. So the root nameservers in Europe would ignore requests
+&gt; &gt; &gt; from non-European network numbers. Not only that but when they get
+&gt; &gt; &gt; a request for "." from a European network number then they will only
+&gt; &gt; &gt; report back with the European root nameservers. I think that with
+&gt; &gt; &gt; this scheme you could have as many root nameservers as efficiency
+&gt; &gt; &gt; requires.
+&gt; &gt; &gt; 
+
+Also name servers off MILNET should probably not harass the root servers
+on MILNET.
+
+&gt; &gt; 
+&gt; &gt; This won't work very well either with the current versions of BIND.
+&gt; &gt; If my name server queries a European name server for a domain that it
+&gt; &gt; is supposed to be authoritative for but isn't, the European server will
+&gt; &gt; delegate my server back to the European root servers.  It will list the
+&gt; &gt; European root name servers in the authority section of the response and
+&gt; &gt; their addresses in the additional section.  My name server just add these
+&gt; &gt; servers to its list of root servers (and pass this information on if it
+&gt; &gt; is similarly misconfigured).  I have also observered broken name servers
+&gt; &gt; responding with the root server list in the authority section just for
+&gt; &gt; the heck of it.  May I remind everyone that just a few months ago many
+&gt; &gt; name servers thought that "GENTER-ADAM.ARPA" was a root server.
+&gt; 
+&gt; This rather goes with a discussion held some months ago. Name servers
+&gt; shouldn't believe things they hear from non-authoritative sources
+&gt; except as "information of last resort", like the startup cache.
+
+Well, the point is that currently available versions of BIND don't
+behave this way, and even when the fixed version is available we all
+know how easy it is to get everyone to update there software.
+
+&gt; Even
+&gt; so this situation won't be drastic. The broken name server will have 
+&gt; the European nameservers in its list of root nameservers, but if it 
+&gt; tries to use them it will be ignored.
+
+On the surface, it looks like that would cut the traffic by 50%, but
+in reality the US name servers will just go on to try other root
+servers, some of which will be European.  If a US name server queries
+two European name servers, we will have just as much traffic as if
+the first European name server answered in the first place.
+
+&gt; I'm sure things would still be a 
+&gt; lot better than they are now. In fact packets destined for the European
+&gt; (and Australian!) root nameservers could be dropped by the routers before
+&gt; they leave America (unless from the other root nameservers), so the cost
+&gt; on those most expensive and overloaded links could be nil.
+
+How much will this filtering impact the performance of the routers?
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+
+<b>[<a href="?l=namedroppers&m=95837798826847&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826852&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327141&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826850&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

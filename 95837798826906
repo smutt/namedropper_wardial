@@ -1,0 +1,51 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: CS top-level domain and its impact on the UK?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826905&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826907&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826905&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826907&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900001&r=1&w=2">Re: CS top-level domain and its impact on the UK?</a>
+From:       <a href="?a=95837786000010&r=1&w=2">brian () ucsd ! edu  (Brian Kantor)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-06 15:59:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826906&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826906&q=raw">body</a>]</b>
+
+Not to beat a dead horse, but if you take a JANET mailbox address like
+
+	john-thomas@uk.ac.manchester.cs
+
+and tack a .GB on the end of it, thus
+
+	john-thomas@uk.ac.manchester.cs.gb
+
+and you have a pair of nameservers for '.gb' that understand that
+subdomains of '.gb' are JANET-compliant hostnames that have to be
+treated according to coloured-book rules, then you have something that
+the JANET/internet gateways can handle unambiguously, and that is
+completely acceptable to the internet DNS - and won't be confused with
+something that originates anywhere else, or that belongs elsewhere in
+Europe.
+
+The simple trick here is that the GB nameserver can just strip off the
+ .GB and ask the JANET nameserver, which is presumably separate anyway.
+
+Simple, straightforward, and elegant in its simplicity.  Therefore, it
+will never happen.
+	- Brian
+
+<b>[<a href="?l=namedroppers&m=95837798826905&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826907&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826905&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826907&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

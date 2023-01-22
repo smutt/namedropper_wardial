@@ -1,0 +1,130 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Several issues discussed in BIND mailing list' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926789&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926791&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Several issues discussed in BIND mailing list
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198703">1987-03-13 16:55:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926790&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926790&q=raw">body</a>]</b>
+
+Several messages from the BIND mailing list have covered some issues
+which are related to upcoming changes (additions really) in the domain
+system.  I'd like to put in my two cents worth, and get feedback.
+
+The main change is to allow negative response caching.  The idea here is
+that when you get an authoritative response, the authority section will
+contain the SOA RR from the zone.  Given that the requestor knows all
+types which match the QTYPE of the query, it can create create
+"antimatter" RRs for all types which do NOT appear in the answer
+section.  The antimatter RRs get a TTL equal to the MINIMUM value from
+the SOA RR, and timeout in the normal way.  (This might not be really
+implemented as RRs, but you get the idea.)
+
+Non-existent names get cached the same way as missing RRs.
+
+For example, suppose that the QTYPE is A, and the answer section comes
+back empty.  Then you can cache the fact that no A RR exists for a time
+equal to the minimum.  If the QTYPE is *, and only a A RR comes back,
+then you can assume that NS, SOA, MX, etc do not exist for the MINIMUM
+interval.  A name error caches the fact that the name doesn't exist.
+
+The nice thing about this approach is that the change is pretty minimal
+in the name servers.  The drawback is that there doesn't seem to be a real
+clean way to pass the information back from a server which is not
+authoritative.  Any ideas out there?
+
+At any rate, this idea interacts with some of the recent discussion:
+
+QCLASS=*
+
+When a server gets a query for QCLASS=*, it doesn't have a real great
+choice for setting the AA bit in the present scheme, since it might be
+authoritative for one class but not for another.  The present RFCs say
+that AA should not be set if QCLASS=*.  If we go to the SOA's in the
+authority section, we could then use them to replace the AA bit, but
+this gets sticky when truncation occurs, and might also lead to trouble
+during the transition to SOA passing.
+
+I think QCLASS=* is asking for trouble unless you really need it, and
+I haven't seen anybody yet that really needs it.
+
+Inappropriate failures
+
+There are versions of BIND out there that give back non-existent name
+errors when they really mean that they were not able to do a zone
+transfer.  Beat up the owners.  BRL is supposed to be fixed.  If you ask
+a server which is supposed to be authoritative and it denies autority,
+don't self destruct, try another.
+
+Defaults vs Minimum etc
+
+I suggest we change the master file format as follows.  The default for
+a TTL should be the last explicitly stated TTL in the file, but all TTls
+must be at least the minimum value.
+
+Note that since zone transfers move a TTL per RR, there really isn't any
+point in putting the default in the SOA.  MINIMUM is required for the
+negative caching scheme.
+
+I don't see why all RRs in a zone want the same TTL.  I may well want
+all of the ISI data in a zone with long TTLs for the ISI.EDU MX RRs and
+shorter TTLs for the addresses of IBM PCs here.
+
+Named startup problem
+
+I think that the right architecture is to have three kinds of
+information:  authoritative data in zones, cached data, and
+safety-belt/startup data.  When you are trying to find a server to ask a
+query, use authoritative first, cached if no authoritative, etc.  NEVER
+export safety-belt data, just use it when you are stuck.  Include the
+NIC and other root servers in the safety-belt.  Queue a query for the root
+servers whenever you use the safety belt; unless the safety belt is
+totally useless, you will put the response in the cache and not use the
+safety belt anymore.
+
+Wild card rules
+
+My model for wildcards is as follows: the search for a name traverses a
+tree (virtual or actual) in a label by label manner.
+
+If you find the name, or find delegation, you don't even consider
+wildcards.  The rationale is that you shouldn't be able to force
+wildcards on zones you delegate (not to mention that you would then have
+to check for them in all ancestor zones), and that if a node exists you
+can always have the same RRs there, but you might want to avoid the
+default.
+
+If the name search fails at some point, you look for a * at that point,
+and use it if its helpful.  The virtue of this scheme is that it
+allows different wildcards in differnet subtrees, but it does make for
+more RRs that one might like.
+
+There may be a better way, but it sounds to me like what you want is a
+macro facility for defining the RRs for hosts, users, etc.  I'm not so
+sure that we really want defaults associated with all names in a zone,
+because the set of types will get richer with time, and you wouldn't
+really want MX RRs for all netbios names, etc.
+
+I'm ready for discussion at Monterey.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781926789&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926791&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

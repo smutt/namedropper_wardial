@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Chaos issues' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426559&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426562&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426562&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600036&r=1&w=2">Chaos issues</a>
+From:       <a href="?a=95837661700001&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-09 11:03:39</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426561&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426561&q=raw">body</a>]</b>
+
+Forgive me if I misunderstand this issue but:
+
+There is a concern that because there are multiple, disconnected
+chaosnets hanging off various Internet sites, that we must thus
+qualify a host's chaos host number with a network number.
+
+Somehow this seems misguided since there are of course multiple,
+disconnected internets in the world (e.g., many corporations have
+their own ethernets running TCP/IP which are not connected to the
+DARPA Internet).  When these companies start running domain servers,
+we won't need to suddenly qualify internet addreses by some higher
+level number which disambiguates among all these disconnected
+internets.  The idea of course is that a given client only cares about
+the internet address of a host on the network it is connected to.
+
+Thus, by analogy we shouldn't have to qualify the chaos host numbers
+in a given servers database.  The MIT server, for example, can assume
+that the only clients that will ask it for the address of an MIT chaos
+host are in fact on the MIT chaosnet.
+
+The only flaw I can see in this argument is that the two cases are not
+completely analagous because there is a sense in which the multiple
+chaosnets are "connected" (via the DARPA Internet), while the multiple
+Internets I describe are not necessarily connected (although they could
+be, e.g. by UUCP, DECnet, Chaosnet).  For now TCP/UDP/IP is unique in
+that only it serves as a medium for domain server queries.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426559&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426562&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426562&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

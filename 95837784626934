@@ -1,0 +1,89 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Undeliverable Mail' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626932&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626933&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Undeliverable Mail
+From:       <a href="?a=95837786200036&r=1&w=2">&lt;SMTP () VM1 ! NoDak ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-10 15:03:05</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626934&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626934&q=raw">body</a>]</b>
+
+SRI-NIC Hostmaster:
+
+   There is a CNAME entry for LOGNET2.ARPA pointing to LOGNET2.AF.MIL.
+However, LOGNET2.AF.MIL is not resolved by all the root servers equally.
+Perhaps it is just a temporary glitch but rather frustrating.
+
+   Connectivity was rather poor when I tried, but negative replies for
+LOGNET2.AF.MIl were returned by C.NYSER.NET and TERP.UMD.EDU.  The
+rest either resolved the name or could not be reached.
+
+   There has been talk of a BARRNET/NSFNET connection for SRI-NIC which
+would make it much more accessible to the root servers on NSFNET and user
+and host systems!  Is that being worked on?  This is the 2nd time in a
+week that I have been affected by a discrepency like this...  ;-)
+
+   It would seem that improving the connectivity should help keep the
+root servers in something less than one week synchronization (C.Nyser.NET
+was a few days old and TERP.UMD.EDU at 890602).  Certainly the people who
+run the root servers are probably very busy and shouldn't have to take
+manual intervention all the time.
+
+   I am not familiar with how the root server base developed, but is there
+some sort of combined effort to upgrade the software and connectivity
+among the servers?
+
+       Marty Hoag  (personal mail address NU021172@vm1.nodak.edu)
+
+----------------------------Original message----------------------------
+VM1.NoDak.EDU unable to deliver following mail to recipient(s):
+    &lt;segal@LOGNET2.ARPA&gt;
+550 Host 'LOGNET2.AF.MIL' Unknown
+
+           ** Text of Mail follows **
+Received: from NDSUVM1.BITNET by VM1.NoDak.EDU (IBM VM SMTP R1.2.1MX) with BSMTP
+ id 9653; Sat, 10 Jun 89 15:01:55 CDT
+Received: from NDSUVM1.LISTSERV by NDSUVM1.BITNET (Mailer R2.03B) with BSMTP id
+ 9650; Sat, 10 Jun 89 15:01:52 CDT
+Date:         Sat, 10 Jun 89 15:57:00 EDT
+Reply-To:     ROOTS-L Genealogy List &lt;ROOTS-L@VM1.NoDak.EDU&gt;
+Sender:       ROOTS-L Genealogy List &lt;ROOTS-L@VM1.NoDak.EDU&gt;
+From:         "JOHN P. BRADLEY" &lt;POSTMASTER%SNYPLAVA.BITNET@VM1.NoDak.EDU&gt;
+Subject:      Sources for Ireland.
+To:           Multiple recipients of list ROOTS-L &lt;ROOTS-L@NDSUVM1&gt;
+
+Howdy!
+      This question may be rather broad, but as I am new to this list and to
+this field of study, I thought I'd try it :
+
+      Can anyone suggest some good sources for tracing the roots of one's
+      family in Ireland?  We have some relatives who have provided a great
+      deal of information, but some items come to an abrupt dead-end.  Is there
+      a definitve anthology of family historys for that country?
+
+The two surnames we are trying to trace are BRADLEY and KINSELLA.  Any
+information of such sources or commenst that may point us in the correct
+direction will be greatly appreciated.
+
+
+John P. Bradley
+BRADLEJP@SNYPLAVA
+
+<b>[<a href="?l=namedroppers&m=95837784626932&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626933&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

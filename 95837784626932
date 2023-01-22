@@ -1,0 +1,39 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'about RFC 1101' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626931&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626934&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    about RFC 1101
+From:       <a href="?a=95837786000031&r=1&w=2">mcvax!inria!dupont () uunet ! uu ! net  (Francis Dupont)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-09 20:43:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626932&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626932&q=raw">body</a>]</b>
+
+The RFC 1101 'DNS Encoding of Network Names and Other Types' doesn't enter
+upon a difficult case in 'Names corresponding to organizations' (last
+paragraph of section 4.0, page 6).
+The issue is : what is to be done when one network is shared between
+two or more organizations ?
+It might be legal to use a different network-name (at least the domain part
+is not the same) for each organization, but there is not in RFC 1101.
+Maybe someone has a good answer ...
+
+Francis.Dupont@inria.fr
+
+<b>[<a href="?l=namedroppers&m=95837784626931&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626934&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  recursion available vs virtual circuits' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927022&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927017&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500014&r=1&w=2">Re:  recursion available vs virtual circuits</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 10:55:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927021&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927021&q=raw">body</a>]</b>
+
+I copletely agree with your first paragraph.  We're talking on the same
+wavelength now.
+
+I disagree with your second paragraph.  You make assumptions about what
+applications want.  Specifically, you are assuming many (most?)
+applications are quite willing to live with non-authoritative data, such
+as that obtained from a cache.  There are vague hints but no specifics
+for applications that really want authoritative data.  This gets back to
+"What good is a cache if it can't be used?"  If all my applications want
+a best-effort attempt at authoritative data, which I think is
+reasonable, why should my local machine or my local caching site
+resolver have to spend A LOT of time querying the authoritative servers
+on the big-I Internet when the data is likely in the server's cache?  I
+don't think the domain system was designed to be fully consistent; I
+think it was designed to be loosely consistent, and that to me means I
+can keep data which was authoritatively found in my cache and report it
+as authoritative until it times out or I learn otherwise.  The domain
+RFCs do not completely address how to determine this, either because it
+doesn't believe it should be possible or because it is an oversight.
+
+I think another problem in our communication is the model of "resolver,"
+"cache" and "local name server."  From what I can tell, your model is
+that a resolver is a program running on the machine that might have a
+cache, and that an application makes recursive queries of the resolver,
+which might use the cache.  The application can also make non-recursive
+queries and go off and query on it's own.  The smacks of poor
+modularity: The application wants an answer to a question, and shouldn't
+have to know how getting the answer is implemented.  Your model also
+seems to assume the resolver, if it doesn't have the answer, always goes
+out to the Big-I Internet looking for it.  This may be because Unix bind
+hasn't yet had the concept of local site resolvers that implement field
+requests for a cluster of machines which therefore provide a more common
+cache.  There's nothing wrong with that, and I understand unix is
+finally implementing such local site resolvers and that you are a beta
+test.  My model is that my local machine, if it doesn't have something
+in its cache, doesn't go to the Big-I Internet but goes to the local
+site resolver, and only if all the local site resolvers aren't
+responding will it consider the Big-I Internet.  Therefore, since I
+always ask my local site resolver recursive questions, and I don't want
+to waste my own resources wandering around the Internet, I want my local
+site resolver to return authoritative information.  This isn't just an
+issue for negative caching, it is for positive caching as well.
+
+[Host's don't have MX records.  "Domain names" have MX records.]
+
+I think trying to use different port numbers is a complete crock to
+avoid being allowed to authoritatively cache data for the use by client
+resolvers and applications.
+
+Maybe one problem is that I've never used Unix and by using Lisp
+Machines have a completely different model of the world.  I can't easily
+describe my model to you and you can't easily describe your model to me.
+I read a spec and take it as a spec and try to think about it in terms
+of functionality instead of implementation.  A lot of people seem to
+read a spec and think about it in terms of how it will be implemented on
+Unix.
+
+<b>[<a href="?l=namedroppers&m=95837781927019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927022&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927017&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

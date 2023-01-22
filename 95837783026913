@@ -1,0 +1,49 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'two questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026912&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026914&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026914&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=90651748400001&r=1&w=2">two questions</a>
+From:       <a href="?a=95837785600004&r=1&w=2">Here's That Rainy Day &lt;DIEHLD%carleton.edu () RELAY ! CS ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198807">1988-07-25 16:37:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026913&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026913&q=raw">body</a>]</b>
+
+I'm new to networking, and new to NAMEDROPPERS, so I may be asking an old
+question here, but could someone tell me more about the IN-ADDR.ARPA domain?
+All I know about it is the info in RFC1034 ("its role is to translate
+from network or host numbers to names").  I'm curious.  How does this work?
+How is it kept up when domain administrators are free to name new nodes?
+I'm sure it wouldn't know to resolve 192.35.51.6 to LAOTSE.CARLETON.EDU,
+since this is a PC we are using for TCP/IP testing, which has had no contact
+with the net at large.
+
+Also, why is the NIC still in the `temporary' ARPA domain?  Have they, like
+compassionate disciples of the Buddha, vowed to pass last into enlightenment?
+Or do they simply not know which domain they belong in?
+
+Any info on my serious or my semi-serious question (you can guess which
+is which, I hope) would be appreciated.
+
+				Dave Diehl
+				Student Programmer
+				(DIEHLD@CARLETON.EDU)
+				...!umn-cs!stolaf!ccnfld!diehld
+
+<b>[<a href="?l=namedroppers&m=95837783026912&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026914&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026914&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

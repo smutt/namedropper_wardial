@@ -1,0 +1,53 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426576&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426577&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426584&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=90385617000001&r=1&w=2">domain names</a>
+From:       <a href="?a=95837693400028&r=1&w=2">Rudy.Nedved () A ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-29 19:37:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426575&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426575&q=raw">body</a>]</b>
+
+What is the "name policy" behind CSNET going to domain names like .CS.NET?
+Wasn't the plan to have names like UMASS.EDU registered at NIC which
+pointed to some domain server at CSNET which had MF records for the
+phonenet site "umass"?
+
+Does this first attempt at using domains for another transport/administration
+network means that we will have domain names like:
+	network			domain names
+	-------			---------------------
+	BITNET			BIT.NET
+	MAILNET			MAIL.NET or EDUCOM.NET
+	UUCP			UCB-UUCP.NET, SEISMO-UUCP.NET, etc.
+or is this some transition mechanism to get thru the short term?
+
+One of the driving arguments around CMU for domain names were they
+provided a flat name space independent of networks and that each host
+would have ONE name. With hosts part of CSNET, MAILNET, UMich net, etc.
+and this unwritten new naming policy, the driving flat name space
+argument has been undermined.
+
+So what is the deal? Some feedback from the domain gurus would be
+nice for a change. 
+
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837667426576&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426577&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426584&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

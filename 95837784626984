@@ -1,0 +1,67 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Large Volume of Domain Traffic' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626983&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626985&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626983&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200019&r=1&w=2">re: Large Volume of Domain Traffic</a>
+From:       <a href="?a=95837784600012&r=1&w=2">Craig Partridge &lt;craig () NNSC ! NSF ! NET&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198908">1989-08-17 12:30:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626984&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626984&q=raw">body</a>]</b>
+
+
+Kent:
+
+    The number one problem to look for is for a host on your system
+continuously sending queries, or a server dying under a continuous
+stream.  SUN YP apparently fires a continuous stream of queries at
+its server, which then proceeds to blast at the appropriate server for
+the domain name being investigated.  True disaster strikes if the
+appropriate server isn't serving.  There's a well-known case last
+fall where a site in the Midwest had listed a server they expected
+to have on-line soon, and a workstation in Hawaii concluded that server
+was the *righti* one to query.  Some huge fraction (like 40%) of the
+NSFNET backbone for two days was caused by that workstation trying
+over-zealously to contact the non-existent server.
+
+    Two morals to this tale:  (1) SUN has an Internet bugfix for SUN
+YP -- I don't know the ID to request (sorry!).  Install it.  (2) Make
+sure that the servers for your domain are properly listed with the NIC
+and running.  Don't list servers which aren't live.  (Note that NIC
+doesn't check servers for you -- when you send your request in,
+you are certifying that everything works).
+
+    Another key problem is that many domain servers don't do exponential
+backoff on retransmissions.  So, for long distance queries, you have
+a multiplier effect.  Instead of 1 or 2 queries, you get 10 or 20,
+all for the same info.  Given that problem #1 is more severe, this problem
+has not been pursued as hard as it might.  But the Host Requirements
+RFC requires exponential backoff, so help is on the way.
+
+    Finally, I've heard tell (from Jim Bloom) of problems with resolvers
+sending to broadcast addresses on networks where most of the workstations
+run servers.  Voila, meltdown on the entire path to the appropriate
+server to answer the question.  (Each server hears the broadcast query,
+and tries to answer it.  Local ethernet promptly floods.  Local gateway
+gets swamped, those queries that get through blast remote server...).
+This problem is still being investigated for a clean solution.
+
+Craig
+
+<b>[<a href="?l=namedroppers&m=95837784626983&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626985&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626983&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

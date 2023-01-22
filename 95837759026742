@@ -1,0 +1,113 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026741&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026743&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026741&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026743&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=90385617000001&r=1&w=2">domain names</a>
+From:       <a href="?a=95837784000012&r=1&w=2">Benson I. Margulies &lt;Margulies () SAPSUCKER ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198608">1986-08-04 17:33:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026742&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026742&q=raw">body</a>]</b>
+
+    Date: Mon, 4 Aug 86 15:02 EDT
+    From: David C. Plummer &lt;DCP@QUABBIN.SCRC.Symbolics.COM&gt;
+
+    Be warned: Questions with cultural ramifications.
+
+    Another warning: John Dunning, a coworker at Symbolics, has seen some
+    other discussion about possible ways to do some of this stuff in the
+    existing system.  He tried to give me 5 or more examples and I shot down
+    each one immediately.  Please, before submitting a way to do all of this
+    in the current system, make sure there aren't any counter examples.  If
+    you can propose a scheme, if it is complicated, it isn't worth it.
+
+&gt;From very early, several smart people pointed out that the user
+interfaces that talked about host names might use a representation that
+is arbitrarily different from the representation used by user agents and 
+mail transfer agents to communicate. Agents have no need for relative
+names or ambiguity, at least if the blasted envelope/content muddle is
+ever resolved (addresses in the content that are not corrected by agents
+to be correct for the environment to which the mail is sent and which
+are fed to programs on the receiving end).
+
+Any user interface is welcome to adopt any convention that it likes.
+
+It would be good if there was a reasonable common convention that
+addresses the problems raised by DCP.
+
+
+
+			 ------------------------------ 
+
+    A few of us at Symbolics have realized that domain names would be better
+    if they were explicitly rooted.  Something like A.BBN.COM has four
+    components (A, BBN, COM and the root) but only 2 separators.  In a
+    system that wants to be able (on input) to do merging and relative
+    naming.  On output, things are generally fully specified.  This is quite
+    analogous to pathnames.
+
+    Consider this example.  Assume that the default domain name is
+    "Quabbin.SCRC.Symbolics.COM".
+     - Riverside wants to mean Riverside.SCRC.Symbolics.COM
+     - White.SWW wants to mean White.SWW.Symbolics.COM
+     - A.BBN.COM does &gt;&gt;not&lt;&lt; want to mean A.BBN.COM.COM
+
+    To fix the merging problem, consider one possible way to root names: put
+    a . at the end.  The fully specified default is now
+    "Quabbin.SCRC.Symbolics.COM.".  Merging works naturally.  "A.BBN.COM"
+    &gt;&gt;does&lt;&lt; mean "A.BBN.COM.COM." but the real name of the host is
+    "A.BBN.COM." which is known to be rooted.  (John Dunning tells me of a
+    scheme to "use dots to represent missing components."  This may work for
+    merging, but fails for relative naming.  Read on.)
+
+    Here comes more culture shock.  (There really are good reasons for
+    this.)  Turn it around:
+	    .COM.Symbolics.SCRC.Quabbin
+    This is very much like hierarchical pathnames (and isn't too much of a
+    culture shock except in the context of the current domain naming system).
+
+    More culture shock.  (I realize there are potential problems with the
+    format of mail headers.  I'm thinking about that...)
+	    &gt;COM&gt;Symbolics&gt;SCRC&gt;Quabbin
+    It is still rooted.  It also has a directional character, which has a
+    counterpart of &lt;.  This allows relative naming.  Our current three
+    examples now look like this
+	    Riverside means &gt;COM&gt;Symbolics&gt;SCRC&gt;Riverside
+	    &lt;SWW&gt;White means (up one then...) &gt;COM&gt;Symbolics&gt;SWW&gt;White
+	    &gt;COM&gt;BBN&gt;A means &gt;COM&gt;BBN&gt;A
+    and additionally
+	    &lt;&lt;BBN&gt;A means &gt;COM&gt;BBN&gt;A
+	    3rd-floor&gt;Creeper means &gt;COM&gt;Symbolics&gt;SCRC&gt;3rd-floor&gt;Creeper
+
+    For compatibility, I think a current (fully specified) domain name of
+    x.y.z.w can be turned into &gt;w&gt;z&gt;y&gt;x and vice versa.  We could use this
+    during the period of transition.  (Turn on &gt; style names for one day and
+    see what happens, fix the bugs, wait a month, turn them on again, etc.)
+
+    I ask for your opinions from a variety of viewpoints:
+     - The ideas on their own merit.  Pretend the current domain naming
+       system doesn't exist.  Pretend &lt;&gt; isn't special in mail headers.
+     - The ideas in the context of existing stuff.
+     - The ideas as if I were going to submit an RFC in 6 to 9 months making
+       very serious claims that people should consider this as part of
+       functional and human interaction (face it, humans have to interact
+       with computers and need to specify names) improvements to a
+       distributed network database of objects.
+
+<b>[<a href="?l=namedroppers&m=95837759026741&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026743&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026741&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026743&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

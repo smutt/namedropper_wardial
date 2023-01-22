@@ -1,0 +1,84 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain server WKS (Well Known Services)' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426540&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426543&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426542&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600027&r=1&w=2">Domain server WKS (Well Known Services)</a>
+From:       <a href="?a=95837693400018&r=1&w=2">Louis A. Mamakos &lt;louie () trantor ! UMD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198509">1985-09-17 13:19:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426541&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426541&q=raw">body</a>]</b>
+
+I've been hacking on the  named  program for 4.2 BSD over the past few
+days, and noticed that the code that dumps the Resource Records is bogus
+for the WKS record. It was looking at the bits from the wrong end of the byte.
+
+The other thing that I noticed is that the root domain server at SRI-NIC.ARPA
+seems to be returning the wrong information.  Everything looks ok, expect for
+port 21 (FTP) which comes back as port 20.  I don't think my code is busted,
+and I was wondering if anyone else noticed this.  For example, for DCN4.ARPA
+I get:
+
+DCN4.ARPA
+	type = WKS, class = IN, ttl = 3600, dlen = 10
+	internet address = 128.4.0.4, protocol = 6
+	 7 9 13 19 20 23 25 37
+
+DCN4.ARPA
+	type = WKS, class = IN, ttl = 3600, dlen = 6
+	internet address = 128.4.0.4, protocol = 17
+	 7
+
+while the entry in HOSTS.TXT is:
+
+HOST : 128.4.0.4 : DCN4.ARPA,DCN4,HOWLAND : LSI-11/23 : FUZZ :
+	TCP/TELNET,TCP/SMTP,TCP/FTP,TCP/ECHO,TCP/DISCARD,TCP/CHARGEN,
+	TCP/DAYTIME,TCP/TIME,TCP/TALK,UDP/ECHO :
+
+Here's a diff -c of the changes.
+
+*** res_debug.c.old	Thu Aug 29 16:08:46 1985
+--- res_debug.c	Tue Sep 17 13:00:43 1985
+***************
+*** 273,281 ****
+--- 273,281 ----
+  		while (cp &lt; cp1 + dlen) {
+  			c = *cp++;
+  			do {
+!&lt;				if (c &amp; 1)
+  					printf(" %d", n);
+!&lt;				c &gt;&gt;= 1;
+  			} while (++n &amp; 07);
+  		}
+  		putchar('\n');
+---------------
+  		while (cp &lt; cp1 + dlen) {
+  			c = *cp++;
+  			do {
+!&gt;				if (c &amp; 0x80)
+  					printf(" %d", n);
+!&gt;				c &lt;&lt;= 1;
+  			} while (++n &amp; 07);
+  		}
+  		putchar('\n');
+
+Louis A. Mamakos WA3YMH   University of Maryland, Computer Science Center
+ Internet: louie@trantor.arpa  -or-  louie@TRANTOR.UMD.EDU
+
+<b>[<a href="?l=namedroppers&m=95837667426540&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426543&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426542&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'no data' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426558&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426561&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    no data
+From:       <a href="?a=95837693400028&r=1&w=2">Rudy.Nedved () A ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-08 20:01:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426559&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426559&q=raw">body</a>]</b>
+
+ISIB is currently responding to requests about .ARPA hosts with
+no data about the queried hosts and no error about the query.
+
+My resolver occasionally asks the various domains it knows about
+for NS records and ISIB is listed as an NS for root. Therefore,
+for some reason, it ended up tonight asking ISIB for information
+about .ARPA which ISIB name server kindly responds with ", you
+can talk to NIC, ISIC, BRL or me".
+
+My resolver is currently treating this situation as a failure
+and returning an error to the resolver clients.
+
+The question is: Is ISIB busted and should be giving information
+about .ARPA hosts OR should my resolver treat no information
+received about the host and no error as a useless server and
+ignore it?
+
+The manual query transcript is:
+
+UDP debugging?  [no]  
+UDP based Domain Server host name?  [SRI-NIC.ARPA]  
+UDP remote port number?  (1 to 10000)  <A NAME="-53"></A><A HREF="#53">[53]</A>  
+        Query operation?  [QUERY]  
+QUERY section:
+        Add a query?  [yes]  
+        Query name?  [G.CS.CMU.EDU]  .
+        Query type?  [A]  NS
+        Query class?  [IN]  
+        Add a query?  [no]  
+ANSWER section:
+        Add answer information?  [no]  
+AUTHORITY/NAME SERVER section:
+        Add authority information?  [no]  
+ADDITIONAL INFORMATION or ENVIROMENT section:
+        Add a additional information?  [no]  
+Header:
+        ID = 136643 QR = 0 OPCODE = 0 (QUERY)
+        AA = 0 TC = 0 RD = 0 RA = 0 ?? = 0 RCODE = 0 (No error)
+        QDCOUNT = 1, ANCOUNT = 0, NSCOUNT = 0, ARCOUNT = 0
+Quest.
+        QName:  QType: 2 (NS) QClass: 1 (IN)
+Sending query with UDP size 25 (512 limit)...
+Sending to sri-nic.arpa [26.0.0.73]
+&gt;
+Received from sri-nic.arpa [26.0.0.73]
+Response time is 2 seconds
+Got response with UDP size 240 (512 limit)...
+Header:
+        ID = 136643 QR = 1 OPCODE = 0 (QUERY)
+        AA = 1 TC = 0 RD = 0 RA = 0 ?? = 0 RCODE = 0 (No error)
+        QDCOUNT = 1, ANCOUNT = 4, NSCOUNT = 0, ARCOUNT = 5
+Quest.
+        QName:  QType: 2 (NS) QClass: 1 (IN)
+Ans.    Name:  Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 14 RDData:
+        Auth. name server: SRI-NIC.ARPA
+Ans.    Name:  Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 15 RDData:
+        Auth. name server: USC-ISIC.ARPA
+Ans.    Name:  Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 15 RDData:
+        Auth. name server: USC-ISIB.ARPA
+Ans.    Name:  Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 10 RDData:
+        Auth. name server: BRL.ARPA
+Add.    Name: SRI-NIC.ARPA Type: 1 (A) Class: 1 (IN)
+        TTL: 604800 RDLength: 4 RDData:
+        IN Host address: [26.0.0.73]
+Add.    Name: SRI-NIC.ARPA Type: 1 (A) Class: 1 (IN)
+        TTL: 604800 RDLength: 4 RDData:
+        IN Host address: [10.0.0.51]
+Add.    Name: USC-ISIC.ARPA Type: 1 (A) Class: 1 (IN)
+        TTL: 604800 RDLength: 4 RDData:
+        IN Host address: [10.0.0.52]
+Add.    Name: USC-ISIB.ARPA Type: 1 (A) Class: 1 (IN)
+        TTL: 604800 RDLength: 4 RDData:
+        IN Host address: [10.3.0.52]
+Add.    Name: BRL.ARPA Type: 1 (A) Class: 1 (IN)
+        TTL: 604800 RDLength: 4 RDData:
+        IN Host address: [26.0.0.29]
+continue?  [yes]  
+
+UDP debugging?  [no]  
+UDP based Domain Server host name?  [SRI-NIC.ARPA]  USC-ISIB.ARPA
+UDP remote port number?  (1 to 10000)  <A HREF="#53">[53]</A>  
+        Query operation?  [QUERY]  
+QUERY section:
+        Add a query?  [yes]  
+        Query name?  [.]  bbna.arpa
+        Query type?  [NS]  A
+        Query class?  [IN]  
+        Add a query?  [no]  
+ANSWER section:
+        Add answer information?  [no]  
+AUTHORITY/NAME SERVER section:
+        Add authority information?  [no]  
+ADDITIONAL INFORMATION or ENVIROMENT section:
+        Add a additional information?  [no]  
+Header:
+        ID = 136642 QR = 0 OPCODE = 0 (QUERY)
+        AA = 0 TC = 0 RD = 0 RA = 0 ?? = 0 RCODE = 0 (No error)
+        QDCOUNT = 1, ANCOUNT = 0, NSCOUNT = 0, ARCOUNT = 0
+Quest.
+        QName: bbna.arpa QType: 1 (A) QClass: 1 (IN)
+Sending query with UDP size 35 (512 limit)...
+Sending to usc-isib.arpa [10.3.0.52]
+&gt;
+Received from usc-isib.arpa [10.3.0.52]
+Response time is 1 seconds
+Got response with UDP size 129 (512 limit)...
+Header:
+        ID = 136642 QR = 1 OPCODE = 0 (QUERY)
+        AA = 0 TC = 0 RD = 0 RA = 0 ?? = 0 RCODE = 0 (No error)
+        QDCOUNT = 1, ANCOUNT = 0, NSCOUNT = 4, ARCOUNT = 0
+Quest.
+        QName: bbna.arpa QType: 1 (A) QClass: 1 (IN)
+Auth.   Name: ARPA Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 14 RDData:
+        Auth. name server: SRI-NIC.ARPA
+Auth.   Name: ARPA Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 15 RDData:
+        Auth. name server: USC-ISIC.ARPA
+Auth.   Name: ARPA Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 15 RDData:
+        Auth. name server: USC-ISIB.ARPA
+Auth.   Name: ARPA Type: 2 (NS) Class: 1 (IN)
+        TTL: 604800 RDLength: 10 RDData:
+        Auth. name server: BRL.ARPA
+continue?  [yes]  n
+
+<b>[<a href="?l=namedroppers&m=95837667426558&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426561&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

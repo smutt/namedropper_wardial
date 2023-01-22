@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Interaction of MB and MX records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927018&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927027&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Interaction of MB and MX records
+From:       <a href="?a=95837784600006&r=1&w=2">Bruce Orchard &lt;ORCHARD/BRUC () scarecrow ! waisman ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-19 9:50:37</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927020&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927020&q=raw">body</a>]</b>
+
+I would like to see the host name returned in MB records by MAILB
+and MB queries looked up in the MX records (the server could
+include the response in the additional information section of
+the response to the MAILB query).
+
+The case I have in mind is this one:
+In addition to the campus IP network, there is also a campus wide
+DECNET and a few machines with only UUCP links to the IP network.
+Mail to the DECNET hosts all goes through a few relay hosts.
+I would like the MB records for mailboxes on DECNET hosts
+to say mailbox@real-decnet-host.wisc.edu rather than
+mailbox@decnet-relay-host.wisc.edu.  If the MB record gives the real
+host name, an MX record to give the name of the relay host is
+required.  If the MB record gives the name of the relay host,
+then the relay host will have to have the list of mailboxes for
+all the hosts it is relaying for, which I think could get unreasonably
+large.
+
+Bruce Orchard
+
+<b>[<a href="?l=namedroppers&m=95837781927018&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927027&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

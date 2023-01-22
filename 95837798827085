@@ -1,0 +1,70 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: How do I list domains under root server?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827088&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827086&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827082&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500003&r=1&w=2">Re: How do I list domains under root server?</a>
+From:       <a href="?a=95837817400032&r=1&w=2">zaphod.mps.ohio-state.edu!rpi!uupsi!sunic!nuug!ifi!enag () tut ! cis ! ohio-state ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-03 14:23:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827085&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827085&q=raw">body</a>]</b>
+
+In article &lt;9011010531.AA01630@mtu.edu&gt; tony@MTU.EDU (Tony Dal Santo) writes:
+
+   How would I go about listing all the domains under the root server.  The
+   domains I am refering to are on the same level as EDU, COM, GOV, etc.  I
+   tried using nslookup, and doing an "ls ." at ns.nasa.gov, but it just gave
+   me the root servers, not the domains under the root servers.
+
+   An example of my problem would be say I am looking for the domain for the
+   United Kindom, how would I find out it was UK?
+
+Ah, the United Kingdom.  The national Internet top-level domains are
+named after the naming defined in International Standard 3166, two-
+letter abbreviations.  This standard declares that the two-letter
+abbreviation for "United Kingdom" is "GB".  This is the right answer,
+according to the rules.
+
+Now, we need some history and folklore to know when to break the
+rules.  There is only one two-letter national top-level domain which
+breaks the rules.  The rule to break the rule is: "Is it British?"  If
+yes, you break the rules, and make your own rules, subtly different
+from all other rules.
+
+The British Special Rule for Naming of Top-Level Domains in the
+Internet is that "We think UK sounds better."
+
+
+Seriously, though, the way to ask for the sub-domains of root is to
+give NIC's WHOIS the command
+
+	SUB EXP DOM ROOT
+
+This will list the sub-domains of ROOT-DOM.  The EXP is for Expand.
+The list includes the administrative contact points for the domains
+listed, not the countries.  I know I got a list some time ago with the
+names of the countries and the continent indicated as well.  Ask me if
+you would like to get it, and I'll update it to concur with the
+present root-level domains.
+
+--
+[Erik Naggum]
+--
+
+<b>[<a href="?l=namedroppers&m=95837798827088&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827086&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827082&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

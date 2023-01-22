@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Root nameserver change at NASA Ames' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627097&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326843&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Root nameserver change at NASA Ames
+From:       <a href="?a=95837816800001&r=1&w=2">"Milo S. Medin" (NASA ARC NSI Project Office) &lt;medin () nsipo ! nasa ! gov&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199001">1990-01-02 9:12:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326842&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326842&q=raw">body</a>]</b>
+
+
+Hi folks.  Sometime today (02-Jan-90), we will be replacing the machine
+ns.nasa.gov (128.102.16.10), which is currently a SUN 3/60S running
+a very hacked up 3.5 SunOS with a new SparcStation I, running a slightly
+hacked 4.0.3c.  The new machine will have the same address as the old
+machine, and the same configuration for being a root nameserver.  This means
+that you folks don't need to change your named.ca files.
+
+One reason this cutover is occuring is that the SS1 is capable of supporting
+more than 1 ethernet interface.  In fact, a 2nd ethernet controller in the
+SS1 will be connected to the FRICC Inter-agency interconnect network at Ames,
+at address 192.52.195.10.  Thus, you will be able to reach the new server
+at both 192.52.195.10 and 128.102.16.10.  Remote users (that is, everyone
+outside of Ames) will be better served by the new address, which is one
+router closer to wherever you are.  You will no longer need to route to
+the Ames network get service from this machine.
+
+In addition, this machine also has a radio clock attached and runs xntpd
+to provide NTP time services.
+
+I'll send out a note after the cutover is complete.  I do not expect
+the change to take long, as the SS1 is already running in a cloned 
+nameserver configuration on another address.  The root server update
+software has been checked out as well, so it takes is to remove the
+old machine, and change the configured addresses, and then reboot.
+
+Don't worry about the 3/60S though, he'll be upgraded to 4.0.3 and 
+take over local nameserver services for Ames and serving as a secondary
+for a number of associate's domains (BIND doesn't work when you ask it
+to be a root nameserver and a secondary for some domains).
+
+Bugs and gripes (compliments reluctantly accepted too :-)) to me.
+
+					Thanks,
+					    Milo
+r
+
+<b>[<a href="?l=namedroppers&m=95837784627097&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326843&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

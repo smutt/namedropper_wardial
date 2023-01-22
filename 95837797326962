@@ -1,0 +1,118 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'DNS troubles' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326961&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326963&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326963&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200026&r=1&w=2">DNS troubles</a>
+From:       <a href="?a=95837817000026&r=1&w=2">usc!zaphod.mps.ohio-state.edu!uakari.primate.wisc.edu!dali!milton!oregon!dsmith</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-26 20:26:13</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326962&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326962&q=raw">body</a>]</b>
+
+I've seen a recent rash of DNS problems recently and I am wondering if
+others have seen the same.
+
+Right now, I see that one of the listed authoritative servers for
+northeastern.edu (nisc.jvnc.net) knows nothing about northeastern.edu
+hosts and gives "no information" answers. 
+
+Also, I see that all of the servers for kun.nl gives "non-existent
+domain" answers to a host I know is there (mpi01.mpi.kun.nl).  In this
+case, the server for mpi.kun.nl is unreachable from my site for some
+reason, but all the servers for kun.nl happily give tell me that mpi01
+doesn't exist. 
+
+I just discovered the northeastern.edu problems today, so the
+nisc.jvnc.net folks haven't had time to try to fix it, but in the kun.nl
+case, I've tried everything I know of (short of posting to this list and
+to info-nets@think.com, which I'm doing now) to try to get them to fix
+the problem. 
+
+Meanwhile, I have faculty members who are visiting those sites who are
+stranded, not able to receive mail from their labs and co-workers here. 
+
+GGGGGGGGGrrrrrrrrrrrrr!!!!!!!
+
+-- 
+Dale Smith, Acting Director of Network Services
+University of Oregon		Internet: dsmith@oregon.uoregon.edu
+Computing Center		BITNET: dsmith@oregon.bitnet
+Eugene, OR  97403-1212		Voice: (503)346-4394
+
+------------------------------------------------------------
+&gt; set q=ns
+&gt; northeastern.edu
+Server:  c.nyser.net
+Addresses:  192.33.4.12, 128.213.5.17
+
+Non-authoritative answer:
+northeastern.edu        nameserver = HELIOS.NORTHEASTERN.EDU
+northeastern.edu        nameserver = NNSC.NSF.NET
+northeastern.edu        nameserver = NISC.JVNC.NET
+Authoritative answers can be found from:
+HELIOS.NORTHEASTERN.EDU inet address = 129.10.1.2
+NNSC.NSF.NET    inet address = 192.31.103.6
+NNSC.NSF.NET    inet address = 128.89.1.178
+NISC.JVNC.NET   inet address = 128.121.50.7
+&gt; server NISC.JVNC.NET
+Default Server:  NISC.JVNC.NET
+Address:  128.121.50.7
+
+&gt; set q=any
+&gt; HELIOS.NORTHEASTERN.EDU
+Server:  NISC.JVNC.NET
+Address:  128.121.50.7
+
+*** No any type information is available for HELIOS.NORTHEASTERN.EDU
+&gt; set q=soa
+&gt; northeastern.edu
+Server:  NISC.JVNC.NET
+Address:  128.121.50.7
+
+*** No start of authority zone information is available for northeastern.edu
+
+------------------------------------------------------------
+&gt; set q=ns
+&gt; kun.nl
+Server:  terp.umd.edu
+Addresses:  128.8.10.90, 10.1.0.17
+
+Non-authoritative answer:
+kun.nl  nameserver = phoibos.cs.kun.nl
+kun.nl  nameserver = wn1.sci.kun.nl
+kun.nl  nameserver = wn3.sci.kun.nl
+kun.nl  nameserver = sering.cwi.nl
+Authoritative answers can be found from:
+phoibos.cs.kun.nl       inet address = 131.174.81.1
+wn1.sci.kun.nl  inet address = 131.174.80.1
+wn3.sci.kun.nl  inet address = 131.174.80.3
+sering.cwi.nl   inet address = 192.16.184.4
+&gt; server wn1.sci.kun.nl
+Default Server:  wn1.sci.kun.nl
+Address:  131.174.80.1
+
+&gt; set timeout=60
+&gt; set q=any
+&gt; mpi01.mpi.kun.nl
+Server:  wn1.sci.kun.nl
+Address:  131.174.80.1
+
+*** wn1.sci.kun.nl can't find mpi01.mpi.kun.nl: Non-existent domain
+
+<b>[<a href="?l=namedroppers&m=95837797326961&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326963&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326963&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

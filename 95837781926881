@@ -1,0 +1,105 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogus ROOT domain server on ARPAnet' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926880&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926882&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Bogus ROOT domain server on ARPAnet
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198706">1987-06-15 23:24:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926881&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926881&q=raw">body</a>]</b>
+
+XX has been doing its famous yoyo impersonation for the last week,
+hence the delay in answering this.
+
+    Date: Mon, 08 Jun 87 22:40:46 -0500
+    From: Paul Richards &lt;richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu&gt;
+
+    Tonight, we had what I'd call a major failure on the ARPA domain
+    name system.  A system at NORTHWESTERN.ARPA, [10.4.0.94], started
+    advertising itself as a root domain name server, with the
+    consequences that we stopped being able to locate any domain names
+    at all.  I called NOC around 11:15pm EST, talked to a gentleman
+    named Ron, who eventually looped back NORTHWESTERN until he could
+    talk to their system admin.
+
+Paul,
+
+Please explain what you mean by "advertising".  Was your resolver
+asking this machine a question about the root?  If so, why?  If not,
+why did it matter?  Does your resolver cache any RR that somebody
+sends it, whether this RR is relevant to a pending query or not?
+Since your machine runs unix, I assume you are running bind.  Which
+version?
+
+Everybody,
+
+I'm not picking on Paul, folks.  I am quite willing to believe that a
+resolver would in fact cache any RR that it is sent.  It's an easy
+trap to fall into.  But it seems pretty clear from this example that
+it's a bad idea.
+
+Here's my current list of things that a resolver should check for
+before inserting an RR it has received into its cache:
+
+- Does this RR match a pending query?  Ie, is it either the direct
+  answer to something we asked or something from the additional
+  section which is related to the answer in some obvious way (eg, A
+  RRs to go with a relevant NS RR).  It might also be a good idea to
+  check that this answer comes from the machine of which we asked the
+  question, although this is something of a pain with multi-homed
+  hosts.
+
+- Does the TTL of this RR fall within "reasonable" bounds?  See recent
+  discussion on 99999999 TTLs and associated woes.  30 days seems like
+  a reasonable upper bound, but it ought to be per-site configurable.
+
+- Does this RR tell us about a root server we haven't heard of before?
+  If so, it should probably be viewed with extreme distrust.  I'd only
+  believe such an RR if we had actually asked about the root itself.
+
+I do think it's possible to use the domain system to find out who the
+current root servers are, if you're careful.  The following algorithm
+is based on some comments by Paul Mockapetris, some time back:
+
+1) Your initialization file contains the addresses of a few "default"
+   servers.  These are not necessarily root servers, just machines
+   that you trust to answer the question honestly.  This information
+   does -not- go into your cache, so it can never be propagated.
+
+   Obviously, if all your default servers are down or if one of them
+   lies to you, you lose.  But at least you can chose which machines
+   you depend on.
+
+2) If you are resolving something and can't find any appropriate
+   server to ask, ask your default server(s).  Since this state
+   implies that you don't know who the root is, you also send a query
+   about the root to your default server(s).  Cache the answer to this
+   root query.  If you want to be sure you know about all the root
+   servers, you can now ask the root servers you just got to tell you
+   who the root servers are; this should give you an exhaustive list.
+
+3) Screen all incoming RRs by (at least) the criteria listed above, to
+   prevent bogus root information from making its way into your cache.
+
+If anybody sees serious problems with this method, holler.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926880&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926882&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

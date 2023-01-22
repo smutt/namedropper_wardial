@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND modifications for Ultrix 2.2?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027041&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027043&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783027043&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700013&r=1&w=2">BIND modifications for Ultrix 2.2?</a>
+From:       <a href="?a=95837785800029&r=1&w=2">sam () ncsuvx ! ncsu ! edu  (Sam Moore)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198812">1988-12-29 13:05:28</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027042&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027042&q=raw">body</a>]</b>
+
+I have the BIND 4.8 sources. I want to build them on Ultrix 2.2. The
+first attempt at compiling didn't work. The BIND source expects the
+function inet_addr() to return an (u_long), however the function is
+returning (struct in_addr). I will continue to work on getting it, but
+would appreciate some pointers from someone that has done this.
+
+To make things worse I had the changes, but operator error in my mailer
+deleted that mail message. All I can remember about the person that was
+so nice to send the changes to me is that his 'In real life' name was
+something like "Brain dead".
+
+Thanks,
+
+Sam
+
+<b>[<a href="?l=namedroppers&m=95837783027041&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027043&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783027043&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

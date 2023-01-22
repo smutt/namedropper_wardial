@@ -1,0 +1,64 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: BOGUS ROOT SERVERS!!' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827110&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827112&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827110&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827112&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500018&r=1&w=2">Re: BOGUS ROOT SERVERS!!</a>
+From:       <a href="?a=95837818200003&r=1&w=2">usc!wuarchive!julius.cs.uiuc.edu!ux1.cso.uiuc.edu!mp.cs.niu.edu!rickert () ucsd ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-14 2:13:01</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827111&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827111&q=raw">body</a>]</b>
+
+In article &lt;9163@ncar.ucar.edu&gt; woods@ncar.UCAR.EDU (Greg Woods) writes:
+&gt;We are having a serious problem with our name servers that APPEARS to be
+&gt;related to bogus root server data that is coming in from God knows where.
+&gt;Our configuration is that we have a primary server (ncar.ucar.edu a.k.a.
+&gt;(....)
+&gt;
+&gt;What happens is that when a machine is rebooted (or named is restarted), it
+&gt;goes into an infinite loop burning tons of CPU time and refusing to answer
+&gt;(....)
+&gt;queries. It also ignores all signals (except 9, of course) which makes
+&gt;debugging a real pain. Empirical evidence shows that every time this has
+&gt;happened, I find the following bogus root servers in both the primary and
+&gt;secondary servers' caches:
+&gt;
+&gt;Has anyone else seen this? Does anyone have any idea what the &amp;^$%#@! is going
+
+  Probably lots of people have seen the bogus records.  They didn't cause
+any loops on our system, but we did have to kill and restart named to remove
+them from the cache.  (Come to think of it, maybe it is about time I rechecked
+the cache to see if they have reappeared).
+
+&gt;Before I dive into the source code, I'd like to ask: is there any reason why
+&gt;data about the root domain coming in from outside should EVER be believed
+&gt;and cached?  Has anyone patched BIND to disallow this? Will I break the entire
+&gt;DNS if I do this here? :-)
+&gt;
+  If the data comes from one of the root servers, it should be believed and
+cached.  (Alas, at one stage a root server was putting out these bogus
+records - it had been contaminated too).
+
+-- 
+=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=
+  Neil W. Rickert, Computer Science               &lt;rickert@cs.niu.edu&gt;
+  Northern Illinois Univ.
+  DeKalb, IL 60115.                                  +1-815-753-6940
+
+<b>[<a href="?l=namedroppers&m=95837798827110&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827112&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827110&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827112&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

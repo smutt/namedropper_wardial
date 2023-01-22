@@ -1,0 +1,52 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: Domain RFCs' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626921&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626922&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    re: Domain RFCs
+From:       <a href="?a=95837786200031&r=1&w=2">DDN Reference &lt;NIC () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198905">1989-05-31 15:35:54</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626923&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626923&q=raw">body</a>]</b>
+
+Hello,
+
+RFCs may be obtained by electronic mail from the SRI-NIC.ARPA host; send
+a message to SERVICE@SRI-NIC.ARPA. Put the words  RFC xxxx  (where xxxx is
+the RFC number) in the subject line of your message. The body of your message
+will be ignored. RFCs may also be retrieved by FTP (host: sri-nic.arpa,
+username: anonymous, password: guest, filename: rfc:rfcxxxx.txt).
+
+I recommend the following RFCs that pertain to the Domain Name System, all
+available from SERVICE or via FTP.
+
+        RFC-920   Domain requirements
+        RFC-974   Mail routing and the domain system
+        RFC-1031  MILNET name domain transition
+        RFC-1032  Domain administrators guide
+        RFC-1033  Domain administrators operations guide
+        RFC-1034  Domain Names - concepts and facilities
+        RFC-1035  Domain Names - implementation and specification
+        RFC-1101  DNS encoding of network names and other types
+
+Regards,
+Sol for the NIC
+-------
+
+<b>[<a href="?l=namedroppers&m=95837784626921&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626922&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

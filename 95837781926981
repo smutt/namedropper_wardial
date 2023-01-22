@@ -1,0 +1,171 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'name daemon failure modes' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926983&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    name daemon failure modes
+From:       <a href="?a=95837784800017&r=1&w=2">hedrick () athos ! rutgers ! edu (Charles Hedrick)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-08 21:05:44</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926981&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926981&q=raw">body</a>]</b>
+
+For those who are working on bind or thinking of new protocols, it's
+useful to have a concrete idea of what things typically go wrong.
+I've been watching bind misbehaviors very closely for the last few
+weeks.  Here are some typical scenarios:
+  look up boulder.colorado.edu.
+  The root servers say that servers are sigi.colorado.edu, colo.csc.org,
+	and jvnca.csc.org.  
+  sigi has the answer
+  jvnca refers us back to the root
+  colo times out
+Depending upon the order in which we use the servers, we may get the
+right answer or a log entry telling us that there is a database loop.
+
+It is in fact *very* common for the root servers to refer us to
+servers that don't know anything.  Most typically, servers that don't
+know anything refer us back to the root.  It appears that some of this
+is caused by hosts that are using bind's secondary authority feature,
+but without using the backup file.  Thus if they lose contact with one
+of the primary servers for an extended period, they have no data.
+Unfortunately, the root servers still refer us to them.  Anyone who is
+using a "secondary" line in named.boot should make sure that he
+specifies a disk file to act as backup.  An even more interesting
+situation occured with njit.edu a few days ago.  Currently the
+situation is much like the one just shown: one server is unreachable
+and the other refers us back to the root.  However a few days ago
+jvnca.csc.org actually referred us to rutgers.edu.  Since we are in
+fact rutgers.edu, this caused a very high-speed loop that loaded the
+T1 line between us and jvnca (and the 750 that acts as the gateway)
+100%.  (We believe that jvnca was getting that bad information from
+njit.)
+
+Here's a more interesting scenario:
+  look up tut.cc.rochester.edu.
+  The root servers say that the servers for rochester.edu are
+	cs.rochester.edu and cu-arpa.cs.cornell.edu.
+  cs.rochester.edu says that the servers for cc.rochester.edu are
+	rochway.cc.rochester.edu, vera.cc.rochester.edu, and 
+	cc.rochester.edu, that the server for rochester.edu is
+	cayuga.cs.rochester.edu, and that the server for root is
+	sri-nic.arpa.  It says all of this in the "additional
+	information" field of an otherwise empty response, and does
+	not volunteer any adddresses.
+  If we then ask cs.rochester.edu for the address of cc.rochester.edu,
+	we get it.  (It appears to know the address of the other two
+	servers as well.)
+  cc.rochester.edu knows about tut, our original query.
+  Taking the other path, cu-arpa.cs.cornell.edu also  says that the
+	servers for cc.rochester.edu are rochway.cc.rochester.edu, 
+	vera.cc.rochester.edu, and cc.rochester.edu.  It does this
+	more conventionally, and volunteers the address for
+	cc.rochester.edu only.  (It does not appear to know the
+	addresses of the other two servers, even when asked.)
+	This allows us to go directly to cc.rochester.edu, and
+	resolve our query.  Assuming that cc.rochester.edu is up.
+	If it isn't, then we are stuck.
+
+This case is interesting because of the somewhat odd pattern of different
+servers giving us different subsets of the information that we would like
+to see.
+
+Another somewhat interesting problem is caused when we ask 
+nisc.nyser.net about a name it has never heard of.  We get the following
+somewhat interesting response:
+
+   athos 2&gt; host -v -r -w foo. nisc.nyser.net.
+   Using domain server:
+   Name: nisc.nyser.net
+   Address: 128.213.1.13
+   Aliases:
+
+   For authoritative answers, see:
+   .	563843224 IN	NS	BRL-AOS.ARPA
+   .	563843224 IN	NS	SRI-NIC.ARPA
+   .	563843224 IN	NS	A.ISI.EDU
+   .	563843224 IN	NS	C.ISI.EDU
+   Additional information:
+   BRL-AOS.ARPA	589948 IN	A	128.20.1.2
+   BRL-AOS.ARPA	1 IN	A	192.5.25.82
+   SRI-NIC.ARPA	589948 IN	A	26.0.0.73
+   SRI-NIC.ARPA	1 IN	A	10.0.0.51
+   A.ISI.EDU	1 IN	A	26.3.0.103
+   A.ISI.EDU	1 IN	A	128.9.0.107
+   C.ISI.EDU	1 IN	A	10.0.0.52
+Bind takes information from such responses and enters it into the
+database.  This one causes our knowledge of how to get to the root
+servers to expire.  (Expiring one address of a host quite correctly
+causes bind to delete both addresses.)  Fortunately, bind has a
+secret cache of information about the root, and is able to
+reestablish contact.  Last week we got into an even more interesting
+situation when some hosts were giving out incorrect lists of the
+root servers, but I'm not able to duplicate that at the moment.
+(It appears that the sites I remember have fixed things up.)
+However I wouldn't be surprised to find a response like the one above
+that lists some local machine as a fake root site, added my the
+local administration for performance reasons.
+
+
+
+What do we learn from all of this?
+
+The first thing is that inconsistencies are surprisingly common, and
+the name deamon needs to be able to deal with them.  The second is
+that the name daemon probably needs a design more like an AI program
+than like typical network software.  In order to process a request, it
+needs to be able to follow referals from higher-level name servers,
+and compute referals itself (when a server gives it the data it needs
+but in the wrong format).  It needs to be able to generate further
+queries when it is given an NS record without an A record.  It must
+try multiple sources of information.  Bind is built on the theory that
+all name servers will give the same information.  It tries a different
+server if one times out, but not if one responds, but with
+insufficient information to resolve the query.  Third, the name
+daemon must defend itself against name server that give it bad
+information.  In my opinion, only information from authoritative
+servers should be added to the data base.  Other information should be
+kept around on the blackboard for the course of a given query, but not
+added to the database.  Finally, the name daemon probably needs an
+intelligent syslog interface.  When there is a databse inconsistency,
+we can end up with large numbers of messages.  We actually had to
+comment out one message because it kept filling up our disk.  It would
+be useful to keep a hash table of recently issued messages, and
+start counting instances.  You might then issue them only in powers
+of two.  I.e. put our messages when you see one for the first time,
+the second time, the fourth time, etc. (with appropriate labels to
+indicate the number of times the message has happened).
+
+Finally, lots of people still have TTL's that are unreasonably small.
+We suggest using a week for all NS records, and the addresses of all
+name servers.  We use a day for normal hosts, since we do move hosts
+around locally now and then, and people get upset if it takes longer
+than a day for things to adjust.
+
+Of course the job of the name deamon would be much simpler if
+domain administrators would clean up their databases.  The original
+RFC's emphasized that running a domain was a serious business, and
+should only be undertaken by people who know what they are doing.
+Our recent experiences emphasize this point.  It appears that most
+universities are now running domain systems.  It might be better
+for service organizations such as CSnet and JvNC to do this for
+them in some cases.  It would be really handy to have to have
+some sort of network database lint, that could go around and check
+the consistency of data in the various servers.
+
+<b>[<a href="?l=namedroppers&m=95837781926980&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926983&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

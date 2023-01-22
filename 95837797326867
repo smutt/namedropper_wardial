@@ -1,0 +1,38 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Can you do this?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326866&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326868&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326868&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400041&r=1&w=2">Can you do this?</a>
+From:       <a href="?a=95837816800020&r=1&w=2">elroy.jpl.nasa.gov!usc!cs.utexas.edu!ut-emx!jones () decwrl ! dec ! com  (William L !  Jo</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199002">1990-02-15 21:05:53</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326867&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326867&q=raw">body</a>]</b>
+
+The following recored was recently added to, for a very short time, 
+the top level utexas.edu zone so that decnet traffic could be 
+forwarded to a standard host:
+
+ *.decnet	in	mx 1	nic.the.net.
+
+What I would like to know is this a reasonable thing to do?
+
+Bill Jones
+
+<b>[<a href="?l=namedroppers&m=95837797326866&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326868&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326868&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

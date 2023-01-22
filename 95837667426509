@@ -1,0 +1,40 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'BIND under OS/MVS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426508&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426510&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426514&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600011&r=1&w=2">BIND under OS/MVS</a>
+From:       <a href="?a=95837693400007&r=1&w=2">Bob Braden &lt;BRADEN () UCLA-CCN ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-11 9:25:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426509&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426509&q=raw">body</a>]</b>
+
+
+ BIND is alive (well is another question) on UCLA's IBM 3033
+ under OS/MVS.  It was ported into the Internet code using the
+ AT&amp;T C/370 compiler.  The only interesting change has been
+ to store the domain names locally in EBCDIC; simple changes
+ in RES#COMP accomplished this.
+
+ Can anyone tell me if the TAR file at Berkeley has changed
+ since mid-May, and whether there are plans to update it?
+
+ Bob Braden
+
+<b>[<a href="?l=namedroppers&m=95837667426508&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426510&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837667426514&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

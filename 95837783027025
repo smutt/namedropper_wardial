@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Multiple addresses' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027026&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Multiple addresses
+From:       <a href="?a=95837785800023&r=1&w=2">Philip Prindeville  &lt;philipp () Moe ! McRCIM ! McGill ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-21 17:19:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027025&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027025&q=raw">body</a>]</b>
+
+&gt; Date: Mon, 14 Nov 88 15:56:44 PST
+&gt; From: Richard Fox &lt;rfox@wkd4.nas.nasa.gov&gt;
+&gt; To: namedroppers@sri-nic.arpa
+&gt; 
+&gt; In the recent past there has been some talk about which IP address to use
+&gt; when the resolver returns more than 1 for a destination address. For the most
+&gt; part the problem has been past off as no problem. [ ... ]
+
+(First, let me encourage you to use a "Subject:" when posting to
+ mailing lists...)
+
+I think you oversimplify the problem, and hence the solution.  There
+are several reasons why this is an incredibly complex problem, but
+all of it goes back to the fact that IP should not have allowed
+different addresses for multi-homed hosts.  Anyway, no use crying
+over spilt milk...
+
+The solution is to have the application query the kernel (or perhaps
+a user-space daemon [at least under UNIX]) which address in a list
+is preferred given (1) protocol (2) type-of-service and
+(3) available routing information.  The first two criteria would be
+set by the application, the last collected by the "resolver".  The
+information is potentially of a highly dynamic nature, and static
+solutions such as your's will not prove to be sufficiently robust.
+
+Indeed, certain information might be returned to the application
+(such as estimated best-case bandwidth/latency) that would allow
+an application to decide what services it was willing to offer
+and which it might defer (an FTP might ask you if you wanted to
+queue a large transfer for a later time).
+
+I think this is a problem few of us are ready to solve.  In any
+event, it is not an issue for the DNS server or client.  It is
+a routing issue.
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837783027024&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027026&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

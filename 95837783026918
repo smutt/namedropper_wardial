@@ -1,0 +1,82 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TCP domain queries' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026919&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026919&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400005&r=1&w=2">TCP domain queries</a>
+From:       <a href="?a=95837785200027&r=1&w=2">Philip Almquist &lt;almquist () jessica ! Stanford ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198808">1988-08-01 12:19:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026918&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026918&q=raw">body</a>]</b>
+
+	I'd like to see the host requirements RFC address the use of
+TCP in the domain system.  Specifically, when (if ever) is it
+appropriate for a resolver to use TCP for simple queries (for A
+records, for example), and are there any "M" words governing whether
+domain servers handle such queries?
+
+	Unfortunately, the domain RFC's do not take a firm stand on
+these issues, and interoperability problems result.  Consider, for
+example, that:
+
+ - IBM's VM resolver uses TCP for all queries.
+ - Increasingly, UNIX applications are choosing to use TCP (the newest
+   MH and gated, for example).  These TCP requests escape onto the network
+   if the machine the application is running on isn't running a named
+   process locally.
+
+yet:
+
+ - TOPS-20 domain servers refuse connections on the TCP domain port.
+ - Stanford's domain servers respond to most queries that arrive on the
+   TCP domain port with empty responses that have the REFUSED bit set
+   in the domain header.
+
+Since none of the above implementations are in obvious violation of any
+spec, complaints to the responsible persons about lack of interoperability
+tend to result in finger-pointing rather than fixes.
+
+	What should the RFC say?  I would like to see it say that for
+simple queries (ie. anything besides zone transfer), domain servers
+MAY support them over TCP but that resolvers MUST use UDP when the
+server is not known to support TCP.  The rationale:
+
+ - It seems improbable that resolvers would be significantly complicated by
+   a requirement that they support UDP.
+ - Servers, on the other hand, may be made significantly more complicated
+   if they are required to support TCP.
+ - The TCP connection setup, state maintenance, and teardown is likely to
+   be a significant expense to a server that receives a large number of
+   TCP queries.  The server (rather than  its clients) should be able to
+   make the decision about whether to incur that extra expense.
+ - Similarly, the connection setup and teardown required for a TCP connection
+   generally requires more packets on the network per query.
+ - I have yet to hear any convincing reason why TCP would ever be superior
+   to UDP for a simple query.
+
+I am willing to turn this proposal into a paragraph or two for the RFC, but
+I wanted to throw it out for discussion first since it may be controversial
+and since I care more whether the RFC takes a position than I do about
+exactly what that position is.
+							Philip
+
+PS: The RFC may also want to say something about when it is allowable or
+    appropriate for a server to set the REFUSED bit in a response.
+
+<b>[<a href="?l=namedroppers&m=95837783026917&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026919&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026919&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

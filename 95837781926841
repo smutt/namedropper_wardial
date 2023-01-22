@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Interesting BIND/sendmail interaction' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926840&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926842&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926840&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926842&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800021&r=1&w=2">Interesting BIND/sendmail interaction</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-15 1:06:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926841&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926841&q=raw">body</a>]</b>
+
+    Date: Tuesday, 14 April 1987  14:34-EDT
+    From: nowicki@Sun.COM (Bill Nowicki)
+
+    ...								   I
+    thought that putting a single wildcard MX record for *.Sun.COM into our
+    database would do it.  This did work in an early version of BIND, but
+    does NOT WORK in the current version.  The problem is that when you do
+    an address lookup for a host that does not have any address records,
+    BIND finds the the wildcard, even though it has the wrong type, and
+    returns an empty NOERROR response instead of NXDOMAIN.
+
+If you are looking for {QNAME="Unknown.Sun.COM", QCLASS=IN, QTYPE=A},
+the presence or absence of an MX RR is irrelevant (as you obviously
+realize).  The JEEVES (TOPS-20) user interface has an error code
+meaning "No RRs with that type and class were found at that name".
+This code is returned when the resolver gets an empty authoritative
+answer to a query.  If bind doesn't have an equivalent to this error
+code, it should.
+
+The (very old) version of the bind gethostbyname() routine that I
+found on one of our unix machines seems to be using QCLASS=*.  If this
+is still the case, it could be part of the problem, since you can
+never get back an authoritative answer for such a query.
+
+--Rob
+
+<b>[<a href="?l=namedroppers&m=95837781926840&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926842&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926840&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926842&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'TOPS20 nameserver behavior' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426448&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426449&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    TOPS20 nameserver behavior
+From:       <a href="?a=95837661700016&r=1&w=2">MOCKAPETRIS () USC-ISIF ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198505">1985-05-21 12:38:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426450&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426450&q=raw">body</a>]</b>
+
+Since most of the TOPS20 name servers are derived from the ISI code, I
+should first take the blame for some bugs that caused multiple address
+problems and also added extra octets to retransmissions.  A new version
+which fixes these problems is being tested.
+
+However, the famous RICE.EDU query represents a policy question, or at
+least is a subtle, rather than obvious, bug.
+
+When the name server at the NIC is asked for the address of RICE.EDU,
+the dialog goes as below:
+
+QUERY OPERATION:  serve
+host(string or address)  port(optional):  sri-nic
+Using address 26.0.0.73       and port    53(decimal)
+
+QUERY OPERATION:  std
+question section
+domain name  rice.edu
+type (use qtype)  a
+class (use qclass)  in
+Matching pkt:0030
+&lt;authority&gt;
+RICE.EDU.             NS     IN     ttl:   0  RICE.EDU. 
+RICE.EDU.             NS     IN     ttl:   0  PENDRAGON.CS.PURDUE.EDU. 
+PURDUE.EDU.           NS     IN     ttl:   0  PENDRAGON.CS.PURDUE.EDU. 
+PURDUE.EDU.           NS     IN     ttl:   0  RICE.EDU. 
+&lt;additional&gt;
+RICE.EDU.             A      IN     ttl:   0  192.5.58.6 
+RICE.EDU.             A      IN     ttl:   0  128.42.1.1 
+PENDRAGON.CS.PURDUE.EDU. A      IN     ttl:   0  192.5.48.5 
+
+Now the RICE.EDU NS RRs are found because the has delegated authority
+for this domain, and the NIC doesn't have it.  To finnish up processing
+the query, the name server tries to do the appropriate additional
+section processing so that the requester can talk to the delegated
+servers.  The PURDUE.EDU NS records are found because the NIC has also
+delegated to PURDUE.  The address records are part of the zone glue.
+
+The only question is whether the PURDUE.EDU NS RRs belong in the
+authority or answer section; I would maintain that they should be
+included since in many cases you won't have a forward reference and may
+not get the address RRs.
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426448&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426449&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

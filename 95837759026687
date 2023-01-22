@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'super resolver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026686&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026688&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    super resolver
+From:       <a href="?a=95837693400028&r=1&w=2">Rudy.Nedved () A ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-24 19:27:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026687&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026687&q=raw">body</a>]</b>
+
+Good to hear that other people have independently come to the same conclusion
+that CMU did.
+
+When the domain transition started, we decided in August of 85 on a mechanism
+that would allow our users to specify a "relative domain name" or "shorthand
+names" in a consistent manner.  Given the comments about the trailing dot, we
+adopted the policy of names ending with dot are absolute names and not subject
+to modification.
+
+The scheme we cooked up is called the "super resolver". The intention is to
+have a network resource that takes a simple name (like "a" or "a.cs") and
+either an implicit or explicit context to resolve that name in. The network
+resource enables us to have a consitent resolving algorithm and to modularize
+certain levels enabling certain performance improvements.
+
+The model is a process on a network node talks via a customized protocol
+(which uses TOPS-20 IPCF, Mach IPC, VMS mailboxes, etc) which we named the
+"red protocol" to a local process. This local process uses the "green
+protocol" to communicate over the network with the super resolver. The super
+resolver does as much cacheing as possible and handles resolving queries using
+the "domain system protocol" (RFC 883).
+
+We currently have a complete system installed but in experimental stage for
+TOPS-20 and 4.1BSD Unix. The super resolver runs under 4.1BSD Unix.
+
+The "Green Protocol" was designed by Vince Fuller and the Super Resolver was
+implemented by me. The system is still in the experimental stage but is
+expected to be in production around CMU by mid summer (when resources involved
+in CMU CS/RI 4.1BSD to 4.2BSD transition are available).
+
+Cheers,
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837759026686&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026688&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

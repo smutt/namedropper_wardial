@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'CNAMEs &amp; MXs &amp; sendmail' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026944&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026944&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400013&r=1&w=2">CNAMEs &amp; MXs &amp; sendmail</a>
+From:       <a href="?a=95837785600018&r=1&w=2">woods () handies ! ucar ! edu  (Greg Woods)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198808">1988-08-23 20:04:03</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026943&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026943&q=raw">body</a>]</b>
+
+
+  I'm a little confused about some things having to do with CNAME records
+and how they interact with other kinds of RR's. I know the official spiel
+on "if you have a CNAME record for something, you can't have any other kind
+of RR for that". That isn't where the confusion is. Here's what I want
+to do, maybe someone can tell me how I can do it. The "official" name
+for our main mail/news machine (the one that is in the HOSTS.TXT file and is 
+the one name server queries for our domain are directed to; also the one that 
+is output by hostname(1)) is not the same as the one that appears in mail and
+news headers; for political reasons I cannot change any of the "official"
+things. I changed the mail and news headers on purpose; the name I am
+using there ("ncar", or "ncar.ucar.edu") reflects the name of our organization
+and will be much more readily remembered by those who wish to send mail to
+us than "handies" (the "official" name). There is a CNAME record in our
+name server for ncar.ucar.edu -&gt; handies.ucar.edu. So far, so good. Everything
+works fine. Now what I want to do is to have all incoming mail come in
+through ncar.ucar.edu, so I output an MX record *.ucar.edu -&gt; handies.ucar.edu.
+Then I discover the hard way that an MX wild card will not match anything for
+which there is a valid A record (is that the way it is supposed to be, or
+is there a bug in BIND 4.8?) So this still doesn't do it. Next, I add a series
+of explicit MX records directing mail for all the ucar.edu hosts that have
+A records to handies.ucar.edu. This all works great from the outside, but
+now all mail from ncar to other ucar.edu hosts is broken, because the MX
+record directs sendmail to handies, which it apparently does not recognize
+as a reference to itself, and therefore fails with an "I refuse to talk to
+myself" error. What I would really like is to convince sendmail that
+handies == ncar. Apparently sendmail does not check for CNAME records,
+nor does it check the name returned by an MX query against the Cw names
+for itself (only the Dw name is checked). 
+  There are two ways I can go that I can see; the first is to hack sendmail
+to check MX records against all the Cw names instead of just the Dw name.
+This is probably the correct thing to do, but I don't know enough about
+the inner workings of sendmail to do this in any reasonable amount of time.
+The other possibility is to just make handies a CNAME for ncar instead.
+The trouble with that is that the name HANDIES appears in a number of places
+besides MX and A records, such as in NS records and the SOA record. So, if
+I change this around, is the fact that the name in the SOA record no longer
+matches the name being output by the root servers going to hose things up,
+even though the address is still correct? This is not something that I care
+to find out the hard way. How about if I leave the SOA and NS records alone
+and just reverse the A and CNAME records (make "ncar" the real name and
+"handies" a CNAME for it)? Will the fact that the name in the SOA record
+and NS records now points to a CNAME record now hose things up? Is
+there a better way to accomplish my goal? Discussion welcome.
+
+--Greg
+
+<b>[<a href="?l=namedroppers&m=95837783026940&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026944&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026944&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

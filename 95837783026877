@@ -1,0 +1,73 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'attribute-based naming' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026874&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026875&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026882&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200019&r=1&w=2">attribute-based naming</a>
+From:       <a href="?a=95837784000018&r=1&w=2">"Larry Peterson" &lt;llp () arizona ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-28 9:33:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026877&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026877&q=raw">body</a>]</b>
+
+
+I'm delighted to see the response my message received. I want to
+say a few things about what we're doing, and for that matter, who
+"we" are.
+
+The task force I referred to is the naming task force of the Distributed
+Systems Architecture Board (DSAB); a sister organization of the IAB.
+(In practice, it turns out we're a pseudo task force of the IAB as well.)
+In addition to myself, other board members include Karen Sollins (MIT),
+Dave Presotto (Bell Labs), John Zahorjan (Washington), Mike Davis (SRI),
+Craig Partrige (BBN), and Paul Mockapetris (you all know Paul). Several
+other people, too numerous to mention, have also participated in e-mail
+discussions. Karen and I are currently writing the RFC, which specifies 
+an architecture and protocol loosely based on a prototype designed, 
+implemented, and evaluated as part of the Profile project at Arizona. 
+That project is/will be funded by NSF and NASA. In the next three years 
+we plan to turn the protoype into "working" system and make it available 
+to the internet community.
+
+By the way, we are aware of the CCITT/ISO effort, but so far have only
+sketchy details about what they're doing. (I'd be happy to receive 
+anything written down about X.500, etc.)
+
+I used the wrong word when I said "*many* of the technical problems have
+been solved". I should have said *enough* of them have been solved to lead 
+us to believe two things: (1) we understand what the basic architecture
+should look like, and (2) we can build a system that, while it can be
+extened, will provide a valuable service to the internet. One of the
+most challenging problems that remains (as pointed out by a couple of
+the responses) is how to partition the attribute space into a hierarchy 
+of name servers. Our answer is that the partitioning should be allowed to
+evolve in a "natural" and "unspecified" way. That is, multiple hierarchies
+of name servers will grow from the leaves up. The architecture will not
+mandate a particular top-down growth as was done in the DNS. This pushes
+the problem onto the "search strategy" used by a given client to walk
+through the "confederation of name servers". A good analogy is to view the
+collection of loosely coupled name servers (they are at least weakly coupled
+in the sense that one of the objects named by a given name server might
+be another name server) as a library reference collection. The search
+discipline is the "librarian" that uses heuristics to search the reference
+collection. We believe, there will exist well-recongized hierarchies within
+the confederation.
+
+Larry
+
+<b>[<a href="?l=namedroppers&m=95837783026874&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026875&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026882&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

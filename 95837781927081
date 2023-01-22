@@ -1,0 +1,73 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'timeout-out CNAME and non-timedout data' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927080&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927082&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927075&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927083&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700006&r=1&w=2">timeout-out CNAME and non-timedout data</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-07 12:29:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927081&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927081&q=raw">body</a>]</b>
+
+    Date: Thu, 3 Dec 87 11:34:26 EST
+    From: hedrick@aramis.rutgers.edu (Charles Hedrick)
+
+
+    The violation is in having both a CNAME and an HINFO.  
+Does the spec say that, or is it "proper bahavior"?  Are you suggesting
+that caching implementations which receive a CNAME record flush any
+other data associate with that name?  I don't think that sounds right.
+    I had always
+    assumed that you would be required to manipulate the TTL's so that you
+    didn't have unexpired conflicting information, or at least not for
+    more than a few hours.
+Who is the "you"?  Is it me the programmer, me the administrator of the
+domain, or me the program?
+    I think there is a concensus that one-year
+    TTL's are not acceptable.  I don't think people are using more than a
+    week.  My view (which others have also supported) is that if you are
+    using one week TTL's, you set them down to one day at least a week
+    before making any change that owuld introduce an inconsistency of this
+    kind.  Then to one hour a day before making the change etc.  Except that
+    at some point you decide that you're willing to live with being
+    inaccessible for a certain period of time and just don't bother.  In
+    that case, it doesn't much matter what an implementatio does about
+    "impossible" things, since the domain administrator has chosen to be
+    inconsistent for a certain period of time.  
+This sounds like good administration policy.  The real unfortunate bugs
+are that there is no way to enforce it, the domain specs (I haven't
+carefully read the 103* series) don't say this, and the domain spec
+doesn't disallow any of the scenarios I've described, nor does it
+describe how to cope with them.
+    The only proviso I would
+    add is that you should make sure not to get into a loop when things
+    are invalid.  
+I assume "you" == "programmer" here?
+    In that case, simply returning the information that
+    appears to be valid, or failing, is probably safer than going off and
+    making queries into a distributed database that is likely not to be
+    consistent.
+But which data is valid!
+
+According to a strict reading of RFC 1034 page 15, the CNAME check
+should be done only after a failure to find the requested data.  That
+may answer my implementation-level questions.  It still leaves open the
+design-level questions and timeout skew issues.
+
+<b>[<a href="?l=namedroppers&m=95837781927080&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927082&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927075&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927083&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

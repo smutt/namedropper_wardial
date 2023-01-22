@@ -1,0 +1,244 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: no inverse mappings' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798826936&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826941&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826936&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826941&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893100009&r=1&w=2">Re: no inverse mappings</a>
+From:       <a href="?a=95837817400010&r=1&w=2">paul () uxc ! cso ! uiuc ! edu  (Paul Pomes - UofIllinois CSO)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199008">1990-08-10 21:45:33</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798826939&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798826939&q=raw">body</a>]</b>
+
+Here are my changes to ftpd.c (V5.28 from uunet) that implements command
+logging, enhanced local access, and restricted use if the IP inverse mapping
+doesn't exist.
+
+/pbp
+
+========
+*** ftpd.c-	Fri Aug 10 16:33:09 1990
+--- ftpd.c	Fri Aug 10 16:39:05 1990
+***************
+*** 47,52 ****
+--- 47,53 ----
+  #include &lt;stdio.h&gt;
+  #include &lt;signal.h&gt;
+  #include &lt;pwd.h&gt;
++ #include &lt;grp.h&gt;
+  #include &lt;setjmp.h&gt;
+  #include &lt;netdb.h&gt;
+  #include &lt;errno.h&gt;
+***************
+*** 53,58 ****
+--- 54,60 ----
+  #include &lt;strings.h&gt;
+  #include &lt;syslog.h&gt;
+  #include &lt;varargs.h&gt;
++ #include &lt;nlist.h&gt;
+  #include "pathnames.h"
+  
+  #ifndef MAXHOSTNAMELEN
+***************
+*** 64,74 ****
+  typedef int uid_t;
+  typedef int gid_t;
+  #endif
+! /*
+!  * File containing login names
+!  * NOT to be used on this machine.
+!  * Commonly used to disallow uucp.
+!  */
+  extern	int errno;
+  extern	char *sys_errlist[];
+  extern	int sys_nerr;
+--- 66,72 ----
+  typedef int uid_t;
+  typedef int gid_t;
+  #endif
+! 
+  extern	int errno;
+  extern	char *sys_errlist[];
+  extern	int sys_nerr;
+***************
+*** 445,451 ****
+--- 443,471 ----
+  		}
+  	}
+  	login_attempts = 0;		/* this time successful */
++ #if defined(UICSO) &amp;&amp; defined(LOCAL_GROUP)
++ # ifndef MYDOMAIN
++ #  define MYDOMAIN	".uiuc.edu"
++ # endif /* MYDOMAIN */
++ 	if (guest) {
++ 		struct group	*grp;
++ 		int		rlen = strlen (remotehost);
++ 		int		mlen = strlen (MYDOMAIN);
++ 
++ 		if (rlen &gt; mlen &amp;&amp;
++ 		    strcasecmp(remotehost + (rlen-mlen), MYDOMAIN) == 0) {
++ 			if ((grp = getgrnam(LOCAL_GROUP)) == NULL)
++ 				syslog(LOG_ERR, "Group %s: %m", LOCAL_GROUP);
++ 			else if (setegid(grp-&gt;gr_gid) == -1)
++ 				syslog(LOG_ERR, "Setegid failed: %m");
++ 		}
++ 		else
++ 			(void) setegid((gid_t)pw-&gt;pw_gid);
++ 	}
++ 	else
++ #else	/* !UICSO || !LOCAL_GROUP */
+  	(void) setegid((gid_t)pw-&gt;pw_gid);
++ #endif	/* UICSO &amp;&amp; LOCAL_GROUP */
+  	(void) initgroups(pw-&gt;pw_name, pw-&gt;pw_gid);
+  
+  	/* open wtmp before chroot */
+***************
+*** 559,564 ****
+--- 579,585 ----
+  	data = -1;
+  	pdata = -1;
+  done:
++ 	syslog(LOG_INFO, "Retrieve %s %ld", name, st.st_size);
+  	(*closefunc)(fin);
+  }
+  
+***************
+*** 626,631 ****
+--- 647,655 ----
+  	pdata = -1;
+  done:
+  	(*closefunc)(fout);
++ 	if (stat(name, &amp;st) != 0)
++ 		st.st_size = -1;
++ 	syslog(LOG_INFO, "Stored %s %ld", name, st.st_size);
+  }
+  
+  FILE *
+***************
+*** 1059,1064 ****
+--- 1083,1089 ----
+  		return;
+  	}
+  done:
++ 	syslog(LOG_INFO, "Delete %s", name);
+  	ack("DELE");
+  }
+  
+***************
+*** 1069,1074 ****
+--- 1094,1100 ----
+  		perror_reply(550, path);
+  	else
+  		ack("CWD");
++ 	syslog(LOG_INFO, "Chdir %s", path);
+  }
+  
+  makedir(name)
+***************
+*** 1078,1083 ****
+--- 1104,1110 ----
+  		perror_reply(550, name);
+  	else
+  		reply(257, "MKD command successful.");
++ 	syslog(LOG_INFO, "Mkdir %s", name);
+  }
+  
+  removedir(name)
+***************
+*** 1087,1092 ****
+--- 1114,1120 ----
+  		perror_reply(550, name);
+  	else
+  		ack("RMD");
++ 	syslog(LOG_INFO, "Rmdir %s", name);
+  }
+  
+  pwd()
+***************
+*** 1121,1126 ****
+--- 1149,1155 ----
+  		perror_reply(550, "rename");
+  	else
+  		ack("RNTO");
++ 	syslog(LOG_INFO, "Rename from %s to %s", from, to);
+  }
+  
+  dolog(sin)
+***************
+*** 1128,1151 ****
+  {
+  	struct hostent *hp = gethostbyaddr((char *)&amp;sin-&gt;sin_addr,
+  		sizeof (struct in_addr), AF_INET);
+- 	time_t t, time();
+- 	extern char *ctime();
+  
+  	if (hp)
+  		(void) strncpy(remotehost, hp-&gt;h_name, sizeof (remotehost));
+! 	else
+  		(void) strncpy(remotehost, inet_ntoa(sin-&gt;sin_addr),
+  		    sizeof (remotehost));
+  #ifdef SETPROCTITLE
+  	sprintf(proctitle, "%s: connected", remotehost);
+  	setproctitle(proctitle);
+  #endif /* SETPROCTITLE */
+  
+! 	if (logging) {
+! 		t = time((time_t *) 0);
+! 		syslog(LOG_INFO, "connection from %s at %s",
+! 		    remotehost, ctime(&amp;t));
+! 	}
+  }
+  
+  /*
+--- 1157,1182 ----
+  {
+  	struct hostent *hp = gethostbyaddr((char *)&amp;sin-&gt;sin_addr,
+  		sizeof (struct in_addr), AF_INET);
+  
+  	if (hp)
+  		(void) strncpy(remotehost, hp-&gt;h_name, sizeof (remotehost));
+! 	else {
+  		(void) strncpy(remotehost, inet_ntoa(sin-&gt;sin_addr),
+  		    sizeof (remotehost));
++ 		{
++ 			lreply(421, "Cannot map IP address into host name.  We only accept FTP \
+connections\n     from recognized sites.  Get your system administrator to fix your \
+domain\n     servers or try again in a few minutes when the DNS has the \
+translation."); + 			reply(421, "FTP connection refused, closing connection.");
++ 			syslog(LOG_INFO,"connection refused (Internet un-registered) from %s", \
+remotehost); + 		}
++ 	exit(1);
++ 	}
+  #ifdef SETPROCTITLE
+  	sprintf(proctitle, "%s: connected", remotehost);
+  	setproctitle(proctitle);
+  #endif /* SETPROCTITLE */
+  
+! 	if (logging)
+! 		syslog(LOG_INFO,"connection from %s", remotehost);
+  }
+  
+  /*
+--
+         Paul Pomes
+
+UUCP: {att,iuvax,uunet}!uiucuxc!paul   Internet, BITNET: paul@uxc.cso.uiuc.edu
+US Mail:  UofIllinois, CSO, 1304 W Springfield Ave, Urbana, IL  61801-2987
+
+
+<b>[<a href="?l=namedroppers&m=95837798826936&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798826941&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798826936&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798826941&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

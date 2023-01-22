@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Thinking Machine's domain administration' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026788&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026784&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026787&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026784&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700029&r=1&w=2">Thinking Machine's domain administration</a>
+From:       <a href="?a=95837785200023&r=1&w=2">barmar () think ! com (Barry Margolin)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-04 1:44:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026785&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026785&q=raw">body</a>]</b>
+
+
+    Date: Wed, 3 Feb 88 14:38 EST
+    From: David C. Plummer &lt;DCP@quabbin.scrc.symbolics.com&gt;
+
+    Remember that message I sent to PostMaster@Think.COM because that what
+    it says in the SOA record?  Here's what I got back:
+      SMTP error from THINK.COM: 550 &lt;PostMaster@THINK.COM&gt;... User unknown
+      SMTP error from THINK.COM: 550 &lt;PostMaster.Think.COM@THINK.COM&gt;... Addressee unknown
+    The second one is OK.  The first one bothers me.
+
+Our aliases database got screwed up this afternoon.  Please resend the
+message.  Sorry for the inconvenience.
+
+                                                barmar
+
+<b>[<a href="?l=namedroppers&m=95837783026788&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026784&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026787&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026784&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

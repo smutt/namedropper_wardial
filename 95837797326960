@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'means of propagation of bogus root name server RR's' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326958&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326959&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    means of propagation of bogus root name server RR's
+From:       <a href="?a=95837817000025&r=1&w=2">cs.utexas.edu!samsung!uakari.primate.wisc.edu!uflorida!mlb.semi.harris.com!thrus</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-26 8:04:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326960&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326960&q=raw">body</a>]</b>
+
+I installed the patch to BIND posted to this newsgroup a few weeks ago
+that logs responses that contain bogus root name server information.
+After perusing the logs and poking around the culprits, I have discovered
+two of the ways that this misinformation is spread.
+
+The first way is when a name server is listed as an authoritative
+name server for a zone, but is not configured as one.  When another
+name server queries this name server, the response will be a list
+of name servers for this zone or a zone further up the tree, depending
+on the contents of the misconfigured name server's cache.  If this
+is an in-addr.arpa query, the response will often just be a list
+of the root name servers, and if the misconfigured name server
+has bogus name server RR's in its cache, it will pass them on.
+
+The second possibility is caused when the target of a query returns
+the answer to the query, but includes the root name server RR's in
+the authority section.  I don't know what combination of broken
+software and/or misconfiguration causes this.  I know of one host
+that servers two in-addr.arpa zones that will work correctly
+with one zone and not the other, and the broken/correct zones
+switch around.  Names not used to protect the guilty.
+
+I have notified the appropriate parties having the first problem,
+and about half had fixed their name server configurations last
+I checked.  As to the second problem...
+
+Because of decaying TTL's, one would expect this problem to eventually
+disappear, but there must be at least one name server out there that
+has non-decaying TTL's for bogus root name server information and
+that probably has one of the above problems, but I have not stumbled
+on it directly.
+
+I feel like I should be working for the health department.  :-)/2
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797326958&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326959&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

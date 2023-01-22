@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'case (upper/lower) in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026794&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026797&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026796&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889700034&r=1&w=2">case (upper/lower) in domain names</a>
+From:       <a href="?a=95837785200028&r=1&w=2">hi!cyrus () hc ! dspo ! gov  (Tait Cyrus)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198802">1988-02-09 17:46:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026795&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026795&q=raw">body</a>]</b>
+
+
+Here at the University of New Mexico we are going fully qualified
+host names (because we are attaching to NSFnet).  I have several questions,
+though, concerning the case of these names.
+
+RFC 1034 (DOMAIN NAMES - CONCEPTS AND FACILITIES) says:
+
+	Note that while upper and lower case letters are allowed in
+	domain names, no significance is attached to the case.  That
+	is, two names with the same spelling but different case are
+	to be treated as if identical.
+
+and RFC 1035 (DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION) says:
+
+	For all parts of the DNS that are part of the official
+	protocol, all comparisons between character strings (e.g.,
+	labels, domain names, etc.) are done in a case-insensitive
+	manner.  At present, this rule is in force throughout the
+	domain system without exception.  However, future additions
+	beyond current usage may need to use the full binary octet
+	capabilities in names, so attempts to store domain names in
+	7-bit ASCII or use of special bytes to terminate labels, etc.,
+	should be avoided.
+
+If this is true, then why is it that rsh/rlogin/rcp all require
+a .rhosts that EXACTLY matches the case the name server returns?
+For example if I try to login from machine_a to machine_b and
+machine_b's name server sees machine_a as 'machine_a.UNM.EDU', then
+machine_b had better have a .rhosts that looks something like
+	machine_a.UNM.EDU user
+and NOT
+	machine_a.unm.edu user
+
+This question arrises from the fact that some people here at UNM
+want the domain names to be in upper case, for example &lt;machine&gt;.UNM.EDU.
+Our users are all going to have to be 're-educated' to use the
+fully qualified names in their .rhosts.  Enough confusion is going to
+be caused by the change to fully qualified names without having to explain
+why they have to be in upper case.
+
+Are there any reasons to use upper case domains names?  Are there reasons
+that other institutions use upper case?  Is it because the RFC's all have
+examples in upper case?
+
+Thanks in advance
+
+-- 
+    @__________@    W. Tait Cyrus   (505) 277-0806
+   /|         /|    University of New Mexico
+  / |        / |    Dept of Electircal &amp; Computer Engineering 
+ @__|_______@  |       Parallel Processing Research Group (PPRG)
+ |  |       |  |       UNM/LANL Hypercube Project
+ |  |  hc   |  |    Albuquerque, New Mexico 87131
+ |  @.......|..@    
+ | /        | /     e-mail:      
+ @/_________@/        cyrus@hc.dspo.gov
+
+<b>[<a href="?l=namedroppers&m=95837783026794&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026797&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026796&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

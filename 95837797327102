@@ -1,0 +1,60 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'HINFO &amp;&amp; rfc1010 &amp;&amp; rfc1033' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327105&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327101&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327105&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327110&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892900006&r=1&w=2">HINFO &amp;&amp; rfc1010 &amp;&amp; rfc1033</a>
+From:       <a href="?a=95837817400016&r=1&w=2">seth () ctr ! columbia ! edu (Seth Robertson)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199007">1990-07-13 19:36:04</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327102&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327102&q=raw">body</a>]</b>
+
+&gt;&gt;&gt;&gt;&gt; On Fri, 13 Jul 90 10:38:38 PDT, postel@venera.isi.edu said:
+
+
+jon&gt; Hi.  Well it looks like in entering some names in the list we didn't
+jon&gt; follow our own rules.  What we will do is replace the spaces in names
+jon&gt; with dashes ("-") or squeeze them out, and we will change the rules to
+jon&gt; allow dots (".") [or squeeze them out].
+
+jon&gt; 	SUN OS 3.5	--&gt;	SUN-OS3.5
+jon&gt; 	SUN OS 4.0	--&gt;	SUN-OS4.0
+jon&gt; 	UNIX-V.1	--&gt;	UNIX-V1
+jon&gt; 	UNIX-V.2	--&gt;	UNIX-V2
+jon&gt; 	UNIX-V.3	--&gt;	UNIX-V3
+
+jon&gt; --jon.
+
+
+Just as a matter of conformity with the way Sun writes things, perhaps
+SUNOS-4.0 would be more appropriate.
+
+((The following string is the exact way that Sun specifies their OS
+version in the kernel: "SunOS Release 4.0.3"))
+
+
+Thanks to you and to all who have responded to my message.  In
+response to my second question (does anything use it) several people
+have responded that "Symbolics" and "TVG's MultiNet" both use it.
+Symbolics also apparently uses WKS info if it is present.
+
+                                        -Seth Robertson
+                                         seth@ctr.columbia.edu
+
+<b>[<a href="?l=namedroppers&m=95837797327105&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327101&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327105&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327110&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

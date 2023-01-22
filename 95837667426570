@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Registering subdomain hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426569&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426571&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426568&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887600039&r=1&w=2">Re: Registering subdomain hosts</a>
+From:       <a href="?a=95837693400028&r=1&w=2">Rudy.Nedved () A ! CS ! CMU ! EDU</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198510">1985-10-23 16:46:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426570&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426570&q=raw">body</a>]</b>
+
+&gt;However, this does not necessarily mean that you have to wait for an
+&gt;indefinite MILNET transition date before you can stop sending your
+&gt;hostname changes to the NIC.  Since the NIC is responsible for
+&gt;bridging the gap between the current MILNET "flat" host table and the
+&gt;still-evolving ARPANET domain name system, we have been working on a
+&gt;survey program which will periodically query the servers for all known
+&gt;domains in order to build a near-complete host table.  This "snapshot"
+&gt;can then be used in the usual way by any systems which rely on the
+&gt;simple table lookup method.
+&gt;
+&gt;Currently there are some problems which are preventing this strategy
+&gt;from working, and which need to be resolved by people outside of the
+&gt;NIC.  Here is a partial list from Mark Lottor (MKL@SRI-NIC.ARPA);
+&gt;please contact him if you are in a position to help.
+&gt;
+&gt;------------
+&gt;- Some domains do not support or answer zone transfer requests;
+&gt;  e.g. CMU has 3 servers but none do zone transfers.
+
+CMU would like to implement a similiar server but since NIC itself
+does not implement zone transfers we never bothered implementing
+the server option or the survey program. CMU and I suspect other
+organizations also have similiar transition problems that MILNET
+is or will have.
+
+
+-Rudy
+
+<b>[<a href="?l=namedroppers&m=95837667426569&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426571&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426568&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

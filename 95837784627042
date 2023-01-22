@@ -1,0 +1,97 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Misbehavior in DNS Clients' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627040&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627039&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400002&r=1&w=2">Misbehavior in DNS Clients</a>
+From:       <a href="?a=95837786600009&r=1&w=2">klm () cme ! nist ! gov (Ken Manheimer)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198910">1989-10-11 11:09:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627042&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627042&q=raw">body</a>]</b>
+
+A few days ago i received a message from Paul Mockapetris (relayed to
+me and the other recipients of this message by Jon Postel).  In it Mr
+Mockapetris pointed out a number of systems that had both undue DNS
+traffic on NIC.DDN.MIL and some sort of misconfiguration in their own
+name domains.  I'm responsible for the configuration of
+DURER.CME.NBS.GOV, which had the highest traffic figure and appeared
+to be lacking an in-addr.arpa reverse-name resolution entry.  In the
+intervening two days i tracked down the problems and am sending out
+this message to detail what i found and what i did about it.
+
+First of all, i had in fact failed to make an entry for the name
+server in its in-addr.arpa files - in fact, i only excluded the name
+server, all my other hosts were reverse-resolvable.  I don't know why
+i originally excluded the name server machine from the entries, but
+expect it was an early misunderstanding that went by unnoticed when i
+eventually knew better.  The solution to this was simply to add the
+entry.
+
+The other problem was more tricky.  I guessed that my name service was
+routing queries to the root name servers extremely frequently, and set
+about tracking down what exactly was happening.  By examining the log
+produced when running 'named' in debug mode i discovered that it was
+incessantly redispatching a query concerning a system named
+"econ.vu.nl" to the root servers.  However, i couldn't see where the
+queries were coming in from - that didn't show up in my log file.
+
+On mentioning this in a note to Craig Hunt, the central network
+coordinator here at NIST, he informed me that "econ.vu.nl" has only
+one server (contrary to the rfc's), "star.cs.vu.nl", and that that
+server is not responding.  (I don't know what magic Craig invoked to
+track down this tidbit info, but it was certainly helpful to know
+about it.) This aberration could easily explain why the requests were
+never getting resolved (one way or another).  I still didn't know
+where the requests were originating or why they kept occurring.
+
+Eventually i took the step of taking a hex-dump sample of around 4000
+packets using the Sun OS 'etherfind' utility (in /usr/etc), and
+searching for references to "econ.vu.nl" in the hex code.  With the
+help of a buddy here we found one machine that had non-'domain'
+packets with references to that name. (We were not concerned with
+'domain' packets because they were all part of the various name
+servers correspondance about resolving the name).  On logging in to
+that machine i discovered an orphaned 'finger' process to "econ" that
+a researcher (from another installation) had accidentally left going a
+few days ago.  Evidentally this finger process was perpetually
+flogging the name server to resolve the name, to the tune of two to
+three resends every ten seconds.  Killing this orphaned process
+stopped all the extra commotion almost immediately, and speaking with
+the researcher and asking him to check another way to determine
+whether 'econ' is reachable should keep this version of the problem
+from reoccuring.
+
+So, the problems that Paul Mockapetris reported were a combination of
+misconfiguration and peculiar use of the name server.  While i should
+have caught the absence of a reverse-resolution entry for my name
+server in it's data base, i don't see how i could have configured
+things any better to prevent the undue loading of the NIC that he
+refers to.  Apparently, for reasons i can't explain, the name server
+was unable to supply 'finger' with the information that the site it
+was seeking was unreachable, and 'finger' never gave up.
+
+Thanks to Don Libes, Bill Anderson, and Craig Hunt for misc
+information and assistance in tracking down this bizarreness.
+
+Ken Manheimer		 	Nat'l Inst of Standards and Technology
+(301) 975-3539			(Formerly "National Bureau of Standards")
+klm@cme.nist.gov		CME, Factory Automation Systems Division
+or ..!uunet!cme-durer!klm	Integrated Systems Group
+
+<b>[<a href="?l=namedroppers&m=95837784627040&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627039&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627044&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

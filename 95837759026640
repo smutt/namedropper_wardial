@@ -1,0 +1,82 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Draft RFC on Mailers and Domains' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026639&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026641&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Draft RFC on Mailers and Domains
+From:       <a href="?a=95837693400023&r=1&w=2">Craig Partridge &lt;craig () LOKI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198601">1986-01-09 15:04:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026640&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026640&q=raw">body</a>]</b>
+
+
+    A draft of an RFC on how Internet mailers should interact with
+the domain system for the purposes of routing mail is now available
+by anonymous FTP from SH.CS.NET (or CSNET-SH.ARPA) in "rfc/rfcXXX.txt".
+I'll be interested in any comments that readers have.
+
+    People should be aware that there is an anticipated change in
+how the domain system stores mail routing.  MD and MF RRs are going
+to be replaced by a single RR, called MX.  An MX RR matches a
+domain name with two pieces of data: a domain name of a host and
+a 32-bit preference number.  The preference number is used to
+allow mailers to prioritize MXs. (I.e. to answer the question,
+to which host should I try to deliver this message to first?).
+The preference value is purely for purposes of prioritization
+and has nothing to do with distances, hop counts, etc.
+
+    There are several reasons for the change.  Here are a few:
+    
+    (1) It vastly simplifies what mailers have to do to route
+    messages.  The decision making process turns out to be
+    messy using two types of RRs.
+
+    (2) It is more flexible than a simple two class (MD and MF)
+    system.
+
+    (3) Using one RR type instead of two dramatically reduces the
+    chances for mail looping and other unpleasantness due to
+    differing timeout periods for the two RR types.
+
+The draft RFC is written in terms of using MX RRs.
+
+    I believe that an RFC explaining this change and incorporating
+the updates in DOMAIN-CHANGES.2 is planned.
+
+Craig Partridge
+CSNET Technical Staff
+
+craig@csnet-sh or craig@sh.cs.net (CSNET)
+craig@loki.bbn.com (ARPA)
+
+----------
+
+P.S.  For users of the BIND software, I have diffs to BIND to support
+MX RRs.  It assumes that the type for MX is 15 (which was the first
+free type) and that the format in the nameserver files and RRs is:
+
+# domain        class etc.      type    host		preference
+LOKI.BBN.COM.		IN	MX	UNIX.BBN.COM	10
+
+this may well turn out to be backwards (preference could just as
+well come before the host name) and the type number could prove wrong,
+but at least this allows you to try things out.  Diffs are being posted to
+the bind list.
+
+<b>[<a href="?l=namedroppers&m=95837759026639&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026641&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

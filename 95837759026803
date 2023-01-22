@@ -1,0 +1,45 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Is anyone using MB/MR/MG/MINFO records yet?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026800&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026802&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026800&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026802&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500016&r=1&w=2">Is anyone using MB/MR/MG/MINFO records yet?</a>
+From:       <a href="?a=95837784200002&r=1&w=2">Jon Solomon &lt;jsol () BU-CS ! BU ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198610">1986-10-14 13:46:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026803&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026803&q=raw">body</a>]</b>
+
+I do the same sort of thing Jordan does, when I need to redirect mail
+delivery I only have to remove one .forward file in the path (or redirect
+one .forward file, etc).
+
+There are two issues here that need to be addressed. First is that
+not every host on the Internet has the capability to forward mail,
+so putting that capacity *somewhere* is very important. The domain
+system is one of many places to put it.
+
+Second, is that you don't have to use the mechanism if you don't want
+to. Administrative types aren't forcing domain mailboxing down your
+throat (and if they do it is a local issue, rather than a network-wide
+edict).
+
+cheers,
+--jsol
+
+<b>[<a href="?l=namedroppers&m=95837759026800&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026802&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026800&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026802&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

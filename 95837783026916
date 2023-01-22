@@ -1,0 +1,87 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Resolving partially qualified domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026915&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026917&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026915&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026917&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400004&r=1&w=2">Re: Resolving partially qualified domain names</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198807">1988-07-27 3:05:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026916&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026916&q=raw">body</a>]</b>
+
+You don't have to go all the way to the root (if you do, it's an
+implementation problem, not a spec problem).  If your resolver already
+knows (perhaps because you told it in an init file of some kind) where
+the name server for bellcore.com is, your resolver is at liberty to
+ask the right server the first time.
+
+The CHIVES resolver system handles (well, addresses) the user-friendly
+nickname problem you mention via search paths.  We use the syntax
+suggested by Paul Mockapetris, several years ago: "foo" and "foo.bar"
+will be expanded according to the search path rules, "foo.bar." will
+not.  Obviously, we make sure that all hostnames that ever escape onto
+the network (in mail messages, etc) have been canonicalized and are in
+the standard syntax ("foo.bar").  The CHIVES user interface always
+offers the canonical version of the target name as one of the return
+values, so this isn't hard to do.
+
+XX's resolver runs with a search path of 
+
+	( .  LCS.MIT.EDU. AI.MIT.EDU. MIT.EDU. ARPA. )
+
+Thus, "XX" means "XX.LCS.MIT.EDU", "TOTO" means "TOTO.AI.MIT.EDU" (not
+"TOTO.LCS.MIT.EDU" because there is no such name and not
+"TOTO.MIT.EDU" because AI.MIT.EDU is searched earlier),
+"SCORE.STANFORD.EDU" means "SCORE.STANFORD.EDU", "SRI-NIC" means
+"SRI-NIC.ARPA", and "ATHENA" means "ATHENA.MIT.EDU".  We could add an
+entry for "EDU.", at which point "TOTO.MIT" would mean "TOTO.MIT.EDU";
+"TOTO.AI" already means "TOTO.AI.MIT.EDU".
+
+Two points are worth mentioning here.  First, the preceeding paragraph
+presumably reads like a list of names of total strangers, except to
+people familiar with the names of these MIT machines; the whole point
+of the search path mechanism is to transform a name that is "obvious"
+to our users into a name that is obvious to anybody.  Second, note
+what happens if somebody adds "ATHENA.AI.MIT.EDU"; you have to be
+careful about arranging the search path to minimize the chances of
+somebody eclipsing a well-known nickname.  This is one of the reasons
+for allowing the user to specify that a particular name should not be
+expanded via the search path mechanism.
+
+Who should set the search path and how widely it should apply (per
+process? per user? per host? per site? per planet?) are decisions that
+have to be made based on outside factors, such as the operating system
+environment in question and user needs.  In general, the goal is to
+have the abbreviation expand to the "obvious" fully-specified name;
+the hard part is deciding what's obvious (cf. the story about the
+philosophy professor in John Brunner's "Stand on Zanzibar").
+
+For what it's worth, the search path code XX is running has been in
+place for most of a year now, and the users apparently like it (voting
+with their feet: a lot of MIT users who do not use XX directly send
+mail through XX because they think the service is better).
+
+The above is a simplified picture of how CHIVES's search path
+mechanism actually works; I've left out a lot of implementation
+details and performance hacks.
+
+--Rob
+-------
+
+<b>[<a href="?l=namedroppers&m=95837783026915&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026917&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026915&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026917&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

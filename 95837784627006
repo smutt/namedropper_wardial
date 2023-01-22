@@ -1,0 +1,48 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Putting up with sites not using nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627005&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627005&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627007&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200027&r=1&w=2">Re: Putting up with sites not using nameservers</a>
+From:       <a href="?a=95837786400039&r=1&w=2">ehrlich () psuvax1 ! cs ! psu ! edu  (Daniel Ehrlich)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198909">1989-09-15 13:20:22</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627006&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627006&q=raw">body</a>]</b>
+
+In article &lt;8909132320.AA08784@ucbvax.Berkeley.EDU&gt; RAF@NIHCU.BITNET ("Roger Fajman") writes:
+
+   &gt; Is there a good reason for no-nameserver tolerance?  Am I missing an
+   &gt; important (and surely DoD-bureaucratic) justification for this
+   &gt; foolishness?
+
+   One unfortunate reason is that there are still vendors that don't
+   provide domain resolvers.  One example that affects us is ACC with
+   ACCES/MVS.  They've been promising a resolver for years, but still
+   have not delivered.
+
+Get IBM's implemntation of TCP/IP for MVS.  It has a resolver and the SMTP
+mailer is even supposed to know how to use MX records.
+
+--
+Dan Ehrlich &lt;ehrlich@cs.psu.edu&gt;   | "A message is not a message until the
+The Pennsylvania State University  | rules for interpreting it are in the
+Department of Computer Science     | hands of the reciever."
+University Park, PA   16802        |    --Apollo Belvedere Smith
+
+<b>[<a href="?l=namedroppers&m=95837784627005&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627007&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784627005&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784627007&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

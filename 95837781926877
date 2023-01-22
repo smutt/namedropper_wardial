@@ -1,0 +1,75 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'[Paul Richards &lt;richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu&gt;: Bogus ROOT domain server on ARPAnet]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926876&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926878&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926878&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000006&r=1&w=2">[Paul Richards &lt;richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu&gt;: Bogus ROOT domain server on ARPAnet]</a>
+From:       <a href="?a=95837783700002&r=1&w=2">HOSTMASTER () SRI-NIC ! ARPA</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198706">1987-06-09 12:23:16</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926877&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926877&q=raw">body</a>]</b>
+
+Hostmaster received this message.  Any comments?
+
+                ---------------
+
+Return-Path: &lt;richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu&gt;
+Received: from a.cs.uiuc.edu by SRI-NIC.ARPA with TCP; Mon 8 Jun 87 20:43:34-PDT
+Received: from shangrila.cs.uiuc.edu by a.cs.uiuc.edu with SMTP (UIUC-5.52/9.7)
+	id AA09442; Mon, 8 Jun 87 22:43:57 CDT
+Received: from localhost by shangrila.cs.uiuc.edu (3.2/9.7)
+	id AA08682; Mon, 8 Jun 87 22:40:48 CDT
+Message-Id: &lt;8706090340.AA08682@shangrila.cs.uiuc.edu&gt;
+Reply-To: richards@b.cs.uiuc.edu
+To: hostmaster@sri-nic.arpa
+Cc: richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu
+Subject: Bogus ROOT domain server on ARPAnet
+Goal-Of-The-Day: An empty Mailbox.
+Date: Mon, 08 Jun 87 22:40:46 -0500
+From: Paul Richards &lt;richards%shangrila.cs.uiuc.edu@a.cs.uiuc.edu&gt;
+
+Hi Hostmaster...
+
+I'm not sure you're the right group to handle this, but if not, you can point
+me in the right direction.
+
+Tonight, we had what I'd call a major failure on the ARPA domain name system.
+A system at NORTHWESTERN.ARPA, [10.4.0.94], started advertising itself as a
+root domain name server, with the consequences that we stopped being able to
+locate any domain names at all.  I called NOC around 11:15pm EST, talked to
+a gentleman named Ron, who eventually looped back NORTHWESTERN until he could
+talk to their system admin.
+
+The main question now is, what or who is the right organization to contact for
+problems of this kind?  NOC wasn't sure what could be done other than cutting
+off the host from the net.  Is there an operations center handling domain
+servers? 
+
+If we are going to use the domain system for all it's intended uses, it has
+to remain up as much as possible.  (and we do use it for the great majority
+of our mail and name resolution)  
+
+Thanks for your attention on this.
+
+Paul Richards	University of Illinois at Urbaba-Champaign; Computer Science
+		richards@b.cs.uiuc.edu
+		+217 333-3536
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926876&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926878&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926878&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

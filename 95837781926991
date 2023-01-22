@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'inverse query questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926990&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926992&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    inverse query questions
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-11 13:16:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926991&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926991&q=raw">body</a>]</b>
+
+I poked around with the inverse query mechanism on a few machines.
+References pages 17 and 18 of RFC 883.
+
+One thing I tried is to inverse query a nameserver asking it about
+itself.  That is:
+	opcode = IQUERY
+	answer = &lt;noname&gt; NS IN &lt;host namelist&gt;
+
+When I tried XX.LCS.MIT.EDU a few days ago, it worked.  It told me about
+the various zones inside IN-ADDR.ARPA that it servers, as well as
+LCS.MIT.EDU and Proteon.COM.
+
+When I tried SRI-NIC.ARPA I got an rcode=NOT-IMPLEMENTED.
+
+When I tried BITSY.MIT.EDU (which serves MIT.EDU) I got a rcode=REFUSED.
+Shouldn't this be NOT-IMPLEMENTED (as mentioned in the last paragraph on
+page 17), or is it really trying to tell me if I were more trusted it
+might tell me?
+
+I also tried some inverse queries by address.  Again, XX.LCS.MIT.EDU
+when I asked it to IQUERY its own address responded correctly (modulo
+filling in the namelist for the answer field like the example on page 18
+shows.  (It did include the namelist in the question, so that was good
+enough.)  When I asked BITSY.MIT.EDU to IQUERY BITSY's address, it
+didn't say REFUSED this time but returned no answers, even though BITSY
+is authoritative for its own address!
+
+<b>[<a href="?l=namedroppers&m=95837781926990&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926992&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

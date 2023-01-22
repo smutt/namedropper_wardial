@@ -1,0 +1,88 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Multi-homed hosts and which address to use' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026821&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026822&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026821&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026822&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500022&r=1&w=2">Re: Multi-homed hosts and which address to use</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198611">1986-11-20 12:35:02</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026823&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026823&q=raw">body</a>]</b>
+
+This issue has come up several times, and I would suggest that we are
+really talking about three issues: is RR ordering a good thing inside
+the domain system, where should the ordering occur, and what should we
+do about the specific problem of addresses.
+
+1. The domain system does not guarantee to preserve the order of RRs.
+
+A pragmatic argument is that I have seen servers which don't preserve order.
+
+The primary argument here is that there is no good place within the
+domain system components to decide the order.  For example, the only
+reasonable place to order addresses is at the site of their use, so that
+neither source name server or destination name server (remember it might
+be a recursive server for a large community) is appropriate.  Where
+ordering is important, it can be done by ranking information in the RRs,
+as is done in MX.
+
+A secondary concern is that we might be painting ourselves into a corner
+for future domain system development with regard to dynamic update of
+domain data, etc.  For example, we might have a future set of domain
+transactions of the flavor of "add the following RR at the specified
+name".  If order becomes important, then we will have to support it,
+which will complicate things for no great benefit.
+
+2. Specific interfaces to the domain system can process the information
+   they pass on to the client, but the general interface shouldn't.  An
+   exception might be that the general interface might sort things to be
+   some quasi-"alphabetical" order, so that RRs of the same type are
+   together, and RRs within a type are sorted by domain names, etc.
+
+A rough version of this takes place in the current version of JEEVES.
+The flavor of JSYS which can ask for all RRs associated with a specific
+name which match a QTYPE doesn't worry about order; the flavor of JSYS
+which asks for a single address for a specific host picks the best
+address out of the choices available.
+
+3. The benefits of sorting addresses are obvious for anyone who has ever
+   accessed the NIC by the "wrong address", so we should provide an
+   interface which sorts addresses.
+
+Most of the benefits of sorting can be achieved via a small amount of
+configuration information.  For example, the configuration information
+might say "directly connected networks best, net 10 second best, net 26
+third, then class A, class B, and last class C".  (Note that this is just an
+example, your milage may vary.)
+
+Another issue we might want in this is supplying a RTT estimate along
+with the sorted addresses.  Of course this gets muddy too, since which RTT
+are we talking about?  For example, ICMP PING times are bad for use with
+domain retransmissions since they often don't include the process schedule,
+paging, etc times associated with a domain query.
+
+A general concern I have is that we don't base design decisions on bad
+examples or hacks.  I get real uncomfortable when I think about deciding
+to preserve RR order so that the "one-way" address of some UCL host
+works.  While it may be that it's important to accommodate this or
+similar constructs, the information should be explicit.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837759026821&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026822&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026821&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026822&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

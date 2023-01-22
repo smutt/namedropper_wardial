@@ -1,0 +1,130 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: BIND bug list' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327032&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327028&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327033&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400010&r=1&w=2">Re: BIND bug list</a>
+From:       <a href="?a=95837817200018&r=1&w=2">del () mlb ! semi ! harris ! com (Don Lewis)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199006">1990-06-01 16:25:40</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327034&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327034&q=raw">body</a>]</b>
+
+On Jun 1,  5:14pm, Philippe Prindeville wrote:
+} Subject: Re: BIND bug list
+&gt; 	From: del@mlb.semi.harris.com (Don Lewis)
+&gt; 	Date: Thu, 31 May 1990 16:13:20 EDT
+&gt; 	Subject: Re: BIND bug list
+&gt; 	&gt; Really,
+&gt; 	&gt; the best thing to do is to RPC to a local resolver daemon that can
+&gt; 	&gt; do things like measure which servers give timely responses, and
+&gt; 	&gt; which ones are south.  Also, things like address sorting based on
+&gt; 	&gt; policy constraints could be done there also.
+&gt; 	If you get a BIND version &gt;= 4.8, you can do this now if you don't list
+&gt; 	any name server addresses in /etc/resolve.conf, and list the real name
+&gt; 	servers as forwarders in /etc/named.boot.  BIND is also kind enough
+&gt; 	to do caching for you, which is a definite win.  The only thing lacking
+&gt; 	is that BIND doesn't keep track of performance data, but that should
+&gt; 	probably not be too hard to add.
+&gt; 
+&gt; One of us is confused here:  I thought we were talking solely about
+&gt; the resolver, not the nameserver as well.  I don't think installing
+&gt; the nameserver on every workstation is a solution.  It would give
+&gt; a rich local cache, but it would be better to have one or two forwarding
+&gt; nameservers for the local site, and let them accumulate the cache.
+
+Both will accumulate the cache.  A local cache does good things.  It
+reduces the load on the main name servers, and it improves performance,
+especially if one of the main name servers is down.  If you already have
+the address for host xyzzy in the local cache because your applications
+ask for its address twenty times a day, then you get an immediate response
+to a query for its address, no matter what happens to the forwarding
+servers.  The best that the name server performance tracking can do is
+to make you wait only once each time one of the main name server fails,
+and it probably won't be able to do this well if there are difficult
+to resolve queries in the mix.  There will also be degradation because
+you should occasionally retry the broken servers, so that all the clients
+don't gang up on just one server.  My gut feel is that a local cache will
+do more to improve performance than keeping track of the performance
+of the forwarders.
+
+Caching resolvers are mentioned in the RFC's.  BIND can perform this
+function as is, except for funny resolver search rules.
+
+&gt; 	
+&gt; 	The problems with this approach are:
+&gt; 	  * If the local BIND process dies, your host will be very unhappy
+&gt; 	  * The local BIND process is not able to distinguish between a
+&gt; 	    forwarder being down and a query that the forwarder is having
+&gt; 	    trouble resolving (due to the nameservers it is querying not
+&gt; 	    responding).  If you list only one forwarder, you are killed
+&gt; 	    by the first case.  If you list multiple forwarders, you may
+&gt; 	    time out the first query and try the next forwarder, which will
+&gt; 	    not have any better luck.  This is a good way to thrash the
+&gt; 	    internet, and it will also muck up your performance data.
+&gt; 
+&gt; Yes, another reason not to run a nameserver on every host.
+
+Both problems still occur if you have a stripped down local resolver process.
+The second problem also occurs even if you have the resolver linked into
+each program on the client if there are multiple name servers listed in
+/etc/resolv.conf.
+
+&gt; 
+&gt; 	Basically recursive queries and UDP don't mix very well.  Recursive
+&gt; 	queries work fine with TCP, but then you are limited as far as the
+&gt; 	number of simulataneous queries that you can support.
+&gt; 
+&gt; Yes, so?  Apropos of what?
+
+If you use UDP to make queries, you can't distinguish between:
+	1) name server is dead
+	2) query packet or response packet was lost
+	3) name server is taking a long time to find the answer
+
+Since we are concerned with recursive queries here, Case 3 will be
+quite common.  In Cases 1 and 2, the correct action is to retry the
+query on another name server.  In Case 3, you want to let the server
+keep working to avoid the internet thrashing mentioned above.  Since
+it is not possible to distinguish the cases, present implementations
+just time out the query after a while and do some number of retries.
+
+When using TCP, Case 2 doesn't happen, and Cases 1 and 3 can be
+distinguished.  The problem is that the server will only be able
+to support a limited number of simultaneous TCP connections.  If
+there are 500 clients and only 3 servers, this could be a problem.
+One additional problem is that the officially released BIND 4.8.*
+versions have a bug in the TCP code that causes core dumps.
+
+This discussion primarily applies to communication between one host
+and a recursive name server, but there are similar considerations
+between a client process and a resolver process on the same host.
+
+&gt; 	I don't think there needs to be a new protocol, maybe just some
+&gt; 	enhancements to the existing protocol to better support recursive
+&gt; 	queries.
+&gt; 
+&gt; Eh, no:  I meant a protocol for RPC between processes, such as a
+&gt; client program (maybe telnet) wanting to talk to a server (such as
+&gt; a local resolver daemon).
+
+What's wrong with using the present DNS protocol?
+
+			---  Truck
+
+<b>[<a href="?l=namedroppers&m=95837797327032&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327033&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327028&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327033&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Questions about MR and MB records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926975&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926978&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926985&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500007&r=1&w=2">Questions about MR and MB records</a>
+From:       <a href="?a=95837784800015&r=1&w=2">Alfred Ganz &lt;ganz-alfred () YALE ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-04 14:03:57</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926977&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926977&q=raw">body</a>]</b>
+
+
+I have sent the first half of this message to the bind mailing list and have
+received essentially no feedback. I then realized that namedroppers might be
+more interested in my questions. However, since there is significantly more
+detail in this message I will send it to both mailing lists and check the
+response. I promise not to flood the system after this.
+
+Our current mail system does MAILBOX BINDING as described in RFC-883. The mail
+system supports a two level hierarchy of zones (a zone for each machine and a
+system wide mail zone). The system supports mail delivery to mailboxes within
+a local zone, to mailboxes in other than the current zone, and to mailgroups
+(any user with multiple mailboxes or specific delivery requirements is handled
+as a mailgroup). Each person known outside of Yale is also represented as a
+mailgroup in the mail domain which specifies local delivery for that person.
+Note that there may be mailboxes and mailgroups with the same name but
+belonging to different people in different zones (If necessary, names are made
+unique in the mail zone by using the form lastname-firstname instead of
+lastname only).
+
+The local practice is to use lastnames for account names wherever feasible,
+and mailbox names are the same as account names. In most cases the casual user
+sends his mail to lastnames (or account names) and is unaware of what kind of
+delivery takes place. The mail system is based on a mail data base which is
+heavily munged into proper alias tables for sendmail every night. Mail delivery
+is through an unadulterated version of sendmail with a relatively complex,
+locally defined configuration file. There BTW exists an inverse problem here,
+which is to map account names into mailgroup names in order to create proper
+From: addresses (which sendmail can't do and which we handle with a frontend to
+sendmail).
+
+I am currently trying to map the functionality of our system into the
+nameserver capabilities described in RFC-883. Based on my current insights I
+believe that a reasonable model of mailbox binding must recognize two kinds of
+bindings, bindings that will in the long run be done by the originator (but if
+detected as not done yet upon receipt will be applied by the recipient host),
+and bindings that will always be done at the recipient host. I make this
+assumption because I believe that there will always be things about our own
+systems that we don't wish to advertise (e.g. why should I tell the world all
+the account names on our machine just because mailbox names happen to be the
+same, I might instead have some private transformation that lets me do a final
+mapping locally).
+
+The first question about MR and MB records is therefore if the information
+specified by the MR and MB records is to be used for both kinds of bindings
+or only for those of the originator kind. Since the current specifications
+include only information that is available world wide, I assume that the
+MR and MB records are used to specify originator kind bindings only (which
+may potentially be applied at the recipient host of course).
+==&gt;  Question to the specifiers of RFC-883 and follow ups, is this the intended
+     interpretation of the standard?
+
+This interpretation would imply that the mailbox names used in the MR and MB
+records may, assuming the proper private recipient mapping, actually be logical
+mailbox names rather than real mailbox names. This would make the last-,
+mailbox-, and account- name problem outlined above much more manageable.
+==&gt;  Question to the specifiers of RFC-883 and follow ups, is this a fair
+     interpretation of the standards?
+
+Under the assumption that the above interpretations are correct, a question
+to be asked is: Would the nameserver scheme of things be a reasonable way to
+specify private bindings (the functionality needed is again some database of
+mappings, although one would probably want some kind of access protection
+mechanisms), or is the goal to use the good old standby of sendmail with
+aliases for this (which I had hoped to get rid of once and for all)?
+==&gt;  Question to the specifiers of RFC-883 and nameserver implementors, what
+     would be your recommendation?
+
+And finally, even with the above interpretations it will be necessary for the
+recipient mailer to detect if an arriving message has gone through remote
+mailbox binding. The problem that arises from this has only partially to do
+with RFC-883, but originates with the mail delivery protocols (like SMTP).
+Since they don't allow us to carry this information as part of the protocol
+we must use the recipient names to recognize which addresses have gone through
+remote mailbox binding. This can be achieved either by making the MB names
+unique among MB and MR records in the zone (as opposed to among the entries
+of a specific record type), or by using a separate zone. Using a separate zone
+seems to be totally contrary to the intent of the definition of MB records.
+This leaves us stuck with unique MB names over all MR and MB records, which
+isn't nice either, but at least it can be done within the current framework.
+==&gt;  Question to the specifiers of RFC-883 and follow ups, is this requirement
+     for uniqueness among MB and MR records reasonable? Is there another rule
+     which would avoid reinterpretation of an MR to MB chain (Note that
+     priority of MR over MB will not do here)?
+
+I sure would like to get some guidance on these questions. I think they are
+real and need answers before we can talk about implementing mailbox binding
+based on nameservers.
+
+Thanks for any help! AG
+
+<b>[<a href="?l=namedroppers&m=95837781926975&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926978&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926985&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

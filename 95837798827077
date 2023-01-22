@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Philosophical question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827078&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827072&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=92706767000002&r=1&w=2">Re: Philosophical question</a>
+From:       <a href="?a=95836735000003&r=1&w=2">Craig_Everhart () transarc ! com</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199010">1990-10-26 15:53:07</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827077&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827077&q=raw">body</a>]</b>
+
+(I'm planning to be careful to observe the one-message-per-day
+restriction on Namedroppers.)
+
+Excerpts from internet.namedroppers: 24-Oct-90 Re: Philosophical
+question John Luke Mills@ucsd.edu (414)
+
+&gt; &gt;And all mail from the domain goes out as 
+
+&gt; &gt;From: local-part@andrew.cmu.edu
+
+&gt; How do you accomplish this reverse aliasing?  Does it require all mail
+&gt; to leave via "special" machines that can change the from line from
+&gt; login@machine.andrew.cmu.edu to alias@andrew.cmu.edu?
+
+Andrew handles its mail in an unusual fashion.  All the mail composers
+send mail with From: lines in the given format: the machine name doesn't
+enter into it at all.  Mailboxes (as well as all personal files) are
+kept in the andrew.cmu.edu AFS installation; workstations are tools by
+which users authenticate to AFS and manipulate their files (including
+their mail).  Thus, mail is generated as ``From:
+local-part@andrew.cmu.edu'' since that's how return mail is received.
+
+The local delivery system is AMDS, which comes in the Andrew
+contribution to the X.V11R4 tape.  All of AMDS at an installation,
+including the stub that runs on each workstation, recognizes
+@andrew.cmu.edu (i.e. the name of a connected AFS cell) as the local
+domain, and delivers mail to the in-AFS mailbox.
+
+As it happens, mail does leave andrew.cmu.edu through a set of special
+macines (workstations dedicated to use as post-office machines), but
+they don't generally rewrite the From: address.
+
+All this was incidental to the original discussion, but I hope it was of
+some interest anyway.
+
+		Craig
+
+<b>[<a href="?l=namedroppers&m=95837798827076&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827078&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827072&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

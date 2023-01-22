@@ -1,0 +1,47 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'domain system performance' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926945&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926951&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926962&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000036&r=1&w=2">domain system performance</a>
+From:       <a href="?a=95837784200026&r=1&w=2">Peter Karp &lt;KARP () SUMEX-AIM ! STANFORD ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-20 16:01:11</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926950&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926950&q=raw">body</a>]</b>
+
+Seems to me that the domain system could be a great testbed for
+experiments in adaptive network algorithms.  A resolver wishes
+to retrieve records which it knows are stored in N servers at
+different locations.  It wishes to minimize both its wait for the
+data, and its impact upon the network.  What is its optimum policy?
+Sending out N queries will get it the response in minimal time, but
+also with a large cost in network resources.  Conversely, with one
+query it may have to wait a long time, but it will have minimal
+impact on the network.  A number of intermediate approaches are
+possible, such as choosing M &lt; N random servers to query, or
+choosing the M &lt; N servers whose response has been fastest in the
+past, or choosing the M servers with fastest past performance plus
+K random servers as experiments (M+K&lt;N).  Timing information could
+be cached in a server's local database.  Is anyone working on this?
+It doesn't seem so tough.
+
+Peter
+-------
+
+<b>[<a href="?l=namedroppers&m=95837781926945&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926951&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926962&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

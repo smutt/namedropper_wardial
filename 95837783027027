@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: network preferences in resolver' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027026&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027028&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027026&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027028&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700005&r=1&w=2">Re: network preferences in resolver</a>
+From:       <a href="?a=95837784600006&r=1&w=2">Bruce Orchard &lt;ORCHARD/BRUC () scarecrow ! waisman ! wisc ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-22 16:08:49</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027027&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027027&q=raw">body</a>]</b>
+
+In the resolver I wrote for the Harris H series, I implemented network
+preferences.  For each network, the startup file gives the network,
+a mask to match the network, and a preference value (lower is better).
+On our machine I use this for two purposes:  (1) To use an address
+that will go through fewer gateways and (2) to use an address that
+is more likely to be in the gateway tables.
+
+In our case, it is more appropriate to do this in the resolver
+than the server because the servers are connected to
+different networks and so would have different preferences
+about the networks.
+
+This approach does not track changes in network topology, but they
+are rare:  The last one was over a year ago.
+
+Bruce Orchard
+University of Wisconsin-Madison
+
+Here is the network preferences section of the resolver initialization
+file from scarecrow.waisman.wisc.edu:
+
+#
+# Network Preferences
+#
+pn 192.12.223.0 255.255.255.0 10  # scarecrow is on this network
+pn 128.104.0.0  255.255.0.0   10  # scarecrow is on this network
+pn 128.105.0.0  255.255.0.0   20  # there is a gateway from 128.104 to this network
+pn 10.0.0.0     255.0.0.0     30  # there is a gateway from 128.104 to this network
+pn 26.0.0.0     255.0.0.0     40
+
+<b>[<a href="?l=namedroppers&m=95837783027026&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027028&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027026&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027028&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

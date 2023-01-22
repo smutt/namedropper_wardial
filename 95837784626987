@@ -1,0 +1,99 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'in-addr.arpa problem/question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626986&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626988&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626993&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200021&r=1&w=2">in-addr.arpa problem/question</a>
+From:       <a href="?a=95837786400024&r=1&w=2">agate!bionet!csd4.csd.uwm.edu!uakari.primate.wisc.edu!ctrsol!emory!glenn () ucbvax ! </a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198908">1989-08-22 2:59:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626987&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626987&q=raw">body</a>]</b>
+
+
+
+I've got a problem with the in-addr.arpa "special" domain:  nameservers
+on the internet that do not serve our domain (emory.edu, 
+140.128.in-addr.arpa) are *not* able to traverse the in-addr.arpa domain tree
+to groak in-addr queries for '140.128.in-addr.arpa'.  
+
+My question is then, who do I get in contact with to see why 
+the servers for '128.in-addr.arpa' do not have any "glue" (this is asssuming
+the "special" in-addr.arpa domain has "glue" RRs) RRs to point at 
+our net on the next level, '140.128.in-addr.arpa'?
+
+Here's a little DiG output to demo my point.
+
+DiG output from a server (cc.emory.edu) that serves '140.128.in-addr.arpa':
+
+emoryu1(223)&gt; dig @127.1 140.128.in-addr.arpa. any
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; @127.1 140.128.in-addr.arpa. any
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa rd ra  Ques: 1, Ans: 2, Auth: 0, Addit: 1
+
+;; QUESTIONS:
+;;      140.128.in-addr.arpa, type = ANY, class = IN
+
+;; ANSWERS:
+140.128.in-addr.arpa    IN      SOA     cc.emory.edu  arnold.emory.edu (
+                        100020  ;serial
+                        10800   ;refresh
+                        3600    ;retry
+                        3600000 ;expire
+                        604800  ;minim )
+        ; 604800
+140.128.in-addr.arpa    IN      NS      cc.emory.edu    ; 604800
+
+;; ADDITIONAL RECORDS:
+cc.emory.edu    IN      A       128.140.1.1     ; 604800
+
+;; Sent 1 pkts, answer found in time: 0.0 sec
+;; FROM: emoryu1 to SERVER: 127.1
+;; WHEN: Mon Aug 21 22:27:48 1989
+
+
+
+Here's the DiG output from a server (this could be any server that
+does not serve our domain) that does not serve '140.128.in-addr.arpa':
+
+emoryu1(228)&gt; dig @troll-gw.gatech.edu.  140.128.in-addr.arpa. any
+
+; &lt;&lt;&gt;&gt; DiG &lt;&lt;&gt;&gt; @troll-gw.gatech.edu. 140.128.in-addr.arpa. any
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa rd ra  Ques: 1, Ans: 0, Auth: 0, Addit: 0
+
+;; QUESTIONS:
+;;      140.128.in-addr.arpa, type = ANY, class = IN
+
+;; Sent 1 pkts, answer found in time: 1.750 sec
+;; FROM: emoryu1 to SERVER: troll-gw.gatech.edu.
+;; WHEN: Mon Aug 21 22:42:29 1989
+
+
+As you see, it was not successful.   Any ideas, bind gurus?
+
+thanks,
+
+-- 
+Glenn T. Barry      |  glenn@mathcs.emory.edu                   Internet
+Emory University    |  {sun!sunatl,gatech}!emory!glenn          UUCP
+Dept of Math and CS |  glenn@emory                              BITNET
+Atlanta, GA 30322   |  ph: (404) 727-5637
+
+<b>[<a href="?l=namedroppers&m=95837784626986&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626988&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837784626993&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

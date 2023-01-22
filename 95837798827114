@@ -1,0 +1,146 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'follow-up to clouso.crim.ca. as bogus root name server.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827112&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827115&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827116&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500019&r=1&w=2">follow-up to clouso.crim.ca. as bogus root name server.</a>
+From:       <a href="?a=95837818000026&r=1&w=2">kinley () bond ! crim ! ca (J !  Darren Kinley)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-14 15:27:19</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827114&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827114&q=raw">body</a>]</b>
+
+
+On Oct 25, J. Darren Kinley writes:
+&gt; ...
+&gt;
+&gt; &gt; One of our nameservers (RA.DEPT.CS.YALE.EDU) has picked up a Canadian root
+&gt; &gt; server (CLOUSO.CRIM.CA - is it valid?):
+&gt; 
+&gt; ACK!!!!
+&gt; No, this is *definitely* not valid! ...
+&gt; 
+&gt; I will investigate and see if I can figure this out. Any hints,
+&gt; suggestions, or information that could prove usefull will be
+&gt; *greatly* appreciated. I will have follow this thread backwards
+&gt; and catch up on what I have missed.
+&gt; -- End of excerpt from J. Darren Kinley.
+
+Hello again,
+
+First of all thanks to the people who took the time to reply to my
+request for hints. Most of the replies simply stated that they had
+seen the bogus records and/or wished me looks of luck in discovering
+the source of the bogons. These were interesting and appreciated,
+but did not quite give the information I was hoping for. I will
+wrap up this follow-up with a few questions that I don't have 
+acceptable answers to.
+
+Problem: Find and eliminate the source of the clouso.crim.ca. bogus
+         root name server records. This turns out to be about as
+         difficult as finding the proverbial needle in the hay stack.
+
+Assumptions: I knew the person that was giving out the bad information.
+             This assumption restricted my search all name servers on
+             the RISQnet and a few others in the west of Canada.
+
+How I proceeded:
+
+1. Made a list of all name server that I knew and proceeded to ask
+   each who the root name servers were. Bingo! I lucked out. The TTLs,
+   however, were only a few seconds and the bad RRs disappeared 
+   immediately. (Hmm, could they be the source of my problems?)
+
+2. Ran a script that monitored those servers on a 2 minute interval
+   over 3 days. I had hoped that this might help to point me in the
+   right direction. The assumption being; from a name server that is
+   infected more often than mine, I can find the source of the 
+   problem more quickly. Not even a single hit!
+
+3. Reconsidered assumptions and plan of attack.
+    -  I still put I high probability that the person responsible was
+       someone that I knew, and so decided to stick with my primary
+       assumption.
+    -  I considered running my NS in debug mode and reading the
+       megabytes of trace, but the bad information had never shown up
+       here.  Besides, I didn't really want to go through a trace.
+    -  I considered that the problem would go away *if* the guilty
+       person saw this thread, but decided that they probably didn't
+       read this list and that I could not ignore the problem.
+
+4. Some name servers were more suspect than others and so I
+   concentrated my efforts on them. I connected to each and asked
+   simple questions like; ". ns", "ca. ns", "edu. ns.". Finally,
+   I found a machine that thought that we were a name server for
+   just about everything except ".". When asked, however, "foo. ns"
+   it replied that "clouso.crim.ca." was a root name server. Aha!
+
+   I then visited the domain admin, explained how the name server
+   should work and how to correctly configure it, played with his
+   name server and found out that it was rather broken (or at least
+   I was unable to understand why it worked that way that it did).
+   Anyhow, I was able to get the thing to work. Hopefully, this was
+   the only source of the problem!
+
+   Has anyone any experience getting a name server to run on an
+   IBM running VM? If so I would like to hear from you.
+
+5. Am I finished?
+
+   I received a mail from someone on another Canadian regional
+   network. Apparently, before having a connected status on the
+   core, some admins on this particular network found that naming
+   clouso.crim.ca. as a "." name server solved their immediate 
+   problems.
+
+   Perhaps some name servers are still configured in this way.
+   As it turns out, my primary assumption must now be discarded
+   (sigh) and I have possibly/probably not seen the end of the
+   problems.
+   
+
+Questions:
+
+Does anyone still have the bogus root name server records that
+name clouso.crim.ca.?
+
+HOW DOES THIS BAD INFORMATION GET PROPOGATED? If organization X
+has a name server which serves *only* the domain associated with
+X, no one outside of X should be asking the X name server anything
+other than the domain associated with X. So the bad information
+cannot possible be propogated outside of the X organization! More
+generally, I cannot see any scenario where bad root name server
+information can possibly be propogated by anyone other than root.
+The exception of course, is that humans force this bad information
+to be propogated while playing with nslookup or dig. If anyone
+can enlighten me it would be *greatly* appreciated.
+
+Concerning debugging, I have often heard (read) people mention
+reading traces. Reading a trace is the last thing that I want to do!
+Perhaps it is time to discuss alternative methods or procodures
+we (domain admins) can try in order to help isolate problems.
+I have listed the steps in my approach to the problem. Can someone
+suggest a better approach?
+
+-- 
+Darren Kinley             | Centre de recherche informatique de Montreal (CRIM)
+Analyste/Prog. en Telecom | 3744 rue Jean-Brillant, bureau 500
+kinley@crim.ca            | Montreal (Quebec) Canada H3T 1P1
+uunet!clouso!kinley       | tel: +1 514 340 5700 / fax: +1 514 340 5777
+
+<b>[<a href="?l=namedroppers&m=95837798827112&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827115&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837798827116&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Reverse resolving an address...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326914&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326916&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326916&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200008&r=1&w=2">Reverse resolving an address...</a>
+From:       <a href="?a=95837816800039&r=1&w=2">"Kannan Varadhan" &lt;kannan () oar ! net&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199004">1990-04-02 17:38:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326915&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326915&q=raw">body</a>]</b>
+
+
+
+Hi all,
+
+For some strange reason, our nameserver got busy the other day, trying
+to reverse resolve an address.  The address it was attempting to reverse
+resolve was/is 130.113.0.69.  When I tried repeating the phenomenon by
+querying one of the root name servers, I
+got back NS RR's for the reverse mapping, but no glue RRs in the
+additional section.
+
+Upon making a second query for the address of this list of name servers,
+I got referred to a second set of name servers, who gave me only MX RRs,
+no A records.
+
+Is this the right scheme of approaching things?  Or, am I missing
+something blatantly obvious, or obviously blatant here?  Here is a
+transcript of what I tried, using dig.
+
+
+Script started on Mon Apr  2 17:27:09 1990
+malgudi src. dig @a.isi.edu 113.130.in-addr.arpa any 
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @a.isi.edu 113.130.in-addr.arpa any 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr rd  Ques: 1, Ans: 0, Auth: 2, Addit: 0
+
+;; QUESTIONS: 
+;;	113.130.in-addr.arpa, type = ANY, class = IN
+
+;; AUTHORITY RECORDS:
+113.130.IN-ADDR.ARPA.	518400	IN	NS	BLACKADDER.CIS.MCMASTER.CA.
+113.130.IN-ADDR.ARPA.	518400	IN	NS	BALDRIC.CIS.MCMASTER.CA.
+
+;; Sent 1 pkts, answer found in time: 1180 msec 
+;; FROM: malgudi.oar.net to SERVER: a.isi.edu
+;; WHEN: Mon Apr  2 17:29:07 1990
+
+malgudi src. dig @a.isi.edu blackadder.cis.mcmaster.ca. any
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @a.isi.edu blackadder.cis.mcmaster.ca. any 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr rd  Ques: 1, Ans: 0, Auth: 4, Addit: 3
+
+;; QUESTIONS: 
+;;	blackadder.cis.mcmaster.ca, type = ANY, class = IN
+
+;; AUTHORITY RECORDS:
+CA.	518400	IN	NS	RELAY.CDNNET.CA.
+CA.	518400	IN	NS	NNSC.NSF.NET.
+CA.	518400	IN	NS	CLOUSO.CRIM.CA.
+CA.	518400	IN	NS	UGW.UTCS.UTORONTO.CA.
+
+;; ADDITIONAL RECORDS:
+RELAY.CDNNET.CA.	518400	IN	A	128.189.97.41
+CLOUSO.CRIM.CA.	518400	IN	A	192.26.210.1
+UGW.UTCS.UTORONTO.CA.	518400	IN	A	128.100.102.3
+
+;; Sent 1 pkts, answer found in time: 860 msec 
+;; FROM: malgudi.oar.net to SERVER: a.isi.edu
+;; WHEN: Mon Apr  2 17:29:37 1990
+
+malgudi src. dig @a.isi.edu baldric.cis.mcmaster.ca. any
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @a.isi.edu baldric.cis.mcmaster.ca. any 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr rd  Ques: 1, Ans: 0, Auth: 4, Addit: 3
+
+;; QUESTIONS: 
+;;	baldric.cis.mcmaster.ca, type = ANY, class = IN
+
+;; AUTHORITY RECORDS:
+CA.	518400	IN	NS	RELAY.CDNNET.CA.
+CA.	518400	IN	NS	NNSC.NSF.NET.
+CA.	518400	IN	NS	CLOUSO.CRIM.CA.
+CA.	518400	IN	NS	UGW.UTCS.UTORONTO.CA.
+
+;; ADDITIONAL RECORDS:
+RELAY.CDNNET.CA.	518400	IN	A	128.189.97.41
+CLOUSO.CRIM.CA.	518400	IN	A	192.26.210.1
+UGW.UTCS.UTORONTO.CA.	518400	IN	A	128.100.102.3
+
+;; Sent 1 pkts, answer found in time: 1119 msec 
+;; FROM: malgudi.oar.net to SERVER: a.isi.edu
+;; WHEN: Mon Apr  2 17:30:14 1990
+
+malgudi src. dig @128.189.97.41 blackadder.cis.mcmaster.ca any +norec
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @128.189.97.41 blackadder.cis.mcmaster.ca any +norec 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 13
+;; flags: qr aa ra  Ques: 1, Ans: 1, Auth: 0, Addit: 2
+
+;; QUESTIONS: 
+;;	blackadder.cis.mcmaster.ca, type = ANY, class = IN
+
+;; ANSWERS:
+blackadder.cis.mcmaster.ca.	43200	IN	MX	10 ugw.utcs.utoronto.ca.
+
+;; ADDITIONAL RECORDS:
+ugw.utcs.utoronto.ca.	43200	IN	A	128.100.102.3
+ugw.utcs.utoronto.ca.	43200	IN	A	128.100.100.3
+
+;; Sent 4 pkts, answer found in time: 400 msec 
+;; FROM: malgudi.oar.net to SERVER: 128.189.97.41
+;; WHEN: Mon Apr  2 17:31:21 1990
+
+malgudi src. dig @128.100.102.3 blackadder.cis.mcmaster.ca. any +norec
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @128.100.102.3 blackadder.cis.mcmaster.ca. any +norec 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa ra  Ques: 1, Ans: 0, Auth: 0, Addit: 0
+
+;; QUESTIONS: 
+;;	blackadder.cis.mcmaster.ca, type = ANY, class = IN
+
+;; Sent 1 pkts, answer found in time: 459 msec 
+;; FROM: malgudi.oar.net to SERVER: 128.100.102.3
+;; WHEN: Mon Apr  2 17:31:46 1990
+
+malgudi src. # Hmm...that was indeed strange
+malgudi src. dig @128.100.100.3 blackadder.cis.mcmaster.ca. any +norec
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @128.100.100.3 blackadder.cis.mcmaster.ca. any +norec 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr aa ra  Ques: 1, Ans: 0, Auth: 0, Addit: 0
+
+;; QUESTIONS: 
+;;	blackadder.cis.mcmaster.ca, type = ANY, class = IN
+
+;; Sent 1 pkts, answer found in time: 760 msec 
+;; FROM: malgudi.oar.net to SERVER: 128.100.100.3
+;; WHEN: Mon Apr  2 17:32:41 1990
+
+malgudi src. # Let's try THE nic
+malgudi src. dig @nic.ddn.mil 113.130.in-addr.arpa any 
+
+; &lt;&lt;&gt;&gt; DiG 1.1.beta &lt;&lt;&gt;&gt; @nic.ddn.mil 113.130.in-addr.arpa any 
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY , status: NOERROR, id: 10
+;; flags: qr rd  Ques: 1, Ans: 0, Auth: 2, Addit: 0
+
+;; QUESTIONS: 
+;;	113.130.in-addr.arpa, type = ANY, class = IN
+
+;; AUTHORITY RECORDS:
+113.130.IN-ADDR.ARPA.	518400	IN	NS	BLACKADDER.CIS.MCMASTER.CA.
+113.130.IN-ADDR.ARPA.	518400	IN	NS	BALDRIC.CIS.MCMASTER.CA.
+
+;; Sent 1 pkts, answer found in time: 2580 msec 
+;; FROM: malgudi.oar.net to SERVER: nic.ddn.mil
+;; WHEN: Mon Apr  2 17:36:14 1990
+
+malgudi src. ^D
+
+script done on Mon Apr  2 17:35:04 1990
+
+Confusedly yours,
+
+
+KANNAN
+
+-=-
+Kannan Varadhan, Internet Engineer, OARNet
+Ohio Supercomputer Center, Columbus, OH 43212	+1 (614) 292-4137
+email:	kannan@oar.net	|  osu-cis!malgudi.oar.net!kannan
+
+<b>[<a href="?l=namedroppers&m=95837797326914&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326916&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326916&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

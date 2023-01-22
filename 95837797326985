@@ -1,0 +1,122 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: glue ==  [what is glue?]' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326984&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326986&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326984&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400006&r=1&w=2">Re: glue ==  [what is glue?]</a>
+From:       <a href="?a=95837817000043&r=1&w=2">mailrus!uflorida!mlb.semi.harris.com!sunrise.mlb.semi.harris.com!del () tut ! cis ! ohi</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-12 0:50:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326985&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326985&q=raw">body</a>]</b>
+
+In article &lt;57150@bu.edu.bu.edu&gt; kwe@bu-it.bu.edu (Kent England) writes:
+	[stuff deleted]
+&gt;
+&gt;	I'm getting confused by this thread.  I thought the DNS
+&gt;rule was that name servers for sub-domains had to have names that
+&gt;belonged to the delegating domain, and that consequently
+&gt;the A records for a sub-domain server are not really glue records
+&gt;in the delegating domain, since they rightly are owned by the 
+&gt;delegating domain.  Yes?
+No.  The owner of the NS record delegating authority for a subdomain
+belongs to the subdomain.  Quoting from RFC 1034 section 4.2.1:
+
+  The RRs that describe cuts around the bottom of the zone are NS RRs that
+  name the servers for the subzones.  Since the cuts are between nodes,
+  these RRs are NOT part of the authoritative data of the zone, and should
+  be exactly the same as the corresponding RRs in the top node of the
+  subzone.  Since name servers are always associated with zone boundaries,
+  NS RRs are only found at nodes which are the top node of some zone.  In
+  the data that makes up a zone, NS RRs are found at the top node of the
+  zone (and are authoritative) and at cuts around the bottom of the zone
+  (where they are not authoritative), but never in between.
+
+The name server that this NS record points to can be any arbitrary domain
+name.  The owner of the A records for these name servers is based on
+this name.  The name servers for X.Y.Z might be FOO.BAR.COM and XYZZY.EDU.
+The owners of the A records for these name servers are probably the
+BAR.COM and XYZZY.EDU zones.  No glue is necessary for these name servers
+in the Y.Z domain because their A records do not belong to a subdomain
+of Y.Z.  The only case where the Y.Z zone would be authoritative for the
+A record of the name server for X.Y.Z would be if the name server was
+J.Y.Z.
+
+Also from RFC 1034 section 4.2.1:
+
+  One of the goals of the zone structure is that any zone have all the
+  data required to set up communications with the name servers for any
+  subzones.  That is, parent zones have all the information needed to
+  access servers for their children zones.  The NS RRs that name the
+  servers for subzones are often not enough for this task since they name
+  the servers, but do not give their addresses.  In particular, if the
+  name of the name server is itself in the subzone, we could be faced with
+  the situation where the NS RRs tell us that in order to learn a name
+  server's address, we should contact the server using the address we wish
+  to learn.  To fix this problem, a zone contains "glue" RRs which are not
+  part of the authoritative data, and are address RRs for the servers.
+  These RRs are only necessary if the name server's name is "below" the
+  cut, and are only used as part of a referral response.
+
+
+&gt;
+&gt;	So, the server for Y.Z owns the entry for the name
+&gt;server for the X.Y.Z sub-domain and is authoritative for the
+&gt;address for that name server, not the server for X.Y.Z.
+Nope.  The X.Y.Z domain owns the NS record for itself.  This NS
+record must also be present in the Y.Z zone in order for the name
+server for Y.Z to properly do the delegation.  The NS records must
+match between the two zones or terrible things will happen.  The
+owner of the A record for the name server is determined entirely
+by the fully qualified domain name (FQDN) of this host, and is
+entirely independent of whether this host is a name server or not.
+If the FQDN of the name server for X.Y.Z is a subdomain of Y.Z that
+the Y.Z zone is not authoritative for, then the the address of this
+name server must be present in the Y.Z zone file as a glue record.
+
+&gt;
+&gt;	I thought that glue records were only needed to refer
+&gt;back up the tree.  In other words, the X.Y.Z server needs glue
+&gt;A records to find the server for Y.Z or root.
+Nope.  The X.Y.Z server should be configured with a root.cache
+file or equivalent to point it at the root servers.  If it needs to
+find the Y.Z server, it starts at the root and works down.
+
+&gt;Once you find a root server, you can find any other domain server,
+&gt;including the one right above you,
+Right
+
+&gt;so everyone simply uses
+&gt;root glue records.
+Minor quibble.  The configured in root name server information is
+generally referred to as the "safety belt" (it appears that BIND just
+uses this to find a root name server to query in order to find the
+authoritative list of root servers, or in case this information times
+out).  "Glue" information refers to those records needed to communicate
+with a name server for the subdomain when that server itself resides at
+or below the subdomain.
+
+I just re-read RFCs 1034 and 1035 last week.  I picked up a lot
+more the second time around.  It answered quite a few questions
+that I had.  Also the section on DNS in RFC 1123 is helpful.
+--
+Don "Truck" Lewis                      Harris Semiconductor
+Internet:  del@mlb.semi.harris.com     PO Box 883   MS 62A-028
+Phone:     (407) 729-5205              Melbourne, FL  32901
+
+<b>[<a href="?l=namedroppers&m=95837797326984&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326986&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326984&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

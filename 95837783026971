@@ -1,0 +1,68 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Bogus root nameservers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026970&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026972&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026964&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026972&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890400018&r=1&w=2">Bogus root nameservers</a>
+From:       <a href="?a=95837785400027&r=1&w=2">John Lekashman &lt;lekash () orville ! nas ! nasa ! gov&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198809">1988-09-19 11:29:23</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026971&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026971&q=raw">body</a>]</b>
+
+
+    At least one of the root nameservers, TERP.UMD.EDU, is responding
+    incorrectly to requests about non-existant top-level domains.
+    When queries for an address record for "FOO.BAR." it returns a
+    NOERROR instead of NXDOMAIN, indicating that the domain exists but
+    the record doesn't.
+
+    As for the "brain-damaged-root-server-of-the-day", NS.NASA.GOV
+    returns a SERVFAIL to this query.
+
+I moved ns.nasa.gov from a vax to a sun, about the 13th, and no
+longer have it serving other primary domains.  It also no longer
+sends UDP packets out the wrong interface, as said sun has only
+one interface.  The server has been up for six days, and still returns
+NXDOMAIN to this query.
+
+I suspect (only a first level suspect, I haven't spent time 
+looking at it very much at all) that the incorrect response to
+losing queries is in some fashion related to the server choking on
+invalid data in the address files.  Up until last week, ns.nasa.gov
+also served about 7 local primaries, with the result being 
+regular changes to the associated files.  (Not the root distributions,
+of course, but others.)  
+
+It is interesting to note that the breakdowns were first noted (or
+at least mentioned out loud) when I went away on vacation.  I do not have
+normal responsibility for adding new hosts to the local primaries,
+but I did monitor syslog and note when someone adding such a host
+made a typo, resulting in complaints from bind.  I would also then
+quickly see to its correction.  Apparently others were not so careful, as 
+while I was gone, such errors hung around for some time.
+
+In any event, ns.nasa.gov now only serves the root, and nasa.gov, 
+which is not subject to frequent change.  It also seems remarkably
+more stable.  I apologize for inconvienence it may have caused.
+
+
+
+						john
+
+<b>[<a href="?l=namedroppers&m=95837783026970&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026972&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783026964&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783026972&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

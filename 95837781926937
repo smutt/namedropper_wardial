@@ -1,0 +1,83 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Where is France?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926936&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926938&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926939&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889000033&r=1&w=2">Where is France?</a>
+From:       <a href="?a=95837784400015&r=1&w=2">Steve D. Miller &lt;steve () brillig ! umd ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-19 8:09:56</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926937&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926937&q=raw">body</a>]</b>
+
+   I'm getting some really inconsistent results whenever I try to look
+up anything in the FR domain.  When I ask the root servers to tell me
+who serves FR, they tell me:
+
+	QUESTIONS:
+	        fr, type = NS, class = ANY
+	NAME SERVERS:
+	-&gt;  FR  server name = RUTGERS.EDU
+	-&gt;  FR  server name = BRL-AOS.ARPA
+	ADDITIONAL RECORDS:
+	-&gt;  BRL-AOS.ARPA        inet address = 192.5.25.82
+	-&gt;  BRL-AOS.ARPA        inet address = 128.20.1.2
+
+   This response is what I get from any of the root servers (a.isi.edu,
+c.isi.edu, or sri-nic.arpa -- I can ping brl-aos.arpa, but it's server
+completely fails to respond.)  So, as a side issue, why don't I get
+additional records for RUTGERS.EDU?
+
+  Back to the real problem at hand.  When I initially queried RUTGERS.EDU
+about lri.fr, I got back a response that looks like:
+
+	QUESTIONS:
+        lri.fr, type = NS, class = ANY
+	NAME SERVERS:
+	-&gt;  fr  server name = RUTGERS.EDU
+	-&gt;  fr  server name = BRL-AOS.ARPA
+	ADDITIONAL RECORDS:
+	-&gt;  RUTGERS.EDU inet address = 128.6.4.7
+	-&gt;  BRL-AOS.ARPA        inet address = 192.5.25.82
+	-&gt;  BRL-AOS.ARPA        inet address = 128.20.1.2
+	-&gt;  BRL-AOS.ARPA        inet address = 192.5.22.82
+	
+	Authoritative answers can be found from:
+	RUTGERS.EDU     inet address = 128.6.4.7
+	BRL-AOS.ARPA    inet address = 192.5.25.82
+	BRL-AOS.ARPA    inet address = 128.20.1.2
+	BRL-AOS.ARPA    inet address = 192.5.22.82
+
+   I got a similar response for FR itself.  For a while, I started getting
+NXDOMAINS for FR, and now I'm getting these responses again.  Note that
+this response is sure to cause a query loop.
+
+   I also have additional information (not derived from any queries) that
+makes me think that seismo.css.gov and brl-aos.arpa are the servers for
+FR.
+
+   My supposition is that Rutgers isn't really serving for FR, and that when
+it gets polluted by information from the root, it starts giving out really
+strange responses.  In the meantime, mail to hosts in the FR domain is
+falling on the floor here.  Can someone tell me who *really* serves this
+domain, and fix the servers at the root, at Rutgers, and wherever else is
+necessary so that all is well again?  Thanks.
+
+	-Steve
+
+<b>[<a href="?l=namedroppers&m=95837781926936&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926938&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837781926939&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

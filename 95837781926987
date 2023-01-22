@@ -1,0 +1,264 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Lessons from the current domain name system' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926985&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926988&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926978&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926988&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500008&r=1&w=2">Lessons from the current domain name system</a>
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-09 16:50:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926987&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926987&q=raw">body</a>]</b>
+
+    Date: Thu, 5 Nov 87 16:05:13 PST
+    From: Rich Wales &lt;wales@CS.UCLA.EDU&gt;
+
+I apologize for not trimming this message very much, as I hope to give
+point by point opinions.  Also, in the summer of '86 Postel requested
+that design decisions not be done on this mailing list.  When somebody
+at the NIC sets up another mailing list so interested parties can
+discuss the next naming system, I will happily use that forum instead of
+namedroppers.  Until that time...
+	
+    ...
+    Even if it turns out to be infeasible to "start over", I would hope that
+    this kind of discussion could point up ways in which the existing domain
+    system could be improved.
+
+My belief is that the current domain system, given what /I/ want out of
+a naming system, can not be improved enough to get my desired
+functionalities.
+
+There are other people thinking about the next generation naming system.
+I think the only requirement for an RFC is to have it be real enough
+that other people will give it some credence.
+
+    ========================================================================
+
+    QUERYING
+
+	The "authoritative answer" concept needs to be clarified -- how much
+	of a reply with the AA bit set represents authoritative data?  Maybe
+	each individual RR should have an "authoritative" bit.  Or, there
+	could be separate "authoritative" and "non-authoritative" sections
+	in a reply.
+
+I think making the unit of transfer be the object instead of the record
+would help this issue a lot.  Another thing that would help is
+timestamps instead of timeouts.  The object, no matter where it came
+from, is authoritative at the given timestamp.  Therefore, if you get an
+object whose timestamp is lower than for a cached object, you are being
+given old information which you ignore.
+
+	Maybe servers should maintain separate "authoritative" and "non-
+	authoritative" caches, and look at the authoritative data first when
+	trying to answer a query.
+
+See above.
+
+I'm going to separate the next two questions.  They really are
+different, despite your putting them in the same paragraph
+
+	Is "inverse querying" really useful?  
+
+Yes, but rarely in the current domain system.  The one use I have found
+for it is to inverse query on name server (NS).  For those
+implementations that do this (XX.LCS.MIT.EDU is the only one I found),
+this can tell you what domains the host serves for.  Other systems
+(specifically Symbolics Lisp Machine) can use a form of inverse querying
+for service finding.  That is, the LispM sometimes wants to know "What
+machines at my site provide DOMAIN service."  This cannot be done in the
+current domain system, as it would require inverse querying on WKS
+records, which isn't well defined.
+
+	Is the "IN-ADDR.ARPA" domain,
+	inelegant as many feel it is, still the best solution for address-
+	to-name translations?
+
+IN-ADDR.ARPA is a poor name, but some of us think it is *the right
+thing*.  The issue is not really backtranslation by address, but naming
+by address.  That distinction is very subtle.  The important concept is
+that objects are keyed by unique identifiers, which we call names.
+Names can be human readable (CS.UCLA.EDU) or they can be for the benefit
+of machines (x.y.z.w.IN-ADDR.ARPA).
+
+	Is "completion querying" really useful?  Should this entire function
+	perhaps be deleted from the name server altogether, and left to the
+	resolver routines?
+
+Completion querying is really a user interface support functionality.
+As such, it is useful and some systems do use the equivalent in other
+naming systems.  For efficiency, it really does belong in the server;
+the alternative is to do a zone transfer.
+
+	There should be a way to request an arbitrary set of RR types in a
+	single request.  (E.g.:  "Give me any WKS and/or A records".)
+
+If the unit of transfer were the object and not the record, this issue
+would magically disappear.
+
+	Maybe it should be possible to send queries about more than one name
+	in a single request.  (E.g., a resolver could do multiple-domain
+	"completion querying" by asking about all possibilities together.)
+
+Because of the single authoritative bit, this is probably quite hard.
+Some systems may assume that the ANSWER field answers the single
+question; installing multiple questions might confuse them.
+
+    CACHING
+
+	There should be a way of distinguishing, in the cache, between "I
+	have *some* RRs for this name, but there might be RRs of other types
+	that I haven't seen" and "I *know* I have *all* the RRs on this
+	name".  Currently, there is no way to cache a "type=ANY" reply and
+	later rely on the cache instead of going back to an authoritative
+	server, because there is no way to indicate whether the data for a
+	given domain name all came together (in response to a "type=ANY"
+	query), or whether it is simply the result of separate queries for
+	individual types (in which case there might be RRs of other types
+	on another server somewhere).
+
+I think this is an implementation issue, requiring only programmer
+effort.
+
+	We need "negative caching".  This should include both "name doesn't
+	exist at all" and "name exists but has no RRs of given type".  The
+	TTL of a "negative" cache entry should be specified by the replying
+	name server -- just as is currently the case for "affirmative"
+	cached data.
+
+Again, with unit of transfer being the object, a timestamp mechanism,
+and a different timeout policy, I think you'll find that negative
+caching falls out for free.
+
+    ZONES
+
+	Suppose a site wants to put all its users into the domain data base,
+	with MB/MR RRs (e.g., "wales.CS.UCLA.EDU IN MB Maui.CS.UCLA.EDU").
+	It might be desirable to put this user information into a separate
+	zone -- so that, for example, a remote site could be a backup server
+	for the UCLA.EDU zone without having to store the (probably huge)
+	amount of user info as well.  Under the current model, though, there
+	is no way to partition user mailbox info into a zone by itself.  Is
+	there a solution to this problem?  Should mailbox info be made into
+	a new class (since RRs in different classes must, by definition, be
+	in different zones)?  Maybe the whole user mailbox info idea needs
+	to be thought out again from scratch -- since, so far, it's hardly
+	been used at all anyway.
+
+I've convinced myself that most people, myself included, don't
+understand mail.  Note that the mail information using domain system was
+revised, so as recently as 1983 mail was poorly understood.  My current
+thoughts go off in two directions, both of which are potentially
+feasible.  One is that Wales.CS.UCLA.EDU is a user object, and one of
+the user fields is the mail address to use for you.  The nameserver for
+CS.UCLA.EDU would need to know about all the user objects in that zone.
+The other idea, is that individual mailbox data does not belong in the
+naming database.  The naming database is for more "registered" objects,
+which includes users but not individual mailboxes.  The end result is
+that Wales@CS.UCLA.EDU is a mailaddress that specifies the /mailbox/
+named "Wales" at the maildrop named "CS.UCLA.EDU" and that the naming
+scheme is appropriate for storing maildrop information.  This is roughly
+MX records.  I think MB and MG records don't belong here and are
+specific to individual implementations of mailers.
+
+	There should be two different types of RRs to identify name servers:
+	one type at the top of a zone (to identify all the servers for the
+	zone), and another type at the bottom of a zone (to refer queries to
+	another zone).  The current scheme, where a single NS RR type can
+	have two very different semantics (depending on whether there is an
+	SOA RR for the same name), is cumbersome and error-prone.
+
+Delegation is indeed a little tricky.  I do have some thoughts on this,
+but not far enough along to state them coherently.
+
+	Should there be a way of asking a server what zones it is authori-
+	tative for?  Would there be any point in doing this?
+
+Considering the server somehow has to know what zones it is
+authoritative for, I don't see any reason not to let this information
+out.  As for usefulness, it is: it can help you sort your possible
+servers list by distance so that you can ask your neighbor instead of
+calling across the country.
+
+    RESOURCE CLASSES
+
+	Should any classes other than CLASS=IN be officially defined at the
+	present time?  (Possibly a class for user mailbox info?)
+
+Symbolics does use two other classes, and there is no other way to get
+some functionality without them.  The uses are for CHAOSnet information
+and DialNet information.  One can also envision describing PUP, DECnet,
+SNA and XNS information in the domain system.   The designed way to do
+this is with classes.  If the method of information transport were
+textual instead of bit encoded, this wouldn't be quite so hard.
+
+	Is CLASS=ANY really useful, or even desirable?  It certainly should
+	not be used indiscriminately, when CLASS=IN would clearly be better.
+
+If the unit of transfer were the object, and if it were decreed that all
+the information about a single object were stored together, we wouldn't
+need CLASS for this.  We would need some form of class mechanism to
+differentiate different types of objects (e.g., Hosts from Users
+from Printers, etc).  With textual transmission instead of bit packing,
+it should be easy for hosts to extract the information they want/need,
+for example, just the Internet information.
+
+	Maybe there could be a set of class numbers that are reserved for
+	local use/experimentation.
+
+That would help, but I think other forms of extensibility would work
+better.
+
+    EXTENSIBILITY
+
+	A problem with extending the current set of types and classes is
+	that the "name compression" scheme requires the receiver to "know"
+	which RR types use compression.  Is there a way to identify com-
+	pression as part of the RR itself, so that this "a priori" knowledge
+	will not be required?  One approach might be to have a field in each
+	RR specifying a number X, meaning that the RR's data field begins
+	with "X" domain names (which might or might not be compressed).
+
+If you buy my textual transmission instead of bit packing argument
+above, compression goes away at the expense of bandwidth.  Bandwidth is
+recovered by smarter algorithms.
+
+    ROBUSTNESS
+
+	What to do when a server falsely claims to be authoritative for a
+	zone (especially the root zone)?
+
+Or equivalently, what if an object comes along with a very high
+timestamp?  This is tough.  What do people do if somebody goes into
+their house and turns all their light switches upside down?
+
+	What to do when A claims that B is authoritative for a zone, but B
+	claims to know nothing?  Even worse, suppose B claims to have no
+	info on a domain name, but instead refers queries to B (itself)!
+
+You note this inconsistency so that a human can get on the phone and
+patch things up.  Hopefully the humans can fix this in time for the
+programs not to timeout mail or other data.
+
+	Other situations where a name server might return bogus information?
+	How bogon-proof can we make the design?
+
+    ========================================================================
+
+<b>[<a href="?l=namedroppers&m=95837781926985&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926988&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926978&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926988&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

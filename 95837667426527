@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Host name transition -- possibly serious problem' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426526&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426528&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Re: Host name transition -- possibly serious problem
+From:       <a href="?a=95837693200009&r=1&w=2">Mary Stahl &lt;STAHL () SRI-NIC ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198507">1985-07-26 9:18:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426527&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426527&q=raw">body</a>]</b>
+
+Rich,
+
+
+We agree with you that immediate removal of a host from ARPA.ZONE when
+it joins a new domain would cause quite a bit of disruption.  The
+better course of action is, as you suggest, to have a CNAME pointer in
+ARPA.ZONE pointing to the new domain name of the host.  A query about
+an old .ARPA name would return the domain name as we know it and the
+servers of the domain that it has joined.  (Since we will no longer
+have authority over that host, we can only hope that in the event of
+another name change the new domain keeps the old domain name around as
+a CNAME pointer in its database.)
+
+It probably would have been a good idea to define a TYPE to
+distinguish between nicknames within a domain name space and CNAMEs
+pointing to a name in another domain.
+
+The CNAME records for hosts joining new domains will remain in the
+ARPA.ZONE file until we receive a request from the host administrator
+to remove it.  At this point, we will have absolved ourselves of any
+responsibitity for that host.
+
+
+- Mary
+-------
+
+<b>[<a href="?l=namedroppers&m=95837667426526&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426528&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

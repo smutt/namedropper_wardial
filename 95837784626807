@@ -1,0 +1,119 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: More * records' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626808&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626810&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626806&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700025&r=1&w=2">Re: More * records</a>
+From:       <a href="?a=95837786000011&r=1&w=2">ulowell!page () bbn ! com  (Bob Page)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198902">1989-02-13 23:11:23</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626807&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626807&q=raw">body</a>]</b>
+
+Normally I'm lax to install 'user-supplied' (rather than 'author-supplied')
+patches, but this one has saved me more grief than I want to think about.
+
+You may feel the same.
+
+..Bob
+---------
+
+From: almquist@JESSICA.STANFORD.EDU (Philip Almquist)
+Newsgroups: comp.protocols.tcp-ip.domains
+Subject: Bogus root nameservers fix
+Message-ID: &lt;8809260207.AA11005@ucbvax.Berkeley.EDU&gt;
+Date: 21 Sep 88 23:36:00 GMT
+
+Milo,
+	I think I know the source of the NASA root server problem.  Bogus
+RR's such as you saw ("* IN NS whatever") almost always come from IBM VM
+domain servers.  VM servers usually (always?) are configured with such an RR
+in order to allow them to resolve non-local names.  Unfortunately, when VM
+servers are use as the authoritative servers for a zone, these bogus RR's
+leak out into the Internet.
+
+	At the end of this message is a patch to the named 4.8 to protect
+against this problem, though of course the real fix would be to fix the
+IBM software.  The last time this nuked one of my servers, I asked the
+owner of the offending server to report the problem to IBM, so maybe
+they're working on it...
+
+	Although I have included a patch, I might also suggest that it's
+not clear to me that a root server wants to support recursion anyway.  It
+opens you up to getting bogus data from other people and also slows the
+server down a lot.  Disabling recurive service in named should be trivial:
+just change the (probably under half a dozen) lines in ns_req.c that refer
+to hp-&gt;rd or hp-&gt;ra.
+
+						Philip
+
+*** /tmp/,RCSt1006990	Tue Sep 20 16:09:27 1988
+--- /tmp/,RCSt2006990	Tue Sep 20 16:09:29 1988
+***************
+*** 12,18 ****
+  
+  #ifndef lint
+  static char sccsid[] = "@(#)ns_resp.c	4.50 (Berkeley) 4/7/88";
+! static char rcsid[] = "$Header: ns_resp.c,v 1.5 88/05/16 21:21:37 almquist Exp $";
+  #endif /* not lint */
+  
+  #include &lt;stdio.h&gt;
+--- 12,18 ----
+  
+  #ifndef lint
+  static char sccsid[] = "@(#)ns_resp.c	4.50 (Berkeley) 4/7/88";
+! static char rcsid[] = "$Header: ns_resp.c,v 1.6 88/09/17 19:40:29 almquist Exp $";
+  #endif /* not lint */
+  
+  #include &lt;stdio.h&gt;
+***************
+*** 998,1003 ****
+--- 998,1022 ----
+  
+  	if (zone == 0)
+  		ttl += tt.tv_sec;
++ 
++ 	/*
++ 	 * Bogon check: we don't want to cache a wildcard
++ 	 */
++ 	if ((dname<A NAME="-0"></A><A HREF="#0">[0]</A> == '*') &amp;&amp; (dname<A NAME="-1"></A><A HREF="#1">[1]</A> == '\0') &amp;&amp; (zone == 0)) {
++ 		syslog(LOG_ERR, "Bogus wildcard from %s:\n",
++ 					inet_ntoa(from-&gt;sin_addr));
++ #ifdef DEBUG
++ 		if (debug)
++ 			fprintf(ddt, "Bogus wildcard from %s:\n",
++ 					inet_ntoa(from-&gt;sin_addr);
++ #endif
++ 		hp-&gt;rcode = FORMERR;
++ 		return(-1);
++ 	}
++ 		 
+  	dp = savedata(class, type, ttl, cp1, n, from);
+  	dp-&gt;d_zone = zone;
+  	if ((n = db_update(dname, dp, dp, flags, hashtab)) &lt; 0) {
+
+
+
+------- End of Forwarded Message
+
+
+-- 
+Bob Page, U of Lowell CS Dept.  page@swan.ulowell.edu  ulowell!page
+Have five nice days.
+
+<b>[<a href="?l=namedroppers&m=95837784626808&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626810&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626806&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

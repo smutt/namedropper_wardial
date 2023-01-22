@@ -1,0 +1,61 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Why Germany lies about the DE. domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326977&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326979&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326979&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400002&r=1&w=2">Why Germany lies about the DE. domain.</a>
+From:       <a href="?a=95837817000036&r=1&w=2">Lars Henrik Mathiesen &lt;thorinn () diku ! dk&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-07 20:49:41</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326978&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326978&q=raw">body</a>]</b>
+
+In an email correspondence with Piet Beertema (piet@cwi.nl) the
+following explanation emerged (potentially sensitive parts elided):
+
+                            ... . But there are indeed internal
+   political problems in Germany that appear to prevent a proper
+   DNS setup for DE; and Germany really isn't the only where there
+   are such problems: the UK is yet another example. Main point
+   is that some people still ... don't ... trust others.
+   The original DSN setup came from DFN, which serves only academia;
+   the "additional server" on unido is meant to serve *all* of DE
+   (mainly implying that also non-Internet-connected networks served
+   by EUnet will be included). And if you look at where the nameservers
+   for DE are, you'll notice they're *only* in the USA; there's not
+   one single secondary server in Europe!
+As I read that, DFN (Deutsche Forschungs-Net?) says "We own the DE.
+domain, nobody else belongs." And the NIC says "German sites must be
+in the DE. domain, please register with DFN." And we get the current
+mess.
+   In all cases it has been offered that mcsun.eu.net run primary (for
+   those countries that don't have their own server yet) or secondary
+   (for those that do). Neither the Brits nor the Germans have accepted
+   that (yet). ...
+   The Brits have the problem that their nameservers are unreachable
+   *very* often (it's the case again right now!), which clearly calls
+   for the need of a secondary server (in Europe). But sofar they
+   have refused to have mcsun.eu.net run secondary for UK, because
+   they "have no control over it". Well, my answer to that is that
+   they don't have control over their secondary aos.brl.mil either!
+
+--
+Lars Mathiesen, DIKU, U of Copenhagen, Denmark      [uunet!]mcsun!diku!thorinn
+Institute of Datalogy -- we're scientists, not engineers.      thorinn@diku.dk
+
+<b>[<a href="?l=namedroppers&m=95837797326977&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326979&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326979&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

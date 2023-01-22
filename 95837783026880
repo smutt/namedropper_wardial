@@ -1,0 +1,66 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'CNAME and other data - semantic problems' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026882&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026881&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026883&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890200021&r=1&w=2">CNAME and other data - semantic problems</a>
+From:       <a href="?a=95837785400019&r=1&w=2">brian () ucsd ! edu (Brian Kantor)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-29 12:06:25</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026880&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026880&q=raw">body</a>]</b>
+
+We are using BIND to store MB records for mailbox names here at
+UCSD - using a variant of NSLOOKUP to provide an on-line electronic
+mail directory.
+
+We have a mailbox name "u3g".  We also have a host whose nickname
+of "u3g" is recorded as a CNAME entry under its real name.
+
+BIND 4.8 reports this as illegal; I don't think it should be illegal
+because of the difference between host-related information (A, WKS,
+HINFO, etc) and mailbox-related information (MB, MG, etc).  
+I suspect the same separation should exist for user-related data
+(UID, GID, UINFO, etc).
+
+It seems to me that we have at least three disjoint namespaces here
+- host, mailbox, and user - and that the current version of BIND
+does not properly separate them semantically when parsing the input file.
+
+Clearly I can work around this in a way that the Athena people did
+- by creating "mailbox.ucsd.edu" and "user.ucsd.edu" domains,
+and storing the data under those - but that is just as clearly not
+the right way to do it, since I shouldn't have to have separate
+subdomains as well as types of RRs.
+
+Since we have lots of personal workstations here, we're going to run
+into this more often.  It seems quite reasonable to have a USER "wade",
+a MAILBOX "wade", and a HOST "wade".  Yet these are clearly separate
+entities, and grouping of data for them between the three namespaces
+cannot be assumed.
+
+Before I go hack on the BIND source to fix this, would someone
+please let me know if I'm off-base, or whether this is really the
+design error I think it is.
+
+	Brian Kantor	UCSD Office of Academic Computing
+			Academic Network Operations Group  
+			UCSD B-028, La Jolla, CA 92093 USA
+			brian@ucsd.edu ucsd!brian BRIAN@UCSD
+
+<b>[<a href="?l=namedroppers&m=95837783026882&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026881&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837783026883&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

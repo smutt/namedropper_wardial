@@ -1,0 +1,37 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Why Germany lies about the DE. domain.' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797327004&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327005&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327004&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892400002&r=1&w=2">Re: Why Germany lies about the DE. domain.</a>
+From:       <a href="?a=95837786600026&r=1&w=2">Philippe Prindeville &lt;philipp () Gipsi ! Gipsi ! Fr&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199005">1990-05-21 14:19:59</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797327003&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797327003&q=raw">body</a>]</b>
+
+Yet another solution is to take a vector that represents the
+product of the MX record and the cost of reaching that network
+(ie. consider all MXes of equivelant cost as a single multi-homed
+host and use an address ordering list like the one suggested in
+the host requirements document).  It is sort of mixing apples
+and oranges, but...
+
+-Philip
+
+<b>[<a href="?l=namedroppers&m=95837797327004&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797327005&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797327004&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797327006&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

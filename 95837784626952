@@ -1,0 +1,140 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: .US domain' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626953&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626947&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626953&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837887800008&r=1&w=2">Re: .US domain</a>
+From:       <a href="?a=95837784200006&r=1&w=2">Ann Westine &lt;westine () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-30 10:28:21</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626952&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626952&q=raw">body</a>]</b>
+
+
+
+       US Domain Policy and Procedures - September 1988 (Revised)
+       ----------------------------------------------------------
+
+
+1.  What is the US Domain and who is eligible to register?
+
+        The US domain is a Top Level domain created for people in the
+        United States who have computers at home, or small local
+        corporations who would like to register their host
+        geographically.  A large corporation with offices all over the
+        world would probably want to register with .COM.
+
+2.  How do you register a host in the US Domain?
+
+        Send a message to the US Domain Registrar (Westine@ISI.EDU).
+        She will send you a US Domain Questionnaire to fill out.
+
+3.  How is the Naming Scheme set up for the US Domain and it's
+    subdivisions?
+
+        The US Domain is set up geographically, that is, states, cities,
+        etc.  The state codes are those assigned by the US Postal
+        Service, and the city codes are Western Union's "City Mnemonics"
+        code that we will send to you.  Another alternative for the city
+        code it to use the full name of your city.
+
+        For example:  academ.hou.tx.us (or)
+                      academ.houston.tx.us
+
+4.  Who will administer the US Domain and its subdivisions?
+
+        For now, the US Domain and all of its subdivisions (i.e.,
+        states, cities etc.) are managed by the US Domain Registrar.
+
+        The US Domain is just getting started and we want to be careful
+        about what names get used and how control is allocated until
+        some usage patterns are established.  We will run the servers
+        for all the US domains.  At some future point we will hand off
+        the administration of individual states to appropriate
+        responsible people, probably in the state they administer.
+
+5.  Can I manage a Domain Group?
+
+        The organizer of a group (or "domain park") of users with
+        individual hosts can help by acting as the coordinator of the
+        group and forwarding all the information for the group to the US
+        Domain Registrar.
+
+
+
+
+                                                                [Page 1]
+
+                                                          September 1988
+
+
+        The explicit specific information for each host in the group
+        must be provided.  And all fully qualified names must be unique.
+        If your host is not directly on the internet an MX record is
+        required pointing to an internet host for forwarding.
+
+        For example:
+
+           JOES-HOST.ACADEM.HOU.TX.US   MX   10   GAZETTE.BCM.TMC.EDU
+           SAMS-HOST.ACADEM.HOU.TX.US   MX   10   GAZETTE.BCM.TMC.EDU
+
+        Wild card records are not currently allowed in the US domain.
+
+        If you want to keep tabs on user individual hosts in a certain
+        group and to register them say under "Houston" in the TX.US
+        domain, for example, JOES-HOST.ACADEM.HOUSTON.TX.US with
+        "ACADEM" as the group you would be managing, this would be ok.
+        But you can't manage all "HOUSTON" or all "TX", just your group.
+
+6.  How will the US Domain affect hosts in UUCP, CSNET and BITNET Zones?
+
+        If a host is registered in UUCP, BITNET, or CSNET Zone, it
+        doesn't need to register in the US domain, unless it wants to be
+        registered geographically.  Only hosts on the internet can act
+        as forwarding hosts.  Hosts on systems such as CSNET, UUCP,
+        BITNET, etc., must register their hosts with an internet host.
+        This is necessary because when messages for your host arrive at
+        the internet host it will need to know where to forward them.
+        MX records are necessary.
+
+7.  Can a host be in both the US Domain and another domain (like .EDU
+    or .COM)?
+
+        No.  A host should have a single name.  It is possible to have
+        "nicnames" for a brief period while a host name change is in
+        progress.
+
+8.  What does it cost?
+
+        Currently, there is no cost for registering in the US Domain.
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                [Page 2]
+
+
+<b>[<a href="?l=namedroppers&m=95837784626947&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626953&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626947&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837784626953&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

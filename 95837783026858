@@ -1,0 +1,92 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'converting in a non-perfect world' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026857&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026860&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    converting in a non-perfect world
+From:       <a href="?a=95837785400008&r=1&w=2">Mark Crispin &lt;Crispin () SUMEX-AIM ! Stanford ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-20 12:57:36</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026858&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026858&q=raw">body</a>]</b>
+
+     Excuse me for the length of this message.
+
+     I recently had to go through some of this myself, so I'll share my
+experiences with you.  I see this through two viewpoints.  In the first, I am
+the mailsystems developer for SUMEX-AIM, coordinating a project with
+implementations on Unix, TOPS-20, Xerox Lisp machine, TI Lisp Machine, and
+Macintosh.  In the second viewpoint, I'm the owner of a DEC-20 system and
+administrator of a domain (with two operational hosts at present) that is
+accessible only via MX access.
+
+     SUMEX-AIM is one of a handful of DEC-20 systems which fully implements
+domains including MX records (the others are XX.LCS.MIT.EDU, C.CS.CMU.EDU,
+PANDA.PANDA.COM, and I believe KL.SRI.COM).  Other DEC-20 systems use the
+%-routing hack, and there is an elaborate mechanism to try to make it
+transparent and transmogrify the addresses appropriately, etc.
+
+     My experience on SUMEX-AIM was that we were able to totally drop use of
+the %-routing hack mechanisms.  It's possible that some mailing lists still
+use it explicitly, but, in general, we tell our users simply to use the domain
+form of the host name.  The problems we faced, such as they were, were mostly
+those traumas in going from host table to domains.  Many of those traumas were
+avoided because I avoided halfway measures; I migrated from a full host table
+implementation to a full domain implementation.  What's more, I had delayed
+the migration until all the technical issues had been solved.  This included
+rewriting algorithms to do things the "domain way" instead of merely
+converting host table algorithms to their domain equivalents.  As a specific
+example, I use CNAME information instead of number_to_name(name_to_number(X))
+to get the canonical form of host X.
+
+     The situation on PANDA.PANDA.COM was somewhat different.  The PANDA.COM
+domain is accessible only via MX access, and for a long time its mail to the
+outside world used the %-routing hack.  I was somewhat nervous in turning off
+the hack, but my observation was that most of the hosts PANDA exchanged mail
+with were MX-capable.  The hosts which were not were mostly TOPS-20's running
+either host table or the old ISI domain software (not MX-capable), and among
+those PANDA was well-known.  So, I took the plunge and migrate.  It was a
+major performance win to nuke the %-routing tables (PANDA is a slow machine)!
+
+     Indeed, the TOPS-20's PANDA talked to adapted; they either added PANDA to
+their %-routing tables or used some other Internet address to mail to me.  The
+major problem seems to have happened on certain MX-capable hosts in the
+backwaters of the net.  Apparently there is some condition where certain
+domain servers falsely return authoritative information that a particular host
+or domain does not exist rather than the indeterminate indication.  I have
+noticed that on SUMEX on rare instances where suddenly a well-known host is
+suddenly labelled as non-existant.  These episodes haven't been happening much
+lately; apparently the buggy servers are being identified and stomped.  But,
+in the backwaters, I have occasionally gotten messages from some of my
+contacts on MX-capable Unix systems which find that "mail to PANDA.PANDA.COM
+isn't working today" because some machine in the middle of the mail path
+rejects that host name.
+
+     In general, however, I think that the overall amount of problems has been
+considerably *less* than before, and furthermore I have had fewer problems
+that I did in the past with hosts which mishandled %-routing.  There seem to
+be many hosts out there that try to be clever with %-routings (in violation of
+RFC 822) and blow it.  My overall experience is that mail works *better* with
+domains than before.  I'm glad to see that we've finally gotten to that point.
+
+     My advice for a site considering whether or not to go all the way with
+domains is -- Go For It!
+
+-- Mark --
+
+<b>[<a href="?l=namedroppers&m=95837783026857&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026860&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'I think this is a bug in bind...' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783026852&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026855&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    I think this is a bug in bind...
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198804">1988-04-19 17:57:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783026853&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783026853&q=raw">body</a>]</b>
+
+WHEATIES.AI.MIT.EDU is a (Unix?) nameserver for the AI.MIT.EDU zone.  
+
+If I ask Wheaties  about the internet address of WHEATIES.AI.MIT.EDU I
+get back the correct information.
+
+If I ask it for the internet address of WHEATIES\.AI.MIT.EDU (which
+parses into labels as WHEATIES.AI MIT EDU) it responds with
+authoritative name-error, the question it says it is replying to is
+correctly called WHEATIES\.AI.MIT.EDU, and it also replies with an SOA
+record for AI.MIT.EDU.  This is a bug, since I wasn't asking about an
+object in the AI.MIT.EDU zone, I was asking about an object in the
+MIT.EDU zone.
+
+Similarly, if I ask Wheaties about WHEATIES.AI\.MIT.EDU (which parses
+into labels as WHEATIES AI.MIT EDU) it responds with non-authoritative
+(correct) no-error (correct), with a correct question field, but with
+incorrect authorities fields, saying go ask various hosts about the
+MIT.EDU zone.
+
+Asking XX.LCS.MIT.EDU (a TOPS 20) about XX.LCS.MIT.EDU, it gives the
+correct info.  Asking it about XX\.LCS.MIT.EDU or XX.LCS\.MIT.EDU
+correctly says it doesn't know anything, correctly doesn't give out an
+SOA, and validly doesn't give authority RRs.
+
+I suspect what is happening is that bind is looking up data based on the
+parsed-into-label representation, and when that fails it turns it into a
+string failing to convert . to \., does some lookups for SOAs or
+authorities, and spits the answer back out, which is actually invalid
+because the lookup key was invalid.
+
+<b>[<a href="?l=namedroppers&m=95837783026852&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783026855&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

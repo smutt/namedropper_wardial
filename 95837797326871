@@ -1,0 +1,46 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: name choice' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326869&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326872&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326870&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326877&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891400043&r=1&w=2">Re: name choice</a>
+From:       <a href="?a=91213931500004&r=1&w=2">Paul Mockapetris &lt;pvm () ISI ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199002">1990-02-26 5:55:35</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326871&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326871&q=raw">body</a>]</b>
+
+Some naming systems put the most significant name on the right, some
+put the most significant on the left.  This is generally recognized as
+one of the facts of life, although there are some arguments about
+which is better.
+
+Some mail systems attempt to recognize which end of a name has the
+most significant component by recognizing "most significant"
+components.  This is generally recognized as a bad idea, but it
+persists.
+
+Thus, if you use names which begin with components which also happen
+to be "well-known" top level names, you can expect difficulties due to
+their broken code.  Lest you feel too generous towards them, they once
+told me I should rename E.ISI.EDU since E was a "recognized" alias
+for Spain.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837797326869&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326872&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837797326870&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837797326877&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

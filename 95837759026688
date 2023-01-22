@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Relative naming' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026687&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026684&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888300007&r=1&w=2">Relative naming</a>
+From:       <a href="?a=95837693600009&r=1&w=2">Joe Weening &lt;JJW () SU-AI ! ARPA&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-24 23:41:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026688&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026688&q=raw">body</a>]</b>
+
+There seems to be agreement that a sequence of possible completions for a
+partially specified domain name should be tried.  If one of these is to
+treat the name as fully specified, however, then it will cause a request
+to go to a root server, to ask for a top-level domain that probably does
+not exist.
+
+Too many of these might cause a significant load on the root servers.  Has
+any of this been noticed yet?  (Perhaps resulting from implementations
+that don't yet complete partial specificatiions.)  It suggests that the
+completions further down in the tree should be tried first, which
+fortunately is also the most reasonable assumption about what the user
+intended.  However, a single character mistyped could still result in a
+request to go all the way to the root.  This somehow seems wrong.
+
+						Joe
+
+<b>[<a href="?l=namedroppers&m=95837759026687&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026684&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026689&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

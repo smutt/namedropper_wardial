@@ -1,0 +1,156 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re:  leading digits in domain names' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926862&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926864&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926862&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926864&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888800022&r=1&w=2">Re:  leading digits in domain names</a>
+From:       <a href="?a=95837783700018&r=1&w=2">jordan () ucbarpa ! Berkeley ! EDU (Jordan Hayes)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198704">1987-04-28 22:57:48</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926863&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926863&q=raw">body</a>]</b>
+
+I think that the "It would break existing code" argument is about the
+worst reason to prohibit 3Com.COM from being a legal domain name.
+There certainly is precident for breaking existing code in the name of
+"progress," and laziness or bad programming habits is no excuse for not
+doing the right thing ... (c.f., 14-character filenames?).
+
+In 4BSD, the function inet_addr(3) does a really thorough job of
+determining whether an address is specified as a legal dotted IP
+address, and it's worth looking at if you write code that interfaces to
+the resolver.
+
+----- new angle on the subject ...
+
+I think the thing that most people are missing in this whole discussion
+about where things "fit" in the domain namespace, is the fact that
+things like "Berkeley.EDU" or "NASA.GOV" or "IBM.COM" are really just
+redundant.
+
+Why do I need to to "tag" my domain in order to explain that NASA is a
+Government Agency?
+
+Shouldn't the top-level domains be more descriptive organizationally?
+
+As an example, it seems that there are largely two types of networks
+these days. The first, and presently most common, is the LAN with one
+connection to the Internet, such as UC Berkeley.  The whole site is
+self-contained, and so the now-near-famous addage "Names should not
+imply routes" has fallen apart.  Certainly, just from looking at the
+hostname "gadzooks.Berkeley.EDU" one can infer that this local part
+"gadzooks" is on the 128.32 Class B IP network and can be reached
+through the Berkeley-PSN.
+
+The other flavor, and the one which is growing in popularity among the
+corporate world, but certainly is not unfounded in the academic world,
+is that of the so-called "swamp model" of clusters of networks, some of
+which may have multiple connections to the Internet. Examples include
+DEC.COM, ATT.COM and soon, NASA.GOV.
+
+Even the University of California is busy off making their own internal
+network, which will eventually connect together all 9 UC Campusses,
+including the presently Internet-connected sites Los Angeles, San
+Francisco, San Diego, Berkeley and Irvine along with the other
+non-Internet campusses, Santa Cruz, Davis, Riverside and Santa Barbara
+(SB was originally on the ARPANET way back when, but I bet we'll see
+them return).
+
+What we get then are parallel sets of networks with multiple gateways
+into *administrative* domains ... it's always bothered me that the
+domain model asserts that the parent of each sub-tree is *responsible*
+for the sub-tree below it, even though there was no "responsible
+administrative entity" that could prove itself to actually *be*
+responsible for sub-trees like "COM" -- is there a group that would
+"police" both IBM and DEC at the same time?  Should there be?
+
+You're all shouting at your terminals right now, "THE NIC IS
+RESPONSIBLE" which, in a certain sense (that of the NIC acting through
+DCA and ultimately DARPA's wishes in the `protocol police' area), but
+now that domains don't imply IP connectivity (and thus, some sort of
+DCA control), I can't see how the tag "COM" makes any sense at all ...
+
+I would propose that Administrative Entities get their own top-level
+domains, and *use* them ... for instance, it seems rather silly for the
+common parent of Berkeley, UCI, UCSD and UCLA (and now UCSC) to be
+"EDU" (or "Educational Entities") instead of The University of
+California.
+
+Why is there Berkeley.EDU, UCI.EDU, UCLA.EDU, UCSD.EDU, UCSC.EDU
+instead of Berkeley.UCal, Irvine.UCal, LosAngeles.UCal, SanDiego.UCal,
+SantaCruz.UCal etc.???
+
+What makes the "organizational" relationship between Berkeley-&gt;UCLA
+different from Berkeley-&gt;MIT such that a more reasonable granularity
+isn't possible?
+
+I claim this will also help us think more about how it is we want to
+structure the *semantics* of an address in the coming years.  With
+X.400, etc. just around the corner (if they can, as Jon Postel echoed,
+figure out what to have for breakfast :-), something like
+
+	Jordan.Hayes@Mechanical.Engineering.Berkeley.UCal
+
+winds up translating very well into some sort of "common denominator"
+addressing scheme that approaches the ultimate goal of being usable,
+functional, logical and above all, meaningful, while maintaining both
+the spirit and the letter of the original designers.
+
+If you change the order, and substitute `\n' for the `.', that winds up
+looking an awful lot like
+
+	Jordan Hayes
+	Department of Mechanical Engineering
+	College of Engineering
+	University of California, Berkeley
+
+Also, the semantics of the system would begin to make sense.  Take, for
+example, the mythical case of the Internal parallel network owned by
+the University of California, linking all 9 campusses (not too far
+away, and not at all different from the plans of other schools, such as
+SUNY, the Virginia University Schools, some things I've heard about the
+Wisconsin and Minnesota schools, not to mention multi-national
+corporations such as IBM, DEC, etc. and certainly the Government
+branches), and given an address like the above -- now there really is a
+way to talk to the top level nameservice provider, as well as (if the
+message is coming from a disconnected network, such as CSNet or UUCP)
+simply handing it off to any UCal gateway, be it at Los Angeles, San
+Diego or what have you.
+
+So many people in the non-IP world (and a few of us Arpanauts as well)
+ask the question ``Where is the EDU nameserver?'' ... *grrr*
+
+Is there a reason why the top-level domains have to be *explicit* to
+the point of obscuring the intent and functionality of it?  Why can't
+this simply be a software issue?  I understand the need for the domain
+names to be *rooted* but can't the end of the string signify the root?
+Some people were even suggesting back then that we have a trailing dot
+to explicity specify the route.  Geepers.
+
+This also leads to a cleaner solution to the National top-level (i.e.,
+UK) -- those situations where the country really is the adminstrative
+owner of the sub-trees below (European PTT's come to mind here) should
+certainly be rooted with the country name or ISO initials ... while
+leaving a place like the good old USA alone and away from that vague
+and unenforcable issue ...
+
+Comments?
+
+/jordan
+
+<b>[<a href="?l=namedroppers&m=95837781926862&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926864&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781926862&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781926864&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

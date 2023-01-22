@@ -1,0 +1,164 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: RD/RA/AA/chaching' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927055&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927057&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927036&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927057&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837889500027&r=1&w=2">Re: RD/RA/AA/chaching</a>
+From:       <a href="?a=95837784200005&r=1&w=2">Paul Mockapetris &lt;pvm () venera ! isi ! edu&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198711">1987-11-23 18:23:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927056&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927056&q=raw">body</a>]</b>
+
+A lot of recent discussion has had to do with authority.
+
+Authority has to do with the ownership of information.  Every name
+belongs to some zone, and only servers which support that zone can
+respond authoritatively about that name.  In effect, it says that no
+better information is available about the name.  (We are assuming here
+that all of the servers for a zone, primary and secondary are equally
+good.  Of course, this isn't totally true, but its close enough.)
+
+A concrete example is the name poneria.isi.edu.  It belongs to the
+isi.edu domain/zone, which is supported by servers named venera.isi.edu
+and vaxa.isi.edu.  Only these two servers can respond authoritatively
+about the name poneria.isi.edu.
+
+This has several fine points:
+
+	Since the autoritative bit in the current protocol is just
+	a bit, it can only cover one name, and also pertains only
+	to the answer section.  That's the query name, which
+	should be the first name in the answer section.  If a response
+	starts with an alias, the authority bit only covers the first
+	CNAME RR.  If a server sticks information in the authority or
+	additional sections, that information is never covered by the 
+	authority bit, even though the server might be able to respond
+	authoritatively about it.
+
+	Give the way delegation works, the parent zone always has some
+	information about the top node (call it the zone node) of the
+	child zone.  In our example, the EDU zone has NS RRs for
+	ISI.EDU, and glue type A RRs for venera.isi.edu and vaxa.isi.edu.
+	Can the servers for the EDU zone respond authoritatively about
+	ISI.EDU?  No.  Well, more precisely, not unless they also happen
+	to support the ISI.EDU zone, which isn't the case.  Why this
+	definition?  Since we are talking separate zones, there is
+	always the possibility that they are out of synch, and hence
+	we should designate one as the ultimate authority.  The zone
+	maintained by the owners seems the clear choice.  In addition,
+	the parent zone's main concern is connectivity, and the RRs
+	needed for connectivity may be a small subset of the potential
+	RRs needed at the zone node.  For example, the SOA isn't there.
+
+	If one of the supporting servers for a zone can't load the
+	zone due to some problem (e.g. failed zone transfer, etc).  It
+	should not guess about what's there.  It should just answer any
+	queries as if it were not one of the supporting servers.  We
+	have already had several problems caused by servers not following
+	this rule.  Correspondingly, a resolver which asks a server
+	a question shouldn't jump on its sword if the server which
+	is supposed to have the zone doesn't; such an action might be
+	appropriate for a freshman class program, but is inappropriate
+	in the real world.
+
+But doesn't this mean that cached information / QTYPE=* is useless?
+
+No.  This is confusing complete answers with authoritative ones.
+
+Let's take the recursive and non-recursive cases separately.  By
+recursive, I mean the case where recursion is both requested and
+available to the requester.  If only one is the case, then the server
+behaves as if the request was non-recursive.
+
+Recursive Case:
+
+The key behaviour here is that a client is asking a server to do all of
+the work for a query.  The usual reasons are that the either the client
+is on a PC and not capable, or a bunch of clients want to concentrate
+caches on some interface machines.
+
+What the client should be able to believe is that the response is
+complete, i.e. has RRs all types covered by the client's QTYPE.  If the
+request is for QTYPE=*, this means that the response must contain all
+types for which there is data.  Does this mean that the recursive server
+has to consult an authoritative one.  No.  It can answer from its cache,
+if, and only if, it has cached RRs or negative caching information for
+all RR types covered by the QTYPE.  The negative caching information
+gets built using the SOA from authoritative answers.
+
+Note that the client of an authoritative query isn't really concerned
+with whether the response is authoritative; its basically said that
+its going to rely on the recursive server.
+
+Non-recursive case:
+
+If you are a resolver, and a user asks for QTYPE=*, and you don't
+locally have (or get in the course of the query) complete data, then you
+have to press on until you get to an authoritative server.
+
+User programs should have a way to signify that only complete
+information, and perhaps only authoritative information is
+acceptable in resolver requests.
+
+What should we think about changing?
+
+I don't think we should change the meaning of the authoritative bit.
+Its useful as an indicator that you have done the best you can do, and
+also allows you make smoking-gun accusations at bad servers.  That is, a
+server which responds with bad data authoritatively, can't claim that it
+got it from somewhere else, blame them.  Note that even if we wanted to
+change to some notion that second hand data is authoritative, but third
+hand is not etc, we would probably have to change things substantially
+rather than figure out some clever way to carry more information in
+a single bit.
+
+We might want to think about allowing a recursive server to pass on
+authority if it went off and got an authoritative reply.  I suppose you
+could look at this as having the recursive server act as a "transport
+protocol".  However, I do believe that the recursive server should be
+allowed to answer from its cache, providing it has complete information.
+
+We might think about stating that the AA bit in a recursive query is a
+demand for authoritative data.  I don't like this much, but it might be
+useful.
+
+We might want to think about extending the negative caching services so
+that a non-authoritative server has some way to pass along individual
+negative RRs.  Perhaps negative numbers for types.  The problem with
+QTYPE=* has to do with caching negative results for individual RR types,
+and is related to authority only in that we have no way to pass
+non-authoritative negative info.  We need a way to pass negative
+non-authoritative data, not a new definition of authority.  Of course,
+this isn't a problem until you go through more than one level of
+non-recursive servers, and I'm not sure I understand why this should
+happen very often.
+
+Where's the spec?
+
+RFC 882 and 883 are old, and replacement RFCs have been written and are
+going through the RFC publishing process.  They will be replaced by RFCs
+1034 and 1035.  Draft copies of these RFCs are available from host
+SRI-NIC.ARPA, directory &lt;IETF&gt;, files DOMAIN-CONCEPTS.DOC and
+DOMAIN-IMPLEMENTATION.DOC.  I wouldn't claim they are perfect, but they
+are better than 882 and 883 and make many of these points more clearly.
+I'd suggest that we use the drafts instead of 88X when we debate changes.
+
+paul
+
+<b>[<a href="?l=namedroppers&m=95837781927055&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927057&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837781927036&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837781927057&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

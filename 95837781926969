@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Classes which aren't IN' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926968&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926970&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Classes which aren't IN
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-27 20:20:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926969&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926969&q=raw">body</a>]</b>
+
+If I query a domain server about a class other than IN, what should it
+return if it has no idea what I'm talking about?  
+
+For servers that aren't authoritative for any part of the hierachy, I
+would expect to get some authorities back.  But when querying
+BITSY.MIT.EDU about FOO.BBN.COM I get this reply.
+
+#&lt;domain message 
+   #&lt;domain message header    ID 0, QR=response, op=QUERY rcode=NO-ERROR
+      recusion available&gt;
+   questions   (#&lt;domain question ("foo" "bbn" "com") type :ADDRESS class :CHAOS&gt;)
+   answers     NIL
+   authorities NIL
+   additional  NIL&gt;
+
+If I make the same query of SRI-NIC.ARPA or XX.LCS.MIT.EDU, I get a
+different type of reply with a FORMAT-ERROR.
+
+#&lt;domain message 
+   #&lt;domain message header    ID 0, QR=response, op=QUERY rcode=FORMAT-ERROR&gt;
+   questions   (#&lt;domain question ("foo" "bbn" "com") type :ADDRESS class :CHAOS&gt;)
+   answers     NIL
+   authorities NIL
+   additional  NIL&gt;
+
+RFC973 assigns CHAOS a class number of 3, so this should be a completely
+valid and well-formed request.  It might be that the NIC and XX (both
+TOPS-20s) have no answers, but they shouldn't return FORMAT-ERROR,
+should it?  And shouldn't BITSY (and other Unixes) point to the roots as
+a last resort?
+
+<b>[<a href="?l=namedroppers&m=95837781926968&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926970&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

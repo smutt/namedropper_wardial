@@ -1,0 +1,62 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'re: some questions' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426629&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426631&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426628&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=89254001800001&r=1&w=2">re: some questions</a>
+From:       <a href="?a=95837693600007&r=1&w=2">cbpavo.cbosgd.ATT.UUCP!mark () seismo ! CSS ! GOV (Mark Horton)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198511">1985-11-15 13:21:30</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426630&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426630&q=raw">body</a>]</b>
+
+We all know (or should know) how easy it is to break into a Berkeley
+style system that relies on IP source addresses for authentication.
+(To break into system A, wait for system B, which A trusts, to go down.
+Then change your local host name to B, reboot, and impersonate B.
+This only requires a Sun workstation or similar PC which you control
+and which is tapped into the local Ethernet.)
+
+In fact, Berkeley warns people about the problem in the documentation
+and discourages you from putting many hosts in the list of trusted
+hosts.  They also do not distribute any programs that let you go super
+user without a password.  And they prevent root on one machine from
+becoming root on another trusted machine.
+
+But in the interests of productivity, a lot of sites configure their
+systems to be wide open (or at least they use the hooks as provided
+so their local machines all trust each other.)  That way they don't
+spend half their life typing passwords across the Ethernet (which
+itself would be a security problem if someone is watching the cable.)
+
+So, it's a fact of life that IP source addresses are going to be used
+for authentication.  It's not perfect, and it certainly leaves a lot
+of places vulnerable to a cable-tapper, but the risks often are
+outweighed by the benefits.
+
+So the position "you should not use IP source addresses for host
+authentication, therefore there shall be no facility to translate
+IP source addresses to host names" isn't helpful.
+
+	Mark
+
+P.S. Somebody ought to invent a public key cryptosystem to do the
+validation without having to type a password and without these sorts
+of vulnerabilities.  But in the meantime...
+
+<b>[<a href="?l=namedroppers&m=95837667426629&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426631&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837667426628&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

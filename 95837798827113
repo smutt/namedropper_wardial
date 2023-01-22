@@ -1,0 +1,39 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Return of the Bogons Part IV' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827109&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827110&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827109&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893500017&r=1&w=2">Re: Return of the Bogons Part IV</a>
+From:       <a href="?a=90366298700004&r=1&w=2">asp () uunet ! uu ! net (Andrew Partan)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199011">1990-11-13 23:17:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827113&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827113&q=raw">body</a>]</b>
+
+&gt; Looks like uunet.uu.net has picked up many of the different bogons
+&gt; going around (lbl.gov, the always popular gunter-adam.arpa and with
+&gt; the unqualified Mexicans - telecom, nexsvr, mtecv1 - in for good
+&gt; measure ):
+
+I am not sure where we pick them up from, but we must have picked them
+up in the last 24 hours since we rebooted 24 hours ago, and non of the
+bogons are in any of our files.  I just restarted our nameserver to
+purge it of these and of the bogon 137.39.1.2 A record for uunet.
+	--asp@uunet.uu.net (Andrew Partan)
+
+<b>[<a href="?l=namedroppers&m=95837798827109&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827110&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827109&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

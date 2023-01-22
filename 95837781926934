@@ -1,0 +1,55 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'number of questions question' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781926933&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926935&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    number of questions question
+From:       <a href="?a=95837784000011&r=1&w=2">David C. Plummer &lt;DCP () QUABBIN ! SCRC ! Symbolics ! COM&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198710">1987-10-02 18:23:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781926934&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781926934&q=raw">body</a>]</b>
+
+RFC883, as far as I can tell, implies that the number of questions in a
+QUERY is one, only one, no more and no less.  Does does this by saying
+"a question" and labelling that slot in the pictures with "question."
+It also labels the answer slot with the singular "answer" even though
+there may be many answers.
+
+So... I poked around.  I sent two questions to various types of server hosts,
+asking about machines for which they were an authority.  The Unix
+systems I tried (bitsy.mit.edu, prep.ai.mit.edu, bbn.com) all replied
+with a format error.  (bbn.com is actually running Ultrix.)  They also
+replied with a zero-length question field.  The only TOPS-20 I tried,
+XX.LCS.MIT.EDU also replied with a format error, and additionally
+returned the original questions in the reponse.  Symbolics appears to
+look at the first question and returns a response containing all the
+questions but only returns answer(s) for the first.
+
+Should multiple questions work?  (This is a design question, not an
+implemtation question.)  
+  -  If not, why not?  There are some systems out in the world that
+     would like to query many things at once.
+  -  If so, how should the authority bit be managed?  My guess is that
+     it is only valid to set the authority bit if the server is an
+     authority for all the answers.  Also, what if some of the questions
+     are OK, but some would generate a name-error?  Should that cause a
+     non-error response without the authority bit set, or generate a
+     name-error which would force the requestor to query each name?
+
+<b>[<a href="?l=namedroppers&m=95837781926933&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781926935&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: DNS glue records and BIND 4.8' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837798827025&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827019&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837893300019&r=1&w=2">Re: DNS glue records and BIND 4.8</a>
+From:       <a href="?a=95837817200032&r=1&w=2">"Cricket" &lt;cricket () winnie ! corp ! hp ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199009">1990-09-25 21:14:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837798827026&q=mbox">message</a> or <a href="?l=namedroppers&m=95837798827026&q=raw">body</a>]</b>
+
+
+    We are currently having a problem caused (I think) by someone with a
+    glue records for uunet.uu.net with the wrong address.  The only address
+    that uunet.uu.net has is 192.48.96.2; however the address 137.39.1.2
+    keeps showing up.
+
+    We have been trying to track this down &amp; kill it for a while now, but
+    can't figure out where it is coming from.
+
+A very sticky problem, I agree.  A friend and I tried in vain some months
+ago to track down the source of an RR for aos.brl.mil with a bad dlen.
+
+    The real problem is that named accepts non-authoratative updates for
+    information that it is the authoratative server for (and thus the
+    'infection' gets spread).  Named needs to be fixed to not do this.
+    
+Am I hallucinating, or do newer versions already do this?  I seem to
+remember a message appearing on consoles 'round here that looked like:
+
+	    datagram from 15.0.200.33 port 53, fd 5, len 347 
+	    15.0.200.33 attempted update to auth zone 1 'sc.hp.com' 
+	    update failed (-10)
+
+when glue conflicted with a server's authoritative data.  (I could be
+wrong - I've never personally seen the message, and I run some big
+nameservers.)
+
+cricket
+
+hostmaster@hp.com
+
+<b>[<a href="?l=namedroppers&m=95837798827025&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837798827019&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837798827024&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837781927091&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927089&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    
+From:       <a href="?a=95837785000017&r=1&w=2">dmo () tut ! cc ! rochester ! edu (Denise Ondishko)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198712">1987-12-14 8:57:24</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837781927088&q=mbox">message</a> or <a href="?l=namedroppers&m=95837781927088&q=raw">body</a>]</b>
+
+	From MAILER-DAEMON Wed Dec  9 19:52:05 1987
+	Received: by tut.cc.rochester.edu id AA23840 (5.52wj3); Wed, 9 Dec 87 19:52:00 EST
+	Message-Id: &lt;8712100052.23840@tut.cc.rochester.edu&gt;
+	Date: Wed, 9 Dec 87 19:52:00 EST
+	From: MAILER-DAEMON (Mail Delivery Subsystem)
+	Subject: Returned mail: Cannot send message for 3 days
+	To: MAILER-DAEMON
+	
+	   ----- Transcript of session follows -----
+	421 sri-nic.arpa.tcp-ok... Deferred: Connection timed out during user open with sri-nic.arpa
+	
+	   ----- Unsent message follows -----
+	Received: by tut.cc.rochester.edu id AA11160 (5.52wj3); Sun, 6 Dec 87 19:48:00 EST
+	Message-Id: &lt;8712070048.11160@tut.cc.rochester.edu&gt;
+	Date: Sun, 6 Dec 87 19:48:00 EST
+	From: MAILER-DAEMON (Mail Delivery Subsystem)
+	Subject: Returned mail: Cannot send message for 3 days
+	To: &lt;namedroppers-RELAY@SRI-NIC.ARPA&gt;
+	
+	   ----- Transcript of session follows -----
+	421 rochway.ether... Deferred: Connection timed out during user open with rochway
+	
+	   ----- Unsent message follows -----
+	Received: from sri-nic.arpa by tut.cc.rochester.edu id AA21369 (5.52wj3); Thu, 3 Dec 87 19:24:35 EST
+	Received: from aramis.rutgers.edu by SRI-NIC.ARPA with TCP; Thu 3 Dec 87 08:40:46-PST
+	Received: by aramis.rutgers.edu (5.54/1.14) 
+		id AA03943; Thu, 3 Dec 87 11:34:26 EST
+	Date: Thu, 3 Dec 87 11:34:26 EST
+	From: hedrick@aramis.rutgers.edu (Charles Hedrick)
+	Message-Id: &lt;8712031634.AA03943@aramis.rutgers.edu&gt;
+	To: namedroppers@sri-nic.arpa
+	Subject: timeout-out CNAME and non-timedout data
+	
+	The violation is in having both a CNAME and an HINFO.  I had always
+	assumed that you would be required to manipulate the TTL's so that you
+	didn't have unexpired conflicting information, or at least not for
+	more than a few hours.  I think there is a concensus that one-year
+	TTL's are not acceptable.  I don't think people are using more than a
+	week.  My view (which others have also supported) is that if you are
+	using one week TTL's, you set them down to one day at least a week
+	before making any change that owuld introduce an inconsistency of this
+	kind.  Then to one hour a day before making the change etc.  Except that
+	at some point you decide that you're willing to live with being
+	inaccessible for a certain period of time and just don't bother.  In
+	that case, it doesn't much matter what an implementatio does about
+	"impossible" things, since the domain administrator has chosen to be
+	inconsistent for a certain period of time.  The only proviso I would
+	add is that you should make sure not to get into a loop when things
+	are invalid.  In that case, simply returning the information that
+	appears to be valid, or failing, is probably safer than going off and
+	making queries into a distributed database that is likely not to be
+	consistent.
+	
+	
+	
+	
+
+<b>[<a href="?l=namedroppers&m=95837781927091&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837781927089&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

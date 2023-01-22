@@ -1,0 +1,89 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Domain Heirarchy &amp; IN-ADDR domain server assignments &amp; McPointers' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837667426655&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426657&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Domain Heirarchy &amp; IN-ADDR domain server assignments &amp; McPointers
+From:       <a href="?a=95837693600025&r=1&w=2">"Christopher C. Stacy" &lt;CSTACY () MC ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198512">1985-12-23 0:15:51</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837667426656&q=mbox">message</a> or <a href="?l=namedroppers&m=95837667426656&q=raw">body</a>]</b>
+
+
+    Date: Fri, 20 Dec 1985  19:24 EST
+    From: Chris Lindblad &lt;CJL%MIT-OZ at MIT-MC.ARPA&gt;
+    Re:   Domain Heirarchy &amp; IN-ADDR domain server assignments.
+    In-reply-to: Msg of 20 Dec 1985  16:36-EST from &lt;MKL at SRI-NIC.ARPA&gt;
+
+    I want to set the name servers for the 52.128.IN-ADDR.ARPA domain to be
+    say, PREP.AI.MIT.EDU, HERMES.AI.MIT.EDU, and GUTENBERG.AI.MIT.EDU.
+    MKL@SRI-NIC won't do it, because he says that then NIC would have to
+    know about the AI.MIT.EDU domain. 
+
+        Date: Friday, 20 December 1985  16:36-EST
+        From: Mark Lottor &lt;MKL at SRI-NIC.ARPA&gt;
+
+        OK, I was a bit confused.  I think you are too.  Here is what
+        I think should be happening, and I think our IN-ADDR file
+        is correct at this time.  MIT.EDU has authority over your domain
+        AI.MIT.EDU.  Therefor MIT.EDU is required to know about the
+        servers for AI.MIT.EDU, we are not.  In our INADDR file we
+        currently have a pointer stating that for queries of net
+        128.52 you should go ask the MIT.EDU servers.  Those servers
+        should then tell the querier to go ask the AI.MIT.EDU servers.
+
+        I think you should send your in-addr requests off to the
+        MIT.EDU domain maintainer then...
+
+If you had been watching television commercials lately you would
+realize that if you want to buy chicken nuggets, you don't go to the
+hamburger place.  Similarly, IN-ADDR.ARPA requests should go to the
+IN-ADDR.ARPA maintainer, not the MIT.EDU maintainer.
+
+We're not talking about the MIT.EDU domain.  We're talking about a
+domain named IN-ADDR, which isn't even under EDU.  The fact that some
+of the names in those two domains happen to represent the same
+physical objects is an irrelevant (?) coincidence.
+
+For NIC to be authoritative over 52.128.IN-ADDR.ARPA requires only
+that NIC be authoritative for 128.IN-ADDR.ARPA, which they are.  
+NIC can directly delegate authority over the domain to PREP.AI.MIT.EDU
+or whoever. I don't think there is any rule that says you can only
+delegate down one level, but there is a problem in doing this.
+The screw is that NIC won't have the authoritative host address of the
+delgate server host in the AI.MIT.EDU domain, (but the server which is
+authoritative for MIT.EDU is closer and has that answer.)
+
+So, to get the answer for {IN,PTR,"14.22.52.128.IN-ADDR.ARPA"} a user
+asks NIC.  NIC can say {IN,NS,"HERMES.AI.MIT.EDU"} but doesn't know
+the host address for HERMES, and can't put that in its Additional
+section.  NIC can also point you to the name and address of "MIT.EDU"
+domain servers, which can tell you HERMES's address, so that then you
+can connect to HERMES and get the answer to your original question.
+
+I think resolvers will wind up needing to ask the authority for
+MIT.EDU some of the relavent questions anyway, since the answer lives
+in a server underneath MIT.EDU and you have to find it.  You have to
+decide on which search path to send them.  I don't know the optimum
+configuration offhand, but I don't see any reason why it is not
+possible for NIC to refer people to PREP or HERMES for IN-ADDR queries.
+
+Chris
+
+<b>[<a href="?l=namedroppers&m=95837667426655&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837667426657&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

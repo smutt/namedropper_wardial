@@ -1,0 +1,44 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'shell-service' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784627095&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627097&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    shell-service
+From:       <a href="?a=95837786600039&r=1&w=2">mcsun!unido!quando!stullich () uunet ! uu ! net  (Thomas Stullich)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198912">1989-12-18 11:02:00</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784627096&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784627096&q=raw">body</a>]</b>
+
+Hello!
+
+I've just installed a nameserver for our TCP-IP-LAN.
+I also have added all services with portnumbers smaller than 256 for
+every host in WKS RR's.
+While the nameserver is running, the following problem occurs:
+The unix specific commands 'rcp' and 'rsh' stop working during execution
+with the message 'Permission denied.'.
+What is the reason and how can i solve this problem?
+
+-- 
+Thomas Stullich UUCP: {backbone}!unido!quando!stullich OR stullich@quando.uucp
+  Quantum GmbH  Bitnet: UNIDO!quando!stullich OR stullich%quando@UNIDO(.bitnet)
+    Dortmund    internet: stullich%quando%mcvax.UUCP@cwi.nl
+    Germany     internet: stullich%quando%UNIDO.bitnet@mitvma.mit.edu
+
+<b>[<a href="?l=namedroppers&m=95837784627095&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784627097&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

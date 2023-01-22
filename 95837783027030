@@ -1,0 +1,81 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: Network Names and the DNS' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837783027019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027020&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027013&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027031&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837890700001&r=1&w=2">Re: Network Names and the DNS</a>
+From:       <a href="?a=95837784000019&r=1&w=2">Rob Austein &lt;SRA () XX ! LCS ! MIT ! EDU&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198811">1988-11-16 10:01:17</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837783027030&q=mbox">message</a> or <a href="?l=namedroppers&m=95837783027030&q=raw">body</a>]</b>
+
+Ok, I'll bite.  This may all be old news to you guys, but maybe
+there's a useful suggestion buried in it.
+
+I think putting the services (port/protocol/etc) stuff into the DNS is
+a great idea.  I even proposed this once or twice on namedroppers.
+There was some concern at the time about the overhead of having every
+unix box query the NIC for everything currently in /etc/services every
+time it started up; I don't know how real a concern that is, certainly
+it could be addressed by throwing another few CPUs behind the problem
+(delegating the service RRs into a zone that is under the control of
+the NIC but which uses different server machines to spread the load).
+
+How would the mechanics of this work?  I think we need a few new RR types,
+perhaps PORT and PROT(ocol).  Then we could do
+
+    TCP.IP-PROTOCOLS.ARPA.  IN  PROT  6
+    SMTP.TCP-PORTS.ARPA.    IN  PORT  25
+    TFTP.UDP-PORTS.ARPA.    IN  PORT  69
+    6.IP-PROTOCOLS.ARPA.    IN  PTR   TCP.IP-PROTOCOLS.ARPA.
+    25.TCP-PORTS.ARPA.      IN  PTR   SMTP.TCP-PORTS.ARPA.
+    69.UDP-PORTS.ARPA.      IN  PTR   TFTP.UDP-PORTS.ARPA.
+
+Or perhaps we could overload the PORT and PROT RR types onto a single
+type with some catchy name if you think that would go over better.
+
+I do think it's important to distinguish between TCP and UDP ports.
+
+An alternative that makes more use of the DNS's inherent tree
+structuring would be to add a single new type (call it ANUM, for
+Assigned Number, and make it a 16 or 32 or 48 or 64 bit quantity
+depending on how far you want to proceed with this, or maybe even a
+length count followed by data bytes), and do something like:
+
+    TCP.IP-ANUM.ARPA.	    IN  ANUM  6
+    SMTP.TCP.IP-ANUM.ARPA.  IN  ANUM  25
+    TFTP.UDP.IP-ANUM.ARPA.  IN  ANUM  69
+    6.IP-ANUM.ARPA.         IN  PTR   TCP.IP-ANUM.ARPA.
+    25.TCP.IP-ANUM.ARPA.    IN  PTR   SMTP.TCP.IP-ANUM.ARPA.
+    69.UDP.IP-ANUM.ARPA.    IN  PTR   TFTP.UDP.IP-ANUM.ARPA.
+
+This has the advantage that you can delegate an entire IP protocol
+number and its set of port mappings to somebody other than the NIC for
+experimental purposes.  Which might be useful for protocol design.
+
+I'm not up enough on the Ethernet level stuff to have an opinion on it.
+
+If you like this scheme I'll write up something for circulation.  I
+may send it to namedroppers if several days go by without either
+hearing from one of you or hearing a better proposal on the list.
+
+--Rob
+-------
+
+<b>[<a href="?l=namedroppers&m=95837783027019&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837783027020&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837783027013&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837783027031&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

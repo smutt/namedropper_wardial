@@ -1,0 +1,54 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Joining the internet domain questions?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837797326889&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326891&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326895&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837892200004&r=1&w=2">Joining the internet domain questions?</a>
+From:       <a href="?a=95837816800029&r=1&w=2">cs.utexas.edu!usc!elroy.jpl.nasa.gov!hacgate!janus!todd () tut ! cis ! ohio-state ! edu</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=199003">1990-03-13 19:04:10</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837797326890&q=mbox">message</a> or <a href="?l=namedroppers&m=95837797326890&q=raw">body</a>]</b>
+
+background:
+
+I'm new to name servers and wanted to run my *solution* by others.
+
+We (quotron.com) have recently been connected to the internet.
+For a long time, we've been getting our mail through uunet via
+an MX forward entry and would like to continue doing so.  However,
+we would like all non-mail name server requests to be served by
+dino.quotron.com which is reachable from the internet.
+
+solution?:
+
+I assume we should setup our name server with an MX mail forward record
+pointing mail to uunet.uu.net and to service all other quotron.com 
+requests ourselves.
+
+Then we should update the .com name server to use our dino.quotron.com
+name server as the primary quotron.com name server and change the
+existing quotron.com name servers to secondary?
+
+Does this sound reasonable?
+
+thanks in advance,
+
+--todd booth
+
+<b>[<a href="?l=namedroppers&m=95837797326889&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837797326891&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<a href="?l=namedroppers&m=95837797326895&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

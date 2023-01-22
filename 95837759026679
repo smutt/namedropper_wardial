@@ -1,0 +1,65 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Experimental MX Relay Host' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026678&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026680&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    Experimental MX Relay Host
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198604">1986-04-03 20:55:06</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026679&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026679&q=raw">body</a>]</b>
+
+
+    The CSNET CIC has recently been beta-testing a version of MMDF II
+which knows how to use MX RR's in the domain system to route Internet
+mail.  We have now been running this software for about three weeks,
+and while it has bugs, it is beginning to settle down.  We are now
+in search of a wider class of mail problems to try it with.  As part
+of this experiment, we have rigged our test and development host,
+DEV.CS.NET (128.89.0.94 and 8.5.0.14) to act as a mail relay.  People
+who want to try mailing to domain hosts and seeing how MX's work can
+deliver mail to DEV.CS.NET via SMTP and see what happens.  Let us know
+(long@sh.cs.net and craig@sh.cs.net) if you find some behaviour
+disturbing/startling/etc.  Please note that this is an experimental
+service -- we make no promises that your mail will get through or that
+DEV.CS.NET will be continuously available.  It is a development host and
+we do take it down frequently to change software and hardware.  Also,
+we do ask that people do *not* start sending their MX-needy mail
+to RELAY.CS.NET (aka CSNET-RELAY) or other CSNET CIC hosts.  We
+can't take the extra volume!
+
+    More generally, a few comments on MX experience so far may be of
+interest.  Our most serious initial problem was with servers (in
+particular root servers) that didn't know about MX and returned
+format errors to queries for MX RRs.  Paul Mockapetris was good enough
+to get MX-understanding servers up on ISIC and ISIB after which we were
+able to do serious testing.  After that we discovered a lot of problems
+with timeouts.  Hosts with different network connectivity (not surprisingly)
+turn out to experience noticeably different performance when querying the
+domain system.  Finding good, generally serviceable, timeout periods proves
+difficult.  In particular incoming SMTP mail is dramatically affected:
+too short a timeout and you end up refusing most messages because you
+can't resolve the sending host name (frequently they work the second
+time because your local resolver cache has finally picked up the reply
+from the first query issued on the first connection);  too long a timeout
+and the remote host times out and concludes you are down.
+
+Craig Partridge
+
+<b>[<a href="?l=namedroppers&m=95837759026678&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026680&w=2">next in list</a>] [<font color="#c0c0c0">prev in thread</font>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

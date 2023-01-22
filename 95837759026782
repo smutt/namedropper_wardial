@@ -1,0 +1,56 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'List of MX Hosts' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837759026783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026784&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026783&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026784&w=2">next in thread</a>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837888500013&r=1&w=2">List of MX Hosts</a>
+From:       <a href="?a=95837783700008&r=1&w=2">Craig Partridge &lt;craig () loki ! bbn ! com&gt;</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198609">1986-09-26 16:54:26</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837759026782&q=mbox">message</a> or <a href="?l=namedroppers&m=95837759026782&q=raw">body</a>]</b>
+
+
+    It looks like more and more hosts are converting over to using MX RRs
+to route their mail.  Here at CSNET we are interested in getting a better
+sense of how many hosts are actually using MX-cognizant mailers.  So we've
+set up a mailbox to which system administrators can mail names of the hosts
+they maintain that understand MX.  Furthermore we've made the list that is
+generated available through the CSNET Info Server for those people interested
+in seeing the list.
+
+    To add a host to the list, mail to mxhosts@sh.cs.net.  In the body of
+the message simply list the hosts that know about MX, one host per line.
+The script attached to the mailbox is very dumb and simply strips the 822
+header off the message and appends the rest of the message to our list.
+(This is very low-tech but should give us the information we want).
+
+    To retrieve the list, mail the following query to info@sh.cs.net:
+
+--------cut---here---------
+request: info
+topic: mxlist
+request: end
+--------cut---here---------
+
+    Please let me know if you encounter problems with this system.
+
+Craig Partridge
+CSNET Technical Staff
+
+<b>[<a href="?l=namedroppers&m=95837759026783&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837759026784&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837759026783&w=2">prev in thread</a>] [<a href="?l=namedroppers&m=95837759026784&w=2">next in thread</a>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>

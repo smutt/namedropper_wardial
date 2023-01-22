@@ -1,0 +1,43 @@
+<head>
+ <meta http-equiv="Content-Type" content="text/html ">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>'Re: What liberties may an MX'ing host take with delivery?' - MARC</title>
+ <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000C0" vlink="#800080">
+<pre><b>[<a href="?l=namedroppers&m=95837784626955&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626956&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626948&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+<b><font size=+1>
+List:       <a href="?l=namedroppers&r=1&w=2">namedroppers</a>
+Subject:    <a href="?t=95837891200004&r=1&w=2">Re: What liberties may an MX'ing host take with delivery?</a>
+From:       <a href="?a=95837786400004&r=1&w=2">anise!salt.acc.com!lars () ucbvax ! Berkeley ! EDU  (Lars J Poulsen)</a>
+Date:       <a href="?l=namedroppers&r=1&w=2&b=198906">1989-06-30 21:17:14</a></font>
+[Download RAW <a href="?l=namedroppers&m=95837784626954&q=mbox">message</a> or <a href="?l=namedroppers&m=95837784626954&q=raw">body</a>]</b>
+
+The problem with the FIDONET mail routing loops that was described is
+not really with the MX; it is with the gateways.
+
+A gateway fronting for a fidonet region must recognize the subset of
+hosts that it is fronting for and route those to the appropriate mailer,
+rather than to the central router.
+
+This should be no harder than to define a class enumerating those
+fidonet hosts, and point that class to wahtever mailer is used to reach
+those hosts.
+
+/ Lars Poulsen &lt;lars@salt.acc.com&gt;     (800) 222-7308  or (805) 963-9431 ext 358
+  ACC Customer Service                Affiliation stated for identification only
+                  My employer probably would not agree if he knew what I said !!
+
+<b>[<a href="?l=namedroppers&m=95837784626955&w=2">prev in list</a>] [<a href="?l=namedroppers&m=95837784626956&w=2">next in list</a>] [<a href="?l=namedroppers&m=95837784626948&w=2">prev in thread</a>] [<font color="#c0c0c0">next in thread</font>] </b>
+</pre>
+  </pre><br><center>
+    <a href="?q=configure">Configure</a> | 
+
+    <a href="?q=about">About</a> |
+    <a href="?q=news">News</a> |
+    <a href="mailto:webguy@marc.info?subject=Add%20a%20list%20to%20MARC">Add&nbsp;a&nbsp;list</a> |
+    Sponsored&nbsp;by&nbsp;<a href="http://www.korelogic.com/">KoreLogic</a>
+</center>
+</body>
+</html>
